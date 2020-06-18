@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 
@@ -211,7 +209,15 @@ class App extends React.Component {
 
 constructor(props){
 super(props);
-this.state = {"key":"value","SecondPageinput5":"Select"}
+this.state = {"key":"value","SecondPageinput5":"Select","loaded":false,"dbLinks":{}}
+}
+componentDidMount(){
+var appData = this.state;
+var that = this;
+var dbLinks = {"weapons":"https://spreadsheets.google.com/feeds/cells/1QQnDBXvWjKs7wl0OjHlpp72eR-bfdtz9X0eAtuFeo6o/1/public/full?alt=json"}
+Object.keys(dbLinks).forEach(function(key){
+that.connectToDatabase(dbLinks[key], key);
+})
 }
 render(){ var appData = this.state; var that = this; 
 return (
@@ -235,6 +241,82 @@ source = {{uri:"https://cm1.narvii.com/7192/f75cb8c8074b5ccc961668aa91bbec9256a4
 </Image></View>
 )
 }
+
+
+connectToDatabase(db_link,name){
+      var that = this;
+      that.state.dbLinks[name] = db_link;
+      console.log(db_link)
+      if(db_link.indexOf("google.com") !== -1){
+         var schema = fetch(db_link, {
+                  method: 'GET',
+                  headers: {
+                    "Content-Type": "application/json"
+                  }
+          }).then(async function(res){
+            
+ 
+           var res = await res.json();
+           var cols = {};
+           var data = res.feed.entry.map(convert_spreadsheet_data_to_obj);
+           var output = {};
+           data.forEach(function(cell){
+            
+            if(parseInt(cell.row) === 1){
+              cols[cell.col] = cell.data;
+            }
+           })
+
+          data.forEach(function(cell){
+            if(output[cell.row] !== 1){
+              if(output[cell.row] === undefined){
+                output[cell.row] = {};
+              }
+              output[cell.row][cols[cell.col]] = cell.data;
+            }
+          })
+
+          var data_arr = Object.keys(output).map(function(key){
+            return output[key]
+          })
+              
+          
+    
+            window[name] = data_arr;
+
+            that.forceUpdate();
+            that.setState({dbLinks:that.state.dbLinks, loaded:true})
+          
+
+
+          })
+
+        return;
+      }
+
+      
+      
+      var schema = fetch(db_link, {
+                  method: 'GET',
+                  headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                  }
+        }).then(async function(res){
+          console.log("SAVED");
+          res = await res.json();
+          window[name] = res;
+          that.forceUpdate();
+          that.setState({dbLinks:that.state.dbLinks, loaded:true})
+          window.$("#database_table_rows").append(`<tr>
+      <td>`+ name +`</td>
+      <td>`+`Loaded` +`</td>
+      <td><button onclick = "view_database('`+name+`')">`+`View` +`</button></td>
+    </tr>`)
+
+
+        })
+    }
 
   goTo(pageName){
     this.setState({page:pageName,
