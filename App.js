@@ -207,14 +207,14 @@ function unwrap_dynamically(value,default_value){
 //prettifier: https://www.prettifier.net/js/
 class App extends React.Component {
 
-  constructor(props){
+ constructor(props){
 super(props);
-this.state = {"key":"value","SecondPageinput5":"Select","loaded":false,"dbLinks":{}}
+this.state = {"key":"value","id":3,"ID":null,"loaded":false,"dbLinks":{}}
 }
 componentDidMount(){
 var appData = this.state;
 var that = this;
-var dbLinks = {"weapons":"https://spreadsheets.google.com/feeds/cells/1QQnDBXvWjKs7wl0OjHlpp72eR-bfdtz9X0eAtuFeo6o/1/public/full?alt=json"}
+var dbLinks = {"null":null,"Movies":"https://spreadsheets.google.com/feeds/cells/1QJPEnmZRWsjySvExe8sQfB2ozeUf32lTwEjl8UJhSOI/1/public/full?alt=json"}
 Object.keys(dbLinks).forEach(function(key){
 that.connectToDatabase(dbLinks[key], key);
 })
@@ -228,24 +228,97 @@ return(
 )
 }
 return (
-<View style = {{width:"380px", height:"657px", borderWidth:5, borderColor:"black", backgroundColor:"white"}}><Text
-style= {{"innerText":"Fortnite Gun Tier List","textAlign":"center","top":64.09247999999997,"left":53.297514999999976,"width":"75%","height":"7%","backgroundColor":"#49c4fc"}}
-> {"Fortnite Gun Tier List"} </Text>
-<Text
-style= {{"top":340.904,"left":4.813500000000033,"innerText":"Click a List to View","textAlign":"center"}}
-> {"Click a List to View"} </Text>
-<Multiplier
-type = {"button"}
-data = {["Shotgun List", "Assault Rifle List", "Sub Machine Gun List", "Snipers List", "Explosive List", "Healing List"]}
-style = {[{alignItems:'center'},{"options":"[\"Shotgun List\", \"Assault Rifle List\", \"Sub Machine Gun List\", \"Snipers List\", \"Explosive List\", \"Healing List\"]","repeaterinnerText":"elem","repeaterType":"button","top":344.904,"left":0.8135000000000332,"width":null,"height":"height"}]}
-clickfunction = {function(){goTo("SecondPage");}}
->
-</Multiplier>
+<View style = {{width:"380px", height:"657px", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
 <Image
-style= {[{width:"200px",height:"200px"}, {"source":"https://cm1.narvii.com/7192/f75cb8c8074b5ccc961668aa91bbec9256a4c544_00.jpg","top":-48.096000000000004,"left":97.81350000000003}]}
-source = {{uri:"https://cm1.narvii.com/7192/f75cb8c8074b5ccc961668aa91bbec9256a4c544_00.jpg"}}
+style= {[{width:"200px",height:"200px"}, {"source":"Movies[appData.id].Poster","top":62.98399999999998,"left":12.245999999999981,"textAlign":"center","paddingTop":1,"height":"40%","width":"35%","innerText":"Movies[appData.id].IMDb"}]}
+source = {{uri:"Movies[appData.id].Poster"}}
 >
-</Image></View>
+</Image>
+<Text
+   style= {{"innerText":"Movies[appData.id].Title","textAlign":"center","backgroundColor":"transparent","top":41.31999999999999,"left":0.3294999999999959,"fontFamily":"Verdana","fontSize":24,"color":"#828282","fontWeight":"BOLD"}}
+   > {Movies[appData.id].Title} </Text>
+<TouchableOpacity
+onPress = { function(){goTo("settings"); that.forceUpdate(); }}  
+style= {[{
+shadowColor: 'rgba(0,0,0, .4)', // IOS
+shadowOffset: { height: 1, width: 1 }, // IOS
+shadowOpacity: 1, // IOS
+shadowRadius: 1, //IOS
+backgroundColor: '#fff',
+elevation: 2, // Android
+height: 50,
+width: 100,
+justifyContent: 'center',
+alignItems: 'center',
+flexDirection: 'row',
+position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"Settings","backgroundColor":"#757778","top":0.3199999999999932,"left":339.3295}]}
+>
+<Text>{"Settings"}</Text>
+</TouchableOpacity>
+<TouchableOpacity
+onPress = { function(){that.forceUpdate();}} 
+style= {[{
+shadowColor: 'rgba(0,0,0, .4)', // IOS
+shadowOffset: { height: 1, width: 1 }, // IOS
+shadowOpacity: 1, // IOS
+shadowRadius: 1, //IOS
+backgroundColor: '#fff',
+elevation: 2, // Android
+height: 50,
+width: 100,
+justifyContent: 'center',
+alignItems: 'center',
+flexDirection: 'row',
+position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":524.3199999999999,"left":-0.6705000000000041,"height":"10%","width":"30%","innerText":"Yes","backgroundColor":"#16e03f","fontFamily":null}]}
+>
+<Text>{"Yes"}</Text>
+</TouchableOpacity>
+<TouchableOpacity
+onPress = { function(){appData.id=appData.id+1; that.forceUpdate(); }}  
+style= {[{
+shadowColor: 'rgba(0,0,0, .4)', // IOS
+shadowOffset: { height: 1, width: 1 }, // IOS
+shadowOpacity: 1, // IOS
+shadowRadius: 1, //IOS
+backgroundColor: '#fff',
+elevation: 2, // Android
+height: 50,
+width: 100,
+justifyContent: 'center',
+alignItems: 'center',
+flexDirection: 'row',
+position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":523.3199999999999,"left":274.3295,"height":"10%","width":"30%","innerText":"Give me another","backgroundColor":"#e81010"}]}
+>
+<Text>{"Give me another"}</Text>
+</TouchableOpacity>
+<Text
+style= {{"top":-32.68000000000001,"left":69.3295,"width":"50%","source":null,"innerText":"Director: Edgar Wright"}}
+> {"Director: Edgar Wright"} </Text>
+<Text
+   style= {{"top":95.32,"left":171.3295,"width":"55%","innerText":"Movies[appData.id].Director","fontFamily":"Lato","color":"#828282"}}
+   > {Movies[appData.id].Director} </Text>
+<Text
+   style= {{"innerText":null,"top":-21.680000000000007,"left":31.329499999999996}}
+   > {null} </Text>
+<Text
+   style= {{"innerText":"Movies[appData.id].Genre","width":"60%","top":172.32,"left":170.3295,"color":"#828282"}}
+   > {Movies[appData.id].Genre} </Text>
+<Text
+   style= {{"top":310.32,"left":0.3294999999999959,"height":"25%","width":"100%","innerText":"Movies[appData.id].Description","fontFamily":"Verdana","fontSize":14,"backgroundColor":"transparent","color":"#828282"}}
+   > {Movies[appData.id].Description} </Text>
+<Text
+   style= {{"top":118.32,"left":171.3295,"backgroundColor":"transparent","innerText":"Movies[appData.id].Rating","color":"#828282"}}
+   > {Movies[appData.id].Rating} </Text>
+<Text
+   style= {{"backgroundColor":"transparent","innerText":null,"top":146.32,"left":211.3295,"color":"#828282"}}
+   > {null} </Text>
+<Text
+   style= {{}}
+   > {undefined} </Text>
+<Text
+   style= {{}}
+   > {undefined} </Text>
+</View>
 )
 }
 
@@ -253,6 +326,9 @@ connectToDatabase(db_link,name){
       var that = this;
       that.state.dbLinks[name] = db_link;
       console.log(db_link)
+      if(db_link === null || name === null){
+        return
+      }
       if(db_link.indexOf("google.com") !== -1){
          var schema = fetch(db_link, {
                   method: 'GET',
