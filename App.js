@@ -289,6 +289,7 @@ connectToDatabase(db_link,name){
           
     
             window[name] = data_arr;
+            global[name] = data_arr;
 
             that.forceUpdate();
             that.setState({dbLinks:that.state.dbLinks, loaded:true})
@@ -312,6 +313,7 @@ connectToDatabase(db_link,name){
           console.log("SAVED");
           res = await res.json();
           window[name] = res;
+          global[name] = res;
           that.forceUpdate();
           that.setState({dbLinks:that.state.dbLinks, loaded:true})
           window.$("#database_table_rows").append(`<tr>
