@@ -207,7 +207,7 @@ function unwrap_dynamically(value,default_value){
 //prettifier: https://www.prettifier.net/js/
 class App extends React.Component {
 
-constructor(props){
+  constructor(props){
 super(props);
 this.state = {"key":"value","SecondPageinput5":"Select","loaded":false,"dbLinks":{}}
 }
@@ -220,6 +220,13 @@ that.connectToDatabase(dbLinks[key], key);
 })
 }
 render(){ var appData = this.state; var that = this; 
+if(!that.state.loaded){
+return(
+<View>
+   <Text>LOADING</Text>
+</View>
+)
+}
 return (
 <View style = {{width:"380px", height:"657px", borderWidth:5, borderColor:"black", backgroundColor:"white"}}><Text
 style= {{"innerText":"Fortnite Gun Tier List","textAlign":"center","top":64.09247999999997,"left":53.297514999999976,"width":"75%","height":"7%","backgroundColor":"#49c4fc"}}
@@ -241,7 +248,6 @@ source = {{uri:"https://cm1.narvii.com/7192/f75cb8c8074b5ccc961668aa91bbec9256a4
 </Image></View>
 )
 }
-
 
 connectToDatabase(db_link,name){
       var that = this;
