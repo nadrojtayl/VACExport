@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 
@@ -208,46 +210,31 @@ function unwrap_dynamically(value,default_value){
 class App extends React.Component {
 
 constructor(props){
-              super(props);
-              this.state = {"key":"value","list":[1,2,3,4]}
-            }
-
-            render(){ var appData = this.state; var that = this; return (
-              <View style = {{width:"380px", height:"657px", backgroundColor:"red"}}> 
-              <TouchableOpacity
-          onPress = { function(){appData.key = "more"; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            height: 50,
-            width: 100,
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":214.09247999999997,"left":195.29751499999998,"innerText":"Click"}]}
-        >
-        <Text>
-        {"Click"}
-        </Text>
-        </TouchableOpacity>
-        <Text
-          style= {{"top":72.09247999999997,"left":200.29751499999998,"innerText":"appData.key"}}
-        > {appData.key}
-         </Text>
-        
+super(props);
+this.state = {"key":"value","SecondPageinput5":"Select"}
+}
+render(){ var appData = this.state; var that = this; 
+return (
+<View style = {{width:"380px", height:"657px", borderWidth:5, borderColor:"black", backgroundColor:"white"}}><Text
+style= {{"innerText":"Fortnite Gun Tier List","textAlign":"center","top":64.09247999999997,"left":53.297514999999976,"width":"75%","height":"7%","backgroundColor":"#49c4fc"}}
+> {"Fortnite Gun Tier List"} </Text>
+<Text
+style= {{"top":340.904,"left":4.813500000000033,"innerText":"Click a List to View","textAlign":"center"}}
+> {"Click a List to View"} </Text>
 <Multiplier
-      type = {"text"}
-      data = {appData.list}
-      style = {[{alignItems:'center'},{"options":"appData.list","top":326.09247999999997,"left":-23.702485000000024,"repeaterinnerText":"elem"}]}
-     
-      >
-      </Multiplier>
-      </View>)}
-
+type = {"button"}
+data = {["Shotgun List", "Assault Rifle List", "Sub Machine Gun List", "Snipers List", "Explosive List", "Healing List"]}
+style = {[{alignItems:'center'},{"options":"[\"Shotgun List\", \"Assault Rifle List\", \"Sub Machine Gun List\", \"Snipers List\", \"Explosive List\", \"Healing List\"]","repeaterinnerText":"elem","repeaterType":"button","top":344.904,"left":0.8135000000000332,"width":null,"height":"height"}]}
+clickfunction = {function(){goTo("SecondPage");}}
+>
+</Multiplier>
+<Image
+style= {[{width:"200px",height:"200px"}, {"source":"https://cm1.narvii.com/7192/f75cb8c8074b5ccc961668aa91bbec9256a4c544_00.jpg","top":-48.096000000000004,"left":97.81350000000003}]}
+source = {{uri:"https://cm1.narvii.com/7192/f75cb8c8074b5ccc961668aa91bbec9256a4c544_00.jpg"}}
+>
+</Image></View>
+)
+}
 
   goTo(pageName){
     this.setState({page:pageName,
@@ -268,3 +255,5 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+
+
