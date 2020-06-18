@@ -231,7 +231,7 @@ return (
 <View style = {{width:"380px", height:"657px", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
 <Image
 style= {[{width:"200px",height:"200px"}, {"source":"Movies[appData.id].Poster","top":62.98399999999998,"left":12.245999999999981,"textAlign":"center","paddingTop":1,"height":"40%","width":"35%","innerText":"Movies[appData.id].IMDb"}]}
-source = {{uri:"Movies[appData.id].Poster"}}
+source = {{uri:Movies[appData.id].Poster}}
 >
 </Image>
 <Text
