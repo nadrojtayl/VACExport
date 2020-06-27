@@ -10,7 +10,10 @@ EXPORT PROCESS
 
 3. Fix errors (Adding quotation marks and semicolons where necessary)
 
-4. Take the generated componentdidmount from the class and paste it into the App class
+4. Take the generated componentdidmount from the class and paste it over the App class's componentdidmount
+
+5. Delete componentdidmount from generated classes
+
 */
 
 class FirstPage extends React.Component {
@@ -18,21 +21,12 @@ class FirstPage extends React.Component {
         super(props);
         this.state = {"key":"value","RegisterPageinput0":"Dog","RegisterPageinput5":"Russian Blue","RegisterPageinput8":"Light blue skin","Info Pageinput1":"d","RegisterPageinput10":"973 768 9820","RegisterPageinput11":"","FindorAdd":true,"AddorFind":true,"loaded":false,"dbLinks":{}}
       }
-      componentDidMount(){
-        var appData = this.state;
-        var that = this;
-        var dbLinks = {"animals":"https://sheetsu.com/apis/v1.0su/3e46d7afe9c1"}
-        Object.keys(dbLinks).forEach(function(key){
-          that.connectToDatabase(dbLinks[key], key);
-        })
-
-
-      }
+      
       render(){ 
       var appData = this.state; var that = this; 
       
 
-      if(!that.state.loaded){
+      if(!that.props.loaded){
         return(<View><Text>LOADING</Text></View>)
       }
 
@@ -322,7 +316,7 @@ class App extends React.Component {
 
 constructor(props){
 super(props);
-this.state = {dbLinks:{}}
+this.state = {dbLinks:{}, loaded:false}
 }
 
  componentDidMount(){
@@ -337,11 +331,13 @@ this.state = {dbLinks:{}}
       }
 
 
-render(){ var appData = this.state; var that = this; this.state.page = "FirstPage";
+render(){ 
+
+  var appData = this.state; var that = this; this.state.page = "FirstPage";
 
   return(
-    <View>
-       <Text>LOADING</Text>
+    <View style = {{width:"100%",height:"100%"}}>
+       <FirstPage loaded = {that.state.loaded}></FirstPage>
     </View>
   )
 
