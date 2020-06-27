@@ -316,7 +316,7 @@ class App extends React.Component {
 
 constructor(props){
 super(props);
-this.state = {dbLinks:{}, loaded:false}
+this.state = {dbLinks:{}, loaded:false, page:"FirstPage"}
 }
 
  componentDidMount(){
@@ -335,11 +335,15 @@ render(){
 
   var appData = this.state; var that = this; this.state.page = "FirstPage";
 
-  return(
-    <View style = {{width:"100%",height:"100%"}}>
-       <FirstPage loaded = {that.state.loaded}></FirstPage>
-    </View>
-  )
+  if(that.state.page === "FirstPage"){
+    return(
+      <View style = {{width:"100%",height:"100%"}}>
+         <FirstPage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FirstPage>
+      </View>
+    )
+  }
+
+  
 
 }
 
@@ -420,10 +424,7 @@ connectToDatabase(db_link,name){
     }
 
   goTo(pageName){
-    this.setState({page:pageName,
-      children:this.state.pages[pageName].children,
-      childrenAdditionalStyles: this.state.pages[pageName].childrenAdditionalStyles,
-      clickfunctions: this.state.pages[pageName].clickfunctions })
+    this.setState({page:pageName})
   }
 
 }
