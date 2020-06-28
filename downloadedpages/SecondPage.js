@@ -128,7 +128,10 @@ function unwrap_dynamically(value,default_value){
     
       return(
         <TouchableOpacity
-        onPress = { function(){  eval(additionalStyle.onPress); if(additionalStyle.onPress.indexOf("appData") !== -1){ console.log("UPDATING APP DATA"); that.forceUpdate(); window.updateAppData(); }   } }
+        onPress = { function(){   
+          appData.WeaponIndex = parseInt(elem.Index);
+          that.props.goTo("ThirdPage");
+        } }
           
           key = {int}
           style={[{
@@ -252,6 +255,7 @@ function unwrap_dynamically(value,default_value){
         </TouchableOpacity>
       <Multiplier
       type = {"button"}
+      goTo = {that.props.goTo}
       data = {appData.FilteredList}
       style = {[{alignItems:'center'},{"options":"appData.FilteredList","repeaterinnerText":"elem[\"Gun Name\"]","repeaterType":"button","top":68.904,"left":-22.93399999999997,"repeateronPress":"appData.WeaponIndex = parseInt(elem.Index);\ngoTo(\"ThirdPage\");"}]}
       clickfunction = {function(){}}

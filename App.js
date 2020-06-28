@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 import FirstPage from './downloadedpages/FirstPage.js'
-import RegisterPage from './downloadedpages/RegisterPage.js'
+import ThirdPage from './downloadedpages/ThirdPage.js'
 import LastPage from './downloadedpages/LastPage.js'
 import Privacy from './downloadedpages/Privacy.js'
 import SecondPage from './downloadedpages/SecondPage.js'
@@ -117,10 +117,10 @@ render(){
     )
   }
 
-   if(that.state.page === "Privacy"){
+   if(that.state.page === "ThirdPage"){
     return(
       <View style = {{width:"100%",height:"100%"}}>
-         <Privacy goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Privacy>
+         <ThirdPage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></ThirdPage>
       </View>
     )
   }
