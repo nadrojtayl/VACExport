@@ -68,7 +68,8 @@ function unwrap_dynamically(value,default_value){
 
   renderElement(name,int, additionalStyle, clickfunctions,elem){
     var that = this;
-    console.log(additionalStyle)
+    console.log("SER")
+    console.log(appData)
 
     var copy = {};
     additionalStyle.forEach(function(obj,ind){
@@ -127,7 +128,13 @@ function unwrap_dynamically(value,default_value){
     
       return(
         <TouchableOpacity
-        onPress = { function(){ console.log(additionalStyle.onPress);  eval(additionalStyle.onPress); if(additionalStyle.onPress.indexOf("appData") !== -1){ console.log("UPDATING APP DATA"); that.forceUpdate(); }   } }
+        onPress = { function(){  
+        
+          appData.FilteredList = filter_list_of_objs(weapons,"Gun Class",elem);
+          that.props.goTo("SecondPage");
+          that.forceUpdate();    
+
+        } }
           
           key = {int}
           style={[{
@@ -237,6 +244,7 @@ class FirstPage extends React.Component {
         
 <Multiplier
       type = {"button"}
+      goTo = {that.props.goTo}
       data = {map_list_of_objs(weapons,"Gun Class")}
       style = {[{alignItems:'center'},{"options":"map_list_of_objs(weapons,\"Gun Class\")","repeaterinnerText":"elem","repeaterType":"button","top":398.904,"left":-9.186499999999967,"width":null,"height":"40%","repeateronPress":"appData.SelectedGroup = elem;\nappData.FilteredList = filter_list_of_objs(weapons,\"Gun Class\",elem);\ngoTo(\"SecondPage\");"}]}
       clickfunction = {function(){goTo("SecondPage");}}
@@ -250,7 +258,7 @@ class FirstPage extends React.Component {
       </Image>
  <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("Privacy");; that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("Privacy"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS

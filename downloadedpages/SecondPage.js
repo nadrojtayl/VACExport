@@ -171,7 +171,7 @@ import appData from './global.js';
 
       }
       render(){ 
-      var appData = this.state; var that = this; 
+      var that = this; 
       
 
       if(!that.props.loaded){
