@@ -1,7 +1,6 @@
 import React from 'react';
-
-      import { TextInput, StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
-
+import { TextInput, StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
+import appData from './global.js';
 
 
 
@@ -52,8 +51,7 @@ import React from 'react';
 
     }
 
-    console.log("STYLE");
-    console.log(additionalStyle)
+    
 
 
     int = parseInt(int)
@@ -159,10 +157,11 @@ import React from 'react';
       class SecondPage extends React.Component {
       constructor(props){
         super(props);
-        this.state = {"key":"value","SecondPageinput5":"Select","SelectedGroup":"SMG","FilteredList":[{"Gun Name":"Submachine","Gun Class":"SMG","Damage":"19","Fire Rate/Style":"Fast","Clip":"30","Rarity":"Common-Rare","Ranking For Class":"1","Description":"With an insane fire rate, the submachine rips through people and builds. By far the best SMG","Image Of Item":"https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Finsertcoin%2Ffiles%2F2018%2F07%2Fsmg-new.jpg","Index":"3"},{"Gun Name":"Sillenced Submachine","Gun Class":"SMG","Damage":"22","Fire Rate/Style":"Fast","Clip":"30","Rarity":"Common-Rare","Ranking For Class":"2","Description":"Only found at certain POI's, this SMG is hard to find, yet still not good, and is the 2nd best SMG.","Image Of Item":"https://assets.rockpapershotgun.com/images/2019/01/fortnite-suppressed-smg-1212x682.jpg/RPSS/resize/760x-1/format/jpg/quality/90","Index":"4"}],"WeaponIndex":4,"loaded":false,"dbLinks":{}}
+        this.state = {};
       }
+
       componentDidMount(){
-        var appData = this.state;
+       
         var that = this;
         var dbLinks = {"weapons":"https://spreadsheets.google.com/feeds/cells/1QQnDBXvWjKs7wl0OjHlpp72eR-bfdtz9X0eAtuFeo6o/1/public/full?alt=json"}
         Object.keys(dbLinks).forEach(function(key){
