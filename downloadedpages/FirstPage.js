@@ -1,6 +1,9 @@
 import React from 'react';
+
 import { TextInput, StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
+
 import appData from './global.js';
+
 
 
 
@@ -56,7 +59,8 @@ function unwrap_dynamically(value,default_value){
   return try_eval(value) === undefined ? (default_value):  try_eval(value) 
 }
 
-  class Multiplier extends React.Component{
+
+class Multiplier extends React.Component{
     constructor(props){
       super(props);
       this.state = {
@@ -214,51 +218,36 @@ function unwrap_dynamically(value,default_value){
 
 
 
-class FirstPage extends React.Component {
+
+      class FirstPage extends React.Component {
       constructor(props){
         super(props);
-        this.state = {};
+        this.state = {"key":"value","id":3,"ID":null,"settingsinput1":"","settingspicker3":"Option1","settingspicker4":"","settingspicker6":"","settingspicker9":"","settingspicker10":"","settingspicker11":"","settingspicker12":"","APIKey":"09dc52b6b12bb0a87cfd0c79f2dfe1e9","loaded":false,"dbLinks":{}}
       }
-
-
       
       render(){ 
-       var that = this; 
+      var appData = this.state; var that = this; 
+      
 
       if(!that.props.loaded){
         return(<View><Text>LOADING</Text></View>)
       }
-      
-
-      
 
 
       return (
-      <View style = {{width:"380px", height:"657px", borderWidth:5, borderColor:"black", backgroundColor:"white"}}><Text
-          style= {{"innerText":"'Slippery's Guide to a Fortnite Tier List'","textAlign":"center","top":64.09247999999997,"left":53.297514999999976,"width":"75%","height":"7%","backgroundColor":"#49c4fc","fontSize":24}}
-        > {"Slippery's Guide to a Fortnite Tier List"} </Text>
-        
-<Text
-          style= {{"top":340.904,"left":4.813500000000033,"innerText":"'Click a Class to View'","textAlign":"center"}}
-        > {'Click a Class to View'} </Text>
-        
-<Multiplier
-      type = {"button"}
-      goTo = {that.props.goTo}
-      data = {map_list_of_objs(weapons,"Gun Class")}
-      style = {[{alignItems:'center'},{"options":"map_list_of_objs(weapons,\"Gun Class\")","repeaterinnerText":"elem","repeaterType":"button","top":398.904,"left":-9.186499999999967,"width":null,"height":"40%","repeateronPress":"appData.SelectedGroup = elem;\nappData.FilteredList = filter_list_of_objs(weapons,\"Gun Class\",elem);\ngoTo(\"SecondPage\");"}]}
-      clickfunction = {function(){goTo("SecondPage");}}
-      >
-      </Multiplier>
-
+      <View style = {{width:"380px", height:"657px", borderWidth:5, borderColor:"black", backgroundColor:"black"}}>
       <Image
-        style= {[{width:"200px",height:"200px"}, {"source":"https://cm1.narvii.com/7192/f75cb8c8074b5ccc961668aa91bbec9256a4c544_00.jpg","top":-87.24799999999999,"left":109.91700000000003,"height":"25%"}]}
-        source = {{uri:"https://cm1.narvii.com/7192/f75cb8c8074b5ccc961668aa91bbec9256a4c544_00.jpg"}}
+        style= {[{width:"200px",height:"200px"}, {"source":"Movies[appData.id].Poster","top":62.98399999999998,"left":12.245999999999981,"textAlign":"center","paddingTop":1,"height":"40%","width":"35%","innerText":"Movies[appData.id].IMDb"}]}
+        source = {{uri:"Movies[appData.id].Poster"}}
       >
       </Image>
+<Text
+          style= {{"innerText":"Movies[appData.id].Title","textAlign":"center","backgroundColor":"transparent","top":41.31999999999999,"left":0.3294999999999959,"fontFamily":"Verdana","fontSize":24,"color":"#828282","fontWeight":"BOLD"}}
+        > {Movies[appData.id].Title} </Text>
+        
  <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("Privacy"); that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("settings"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -271,9 +260,81 @@ class FirstPage extends React.Component {
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":5.903999999999996,"left":444.81350000000003,"innerText":"'Go To Privacy Page'","height":"5%","width":"20%"}]}
-        ><Text>{'Go To Privacy Page'}</Text>
-        </TouchableOpacity></View>
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Settings'","backgroundColor":"#757778","top":0.3199999999999932,"left":339.3295}]}
+        ><Text>{'Settings'}</Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            height: 50,
+            width: 100,
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":524.3199999999999,"left":-0.6705000000000041,"height":"10%","width":"30%","innerText":"'Yes'","backgroundColor":"#16e03f","fontFamily":null}]}
+        ><Text>{'Yes'}</Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){appData.id=appData.id+1;; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            height: 50,
+            width: 100,
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":523.3199999999999,"left":274.3295,"height":"10%","width":"30%","innerText":"'Give me another'","backgroundColor":"#e81010"}]}
+        ><Text>{'Give me another'}</Text>
+        </TouchableOpacity>
+<Text
+          style= {{"top":-32.68000000000001,"left":69.3295,"width":"50%","source":null,"innerText":"'Director: Edgar Wright'"}}
+        > {'Director: Edgar Wright'} </Text>
+        
+<Text
+          style= {{"top":95.32,"left":171.3295,"width":"55%","innerText":"Movies[appData.id].Director","fontFamily":"Lato","color":"#828282"}}
+        > {Movies[appData.id].Director} </Text>
+        
+<Text
+          style= {{"innerText":null,"top":-21.680000000000007,"left":31.329499999999996}}
+        > {null} </Text>
+        
+<Text
+          style= {{"innerText":"Movies[appData.id].Genre","width":"60%","top":172.32,"left":170.3295,"color":"#828282"}}
+        > {Movies[appData.id].Genre} </Text>
+        
+<Text
+          style= {{"top":310.32,"left":0.3294999999999959,"height":"25%","width":"100%","innerText":"Movies[appData.id].Description","fontFamily":"Verdana","fontSize":14,"backgroundColor":"transparent","color":"#828282"}}
+        > {Movies[appData.id].Description} </Text>
+        
+<Text
+          style= {{"top":118.32,"left":171.3295,"backgroundColor":"transparent","innerText":"Movies[appData.id].Rating","color":"#828282"}}
+        > {Movies[appData.id].Rating} </Text>
+        
+<Text
+          style= {{"backgroundColor":"transparent","innerText":null,"top":146.32,"left":211.3295,"color":"#828282"}}
+        > {null} </Text>
+        
+<Text
+          style= {{}}
+        > {} </Text>
+        
+<Text
+          style= {{}}
+        > {} </Text>
+        </View>
         )
       }
     }

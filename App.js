@@ -87,13 +87,14 @@ this.state = {dbLinks:{}, loaded:false, page:"FirstPage"}
 componentDidMount(){
         var appData = this.state;
         var that = this;
-        var dbLinks = {"weapons":"https://spreadsheets.google.com/feeds/cells/1QQnDBXvWjKs7wl0OjHlpp72eR-bfdtz9X0eAtuFeo6o/1/public/full?alt=json"}
+        var dbLinks = {"null":null,"Movies":"https://spreadsheets.google.com/feeds/cells/1QJPEnmZRWsjySvExe8sQfB2ozeUf32lTwEjl8UJhSOI/1/public/full?alt=json"}
         Object.keys(dbLinks).forEach(function(key){
           that.connectToDatabase(dbLinks[key], key);
         })
 
 
       }
+
 
 
 render(){ 
