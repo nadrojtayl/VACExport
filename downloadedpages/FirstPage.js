@@ -1,72 +1,18 @@
 import React from 'react';
-import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 
-function try_eval(input){
-  try {
-    var output =  eval(input);
-    return output
-  } catch(e){
-    return input;
+      import { TextInput, StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 
-  }
- }
-
-
-function filter(arr,phrase){
-  return arr.filter(function(elem){
-    return elem.indexOf(phrase) !== -1;
-  })
-}
-
-function filter_list_of_objs(arr,key,filter_value){
-  return arr.filter(function(obj){
-    return obj[key] === filter_value
-  })
-}
-
-function map_list_of_objs(arr,key){
-  return arr.map(function(obj){
-    return obj[key];
-  })
-}
-
-function clone(arr){
-  return arr.slice();
-}
-
-
-function convert_spreadsheet_data_to_obj(data){
-  return {
-    row: data.gs$cell.row,
-    col: data.gs$cell.col,
-    data: data.content.$t,
-    type:data.content.type
-  }
-}
-
-
-
-function unwrap_dynamically(value,default_value){
-  if(default_value === undefined){
-    default_value = "undefined"
-  }
-  return try_eval(value) === undefined ? (default_value):  try_eval(value) 
-}
-
-
-class FirstPage extends React.Component {
+      class FirstPage extends React.Component {
       constructor(props){
         super(props);
         this.state = {"key":"value","RegisterPageinput0":"Dog","RegisterPageinput5":"Russian Blue","RegisterPageinput8":"Light blue skin","Info Pageinput1":"d","RegisterPageinput10":"973 768 9820","RegisterPageinput11":"","FindorAdd":true,"AddorFind":true,"loaded":false,"dbLinks":{}}
       }
-      
+     
       render(){ 
       var appData = this.state; var that = this; 
       
 
-      if(!that.props.loaded){
-        return(<View><Text>LOADING</Text></View>)
-      }
+     
 
 
       return (
@@ -76,7 +22,7 @@ class FirstPage extends React.Component {
         
  <TouchableOpacity
           
-          onPress = { function(){ that.props.goTo("RegisterPage"); that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("RegisterPage"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -89,13 +35,13 @@ class FirstPage extends React.Component {
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"Add New Animal","top":198.98399999999998,"left":14.245999999999981,"width":"90%","textAlign":"Center","backgroundColor":"#9face0","color":"black"}]}
-        ><Text>{"Add New Animal"}</Text>
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Add New Animal'","top":198.98399999999998,"left":14.245999999999981,"width":"90%","textAlign":"Center","backgroundColor":"#9face0","color":"black"}]}
+        ><Text>{'Add New Animal'}</Text>
         </TouchableOpacity>
  <TouchableOpacity
           
           onPress = { function(){appData.AddorFind=true;
-that.props.goTo("RegisterPage"); that.forceUpdate(); }}  
+that.props.goTo("RegisterPage");; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -108,15 +54,15 @@ that.props.goTo("RegisterPage"); that.forceUpdate(); }}
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":291.984,"left":16.24599999999998,"innerText":"Find Animal","width":"90%","textAlign":"Center","backgroundColor":"#9face0","color":"black"}]}
-        ><Text>{"Find Animal"}</Text>
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":291.984,"left":16.24599999999998,"innerText":"'Find Animal'","width":"90%","textAlign":"Center","backgroundColor":"#9face0","color":"black"}]}
+        ><Text>{'Find Animal'}</Text>
         </TouchableOpacity>
 <Text
           style= {{"innerText":null}}
         > {null} </Text>
         
 <Text
-          style= {{"innerText":"Are You Here To \"Find an Animal\" or \"Add a New Animal\"","top":148.98399999999998,"left":0.2459999999999809,"height":"5%","textAlign":"center","backgroundColor":"#ccb2db","borderColor":"black"}}
+          style= {{"innerText":"'Are You Here To \"Find an Animal\" or \"Add a New Animal\"'","top":148.98399999999998,"left":0.2459999999999809,"height":"5%","textAlign":"center","backgroundColor":"#ccb2db","borderColor":"black"}}
         > {'Are You Here To "Find an Animal" or "Add a New Animal"'} </Text>
         
  <TouchableOpacity
@@ -134,8 +80,8 @@ that.props.goTo("RegisterPage"); that.forceUpdate(); }}
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"Privacy Agrements","top":373.984,"left":150.24599999999998,"backgroundColor":"#e6a3aa","color":"black"}]}
-        ><Text>{"Privacy Agrements"}</Text>
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Privacy Agrements'","top":373.984,"left":150.24599999999998,"backgroundColor":"#e6a3aa","color":"black"}]}
+        ><Text>{'Privacy Agrements'}</Text>
         </TouchableOpacity>
 
       <Image
@@ -147,4 +93,5 @@ that.props.goTo("RegisterPage"); that.forceUpdate(); }}
       }
     }
 
-export default FirstPage;
+    
+      export default FirstPage;
