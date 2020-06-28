@@ -129,10 +129,17 @@ class RegisterPage extends React.Component {
         />
  <TouchableOpacity
           
-          onPress = { function(){var matchinganimals=filter_list_of_objs(animals,"Type",appData.RegisterPageinput0);
+    onPress = { function(){
+      try{
 
-      that.props.goTo("LastPage");
-       that.forceUpdate(); }}  
+       var matchinganimals =filter_list_of_objs(animals,"Type",appData.RegisterPageinput0);
+       alert(JSON.stringify(matchinganimals));
+       that.props.goTo("LastPage");
+       that.forceUpdate(); 
+      } catch(e){
+        alert(e);
+      }
+     }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS

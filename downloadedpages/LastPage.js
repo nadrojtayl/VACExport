@@ -74,7 +74,7 @@ class LastPage extends React.Component {
         
  <TouchableOpacity
           
-          onPress = { function(){goTo("FirstPage"); that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("FirstPage"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -93,3 +93,5 @@ class LastPage extends React.Component {
         )
       }
     }
+
+    export default LastPage;
