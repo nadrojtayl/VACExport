@@ -1,6 +1,58 @@
 import React from 'react';
 import { TextInput, StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 
+function try_eval(input){
+  try {
+    var output =  eval(input);
+    return output
+  } catch(e){
+    return input;
+
+  }
+ }
+
+
+function filter(arr,phrase){
+  return arr.filter(function(elem){
+    return elem.indexOf(phrase) !== -1;
+  })
+}
+
+function filter_list_of_objs(arr,key,filter_value){
+  return arr.filter(function(obj){
+    return obj[key] === filter_value
+  })
+}
+
+function map_list_of_objs(arr,key){
+  return arr.map(function(obj){
+    return obj[key];
+  })
+}
+
+function clone(arr){
+  return arr.slice();
+}
+
+
+function convert_spreadsheet_data_to_obj(data){
+  return {
+    row: data.gs$cell.row,
+    col: data.gs$cell.col,
+    data: data.content.$t,
+    type:data.content.type
+  }
+}
+
+
+
+function unwrap_dynamically(value,default_value){
+  if(default_value === undefined){
+    default_value = "undefined"
+  }
+  return try_eval(value) === undefined ? (default_value):  try_eval(value) 
+}
+
 
 class RegisterPage extends React.Component {
       constructor(props){
@@ -79,8 +131,8 @@ class RegisterPage extends React.Component {
           
           onPress = { function(){var matchinganimals=filter_list_of_objs(animals,"Type",appData.RegisterPageinput0);
 
-that.props.goTo("LastPage");
- that.forceUpdate(); }}  
+      that.props.goTo("LastPage");
+       that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
