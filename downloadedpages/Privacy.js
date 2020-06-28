@@ -53,28 +53,34 @@ function unwrap_dynamically(value,default_value){
 }
 
 
-class Privacy extends React.Component {
+
+      class Privacy extends React.Component {
       constructor(props){
         super(props);
-        this.state = {"key":"value","RegisterPageinput0":"Dog","RegisterPageinput5":"Russian Blue","RegisterPageinput8":"Light blue skin","Info Pageinput1":"d","RegisterPageinput10":"973 768 9820","RegisterPageinput11":"","FindorAdd":true,"AddorFind":true,"loaded":false,"dbLinks":{}}
+        this.state = {"key":"value","SecondPageinput5":"Select","SelectedGroup":"SMG","FilteredList":[{"Gun Name":"Submachine","Gun Class":"SMG","Damage":"19","Fire Rate/Style":"Fast","Clip":"30","Rarity":"Common-Rare","Ranking For Class":"1","Description":"With an insane fire rate, the submachine rips through people and builds. By far the best SMG","Image Of Item":"https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Finsertcoin%2Ffiles%2F2018%2F07%2Fsmg-new.jpg","Index":"3"},{"Gun Name":"Sillenced Submachine","Gun Class":"SMG","Damage":"22","Fire Rate/Style":"Fast","Clip":"30","Rarity":"Common-Rare","Ranking For Class":"2","Description":"Only found at certain POI's, this SMG is hard to find, yet still not good, and is the 2nd best SMG.","Image Of Item":"https://assets.rockpapershotgun.com/images/2019/01/fortnite-suppressed-smg-1212x682.jpg/RPSS/resize/760x-1/format/jpg/quality/90","Index":"4"}],"WeaponIndex":4,"loaded":false,"dbLinks":{}}
       }
       
       render(){ 
-      	console.log("PRIVACY")
       var appData = this.state; var that = this; 
       
 
-     
+      if(!that.props.loaded){
+        return(<View><Text>LOADING</Text></View>)
+      }
 
 
       return (
       <View style = {{width:"380px", height:"657px", borderWidth:5, borderColor:"black", backgroundColor:"white"}}><Text
-          style= {{"innerText":"The information that you give us will only be used for one reason. It will not be used for anything or given to anyone else.","top":102.71199999999999,"left":95.82049999999998,"height":"40%","textAlign":"center","backgroundColor":"#e6a3aa","width":"50%"}}
-        > {"The information that you give us will only be used for one reason. It will not be used for anything or given to anyone else."} </Text>
+          style= {{"innerText":null}}
+        > {null} </Text>
+        
+<Text
+          style= {{"innerText":"'This app does not require any personal information due to the fact that we are strictly a source of information and a helpful guide to your future of Fortnite. Nothing that you enter will be retained allowing privacy and no need for your information. Thank you!'","top":82.904,"left":21.813500000000033,"height":"40%"}}
+        > {'This app does not require any personal information due to the fact that we are strictly a source of information and a helpful guide to your future of Fortnite. Nothing that you enter will be retained allowing privacy and no need for your information. Thank you!'} </Text>
         
  <TouchableOpacity
           
-          onPress = { function(){that.props.goTo ("FirstPage"); that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("FirstPage");; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -87,12 +93,12 @@ class Privacy extends React.Component {
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":">>Back","backgroundColor":"#e6a3aa","top":7.711999999999989,"left":10.820499999999981,"alignItems":null,"color":"black"}]}
-        ><Text>{">>Back"}</Text>
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Back to Home'"}]}
+        ><Text>{'Back to Home'}</Text>
         </TouchableOpacity></View>
         )
       }
     }
 
-
-export default Privacy;
+    
+      export default Privacy;
