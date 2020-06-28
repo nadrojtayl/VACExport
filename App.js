@@ -82,7 +82,7 @@ class App extends React.Component {
 
 constructor(props){
 super(props);
-this.state = {dbLinks:{}, loaded:false, page:"LastPage"}
+this.state = {dbLinks:{}, loaded:false, page:"FirstPage"}
 }
 
  componentDidMount(){
