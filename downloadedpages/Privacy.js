@@ -9,6 +9,7 @@ class Privacy extends React.Component {
       }
       
       render(){ 
+      	console.log("PRIVACY")
       var appData = this.state; var that = this; 
       
 
@@ -22,7 +23,7 @@ class Privacy extends React.Component {
         
  <TouchableOpacity
           
-          onPress = { function(){goTo ("FirstPage"); that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo ("FirstPage"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -41,3 +42,6 @@ class Privacy extends React.Component {
         )
       }
     }
+
+
+export default Privacy;
