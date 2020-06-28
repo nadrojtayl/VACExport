@@ -12,9 +12,9 @@ EXPORT PROCESS
 
 2. Go through all the pages in the app, click export, and copy the page code into their own files in downloaded pages directory
 
-3. Import pages 
+3. Import pages. In the render function of class App, add if statements that wil render the pages if that.state.page is changed.
 
-4. Fix errors (Adding quotation marks and semicolons where necessary)
+4. Fix errors (Adding quotation marks and semicolons where necessary). Go through every page code and replace 'goTo' with 'that.props.goTo'
 
 
 5. Take the generated componentdidmount from the class and paste it over the App class's componentdidmount
@@ -99,12 +99,44 @@ this.state = {dbLinks:{}, loaded:false, page:"FirstPage"}
 
 render(){ 
 
-  var appData = this.state; var that = this; this.state.page = "FirstPage";
+  var appData = this.state; var that = this; 
 
   if(that.state.page === "FirstPage"){
     return(
       <View style = {{width:"100%",height:"100%"}}>
          <FirstPage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FirstPage>
+      </View>
+    )
+  }
+
+   if(that.state.page === "RegisterPage"){
+    return(
+      <View style = {{width:"100%",height:"100%"}}>
+         <RegisterPage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RegisterPage>
+      </View>
+    )
+  }
+
+   if(that.state.page === "Privacy"){
+    return(
+      <View style = {{width:"100%",height:"100%"}}>
+         <Privacy goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Privacy>
+      </View>
+    )
+  }
+
+  if(that.state.page === "LastPage"){
+    return(
+      <View style = {{width:"100%",height:"100%"}}>
+         <LastPage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></LastPage>
+      </View>
+    )
+  }
+
+  if(that.state.page === "InfoPage"){
+    return(
+      <View style = {{width:"100%",height:"100%"}}>
+         <InfoPage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></InfoPage>
       </View>
     )
   }
@@ -190,6 +222,8 @@ connectToDatabase(db_link,name){
     }
 
   goTo(pageName){
+    console.log("page");
+    console.log(pageName);
     this.setState({page:pageName})
   }
 

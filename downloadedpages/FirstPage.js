@@ -24,7 +24,7 @@ class FirstPage extends React.Component {
         
  <TouchableOpacity
           
-          onPress = { function(){goTo("RegisterPage"); that.forceUpdate(); }}  
+          onPress = { function(){ that.props.goTo("RegisterPage"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -43,7 +43,7 @@ class FirstPage extends React.Component {
  <TouchableOpacity
           
           onPress = { function(){appData.AddorFind=true;
-goTo("RegisterPage"); that.forceUpdate(); }}  
+that.props.goTo("RegisterPage"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -69,7 +69,7 @@ goTo("RegisterPage"); that.forceUpdate(); }}
         
  <TouchableOpacity
           
-          onPress = { function(){goTo("Privacy"); that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("Privacy"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS

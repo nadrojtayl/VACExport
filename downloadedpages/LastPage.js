@@ -1,27 +1,18 @@
 import React from 'react';
+import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
+
 
 class LastPage extends React.Component {
       constructor(props){
         super(props);
         this.state = {"key":"value","RegisterPageinput0":"Dog","RegisterPageinput5":"Russian Blue","RegisterPageinput8":"Light blue skin","Info Pageinput1":"d","RegisterPageinput10":"973 768 9820","RegisterPageinput11":"","FindorAdd":true,"AddorFind":true,"loaded":false,"dbLinks":{}}
       }
-      componentDidMount(){
-        var appData = this.state;
-        var that = this;
-        var dbLinks = {"animals":"https://sheetsu.com/apis/v1.0su/3e46d7afe9c1"}
-        Object.keys(dbLinks).forEach(function(key){
-          that.connectToDatabase(dbLinks[key], key);
-        })
-
-
-      }
+      
       render(){ 
       var appData = this.state; var that = this; 
       
 
-      if(!that.state.loaded){
-        return(<View><Text>LOADING</Text></View>)
-      }
+    
 
 
       return (
