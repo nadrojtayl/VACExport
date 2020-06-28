@@ -68,7 +68,7 @@ class RegisterPage extends React.Component {
 
 
       return (
-      <View style = {{width:"380px", height:"657px", borderWidth:5, borderColor:"black", backgroundColor:"white"}}><TextInput
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}><TextInput
        style= {{"top":243.712,"left":3.8204999999999814,"width":"90%"}}
         value={that.state["RegisterPageinput0"]}
         onChangeText={function(val){that.setState({RegisterPageinput0: val});  

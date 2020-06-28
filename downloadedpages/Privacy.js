@@ -68,7 +68,7 @@ class Privacy extends React.Component {
 
 
       return (
-      <View style = {{width:"380px", height:"657px", borderWidth:5, borderColor:"black", backgroundColor:"white"}}><Text
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}><Text
           style= {{"innerText":"The information that you give us will only be used for one reason. It will not be used for anything or given to anyone else.","top":102.71199999999999,"left":95.82049999999998,"height":"40%","textAlign":"center","backgroundColor":"#e6a3aa","width":"50%"}}
         > {"The information that you give us will only be used for one reason. It will not be used for anything or given to anyone else."} </Text>
         

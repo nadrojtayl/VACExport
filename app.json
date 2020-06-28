@@ -22,7 +22,12 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
-    }
+      "supportsTablet": true,
+      "bundleIdentifier": "localpetfindr.localpetfindr.com"
+    },
+    "android": {
+      "package": "localpetfindr.localpetfindr.com"
+    },
+    "entryPoint": "node_modules/expo/AppEntry.js"
   }
 }

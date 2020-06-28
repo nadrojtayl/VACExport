@@ -16,9 +16,7 @@ import React from 'react';
 
 
       return (
-      <View style = {{width:"380px", height:"657px", borderWidth:5, borderColor:"black", backgroundColor:"white"}}><Text
-          style= {{"top":-31.28800000000001,"left":11.820499999999981}}
-        > {} </Text>
+      <View style = {{width:"100%", height:'100%', borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
         
  <TouchableOpacity
           

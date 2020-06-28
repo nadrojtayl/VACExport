@@ -68,7 +68,7 @@ class LastPage extends React.Component {
 
 
       return (
-      <View style = {{width:"380px", height:"657px", borderWidth:5, borderColor:"black", backgroundColor:"white"}}><Text
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}><Text
           style= {{"innerText":"Thank You For Adding/Help Find an Animal!","top":151.712,"left":94.82049999999998,"textAlign":"Center","backgroundColor":"#ccb2db","height":"20%","width":"50%","borderColor":"black"}}
         > {"Thank You For Adding/Help Find an Animal!"} </Text>
         
