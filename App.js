@@ -4,7 +4,7 @@ import FirstPage from './downloadedpages/FirstPage.js'
 import RegisterPage from './downloadedpages/RegisterPage.js'
 import LastPage from './downloadedpages/LastPage.js'
 import Privacy from './downloadedpages/Privacy.js'
-import InfoPage from './downloadedpages/InfoPage.js'
+import SecondPage from './downloadedpages/SecondPage.js'
 /*
 EXPORT PROCESS
 
