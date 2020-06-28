@@ -1,6 +1,10 @@
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 import FirstPage from './downloadedpages/FirstPage.js'
+import RegisterPage from './downloadedpages/RegisterPage.js'
+import LastPage from './downloadedpages/LastPage.js'
+import Privacy from './downloadedpages/Privacy.js'
+import InfoPage from './downloadedpages/InfoPage.js'
 /*
 EXPORT PROCESS
 
