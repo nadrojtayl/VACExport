@@ -73,10 +73,18 @@ class RegisterPage extends React.Component {
 
         
         <Text
-          style= {{textAlign:'center', marginTop:"25%", alignItems:'center', "left":"0%","innerText":"What Type of Animal","color":"black","backgroundColor":"#9a82cf","textAlign":null}}
+          style= {{textAlign:'center', marginTop:"25%", 
+          alignItems:'center', "left":"0%",
+          width:"100%",
+          height:"5%",
+          "innerText":"What Type of Animal","color":"black",
+          "backgroundColor":"#9a82cf",
+          "textAlign":"center",
+          justifyContent:'center'
+          }}
         > {"What Type of Animal"} </Text>
         <TextInput
-         style= {{"width":"90%"}}
+         style= {{"width":"90%",height:"5%"}}
           value={that.state["RegisterPageinput0"]}
           onChangeText={function(val){that.setState({RegisterPageinput0: val});  
          }
@@ -85,11 +93,17 @@ class RegisterPage extends React.Component {
         
         
         <Text
-          style= {{"innerText":"What Breed of Animal","backgroundColor":"#9a82cf"}}
-        > {"What Breed of Animal"} </Text>
+          style= {{"innerText":"What Breed of Animal","backgroundColor":"#9a82cf",
+        width:"100%",
+          height:"5%",
+          textAlign:'center',
+          textJustify:'center'
+        }}
+        > {"What Breed of Animal"} 
+        </Text>
         
 <TextInput
-       style= {{"width":"90%"}}
+       style= {{"width":"90%",height:"5%"}}
         value={that.state["RegisterPageinput5"]}
         onChangeText={function(val){that.setState({RegisterPageinput5: val});  
        }
@@ -113,12 +127,17 @@ class RegisterPage extends React.Component {
             position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"< Back","backgroundColor":"#e6a3aa","color":"black"}]}
         ><Text>{"< Back"}</Text>
         </TouchableOpacity>
-<Text
-          style= {{"innerText":"Animal Description","backgroundColor":"#9a82cf"}}
+        <Text
+          style= {{"innerText":"Animal Description","backgroundColor":"#9a82cf",
+        width:"100%",
+          height:"5%",
+          textAlign:'center'
+
+        }}
         > {"Animal Description"} </Text>
         
 <TextInput
-       style= {{"alignItems":null,"width":"90%"}}
+       style= {{"alignItems":null,"width":"90%", height:"5%"}}
         value={that.state["RegisterPageinput8"]}
         onChangeText={function(val){that.setState({RegisterPageinput8: val});  
        }
@@ -149,14 +168,21 @@ class RegisterPage extends React.Component {
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":475.712,"left":96.82049999999998,"innerText":"Done","width":"50%","textAlign":"center","backgroundColor":"#a3e3a9","color":"black"}]}
+            position:'absolute',
+            top:0,left:0,
+             backgroundColor:'#8fd158', 
+             alignItems:'center',justifyContent:'center', 
+             height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"65%","left":96.82049999999998,"innerText":"Done","width":"50%","textAlign":"center","backgroundColor":"#a3e3a9","color":"black"}]}
         ><Text>{"Done"}</Text>
         </TouchableOpacity>
         <Text
-          style= {{"innerText":"Enter Email/Phone","backgroundColor":"#9a82cf"}}
+          style= {{"innerText":"Enter Email/Phone","backgroundColor":"#9a82cf",
+        width:"100%",
+          height:"5%",
+          textAlign:'center'}}
         > {"Enter Email/Phone"} </Text>
       <TextInput
-       style= {{"width":"90%"}}
+       style= {{"width":"90%", height:"5%"}}
         value={that.state["RegisterPageinput10"]}
         onChangeText={function(val){that.setState({RegisterPageinput10: val});  
        }
