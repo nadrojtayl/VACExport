@@ -1,15 +1,15 @@
 import React from 'react';
+import { TextInput, StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
+import appData from './global.js';
 
-      import { TextInput, StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
+class FirstPage extends React.Component {
+constructor(props){
+  super(props);
+  this.state = {"key":"value","RegisterPageinput0":"Dog","RegisterPageinput5":"Russian Blue","RegisterPageinput8":"Light blue skin","Info Pageinput1":"d","RegisterPageinput10":"973 768 9820","RegisterPageinput11":"","FindorAdd":true,"AddorFind":true,"loaded":false,"dbLinks":{}}
+}
 
-      class FirstPage extends React.Component {
-      constructor(props){
-        super(props);
-        this.state = {"key":"value","RegisterPageinput0":"Dog","RegisterPageinput5":"Russian Blue","RegisterPageinput8":"Light blue skin","Info Pageinput1":"d","RegisterPageinput10":"973 768 9820","RegisterPageinput11":"","FindorAdd":true,"AddorFind":true,"loaded":false,"dbLinks":{}}
-      }
-     
-      render(){ 
-      var appData = this.state; var that = this; 
+render(){ 
+var that = this; 
       
 
      
@@ -20,7 +20,10 @@ import React from 'react';
         
  <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("RegisterPage"); that.forceUpdate(); }}  
+          onPress = { function(){
+            appData.AddorFind=false;
+            that.props.goTo("RegisterPage"); 
+            that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -38,8 +41,11 @@ import React from 'react';
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){appData.AddorFind=true;
-that.props.goTo("RegisterPage");; that.forceUpdate(); }}  
+          onPress = { function(){
+            appData.AddorFind=true;
+            that.props.goTo("RegisterPage");
+            that.forceUpdate(); 
+          }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS

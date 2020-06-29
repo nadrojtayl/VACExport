@@ -1,2 +1,2 @@
-var appData = {"key":"value","id":3,"ID":null,"settingsinput1":"","settingspicker3":"Option1","settingspicker4":"","settingspicker6":"","settingspicker9":"","settingspicker10":"","settingspicker11":"","settingspicker12":"","APIKey":"09dc52b6b12bb0a87cfd0c79f2dfe1e9","loaded":false,"dbLinks":{}}
+var appData = {AddorFind:true};
 export default appData;
