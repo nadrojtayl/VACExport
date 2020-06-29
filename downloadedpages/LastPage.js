@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
+import appData from './global.js';
 
 function try_eval(input){
   try {
@@ -61,20 +62,49 @@ class LastPage extends React.Component {
       }
       
       render(){ 
-      var appData = this.state; var that = this; 
+      var that = this; 
       
 
     
 
 
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}><Text
-          style= {{"innerText":"Thank You For Adding/Help Find an Animal!","top":151.712,"left":94.82049999999998,"textAlign":"center","backgroundColor":"#ccb2db","height":"20%","width":"50%","borderColor":"black"}}
-        > {"Thank You For Adding/Help Find an Animal!"} </Text>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
+      <Text
+          style= {{"textAlign":"center","backgroundColor":"#ccb2db","height":"3%","width":"100%","borderColor":"black", marginTop:"20%"}}
+        > 
+        <Text style = {{color:'black'}}>{"Thank You For Helping Locate A Lost Animal. "} </Text>
+
+        </Text>
+        <Text
+          style= {{"textAlign":"center","backgroundColor":"#ccb2db","height":"5%","width":"100%","borderColor":"black"}}
+        > 
+        <Text style = {{color:'black'}}>{"Here are our matching animals."} </Text>
+
+        </Text>
+        <View style = {{height:"30%"}}>
+        <ScrollView >
+        {appData.matchingList.map(function(match){
+          return (
+          
+          <View style = {{borderColor:'black',borderWidth:1, marginBottom:"4%"}}>
+            <Text style = {{fontWeight:'bold'}}>{match["Email/Phone"]}</Text>
+            <Text>{match["Description"]}</Text>
+          </View>
+          
+          )
+        }
+
+
+        )}
+        </ScrollView>
+        </View>
         
  <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("FirstPage"); that.forceUpdate(); }}  
+          onPress = { function(){
+            that.props.goTo("FirstPage"); 
+            that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS

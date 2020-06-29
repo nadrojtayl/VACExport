@@ -157,7 +157,8 @@ class RegisterPage extends React.Component {
       try{
         if(appData.AddorFind === true){
            var matchinganimals =filter_list_of_objs(animals,"Type",appData.RegisterPageinput0);
-           alert(JSON.stringify(matchinganimals));
+          
+           appData.matchingList = matchinganimals;
            that.props.goTo("LastPage");
            that.forceUpdate(); 
         } else {
