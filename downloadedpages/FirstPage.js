@@ -16,7 +16,7 @@ import React from 'react';
 
 
       return (
-      <View style = {{width:"100%", height:'100%', borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
+      <View style = {{width:"100%", height:'100%', alignItems:'center', borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
         
  <TouchableOpacity
           
@@ -33,7 +33,7 @@ import React from 'react';
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Add New Animal'","top":198.98399999999998,"left":14.245999999999981,"width":"90%","textAlign":"Center","backgroundColor":"#9face0","color":"black"}]}
+            position:'absolute',top:"40%",left:"5%", backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Add New Animal'","width":"90%","textAlign":"Center","backgroundColor":"#9face0","color":"black"}]}
         ><Text>{'Add New Animal'}</Text>
         </TouchableOpacity>
  <TouchableOpacity
@@ -52,15 +52,18 @@ that.props.goTo("RegisterPage");; that.forceUpdate(); }}
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":291.984,"left":16.24599999999998,"innerText":"'Find Animal'","width":"90%","textAlign":"Center","backgroundColor":"#9face0","color":"black"}]}
+            position:'absolute',backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"53%","left":"5%","innerText":"'Find Animal'","width":"90%","textAlign":"Center","backgroundColor":"#9face0","color":"black"}]}
         ><Text>{'Find Animal'}</Text>
         </TouchableOpacity>
-<Text
-          style= {{"innerText":null}}
-        > {null} </Text>
+
         
-<Text
-          style= {{"innerText":"'Are You Here To \"Find an Animal\" or \"Add a New Animal\"'","top":148.98399999999998,"left":0.2459999999999809,"height":"5%","textAlign":"center","backgroundColor":"#ccb2db","borderColor":"black"}}
+      <Text
+          style= {{"innerText":"'Are You Here To \"Find an Animal\" or \"Add a New Animal\"'",
+          "top":"17%", 
+          height:"5%", 
+          width:"100.4%",
+          left:"-0.4%", 
+          "backgroundColor":"#ccb2db", textAlign:'center'}}
         > {'Are You Here To "Find an Animal" or "Add a New Animal"'} </Text>
         
  <TouchableOpacity
@@ -74,11 +77,25 @@ that.props.goTo("RegisterPage");; that.forceUpdate(); }}
             backgroundColor: '#fff',
             elevation: 2, // Android
             height: 50,
-            width: 100,
+            width: "30%",
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Privacy Agrements'","top":373.984,"left":150.24599999999998,"backgroundColor":"#e6a3aa","color":"black"}]}
+            position:'absolute',
+            backgroundColor:'#8fd158', 
+            alignItems:'center',
+            justifyContent:'center', 
+            height: "7%",  
+            title:'Test', 
+            borderColor: 'gray', 
+            color:'black', 
+            borderRadius:15, 
+            borderWidth: 1},{"innerText":"'Privacy Agrements'",
+            "top":"70%",
+            "left":"35%",
+            alignItems:"center",
+            justifyContent:'center',
+            "backgroundColor":"#e6a3aa","color":"black"}]}
         ><Text>{'Privacy Agrements'}</Text>
         </TouchableOpacity>
 
