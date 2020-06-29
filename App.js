@@ -96,6 +96,29 @@ this.state = {dbLinks:{}, loaded:false, page:"FirstPage"}
 
       }
 
+    sendToDatabase(name,obj){
+      var that = this;
+      var arr = that.state.dbLinks[name].split("/");
+      var id = arr[arr.length - 1]
+      var url = "https://sheetsu.com/apis/v1.0db/" + id;
+     
+      var schema = fetch(url, {
+                  method: 'POST',
+                  body:JSON.stringify(obj),
+                  headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                  }
+        }).then(async function(res){
+          
+          window[name].push(obj);
+          alert("OK! We saved your animal to our database.")
+          that.forceUpdate();
+
+
+        })
+    }
+
 
 render(){ 
 
@@ -112,7 +135,7 @@ render(){
    if(that.state.page === "RegisterPage"){
     return(
       <View style = {{width:"100%",height:"100%"}}>
-         <RegisterPage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RegisterPage>
+         <RegisterPage sendToDatabase = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RegisterPage>
       </View>
     )
   }

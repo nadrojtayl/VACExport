@@ -58,7 +58,7 @@ function unwrap_dynamically(value,default_value){
 class RegisterPage extends React.Component {
       constructor(props){
         super(props);
-        this.state = {"key":"value","RegisterPageinput0":"Dog","RegisterPageinput5":"Russian Blue","RegisterPageinput8":"Light blue skin","Info Pageinput1":"d","RegisterPageinput10":"973 768 9820","RegisterPageinput11":"","FindorAdd":true,"AddorFind":true,"loaded":false,"dbLinks":{}}
+        this.state = {}
       }
      
       render(){ 
@@ -86,9 +86,12 @@ class RegisterPage extends React.Component {
         > {"What Type of Animal"} </Text>
         <TextInput
          style= {{"width":"90%",height:"5%"}}
-          value={that.state["RegisterPageinput0"]}
-          onChangeText={function(val){that.setState({RegisterPageinput0: val});  
-         }
+          value={appData.RegisterPageinput0}
+          onChangeText={
+            function(val){
+              appData.RegisterPageinput0 = val;
+              that.forceUpdate();
+            }
          }
           />
         
@@ -105,8 +108,10 @@ class RegisterPage extends React.Component {
         
 <TextInput
        style= {{"width":"90%",height:"5%"}}
-        value={that.state["RegisterPageinput5"]}
-        onChangeText={function(val){that.setState({RegisterPageinput5: val});  
+        value={appData.RegisterPageinput5}
+        onChangeText={function(val){
+          appData.RegisterPageinput5 = val;
+          that.forceUpdate();
        }
        }
         />
@@ -139,8 +144,10 @@ class RegisterPage extends React.Component {
         
 <TextInput
        style= {{"alignItems":null,"width":"90%", height:"5%"}}
-        value={that.state["RegisterPageinput8"]}
-        onChangeText={function(val){that.setState({RegisterPageinput8: val});  
+        value={appData.RegisterPageinput8}
+        onChangeText={function(val){
+          that.setState({RegisterPageinput8: val});  
+          appData.RegisterPageinput8 = val;
        }
        }
         />
@@ -148,11 +155,15 @@ class RegisterPage extends React.Component {
           
     onPress = { function(){
       try{
-
-       var matchinganimals =filter_list_of_objs(animals,"Type",appData.RegisterPageinput0);
-       alert(JSON.stringify(matchinganimals));
-       that.props.goTo("LastPage");
-       that.forceUpdate(); 
+        if(appData.AddorFind === true){
+           var matchinganimals =filter_list_of_objs(animals,"Type",appData.RegisterPageinput0);
+           alert(JSON.stringify(matchinganimals));
+           that.props.goTo("LastPage");
+           that.forceUpdate(); 
+        } else {
+          that.props.sendToDatabase("animals",{"Email/Phone":appData.RegisterPageinput10,"Type":appData.RegisterPageinput0,"Breed":appData.RegisterPageinput5,"Description":appData.RegisterPageinput8});
+        }
+       
       } catch(e){
         alert(e);
       }
@@ -184,8 +195,10 @@ class RegisterPage extends React.Component {
         > {"Enter Email/Phone"} </Text>
       <TextInput
        style= {{"width":"90%", height:"5%"}}
-        value={that.state["RegisterPageinput10"]}
-        onChangeText={function(val){that.setState({RegisterPageinput10: val});  
+        value={appData.RegisterPageinput10}
+        onChangeText={function(val){
+        appData.RegisterPageinput10 = val;
+        that.forceUpdate();
        }
        }
         />
