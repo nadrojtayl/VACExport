@@ -90,13 +90,13 @@ that.props.goTo("RegisterPage");; that.forceUpdate(); }}
             borderColor: 'gray', 
             color:'black', 
             borderRadius:15, 
-            borderWidth: 1},{"innerText":"'Privacy Agrements'",
+            borderWidth: 1},{"innerText":"'Privacy Guarantee'",
             "top":"70%",
             "left":"35%",
             alignItems:"center",
             justifyContent:'center',
             "backgroundColor":"#e6a3aa","color":"black"}]}
-        ><Text>{'Privacy Agrements'}</Text>
+        ><Text>{'Privacy Guarantee'}</Text>
         </TouchableOpacity>
 
       <Image
