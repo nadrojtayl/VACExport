@@ -22,7 +22,12 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
-    }
+      "supportsTablet": true,
+      "bundleIdentifier": "whathshouldiwatch.whatshouldiwatch.com"
+    },
+    "android": {
+      "package": "whathshouldiwatch.whatshouldiwatch.com"
+    },
+    "entryPoint": "node_modules/expo/AppEntry.js"
   }
 }

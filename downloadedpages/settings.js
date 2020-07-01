@@ -235,7 +235,7 @@ class Multiplier extends React.Component{
 
 
       return (
-      <View style = {{width:"380px", height:"657px", borderWidth:5, borderColor:"black", backgroundColor:"black"}}><Text
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"black"}}><Text
           style= {{"color":null,"innerText":"'Genre'","top":68.00799999999998,"left":115.81350000000003}}
         > {'Genre'} </Text>
         

@@ -235,15 +235,40 @@ class Multiplier extends React.Component{
 
 
       return (
-      <View style = {{width:"380px", height:"657px", borderWidth:5, borderColor:"black", backgroundColor:"black"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"black"}}>
       <Image
-        style= {[{width:"200px",height:"200px"}, {"source":"Movies[appData.id].Poster","top":62.98399999999998,"left":12.245999999999981,"textAlign":"center","paddingTop":1,"height":"40%","width":"35%","innerText":"Movies[appData.id].IMDb"}]}
+        style= {[{width:"40%",height:"20%"}, {"source":"Movies[appData.id].Poster",
+        "top":"5%",
+        "left":"5%","textAlign":"center","paddingTop":1,"height":"40%","width":"50%",
+        resizeMode:"cover",        
+        "innerText":"Movies[appData.id].IMDb"}]}
         source = {{uri:Movies[appData.id].Poster}}
       >
       </Image>
+      <View style = {{marginTop:"20%",height:"100%"}}>
 <Text
-          style= {{"innerText":"Movies[appData.id].Title","textAlign":"center","backgroundColor":"transparent","top":41.31999999999999,"left":0.3294999999999959,"fontFamily":"Verdana","fontSize":24,"color":"#828282","fontWeight":"BOLD"}}
+          style= {{"innerText":"Movies[appData.id].Title","textAlign":"center","backgroundColor":"transparent","fontFamily":"Verdana","fontSize":24,"color":"#828282","fontWeight":"bold"}}
         > {Movies[appData.id].Title} </Text>
+                
+        <Text
+          style= {{"width":"55%","innerText":"Movies[appData.id].Director","color":"#828282"}}
+        > {Movies[appData.id].Director} </Text>
+
+
+<Text
+          style= {{"innerText":"Movies[appData.id].Genre","width":"60%","color":"#828282"}}
+        > {Movies[appData.id].Genre} </Text>
+        <Text
+          style= {{"backgroundColor":"transparent","innerText":"Movies[appData.id].Rating","color":"#828282"}}
+        > {Movies[appData.id].Rating} </Text>
+        
+<Text
+          style= {{"height":"25%","width":"100%","innerText":"Movies[appData.id].Description","fontFamily":"Verdana","fontSize":14,"backgroundColor":"transparent","color":"#828282"}}
+        > {Movies[appData.id].Description} </Text>
+        
+
+        </View>
+        
         
  <TouchableOpacity
           
@@ -260,7 +285,8 @@ class Multiplier extends React.Component{
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Settings'","backgroundColor":"#757778","top":0.3199999999999932,"left":339.3295}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Settings'","backgroundColor":"#757778",
+            "top":"5%","left":"70%"}]}
         ><Text>{'Settings'}</Text>
         </TouchableOpacity>
  <TouchableOpacity
@@ -278,7 +304,12 @@ class Multiplier extends React.Component{
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":524.3199999999999,"left":-0.6705000000000041,"height":"10%","width":"30%","innerText":"'Yes'","backgroundColor":"#16e03f","fontFamily":null}]}
+            position:'absolute',top:0,left:0,
+             backgroundColor:'#8fd158', alignItems:'center',
+             justifyContent:'center', 
+             height: "7%",  title:'Test', borderColor: 'gray', color:'black', 
+             borderRadius:15, borderWidth: 1},{
+              "top":"89%","left":"0%","height":"10%","width":"30%","innerText":"'Yes'","backgroundColor":"#16e03f","fontFamily":null}]}
         ><Text>{'Yes'}</Text>
         </TouchableOpacity>
  <TouchableOpacity
@@ -296,44 +327,12 @@ class Multiplier extends React.Component{
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":523.3199999999999,"left":274.3295,"height":"10%","width":"30%","innerText":"'Give me another'","backgroundColor":"#e81010"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{
+              "top":"89%","left":"70%",
+            "height":"10%","width":"30%","innerText":"'Give me another'","backgroundColor":"#e81010"}]}
         ><Text>{'Give me another'}</Text>
         </TouchableOpacity>
-<Text
-          style= {{"top":-32.68000000000001,"left":69.3295,"width":"50%","source":null,"innerText":"'Director: Edgar Wright'"}}
-        > {'Director: Edgar Wright'} </Text>
-        
-<Text
-          style= {{"top":95.32,"left":171.3295,"width":"55%","innerText":"Movies[appData.id].Director","fontFamily":"Lato","color":"#828282"}}
-        > {Movies[appData.id].Director} </Text>
-        
-<Text
-          style= {{"innerText":null,"top":-21.680000000000007,"left":31.329499999999996}}
-        > {null} </Text>
-        
-<Text
-          style= {{"innerText":"Movies[appData.id].Genre","width":"60%","top":172.32,"left":170.3295,"color":"#828282"}}
-        > {Movies[appData.id].Genre} </Text>
-        
-<Text
-          style= {{"top":310.32,"left":0.3294999999999959,"height":"25%","width":"100%","innerText":"Movies[appData.id].Description","fontFamily":"Verdana","fontSize":14,"backgroundColor":"transparent","color":"#828282"}}
-        > {Movies[appData.id].Description} </Text>
-        
-<Text
-          style= {{"top":118.32,"left":171.3295,"backgroundColor":"transparent","innerText":"Movies[appData.id].Rating","color":"#828282"}}
-        > {Movies[appData.id].Rating} </Text>
-        
-<Text
-          style= {{"backgroundColor":"transparent","innerText":null,"top":146.32,"left":211.3295,"color":"#828282"}}
-        > {null} </Text>
-        
-<Text
-          style= {{}}
-        > {} </Text>
-        
-<Text
-          style= {{}}
-        > {} </Text>
+
         </View>
         )
       }
