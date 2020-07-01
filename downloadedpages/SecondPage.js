@@ -145,8 +145,10 @@ function unwrap_dynamically(value,default_value){
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            height:"7%",
+            height:"50%",
+            width:"80%",
             borderRadius: 10,
+            marginLeft:"10%",
             borderColor: 'gray', borderWidth: 1}, additionalStyle]}
         ><Text style = {{textAlign:'center'}}> { unwrap_dynamically(additionalStyle['innerText'])  }</Text>
         </TouchableOpacity>
@@ -176,34 +178,17 @@ function unwrap_dynamically(value,default_value){
   
     
 
-      if(!window.edit_mode){
-        return (<View
-          style = {that.props.style}
-          >
-       <ScrollView>
-          {that.props.data.map(function(elem,ind){
+      
 
+      return (<View style = {{height:"100%",width:"100%", marginTop:"20%", justifyContent:'center', alignItems:"center"}}
+      >
+        <ScrollView >
+          {that.props.data.map(function(elem,ind){
+          
             return that.renderElement(that.props.type,ind,that.props.style, that.props.clickfunction, elem)
           }) }
         </ScrollView>
         </View>
-        )
-
-
-      }
-
-      return (<TouchableOpacity
-      style = {that.props.style}
-      onPress = { function(){if(window.drag_mode){ that.setState({selectedElemToStyle:that.props.int});  return} if(window.edit_mode){ console.log("IND" + that.props.int); window.edit(that.props.int); return}  eval('(' + that.state.clickfunctions[that.props.int] + ')()'); if(that.state.clickfunctions[that.props.int].indexOf("appData") !== -1){ that.forceUpdate()}   } }
-
-      >
-        <ScrollView>
-          {that.props.data.map(function(elem,ind){
-            console.log(that.props.clickfunction)
-            return that.renderElement(that.props.type,ind,that.props.style, that.props.clickfunction, elem)
-          }) }
-        </ScrollView>
-        </TouchableOpacity>
         )
     }
 
@@ -227,12 +212,13 @@ function unwrap_dynamically(value,default_value){
 
 
       return (
-      <View style = {{width:"380px", height:"657px", borderWidth:5, borderColor:"black", backgroundColor:"white"}}><Text
-          style= {{"top":21.903999999999996,"left":58.81350000000003,"width":"75%","height":"7%","textAlign":"Center","innerText":"appData.FilteredList[0][\"Gun Class\"]","fontSize":25}}
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
+      <Text
+          style= {{"top":"5%","width":"100%", "height":"7%","textAlign":"center","innerText":"appData.FilteredList[0][\"Gun Class\"]","fontSize":25}}
         > {appData.FilteredList[0]["Gun Class"]} </Text>
         
 <Text
-          style= {{"top":76.904,"left":-10.186499999999967,"textAlign":"Center","source":null,"innerText":"'Click to Learn about Weapon'"}}
+          style= {{"top":"5%","left":"25%","textAlign":"Center","source":null,"innerText":"'Click to Learn about Weapon'"}}
         > {'Click to Learn about Weapon'} </Text>
         
  <TouchableOpacity
@@ -250,6 +236,7 @@ function unwrap_dynamically(value,default_value){
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
+            zIndex:5000,
             position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":702.904,"left":226.81350000000003,"innerText":"'Return To Page One'"}]}
         ><Text>{'Return To Page One'}</Text>
         </TouchableOpacity>
@@ -257,7 +244,10 @@ function unwrap_dynamically(value,default_value){
       type = {"button"}
       goTo = {that.props.goTo}
       data = {appData.FilteredList}
-      style = {[{alignItems:'center'},{"options":"appData.FilteredList","repeaterinnerText":"elem[\"Gun Name\"]","repeaterType":"button","top":68.904,"left":-22.93399999999997,"repeateronPress":"appData.WeaponIndex = parseInt(elem.Index);\ngoTo(\"ThirdPage\");"}]}
+      style = {[{alignItems:'center'},{"options":"appData.FilteredList","repeaterinnerText":"elem[\"Gun Name\"]","repeaterType":"button",
+      "top":"10%",
+      "left":"6%",
+      "repeateronPress":"appData.WeaponIndex = parseInt(elem.Index);\ngoTo(\"ThirdPage\");"}]}
       clickfunction = {function(){}}
       >
       </Multiplier></View>

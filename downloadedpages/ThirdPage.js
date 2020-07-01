@@ -72,7 +72,7 @@ class ThirdPage extends React.Component {
 
 
       return (
-      <View style = {{width:"380px", height:"657px", borderWidth:5, borderColor:"black", backgroundColor:"white"}}><Text
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}><Text
           style= {{"top":-33.096000000000004,"left":34.81350000000003}}
         > {} </Text>
         

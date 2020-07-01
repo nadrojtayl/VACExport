@@ -3,7 +3,9 @@ import { TextInput, StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Sw
 import appData from './global.js';
 
 function onlyUnique(value, index, self) { 
-    return self.indexOf(value) === index;
+    console.log(value);
+    console.log("HEREN")
+    return self.indexOf(value) === index && (value !== "Gun Class") && (value !== "Healing")
 }
 
 function try_eval(input){
@@ -146,12 +148,12 @@ function unwrap_dynamically(value,default_value){
             backgroundColor: 'white',
             color:'black',
             elevation: 2, // Android
+            marginTop:"5%",
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
             height:"20%",
             borderRadius: 10,
-            marginTop:10,
             borderColor: 'gray', borderWidth: 1}, additionalStyle]}
         ><Text style = {{textAlign:'center'}}> { unwrap_dynamically(additionalStyle['innerText'])  }</Text>
         </TouchableOpacity>
@@ -197,18 +199,17 @@ function unwrap_dynamically(value,default_value){
 
       }
 
-      return (<TouchableOpacity
-      style = {that.props.style}
-      onPress = { function(){if(window.drag_mode){ that.setState({selectedElemToStyle:that.props.int});  return} if(window.edit_mode){ console.log("IND" + that.props.int); window.edit(that.props.int); return}  eval('(' + that.state.clickfunctions[that.props.int] + ')()'); if(that.state.clickfunctions[that.props.int].indexOf("appData") !== -1){ that.forceUpdate()}   } }
-
-      >
+      return (
+    
         <ScrollView>
+      
           {that.props.data.map(function(elem,ind){
             console.log(that.props.clickfunction)
             return that.renderElement(that.props.type,ind,that.props.style, that.props.clickfunction, elem)
           }) }
+        
         </ScrollView>
-        </TouchableOpacity>
+    
         )
     }
 
@@ -250,8 +251,8 @@ class FirstPage extends React.Component {
         source = {{uri:"https://cm1.narvii.com/7192/f75cb8c8074b5ccc961668aa91bbec9256a4c544_00.jpg"}}
       >
       </Image>
-        
-<Multiplier
+    
+    <Multiplier
       type = {"button"}
       goTo = {that.props.goTo}
       data = { map_list_of_objs(weapons,"Gun Class").filter(onlyUnique) }
@@ -259,6 +260,7 @@ class FirstPage extends React.Component {
       clickfunction = {function(){goTo("SecondPage");}}
       >
       </Multiplier>
+      
 
 
  <TouchableOpacity
