@@ -84,54 +84,61 @@ class ThirdPage extends React.Component {
         source = {{uri:weapons[appData.WeaponIndex]["Image Of Item"]}}
       >
       </Image>
+
         
         <Text
-          style= {{"innerText":"weapons[appData.WeaponIndex][\"Gun Name\"]","textAlign":"Center","height":"25%","fontStyle":null,"fontSize":25,"fontWeight":"bold"}}
+          style= {{"innerText":"weapons[appData.WeaponIndex][\"Gun Name\"]","textAlign":"Center",
+          "height":"25%","fontStyle":null,
+          position:'absolute', 
+          top:"10%",
+          "fontSize":25,"fontWeight":"bold"}}
         > {weapons[appData.WeaponIndex]["Gun Name"]} </Text>
+     
+         <Text
+          style= {{"innerText":"'Rank in Class'","fontWeight":"bold", "marginTop":"65%", fontSize:"18px"}}
+        > {'Rank in Class'} </Text>
+         <Text
+          style= {{fontSize:"18px","innerText":"weapons[appData.WeaponIndex][\"Ranking For Class\"]","source":"appData.FilteredList[0][\"Ranking For Class\"]"}}
+        > {weapons[appData.WeaponIndex]["Ranking For Class"]} </Text>
+        
         
           <Text
-          style= {{"innerText":"'Damage'","fontStyle":"Bold","fontWeight":"bold"}}
+          style= {{fontSize:"18px","innerText":"'Damage'","fontStyle":"Bold","fontWeight":"bold"}}
         > {'Damage'} </Text>
         <Text
-          style= {{"innerText":"weapons[appData.WeaponIndex].Damage"}}
+          style= {{fontSize:"18px","innerText":"weapons[appData.WeaponIndex].Damage"}}
         > {weapons[appData.WeaponIndex].Damage} </Text>
         
         <Text
-          style= {{"innerText":"'Fire Rate/Style'","fontWeight":"bold"}}
+          style= {{fontSize:"18px","innerText":"'Fire Rate/Style'","fontWeight":"bold"}}
         > {'Fire Rate/Style'} </Text>
         <Text
-          style= {{"innerText":"weapons[appData.WeaponIndex][\"Clip\"]","backgroundColor":"transparent"}}
+          style= {{fontSize:"18px","innerText":"weapons[appData.WeaponIndex][\"Clip\"]","backgroundColor":"transparent"}}
         > {weapons[appData.WeaponIndex]["Fire Rate/Style"]} </Text>
         <Text
-          style= {{"innerText":"'Clip/Stack Size'","fontWeight":"bold"}}
+          style= {{fontSize:"18px","innerText":"'Clip/Stack Size'","fontWeight":"bold"}}
         > {'Clip/Stack Size'} </Text>
         <Text
-          style= {{"innerText":"weapons[appData.WeaponIndex][\"Clip\"]","backgroundColor":"transparent"}}
+          style= {{fontSize:"18px","innerText":"weapons[appData.WeaponIndex][\"Clip\"]","backgroundColor":"transparent"}}
         > {weapons[appData.WeaponIndex]["Clip"]} </Text>
         
             <Text
-          style= {{"innerText":"'Rarity '","fontWeight":"bold"}}
+          style= {{fontSize:"18px","innerText":"'Rarity '","fontWeight":"bold"}}
         > {'Rarity '} </Text>
         
              <Text
-          style= {{"innerText":"weapons[appData.WeaponIndex][\"Clip\"]","backgroundColor":"transparent"}}
+          style= {{fontSize:"18px","innerText":"weapons[appData.WeaponIndex][\"Clip\"]","backgroundColor":"transparent"}}
         > {weapons[appData.WeaponIndex]["Rarity"]} </Text>
         
             <Text
-          style= {{"innerText":"'Description'","fontWeight":"bold"}}
+          style= {{fontSize:"18px","innerText":"'Description'","fontWeight":"bold"}}
         > {'Description'} </Text>
         <Text
-          style= {{"paddingBottom":null,"backgroundColor":"transparent","innerText":"appData.FilteredList[0][\"Description\"]"}}
+          style= {{fontSize:"18px","paddingBottom":null,"backgroundColor":"transparent","innerText":"appData.FilteredList[0][\"Description\"]"}}
         > {appData.FilteredList[0]["Description"]} </Text>
         
         
-<Text
-          style= {{"innerText":"'Rank in Class'","fontWeight":"bold"}}
-        > {'Rank in Class'} </Text>
-         <Text
-          style= {{"innerText":"weapons[appData.WeaponIndex][\"Ranking For Class\"]","source":"appData.FilteredList[0][\"Ranking For Class\"]"}}
-        > {weapons[appData.WeaponIndex]["Ranking For Class"]} </Text>
-        
+  
 
 
         
@@ -150,11 +157,12 @@ class ThirdPage extends React.Component {
             backgroundColor: '#fff',
             elevation: 2, // Android
             height: 50,
-            width: 100,
+            width: "40%",
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":736.904,"left":235.81350000000003,"innerText":"'Return to page 1'"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"90%",
+            "left":"55%","innerText":"'Return to page 1'"}]}
         ><Text>{'Return to page 1'}</Text>
         </TouchableOpacity>
       
