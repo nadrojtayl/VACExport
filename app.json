@@ -22,7 +22,12 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
-    }
+      "supportsTablet": true,
+      "bundleIdentifier": "slipperytierlist.slipperytierlist.com"
+    },
+    "android": {
+      "package": "slipperytierlist.slipperytierlist.com"
+    },
+    "entryPoint": "node_modules/expo/AppEntry.js"
   }
 }
