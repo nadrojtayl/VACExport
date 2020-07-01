@@ -218,7 +218,7 @@ function unwrap_dynamically(value,default_value){
         > {appData.FilteredList[0]["Gun Class"]} </Text>
         
 <Text
-          style= {{"top":"5%","left":"25%","textAlign":"Center","source":null,"innerText":"'Click to Learn about Weapon'"}}
+          style= {{"top":"5%","textAlign":"center","source":null,"innerText":"'Click to Learn about Weapon'"}}
         > {'Click to Learn about Weapon'} </Text>
         
  <TouchableOpacity

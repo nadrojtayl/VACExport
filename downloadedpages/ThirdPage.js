@@ -1,4 +1,5 @@
 import React from 'react';
+import PixelRatio from 'react';
 import { TextInput, StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 import appData from './global.js';
 
@@ -87,7 +88,7 @@ class ThirdPage extends React.Component {
 
         
         <Text
-          style= {{"innerText":"weapons[appData.WeaponIndex][\"Gun Name\"]","textAlign":"Center",
+          style= {{"innerText":"weapons[appData.WeaponIndex][\"Gun Name\"]","textAlign":"center",
           "height":"25%","fontStyle":null,
           position:'absolute', 
           top:"10%",
@@ -95,46 +96,46 @@ class ThirdPage extends React.Component {
         > {weapons[appData.WeaponIndex]["Gun Name"]} </Text>
      
          <Text
-          style= {{"innerText":"'Rank in Class'","fontWeight":"bold", "marginTop":"65%", fontSize:"18px"}}
+          style= {{fontSize:18,"innerText":"'Rank in Class'","fontWeight":"bold", "marginTop":"65%"}}
         > {'Rank in Class'} </Text>
          <Text
-          style= {{fontSize:"18px","innerText":"weapons[appData.WeaponIndex][\"Ranking For Class\"]","source":"appData.FilteredList[0][\"Ranking For Class\"]"}}
+          style= {{fontSize:18, "innerText":"weapons[appData.WeaponIndex][\"Ranking For Class\"]","source":"appData.FilteredList[0][\"Ranking For Class\"]"}}
         > {weapons[appData.WeaponIndex]["Ranking For Class"]} </Text>
         
         
           <Text
-          style= {{fontSize:"18px","innerText":"'Damage'","fontStyle":"Bold","fontWeight":"bold"}}
+          style= {{"innerText":"'Damage'","fontWeight":"bold","fontWeight":"bold"}}
         > {'Damage'} </Text>
         <Text
-          style= {{fontSize:"18px","innerText":"weapons[appData.WeaponIndex].Damage"}}
+          style= {{fontSize:18,"innerText":"weapons[appData.WeaponIndex].Damage"}}
         > {weapons[appData.WeaponIndex].Damage} </Text>
         
         <Text
-          style= {{fontSize:"18px","innerText":"'Fire Rate/Style'","fontWeight":"bold"}}
+          style= {{fontSize:18,"innerText":"'Fire Rate/Style'","fontWeight":"bold"}}
         > {'Fire Rate/Style'} </Text>
         <Text
-          style= {{fontSize:"18px","innerText":"weapons[appData.WeaponIndex][\"Clip\"]","backgroundColor":"transparent"}}
+          style= {{fontSize:18,"innerText":"weapons[appData.WeaponIndex][\"Clip\"]","backgroundColor":"transparent"}}
         > {weapons[appData.WeaponIndex]["Fire Rate/Style"]} </Text>
         <Text
-          style= {{fontSize:"18px","innerText":"'Clip/Stack Size'","fontWeight":"bold"}}
+          style= {{fontSize:18,"innerText":"'Clip/Stack Size'","fontWeight":"bold"}}
         > {'Clip/Stack Size'} </Text>
         <Text
-          style= {{fontSize:"18px","innerText":"weapons[appData.WeaponIndex][\"Clip\"]","backgroundColor":"transparent"}}
+          style= {{fontSize:18,"innerText":"weapons[appData.WeaponIndex][\"Clip\"]","backgroundColor":"transparent"}}
         > {weapons[appData.WeaponIndex]["Clip"]} </Text>
         
             <Text
-          style= {{fontSize:"18px","innerText":"'Rarity '","fontWeight":"bold"}}
+          style= {{fontSize:18,"innerText":"'Rarity '","fontWeight":"bold"}}
         > {'Rarity '} </Text>
         
              <Text
-          style= {{fontSize:"18px","innerText":"weapons[appData.WeaponIndex][\"Clip\"]","backgroundColor":"transparent"}}
+          style= {{fontSize:18,"innerText":"weapons[appData.WeaponIndex][\"Clip\"]","backgroundColor":"transparent"}}
         > {weapons[appData.WeaponIndex]["Rarity"]} </Text>
         
             <Text
-          style= {{fontSize:"18px","innerText":"'Description'","fontWeight":"bold"}}
+          style= {{fontSize:18,"innerText":"'Description'","fontWeight":"bold"}}
         > {'Description'} </Text>
         <Text
-          style= {{fontSize:"18px","paddingBottom":null,"backgroundColor":"transparent","innerText":"appData.FilteredList[0][\"Description\"]"}}
+          style= {{fontSize:18,"paddingBottom":null,"backgroundColor":"transparent","innerText":"appData.FilteredList[0][\"Description\"]"}}
         > {appData.FilteredList[0]["Description"]} </Text>
         
         
