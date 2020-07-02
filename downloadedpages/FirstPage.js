@@ -317,7 +317,7 @@ class Multiplier extends React.Component{
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){appData.id=appData.id+1;; that.forceUpdate(); }}  
+          onPress = { function(){appData.id=((appData.id+1) % (Movies.length -1) ) + 1 ; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
