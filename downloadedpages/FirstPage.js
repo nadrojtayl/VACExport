@@ -270,7 +270,7 @@ class Multiplier extends React.Component{
         </View>
         
         
- <TouchableOpacity
+ {true ? null:(<TouchableOpacity
           
           onPress = { function(){that.props.goTo("settings"); that.forceUpdate(); }}  
           style= {[{
@@ -288,7 +288,7 @@ class Multiplier extends React.Component{
             position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Settings'","backgroundColor":"#757778",
             "top":"5%","left":"70%"}]}
         ><Text>{'Settings'}</Text>
-        </TouchableOpacity>
+        </TouchableOpacity>)}
  <TouchableOpacity
           
           onPress = { function(){; 

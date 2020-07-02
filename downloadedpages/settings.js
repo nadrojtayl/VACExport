@@ -236,26 +236,18 @@ class Multiplier extends React.Component{
 
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"black"}}><Text
-          style= {{"color":null,"innerText":"'Genre'","top":68.00799999999998,"left":115.81350000000003}}
+          style= {{"color":"white","innerText":"'Genre'","top":68.00799999999998,"left":115.81350000000003}}
         > {'Genre'} </Text>
         
 <Text
-          style= {{"color":595959,"top":70.00799999999998,"left":367.81350000000003,"innerText":"'Streaming services'"}}
+          style= {{"color":"white","top":70.00799999999998,"left":367.81350000000003,"innerText":"'Streaming services'"}}
         > {'Streaming services'} </Text>
         
 <Text
-          style= {{"color":595959,"height":"10%","fontSize":26,"innerText":"'Settings'","top":-12.807999999999993,"left":222.81350000000003}}
+          style= {{"color":"white","height":"10%","fontSize":26,"innerText":"'Settings'","top":-12.807999999999993,"left":222.81350000000003}}
         > {'Settings'} </Text>
         
-<Picker
-        value={that.state["settingspicker3"]}
-        style= {{"top":72.00799999999998,"left":363.81350000000003,"innerText":"'HBO max'","color":"HBO max","options":"[\"Disney+\",\"HBO Max\",\"Hulu\",\"Netflix\",\"Prime Video\"]"}}
-        onValueChange={function(val){that.setState({settingspicker3: val})}}  
-      > 
-        <Picker.Item label={"Select"} value={"Select"} />
-        <Picker.Item label={"Option1"} value={"Option1"} />
-        <Picker.Item label={"Disney+"} value={"Disney+"} /><Picker.Item label={"HBO Max"} value={"HBO Max"} /><Picker.Item label={"Hulu"} value={"Hulu"} /><Picker.Item label={"Netflix"} value={"Netflix"} /><Picker.Item label={"Prime Video"} value={"Prime Video"} />
-      </Picker>
+
 <Picker
         value={that.state["settingspicker4"]}
         style= {{"top":88.00799999999998,"left":362.81350000000003,"options":"[\"Disney+\",\"HBO Max\",\"Hulu\",\"Netflix\",\"Prime Video\"]"}}
