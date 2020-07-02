@@ -239,7 +239,7 @@ class Multiplier extends React.Component{
       <Image
         style= {[{width:"40%",height:"20%"}, {"source":"Movies[appData.id].Poster",
         "top":"5%",
-        "left":"5%","textAlign":"center","paddingTop":1,"height":"40%","width":"50%",
+        "left":"23%","textAlign":"center","paddingTop":1,"height":"40%","width":"50%",
         resizeMode:"cover",        
         "innerText":"Movies[appData.id].IMDb"}]}
         source = {{uri:Movies[appData.id].Poster}}
