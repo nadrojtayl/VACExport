@@ -88,7 +88,7 @@ this.state = {dbLinks:{}, loaded:false, page:"FirstPage"}
  componentDidMount(){
         var appData = this.state;
         var that = this;
-        var dbLinks = {"animals":"https://sheetsu.com/apis/v1.0su/3e46d7afe9c1"}
+        var dbLinks = {"animals":"https://script.google.com/macros/s/AKfycbwKOnb0Ee16O2kd0UU2bhZeZ85WI4M72zIZW209eaLzYUuwQ67u/exec"}
         Object.keys(dbLinks).forEach(function(key){
           that.connectToDatabase(dbLinks[key], key);
         })
@@ -98,9 +98,7 @@ this.state = {dbLinks:{}, loaded:false, page:"FirstPage"}
 
     sendToDatabase(name,obj){
       var that = this;
-      var arr = that.state.dbLinks[name].split("/");
-      var id = arr[arr.length - 1]
-      var url = "https://sheetsu.com/apis/v1.0db/" + id;
+      var url = that.state.dbLinks[name];
      
       var schema = fetch(url, {
                   method: 'POST',
@@ -175,7 +173,7 @@ connectToDatabase(db_link,name){
       if(db_link === null || name === null){
         return
       }
-      if(db_link.indexOf("google.com") !== -1){
+      if(db_link.indexOf("google.com") !== -1 && db_link.indexOf("macros") === -1){
          var schema = fetch(db_link, {
                   method: 'GET',
                   headers: {
@@ -232,7 +230,7 @@ connectToDatabase(db_link,name){
                     "Accept": "application/json"
                   }
         }).then(async function(res){
-          console.log("SAVED");
+          
           res = await res.json();
           window[name] = res;
           global[name] = res;
