@@ -86,7 +86,12 @@ function unwrap_dynamically(value,default_value){
                   that.props.goTo("PlayerDetails");
                   that.forceUpdate(int);
                 }}   title = {"Add" }  title = {"Stats" + " |"}></Button>
+
                 <Button onPress = {function(){
+                  if(appData.lineup.length >= 5){
+                    alert("Your lineup is done! Click play.")
+                    return;
+                  }
                   appData.lineup.push(player);
                   that.forceUpdate();
                 }}   title = {"Add" }></Button>
@@ -95,7 +100,17 @@ function unwrap_dynamically(value,default_value){
               )
           })}
           <Text style = {{marginTop:"10%", textAlign:'center', fontSize:24, borderStyle:"solid", borderWidth:1, width:"100%"}}>{appData.lineup.length +  " players on your team"}</Text>
-          <Button  title = {"Play"}></Button>
+          <Button
+          onPress = {function(){
+            if(appData.lineup.length < 5){
+                    alert("Add more players to your lineup. You need 5 on the floor.")
+                    return;
+            }
+            alert("Play");
+
+          }}
+
+            title = {"Play"}></Button>
           </View>)
       }
 

@@ -233,22 +233,26 @@ class Multiplier extends React.Component{
 
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"blue"}}>
-      <Text
+      <View
           style= {{"innerText":"'Zion Lateef Williamson is an American professional basketball player for the New Orleans Pelicans of the National Basketball Association. He plays the power forward position. Following a dominant freshman-year stint with the Duke Blue Devils, he was selected by the Pelicans first overall in the 2019 NBA draft.'",
          position:'absolute', "top":"40%", width:"100%","backgroundColor":"red"}}
-        > {players[appData.index].Description} </Text>
+        > 
+        <Text style = {{marginBottom:"5%"}}>{players[appData.index].Packs}</Text> 
+        <Text style = {{marginBottom:"5%"}}>{players[appData.index].Team}</Text> 
+        <Text>{players[appData.index].Description}</Text> 
+        </View>
         
 
       <Image
-        style= {[{width:"20%",height:"20%"}, {"top":117.12,"left":79.48000000000002,"source":"https://tse3.mm.bing.net/th?id=OIP.TZ1NfPhZVDQ2JpOr3CzHXQHaE8&pid=Api&P=0&w=244&h=164"}]}
-        source = {{uri:"https://tse3.mm.bing.net/th?id=OIP.TZ1NfPhZVDQ2JpOr3CzHXQHaE8&pid=Api&P=0&w=244&h=164"}}
+        style= {[{width:"40%",height:"20%"}, {"top":"18%","left":"30%","source":"https://tse3.mm.bing.net/th?id=OIP.TZ1NfPhZVDQ2JpOr3CzHXQHaE8&pid=Api&P=0&w=244&h=164"}]}
+        source = {{uri:players[appData.index]["Picture Link"]}}
       >
       </Image>
 
  <TouchableOpacity
           
           onPress = { function(){
-            that.props.goTo("Settings"); 
+            that.props.goTo("options"); 
             that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
@@ -258,7 +262,7 @@ class Multiplier extends React.Component{
             backgroundColor: '#fff',
             elevation: 2, // Android
             height: 50,
-            width: 100,
+            width: "40%",
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
@@ -268,12 +272,12 @@ class Multiplier extends React.Component{
                height: "7%",  title:'Test', 
                borderColor: 'gray', color:'black', 
                borderRadius:15, borderWidth: 1},{"top":"5%",
-               "left":"40%","innerText":"'Click to see your final card'"}]}
+               "left":"30%","innerText":"'Click to see your final card'"}]}
         ><Text>{'Back'}</Text>
         </TouchableOpacity>
           <Text
           style= {{textAlign:'center', "innerText":"'Level 10'","backgroundColor":"red", position:'absolute', width:"100%",top:"15%"}}
-        > {'Level 10'} </Text>
+        > {"Level " + players[appData.index].Level} </Text>
         </View>
         )
       }
