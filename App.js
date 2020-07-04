@@ -88,7 +88,7 @@ this.state = {dbLinks:{}, loaded:false, page:"FirstPage"}
  componentDidMount(){
         
         var that = this;
-        var dbLinks = {"exercises":"https://spreadsheets.google.com/feeds/cells/1WH7sh8BDw5F3uRWbVfb8oTW44jESeingcVKvA2hlMOk/1/public/full?alt=json","null":null}
+        var dbLinks = {"null":null,"Basketball Card Database":"^Bryanthttps://docs.google.com/spreadsheets/d/1YvAE2YPRpn7Wkn4QLfbUZ0chudMAyX72wULwgXLl3H0/edit#gid=1296521366","^Bryanthttps://docs.google.com/spreadsheets/d/1YvAE2YPRpn7Wkn4QLfbUZ0chudMAyX72wULwgXLl3H0/edit#gid=1296521366":"^Bryanthttps://docs.google.com/spreadsheets/d/1YvAE2YPRpn7Wkn4QLfbUZ0chudMAyX72wULwgXLl3H0/edit#gid=1296521366","Card Database":"https://spreadsheets.google.com/feeds/cells/1YvAE2YPRpn7Wkn4QLfbUZ0chudMAyX72wULwgXLl3H0/4/public/full?alt=json"}
         Object.keys(dbLinks).forEach(function(key){
           that.connectToDatabase(dbLinks[key], key);
         })
@@ -120,7 +120,16 @@ render(){
 
   var appData = this.state; var that = this; 
 
-  if(that.state.page === "FirstPage"){
+  if(that.state.page === "Starting pack page"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <StartingPackPage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></StartingPackPage>
+          </View>
+        )
+      }
+    
+
+    if(that.state.page === "FirstPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
              <FirstPage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FirstPage>
@@ -129,13 +138,85 @@ render(){
       }
     
 
-    if(that.state.page === "ExerciseDetails"){
+    if(that.state.page === "Player Opening Page"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <ExerciseDetails goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></ExerciseDetails>
+             <PlayerOpeningPage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></PlayerOpeningPage>
           </View>
         )
-  }
+      }
+    
+
+    if(that.state.page === "null"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <null goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></null>
+          </View>
+        )
+      }
+    
+
+    if(that.state.page === "Zion Williamson"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <ZionWilliamson goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></ZionWilliamson>
+          </View>
+        )
+      }
+    
+
+    if(that.state.page === "Joel Embid"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <JoelEmbid goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></JoelEmbid>
+          </View>
+        )
+      }
+    
+
+    if(that.state.page === "Lineup"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Lineup goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Lineup>
+          </View>
+        )
+      }
+    
+
+    if(that.state.page === "Lets get Started"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <LetsgetStarted goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></LetsgetStarted>
+          </View>
+        )
+      }
+    
+
+    if(that.state.page === "You are Now Ready To Start"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <YouareNowReadyToStart goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></YouareNowReadyToStart>
+          </View>
+        )
+      }
+    
+
+    if(that.state.page === "New Record"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <NewRecord goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NewRecord>
+          </View>
+        )
+      }
+    
+
+    if(that.state.page === "Second Game VS LA Lakers"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <SecondGameVSLALakers goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SecondGameVSLALakers>
+          </View>
+        )
+      }
 
   
 
