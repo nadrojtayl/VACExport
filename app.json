@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "appbuilderexporttest",
-    "slug": "appbuilderexporttest",
+    "name": "slipperytierlist",
+    "slug": "slipperytierlist",
     "platforms": [
       "ios",
       "android",

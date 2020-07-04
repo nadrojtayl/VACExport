@@ -237,7 +237,9 @@ function unwrap_dynamically(value,default_value){
             alignItems: 'center',
             flexDirection: 'row',
             zIndex:5000,
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":702.904,"left":226.81350000000003,"innerText":"'Return To Page One'"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  
+            title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"80%","left":"65%",
+            "innerText":"'Return To Page One'"}]}
         ><Text>{'Return To Page One'}</Text>
         </TouchableOpacity>
       <Multiplier

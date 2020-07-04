@@ -77,7 +77,7 @@ class ThirdPage extends React.Component {
         <Image
         style= {[ 
         {"width":"50%",
-        "top":"5%","left":"45%",
+        "top":"18%","left":"45%",
         position:'absolute',
         "height":"20%",
         width:"50%",
@@ -162,7 +162,8 @@ class ThirdPage extends React.Component {
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"90%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', 
+            height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"90%",
             "left":"55%","innerText":"'Return to page 1'"}]}
         ><Text>{'Return to page 1'}</Text>
         </TouchableOpacity>

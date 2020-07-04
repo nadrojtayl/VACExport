@@ -20,7 +20,7 @@
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		0731D3B524204D62009CAE85 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Expo.plist; path = appbuilderexporttest/Supporting/Expo.plist; sourceTree = "<group>"; };
 		0AD680EF510FF14AECE0C401 /* Pods-appbuilderexporttest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appbuilderexporttest.release.xcconfig"; path = "Target Support Files/Pods-appbuilderexporttest/Pods-appbuilderexporttest.release.xcconfig"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* com.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = com.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* Slippery Tier List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slippery Tier List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = appbuilderexporttest/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = appbuilderexporttest/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* com.app */,
+				13B07F961A680F5B00A75B9A /* Slippery Tier List.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,7 +132,7 @@
 			);
 			name = appbuilderexporttest;
 			productName = "Hello World";
-			productReference = 13B07F961A680F5B00A75B9A /* com.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* Slippery Tier List.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -275,6 +275,7 @@
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = P2R8JPM986;
 				INFOPLIST_FILE = appbuilderexporttest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.1.0;
 				OTHER_LDFLAGS = (
@@ -283,7 +284,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = slipperytierlist.slipperytierlist.com;
-				PRODUCT_NAME = com;
+				PRODUCT_NAME = "Slippery Tier List";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -297,6 +298,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P2R8JPM986;
 				INFOPLIST_FILE = appbuilderexporttest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.1.0;
 				OTHER_LDFLAGS = (
@@ -305,7 +307,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = slipperytierlist.slipperytierlist.com;
-				PRODUCT_NAME = com;
+				PRODUCT_NAME = "Slippery Tier List";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
