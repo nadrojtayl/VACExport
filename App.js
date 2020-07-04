@@ -3,7 +3,7 @@ import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image
 import FirstPage from './downloadedpages/FirstPage.js'
 import ThirdPage from './downloadedpages/ThirdPage.js'
 import Privacy from './downloadedpages/Privacy.js'
-import SecondPage from './downloadedpages/SecondPage.js'
+import Locationpage from './downloadedpages/locationpage.js'
 /*
 EXPORT PROCESS
 
@@ -84,55 +84,47 @@ super(props);
 this.state = {dbLinks:{}, loaded:false, page:"FirstPage"}
 }
 
-componentDidMount(){
-        var appData = this.state;
+      componentDidMount(){
+        
         var that = this;
-        var dbLinks = {"weapons":"https://spreadsheets.google.com/feeds/cells/1QQnDBXvWjKs7wl0OjHlpp72eR-bfdtz9X0eAtuFeo6o/1/public/full?alt=json"}
+        var dbLinks = {"foodbanks":"https://spreadsheets.google.com/feeds/cells/1YvAE2YPRpn7Wkn4QLfbUZ0chudMAyX72wULwgXLl3H0/4/public/full?alt=json","locations":"https://spreadsheets.google.com/feeds/cells/1YvAE2YPRpn7Wkn4QLfbUZ0chudMAyX72wULwgXLl3H0/1/public/full?alt=json"}
         Object.keys(dbLinks).forEach(function(key){
           that.connectToDatabase(dbLinks[key], key);
         })
+      };
 
-
-      }
 
 
 render(){ 
 
   var appData = this.state; var that = this; 
 
-  if(that.state.page === "FirstPage"){
-    return(
-      <View style = {{width:"100%",height:"100%"}}>
-         <FirstPage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FirstPage>
-      </View>
-    )
-  }
+   if(that.state.page === "FirstPage"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <FirstPage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FirstPage>
+          </View>
+        )
+      }
+    
 
-   if(that.state.page === "SecondPage"){
-    return(
-      <View style = {{width:"100%",height:"100%"}}>
-         <SecondPage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SecondPage>
-      </View>
-    )
-  }
+    if(that.state.page === "locationpage"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Locationpage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Locationpage>
+          </View>
+        )
+      }
+    
 
-   if(that.state.page === "ThirdPage"){
-    return(
-      <View style = {{width:"100%",height:"100%"}}>
-         <ThirdPage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></ThirdPage>
-      </View>
-    )
-  }
-
-
-
-  if(that.state.page === "Privacy"){
-    return(
-      <View style = {{width:"100%",height:"100%"}}>
-         <Privacy goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Privacy>
-      </View>
-    )
-  }
+  //   if(that.state.page === "locationpage#2"){
+  //       return(
+  //         <View style = {{width:"100%",height:"100%"}}>
+  //            <locationpage2 goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></locationpage#2>
+  //         </View>
+  //       )
+  // //    }
+  
 
   
 

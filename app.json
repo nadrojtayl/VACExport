@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "slipperytierlist",
-    "slug": "slipperytierlist",
+    "name": "food4allNYC",
+    "slug": "food4allNYC",
     "platforms": [
       "ios",
       "android",
@@ -9,7 +9,7 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/splash.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -23,10 +23,10 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "slipperytierlist.slipperytierlist.com"
+      "bundleIdentifier": "food4all.food4all.com"
     },
     "android": {
-      "package": "slipperytierlist.slipperytierlist.com"
+      "package": "food4all.food4all.com"
     },
     "entryPoint": "node_modules/expo/AppEntry.js"
   }

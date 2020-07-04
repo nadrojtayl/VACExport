@@ -2,6 +2,9 @@ import React from 'react';
 import { TextInput, StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 import appData from './global.js';
 
+
+
+
       function try_eval(input){
   try {
     var output =  eval(input);
@@ -160,7 +163,7 @@ class Multiplier extends React.Component{
        <Image
           source = {{uri: additionalStyle['source'] === undefined ? ("https://i.imgur.com/89iERyb.png"):additionalStyle['source']}}
           key = {int}
-          style={[{ width:'100%', height:'100%'}, additionalStyle]}
+          style={[{ width:'20%', height:'20%'}, additionalStyle]}
         ></Image>
      
       )
@@ -214,7 +217,7 @@ class Multiplier extends React.Component{
 
 
 
-      class FirstPage extends React.Component {
+      class Locationpage extends React.Component {
       constructor(props){
         super(props);
         this.state = {"key":"value","locationpageinput10":"Select","loaded":false,"dbLinks":{}}
@@ -229,46 +232,65 @@ class Multiplier extends React.Component{
 
 
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#7ab5f5"}}><Text
-          style= {{"top":-28.408000000000015,"left":32.48000000000002}}
-        > {} </Text>
+    <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#7ab5f5"}}> 
+    <TouchableOpacity
         
-<Text
-          style= {{"top":-29.408000000000015,"left":69.48000000000002}}
-        > {} </Text>
-        
-<Text
-          style= {{"top":-36.408000000000015,"left":171.48000000000002}}
-        > {} </Text>
-        
-<Text
-          style= {{"textAlign":"center","innerText":"'food4all'","top":24.815999999999974,"left":5.480000000000018,"fontSize":42}}
-        > {'food4all'} </Text>
-        
-<Text
-          style= {{"textAlign":"center","innerText":"'food4all'","top":36,"left":1,"fontSize":24}}
-        > {'Learn more about NYC food options'} </Text>
+        onPress = { function(){that.props.goTo("FirstPage"); that.forceUpdate(); }}  
+        style= {[{
+          shadowColor: 'rgba(0,0,0, .4)', // IOS
+          shadowOffset: { height: 1, width: 1 }, // IOS
+          shadowOpacity: 1, // IOS
+          shadowRadius: 1, //IOS
+          backgroundColor: '#fff',
+          elevation: 2, // Android
+          height: 50,
+          width: 100,
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'row',
+          position:'absolute',top:25 ,left:10, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', 
+          height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1}]}
+      ><Text>{'Home'}</Text>
+      </TouchableOpacity>
+    <Text
+        style= {{"top":85.81599999999997,"left":6.480000000000018,"innerText":"''Distance Away:''","color":"#ff0000","textAlign":"center","fontSize":20}}
+      > (Distance Away:} </Text>
+      
+    <Text
+        style= {{"top":218.81599999999997,"left":9.480000000000018,"innerText":"''Variety of foods:''","color":"#ff0000","textAlign":"center","fontSize":20}}
+      > {"Variety of foods:"} </Text>
+      
+    <Text
+        style= {{"top":341.816,"left":12.480000000000018,"innerText":"''Rating:''","color":"#ff0000","textAlign":"center","fontSize":20}}
+      > {"Rating:"} </Text>
+      
+      
+    <Text
+        style= {{"top":28.815999999999974,"left":215.48000000000002,"innerText":"location name","repeaterfontSize":15,"fontWeight":"bold","borderColor":"blue","color":"blue"}}
+      > {'location name'} </Text>
+      
+      
+    <Text
+        style= {{"top":244.81599999999997,"left":0.4800000000000182,"innerText":"''Fried Chicken, Pasta, Vegan foods, and breakfast''","color":"black","textAlign":"center","fontSize":20}}
+      > {'Fried Chicken, Pasta, Vegan foods, and breakfast'} </Text>
+      
+    <Text
+        style= {{"top":121.81599999999997,"left":6.480000000000018,"innerText":"''one mile away''","color":"black","borderColor":"black","textAlign":"center","fontSize":20}}
+      > {"one mile away"} </Text>
+      
+    <Text
+        style= {{"top":372.816,"left":13.480000000000018,"innerText":"''five star''","color":"black","textAlign":"center","fontSize":20}}
+      > {"five star"} </Text>
+      
 
-
-<Image
-  style= {[{width:"90%",height:"20%"}, {"top":40,"left":20}]}
-  source = {{uri:"https://3c1703fe8d.site.internapcdn.net/newman/gfx/news/hires/2018/vegetables.jpg"}}>
-</Image>
-
-<Image
-  style= {[{width:"90%",height:"20%"}, {"top":50,"left":20}]}
-  source = {{uri:"https://www.hayesmeats.com/wp-content/uploads/2018/12/meat-variety-display.jpg"}}>
-</Image>
-
-<Image
-  style= {[{width:"90%",height:"20%"}, {"top":60,"left":20}]}
-        source = {{uri:"https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2F1502826406%2F1708w-getty-fruit-closeup-CarstenSchanter-EyeEm.jpg"}}
-      >
-      </Image>
-
+    <Image
+      style= {[{width:"20%",height:"20%"}, {"top":414.816,"left":101.48000000000002,"source":"https://tse4.mm.bing.net/th?id=OIP.1yrQk-5oX6lIBzUJQHZpoQHaCU&pid=Api&P=0&w=500&h=157","height":"22%"}]}
+      source = {{uri:"https://tse4.mm.bing.net/th?id=OIP.1yrQk-5oX6lIBzUJQHZpoQHaCU&pid=Api&P=0&w=500&h=157"}}
+    >
+    </Image>
  <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("locationpage"); that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("locationpage#2"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -276,19 +298,17 @@ class Multiplier extends React.Component{
             shadowRadius: 1, //IOS
             backgroundColor: '#fff',
             elevation: 2, // Android
-            height: "5%",
-            width: "50%",
+            height: 50,
+            width: 100,
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', 
-            height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},
-            {"innerText":"'Move forward'","top":625,"left":100}]}
-        ><Text>{'Bon Appetit'}</Text>
-</TouchableOpacity></View>
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":487.816,"left":305.48,"innerText":"''Move forward''"}]}
+        ><Text>{"Explore More"}</Text>
+        </TouchableOpacity></View>
         )
       }
     }
 
     
-      export default FirstPage;
+      export default Locationpage;
