@@ -82,7 +82,7 @@ function unwrap_dynamically(value,default_value){
               
                 <Text style = {{fontSize:20}}>{player["Players"] + " |"}</Text>
                 <Button onPress = {function(){
-                  appData.index = 
+                  appData.index = int;
                   that.props.goTo("PlayerDetails");
                   that.forceUpdate(int);
                 }}   title = {"Add" }  title = {"Stats" + " |"}></Button>

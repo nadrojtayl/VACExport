@@ -72,8 +72,6 @@ class Multiplier extends React.Component{
 
   renderElement(name,int, additionalStyle, clickfunctions,elem){
     var that = this;
-    console.log("SER")
-    console.log(appData)
 
     var copy = {};
     additionalStyle.forEach(function(obj,ind){
@@ -219,13 +217,13 @@ class Multiplier extends React.Component{
 
 
 
-      class PlayerDetails extends React.Component {
+    class PlayerDetails extends React.Component {
       constructor(props){
         super(props);
         this.state = {"key":"value","null":null,"Lineupinput0":"Select","loaded":false,"dbLinks":{}}
       }
       render(){ 
-      var appData = this.state; var that = this; 
+      var that = this; 
       
 
       if(!that.props.loaded){
@@ -237,8 +235,8 @@ class Multiplier extends React.Component{
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"blue"}}>
       <Text
           style= {{"innerText":"'Zion Lateef Williamson is an American professional basketball player for the New Orleans Pelicans of the National Basketball Association. He plays the power forward position. Following a dominant freshman-year stint with the Duke Blue Devils, he was selected by the Pelicans first overall in the 2019 NBA draft.'",
-         position:'absolute', "top":"407.12","left":8.480000000000018,"backgroundColor":"red"}}
-        > {'Zion Lateef Williamson is an American professional basketball player for the New Orleans Pelicans of the National Basketball Association. He plays the power forward position. Following a dominant freshman-year stint with the Duke Blue Devils, he was selected by the Pelicans first overall in the 2019 NBA draft.'} </Text>
+         position:'absolute', "top":"40%", width:"100%","backgroundColor":"red"}}
+        > {players[appData.index].Description} </Text>
         
 
       <Image
@@ -249,7 +247,9 @@ class Multiplier extends React.Component{
 
  <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("Joel Embid"); that.forceUpdate(); }}  
+          onPress = { function(){
+            that.props.goTo("Settings"); 
+            that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
