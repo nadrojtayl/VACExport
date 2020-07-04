@@ -281,9 +281,9 @@ class Multiplier extends React.Component{
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', 
-            height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},
-            {"innerText":"'Move forward'","top":625,"left":100}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158',
+            title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},
+            {"top":625,"left":100}]}
         ><Text>{'Bon Appetit'}</Text>
 </TouchableOpacity></View>
         )

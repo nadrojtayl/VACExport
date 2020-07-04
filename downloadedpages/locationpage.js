@@ -223,7 +223,7 @@ class Multiplier extends React.Component{
         this.state = {"key":"value","locationpageinput10":"Select","loaded":false,"dbLinks":{}}
       }
       render(){ 
-      var appData = this.state; var that = this; 
+     var that = this; 
       
 
       if(!that.props.loaded){
@@ -253,44 +253,34 @@ class Multiplier extends React.Component{
       ><Text>{'Home'}</Text>
       </TouchableOpacity>
     <Text
-        style= {{"top":85.81599999999997,"left":6.480000000000018,"innerText":"''Distance Away:''","color":"#ff0000","textAlign":"center","fontSize":20}}
-      > (Distance Away:} </Text>
+        style= {{"top":100,textAlign:"center","color":"white","fontSize":28,"fontWeight":"bold"}}
+      > {locations[appData.index]["Name"]} </Text>
       
     <Text
-        style= {{"top":218.81599999999997,"left":9.480000000000018,"innerText":"''Variety of foods:''","color":"#ff0000","textAlign":"center","fontSize":20}}
-      > {"Variety of foods:"} </Text>
+        style= {{"top":125,"color":"white","textAlign":"center","fontSize":18}}
+      > {locations[appData.index].Neighborhood} </Text>
+
+    <Text
+        style= {{"top":135,textAlign:"center","color":"white","fontSize":18}}
+      > {locations[appData.index].Address} </Text>
       
     <Text
-        style= {{"top":341.816,"left":12.480000000000018,"innerText":"''Rating:''","color":"#ff0000","textAlign":"center","fontSize":20}}
-      > {"Rating:"} </Text>
-      
-      
-    <Text
-        style= {{"top":28.815999999999974,"left":215.48000000000002,"innerText":"location name","repeaterfontSize":15,"fontWeight":"bold","borderColor":"blue","color":"blue"}}
-      > {'location name'} </Text>
-      
+        style= {{"top":145,"color":"white","textAlign":"center","fontSize":18}}
+      > {locations[appData.index].PhoneNumber} </Text>
       
     <Text
-        style= {{"top":244.81599999999997,"left":0.4800000000000182,"innerText":"''Fried Chicken, Pasta, Vegan foods, and breakfast''","color":"black","textAlign":"center","fontSize":20}}
-      > {'Fried Chicken, Pasta, Vegan foods, and breakfast'} </Text>
-      
-    <Text
-        style= {{"top":121.81599999999997,"left":6.480000000000018,"innerText":"''one mile away''","color":"black","borderColor":"black","textAlign":"center","fontSize":20}}
-      > {"one mile away"} </Text>
-      
-    <Text
-        style= {{"top":372.816,"left":13.480000000000018,"innerText":"''five star''","color":"black","textAlign":"center","fontSize":20}}
-      > {"five star"} </Text>
-      
+        style= {{"top":155,textAlign:"center","color":"white","fontSize":18}}
+      > {locations[appData.index].HoursOfOperation} </Text>
 
     <Image
-      style= {[{width:"20%",height:"20%"}, {"top":414.816,"left":101.48000000000002,"source":"https://tse4.mm.bing.net/th?id=OIP.1yrQk-5oX6lIBzUJQHZpoQHaCU&pid=Api&P=0&w=500&h=157","height":"22%"}]}
-      source = {{uri:"https://tse4.mm.bing.net/th?id=OIP.1yrQk-5oX6lIBzUJQHZpoQHaCU&pid=Api&P=0&w=500&h=157"}}
-    >
+      style= {[{"top":200,"left":5,"height":"30%","width":"80%"}]}
+      source = {{uri:locations[appData.index]["Link"]}}>
     </Image>
  <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("locationpage#2"); that.forceUpdate(); }}  
+          onPress = { function(){
+            appData.index = (appData.index + 1) % (locations.length-1);
+            that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -298,12 +288,14 @@ class Multiplier extends React.Component{
             shadowRadius: 1, //IOS
             backgroundColor: '#fff',
             elevation: 2, // Android
-            height: 50,
-            width: 100,
+            height: "10%",
+            width: "30%",
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":487.816,"left":305.48,"innerText":"''Move forward''"}]}
+            position:'absolute',backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', 
+            height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},
+            {"top":"85%","right":"5%"}]}
         ><Text>{"Explore More"}</Text>
         </TouchableOpacity></View>
         )

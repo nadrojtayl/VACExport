@@ -87,7 +87,7 @@ this.state = {dbLinks:{}, loaded:false, page:"FirstPage"}
       componentDidMount(){
         
         var that = this;
-        var dbLinks = {"foodbanks":"https://spreadsheets.google.com/feeds/cells/1YvAE2YPRpn7Wkn4QLfbUZ0chudMAyX72wULwgXLl3H0/4/public/full?alt=json","locations":"https://spreadsheets.google.com/feeds/cells/1YvAE2YPRpn7Wkn4QLfbUZ0chudMAyX72wULwgXLl3H0/1/public/full?alt=json"}
+        var dbLinks = {"locations":"https://spreadsheets.google.com/feeds/cells/1YvAE2YPRpn7Wkn4QLfbUZ0chudMAyX72wULwgXLl3H0/1/public/full?alt=json"}
         Object.keys(dbLinks).forEach(function(key){
           that.connectToDatabase(dbLinks[key], key);
         })
@@ -174,7 +174,6 @@ connectToDatabase(db_link,name){
     
             window[name] = data_arr;
             global[name] = data_arr;
-
             that.forceUpdate();
             that.setState({dbLinks:that.state.dbLinks, loaded:true})
           
