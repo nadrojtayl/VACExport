@@ -60,277 +60,55 @@ function unwrap_dynamically(value,default_value){
 }
 
 
-class Multiplier extends React.Component{
-    constructor(props){
-      super(props);
-      this.state = {
-        childrenAdditionalStyles: [],
-        clickfunctions: [],
-        textTreeChildren:[]
-      }
-    }
-
-  renderElement(name,int, additionalStyle, clickfunctions,elem){
-    var that = this;
-    console.log("SER")
-    console.log(appData)
-
-    var copy = {};
-    additionalStyle.forEach(function(obj,ind){
-      // console.log(obj);
-      Object.keys(obj).forEach(function(key){
-   
-        if(key !== undefined && key.indexOf("repeater") !== -1){
-          copy[key.replace("repeater","")] = obj[key];
-        }
-
-      })
-    })
-    
-
-    additionalStyle = copy;
-
-    Object.keys(additionalStyle).forEach(function(key){
-      if(key !== "onPress" && typeof additionalStyle[key] === "string" && (additionalStyle[key].indexOf('elem') !== -1  || additionalStyle[key].indexOf('width') !== -1 || additionalStyle[key].indexOf('height') !== -1 ) ){
-        additionalStyle[key] = eval(additionalStyle[key])
-      }
-    })
 
 
 
-    var innerText = additionalStyle.innerText;
-  
-
-     try {
-     var evaled = eval(innerText)
-     innerText= evaled;
-    } catch(e){
-
-    }
-
-    console.log("STYLE");
-    console.log(additionalStyle)
-
-
-    int = parseInt(int)
-    if(name === "text"){
-
-
-      return (
-        <Text
-          style={[{ height: 40, borderColor: 'black', backgroundColor:'white', color:'black', width:"100%", borderWidth: 5}, additionalStyle]}
-          key = {int}
-          onPress = { function(){  eval('(' + that.props.clickfunction + ')()')   } }
-          selectable = {true}
-        >{  additionalStyle.innerText === undefined ? "example" :additionalStyle.innerText }</Text>
-
-        )
-    }
-
-
-    if(name === "button"){
-    
-      return(
-        <TouchableOpacity
-        onPress = { function(){  
-        
-          appData.FilteredList = filter_list_of_objs(weapons,"Gun Class",elem);
-          that.props.goTo("SecondPage");
-          that.forceUpdate();    
-
-        } }
-          
-          key = {int}
-          style={[{
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: 'white',
-            color:'black',
-            elevation: 2, // Android
-            marginTop:"5%",
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            borderRadius: 10,
-            borderColor: 'gray', borderWidth: 1}, additionalStyle]}
-        ><Text style = {{textAlign:'center'}}> { unwrap_dynamically(additionalStyle['innerText'])  }</Text>
-        </TouchableOpacity>
-      )
-    }
-
-    if(name === "image"){
-      return(
-       <Image
-          source = {{uri: additionalStyle['source'] === undefined ? ("https://i.imgur.com/89iERyb.png"):additionalStyle['source']}}
-          key = {int}
-          style={[{ width:'200px', height:'200px'}, additionalStyle]}
-        ></Image>
-     
-      )
-    }
-
-
-
-
-  }
-
-
-    render(){
-
-      var that = this;
-  
-    
-
-      if(!window.edit_mode){
-        return (<View
-          style = {that.props.style}
-          >
-       <ScrollView>
-          {that.props.data.map(function(elem,ind){
-
-            return that.renderElement(that.props.type,ind,that.props.style, that.props.clickfunction, elem)
-          }) }
-        </ScrollView>
-        </View>
-        )
-
-
-      }
-
-      return (<TouchableOpacity
-      style = {that.props.style}
-      onPress = { function(){if(window.drag_mode){ that.setState({selectedElemToStyle:that.props.int});  return} if(window.edit_mode){ console.log("IND" + that.props.int); window.edit(that.props.int); return}  eval('(' + that.state.clickfunctions[that.props.int] + ')()'); if(that.state.clickfunctions[that.props.int].indexOf("appData") !== -1){ that.forceUpdate()}   } }
-
-      >
-        <ScrollView>
-          {that.props.data.map(function(elem,ind){
-            console.log(that.props.clickfunction)
-            return that.renderElement(that.props.type,ind,that.props.style, that.props.clickfunction, elem)
-          }) }
-        </ScrollView>
-        </TouchableOpacity>
-        )
-    }
-
-  }
-
-
-
-
-      class settings extends React.Component {
+    class Settings extends React.Component {
       constructor(props){
         super(props);
         this.state = {"key":"value","id":3,"ID":null,"settingsinput1":"","settingspicker3":"Option1","settingspicker4":"","settingspicker6":"","settingspicker9":"","settingspicker10":"","settingspicker11":"","settingspicker12":"","APIKey":"09dc52b6b12bb0a87cfd0c79f2dfe1e9","loaded":false,"dbLinks":{}}
       }
       
       render(){ 
-      var appData = this.state; var that = this; 
+      var that = this; 
       
 
-      if(!that.props.loaded){
-        return(<View><Text>LOADING</Text></View>)
+ 
+        return(<View style = {{textAlign:'center', alignItems:'center', marginTop:"10%"}}>
+          <Text style = {{fontSize:32, marginBottom:'5%', textDecorationLine:"underline"}}>Choose your team [5 max]</Text>
+          {players.map(function(player,int){
+            return (
+             <View style = {{flexDirection:'row', marginTop:"2%", justifyContent:'center', alignItems:'center'}}>
+              
+                <Text style = {{fontSize:20}}>{player["Players"] + " |"}</Text>
+                <Button onPress = {function(){
+                  appData.index = 
+                  that.props.goTo("PlayerDetails");
+                  that.forceUpdate(int);
+                }}   title = {"Add" }  title = {"Stats" + " |"}></Button>
+                <Button onPress = {function(){
+                  appData.lineup.push(player);
+                  that.forceUpdate();
+                }}   title = {"Add" }></Button>
+
+              </View>
+              )
+          })}
+          <Text style = {{marginTop:"10%", textAlign:'center', fontSize:24, borderStyle:"solid", borderWidth:1, width:"100%"}}>{appData.lineup.length +  " players on your team"}</Text>
+          <Button  title = {"Play"}></Button>
+          </View>)
       }
 
+     
+    
 
-      return (
-      <View style = {{width:"380px", height:"657px", borderWidth:5, borderColor:"black", backgroundColor:"black"}}><Text
-          style= {{"color":null,"innerText":"'Genre'","top":68.00799999999998,"left":115.81350000000003}}
-        > {'Genre'} </Text>
-        
-<Text
-          style= {{"color":595959,"top":70.00799999999998,"left":367.81350000000003,"innerText":"'Streaming services'"}}
-        > {'Streaming services'} </Text>
-        
-<Text
-          style= {{"color":595959,"height":"10%","fontSize":26,"innerText":"'Settings'","top":-12.807999999999993,"left":222.81350000000003}}
-        > {'Settings'} </Text>
-        
-<Picker
-        value={that.state["settingspicker3"]}
-        style= {{"top":72.00799999999998,"left":363.81350000000003,"innerText":"'HBO max'","color":"HBO max","options":"[\"Disney+\",\"HBO Max\",\"Hulu\",\"Netflix\",\"Prime Video\"]"}}
-        onValueChange={function(val){that.setState({settingspicker3: val})}}  
-      > 
-        <Picker.Item label={"Select"} value={"Select"} />
-        <Picker.Item label={"Option1"} value={"Option1"} />
-        <Picker.Item label={"Disney+"} value={"Disney+"} /><Picker.Item label={"HBO Max"} value={"HBO Max"} /><Picker.Item label={"Hulu"} value={"Hulu"} /><Picker.Item label={"Netflix"} value={"Netflix"} /><Picker.Item label={"Prime Video"} value={"Prime Video"} />
-      </Picker>
-<Picker
-        value={that.state["settingspicker4"]}
-        style= {{"top":88.00799999999998,"left":362.81350000000003,"options":"[\"Disney+\",\"HBO Max\",\"Hulu\",\"Netflix\",\"Prime Video\"]"}}
-        onValueChange={function(val){that.setState({settingspicker4: val})}}  
-      > 
-        <Picker.Item label={"Select"} value={"Select"} />
-        <Picker.Item label={"Option1"} value={"Option1"} />
-        <Picker.Item label={"Disney+"} value={"Disney+"} /><Picker.Item label={"HBO Max"} value={"HBO Max"} /><Picker.Item label={"Hulu"} value={"Hulu"} /><Picker.Item label={"Netflix"} value={"Netflix"} /><Picker.Item label={"Prime Video"} value={"Prime Video"} />
-      </Picker>
- <TouchableOpacity
-          
-          onPress = { function(){appData.APIKey="09dc52b6b12bb0a87cfd0c79f2dfe1e9";
-that.props.goTo("FirstPage"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            height: 50,
-            width: 100,
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'back'","backgroundColor":"transparent","color":595959}]}
-        ><Text>{'back'}</Text>
-        </TouchableOpacity>
-<Picker
-        value={that.state["settingspicker6"]}
-        style= {{"innerText":"'horror'","top":-35.99200000000002,"left":111.81350000000003,"repeaterType":null,"options":"[\"Comedy\", \"Sci-Fi\",\"Horror\",\"Romance\",\"Action\",\"Drama\", \"Mystery\", \"Animation\", \"Adventure\", \"Fantasy\", \"Comedy-Romance\", \"Action-Comedy\", \"Superhero\"]"}}
-        onValueChange={function(val){that.setState({settingspicker6: val})}}  
-      > 
-        <Picker.Item label={"Select"} value={"Select"} />
-        <Picker.Item label={"Option1"} value={"Option1"} />
-        <Picker.Item label={"Comedy"} value={"Comedy"} /><Picker.Item label={"Sci-Fi"} value={"Sci-Fi"} /><Picker.Item label={"Horror"} value={"Horror"} /><Picker.Item label={"Romance"} value={"Romance"} /><Picker.Item label={"Action"} value={"Action"} /><Picker.Item label={"Drama"} value={"Drama"} /><Picker.Item label={"Mystery"} value={"Mystery"} /><Picker.Item label={"Animation"} value={"Animation"} /><Picker.Item label={"Adventure"} value={"Adventure"} /><Picker.Item label={"Fantasy"} value={"Fantasy"} /><Picker.Item label={"Comedy-Romance"} value={"Comedy-Romance"} /><Picker.Item label={"Action-Comedy"} value={"Action-Comedy"} /><Picker.Item label={"Superhero"} value={"Superhero"} />
-      </Picker>
-<Text
-          style= {{"color":595959,"innerText":"'We value your privacy, none of your personal information will be used'","top":-43.80799999999999,"left":280.81350000000003}}
-        > {'We value your privacy, none of your personal information will be used'} </Text>
-        
-<Text
-          style= {{"color":595959,"innerText":"'We value your privacy. None of your personal information will be used'","top":615.192,"left":58.81350000000003}}
-        > {'We value your privacy. None of your personal information will be used'} </Text>
-        
-<Picker
-        value={that.state["settingspicker9"]}
-        style= {{"options":"[\"Comedy\", \"Sci-Fi\",\"Horror\",\"Romance\",\"Action\",\"Drama\", \"Mystery\", \"Animation\", \"Adventure\", \"Fantasy\", \"Comedy-Romance\", \"Action-Comedy\", \"Superhero\"]","top":-21.807999999999993,"left":110.81350000000003}}
-        onValueChange={function(val){that.setState({settingspicker9: val})}}  
-      > 
-        <Picker.Item label={"Select"} value={"Select"} />
-        <Picker.Item label={"Option1"} value={"Option1"} />
-        <Picker.Item label={"Comedy"} value={"Comedy"} /><Picker.Item label={"Sci-Fi"} value={"Sci-Fi"} /><Picker.Item label={"Horror"} value={"Horror"} /><Picker.Item label={"Romance"} value={"Romance"} /><Picker.Item label={"Action"} value={"Action"} /><Picker.Item label={"Drama"} value={"Drama"} /><Picker.Item label={"Mystery"} value={"Mystery"} /><Picker.Item label={"Animation"} value={"Animation"} /><Picker.Item label={"Adventure"} value={"Adventure"} /><Picker.Item label={"Fantasy"} value={"Fantasy"} /><Picker.Item label={"Comedy-Romance"} value={"Comedy-Romance"} /><Picker.Item label={"Action-Comedy"} value={"Action-Comedy"} /><Picker.Item label={"Superhero"} value={"Superhero"} />
-      </Picker>
-<Picker
-        value={that.state["settingspicker10"]}
-        style= {{"options":"[\"Comedy\", \"Sci-Fi\",\"Horror\",\"Romance\",\"Action\",\"Drama\", \"Mystery\", \"Animation\", \"Adventure\", \"Fantasy\", \"Comedy-Romance\", \"Action-Comedy\", \"Superhero\"]","top":-5.807999999999993,"left":106.81350000000003}}
-        onValueChange={function(val){that.setState({settingspicker10: val})}}  
-      > 
-        <Picker.Item label={"Select"} value={"Select"} />
-        <Picker.Item label={"Option1"} value={"Option1"} />
-        <Picker.Item label={"Comedy"} value={"Comedy"} /><Picker.Item label={"Sci-Fi"} value={"Sci-Fi"} /><Picker.Item label={"Horror"} value={"Horror"} /><Picker.Item label={"Romance"} value={"Romance"} /><Picker.Item label={"Action"} value={"Action"} /><Picker.Item label={"Drama"} value={"Drama"} /><Picker.Item label={"Mystery"} value={"Mystery"} /><Picker.Item label={"Animation"} value={"Animation"} /><Picker.Item label={"Adventure"} value={"Adventure"} /><Picker.Item label={"Fantasy"} value={"Fantasy"} /><Picker.Item label={"Comedy-Romance"} value={"Comedy-Romance"} /><Picker.Item label={"Action-Comedy"} value={"Action-Comedy"} /><Picker.Item label={"Superhero"} value={"Superhero"} />
-      </Picker>
-<Picker
-        value={that.state["settingspicker11"]}
-        style= {{"options":"[\"Disney+\",\"HBO Max\",\"Hulu\",\"Netflix\",\"Prime Video\"]","top":-47.80799999999999,"left":362.81350000000003}}
-        onValueChange={function(val){that.setState({settingspicker11: val})}}  
-      > 
-        <Picker.Item label={"Select"} value={"Select"} />
-        <Picker.Item label={"Option1"} value={"Option1"} />
-        <Picker.Item label={"Disney+"} value={"Disney+"} /><Picker.Item label={"HBO Max"} value={"HBO Max"} /><Picker.Item label={"Hulu"} value={"Hulu"} /><Picker.Item label={"Netflix"} value={"Netflix"} /><Picker.Item label={"Prime Video"} value={"Prime Video"} />
-      </Picker></View>
-        )
-      }
+
+
+      
+    
+
+
     }
 
     
-      export default settings;
+      export default Settings;

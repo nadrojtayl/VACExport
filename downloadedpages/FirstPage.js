@@ -237,7 +237,7 @@ class Multiplier extends React.Component{
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"blue"}}> 
       <TouchableOpacity
           
-          onPress = { function(){good; that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("options"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -246,7 +246,7 @@ class Multiplier extends React.Component{
             backgroundColor: '#fff',
             elevation: 2, // Android
             height: 50,
-            width: 100,
+            width: "50%",
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
@@ -257,8 +257,8 @@ class Multiplier extends React.Component{
             color:'black', borderRadius:15, borderWidth: 1},{
               "innerText":"'Basketball Star Cards'",
               "top":"90%",
-              "left":"35%","borderColor":"red","color":" blue"}]}
-        ><Text>{'Basketball Star Cards'}</Text>
+              "left":"25%","borderColor":"red","color":" blue"}]}
+        ><Text>{'Start my journey'}</Text>
         </TouchableOpacity>
 
      

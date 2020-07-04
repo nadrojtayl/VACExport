@@ -1,8 +1,13 @@
 import React from 'react';
-import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
-import appData from './global.js';
 
-function try_eval(input){
+      import { TextInput, StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
+
+      import appData from './global.js';
+
+
+
+
+      function try_eval(input){
   try {
     var output =  eval(input);
     return output
@@ -55,56 +60,196 @@ function unwrap_dynamically(value,default_value){
 }
 
 
-class LastPage extends React.Component {
-      constructor(props){
-        super(props);
-        this.state = {"key":"value","RegisterPageinput0":"Dog","RegisterPageinput5":"Russian Blue","RegisterPageinput8":"Light blue skin","Info Pageinput1":"d","RegisterPageinput10":"973 768 9820","RegisterPageinput11":"","FindorAdd":true,"AddorFind":true,"loaded":false,"dbLinks":{}}
+class Multiplier extends React.Component{
+    constructor(props){
+      super(props);
+      this.state = {
+        childrenAdditionalStyles: [],
+        clickfunctions: [],
+        textTreeChildren:[]
       }
-      
-      render(){ 
-      var that = this; 
-      
+    }
 
+  renderElement(name,int, additionalStyle, clickfunctions,elem){
+    var that = this;
+    console.log("SER")
+    console.log(appData)
+
+    var copy = {};
+    additionalStyle.forEach(function(obj,ind){
+      // console.log(obj);
+      Object.keys(obj).forEach(function(key){
+   
+        if(key !== undefined && key.indexOf("repeater") !== -1){
+          copy[key.replace("repeater","")] = obj[key];
+        }
+
+      })
+    })
     
+
+    additionalStyle = copy;
+
+    Object.keys(additionalStyle).forEach(function(key){
+      if(key !== "onPress" && typeof additionalStyle[key] === "string" && (additionalStyle[key].indexOf('elem') !== -1  || additionalStyle[key].indexOf('width') !== -1 || additionalStyle[key].indexOf('height') !== -1 ) ){
+        additionalStyle[key] = eval(additionalStyle[key])
+      }
+    })
+
+
+
+    var innerText = additionalStyle.innerText;
+  
+
+     try {
+     var evaled = eval(innerText)
+     innerText= evaled;
+    } catch(e){
+
+    }
+
+    console.log("STYLE");
+    console.log(additionalStyle)
+
+
+    int = parseInt(int)
+    if(name === "text"){
 
 
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
-      <Text
-          style= {{"textAlign":"center","backgroundColor":"#ccb2db","height":"3%","width":"100%","borderColor":"black", marginTop:"20%"}}
-        > 
-        <Text style = {{color:'black'}}>{"Thank You For Helping Locate A Lost Animal. "} </Text>
-
-        </Text>
         <Text
-          style= {{"textAlign":"center","backgroundColor":"#ccb2db","height":"5%","width":"100%","borderColor":"black"}}
-        > 
-        <Text style = {{color:'black'}}>{"Here are our matching animals."} </Text>
+          style={[{ height: 40, borderColor: 'black', backgroundColor:'white', color:'black', width:"100%", borderWidth: 5}, additionalStyle]}
+          key = {int}
+          onPress = { function(){  eval('(' + that.props.clickfunction + ')()')   } }
+          selectable = {true}
+        >{  additionalStyle.innerText === undefined ? "example" :additionalStyle.innerText }</Text>
 
-        </Text>
-        <View style = {{height:"30%"}}>
-        <ScrollView >
-        {appData.matchingList.map(function(match){
-          return (
+        )
+    }
+
+
+    if(name === "button"){
+    
+      return(
+        <TouchableOpacity
+        onPress = { function(){  
+        
+          appData.FilteredList = filter_list_of_objs(weapons,"Gun Class",elem);
+          that.props.goTo("SecondPage");
+          that.forceUpdate();    
+
+        } }
           
-          <View style = {{borderColor:'black',borderWidth:1, marginBottom:"4%"}}>
-            <Text style = {{fontWeight:'bold'}}>{match["Email/Phone"]}</Text>
-            <Text>{match["Description"]}</Text>
-          </View>
-          
-          )
-        }
+          key = {int}
+          style={[{
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: 'white',
+            color:'black',
+            elevation: 2, // Android
+            marginTop:"5%",
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            borderRadius: 10,
+            borderColor: 'gray', borderWidth: 1}, additionalStyle]}
+        ><Text style = {{textAlign:'center'}}> { unwrap_dynamically(additionalStyle['innerText'])  }</Text>
+        </TouchableOpacity>
+      )
+    }
+
+    if(name === "image"){
+      return(
+       <Image
+          source = {{uri: additionalStyle['source'] === undefined ? ("https://i.imgur.com/89iERyb.png"):additionalStyle['source']}}
+          key = {int}
+          style={[{ width:'200px', height:'200px'}, additionalStyle]}
+        ></Image>
+     
+      )
+    }
 
 
-        )}
+
+
+  }
+
+
+    render(){
+
+      var that = this;
+  
+    
+
+      if(!window.edit_mode){
+        return (<View
+          style = {that.props.style}
+          >
+       <ScrollView>
+          {that.props.data.map(function(elem,ind){
+
+            return that.renderElement(that.props.type,ind,that.props.style, that.props.clickfunction, elem)
+          }) }
         </ScrollView>
         </View>
+        )
+
+
+      }
+
+      return (<TouchableOpacity
+      style = {that.props.style}
+      onPress = { function(){if(window.drag_mode){ that.setState({selectedElemToStyle:that.props.int});  return} if(window.edit_mode){ console.log("IND" + that.props.int); window.edit(that.props.int); return}  eval('(' + that.state.clickfunctions[that.props.int] + ')()'); if(that.state.clickfunctions[that.props.int].indexOf("appData") !== -1){ that.forceUpdate()}   } }
+
+      >
+        <ScrollView>
+          {that.props.data.map(function(elem,ind){
+            console.log(that.props.clickfunction)
+            return that.renderElement(that.props.type,ind,that.props.style, that.props.clickfunction, elem)
+          }) }
+        </ScrollView>
+        </TouchableOpacity>
+        )
+    }
+
+  }
+
+
+
+
+      class PlayerDetails extends React.Component {
+      constructor(props){
+        super(props);
+        this.state = {"key":"value","null":null,"Lineupinput0":"Select","loaded":false,"dbLinks":{}}
+      }
+      render(){ 
+      var appData = this.state; var that = this; 
+      
+
+      if(!that.props.loaded){
+        return(<View><Text>LOADING</Text></View>)
+      }
+
+
+      return (
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"blue"}}>
+      <Text
+          style= {{"innerText":"'Zion Lateef Williamson is an American professional basketball player for the New Orleans Pelicans of the National Basketball Association. He plays the power forward position. Following a dominant freshman-year stint with the Duke Blue Devils, he was selected by the Pelicans first overall in the 2019 NBA draft.'",
+         position:'absolute', "top":"407.12","left":8.480000000000018,"backgroundColor":"red"}}
+        > {'Zion Lateef Williamson is an American professional basketball player for the New Orleans Pelicans of the National Basketball Association. He plays the power forward position. Following a dominant freshman-year stint with the Duke Blue Devils, he was selected by the Pelicans first overall in the 2019 NBA draft.'} </Text>
         
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"top":117.12,"left":79.48000000000002,"source":"https://tse3.mm.bing.net/th?id=OIP.TZ1NfPhZVDQ2JpOr3CzHXQHaE8&pid=Api&P=0&w=244&h=164"}]}
+        source = {{uri:"https://tse3.mm.bing.net/th?id=OIP.TZ1NfPhZVDQ2JpOr3CzHXQHaE8&pid=Api&P=0&w=244&h=164"}}
+      >
+      </Image>
+
  <TouchableOpacity
           
-          onPress = { function(){
-            that.props.goTo("FirstPage"); 
-            that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("Joel Embid"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -117,11 +262,22 @@ class LastPage extends React.Component {
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"Back<<","borderColor":"black","color":"black"}]}
-        ><Text>{"Back<<"}</Text>
-        </TouchableOpacity></View>
+            position:'absolute',top:0,left:0,
+             backgroundColor:'#8fd158',
+              alignItems:'center',justifyContent:'center',
+               height: "7%",  title:'Test', 
+               borderColor: 'gray', color:'black', 
+               borderRadius:15, borderWidth: 1},{"top":"5%",
+               "left":"40%","innerText":"'Click to see your final card'"}]}
+        ><Text>{'Back'}</Text>
+        </TouchableOpacity>
+          <Text
+          style= {{textAlign:'center', "innerText":"'Level 10'","backgroundColor":"red", position:'absolute', width:"100%",top:"15%"}}
+        > {'Level 10'} </Text>
+        </View>
         )
       }
     }
 
-    export default LastPage;
+    
+      export default PlayerDetails;

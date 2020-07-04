@@ -1,2 +1,2 @@
-var appData = {"key":"value","null":null,"Lineupinput0":"Select","loaded":false,"dbLinks":{}}
-
+var appData = {"key":"value", lineup:[], index:0, "null":null,"Lineupinput0":"Select","loaded":false,"dbLinks":{}}
+export default appData;

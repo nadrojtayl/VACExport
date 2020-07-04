@@ -2,9 +2,9 @@ import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 import FirstPage from './downloadedpages/FirstPage.js'
 import RegisterPage from './downloadedpages/RegisterPage.js'
-import LastPage from './downloadedpages/LastPage.js'
+import PlayerDetails from './downloadedpages/LastPage.js'
 import Privacy from './downloadedpages/Privacy.js'
-import ExerciseDetails from './downloadedpages/InfoPage.js'
+import Settings from './downloadedpages/settings.js'
 /*
 EXPORT PROCESS
 
@@ -88,7 +88,7 @@ this.state = {dbLinks:{}, loaded:false, page:"FirstPage"}
  componentDidMount(){
         
         var that = this;
-        var dbLinks = {"null":null,"Basketball Card Database":"^Bryanthttps://docs.google.com/spreadsheets/d/1YvAE2YPRpn7Wkn4QLfbUZ0chudMAyX72wULwgXLl3H0/edit#gid=1296521366","^Bryanthttps://docs.google.com/spreadsheets/d/1YvAE2YPRpn7Wkn4QLfbUZ0chudMAyX72wULwgXLl3H0/edit#gid=1296521366":"^Bryanthttps://docs.google.com/spreadsheets/d/1YvAE2YPRpn7Wkn4QLfbUZ0chudMAyX72wULwgXLl3H0/edit#gid=1296521366","Card Database":"https://spreadsheets.google.com/feeds/cells/1YvAE2YPRpn7Wkn4QLfbUZ0chudMAyX72wULwgXLl3H0/4/public/full?alt=json"}
+        var dbLinks = {"null":null,"players":"https://spreadsheets.google.com/feeds/cells/1YvAE2YPRpn7Wkn4QLfbUZ0chudMAyX72wULwgXLl3H0/4/public/full?alt=json"}
         Object.keys(dbLinks).forEach(function(key){
           that.connectToDatabase(dbLinks[key], key);
         })
@@ -127,6 +127,15 @@ render(){
           </View>
         )
       }
+
+      if(that.state.page === "options"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Settings  goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Settings>
+          </View>
+        )
+      }
+
     
 
     if(that.state.page === "FirstPage"){
@@ -138,10 +147,10 @@ render(){
       }
     
 
-    if(that.state.page === "Player Opening Page"){
+    if(that.state.page === "PlayerDetails"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <PlayerOpeningPage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></PlayerOpeningPage>
+             <PlayerDetails goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></PlayerDetails>
           </View>
         )
       }
@@ -266,6 +275,7 @@ connectToDatabase(db_link,name){
     
             window[name] = data_arr;
             global[name] = data_arr;
+            data_arr.shift();
 
             that.forceUpdate();
             that.setState({dbLinks:that.state.dbLinks, loaded:true})
