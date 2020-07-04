@@ -4,7 +4,7 @@ import FirstPage from './downloadedpages/FirstPage.js'
 import RegisterPage from './downloadedpages/RegisterPage.js'
 import LastPage from './downloadedpages/LastPage.js'
 import Privacy from './downloadedpages/Privacy.js'
-import InfoPage from './downloadedpages/InfoPage.js'
+import ExerciseDetails from './downloadedpages/InfoPage.js'
 /*
 EXPORT PROCESS
 
@@ -86,15 +86,13 @@ this.state = {dbLinks:{}, loaded:false, page:"FirstPage"}
 }
 
  componentDidMount(){
-        var appData = this.state;
+        
         var that = this;
-        var dbLinks = {"animals":"https://script.google.com/macros/s/AKfycbwKOnb0Ee16O2kd0UU2bhZeZ85WI4M72zIZW209eaLzYUuwQ67u/exec"}
+        var dbLinks = {"exercises":"https://spreadsheets.google.com/feeds/cells/1WH7sh8BDw5F3uRWbVfb8oTW44jESeingcVKvA2hlMOk/1/public/full?alt=json","null":null}
         Object.keys(dbLinks).forEach(function(key){
           that.connectToDatabase(dbLinks[key], key);
         })
-
-
-      }
+  }
 
     sendToDatabase(name,obj){
       var that = this;
@@ -123,43 +121,20 @@ render(){
   var appData = this.state; var that = this; 
 
   if(that.state.page === "FirstPage"){
-    return(
-      <View style = {{width:"100%",height:"100%"}}>
-         <FirstPage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FirstPage>
-      </View>
-    )
-  }
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <FirstPage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FirstPage>
+          </View>
+        )
+      }
+    
 
-   if(that.state.page === "RegisterPage"){
-    return(
-      <View style = {{width:"100%",height:"100%"}}>
-         <RegisterPage sendToDatabase = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RegisterPage>
-      </View>
-    )
-  }
-
-   if(that.state.page === "Privacy"){
-    return(
-      <View style = {{width:"100%",height:"100%"}}>
-         <Privacy goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Privacy>
-      </View>
-    )
-  }
-
-  if(that.state.page === "LastPage"){
-    return(
-      <View style = {{width:"100%",height:"100%"}}>
-         <LastPage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></LastPage>
-      </View>
-    )
-  }
-
-  if(that.state.page === "InfoPage"){
-    return(
-      <View style = {{width:"100%",height:"100%"}}>
-         <InfoPage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></InfoPage>
-      </View>
-    )
+    if(that.state.page === "ExerciseDetails"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <ExerciseDetails goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></ExerciseDetails>
+          </View>
+        )
   }
 
   

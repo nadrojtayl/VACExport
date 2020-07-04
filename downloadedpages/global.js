@@ -1,10 +1,1 @@
-var appData = {matchingList:[], AddorFind:true,
-	"key":"value",
-	"RegisterPageinput0":"Animal Type Here",
-	"RegisterPageinput5":"Type Breed Here",
-	"RegisterPageinput8":"Write Description here",
-	"Info Pageinput1":"d",
-	"RegisterPageinput10":"xxx-xxx-xxxx",
-	"RegisterPageinput11":"",
-	"FindorAdd":true,"AddorFind":true,"loaded":false,"dbLinks":{}}
-export default appData;
+var appData = {"key":"","FirstPageinput1":"","FirstPagepicker2":"Option1","FirstPagepicker3":"","FirstPageinput4":"Select","ke":"","k":"","":"Option1","K":"Option1","Ke":"Option1","Key":"Option1","Key1":["Push-Ups","Sit-Ups","Jumping-Jacks","Squats","Lounges"],"FirstPageinput":"","FirstPageinpu":"","FirstPageinp":"","FirstPagein":"","FirstPagei":"","FirstPage":"Option1","FirstPag":"Option1","FirstPa":"Option1","FirstP":"Option1","First":"Option1","Firs":"Option1","Fir":"Option1","Fi":"Option1","F":"Option1","Key2":"Sit-Ups","FirstPagepicker":"Option1","FirstPagepicke":"Option1","FirstPagepick":"Option1","FirstPagepic":"Option1","FirstPagepi":"Option1","FirstPagep":"Option1","Key3":"Jumping-Jacks","ExerciseIndex":3,"loaded":false,"dbLinks":{}}
