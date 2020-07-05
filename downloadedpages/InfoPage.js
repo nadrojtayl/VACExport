@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 import { TextInput, StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
@@ -236,13 +237,13 @@ class Multiplier extends React.Component{
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#099ad9"}}>
       <Text
-          style= {{"backgroundColor":"#29b8ff", position:'absolute', top:"5%",left:"0%", backgroundColor:'red',  "innerText":"exercises[appData.ExerciseIndex][\"Exercise Name\"]","width":"100%","textAlign":"center","marginTop":null,"color":"white","fontWeight":"bold", fontSize:32}}
+          style= {{"backgroundColor":"#29b8ff", position:'absolute', top:"5%",left:"0%", backgroundColor:'#4a4948',  "innerText":"exercises[appData.ExerciseIndex][\"Exercise Name\"]","width":"100%","textAlign":"center","marginTop":null,"color":"white","fontWeight":"bold", fontSize:32}}
         > {exercises[appData.ExerciseIndex]["Exercise Name"]} </Text>
         
 <View style = {{marginTop:"35%"}}>
         
 <Text
-          style= {{"textAlign":"center",color:'white', fontSize:20,"backgroundColor":"red","innerText":"'Importance:'"}}
+          style= {{"textAlign":"center",color:'white', fontSize:20,"backgroundColor":"#4a4948","innerText":"'Importance:'"}}
         > {'Importance:'} </Text>
         <Text
   style= {{"backgroundColor":"#29b8ff","width":"100%","textAlign":"center","color":"white","innerText":"exercises[appData.ExerciseIndex][\"Health Benefits\"]","fontSize":18}}
@@ -251,21 +252,21 @@ class Multiplier extends React.Component{
 
         
 <Text
-          style= {{"textAlign":"center", color:'white', fontSize:20,"backgroundColor":"red","innerText":"'Importance:'"}}
+          style= {{"textAlign":"center", color:'white', fontSize:20,"backgroundColor":"#4a4948","innerText":"'Importance:'"}}
         > {'Health Benefits:'} </Text>
 <Text
   style= {{"backgroundColor":"#29b8ff","width":"100%","textAlign":"center","color":"white","innerText":"exercises[appData.ExerciseIndex][\"Health Benefits\"]","fontSize":18}}
 > {exercises[appData.ExerciseIndex]["Health Benefits"]} </Text>
         
 <Text
-          style= {{fontSize:20, color:'white',"textAlign":"center","backgroundColor":"red","innerText":"'Importance:'"}}
+          style= {{fontSize:20, color:'white',"textAlign":"center","backgroundColor":"#4a4948","innerText":"'Importance:'"}}
         > {'Recommended Age:'} </Text>
         <Text
   style= {{"backgroundColor":"#29b8ff","width":"100%","textAlign":"center","color":"white","innerText":"exercises[appData.ExerciseIndex][\"Health Benefits\"]","fontSize":18}}
 > {exercises[appData.ExerciseIndex]["Age Recommended"]} </Text>
         
 <Text
-          style= {{"textAlign":"center",color:'white',"backgroundColor":"red", fontSize:20,"innerText":"'Importance:'"}}
+          style= {{"textAlign":"center",color:'white',"backgroundColor":"#4a4948", fontSize:20,"innerText":"'Importance:'"}}
         > {'Time Consumption:'} </Text>
         <Text
   style= {{"backgroundColor":"#29b8ff","width":"100%","textAlign":"center","color":"white","innerText":"exercises[appData.ExerciseIndex][\"Health Benefits\"]","fontSize":18}}
@@ -273,7 +274,7 @@ class Multiplier extends React.Component{
         
         
 <Text
-          style= {{"textAlign":"center",color:'white',"backgroundColor":"red", fontSize:18, "innerText":"'Importance:'"}}
+          style= {{"textAlign":"center",color:'white',"backgroundColor":"#4a4948", fontSize:18, "innerText":"'Importance:'"}}
         > {'Difficulty Level:'} </Text>
 <Text
   style= {{"backgroundColor":"#29b8ff",  "width":"100%","textAlign":"center","color":"white","innerText":"exercises[appData.ExerciseIndex][\"Health Benefits\"]","fontSize":18}}
