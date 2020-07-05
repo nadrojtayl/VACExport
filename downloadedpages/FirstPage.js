@@ -278,7 +278,7 @@ class Multiplier extends React.Component{
         
         
         <TouchableOpacity
-          onPress = { function(){that.props.goTo ("Suggestions"); that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo ("Suggestions2"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS

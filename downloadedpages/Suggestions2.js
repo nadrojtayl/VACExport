@@ -234,25 +234,14 @@ class Multiplier extends React.Component{
 
 
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"blue"}}><Text
-          style= {{"innerText":"'Suggestions2'","fontSize":30,"backgroundColor":"crimson","textAlign":"center","top":0.9200000000000159,"left":147.56,"height":null,"fontWeight":null,"width":200}}
-        > {'Suggestions2'} </Text>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"blue"}}>
+      <Text
+          style= {{"fontSize":30,"backgroundColor":"crimson","textAlign":"center","top":"5%","left":"30%","height":null,"fontWeight":null,"width":"50%"}}
+        > {'Advice'} </Text>
         
-<Text
-          style= {{"innerText":"'Colleges[8][\"Suggestions for College\"]'","fontSize":20,"backgroundColor":"crimson","textAlign":"center","top":105.92000000000002,"left":1.5600000000000023}}
-        > {'Colleges[8]["Suggestions for College"]'} </Text>
-        
-<Text
-          style= {{"innerText":"'Colleges[9][\"Suggestions for College\"]'","top":324.92,"left":-0.4399999999999977,"fontSize":20,"backgroundColor":"crimson","textAlign":"center"}}
-        > {'Colleges[9]["Suggestions for College"]'} </Text>
-        
-<Text
-          style= {{"innerText":"'Colleges[10][\"Suggestions for College\"]'","backgroundColor":"crimson","fontSize":20,"textAlign":"center","top":450.92,"left":-0.4399999999999977}}
-        > {'Colleges[10]["Suggestions for College"]'} </Text>
-        
- <TouchableOpacity
+        <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("Suggestions"); that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("FirstPage"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -260,14 +249,59 @@ class Multiplier extends React.Component{
             shadowRadius: 1, //IOS
             backgroundColor: '#fff',
             elevation: 2, // Android
-            height: 50,
-            width: 100,
             justifyContent: 'center',
             alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'<-'","backgroundColor":"white"}]}
-        ><Text>{'<-'}</Text>
-        </TouchableOpacity></View>
+            position:'absolute',"top":"90%","left":"4%", width:"20%", backgroundColor:'#8fd158',
+            height: "5%"}]}>
+            <Text>{'Back'}</Text>
+        </TouchableOpacity>
+        <View style = {{height:"80%"}}>
+        <ScrollView>
+        <Text
+          style= {{"fontSize":16, marginBottom:"5%", "backgroundColor":"#8fd158","textAlign":"center","top":"7%","left":"0%", "width": "100%"}}
+        > {Colleges[1]["Suggestions for College"]} </Text>
+
+        <Text
+          style= {{"top":"7%",marginBottom:"5%","fontSize":16,"backgroundColor":"#8fd158","textAlign":"center"}}
+        > {Colleges[2]["Suggestions for College"]} </Text>
+
+        <Text
+          style= {{"top":"7%",marginBottom:"5%","fontSize":16,"backgroundColor":"#8fd158","textAlign":"center"}}
+        > {Colleges[3]["Suggestions for College"]} </Text>
+        
+        <Text
+          style= {{"top":"7%",marginBottom:"5%","fontSize":16,"backgroundColor":"#8fd158","textAlign":"center"}}
+        > {Colleges[4]["Suggestions for College"]} </Text>
+
+        <Text
+          style= {{"top":"7%",marginBottom:"5%","fontSize":16,"backgroundColor":"#8fd158","textAlign":"center"}}
+        > {Colleges[5]["Suggestions for College"]} </Text>
+
+        <Text
+          style= {{"top":"7%",marginBottom:"5%","fontSize":16,"backgroundColor":"#8fd158","textAlign":"center"}}
+        > {Colleges[6]["Suggestions for College"]} </Text>
+        
+        <Text
+          style= {{"top":"7%",marginBottom:"5%","fontSize":16,"backgroundColor":"#8fd158","textAlign":"center"}}
+        > {Colleges[7]["Suggestions for College"]} </Text>
+        
+        <Text
+          style= {{"top":"7%",marginBottom:"5%","fontSize":16,"backgroundColor":"#8fd158","textAlign":"center"}}
+        > {Colleges[8]["Suggestions for College"]} </Text>
+        
+        <Text
+          style= {{"top":"7%",marginBottom:"5%","fontSize":16,"backgroundColor":"#8fd158","textAlign":"center"}}
+        > {Colleges[9]["Suggestions for College"]} </Text>
+
+        
+        <Text
+          style= {{"backgroundColor":"#8fd158",marginBottom:"5%","fontSize":16,"textAlign":"center","top":450.92,"left":-0.4399999999999977}}
+        > {'Colleges[10]["Suggestions for College"]'} </Text>
+        </ScrollView>
+        </View>
+        
+ 
+ </View>
         )
       }
     }

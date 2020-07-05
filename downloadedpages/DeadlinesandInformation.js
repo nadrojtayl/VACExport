@@ -3,7 +3,7 @@ import React from 'react';
       import { TextInput, StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 
       import appData from './global.js';
-
+      import * as Linking from 'expo-linking';
 
 
 
@@ -236,32 +236,12 @@ class Multiplier extends React.Component{
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"blue"}}>
       <Text
-          style= {{"textAlign":"center","top":"15%","left":1,"fontSize":40,"backgroundColor":"crimson"}}
+          style= {{"textAlign":"center","top":"11%","fontSize":40,"backgroundColor":"crimson"}}
         > {'Helpful Websites'} </Text>
         
       <Text
-          style= {{"top":116,"left":1,"backgroundColor":"crimson","fontSize":25,"textAlign":"center"}}> 
-          {'If you need to buy something for college life, or you want some more in depth information, click on one of these websites!'} </Text>
-      <TouchableOpacity
-          onPress = { function(){that.props.goTo("https://student.naviance.com/auth/fclookup"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            height: 50,
-            width: 100,
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', 
-            height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},
-            {"top":242.92000000000002,"left":-1.4399999999999977,"width":"100%","textAlign":"center",
-            "height":50,"fontSize":20,"backgroundColor":"orange"}]}>
-        <Text>{Colleges[1]["Websites"]}</Text>
-        </TouchableOpacity>
+          style= {{"top":"12%","backgroundColor":"crimson","fontSize":16,"textAlign":"center"}}> 
+          {'For more in depth information, click on the links below'} </Text>
       <TouchableOpacity
           
           onPress = { function(){that.props.goTo("FirstPage"); that.forceUpdate(); }}  
@@ -270,7 +250,6 @@ class Multiplier extends React.Component{
             shadowOffset: { height: 1, width: 1 }, // IOS
             shadowOpacity: 1, // IOS
             shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
             elevation: 2, // Android
             justifyContent: 'center',
             alignItems: 'center',
@@ -278,9 +257,9 @@ class Multiplier extends React.Component{
             height: "5%"}]}>
             <Text>{'Back'}</Text>
         </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){; that.forceUpdate(); }}  
+
+        <TouchableOpacity
+          onPress  = {function(){Linking.openURL(Colleges[7]["Link"]); that.forceUpdate();}}
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -288,50 +267,111 @@ class Multiplier extends React.Component{
             shadowRadius: 1, //IOS
             backgroundColor: '#fff',
             elevation: 2, // Android
-            height: 50,
-            width: "100%",
+
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":307.92,"left":-5.439999999999998,"innerText":"'''Colleges[2][\"Websites\"]'''","width":500,"fontSize":20,"backgroundColor":"orange"}]}
+            position:'absolute',
+            height: "7%",  borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},
+            {"top":"24%","width":"100%","textAlign":"center",
+            "height":"7%","fontSize":20,"backgroundColor":"orange"}]}>
+        <Text>{Colleges[1]["Websites"]}</Text>
+        </TouchableOpacity>
+
+ <TouchableOpacity
+          
+          onPress = { function(){Linking.openURL(Colleges[2]["Link"]);; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            elevation: 2, // Android
+            flexDirection: 'row',
+            position:'absolute', alignItems:'center',justifyContent:'center', height: "7%", 
+            borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1,"top":"32%",
+            "width":"100%","fontSize":20,"backgroundColor":"orange"}]}
         ><Text>{Colleges[2]["Websites"]}</Text>
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){; that.forceUpdate(); }}  
+          onPress = { function(){Linking.openURL(Colleges[3]["Link"]);; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
             shadowOpacity: 1, // IOS
             shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
             elevation: 2, // Android
-            height: 50,
-            width: 100,
-            justifyContent: 'center',
-            alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":370.92,"left":-4.439999999999998,"innerText":"'''Colleges[3][\"Websites\"]'''","width":500,"fontSize":20,"backgroundColor":"orange"}]}
+            position:'absolute',top:0,left:0, alignItems:'center',justifyContent:'center', height: "7%",  
+            borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1,"top":"40%",
+            "width":"100%","fontSize":20,"backgroundColor":"orange"}]}
         ><Text>{Colleges[3]["Websites"]}</Text>
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){; that.forceUpdate(); }}  
+          onPress = { function(){Linking.openURL(Colleges[4]["Link"]);; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
             shadowOpacity: 1, // IOS
             shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
+            backgroundColor: 'orange',
             elevation: 2, // Android
-            height: 50,
-            width: 100,
-            justifyContent: 'center',
-            alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":431.92,"left":-3.4399999999999977,"innerText":"'''Colleges[4][\"Websites\"]'''","fontSize":20,"width":500,"height":400}]}
+            position:'absolute',alignItems:'center',justifyContent:'center', height: "7%", borderColor: 'gray', color:'black',
+             borderRadius:15, borderWidth: 1,"top":"48%","fontSize":20,"width":"100%",}]}
         ><Text>{Colleges[4]["Websites"]}</Text>
-        </TouchableOpacity></View>
+        </TouchableOpacity>
+
+ <TouchableOpacity
+          
+          onPress = { function(){ Linking.openURL(Colleges[5]["Link"]);; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: 'orange',
+            elevation: 2, // Android
+            flexDirection: 'row',
+            position:'absolute',alignItems:'center',justifyContent:'center', height: "7%", borderColor: 'gray', color:'black',
+             borderRadius:15, borderWidth: 1,"top":"56%","fontSize":20,"width":"100%",}]}
+        ><Text>{Colleges[5]["Websites"]}</Text>
+        </TouchableOpacity>
+
+         <TouchableOpacity
+          
+          onPress = { function(){ Linking.openURL(Colleges[6]["Link"]);   ; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: 'orange',
+            elevation: 2, // Android
+            flexDirection: 'row',
+            position:'absolute',alignItems:'center',justifyContent:'center', height: "7%", borderColor: 'gray', color:'black',
+             borderRadius:15, borderWidth: 1,"top":"64%","fontSize":20,"width":"100%",}]}
+        ><Text>{Colleges[6]["Websites"]}</Text>
+        </TouchableOpacity>
+
+         <TouchableOpacity
+          
+          onPress = { function(){ Linking.openURL(Colleges[7]["Link"]); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: 'orange',
+            elevation: 2, // Android
+            flexDirection: 'row',
+            position:'absolute',alignItems:'center',justifyContent:'center', height: "7%", borderColor: 'gray', color:'black',
+             borderRadius:15, borderWidth: 1,"top":"72%","fontSize":20,"width":"100%",}]}
+        ><Text>{Colleges[7]["Websites"]}</Text>
+        </TouchableOpacity>
+        </View>
         )
       }
     }
