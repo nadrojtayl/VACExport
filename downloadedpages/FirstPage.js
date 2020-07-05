@@ -247,7 +247,7 @@ class Multiplier extends React.Component{
         
 <Text
           style= {{"textAlign":"center","innerText":"'food4all'","top":36,"left":1,"fontSize":24}}
-        > {'Learn more about NYC food options'} </Text>
+        > {'Learn more about your \n options in NYC'} </Text>
 
 
 <Image
