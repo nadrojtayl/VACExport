@@ -72,8 +72,7 @@ class Multiplier extends React.Component{
 
   renderElement(name,int, additionalStyle, clickfunctions,elem){
     var that = this;
-    console.log("SER")
-    console.log(appData)
+
 
     var copy = {};
     additionalStyle.forEach(function(obj,ind){
@@ -108,8 +107,6 @@ class Multiplier extends React.Component{
 
     }
 
-    console.log("STYLE");
-    console.log(additionalStyle)
 
 
     int = parseInt(int)
@@ -133,7 +130,8 @@ class Multiplier extends React.Component{
       return(
         <TouchableOpacity
         onPress = { function(){  
-        
+          appData.selected = unwrap_dynamically(additionalStyle['innerText']);
+          appData.filtered = events.filter(function(event){return event["Calendar Name"] === appData.selected});
          that.props.goTo("repeater");
         } }
           
@@ -149,7 +147,7 @@ class Multiplier extends React.Component{
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            height:"15%",
+            height:"100%",
             width:"100%",
             borderRadius: 10,
             borderColor: 'gray', borderWidth: 1}]}
@@ -211,12 +209,9 @@ class Multiplier extends React.Component{
         this.state = {"key":["calendar 1","calendar 2","q34wugti34wgaes","q34wugti34wgaes","q34wugti34wgaes","q34wugti34wgaes","q34wugti34wgaes","q34wugti34wgaes","q34wugti34wgaes"],"namenewcalendarinput1":"gy","calendars":["calendar1","calendar2","hi","hi","hi","hi","hi","gy","gy"],"loaded":false,"dbLinks":{}}
       }
       render(){ 
-      var appData = this.state; var that = this; 
+      var that = this; 
       
 
-      if(!that.props.loaded){
-        return(<View><Text>LOADING</Text></View>)
-      }
 
 
       return (
@@ -253,8 +248,12 @@ class Multiplier extends React.Component{
       type = {"button"}
       data = {appData.calendars}
       goTo = {that.props.goTo}
-      style = {[{alignItems:'center'},{"options":"appData.calendars","repeaterinnerText":"elem","top":"10%","left":"0%","height":"50%","repeaterType":"button","repeateronPress":"goTo(\"repeater\")"}]}
-      clickfunction = {function(){goTo("repeater")}}
+      style = {[{alignItems:'center'},{"options":"appData.calendars",
+      "repeaterinnerText":"elem","top":"10%","left":"0%","height":"50%","repeaterType":"button",
+      "repeateronPress":"goTo(\"repeater\")"}]}
+      clickfunction = {function(){
+        goTo("repeater")
+      }}
       >
       </Multiplier></View>
         )

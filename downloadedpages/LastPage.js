@@ -212,7 +212,7 @@ class Multiplier extends React.Component{
         this.state = {"key":["calendar 1","calendar 2","q34wugti34wgaes","q34wugti34wgaes","q34wugti34wgaes","q34wugti34wgaes","q34wugti34wgaes","q34wugti34wgaes","q34wugti34wgaes"],"namenewcalendarinput1":"gy","calendars":["calendar1","calendar2","hi","hi","hi","hi","hi","gy","gy"],"loaded":false,"dbLinks":{}}
       }
       render(){ 
-      var appData = this.state; var that = this; 
+      var that = this; 
       
 
       if(!that.props.loaded){
@@ -224,7 +224,7 @@ class Multiplier extends React.Component{
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#959c98"}}>
       <Multiplier
       type = {"text"}
-      data = {events}
+      data = {appData.filtered}
       style = {[{alignItems:'center'},{"options":"events","repeatermarginBottom":"10%",
       "repeaterinnerText":"elem['Months'] + '/' + elem['Days']+ '|' + elem['Time']+ ' | '+elem['event name']",
       "height":"60%","repeaterbackgroundColor":"#8050a6",

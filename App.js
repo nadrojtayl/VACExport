@@ -6,6 +6,12 @@ import Repeater from './downloadedpages/LastPage.js'
 import Privacy from './downloadedpages/Privacy.js'
 import Settings from './downloadedpages/settings.js'
 import Onecalendar from './downloadedpages/InfoPage.js'
+import appData from './downloadedpages/global.js';
+
+function onlyUnique(value, index, self) { 
+    return self.indexOf(value) === index;
+}
+
 /*
 EXPORT PROCESS
 
@@ -241,6 +247,9 @@ connectToDatabase(db_link,name){
             window[name] = data_arr;
             global[name] = data_arr;
             data_arr.shift();
+            appData.calendars = events.map(function(elem){
+              return elem["Calendar Name"];
+            }).filter(onlyUnique);
 
             that.forceUpdate();
             that.setState({dbLinks:that.state.dbLinks, loaded:true})
