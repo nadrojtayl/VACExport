@@ -252,6 +252,7 @@ class Multiplier extends React.Component{
     <Multiplier
       type = {"button"}
       data = {appData.calendars}
+      goTo = {that.props.goTo}
       style = {[{alignItems:'center'},{"options":"appData.calendars","repeaterinnerText":"elem","top":"10%","left":"0%","height":"50%","repeaterType":"button","repeateronPress":"goTo(\"repeater\")"}]}
       clickfunction = {function(){goTo("repeater")}}
       >

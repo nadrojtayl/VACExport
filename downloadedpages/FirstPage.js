@@ -237,7 +237,7 @@ class Multiplier extends React.Component{
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#959c98"}}>
 
         <TouchableOpacity
-        style= {{"top":485.152,"left":"0%", backgroundColor:"black", width:"100%"}}
+        style= {{"top":"50%","left":"0%", position:"absolute", backgroundColor:"black", width:"100%"}}
         onPress = {function(){
           that.props.goTo("namenewcalendar")
         }}
@@ -245,6 +245,17 @@ class Multiplier extends React.Component{
         <Text
           style= {{"innerText":"'Create new schedule!!'","backgroundColor":"black","fontSize":30,"width":"100%","borderRadius":10,"textAlign":"center","color":"yellow"}}
         > {'Create new schedule!!'} </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+        style= {{"top":"60%","left":"0%", position:"absolute",  backgroundColor:"black", width:"100%"}}
+        onPress = {function(){
+          that.props.goTo("1calendar")
+        }}
+        >
+        <Text
+          style= {{"innerText":"'Create new schedule!!'","backgroundColor":"black","fontSize":30,"width":"100%","borderRadius":10,"textAlign":"center","color":"yellow"}}
+        > {'See existing calendars'} </Text>
         </TouchableOpacity>
         
 
