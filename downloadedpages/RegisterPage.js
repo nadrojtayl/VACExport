@@ -74,7 +74,7 @@ class RegisterPage extends React.Component {
           setTimeout(function(i){
             var player = appData.lineup[appData.results.length], playerLevel = appData.lineup[appData.results.length].Level
              appData.results.push(
-              {name:player.Players,score: Math.floor(Math.random() * (playerLevel*3*1.5)) }
+              {name:player.Players,score: 15 + Math.floor(Math.random() * (playerLevel*3)) }
               )
              that.forceUpdate();
           },1000*i)
