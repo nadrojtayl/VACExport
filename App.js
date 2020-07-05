@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 import FirstPage from './downloadedpages/FirstPage.js'
-import RegisterPage from './downloadedpages/RegisterPage.js'
+import Namenewcalendar from './downloadedpages/RegisterPage.js'
 import PlayerDetails from './downloadedpages/LastPage.js'
 import Privacy from './downloadedpages/Privacy.js'
 import Settings from './downloadedpages/settings.js'
@@ -132,7 +132,7 @@ render(){
     if(that.state.page === "namenewcalendar"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <namenewcalendar goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></namenewcalendar>
+             <Namenewcalendar goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Namenewcalendar>
           </View>
         )
       }
