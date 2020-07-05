@@ -219,7 +219,7 @@ class Multiplier extends React.Component{
 
 
 
-      class FirstPage extends React.Component {
+      class resources extends React.Component {
       constructor(props){
         super(props);
         this.state = {"0":1,"1":2,"2":3,"key":"Resources","FirstPageinput1":"Enter College Name","FirstPageinput5":"","FirstPagepicker6":"Option1","loaded":false,"dbLinks":{}}
@@ -234,64 +234,37 @@ class Multiplier extends React.Component{
 
 
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"blue"}}> 
-
-      <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("resources"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            height: 50,
-            width: 100,
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center',
-             height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},
-             {"top":281.92,"left":194.56,"alignItems":null,"width":120,"backgroundColor":"white"}]}
-        ><Text>{'Resources you might need'}</Text>
-        </TouchableOpacity>
-       <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("Deadlines and Information"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            height: 50,
-            width: 100,
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center',
-             height: "7%", borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},
-             {"top":384.92,"left":193.56,"textAlign":"center","width":120,"backgroundColor":"white"}]}
-        ><Text>{'Helpful Information'}</Text>
-        </TouchableOpacity>
-        <Text
-          style= {{top":156.92000000000002,"left":0.9610000000000127,"textAlign":"center","height":50,
-          "backgroundColor":"red","fontFamily":"fantasy","fontSize":40,"borderRadius":30}}
-        > {'Welcome to CollegeAssist!'} </Text>
-          
-        <Text
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"blue"}}><Text
           style= {{"innerText":null}}
         > {null} </Text>
         
-        <Text
-          style= {{"borderRadius":20,"innerText":"'Good Afternoon'","backgroundColor":"white","alignItems":null,"textAlign":"center","top":1.1359999999999673,"left":-0.4399999999999977}}
-        > {'Good Afternoon'} </Text>
+<Text
+          style= {{"innerText":null,"top":85.92000000000002,"left":189.56}}
+        > {null} </Text>
         
-        <TouchableOpacity
+<Text
+          style= {{"innerText":"'Resources'","backgroundColor":"crimson","fontStyle":"italic","width":200,"height":60,"textAlign":"center","fontSize":25,"top":-0.07999999999998408,"left":136.56,"fontFamily":"verdana"}}
+        > {'Resources'} </Text>
+        
+<Text
+          style= {{"innerText":"'Text'","top":-33.079999999999984,"left":12.961000000000013}}
+        > {'Text'} </Text>
+        
+<Text
+          style= {{"top":286.13599999999997,"left":198.56,"innerText":null}}
+        > {null} </Text>
+        
+<Text
+          style= {{"innerText":"'Colleges[1][\"Resources for most colleges\"]'","fontSize":30,"top":110.92000000000002,"left":0.5600000000000023,"backgroundColor":"violet"}}
+        > {'Colleges[1]["Resources for most colleges"]'} </Text>
+        
+<Text
+          style= {{"innerText":"'Here are some things you might need while living on campus!'","fontSize":17,"top":78.92000000000002,"left":1.5600000000000023,"backgroundColor":"crimson","textAlign":"center"}}
+        > {'Here are some things you might need while living on campus!'} </Text>
+        
+ <TouchableOpacity
           
-          onPress = { function(){that.props.goTo ("Suggestions"); that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("FirstPage"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -304,12 +277,12 @@ class Multiplier extends React.Component{
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Suggestions for College'","backgroundColor":"white","top":485.92,"left":198.56}]}
-        ><Text>{'Suggestions for College'}</Text>
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'<-'","backgroundColor":"white"}]}
+        ><Text>{'<-'}</Text>
         </TouchableOpacity></View>
         )
       }
     }
 
     
-      export default FirstPage;
+      export default resources;

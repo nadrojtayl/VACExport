@@ -1,9 +1,11 @@
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 import FirstPage from './downloadedpages/FirstPage.js'
-import ThirdPage from './downloadedpages/ThirdPage.js'
-import Privacy from './downloadedpages/Privacy.js'
-import Locationpage from './downloadedpages/locationpage.js'
+import DeadlinesandInformation from './downloadedpages/DeadlinesandInformation.js'
+import MustHave from './downloadedpages/MustHave.js'
+import resources from './downloadedpages/resources.js'
+import Suggestions from './downloadedpages/Suggestions.js'
+import Suggestions2 from './downloadedpages/Suggestions2.js'
 /*
 EXPORT PROCESS
 
@@ -84,10 +86,10 @@ super(props);
 this.state = {dbLinks:{}, loaded:false, page:"FirstPage"}
 }
 
-      componentDidMount(){
+       componentDidMount(){
         
         var that = this;
-        var dbLinks = {"locations":"https://spreadsheets.google.com/feeds/cells/1YvAE2YPRpn7Wkn4QLfbUZ0chudMAyX72wULwgXLl3H0/1/public/full?alt=json"}
+        var dbLinks = {"Colleges":"https://spreadsheets.google.com/feeds/cells/1WH7sh8BDw5F3uRWbVfb8oTW44jESeingcVKvA2hlMOk/3/public/full?alt=json"}
         Object.keys(dbLinks).forEach(function(key){
           that.connectToDatabase(dbLinks[key], key);
         })
@@ -99,7 +101,7 @@ render(){
 
   var appData = this.state; var that = this; 
 
-   if(that.state.page === "FirstPage"){
+if(that.state.page === "FirstPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
              <FirstPage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FirstPage>
@@ -108,26 +110,59 @@ render(){
       }
     
 
-    if(that.state.page === "locationpage"){
+    if(that.state.page === "null"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <Locationpage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Locationpage>
+             <null goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></null>
           </View>
         )
       }
     
 
-  //   if(that.state.page === "locationpage#2"){
-  //       return(
-  //         <View style = {{width:"100%",height:"100%"}}>
-  //            <locationpage2 goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></locationpage#2>
-  //         </View>
-  //       )
-  // //    }
-  
+    if(that.state.page === "resources"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <resources goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></resources>
+          </View>
+        )
+      }
+    
 
-  
+    if(that.state.page === "DeadlinesandInformation"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <DeadlinesandInformation goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></DeadlinesandInformation>
+          </View>
+        )
+      }
+    
 
+    if(that.state.page === "MustHave"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <MustHave goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></MustHave>
+          </View>
+        )
+      }
+    
+
+    if(that.state.page === "Suggestions"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Suggestions goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Suggestions>
+          </View>
+        )
+      }
+    
+
+    if(that.state.page === "Suggestions2"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Suggestions2 goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Suggestions2>
+          </View>
+        )
+      }
+  
 }
 
 connectToDatabase(db_link,name){

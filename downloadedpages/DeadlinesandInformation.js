@@ -219,7 +219,7 @@ class Multiplier extends React.Component{
 
 
 
-      class FirstPage extends React.Component {
+      class DeadlinesandInformation extends React.Component {
       constructor(props){
         super(props);
         this.state = {"0":1,"1":2,"2":3,"key":"Resources","FirstPageinput1":"Enter College Name","FirstPageinput5":"","FirstPagepicker6":"Option1","loaded":false,"dbLinks":{}}
@@ -234,64 +234,17 @@ class Multiplier extends React.Component{
 
 
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"blue"}}> 
-
-      <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("resources"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            height: 50,
-            width: 100,
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center',
-             height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},
-             {"top":281.92,"left":194.56,"alignItems":null,"width":120,"backgroundColor":"white"}]}
-        ><Text>{'Resources you might need'}</Text>
-        </TouchableOpacity>
-       <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("Deadlines and Information"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            height: 50,
-            width: 100,
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center',
-             height: "7%", borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},
-             {"top":384.92,"left":193.56,"textAlign":"center","width":120,"backgroundColor":"white"}]}
-        ><Text>{'Helpful Information'}</Text>
-        </TouchableOpacity>
-        <Text
-          style= {{top":156.92000000000002,"left":0.9610000000000127,"textAlign":"center","height":50,
-          "backgroundColor":"red","fontFamily":"fantasy","fontSize":40,"borderRadius":30}}
-        > {'Welcome to CollegeAssist!'} </Text>
-          
-        <Text
-          style= {{"innerText":null}}
-        > {null} </Text>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"blue"}}><Text
+          style= {{"innerText":"'''Helpful Websites'''","textAlign":"center","top":55.920000000000016,"left":0.5600000000000023,"fontSize":40,"backgroundColor":"crimson"}}
+        > {'''Helpful Websites'''} </Text>
         
-        <Text
-          style= {{"borderRadius":20,"innerText":"'Good Afternoon'","backgroundColor":"white","alignItems":null,"textAlign":"center","top":1.1359999999999673,"left":-0.4399999999999977}}
-        > {'Good Afternoon'} </Text>
+<Text
+          style= {{"innerText":"'''If you need to buy something for college life, or you want some more in depth information, click on one of these websites!'''","top":115.92000000000002,"left":0.5600000000000023,"backgroundColor":"crimson","fontSize":25,"textAlign":"center"}}
+        > {'''If you need to buy something for college life, or you want some more in depth information, click on one of these websites!'''} </Text>
         
-        <TouchableOpacity
+ <TouchableOpacity
           
-          onPress = { function(){that.props.goTo ("Suggestions"); that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("https://student.naviance.com/auth/fclookup"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -304,12 +257,84 @@ class Multiplier extends React.Component{
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Suggestions for College'","backgroundColor":"white","top":485.92,"left":198.56}]}
-        ><Text>{'Suggestions for College'}</Text>
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":242.92000000000002,"left":-1.4399999999999977,"innerText":"'''Colleges[1][\"Websites\"]'''","width":500,"textAlign":"center","height":50,"fontSize":20,"backgroundColor":"orange"}]}
+        ><Text>{'''Colleges[1]["Websites"]'''}</Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo("FirstPage"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            height: 50,
+            width: 100,
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'''<-'''","backgroundColor":"white","height":30}]}
+        ><Text>{'''<-'''}</Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            height: 50,
+            width: 100,
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":307.92,"left":-5.439999999999998,"innerText":"'''Colleges[2][\"Websites\"]'''","width":500,"fontSize":20,"backgroundColor":"orange"}]}
+        ><Text>{'''Colleges[2]["Websites"]'''}</Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            height: 50,
+            width: 100,
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":370.92,"left":-4.439999999999998,"innerText":"'''Colleges[3][\"Websites\"]'''","width":500,"fontSize":20,"backgroundColor":"orange"}]}
+        ><Text>{'''Colleges[3]["Websites"]'''}</Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            height: 50,
+            width: 100,
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":431.92,"left":-3.4399999999999977,"innerText":"'''Colleges[4][\"Websites\"]'''","fontSize":20,"width":500,"height":400}]}
+        ><Text>{'''Colleges[4]["Websites"]'''}</Text>
         </TouchableOpacity></View>
         )
       }
     }
 
     
-      export default FirstPage;
+      export default DeadlinesandInformation;
