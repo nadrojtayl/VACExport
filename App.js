@@ -85,13 +85,13 @@ super(props);
 this.state = {dbLinks:{}, loaded:false, page:"FirstPage"}
 }
 
- componentDidMount(){
+  componentDidMount(){
         
-        var that = this;
-        var dbLinks = {"null":null,"players":"https://spreadsheets.google.com/feeds/cells/1YvAE2YPRpn7Wkn4QLfbUZ0chudMAyX72wULwgXLl3H0/4/public/full?alt=json"}
-        Object.keys(dbLinks).forEach(function(key){
-          that.connectToDatabase(dbLinks[key], key);
-        })
+    var that = this;
+    var dbLinks = {"events":"https://spreadsheets.google.com/feeds/cells/1YvAE2YPRpn7Wkn4QLfbUZ0chudMAyX72wULwgXLl3H0/2/public/full?alt=json","https://spreadsheets.google.com/feeds/cells/1YvAE2YPRpn7Wkn4QLfbUZ0chudMAyX72wULwgXLl3H0/2/public/full?alt=json":"events"}
+    Object.keys(dbLinks).forEach(function(key){
+      that.connectToDatabase(dbLinks[key], key);
+    })
   }
 
     sendToDatabase(name,obj){
@@ -118,27 +118,9 @@ this.state = {dbLinks:{}, loaded:false, page:"FirstPage"}
 
 render(){ 
 
-  var appData = this.state; var that = this; 
+   var that = this; 
 
-  if(that.state.page === "Starting pack page"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <StartingPackPage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></StartingPackPage>
-          </View>
-        )
-      }
-
-      if(that.state.page === "options"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <Settings  goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Settings>
-          </View>
-        )
-      }
-
-    
-
-    if(that.state.page === "FirstPage"){
+ if(that.state.page === "FirstPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
              <FirstPage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FirstPage>
@@ -147,10 +129,19 @@ render(){
       }
     
 
-    if(that.state.page === "PlayerDetails"){
+    if(that.state.page === "namenewcalendar"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <PlayerDetails goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></PlayerDetails>
+             <namenewcalendar goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></namenewcalendar>
+          </View>
+        )
+      }
+    
+
+    if(that.state.page === "1calendar"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <onecalendar goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></onecalendar>
           </View>
         )
       }
@@ -165,73 +156,37 @@ render(){
       }
     
 
-    if(that.state.page === "Zion Williamson"){
+    if(that.state.page === "calendar"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <ZionWilliamson goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></ZionWilliamson>
+             <calendar goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></calendar>
           </View>
         )
       }
     
 
-    if(that.state.page === "Joel Embid"){
+    if(that.state.page === "fries"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <JoelEmbid goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></JoelEmbid>
+             <fries goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></fries>
           </View>
         )
       }
     
 
-    if(that.state.page === "Lineup"){
+    if(that.state.page === "calendar 2"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <Lineup goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Lineup>
+             <calendartwo goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></calendartwo>
           </View>
         )
       }
     
 
-    if(that.state.page === "Lets get Started"){
+    if(that.state.page === "repeater"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <LetsgetStarted goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></LetsgetStarted>
-          </View>
-        )
-      }
-    
-
-    if(that.state.page === "You are Now Ready To Start"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <YouareNowReadyToStart goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></YouareNowReadyToStart>
-          </View>
-        )
-      }
-    
-
-    if(that.state.page === "New Record"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <NewRecord goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NewRecord>
-          </View>
-        )
-      }
-
-      if(that.state.page === "RegisterPage"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <RegisterPage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RegisterPage>
-          </View>
-        )
-      }
-
-    
-
-    if(that.state.page === "Second Game VS LA Lakers"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <SecondGameVSLALakers goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SecondGameVSLALakers>
+             <repeater goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></repeater>
           </View>
         )
       }

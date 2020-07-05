@@ -165,7 +165,7 @@ class Multiplier extends React.Component{
        <Image
           source = {{uri: additionalStyle['source'] === undefined ? ("https://i.imgur.com/89iERyb.png"):additionalStyle['source']}}
           key = {int}
-          style={[{ width:'20%', height:'20%'}, additionalStyle]}
+          style={[{ width:'200px', height:'200px'}, additionalStyle]}
         ></Image>
      
       )
@@ -222,7 +222,7 @@ class Multiplier extends React.Component{
       class FirstPage extends React.Component {
       constructor(props){
         super(props);
-        this.state = {"key":"value","null":null,"Lineupinput0":"Select","loaded":false,"dbLinks":{}}
+        this.state = {"key":["calendar 1","calendar 2","q34wugti34wgaes","q34wugti34wgaes","q34wugti34wgaes","q34wugti34wgaes","q34wugti34wgaes","q34wugti34wgaes","q34wugti34wgaes"],"namenewcalendarinput1":"gy","calendars":["calendar1","calendar2","hi","hi","hi","hi","hi","gy","gy"],"loaded":false,"dbLinks":{}}
       }
       render(){ 
       var appData = this.state; var that = this; 
@@ -234,52 +234,24 @@ class Multiplier extends React.Component{
 
 
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"blue"}}> 
-      <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("options"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            height: 50,
-            width: "50%",
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, 
-            backgroundColor:'#8fd158', 
-            alignItems:'center',justifyContent:'center', 
-            height: "7%",  title:'Test', borderColor: 'gray', 
-            color:'black', borderRadius:15, borderWidth: 1},{
-              "innerText":"'Basketball Star Cards'",
-              "top":"90%",
-              "left":"25%","borderColor":"red","color":" blue"}]}
-        ><Text>{'Start my journey'}</Text>
-        </TouchableOpacity>
-
-     
-
-      <Image
-        style= {[{width:"80%",height:"40%"}, {"source":"https://tse3.mm.bing.net/th?id=OIP.gLObDeuy2MCgFXIs4FCDWwHaGy&pid=Api&P=0&w=179&h=165",
-        "top":"5%","left":"10%"}]}
-        source = {{uri:"https://tse3.mm.bing.net/th?id=OIP.gLObDeuy2MCgFXIs4FCDWwHaGy&pid=Api&P=0&w=179&h=165"}}
-      >
-      </Image>
-
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#959c98"}}><Text
+          style= {{"innerText":null,"top":38.15199999999999,"left":10.687999999999988,"backgroundColor":"transparent","fontSize":20}}
+        > {null} </Text>
         
 <Text
-          style= {{color:'white', textAlign:'center', alignItems:'center', width:"100%",
-          position:'absolute',
-           "top":"48%",
-          "left":"0%"}}
-        > {`Basketball Star Cards is an app where you can compare cards that you can collect in this game and compare them to other NBA Lineups.For example you can compare your overall Lineup to the LA Lakers and much more.You can even compare it to some College teams also.This is app is also about having fun during quarantine and having a great time.Since we can watch NBA Games in person and on Tv, I have decided to create this app to make sure that everyone has fun and everyone stays safe. You can compare your team with your favourite teams. 
-If you are bored in the house from not watching basketball, I recommend that you start having on Basketball Star Cards and have a great time. This app has a variety of players just for you to compare and have a great time.  
-When the NBA season starts back up, you can also compare your team with other teams who played on this day with the app Basketball Star Cards.`} </Text>
-        </View>
+          style= {{"top":246.152,"left":135.688,"innerText":null,"backgroundColor":"transparent"}}
+        > {null} </Text>
+        
+<Text
+          style= {{"innerText":"'Create new schedule!!'","top":485.152,"left":52.68799999999999,"backgroundColor":"black","fontSize":30,"width":"75%","borderRadius":10,"textAlign":"center","color":"yellow"}}
+        > {'Create new schedule!!'} </Text>
+        
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"source":"https://www.wrike.com/blog/content/uploads/2017/05/rawpixel-633847-unsplash.jpg","top":19.151999999999987,"left":-1.3120000000000118,"width":"100%"}]}
+        source = {{uri:"https://www.wrike.com/blog/content/uploads/2017/05/rawpixel-633847-unsplash.jpg"}}
+      >
+      </Image></View>
         )
       }
     }
