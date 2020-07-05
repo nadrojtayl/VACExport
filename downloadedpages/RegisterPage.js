@@ -245,8 +245,14 @@ class Multiplier extends React.Component{
             }
        
         />
-        <Text style= {{"top":352.152,"left":84.68799999999999,"backgroundColor":"black","fontSize":35,"width":"50%","color":"yellow"}}> {"I'M DONE!!"} </Text>
-        
+        <TouchableOpacity 
+        style= {{"top":"40%","left":"0%", backgroundColor:'black'}}
+        onPress = {function(){
+          appData.calendars.push(appData.namenewcalendarinput1);
+          that.props.goTo("1calendar");
+        }}>
+        <Text style= {{"fontSize":35,"color":"yellow", textAlign:'center'}}> {"I'M DONE!"} </Text>
+        </TouchableOpacity>
  <TouchableOpacity
           
           onPress = { function(){that.props.goTo("FirstPage"); that.forceUpdate(); }}  

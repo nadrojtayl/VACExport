@@ -5,6 +5,7 @@ import Namenewcalendar from './downloadedpages/RegisterPage.js'
 import PlayerDetails from './downloadedpages/LastPage.js'
 import Privacy from './downloadedpages/Privacy.js'
 import Settings from './downloadedpages/settings.js'
+import Onecalendar from './downloadedpages/InfoPage.js'
 /*
 EXPORT PROCESS
 
@@ -141,7 +142,7 @@ render(){
     if(that.state.page === "1calendar"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <onecalendar goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></onecalendar>
+             <Onecalendar goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Onecalendar>
           </View>
         )
       }

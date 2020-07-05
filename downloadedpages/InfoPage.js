@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { TextInput, StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
+      import { TextInput, StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 
-import appData from './global.js';
-
-
+      import appData from './global.js';
 
 
-function try_eval(input){
+
+
+      function try_eval(input){
   try {
     var output =  eval(input);
     return output
@@ -219,10 +219,10 @@ class Multiplier extends React.Component{
 
 
 
-      class ExerciseDetails extends React.Component {
+      class Onecalendar extends React.Component {
       constructor(props){
         super(props);
-        this.state = {"key":"","FirstPageinput1":"","FirstPagepicker2":"Option1","FirstPagepicker3":"","FirstPageinput4":"Select","ke":"","k":"","":"Option1","K":"Option1","Ke":"Option1","Key":"Option1","Key1":["Push-Ups","Sit-Ups","Jumping-Jacks","Squats","Lounges"],"FirstPageinput":"","FirstPageinpu":"","FirstPageinp":"","FirstPagein":"","FirstPagei":"","FirstPage":"Option1","FirstPag":"Option1","FirstPa":"Option1","FirstP":"Option1","First":"Option1","Firs":"Option1","Fir":"Option1","Fi":"Option1","F":"Option1","Key2":"Sit-Ups","FirstPagepicker":"Option1","FirstPagepicke":"Option1","FirstPagepick":"Option1","FirstPagepic":"Option1","FirstPagepi":"Option1","FirstPagep":"Option1","Key3":"Jumping-Jacks","ExerciseIndex":3,"loaded":false,"dbLinks":{}}
+        this.state = {"key":["calendar 1","calendar 2","q34wugti34wgaes","q34wugti34wgaes","q34wugti34wgaes","q34wugti34wgaes","q34wugti34wgaes","q34wugti34wgaes","q34wugti34wgaes"],"namenewcalendarinput1":"gy","calendars":["calendar1","calendar2","hi","hi","hi","hi","hi","gy","gy"],"loaded":false,"dbLinks":{}}
       }
       render(){ 
       var appData = this.state; var that = this; 
@@ -234,61 +234,13 @@ class Multiplier extends React.Component{
 
 
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#099ad9"}}>
-      <Text
-          style= {{"backgroundColor":"#29b8ff", position:'absolute', top:"5%",left:"0%", backgroundColor:'red',  "innerText":"exercises[appData.ExerciseIndex][\"Exercise Name\"]","width":"100%","textAlign":"center","marginTop":null,"color":"white","fontWeight":"bold", fontSize:32}}
-        > {exercises[appData.ExerciseIndex]["Exercise Name"]} </Text>
-        
-<View style = {{marginTop:"35%"}}>
-        
-<Text
-          style= {{"textAlign":"center",color:'white', fontSize:20,"backgroundColor":"red","innerText":"'Importance:'"}}
-        > {'Importance:'} </Text>
-        <Text
-  style= {{"backgroundColor":"#29b8ff","width":"100%","textAlign":"center","color":"white","innerText":"exercises[appData.ExerciseIndex][\"Health Benefits\"]","fontSize":18}}
-> {exercises[appData.ExerciseIndex]["Importance"]} </Text>
-        
-
-        
-<Text
-          style= {{"textAlign":"center", color:'white', fontSize:20,"backgroundColor":"red","innerText":"'Importance:'"}}
-        > {'Health Benefits:'} </Text>
-<Text
-  style= {{"backgroundColor":"#29b8ff","width":"100%","textAlign":"center","color":"white","innerText":"exercises[appData.ExerciseIndex][\"Health Benefits\"]","fontSize":18}}
-> {exercises[appData.ExerciseIndex]["Health Benefits"]} </Text>
-        
-<Text
-          style= {{fontSize:20, color:'white',"textAlign":"center","backgroundColor":"red","innerText":"'Importance:'"}}
-        > {'Recommended Age:'} </Text>
-        <Text
-  style= {{"backgroundColor":"#29b8ff","width":"100%","textAlign":"center","color":"white","innerText":"exercises[appData.ExerciseIndex][\"Health Benefits\"]","fontSize":18}}
-> {exercises[appData.ExerciseIndex]["Age Recommended"]} </Text>
-        
-<Text
-          style= {{"textAlign":"center",color:'white',"backgroundColor":"red", fontSize:20,"innerText":"'Importance:'"}}
-        > {'Time Consumption:'} </Text>
-        <Text
-  style= {{"backgroundColor":"#29b8ff","width":"100%","textAlign":"center","color":"white","innerText":"exercises[appData.ExerciseIndex][\"Health Benefits\"]","fontSize":18}}
-> {exercises[appData.ExerciseIndex]["Time Consumption"]} </Text>
-        
-        
-<Text
-          style= {{"textAlign":"center",color:'white',"backgroundColor":"red", fontSize:18, "innerText":"'Importance:'"}}
-        > {'Difficulty Level:'} </Text>
-<Text
-  style= {{"backgroundColor":"#29b8ff",  "width":"100%","textAlign":"center","color":"white","innerText":"exercises[appData.ExerciseIndex][\"Health Benefits\"]","fontSize":18}}
-> {exercises[appData.ExerciseIndex]["Difficulty Level"]} </Text>
-        
-
-        
-
-
-
-</View>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#959c98"}}><Text
+          style= {{"innerText":"'What calendar would you like to access? '","top":69.15199999999999,"left":0.6879999999999882,"fontSize":20,"backgroundColor":"transparent"}}
+        > {'What calendar would you like to access? '} </Text>
         
  <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("FirstPage");; that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("namenewcalendar"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -301,17 +253,19 @@ class Multiplier extends React.Component{
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:"80%",left:0, backgroundColor:'#8fd158',
-             alignItems:'center',justifyContent:'center', 
-             height: "7%",  title:'Test', 
-             borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Go Back'",
-             "top":"95%","left":"0%","color":null,"backgroundColor":"#6cbff0","width":"100%",
-             "height":20,"fontWeight":"bold"}]}
-        ><Text>{'Go Back'}</Text>
-        </TouchableOpacity></View>
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Name new calendar!!'","top":521.152,"left":116.68799999999999,"fontFamily":null,"backgroundColor":"black","borderRadius":10,"color":"yellow"}]}
+        ><Text>{'Name new calendar!!'}</Text>
+        </TouchableOpacity>
+<Multiplier
+      type = {"button"}
+      data = {appData.calendars}
+      style = {[{alignItems:'center'},{"options":"appData.calendars","repeaterinnerText":"elem","top":162.152,"left":-10.312000000000012,"repeatermarginTop":"20%","height":"50%","repeaterType":"button","repeateronPress":"goTo(\"repeater\")"}]}
+      clickfunction = {function(){goTo("repeater")}}
+      >
+      </Multiplier></View>
         )
       }
     }
 
     
-export default ExerciseDetails;
+      export default Onecalendar;
