@@ -134,10 +134,7 @@ class Multiplier extends React.Component{
         <TouchableOpacity
         onPress = { function(){  
         
-          appData.FilteredList = filter_list_of_objs(weapons,"Gun Class",elem);
-          that.props.goTo("SecondPage");
-          that.forceUpdate();    
-
+         that.props.goTo("repeater");
         } }
           
           key = {int}
@@ -148,13 +145,14 @@ class Multiplier extends React.Component{
             backgroundColor: 'white',
             color:'black',
             elevation: 2, // Android
-            marginTop:"5%",
+            marginTop:"2%",
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            height:"7%",
+            height:"15%",
+            width:"100%",
             borderRadius: 10,
-            borderColor: 'gray', borderWidth: 1}, additionalStyle]}
+            borderColor: 'gray', borderWidth: 1}]}
         ><Text style = {{textAlign:'center'}}> { unwrap_dynamically(additionalStyle['innerText'])  }</Text>
         </TouchableOpacity>
       )
@@ -183,34 +181,22 @@ class Multiplier extends React.Component{
   
     
 
-      if(!window.edit_mode){
-        return (<View
-          style = {that.props.style}
-          >
-       <ScrollView>
-          {that.props.data.map(function(elem,ind){
+      
 
-            return that.renderElement(that.props.type,ind,that.props.style, that.props.clickfunction, elem)
-          }) }
-        </ScrollView>
-        </View>
-        )
-
-
-      }
-
-      return (<TouchableOpacity
+      return (<View
       style = {that.props.style}
-      onPress = { function(){if(window.drag_mode){ that.setState({selectedElemToStyle:that.props.int});  return} if(window.edit_mode){ console.log("IND" + that.props.int); window.edit(that.props.int); return}  eval('(' + that.state.clickfunctions[that.props.int] + ')()'); if(that.state.clickfunctions[that.props.int].indexOf("appData") !== -1){ that.forceUpdate()}   } }
+     
 
       >
         <ScrollView>
+        
           {that.props.data.map(function(elem,ind){
             console.log(that.props.clickfunction)
             return that.renderElement(that.props.type,ind,that.props.style, that.props.clickfunction, elem)
           }) }
+         
         </ScrollView>
-        </TouchableOpacity>
+        </View>
         )
     }
 
@@ -248,18 +234,25 @@ class Multiplier extends React.Component{
             shadowRadius: 1, //IOS
             backgroundColor: '#fff',
             elevation: 2, // Android
-            height: 50,
-            width: 100,
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Name new calendar!!'","top":521.152,"left":116.68799999999999,"fontFamily":null,"backgroundColor":"black","borderRadius":10,"color":"yellow"}]}
-        ><Text>{'Name new calendar!!'}</Text>
+            position:'absolute',top:0,left:0, 
+            width:"50%",
+            backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', 
+            height: "7%",  title:'Test', borderColor: 'gray', 
+            color:'black', borderRadius:15, borderWidth: 1},
+            {"innerText":"'Name new calendar!!'",
+            "top":"70%",
+            "left":"25%",
+            "backgroundColor":"black","borderRadius":10,
+            "color":"yellow"}]}
+        ><Text style = {{color:"yellow"}}>{'Make new calendar!!'}</Text>
         </TouchableOpacity>
-<Multiplier
+    <Multiplier
       type = {"button"}
       data = {appData.calendars}
-      style = {[{alignItems:'center'},{"options":"appData.calendars","repeaterinnerText":"elem","top":162.152,"left":-10.312000000000012,"repeatermarginTop":"20%","height":"50%","repeaterType":"button","repeateronPress":"goTo(\"repeater\")"}]}
+      style = {[{alignItems:'center'},{"options":"appData.calendars","repeaterinnerText":"elem","top":"10%","left":"0%","height":"50%","repeaterType":"button","repeateronPress":"goTo(\"repeater\")"}]}
       clickfunction = {function(){goTo("repeater")}}
       >
       </Multiplier></View>
