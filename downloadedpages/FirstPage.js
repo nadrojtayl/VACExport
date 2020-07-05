@@ -116,7 +116,7 @@ class Multiplier extends React.Component{
       return (
         <Text
           style={[{ height: 40, borderColor: 'black', backgroundColor:'white', 
-          color:'black', width:"100%", borderWidth: 5}, additionalStyle]}
+          color:'black', justifyContent:'center', width:"100%", borderWidth: 5}, additionalStyle]}
           key = {int}
           onPress = { function(){  eval('(' + that.props.clickfunction + ')()')   } }
           selectable = {true}
@@ -224,9 +224,9 @@ class Multiplier extends React.Component{
 <Text
 style= {{"innerText":"'Exercises'","top":"0%","left":"30%",
 "width":"40%","textAlign":"center","borderStyle":"solid",
-"fontWeight":"bold","repeatercontainerStyle":null,"backgroundColor":"#16aff5",
+"fontWeight":"bold","repeatercontainerStyle":null,fontSize:30,
 "paddingTop":"0%","zIndex":null,"marginTop":"10%","marginRight":null,
-"color":"white","fontSize":14}}
+"color":"white","fontSize":30}}
 > {'Exercises'} </Text>
         
 <Multiplier
@@ -245,7 +245,7 @@ style= {{"innerText":"'Exercises'","top":"0%","left":"30%",
       "repeaterresizeMode":"50%",
       "repeateropacity":"100%",
       "repeatermarginTop":"25%","repeaterheight":"4%",
-      "repeaterfontFamily":"Roboto","repeaterfontStyle":"bold","height":"70%"}]}
+      "repeaterfontFamily":"Roboto","repeaterfontStyle":"bold","height":"90%"}]}
       clickfunction = {function(){}}
       >
       </Multiplier></View>
