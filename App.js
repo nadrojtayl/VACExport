@@ -217,6 +217,15 @@ render(){
           </View>
         )
       }
+
+      if(that.state.page === "RegisterPage"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <RegisterPage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RegisterPage>
+          </View>
+        )
+      }
+
     
 
     if(that.state.page === "Second Game VS LA Lakers"){

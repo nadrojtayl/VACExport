@@ -106,7 +106,7 @@ function unwrap_dynamically(value,default_value){
                     alert("Add more players to your lineup. You need 5 on the floor.")
                     return;
             }
-            alert("Play");
+            that.props.goTo("RegisterPage")
 
           }}
 
