@@ -258,7 +258,7 @@ class Multiplier extends React.Component{
             flexDirection: 'row',
             position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', 
             height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},
-            {"top":242.92000000000002,"left":-1.4399999999999977,"width":500,"textAlign":"center",
+            {"top":242.92000000000002,"left":-1.4399999999999977,"width":"100%","textAlign":"center",
             "height":50,"fontSize":20,"backgroundColor":"orange"}]}>
         <Text>{Colleges[1]["Websites"]}</Text>
         </TouchableOpacity>
@@ -289,7 +289,7 @@ class Multiplier extends React.Component{
             backgroundColor: '#fff',
             elevation: 2, // Android
             height: 50,
-            width: 100,
+            width: "100%",
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',

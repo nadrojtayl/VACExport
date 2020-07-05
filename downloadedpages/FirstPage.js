@@ -237,8 +237,8 @@ class Multiplier extends React.Component{
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"blue"}}> 
 
       <Text
-          style= {{"top":"10%","textAlign":"center","height":"7%","justifyContent":"center",
-          "backgroundColor":"red","fontSize":40,"borderRadius":30}}> {'Welcome to CollegeAssist'} </Text>
+          style= {{"top":"10%", "textAlign":"center","height":"7%","justifyContent":"center",
+          "backgroundColor":"red","fontSize":30,"borderRadius":30}}> {'Welcome to CollegeAssist'} </Text>
         
 
       <TouchableOpacity

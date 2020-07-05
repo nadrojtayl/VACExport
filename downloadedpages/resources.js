@@ -255,7 +255,7 @@ class Multiplier extends React.Component{
         
     <Text
           style= {{"backgroundColor":"crimson","fontStyle":"italic","width":"80%","height":"7%","textAlign":"center",
-          justifyContent:"center","fontSize":32,"top":"15%","left":"10%"}}
+          justifyContent:"center","fontSize":24,"top":"15%","left":"10%"}}
         > {'Packing List for College'} </Text>
         
         
