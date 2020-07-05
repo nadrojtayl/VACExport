@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "appbuilderexporttest",
-    "slug": "appbuilderexporttest",
+    "name": "What Should I Watch",
+    "slug": "whatshouldiwatch",
     "platforms": [
       "ios",
       "android",
