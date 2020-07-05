@@ -170,7 +170,7 @@ connectToDatabase(db_link,name){
             return output[key]
           })
               
-          
+          data_arr.shift();
     
             window[name] = data_arr;
             global[name] = data_arr;

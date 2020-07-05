@@ -4,7 +4,7 @@ platform :ios, '10.0'
 target 'food4allnyc' do
   pod 'ExpoKit',
     :git => "http://github.com/expo/expo.git",
-    :tag => "ios/2.15.4",
+    :commit => "30eb0558ff6a77acf56bb045e98b84f6a5e1478a",
     :subspecs => [
       "Core"
     ],

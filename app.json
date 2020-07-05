@@ -23,11 +23,22 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "food4all.food4all.com"
+      "bundleIdentifier": "food4all.food4all.com",
+      "publishBundlePath": "ios/food4allnyc/Supporting/shell-app.bundle",
+      "publishManifestPath": "ios/food4allnyc/Supporting/shell-app-manifest.json"
     },
     "android": {
-      "package": "food4all.food4all.com"
+      "package": "food4all.food4all.com",
+      "publishBundlePath": "android/app/src/main/assets/shell-app.bundle",
+      "publishManifestPath": "android/app/src/main/assets/shell-app-manifest.json"
     },
-    "entryPoint": "node_modules/expo/AppEntry.js"
+    "entryPoint": "node_modules/expo/AppEntry.js",
+    "sdkVersion": "37.0.0",
+    "isDetached": true,
+    "detach": {
+      "iosExpoViewUrl": "https://s3.amazonaws.com/exp-exponent-view-code/ios-v2.15.4-sdk37.0.0-43bca382-d6ca-4b3f-930c-eee5f23d18e2.tar.gz",
+      "androidExpoViewUrl": "https://s3.amazonaws.com/exp-exponent-view-code/android-v2.15.0-sdk37.0.0-25317bc5-e70a-4ffb-b59f-8e2b6fcdd8ce.tar.gz"
+    },
+    "scheme": "expc46f5ab5ac204709a5abee48e37070f8"
   }
 }
