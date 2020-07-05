@@ -234,10 +234,18 @@ class Multiplier extends React.Component{
 
 
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#959c98"}}><Multiplier
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#959c98"}}>
+      <Multiplier
       type = {"text"}
       data = {events}
-      style = {[{alignItems:'center'},{"options":"events","repeatermarginBottom":"10%","repeaterinnerText":"elem[\"Days\"]+\") \"+elem[\"event name\"]","height":"60%","repeaterbackgroundColor":"#8050a6","repeaterborderRadius":20,"repeaterwidth":"90%","top":20.151999999999987,"left":-87.31200000000001,"width":"150%","resizeMode":"[enum: stretch]","innerText":"'example[\"eventname\"]'","color":8050,"repeatercolor":"#c2b027","repeatertextAlign":"center"}]}
+      style = {[{alignItems:'center'},{"options":"events","repeatermarginBottom":"10%",
+      "repeaterinnerText":"elem[\"Days\"]+\") \"+elem[\"event name\"]",
+      "height":"60%","repeaterbackgroundColor":"#8050a6",
+      "repeaterborderRadius":20,"repeaterwidth":"90%",
+      "top":"10%","left":"0%","width":"100%",
+      "resizeMode":"[enum: stretch]",
+      "innerText":"'example[\"eventname\"]'","color":8050,
+      "repeatercolor":"#c2b027","repeatertextAlign":"center"}]}
       clickfunction = {function(){}}
       >
       </Multiplier>
@@ -256,7 +264,11 @@ class Multiplier extends React.Component{
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'back'","top":568.152,"left":-0.3120000000000118}]}
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', 
+            height: "7%",  title:'Test', borderColor: 'gray', color:'black', 
+            borderRadius:15, borderWidth: 1},{"innerText":"'back'",
+            "top":"80%","left":"0%"}]}
         ><Text>{'back'}</Text>
         </TouchableOpacity>
 
@@ -266,17 +278,7 @@ class Multiplier extends React.Component{
       >
       </Image>
 
-      <Image
-        style= {[{width:"200px",height:"200px"}, {}]}
-        source = {{uri:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png"}}
-      >
-      </Image>
-
-      <Image
-        style= {[{width:"200px",height:"200px"}, {}]}
-        source = {{uri:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png"}}
-      >
-      </Image></View>
+     </View>
         )
       }
     }
