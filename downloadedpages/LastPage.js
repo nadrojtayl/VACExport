@@ -226,7 +226,7 @@ class Multiplier extends React.Component{
       type = {"text"}
       data = {events}
       style = {[{alignItems:'center'},{"options":"events","repeatermarginBottom":"10%",
-      "repeaterinnerText":"elem[\"Days\"]+\") \"+elem[\"event name\"]",
+      "repeaterinnerText":"elem['Months'] + '/' + elem['Days']+ '|' + elem['Time']+ ' | '+elem['event name']",
       "height":"60%","repeaterbackgroundColor":"#8050a6",
       "repeaterborderRadius":20,"repeaterwidth":"90%",
       "top":"10%","left":"0%","width":"100%",
