@@ -234,7 +234,29 @@ class Multiplier extends React.Component{
 
 
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"blue"}}></View>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"blue"}}>
+
+              <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo("FirstPage"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            position:'absolute',"top":"4%","left":"4%", width:"20%", backgroundColor:'#8fd158',
+            height: "5%"}]}>
+            <Text>{'Back'}</Text>
+        </TouchableOpacity>
+
+
+
+
+      </View>
         )
       }
     }
