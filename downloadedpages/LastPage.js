@@ -253,10 +253,33 @@ class Multiplier extends React.Component{
             flexDirection: 'row',
             position:'absolute',top:0,left:0, 
             backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', 
-            height: "7%",  title:'Test', borderColor: 'gray', color:'black', 
+            height: "10%",  title:'Test', borderColor: 'gray', color:'black', 
             borderRadius:15, borderWidth: 1},{"innerText":"'back'",
             "top":"80%","left":"0%"}]}
         ><Text>{'back'}</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo("1calendar"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            height: "20%",
+            width: "30%",
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', 
+            height: "10%",  title:'Test', borderColor: 'gray', color:'black', 
+            borderRadius:15, borderWidth: 1},{"innerText":"'back'",
+            "top":"80%","left":"70%"}]}
+        ><Text style = {{alignItems:"center",textAlign:'center'}}>{'Add events with spreadsheet integration (coaches only)'}</Text>
         </TouchableOpacity>
 
       <Image
