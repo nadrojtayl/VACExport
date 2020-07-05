@@ -215,8 +215,9 @@ class Multiplier extends React.Component{
 
 
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#959c98"}}><Text
-          style= {{"innerText":"'What calendar would you like to access? '","top":69.15199999999999,"left":0.6879999999999882,"fontSize":20,"backgroundColor":"transparent"}}
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#959c98"}}>
+      <Text
+          style= {{"innerText":"'What calendar would you like to access? '","top":69.15199999999999,"left":"0%","fontSize":20, alignItems:'center', textAlign:'center', "backgroundColor":"transparent"}}
         > {'What calendar would you like to access? '} </Text>
         
  <TouchableOpacity
