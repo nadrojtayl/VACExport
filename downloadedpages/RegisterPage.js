@@ -225,7 +225,7 @@ class Multiplier extends React.Component{
         this.state = {"key":["calendar 1","calendar 2","q34wugti34wgaes","q34wugti34wgaes","q34wugti34wgaes","q34wugti34wgaes","q34wugti34wgaes","q34wugti34wgaes","q34wugti34wgaes"],"namenewcalendarinput1":"gy","calendars":["calendar1","calendar2","hi","hi","hi","hi","hi","gy","gy"],"loaded":false,"dbLinks":{}}
       }
       render(){ 
-      var appData = this.state; var that = this; 
+      var that = this; 
       
 
       if(!that.props.loaded){
@@ -239,11 +239,11 @@ class Multiplier extends React.Component{
         > {'What would you like to name your calendar?'} </Text>
         
 <TextInput
-       style= {{"top":257.152,"left":90.68799999999999}}
-        value={that.state["namenewcalendarinput1"]}
-        onChangeText={function(val){that.setState({namenewcalendarinput1: val});  
+       style= {{"top":"30%", alignItems:'center', textAlign:'center', color:'white',  "left":"0%", width:"100%", borderRadius:1, height:"5%", borderStyle:"solid",borderWidth:1}}
+        value={appData["namenewcalendarinput1"]}
+        onChangeText={ function(val){ appData["namenewcalendarinput1"] = val; that.forceUpdate();}  
             }
-       }
+       
         />
         <Text style= {{"top":352.152,"left":84.68799999999999,"backgroundColor":"black","fontSize":35,"width":"50%","color":"yellow"}}> {"I'M DONE!!"} </Text>
         
