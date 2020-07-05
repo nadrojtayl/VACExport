@@ -72,9 +72,7 @@ class Multiplier extends React.Component{
 
   renderElement(name,int, additionalStyle, clickfunctions,elem){
     var that = this;
-    console.log("SER")
-    console.log(appData)
-
+   
     var copy = {};
     additionalStyle.forEach(function(obj,ind){
       // console.log(obj);
@@ -108,8 +106,7 @@ class Multiplier extends React.Component{
 
     }
 
-    console.log("STYLE");
-    console.log(additionalStyle)
+
 
 
     int = parseInt(int)
@@ -118,7 +115,12 @@ class Multiplier extends React.Component{
 
       return (
         <Text
-          style={[{ height: 40, borderColor: 'black', backgroundColor:'white', color:'black', width:"100%", borderWidth: 5}, additionalStyle]}
+          style={[{ height: 40, borderColor: 'black', 
+
+          backgroundColor:'#8050a6',
+          color:'white',
+          marginTop:"2%", 
+          color:'white', width:"100%", borderWidth: 5}]}
           key = {int}
           onPress = { function(){  eval('(' + that.props.clickfunction + ')()')   } }
           selectable = {true}
@@ -183,28 +185,13 @@ class Multiplier extends React.Component{
   
     
 
-      if(!window.edit_mode){
-        return (<View
-          style = {that.props.style}
-          >
-       <ScrollView>
-          {that.props.data.map(function(elem,ind){
-
-            return that.renderElement(that.props.type,ind,that.props.style, that.props.clickfunction, elem)
-          }) }
-        </ScrollView>
-        </View>
-        )
-
-
-      }
 
       return (<TouchableOpacity
       style = {that.props.style}
       onPress = { function(){if(window.drag_mode){ that.setState({selectedElemToStyle:that.props.int});  return} if(window.edit_mode){ console.log("IND" + that.props.int); window.edit(that.props.int); return}  eval('(' + that.state.clickfunctions[that.props.int] + ')()'); if(that.state.clickfunctions[that.props.int].indexOf("appData") !== -1){ that.forceUpdate()}   } }
 
       >
-        <ScrollView>
+        <ScrollView style = {{width:"80%"}}>
           {that.props.data.map(function(elem,ind){
             console.log(that.props.clickfunction)
             return that.renderElement(that.props.type,ind,that.props.style, that.props.clickfunction, elem)
