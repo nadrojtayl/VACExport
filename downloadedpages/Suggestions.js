@@ -219,7 +219,7 @@ class Multiplier extends React.Component{
 
 
 
-      class Must Have extends React.Component {
+      class MustHave extends React.Component {
       constructor(props){
         super(props);
         this.state = {"0":1,"1":2,"2":3,"key":"Resources","FirstPageinput1":"Enter College Name","FirstPageinput5":"","FirstPagepicker6":"Option1","loaded":false,"dbLinks":{}}
@@ -240,4 +240,4 @@ class Multiplier extends React.Component{
     }
 
     
-      export default Must Have;
+      export default MustHave;

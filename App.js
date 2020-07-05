@@ -3,7 +3,7 @@ import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image
 import FirstPage from './downloadedpages/FirstPage.js'
 import DeadlinesandInformation from './downloadedpages/DeadlinesandInformation.js'
 import MustHave from './downloadedpages/MustHave.js'
-import resources from './downloadedpages/resources.js'
+import Resources from './downloadedpages/resources.js'
 import Suggestions from './downloadedpages/Suggestions.js'
 import Suggestions2 from './downloadedpages/Suggestions2.js'
 /*
@@ -110,19 +110,10 @@ if(that.state.page === "FirstPage"){
       }
     
 
-    if(that.state.page === "null"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <null goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></null>
-          </View>
-        )
-      }
-    
-
     if(that.state.page === "resources"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <resources goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></resources>
+             <Resources goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Resources>
           </View>
         )
       }

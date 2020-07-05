@@ -121,15 +121,15 @@ class Multiplier extends React.Component{
           style={[{ height: 40, borderColor: 'black', backgroundColor:'white', color:'black', width:"100%", borderWidth: 5}, additionalStyle]}
           key = {int}
           onPress = { function(){  eval('(' + that.props.clickfunction + ')()')   } }
-          selectable = {true}
-        >{  additionalStyle.innerText === undefined ? "example" :additionalStyle.innerText }</Text>
+          selectable = {true}>
+          {  additionalStyle.innerText === undefined ? "example" :additionalStyle.innerText }</Text>
 
         )
+    
     }
 
 
     if(name === "button"){
-    
       return(
         <TouchableOpacity
         onPress = { function(){  
@@ -219,7 +219,7 @@ class Multiplier extends React.Component{
 
 
 
-      class resources extends React.Component {
+      class Resources extends React.Component {
       constructor(props){
         super(props);
         this.state = {"0":1,"1":2,"2":3,"key":"Resources","FirstPageinput1":"Enter College Name","FirstPageinput5":"","FirstPagepicker6":"Option1","loaded":false,"dbLinks":{}}
@@ -234,35 +234,9 @@ class Multiplier extends React.Component{
 
 
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"blue"}}><Text
-          style= {{"innerText":null}}
-        > {null} </Text>
-        
-<Text
-          style= {{"innerText":null,"top":85.92000000000002,"left":189.56}}
-        > {null} </Text>
-        
-<Text
-          style= {{"innerText":"'Resources'","backgroundColor":"crimson","fontStyle":"italic","width":200,"height":60,"textAlign":"center","fontSize":25,"top":-0.07999999999998408,"left":136.56,"fontFamily":"verdana"}}
-        > {'Resources'} </Text>
-        
-<Text
-          style= {{"innerText":"'Text'","top":-33.079999999999984,"left":12.961000000000013}}
-        > {'Text'} </Text>
-        
-<Text
-          style= {{"top":286.13599999999997,"left":198.56,"innerText":null}}
-        > {null} </Text>
-        
-<Text
-          style= {{"innerText":"'Colleges[1][\"Resources for most colleges\"]'","fontSize":30,"top":110.92000000000002,"left":0.5600000000000023,"backgroundColor":"violet"}}
-        > {'Colleges[1]["Resources for most colleges"]'} </Text>
-        
-<Text
-          style= {{"innerText":"'Here are some things you might need while living on campus!'","fontSize":17,"top":78.92000000000002,"left":1.5600000000000023,"backgroundColor":"crimson","textAlign":"center"}}
-        > {'Here are some things you might need while living on campus!'} </Text>
-        
- <TouchableOpacity
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"blue"}}>
+
+      <TouchableOpacity
           
           onPress = { function(){that.props.goTo("FirstPage"); that.forceUpdate(); }}  
           style= {[{
@@ -272,17 +246,31 @@ class Multiplier extends React.Component{
             shadowRadius: 1, //IOS
             backgroundColor: '#fff',
             elevation: 2, // Android
-            height: 50,
-            width: 100,
             justifyContent: 'center',
             alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'<-'","backgroundColor":"white"}]}
-        ><Text>{'<-'}</Text>
-        </TouchableOpacity></View>
+            position:'absolute',"top":"4%","left":"4%", width:"20%", backgroundColor:'#8fd158',
+            height: "5%"}]}>
+            <Text>{'Back'}</Text>
+        </TouchableOpacity>
+        
+    <Text
+          style= {{"backgroundColor":"crimson","fontStyle":"italic","width":"80%","height":"7%","textAlign":"center",
+          justifyContent:"center","fontSize":32,"top":"15%","left":"10%"}}
+        > {'Packing List for College'} </Text>
+        
+        
+    <Text
+          style= {{"fontSize":30,"top":"20%","left":"1%","backgroundColor":"violet"}}
+        > {Colleges[1]["Resources for most colleges"]} </Text>
+        
+    <Text
+          style= {{"fontSize":17,"top":"70%","left":"5%","backgroundColor":"crimson"}}
+        > {"These are some of the many times you'll need on campus"} </Text>
+        
+ </View>
         )
       }
     }
 
     
-      export default resources;
+      export default Resources; 

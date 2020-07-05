@@ -236,76 +236,64 @@ class Multiplier extends React.Component{
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"blue"}}> 
 
+      <Text
+          style= {{"top":"10%","textAlign":"center","height":"7%","justifyContent":"center",
+          "backgroundColor":"red","fontSize":40,"borderRadius":30}}> {'Welcome to CollegeAssist'} </Text>
+        
+
       <TouchableOpacity
-          
           onPress = { function(){that.props.goTo("resources"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
             shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
+            shadowRadius: 1, //IOS=
             elevation: 2, // Android
-            height: 50,
-            width: 100,
+            flexDirection: "row",
             justifyContent: 'center',
             alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center',
-             height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},
-             {"top":281.92,"left":194.56,"alignItems":null,"width":120,"backgroundColor":"white"}]}
-        ><Text>{'Resources you might need'}</Text>
+            "fontSize":32,
+            "top":"25%","left":"10%",
+            position:'absolute',top:"30%",backgroundColor:'#8fd158', 
+             height: "10%", borderColor: 'gray', color:'black', borderRadius:"2%", borderWidth: 1,"width":"80%"}]}
+        ><Text>{'Packing List for College'}</Text>
         </TouchableOpacity>
        <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("Deadlines and Information"); that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("DeadlinesandInformation"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
             shadowOpacity: 1, // IOS
             shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
             elevation: 2, // Android
-            height: 50,
-            width: 100,
             justifyContent: 'center',
             alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center',
-             height: "7%", borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},
-             {"top":384.92,"left":193.56,"textAlign":"center","width":120,"backgroundColor":"white"}]}
-        ><Text>{'Helpful Information'}</Text>
+            "fontSize":32,
+            "top":"50%","left":"10%",
+            position:'absolute',backgroundColor:'#8fd158', 
+             height: "10%", borderColor: 'gray', color:'black', borderRadius:"2%", borderWidth: 1,"width":"80%"}]}>
+        <Text>{'Helpful Websites'}</Text>
         </TouchableOpacity>
-        <Text
-          style= {{top":156.92000000000002,"left":0.9610000000000127,"textAlign":"center","height":50,
-          "backgroundColor":"red","fontFamily":"fantasy","fontSize":40,"borderRadius":30}}
-        > {'Welcome to CollegeAssist!'} </Text>
-          
-        <Text
-          style= {{"innerText":null}}
-        > {null} </Text>
         
-        <Text
-          style= {{"borderRadius":20,"innerText":"'Good Afternoon'","backgroundColor":"white","alignItems":null,"textAlign":"center","top":1.1359999999999673,"left":-0.4399999999999977}}
-        > {'Good Afternoon'} </Text>
         
         <TouchableOpacity
-          
           onPress = { function(){that.props.goTo ("Suggestions"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
             shadowOpacity: 1, // IOS
             shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
+            backgroundColor: 'white',
             elevation: 2, // Android
-            height: 50,
-            width: 100,
+            flexDirection: "row",
             justifyContent: 'center',
             alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Suggestions for College'","backgroundColor":"white","top":485.92,"left":198.56}]}
-        ><Text>{'Suggestions for College'}</Text>
+            "fontSize":38,
+            "top":"70%","left":"10%",
+            position:'absolute',backgroundColor:'#8fd158', 
+             height: "10%", borderColor: 'gray', color:'black', borderRadius:"2%", borderWidth: 1,"width":"80%"}]}>
+        <Text>{'Suggestions for College'}</Text>
         </TouchableOpacity></View>
         )
       }

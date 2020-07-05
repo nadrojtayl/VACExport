@@ -234,16 +234,15 @@ class Multiplier extends React.Component{
 
 
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"blue"}}><Text
-          style= {{"innerText":"'''Helpful Websites'''","textAlign":"center","top":55.920000000000016,"left":0.5600000000000023,"fontSize":40,"backgroundColor":"crimson"}}
-        > {'''Helpful Websites'''} </Text>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"blue"}}>
+      <Text
+          style= {{"textAlign":"center","top":"15%","left":1,"fontSize":40,"backgroundColor":"crimson"}}
+        > {'Helpful Websites'} </Text>
         
-<Text
-          style= {{"innerText":"'''If you need to buy something for college life, or you want some more in depth information, click on one of these websites!'''","top":115.92000000000002,"left":0.5600000000000023,"backgroundColor":"crimson","fontSize":25,"textAlign":"center"}}
-        > {'''If you need to buy something for college life, or you want some more in depth information, click on one of these websites!'''} </Text>
-        
- <TouchableOpacity
-          
+      <Text
+          style= {{"top":116,"left":1,"backgroundColor":"crimson","fontSize":25,"textAlign":"center"}}> 
+          {'If you need to buy something for college life, or you want some more in depth information, click on one of these websites!'} </Text>
+      <TouchableOpacity
           onPress = { function(){that.props.goTo("https://student.naviance.com/auth/fclookup"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
@@ -257,10 +256,13 @@ class Multiplier extends React.Component{
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":242.92000000000002,"left":-1.4399999999999977,"innerText":"'''Colleges[1][\"Websites\"]'''","width":500,"textAlign":"center","height":50,"fontSize":20,"backgroundColor":"orange"}]}
-        ><Text>{'''Colleges[1]["Websites"]'''}</Text>
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', 
+            height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},
+            {"top":242.92000000000002,"left":-1.4399999999999977,"width":500,"textAlign":"center",
+            "height":50,"fontSize":20,"backgroundColor":"orange"}]}>
+        <Text>{Colleges[1]["Websites"]}</Text>
         </TouchableOpacity>
- <TouchableOpacity
+      <TouchableOpacity
           
           onPress = { function(){that.props.goTo("FirstPage"); that.forceUpdate(); }}  
           style= {[{
@@ -270,13 +272,11 @@ class Multiplier extends React.Component{
             shadowRadius: 1, //IOS
             backgroundColor: '#fff',
             elevation: 2, // Android
-            height: 50,
-            width: 100,
             justifyContent: 'center',
             alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'''<-'''","backgroundColor":"white","height":30}]}
-        ><Text>{'''<-'''}</Text>
+            position:'absolute',"top":"4%","left":"4%", width:"20%", backgroundColor:'#8fd158',
+            height: "5%"}]}>
+            <Text>{'Back'}</Text>
         </TouchableOpacity>
  <TouchableOpacity
           
@@ -294,7 +294,7 @@ class Multiplier extends React.Component{
             alignItems: 'center',
             flexDirection: 'row',
             position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":307.92,"left":-5.439999999999998,"innerText":"'''Colleges[2][\"Websites\"]'''","width":500,"fontSize":20,"backgroundColor":"orange"}]}
-        ><Text>{'''Colleges[2]["Websites"]'''}</Text>
+        ><Text>{Colleges[2]["Websites"]}</Text>
         </TouchableOpacity>
  <TouchableOpacity
           
@@ -312,7 +312,7 @@ class Multiplier extends React.Component{
             alignItems: 'center',
             flexDirection: 'row',
             position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":370.92,"left":-4.439999999999998,"innerText":"'''Colleges[3][\"Websites\"]'''","width":500,"fontSize":20,"backgroundColor":"orange"}]}
-        ><Text>{'''Colleges[3]["Websites"]'''}</Text>
+        ><Text>{Colleges[3]["Websites"]}</Text>
         </TouchableOpacity>
  <TouchableOpacity
           
@@ -330,7 +330,7 @@ class Multiplier extends React.Component{
             alignItems: 'center',
             flexDirection: 'row',
             position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":431.92,"left":-3.4399999999999977,"innerText":"'''Colleges[4][\"Websites\"]'''","fontSize":20,"width":500,"height":400}]}
-        ><Text>{'''Colleges[4]["Websites"]'''}</Text>
+        ><Text>{Colleges[4]["Websites"]}</Text>
         </TouchableOpacity></View>
         )
       }
