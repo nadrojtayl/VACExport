@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "appbuilderexporttest",
-    "slug": "appbuilderexporttest",
+    "name": "Slippery Fortnite Tier List",
+    "slug": "slipperFortnitetierlist",
     "platforms": [
       "ios",
       "android",
