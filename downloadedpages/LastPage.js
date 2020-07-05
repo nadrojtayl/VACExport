@@ -72,6 +72,8 @@ class Multiplier extends React.Component{
 
   renderElement(name,int, additionalStyle, clickfunctions,elem){
     var that = this;
+    console.log("SER")
+    console.log(appData)
 
     var copy = {};
     additionalStyle.forEach(function(obj,ind){
@@ -217,13 +219,13 @@ class Multiplier extends React.Component{
 
 
 
-    class PlayerDetails extends React.Component {
+      class Repeater extends React.Component {
       constructor(props){
         super(props);
-        this.state = {"key":"value","null":null,"Lineupinput0":"Select","loaded":false,"dbLinks":{}}
+        this.state = {"key":["calendar 1","calendar 2","q34wugti34wgaes","q34wugti34wgaes","q34wugti34wgaes","q34wugti34wgaes","q34wugti34wgaes","q34wugti34wgaes","q34wugti34wgaes"],"namenewcalendarinput1":"gy","calendars":["calendar1","calendar2","hi","hi","hi","hi","hi","gy","gy"],"loaded":false,"dbLinks":{}}
       }
       render(){ 
-      var that = this; 
+      var appData = this.state; var that = this; 
       
 
       if(!that.props.loaded){
@@ -232,28 +234,16 @@ class Multiplier extends React.Component{
 
 
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"blue"}}>
-      <View
-          style= {{"innerText":"'Zion Lateef Williamson is an American professional basketball player for the New Orleans Pelicans of the National Basketball Association. He plays the power forward position. Following a dominant freshman-year stint with the Duke Blue Devils, he was selected by the Pelicans first overall in the 2019 NBA draft.'",
-         position:'absolute', "top":"40%", width:"100%","backgroundColor":"red"}}
-        > 
-        <Text style = {{marginBottom:"5%"}}>{players[appData.index].Packs}</Text> 
-        <Text style = {{marginBottom:"5%"}}>{players[appData.index].Team}</Text> 
-        <Text>{players[appData.index].Description}</Text> 
-        </View>
-        
-
-      <Image
-        style= {[{width:"40%",height:"20%"}, {"top":"18%","left":"30%","source":"https://tse3.mm.bing.net/th?id=OIP.TZ1NfPhZVDQ2JpOr3CzHXQHaE8&pid=Api&P=0&w=244&h=164"}]}
-        source = {{uri:players[appData.index]["Picture Link"]}}
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#959c98"}}><Multiplier
+      type = {"text"}
+      data = {events}
+      style = {[{alignItems:'center'},{"options":"events","repeatermarginBottom":"10%","repeaterinnerText":"elem[\"Days\"]+\") \"+elem[\"event name\"]","height":"60%","repeaterbackgroundColor":"#8050a6","repeaterborderRadius":20,"repeaterwidth":"90%","top":20.151999999999987,"left":-87.31200000000001,"width":"150%","resizeMode":"[enum: stretch]","innerText":"'example[\"eventname\"]'","color":8050,"repeatercolor":"#c2b027","repeatertextAlign":"center"}]}
+      clickfunction = {function(){}}
       >
-      </Image>
-
+      </Multiplier>
  <TouchableOpacity
           
-          onPress = { function(){
-            that.props.goTo("options"); 
-            that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("1calendar"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -262,26 +252,33 @@ class Multiplier extends React.Component{
             backgroundColor: '#fff',
             elevation: 2, // Android
             height: 50,
-            width: "40%",
+            width: 100,
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0,
-             backgroundColor:'#8fd158',
-              alignItems:'center',justifyContent:'center',
-               height: "7%",  title:'Test', 
-               borderColor: 'gray', color:'black', 
-               borderRadius:15, borderWidth: 1},{"top":"5%",
-               "left":"30%","innerText":"'Click to see your final card'"}]}
-        ><Text>{'Back'}</Text>
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'back'","top":568.152,"left":-0.3120000000000118}]}
+        ><Text>{'back'}</Text>
         </TouchableOpacity>
-          <Text
-          style= {{textAlign:'center', "innerText":"'Level 10'","backgroundColor":"red", position:'absolute', width:"100%",top:"15%"}}
-        > {"Level " + players[appData.index].Level} </Text>
-        </View>
+
+      <Image
+        style= {[{width:"100%",height:"100%"}, {"source":"https://www.pilotonline.com/resizer/2OpTLKC3OF9OswVc8FkeHheHU6Y=/1200x0/top/arc-anglerfish-arc2-prod-tronc.s3.amazonaws.com/public/TSOIZTNY7NH4JLGPN6HL6VEXFY.png","top":-353.848,"left":0.6879999999999882,"zIndex":-5000,"width":"100%","height":"100%"}]}
+        source = {{uri:"https://www.pilotonline.com/resizer/2OpTLKC3OF9OswVc8FkeHheHU6Y=/1200x0/top/arc-anglerfish-arc2-prod-tronc.s3.amazonaws.com/public/TSOIZTNY7NH4JLGPN6HL6VEXFY.png"}}
+      >
+      </Image>
+
+      <Image
+        style= {[{width:"200px",height:"200px"}, {}]}
+        source = {{uri:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png"}}
+      >
+      </Image>
+
+      <Image
+        style= {[{width:"200px",height:"200px"}, {}]}
+        source = {{uri:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png"}}
+      >
+      </Image></View>
         )
       }
     }
 
-    
-      export default PlayerDetails;
+export default Repeater;

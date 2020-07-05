@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 import FirstPage from './downloadedpages/FirstPage.js'
 import Namenewcalendar from './downloadedpages/RegisterPage.js'
-import PlayerDetails from './downloadedpages/LastPage.js'
+import Repeater from './downloadedpages/LastPage.js'
 import Privacy from './downloadedpages/Privacy.js'
 import Settings from './downloadedpages/settings.js'
 import Onecalendar from './downloadedpages/InfoPage.js'
@@ -187,7 +187,7 @@ render(){
     if(that.state.page === "repeater"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <repeater goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></repeater>
+             <Repeater goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Repeater>
           </View>
         )
       }
