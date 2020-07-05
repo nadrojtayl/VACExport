@@ -4,6 +4,7 @@ import React from 'react';
 
       import appData from './global.js';
 
+      import * as Linking from 'expo-linking';
 
 
 
@@ -261,7 +262,11 @@ class Multiplier extends React.Component{
 
         <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("1calendar"); that.forceUpdate(); }}  
+          onPress = { function(){
+            alert("You are not an authorized coach");
+            return;
+            Linking.openURL("https://docs.google.com/spreadsheets/d/1YvAE2YPRpn7Wkn4QLfbUZ0chudMAyX72wULwgXLl3H0/edit#gid=495854468");
+          }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
