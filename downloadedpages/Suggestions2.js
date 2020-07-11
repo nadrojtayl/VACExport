@@ -1,13 +1,13 @@
 import React from 'react';
 
-      import { TextInput, StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
+import { TextInput, StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 
-      import appData from './global.js';
+import appData from './global.js';
+import { CheckBox } from 'react-native-elements'
 
 
 
-
-      function try_eval(input){
+function try_eval(input){
   try {
     var output =  eval(input);
     return output
@@ -219,13 +219,13 @@ class Multiplier extends React.Component{
 
 
 
-      class Suggestions2 extends React.Component {
+class Suggestions2 extends React.Component {
       constructor(props){
         super(props);
         this.state = {"0":1,"1":2,"2":3,"key":"Resources","FirstPageinput1":"Enter College Name","FirstPageinput5":"","FirstPagepicker6":"Option1","loaded":false,"dbLinks":{}}
       }
       render(){ 
-      var appData = this.state; var that = this; 
+      var that = this; 
       
 
       if(!that.props.loaded){
@@ -255,48 +255,80 @@ class Multiplier extends React.Component{
             height: "5%"}]}>
             <Text>{'Back'}</Text>
         </TouchableOpacity>
-        <View style = {{height:"80%"}}>
-        <ScrollView>
-        <Text
-          style= {{"fontSize":16, marginBottom:"5%", "backgroundColor":"#8fd158","textAlign":"center","top":"7%","left":"0%", "width": "100%"}}
-        > {Colleges[1]["Suggestions for College"]} </Text>
+        <View style = {{height:"80%", marginTop:"10%"}}>
+        <ScrollView style = {{height:"3000%"}}>
+    
+          <View style= {{flexDirection:'row', "backgroundColor":"#8fd158","top":"7%","left":"0%", "width": "100%"}}>
+           <CheckBox
+                  checked={appData.tasks[0 + 10]}
+                  uncheckedColor = {"black"}
+                  onPress={function(){appData.tasks[0 + 10] = !appData.tasks[0 + 10]; that.forceUpdate();} }
+                />
+            <Text
+              style= {{"fontSize":16,"textAlign":"center", width:"80%" }}
+            > {Colleges[1]["Suggestions for College"]} </Text>
+          </View>
+           
+           <View style= {{flexDirection:'row', "backgroundColor":"#8fd158","top":"12%","left":"0%", "width": "100%"}}>
+           <CheckBox
+                  checked={appData.tasks[1 + 10]}
+                  uncheckedColor = {"black"}
+                  onPress={function(){appData.tasks[1 + 10] = !appData.tasks[1 + 10]; that.forceUpdate();} }
+                />
+            <Text
+              style= {{"fontSize":16,"textAlign":"center" , width:"80%"}}
+            > {Colleges[2]["Suggestions for College"]} </Text>
+          </View>
 
-        <Text
-          style= {{"top":"7%",marginBottom:"5%","fontSize":16,"backgroundColor":"#8fd158","textAlign":"center"}}
-        > {Colleges[2]["Suggestions for College"]} </Text>
+          <View style= {{flexDirection:'row', "backgroundColor":"#8fd158","top":"17%","left":"0%", "width": "100%"}}>
+           <CheckBox
+                  checked={appData.tasks[2 + 10]}
+                  uncheckedColor = {"black"}
+                  onPress={function(){appData.tasks[2 + 10]= !appData.tasks[2 + 10]; that.forceUpdate();} }
+                />
+            <Text
+              style= {{"fontSize":16,"textAlign":"center" , width:"80%"}}
+            > {Colleges[3]["Suggestions for College"]} </Text>
+          </View>
 
-        <Text
-          style= {{"top":"7%",marginBottom:"5%","fontSize":16,"backgroundColor":"#8fd158","textAlign":"center"}}
-        > {Colleges[3]["Suggestions for College"]} </Text>
-        
-        <Text
-          style= {{"top":"7%",marginBottom:"5%","fontSize":16,"backgroundColor":"#8fd158","textAlign":"center"}}
-        > {Colleges[4]["Suggestions for College"]} </Text>
+          <View style= {{flexDirection:'row', "backgroundColor":"#8fd158","top":"22%","left":"0%", "width": "100%"}}>
+           <CheckBox
+                  checked={appData.tasks[3 + 10]}
+                  uncheckedColor = {"black"}
+                  onPress={function(){appData.tasks[3 + 10] = !appData.tasks[3 + 10]; that.forceUpdate();} }
+                />
+            <Text
+              style= {{"fontSize":16,"textAlign":"center" , width:"80%"}}
+            > {Colleges[4]["Suggestions for College"]} </Text>
+          </View>
+          
+          <View style= {{flexDirection:'row', "backgroundColor":"#8fd158","top":"27%","left":"0%", "width": "100%"}}>
+           <CheckBox
+                  checked={appData.tasks[4 + 10]}
+                  uncheckedColor = {"black"}
+                  onPress={function(){appData.tasks[4 + 10] = !appData.tasks[4 + 10]; that.forceUpdate();} }
+                />
+            <Text
+              style= {{"fontSize":16,"textAlign":"center" , width:"80%"}}
+            > {Colleges[5]["Suggestions for College"]} </Text>
+          </View>
 
-        <Text
-          style= {{"top":"7%",marginBottom:"5%","fontSize":16,"backgroundColor":"#8fd158","textAlign":"center"}}
-        > {Colleges[5]["Suggestions for College"]} </Text>
+        <View style= {{flexDirection:'row', "backgroundColor":"#8fd158","top":"32%","left":"0%", "width": "100%"}}>
+           <CheckBox
+                  checked={appData.tasks[5 + 10]}
+                  uncheckedColor = {"black"}
+                  onPress={function(){appData.tasks[5 + 10] = !appData.tasks[5 + 10]; that.forceUpdate();} }
+                />
 
-        <Text
-          style= {{"top":"7%",marginBottom:"5%","fontSize":16,"backgroundColor":"#8fd158","textAlign":"center"}}
-        > {Colleges[6]["Suggestions for College"]} </Text>
-        
-        <Text
-          style= {{"top":"7%",marginBottom:"5%","fontSize":16,"backgroundColor":"#8fd158","textAlign":"center"}}
-        > {Colleges[7]["Suggestions for College"]} </Text>
-        
-        <Text
-          style= {{"top":"7%",marginBottom:"5%","fontSize":16,"backgroundColor":"#8fd158","textAlign":"center"}}
-        > {Colleges[8]["Suggestions for College"]} </Text>
-        
-        <Text
-          style= {{"top":"7%",marginBottom:"5%","fontSize":16,"backgroundColor":"#8fd158","textAlign":"center"}}
-        > {Colleges[9]["Suggestions for College"]} </Text>
+            <Text
+              style= {{"fontSize":16,"textAlign":"center" , width:"80%"}}
+            > {Colleges[6]["Suggestions for College"]} </Text>
+          </View>
 
+
+          
         
-        <Text
-          style= {{"backgroundColor":"#8fd158",marginBottom:"5%","fontSize":16,"textAlign":"center","top":450.92,"left":-0.4399999999999977}}
-        > {'Colleges[10]["Suggestions for College"]'} </Text>
+        
         </ScrollView>
         </View>
         

@@ -225,7 +225,7 @@ class Multiplier extends React.Component{
         this.state = {"0":1,"1":2,"2":3,"key":"Resources","FirstPageinput1":"Enter College Name","FirstPageinput5":"","FirstPagepicker6":"Option1","loaded":false,"dbLinks":{}}
       }
       render(){ 
-      var appData = this.state; var that = this; 
+      var that = this; 
       
 
       if(!that.props.loaded){
@@ -237,9 +237,12 @@ class Multiplier extends React.Component{
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"blue"}}> 
 
       <Text
-          style= {{"top":"10%", "textAlign":"center","height":"7%","justifyContent":"center",
+          style= {{"top":"10%", "textAlign":"center","justifyContent":"center",
           "backgroundColor":"red","fontSize":30,"borderRadius":30}}> {'Welcome to CollegeAssist'} </Text>
         
+        <Text
+          style= {{"top":"10%", "textAlign":"center","height":"7%","justifyContent":"center",
+          "backgroundColor":"red", color:"rgb(60,60,60)", "fontSize":14,"borderRadius":30}}> {'College Tasks Left: ' +  appData.tasks.filter(function(elem){ return !elem }).length } </Text>
 
       <TouchableOpacity
           onPress = { function(){that.props.goTo("resources"); that.forceUpdate(); }}  
@@ -256,29 +259,12 @@ class Multiplier extends React.Component{
             "top":"25%","left":"10%",
             position:'absolute',top:"30%",backgroundColor:'#8fd158', 
              height: "10%", borderColor: 'gray', color:'black', borderRadius:"2%", borderWidth: 1,"width":"80%"}]}
-        ><Text>{'Packing List for College'}</Text>
+        >
+        <Text>{'Packing List for College'}</Text>
         </TouchableOpacity>
-       <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("DeadlinesandInformation"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            "fontSize":32,
-            "top":"50%","left":"10%",
-            position:'absolute',backgroundColor:'#8fd158', 
-             height: "10%", borderColor: 'gray', color:'black', borderRadius:"2%", borderWidth: 1,"width":"80%"}]}>
-        <Text>{'Helpful Websites'}</Text>
-        </TouchableOpacity>
-        
-        
-        <TouchableOpacity
-          onPress = { function(){that.props.goTo ("Suggestions2"); that.forceUpdate(); }}  
+       
+         <TouchableOpacity
+          onPress = { function(){that.props.goTo("Suggestions2"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -290,11 +276,34 @@ class Multiplier extends React.Component{
             justifyContent: 'center',
             alignItems: 'center',
             "fontSize":38,
-            "top":"70%","left":"10%",
+            "top":"50%","left":"10%",
             position:'absolute',backgroundColor:'#8fd158', 
              height: "10%", borderColor: 'gray', color:'black', borderRadius:"2%", borderWidth: 1,"width":"80%"}]}>
         <Text>{'Suggestions for College'}</Text>
-        </TouchableOpacity></View>
+        </TouchableOpacity>
+       
+        <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo("DeadlinesandInformation"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            "fontSize":32,
+            "top":"70%","left":"10%",
+            position:'absolute',backgroundColor:'#8fd158', 
+             height: "10%", borderColor: 'gray', color:'black', borderRadius:"2%", borderWidth: 1,"width":"80%"}]}>
+        <Text>{'Helpful Websites'}</Text>
+        </TouchableOpacity>
+        
+
+
+
+        </View>
         )
       }
     }

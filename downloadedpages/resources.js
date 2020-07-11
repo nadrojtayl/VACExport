@@ -1,13 +1,15 @@
 import React from 'react';
 
-      import { TextInput, StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
-
-      import appData from './global.js';
-
-
+import { TextInput, StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
+import { CheckBox } from 'react-native-elements'
+import appData from './global.js';
 
 
-      function try_eval(input){
+
+
+
+
+function try_eval(input){
   try {
     var output =  eval(input);
     return output
@@ -108,8 +110,6 @@ class Multiplier extends React.Component{
 
     }
 
-    console.log("STYLE");
-    console.log(additionalStyle)
 
 
     int = parseInt(int)
@@ -225,14 +225,16 @@ class Multiplier extends React.Component{
         this.state = {"0":1,"1":2,"2":3,"key":"Resources","FirstPageinput1":"Enter College Name","FirstPageinput5":"","FirstPagepicker6":"Option1","loaded":false,"dbLinks":{}}
       }
       render(){ 
-      var appData = this.state; var that = this; 
+     var that = this; 
       
 
       if(!that.props.loaded){
         return(<View><Text>LOADING</Text></View>)
       }
 
-
+      var tasks = ["Warm Clothing", "Bed set/Mattress cover + Pillow cases", "Towels","Hangers","Mini trash can",
+      "Laptop","Toiletries","Books for classes","Fans/heaters","Mini Fridge"];
+      
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"blue"}}>
 
@@ -257,15 +259,30 @@ class Multiplier extends React.Component{
           style= {{"backgroundColor":"crimson","fontStyle":"italic","width":"80%","height":"7%","textAlign":"center",
           justifyContent:"center","fontSize":24,"top":"15%","left":"10%"}}
         > {'Packing List for College'} </Text>
+      
+        <View style= {{top:"20%"}}>
+        {
+          tasks.map(function(task,ind){
+            return (
+            <View style = {{flexDirection:'row',"backgroundColor":"violet", alignItems:"center"}}>
+             <CheckBox
+                checked={appData.tasks[ind]}
+                onPress={function(){appData.tasks[ind] = !appData.tasks[ind]; that.forceUpdate();} }
+              />
+
+
+            <Text
+          style= {{"fontSize":30}}
+        > {task} </Text>
+        </View>
+    
+        )
+          })
+    
+      }
+      </View>
         
-        
-    <Text
-          style= {{"fontSize":30,"top":"20%","left":"1%","backgroundColor":"violet"}}
-        > {Colleges[1]["Resources for most colleges"]} </Text>
-        
-    <Text
-          style= {{"fontSize":17,"top":"70%","left":"5%","backgroundColor":"crimson"}}
-        > {"These are some of the many times you'll need on campus"} </Text>
+  
         
  </View>
         )
