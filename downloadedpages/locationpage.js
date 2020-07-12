@@ -2,7 +2,7 @@ import React from 'react';
 import { TextInput, StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 import appData from './global.js';
 
-
+import * as Linking from 'expo-linking';
 
 
       function try_eval(input){
@@ -276,7 +276,30 @@ class Multiplier extends React.Component{
       style= {[{"top":200,"left":5,"height":"30%","width":"80%"}]}
       source = {{uri:locations[appData.index]["Link"]}}>
     </Image>
- <TouchableOpacity
+  
+     <TouchableOpacity
+          
+          onPress = { function(){
+              Linking.openURL('tel:'+locations[appData.index].PhoneNumber)
+             }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            height: "10%",
+            width: "30%",
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            position:'absolute',backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', 
+            height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},
+            {"top":"85%","right":"60%"}]}
+        ><Text>{"Reach out"}</Text>
+        </TouchableOpacity>
+      <TouchableOpacity
           
           onPress = { function(){
             appData.index = (appData.index + 1) % (locations.length-1);
@@ -297,7 +320,8 @@ class Multiplier extends React.Component{
             height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},
             {"top":"85%","right":"5%"}]}
         ><Text>{"Explore More"}</Text>
-        </TouchableOpacity></View>
+        </TouchableOpacity>
+        </View>
         )
       }
     }

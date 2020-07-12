@@ -229,17 +229,8 @@ class Multiplier extends React.Component{
 
 
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#7ab5f5"}}><Text
-          style= {{"top":-28.408000000000015,"left":32.48000000000002}}
-        > {} </Text>
-        
-<Text
-          style= {{"top":-29.408000000000015,"left":69.48000000000002}}
-        > {} </Text>
-        
-<Text
-          style= {{"top":-36.408000000000015,"left":171.48000000000002}}
-        > {} </Text>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#7ab5f5"}}>
+         
         
 <Text
           style= {{"textAlign":"center","innerText":"'food4all'","top":24.815999999999974,"left":5.480000000000018,"fontSize":42}}
