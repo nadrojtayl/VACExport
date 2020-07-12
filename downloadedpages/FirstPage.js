@@ -210,13 +210,16 @@ class Multiplier extends React.Component{
         this.state = {"key":"","FirstPageinput1":"","FirstPagepicker2":"Option1","FirstPagepicker3":"","FirstPageinput4":"Select","ke":"","k":"","":"Option1","K":"Option1","Ke":"Option1","Key":"Option1","Key1":["Push-Ups","Sit-Ups","Jumping-Jacks","Squats","Lounges"],"FirstPageinput":"","FirstPageinpu":"","FirstPageinp":"","FirstPagein":"","FirstPagei":"","FirstPage":"Option1","FirstPag":"Option1","FirstPa":"Option1","FirstP":"Option1","First":"Option1","Firs":"Option1","Fir":"Option1","Fi":"Option1","F":"Option1","Key2":"Sit-Ups","FirstPagepicker":"Option1","FirstPagepicke":"Option1","FirstPagepick":"Option1","FirstPagepic":"Option1","FirstPagepi":"Option1","FirstPagep":"Option1","Key3":"Jumping-Jacks","ExerciseIndex":3,"loaded":false,"dbLinks":{}}
       }
       render(){ 
-      var appData = this.state; var that = this; 
+       var that = this; 
       
 
       if(!that.props.loaded){
         return(<View><Text>LOADING</Text></View>)
       }
-      exercises.shift();
+      
+      if(exercises[0]["Exercise Name"] === "Exercise Name"){
+        exercises.shift();
+      }
 
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#099ad9"}}>
@@ -228,6 +231,13 @@ style= {{"innerText":"'Exercises'","top":"0%","left":"30%",
 "paddingTop":"0%","zIndex":null,"marginTop":"10%","marginRight":null,
 "color":"white","fontSize":30}}
 > {'Exercises'} </Text>
+<Text
+style= {{"innerText":"'Exercises'","top":"0%",
+"width":"100%","textAlign":"center","borderStyle":"solid",
+"repeatercontainerStyle":null,fontSize:30,
+"paddingTop":"0%","zIndex":null,"marginTop":"5%", alignItems:'center',
+"color":"white","fontSize":16}}
+> { exercises.filter(function(elem){ return elem.checked }).length + ' Exercises Complete'} </Text>
         
 <Multiplier
       type = {"button"}
@@ -237,7 +247,7 @@ style= {{"innerText":"'Exercises'","top":"0%","left":"30%",
       {"repeateronPress":"appData.ExerciseIndex = parseInt(elem.Index);\ngoTo(\"Exercise Details\");",
       "options":"exercises",
       "repeaterinnerText":"elem[\"Exercise Name\"]","repeaterType":"button",
-      "top":23.072000000000003,"left":-3.3530000000000086,
+      "top":"5%","left":-3.3530000000000086,
       "repeaterbackgroundColor":"#19b6fa",
       "repeatercolor":"white",
       "repeateralignItems":"center",

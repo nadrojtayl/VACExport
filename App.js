@@ -209,6 +209,9 @@ connectToDatabase(db_link,name){
           res = await res.json();
           window[name] = res;
           global[name] = res;
+          res.forEach(function(obj){
+            obj["checked"] = false;
+          })
           that.forceUpdate();
           that.setState({dbLinks:that.state.dbLinks, loaded:true})
         

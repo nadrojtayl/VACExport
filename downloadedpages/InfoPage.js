@@ -5,6 +5,7 @@ import { TextInput, StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Sw
 
 import appData from './global.js';
 
+import { CheckBox } from 'react-native-elements'
 
 
 
@@ -226,16 +227,17 @@ class Multiplier extends React.Component{
         this.state = {"key":"","FirstPageinput1":"","FirstPagepicker2":"Option1","FirstPagepicker3":"","FirstPageinput4":"Select","ke":"","k":"","":"Option1","K":"Option1","Ke":"Option1","Key":"Option1","Key1":["Push-Ups","Sit-Ups","Jumping-Jacks","Squats","Lounges"],"FirstPageinput":"","FirstPageinpu":"","FirstPageinp":"","FirstPagein":"","FirstPagei":"","FirstPage":"Option1","FirstPag":"Option1","FirstPa":"Option1","FirstP":"Option1","First":"Option1","Firs":"Option1","Fir":"Option1","Fi":"Option1","F":"Option1","Key2":"Sit-Ups","FirstPagepicker":"Option1","FirstPagepicke":"Option1","FirstPagepick":"Option1","FirstPagepic":"Option1","FirstPagepi":"Option1","FirstPagep":"Option1","Key3":"Jumping-Jacks","ExerciseIndex":3,"loaded":false,"dbLinks":{}}
       }
       render(){ 
-      var appData = this.state; var that = this; 
+      var that = this; 
       
 
       if(!that.props.loaded){
         return(<View><Text>LOADING</Text></View>)
       }
 
-
+     
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#099ad9"}}>
+     
       <Text
           style= {{"backgroundColor":"#29b8ff", position:'absolute', top:"5%",left:"0%", backgroundColor:'#4a4948',  "innerText":"exercises[appData.ExerciseIndex][\"Exercise Name\"]","width":"100%","textAlign":"center","marginTop":null,"color":"white","fontWeight":"bold", fontSize:32}}
         > {exercises[appData.ExerciseIndex]["Exercise Name"]} </Text>
@@ -263,7 +265,7 @@ class Multiplier extends React.Component{
         > {'Recommended Age:'} </Text>
         <Text
   style= {{"backgroundColor":"#29b8ff","width":"100%","textAlign":"center","color":"white","innerText":"exercises[appData.ExerciseIndex][\"Health Benefits\"]","fontSize":18}}
-> {exercises[appData.ExerciseIndex]["Age Recommended"]} </Text>
+> {exercises[appData.ExerciseIndex]["Age Recommendation"]} </Text>
         
 <Text
           style= {{"textAlign":"center",color:'white',"backgroundColor":"#4a4948", fontSize:20,"innerText":"'Importance:'"}}
@@ -272,15 +274,25 @@ class Multiplier extends React.Component{
   style= {{"backgroundColor":"#29b8ff","width":"100%","textAlign":"center","color":"white","innerText":"exercises[appData.ExerciseIndex][\"Health Benefits\"]","fontSize":18}}
 > {exercises[appData.ExerciseIndex]["Time Consumption"]} </Text>
         
-        
-<Text
-          style= {{"textAlign":"center",color:'white',"backgroundColor":"#4a4948", fontSize:18, "innerText":"'Importance:'"}}
-        > {'Difficulty Level:'} </Text>
-<Text
-  style= {{"backgroundColor":"#29b8ff",  "width":"100%","textAlign":"center","color":"white","innerText":"exercises[appData.ExerciseIndex][\"Health Benefits\"]","fontSize":18}}
-> {exercises[appData.ExerciseIndex]["Difficulty Level"]} </Text>
-        
+                    
 
+    <Text
+      style= {{"textAlign":"center",color:'white',"backgroundColor":"#4a4948", fontSize:18, "innerText":"'Importance:'"}}
+    > {'Difficulty Level:'} </Text>
+    <Text
+      style= {{"backgroundColor":"#29b8ff",  "width":"100%","textAlign":"center","color":"white","innerText":"exercises[appData.ExerciseIndex][\"Health Benefits\"]","fontSize":18}}
+    > {exercises[appData.ExerciseIndex]["Difficulty Level"]} </Text>
+        
+<CheckBox
+  onPress={function(){
+    exercises[appData.ExerciseIndex].checked = !exercises[appData.ExerciseIndex].checked;
+    that.forceUpdate();
+  }}
+
+  checked={exercises[appData.ExerciseIndex].checked}
+/>
+
+    
         
 
 
