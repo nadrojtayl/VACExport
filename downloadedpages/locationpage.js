@@ -3,6 +3,7 @@ import { TextInput, StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Sw
 import appData from './global.js';
 
 import * as Linking from 'expo-linking';
+import { Ionicons } from '@expo/vector-icons';
 
 
       function try_eval(input){
@@ -222,13 +223,35 @@ class Multiplier extends React.Component{
         super(props);
         this.state = {"key":"value","locationpageinput10":"Select","loaded":false,"dbLinks":{}}
       }
-      render(){ 
-     var that = this; 
-      
 
-      if(!that.props.loaded){
-        return(<View><Text>LOADING</Text></View>)
+      like(){
+        var that = this;
+        locations[appData.index]["Votes"] = parseInt(locations[appData.index]["Votes"]) + 1;
+        var find_obj = {Name:locations[appData.index]["Name"]};
+        var update_obj = {Votes:locations[appData.index]["Votes"]};
+        var schema = fetch("https://script.google.com/macros/s/AKfycbxYi_bS8n6zOD_3f-YsIDgAc65A-DEL5CA31kHBQg1w9BMzZwk-/exec?sheetName=Kenny", {
+                  method: 'POST',
+                  body:JSON.stringify({find_obj, update_obj}),
+                  headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "Accept": "application/json"
+                  }
+        }).then(async function(res){
+         
+          that.forceUpdate();
+
+
+        })
+        this.forceUpdate();
       }
+
+    render(){ 
+       var that = this; 
+        
+
+        if(!that.props.loaded){
+          return(<View><Text>LOADING</Text></View>)
+    }
 
 
       return (
@@ -248,7 +271,7 @@ class Multiplier extends React.Component{
           justifyContent: 'center',
           alignItems: 'center',
           flexDirection: 'row',
-          position:'absolute',top:25 ,left:10, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', 
+          position:'absolute',top:"4%",left:10, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', 
           height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1}]}
       ><Text>{'Home'}</Text>
       </TouchableOpacity>
@@ -276,6 +299,13 @@ class Multiplier extends React.Component{
       style= {[{"top":200,"left":5,"height":"30%","width":"80%"}]}
       source = {{uri:locations[appData.index]["Link"]}}>
     </Image>
+    <TouchableOpacity onPress = {that.like.bind(that)} style= {[{position:'absolute', "top":"5.5%","left":"80%", flexDirection:'row', alignItems:'center'}]}>
+      <Text
+        >
+        { parseInt(locations[appData.index]["Votes"]) + "  " }
+      </Text>
+      <Ionicons name="ios-thumbs-up" size={28} color="green" />
+    </TouchableOpacity>
   
      <TouchableOpacity
           
