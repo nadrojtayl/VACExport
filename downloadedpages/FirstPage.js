@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { Button, Picker, Switch, Image, ScrollView, TouchableOpacity, StyleSheet, Text, View, TextInput, Dimensions } from "react-native";
 import Calendar from "./Calendar.js";
 import appData from "./global.js";
-//import AudioPlayer from 'react-native-play-audio';
+import { Audio } from 'expo-av';
 
 var d = new Date();
 var month = d.getMonth();
@@ -149,24 +149,15 @@ function clone(arr){
 }
 
 global.audio = [];
-function play(url){
+async function play(url){
   
-AudioPlayer.prepare(url, () => {
-  AudioPlayer.play();
-    
-  AudioPlayer.getDuration((duration) => {
-    console.log(duration);
-  });
-  setInterval(() => {
-    AudioPlayer.getCurrentTime((currentTime) => {
-      console.log(currentTime);
-    });
-  }, 1000);
-  AudioPlayer.stop();
-  AudioPlayer.pause();
-  AudioPlayer.setCurrentTime(50.5);
-})
-
+ try {
+    await appData.soundObject.loadAsync({uri:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"});
+    await appData.soundObject.playAsync();
+    // Your sound is playing!
+  } catch (error) {
+    alert(error);
+  }
 
 
 }
@@ -215,6 +206,9 @@ function unwrap_dynamically(value,default_value){
     }
       
   
+    async componentDidMount(){
+     appData.soundObject = new Audio.Sound();
+    }
 
 
    
@@ -238,7 +232,7 @@ function unwrap_dynamically(value,default_value){
           onPress = { function(){appData.lastscore = 0
 
 
-
+            play("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3");
 that.props.goTo("QUESTIONUNO"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS

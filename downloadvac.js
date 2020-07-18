@@ -45,7 +45,7 @@ import React, { Component } from "react";
 import { Button, Picker, Switch, Image, ScrollView, TouchableOpacity, StyleSheet, Text, View, TextInput, Dimensions } from "react-native";
 import Calendar from "./Calendar.js";
 import appData from "./global.js";
-//import AudioPlayer from 'react-native-play-audio';
+import { Audio } from 'expo-av';
 
 var d = new Date();
 var month = d.getMonth();
@@ -64,7 +64,7 @@ global.inputs = {
   0:"This"
 }
 
-class Box{
+class Box extends React.Component{
   render(){
     return (<View style={this.props.view}></View>)
   }
@@ -191,32 +191,21 @@ function clone(arr){
 }
 
 global.audio = [];
-function play(url){
+async function play(url){
   
-AudioPlayer.prepare(url, () => {
-  AudioPlayer.play();
-    
-  AudioPlayer.getDuration((duration) => {
-    console.log(duration);
-  });
-  setInterval(() => {
-    AudioPlayer.getCurrentTime((currentTime) => {
-      console.log(currentTime);
-    });
-  }, 1000);
-  AudioPlayer.stop();
-  AudioPlayer.pause();
-  AudioPlayer.setCurrentTime(50.5);
-})
-
+ try {
+    await appData.soundObject.loadAsync({uri:url});
+    await appData.soundObject.playAsync();
+    // Your sound is playing!
+  } catch (error) {
+    alert(error);
+  }
 
 
 }
 
-function pause(){
-  window.audio.forEach(function(a){
-    a.pause();
-  })
+async function pause(){
+   await appData.soundObject.pauseAsync();
 }
 
 global.play = play;
@@ -254,6 +243,10 @@ function unwrap_dynamically(value,default_value){
     {
         super(props);
         this.state = ` + JSON.stringify(appdata) + `
+    }
+
+    componentDidMount(){
+      appData.soundObject = new Audio.Sound();
     }
       
   

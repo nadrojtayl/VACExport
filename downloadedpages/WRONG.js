@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { Button, Picker, Switch, Image, ScrollView, TouchableOpacity, StyleSheet, Text, View, TextInput, Dimensions } from "react-native";
 import Calendar from "./Calendar.js";
 import appData from "./global.js";
-//import AudioPlayer from 'react-native-play-audio';
+import { Audio } from 'expo-av';
 
 var d = new Date();
 var month = d.getMonth();
@@ -149,32 +149,21 @@ function clone(arr){
 }
 
 global.audio = [];
-function play(url){
+async function play(url){
   
-AudioPlayer.prepare(url, () => {
-  AudioPlayer.play();
-    
-  AudioPlayer.getDuration((duration) => {
-    console.log(duration);
-  });
-  setInterval(() => {
-    AudioPlayer.getCurrentTime((currentTime) => {
-      console.log(currentTime);
-    });
-  }, 1000);
-  AudioPlayer.stop();
-  AudioPlayer.pause();
-  AudioPlayer.setCurrentTime(50.5);
-})
-
+ try {
+    await appData.soundObject.loadAsync({uri:url});
+    await appData.soundObject.playAsync();
+    // Your sound is playing!
+  } catch (error) {
+    alert(error);
+  }
 
 
 }
 
-function pause(){
-  window.audio.forEach(function(a){
-    a.pause();
-  })
+async function pause(){
+   await appData.soundObject.pauseAsync();
 }
 
 global.play = play;
@@ -212,6 +201,10 @@ function unwrap_dynamically(value,default_value){
     {
         super(props);
         this.state = {"key":"value","RIGHTswitch0":"false","WRONGinput0":"Select","Index":0,"option":2,"answerlist":["Right answer","Wrong 1","Wrong 2","Wrong 3"],"clicked":0,"option3":0,"option4":2,"topscore":38,"lastscore":11,"randIndex":0,"option2":1,"opt1":1,"opt2":3,"opt3":0,"opt4":2,"randindex":118,"FirstPageswitch4":true}
+    }
+
+    componentDidMount(){
+      appData.soundObject = new Audio.Sound();
     }
       
   
