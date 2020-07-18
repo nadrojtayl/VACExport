@@ -220,6 +220,7 @@ function unwrap_dynamically(value,default_value){
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"grey"}}>
       <Multiplier
+      goTo = {that.props.goTo}
       type = {"button"}
       data = {appData.filterWeapons}
       style = {[{alignItems:'center'},{"options":"appData.filterWeapons","repeaterinnerText":"elem.Weapon","repeaterType":"button","repeateronPress":"appData.Image = elem.URL;\ngoTo(\"THREE\");","top":"22.21%","left":"2.03%","fontSize":15,"height":null,"repeaterbackgroundColor":"#0b540c","color":"white"}]}

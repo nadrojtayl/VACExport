@@ -353,15 +353,17 @@ function exportElemToExpo(name,int, page, childrenAdditionalStyle, clickfunction
     }
 
     if(name === "repeater"){
+      console.log("click"+clickfunction);
       var options = childrenAdditionalStyle['options'] !== undefined ? childrenAdditionalStyle['options']:["example"];
      
       var type = childrenAdditionalStyle["repeaterType"] === undefined ? ("text"): (childrenAdditionalStyle["repeaterType"]);
       
       return `<Multiplier
+      goTo = {that.props.goTo}
       type = {"`+type+`"}
       data = {`+options+`}
       style = {[{alignItems:'center'},`+JSON.stringify(childrenAdditionalStyle) + `]}
-      clickfunction = {function(){`+clickfunction+`}}
+      clickfunction = {function(){`+clickfunction +`}}
       >
       </Multiplier>`
 
@@ -892,6 +894,188 @@ import { Button, Picker, Switch, Image, ScrollView, TouchableOpacity, StyleSheet
 import Calendar from "./Calendar.js";
 import appData from "./global.js";
 import { Audio } from 'expo-av';
+
+global.appData = appData;
+
+function hasNumber(myString) {
+  return /d/.test(myString);
+}
+
+
+const width = Dimensions.get('window').width;
+const height = Dimensions.get('window').height;
+global.inputs = {
+  0:"This"
+}
+
+class Box extends React.Component{
+  render(){
+    return (<View style={this.props.view}></View>)
+  }
+}
+
+
+
+
+//READ ONLY API: format
+//https://spreadsheets.google.com/feeds/cells/1P0tGuikrAg5ZGpC2fHxLY49Osp6nhwseK2DSr34HM-o/1/public/full?alt=json
+
+function runWithInterval(script_string,interval){
+  var script_string = script_string + "; window.FrontPage.forceUpdate(); window.updateAppData();"
+    try{
+        eval("function y(){"+script_string+"}")
+        return setInterval(function(){ eval(script_string)},interval);
+      } catch(e){
+        alert("There was an error trying to run this!" + e);
+      }
+}
+
+window.runWithInterval = runWithInterval;
+runWithInterval = runWithInterval;
+
+function try_eval(input){
+  try {
+    var output =  eval(input);
+    return output
+  } catch(e){
+    return input;
+
+  }
+ }
+
+ function filter_obj_by_phrase(arr,key_name,phrase){
+  return arr.filter(function(elem){
+    return elem[key_name].indexOf(phrase) !== -1;
+  })
+}
+
+
+function filter(arr,phrase){
+  return arr.filter(function(elem){
+    return elem.indexOf(phrase) !== -1;
+  })
+}
+
+window.filter = filter;
+
+function onlyUnique(value, index, self) { 
+    return self.indexOf(value) === index;
+}
+
+window.onlyUnique = onlyUnique;
+
+function unique(arr){
+  return arr.filter(onlyUnique);
+}
+
+window.unique = unique;
+
+function unique_return_one_key(arr,key){
+  return arr.map(function(obj){
+    return obj[key]
+  }).filter(onlyUnique);
+}
+
+function findInArrayOfObjects(array,search_obj) {
+          
+            for(var i = 0; i < array.length;i++){
+              var match = true;
+
+              Object.keys(search_obj).forEach(function(key){
+                if(search_obj[key] !== array[i][key]){
+                  match = false;
+                }
+              })
+
+              if(match){
+                return array[i];
+              }
+
+            }
+            return false;
+        }
+
+  window.findInArrayOfObjects = findInArrayOfObjects;
+
+window.unique_return_one_key = unique_return_one_key;
+
+function filter_list_of_objs(arr,key,filter_value){
+  return arr.filter(function(obj){
+    return obj[key] === filter_value
+  })
+}
+
+window.filter_list_of_objs = filter_list_of_objs;
+
+function filter_list_of_objs_multiple_keys(arr,filter_object){
+  return arr.filter(function(obj){
+    var match = true;
+    Object.keys(filter_object).forEach(function(key){
+      if(filter_object[key] !== obj[key]){
+        match = false;
+      }
+    })
+    return match
+  })
+}
+
+global.filter_list_of_objs_multiple_keys = filter_list_of_objs_multiple_keys;
+
+
+function map_list_of_objs(arr,key){
+  return arr.map(function(obj){
+    return obj[key];
+  })
+}
+
+global.map_list_of_objs = map_list_of_objs;
+
+function clone(arr){
+  return arr.slice();
+}
+
+global.audio = [];
+async function play(url){
+  appData.soundObject = new Audio.Sound();
+ try {
+    await appData.soundObject.loadAsync({uri:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"});
+    await appData.soundObject.playAsync();
+    // Your sound is playing!
+  } catch (error) {
+    alert(error);
+  }
+
+
+}
+
+async function pause(){
+   await appData.soundObject.pauseAsync();
+}
+
+global.play = play;
+global.pause = pause;
+
+global.clone = clone;
+
+function convert_spreadsheet_data_to_obj(data){
+  return {
+    row: data.gs$cell.row,
+    col: data.gs$cell.col,
+    data: data.content.$t,
+    type:data.content.type
+  }
+}
+
+
+
+function unwrap_dynamically(value,default_value){
+  if(default_value === undefined){
+    default_value = "undefined"
+  }
+  var value = (try_eval(value) === undefined) ? (default_value):  try_eval(value);
+  if(typeof value === "object"){return "Error: This is an object"}
+  return value;
+}
 
 class Multiplier extends Component{
     constructor(props){
