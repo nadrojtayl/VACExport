@@ -151,15 +151,13 @@ function clone(arr){
 global.audio = [];
 async function play(url){
   
-  appData.soundObject = new Audio.Sound();
-       try {
-    await appData.soundObject.loadAsync({uri:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"});
+ try {
+    await appData.soundObject.loadAsync({uri:url});
     await appData.soundObject.playAsync();
     // Your sound is playing!
   } catch (error) {
     alert(error);
   }
-
 
 
 }
@@ -205,19 +203,13 @@ function unwrap_dynamically(value,default_value){
         this.state = {"key":"value","RIGHTswitch0":"false","WRONGinput0":"Select","Index":0,"option":2,"answerlist":["Right answer","Wrong 1","Wrong 2","Wrong 3"],"clicked":0,"option3":0,"option4":2,"topscore":38,"lastscore":11,"randIndex":0,"option2":1,"opt1":1,"opt2":3,"opt3":0,"opt4":2,"randindex":118,"FirstPageswitch4":true}
     }
 
-   
+    componentDidMount(){
+      appData.soundObject = new Audio.Sound();
+
+    }
       
   
 
-    async componentDidMount(){
-      appData.soundObject = new Audio.Sound();
-       try {
-        await appData.soundObject.loadAsync({uri:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"});
-        // Your sound is playing!
-      } catch (error) {
-        alert(error);
-      }
-    }
 
    
 
@@ -239,7 +231,7 @@ function unwrap_dynamically(value,default_value){
           
           onPress = { function(){appData.lastscore = 0
 
-           appData.soundObject.playAsync();
+
 
 that.props.goTo("QUESTIONUNO"); that.forceUpdate(); }}  
           style= {[{

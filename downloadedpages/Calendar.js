@@ -1,3 +1,6 @@
+
+
+
 import React, { Component } from "react";
 import { Button, Picker, Switch, Image, ScrollView, TouchableOpacity, StyleSheet, Text, View, TextInput, Dimensions } from "react-native";
 
@@ -200,3 +203,7 @@ class Calendar extends Component{
 }
 
 export default Calendar;
+
+
+
+    

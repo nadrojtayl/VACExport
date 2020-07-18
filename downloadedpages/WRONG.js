@@ -205,6 +205,7 @@ function unwrap_dynamically(value,default_value){
 
     componentDidMount(){
       appData.soundObject = new Audio.Sound();
+
     }
       
   

@@ -203,7 +203,11 @@ function unwrap_dynamically(value,default_value){
         this.state = {"key":"value","RIGHTswitch0":"false","WRONGinput0":"Select","Index":0,"option":2,"answerlist":["Right answer","Wrong 1","Wrong 2","Wrong 3"],"clicked":0,"option3":0,"option4":2,"topscore":38,"lastscore":11,"randIndex":0,"option2":1,"opt1":1,"opt2":3,"opt3":0,"opt4":2,"randindex":118,"FirstPageswitch4":true}
     }
 
-  
+    componentDidMount(){
+      appData.soundObject = new Audio.Sound();
+
+    }
+      
   
 
 
@@ -225,14 +229,7 @@ function unwrap_dynamically(value,default_value){
       </Image>
  <TouchableOpacity
           
-          onPress = { function(){if(appData.opt1== 0){
-    that.props.goTo("RIGHT")
-}else{
-    pause();
-    that.props.goTo("WRONG")
-}
-
-; that.forceUpdate(); }}  
+          onPress = { function(){if(appData.opt1== 0){    that.props.goTo("RIGHT")}else{    that.props.goTo("WRONG")}; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -253,14 +250,7 @@ function unwrap_dynamically(value,default_value){
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){if(appData.opt2 == 0){
-    that.props.goTo("RIGHT")
-}else{
-   pause();
-    that.props.goTo("WRONG")
-}
-
-; that.forceUpdate(); }}  
+          onPress = { function(){if(appData.opt2 == 0){    that.props.goTo("RIGHT")}else{    that.props.goTo("WRONG")}; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -281,14 +271,7 @@ function unwrap_dynamically(value,default_value){
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){if(appData.opt3== 0){
-    that.props.goTo("RIGHT")
-}else{
-   pause();
-    that.props.goTo("WRONG")
-}
-
-; that.forceUpdate(); }}  
+          onPress = { function(){if(appData.opt3== 0){    that.props.goTo("RIGHT")}else{    that.props.goTo("WRONG")}; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -309,14 +292,7 @@ function unwrap_dynamically(value,default_value){
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){if(appData.opt4== 0){
-    that.props.goTo("RIGHT")
-}else{
-   pause();
-    that.props.goTo("WRONG")
-}
-
-; that.forceUpdate(); }}  
+          onPress = { function(){if(appData.opt4== 0){    that.props.goTo("RIGHT")}else{    that.props.goTo("WRONG")}; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
