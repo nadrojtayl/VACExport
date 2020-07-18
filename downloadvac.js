@@ -376,7 +376,8 @@ function exportElemToExpo(name,int, page, childrenAdditionalStyle, clickfunction
 
     if(name === "button"){
       var color = childrenAdditionalStyle.color ? childrenAdditionalStyle.color:"black";
-      console.log(clickfunction);
+      var innerText = childrenAdditionalStyle.innerText !== undefined ? childrenAdditionalStyle.innerText.replace(";",""):"";
+      console.log("text" + innerText);
       return` <TouchableOpacity
           
           onPress = { function(){`+ ((typeof clickfunction === "string") ? clickfunction.split("goTo").join("that.props.goTo"):"") + ";" +` that.forceUpdate(); }}  
@@ -394,8 +395,7 @@ function exportElemToExpo(name,int, page, childrenAdditionalStyle, clickfunction
         >
         <Text style = {{color:"`+color+`"}}>
 
-        {`+ (childrenAdditionalStyle.innerText !== undefined ? childrenAdditionalStyle.innerText:"")
-        +  `}
+        {`+ innerText +  `}
 
        </Text>
         </TouchableOpacity>`

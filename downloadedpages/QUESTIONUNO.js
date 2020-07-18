@@ -244,7 +244,7 @@ function unwrap_dynamically(value,default_value){
         >
         <Text style = {{color:"white"}}>
 
-        {Flags[appData.randindex][appData.answerlist[appData.opt1]];}
+        {Flags[appData.randindex][appData.answerlist[appData.opt1]]}
 
        </Text>
         </TouchableOpacity>
@@ -265,7 +265,7 @@ function unwrap_dynamically(value,default_value){
         >
         <Text style = {{color:"white"}}>
 
-        {Flags[appData.randindex][appData.answerlist[appData.opt2]];}
+        {Flags[appData.randindex][appData.answerlist[appData.opt2]]}
 
        </Text>
         </TouchableOpacity>
@@ -286,7 +286,7 @@ function unwrap_dynamically(value,default_value){
         >
         <Text style = {{color:"white"}}>
 
-        {Flags[appData.randindex][appData.answerlist[appData.opt3]];}
+        {Flags[appData.randindex][appData.answerlist[appData.opt3]]}
 
        </Text>
         </TouchableOpacity>
@@ -307,7 +307,7 @@ function unwrap_dynamically(value,default_value){
         >
         <Text style = {{color:"white"}}>
 
-        {Flags[appData.randindex][appData.answerlist[appData.opt4]];}
+        {Flags[appData.randindex][appData.answerlist[appData.opt4]]}
 
        </Text>
         </TouchableOpacity>
