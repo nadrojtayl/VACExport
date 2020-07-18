@@ -224,7 +224,7 @@ function unwrap_dynamically(value,default_value){
       
       <Image
         style= {[{width:"20%",height:"20%"}, {"source":"Flags[appData.randindex][\"Flag link\"];","top":"4.45%","left":"5.67%","width":500,"height":300}]}
-        source = {{uri:'Flags[appData.randindex]["Flag link"];'}}
+        source = {{uri:Flags[appData.randindex]["Flag link"]}}
       >
       </Image>
  <TouchableOpacity
