@@ -199,7 +199,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class RIGHT extends React.Component {
      
 
     constructor(props)
@@ -220,26 +220,31 @@ function unwrap_dynamically(value,default_value){
         return(<View><Text>LOADING</Text></View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", 
-      borderWidth:5, borderColor:"black", backgroundColor:"black"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"black"}}>
+      
       <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://cheshirelibraryblog.files.wordpress.com/2015/02/mystery_person.jpg","height":500,"width":600,"top":"-6.23%","left":"-3.42%"}]}
-        source = {{uri:'https://cheshirelibraryblog.files.wordpress.com/2015/02/mystery_person.jpg'}}
+        style= {[{width:"20%",height:"20%"}, {"top":"-5.19%","left":"-0.75%","source":"https://assets.wallpapersin4k.org/uploads/2017/04/Bright-Lime-Green-Wallpaper-13.jpg","height":1000,"width":1000}]}
+        source = {{uri:'https://assets.wallpapersin4k.org/uploads/2017/04/Bright-Lime-Green-Wallpaper-13.jpg'}}
       >
       </Image>
-      <Text
-          style= {[{position:'absolute'},{"top":"78.18%","left":"0.86%","innerText":" 'Top Score :'+ appData.topscore;","color":"white"}]}
-        > { 'Top Score :'+ appData.topscore} </Text>
+<Box
+          style= {{}}
+        >
+        </Box>
+<Box
+          style= {{}}
+        >
+        </Box>
+<Text
+          style= {[{position:'absolute'},{"fontSize":100,"innerText":"'CORRECT'","color":"white","top":"41.97%","left":"12.09%"}]}
+        > {'CORRECT'} </Text>
         
-      <Text
-          style= {[{position:'absolute'},{"top":"87.82%","left":"0.5%","innerText":" 'Last Score :'+appData.lastscore;","color":"white"}]}
-        > { 'Last Score :'+appData.lastscore} </Text>
-        
+
         </View>
         )
     }
   }
-    export default FirstPage; 
+    export default RIGHT; 
 
 
 

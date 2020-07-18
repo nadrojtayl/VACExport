@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { Button, Picker, Switch, Image, ScrollView, TouchableOpacity, StyleSheet, Text, View, TextInput, Dimensions } from "react-native";
 import Calendar from "./Calendar.js";
 import appData from "./global.js";
-//import AudioPlayer from 'react-native-play-audio';
+// import AudioPlayer from 'react-native-play-audio';
 
 var d = new Date();
 var month = d.getMonth();
@@ -199,13 +199,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class Pause extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","RIGHTswitch0":"false","WRONGinput0":"Select","Index":0,"option":2,"answerlist":["Right answer","Wrong 1","Wrong 2","Wrong 3"],"clicked":0,"option3":0,"option4":2,"topscore":38,"lastscore":11,"randIndex":0,"option2":1,"opt1":1,"opt2":3,"opt3":0,"opt4":2,"randindex":118,"FirstPageswitch4":true}
+        this.state = {"key":"value","FirstPageinput1":"hhhhhhi","Settingsswitch0":true,"Settingsswitch2":true,"X":330,"Move":105,"Move2":1310,"Mainswitch78":true,"inter":4014,"inter2":0,"loaded":false,"dbLinks":{},"tomove2":365,"yeet":2666,"thet":2667,"enemies":[54,55,56,55,56,57,58],"spawned":4,"ended":true,"done":false}
     }
       
   
@@ -220,26 +220,14 @@ function unwrap_dynamically(value,default_value){
         return(<View><Text>LOADING</Text></View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", 
-      borderWidth:5, borderColor:"black", backgroundColor:"black"}}>
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://cheshirelibraryblog.files.wordpress.com/2015/02/mystery_person.jpg","height":500,"width":600,"top":"-6.23%","left":"-3.42%"}]}
-        source = {{uri:'https://cheshirelibraryblog.files.wordpress.com/2015/02/mystery_person.jpg'}}
-      >
-      </Image>
-      <Text
-          style= {[{position:'absolute'},{"top":"78.18%","left":"0.86%","innerText":" 'Top Score :'+ appData.topscore;","color":"white"}]}
-        > { 'Top Score :'+ appData.topscore} </Text>
-        
-      <Text
-          style= {[{position:'absolute'},{"top":"87.82%","left":"0.5%","innerText":" 'Last Score :'+appData.lastscore;","color":"white"}]}
-        > { 'Last Score :'+appData.lastscore} </Text>
-        
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"grey"}}>
+      
+
         </View>
         )
     }
   }
-    export default FirstPage; 
+    export default Pause; 
 
 
 

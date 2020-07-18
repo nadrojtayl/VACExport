@@ -199,7 +199,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class QUESTIONUNO extends React.Component {
      
 
     constructor(props)
@@ -220,26 +220,26 @@ function unwrap_dynamically(value,default_value){
         return(<View><Text>LOADING</Text></View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", 
-      borderWidth:5, borderColor:"black", backgroundColor:"black"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"black"}}>
+      
       <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://cheshirelibraryblog.files.wordpress.com/2015/02/mystery_person.jpg","height":500,"width":600,"top":"-6.23%","left":"-3.42%"}]}
-        source = {{uri:'https://cheshirelibraryblog.files.wordpress.com/2015/02/mystery_person.jpg'}}
+        style= {[{width:"20%",height:"20%"}, {"source":"Flags[appData.randindex][\"Flag link\"];","top":"4.45%","left":"5.67%","width":500,"height":300}]}
+        source = {{uri:'Flags[appData.randindex]["Flag link"];'}}
       >
       </Image>
-      <Text
-          style= {[{position:'absolute'},{"top":"78.18%","left":"0.86%","innerText":" 'Top Score :'+ appData.topscore;","color":"white"}]}
-        > { 'Top Score :'+ appData.topscore} </Text>
-        
-      <Text
-          style= {[{position:'absolute'},{"top":"87.82%","left":"0.5%","innerText":" 'Last Score :'+appData.lastscore;","color":"white"}]}
-        > { 'Last Score :'+appData.lastscore} </Text>
+white
+white
+white
+white
+<Text
+          style= {[{position:'absolute'},{"top":"94.07%","left":"3.18%","innerText":1}]}
+        > {1} </Text>
         
         </View>
         )
     }
   }
-    export default FirstPage; 
+    export default QUESTIONUNO; 
 
 
 

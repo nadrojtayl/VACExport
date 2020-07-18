@@ -199,7 +199,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class WRONG extends React.Component {
      
 
     constructor(props)
@@ -220,26 +220,27 @@ function unwrap_dynamically(value,default_value){
         return(<View><Text>LOADING</Text></View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", 
-      borderWidth:5, borderColor:"black", backgroundColor:"black"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"black"}}>
+      
       <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://cheshirelibraryblog.files.wordpress.com/2015/02/mystery_person.jpg","height":500,"width":600,"top":"-6.23%","left":"-3.42%"}]}
-        source = {{uri:'https://cheshirelibraryblog.files.wordpress.com/2015/02/mystery_person.jpg'}}
+        style= {[{width:"20%",height:"20%"}, {"source":"https://media.idownloadblog.com/wp-content/uploads/2017/03/Red-Product-iPad-Wallpaper-without-apple-logo.jpg","height":1000,"width":1000,"top":"-6.23%","left":"-4.85%"}]}
+        source = {{uri:'https://media.idownloadblog.com/wp-content/uploads/2017/03/Red-Product-iPad-Wallpaper-without-apple-logo.jpg'}}
       >
       </Image>
-      <Text
-          style= {[{position:'absolute'},{"top":"78.18%","left":"0.86%","innerText":" 'Top Score :'+ appData.topscore;","color":"white"}]}
-        > { 'Top Score :'+ appData.topscore} </Text>
+<Text
+          style= {[{position:'absolute'},{"top":"48.09%","left":"14.94%","fontSize":100,"color":"white","innerText":"'WRONG!'"}]}
+        > {'WRONG!'} </Text>
         
-      <Text
-          style= {[{position:'absolute'},{"top":"87.82%","left":"0.5%","innerText":" 'Last Score :'+appData.lastscore;","color":"white"}]}
-        > { 'Last Score :'+appData.lastscore} </Text>
+<Text
+          style= {[{position:'absolute'},{"fontSize":50,"color":"white","innerText":"  'Your Score:'+ appData.lastscore;","top":"21.65%","left":"24.75%"}]}
+        > {  'Your Score:'+ appData.lastscore} </Text>
         
+Continue
         </View>
         )
     }
   }
-    export default FirstPage; 
+    export default WRONG; 
 
 
 

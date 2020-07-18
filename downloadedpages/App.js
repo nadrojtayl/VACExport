@@ -91,7 +91,7 @@ this.state = {dbLinks:{}, loaded:false, page:"FirstPage"}
       componentDidMount(){
         
         var that = this;
-        var dbLinks = {"Flags":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbyqHioFIqkw3m8lrGXVOTx84AOJofqhk0t193anSw/exec?sheetName=Baptiste"}
+        var dbLinks = "{\"Flags\":\"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbyqHioFIqkw3m8lrGXVOTx84AOJofqhk0t193anSw/exec?sheetName=Baptiste\"}"
         Object.keys(dbLinks).forEach(function(key){
           that.connectToDatabase(dbLinks[key], key);
         })
@@ -101,7 +101,7 @@ this.state = {dbLinks:{}, loaded:false, page:"FirstPage"}
 
 render(){ 
 
-  var that = this; 
+  var appData = this.state; var that = this; 
 
   
     if(that.state.page === "FirstPage"){
@@ -162,8 +162,11 @@ render(){
 connectToDatabase(db_link,name){
       var that = this;
       that.state.dbLinks[name] = db_link;
-      
-      if(db_link.indexOf("google.com") !== -1 && db_link.indexOf("macros") === -1){
+      console.log(db_link)
+      if(db_link === null || name === null){
+        return
+      }
+      if(db_link.indexOf("google.com") !== -1){
          var schema = fetch(db_link, {
                   method: 'GET',
                   headers: {
@@ -195,19 +198,14 @@ connectToDatabase(db_link,name){
           var data_arr = Object.keys(output).map(function(key){
             return output[key]
           })
-
-          data_arr.forEach(function(obj,index){
-            console.log("OBJ" + obj);
-            obj["Index"] = index;
-          })
               
-          
+          data_arr.shift();
     
             window[name] = data_arr;
-
+            global[name] = data_arr;
             that.forceUpdate();
             that.setState({dbLinks:that.state.dbLinks, loaded:true})
-            
+          
 
 
           })
@@ -216,29 +214,25 @@ connectToDatabase(db_link,name){
       }
 
       
-   
+      
       var schema = fetch(db_link, {
                   method: 'GET',
                   headers: {
-                    "Content-Type": "application/x-www-form-urlencoded",
+                    "Content-Type": "application/json",
                     "Accept": "application/json"
                   }
         }).then(async function(res){
-        
+          console.log("SAVED");
           res = await res.json();
           window[name] = res;
-          res.forEach(function(obj,index){
-            obj["Index"] = index;
-          })
+          global[name] = res;
           that.forceUpdate();
           that.setState({dbLinks:that.state.dbLinks, loaded:true})
-         
+        
 
 
         })
     }
-
-
 
   goTo(pageName){
     console.log("page");
