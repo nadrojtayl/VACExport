@@ -64,6 +64,12 @@ global.inputs = {
   0:"This"
 }
 
+class Box{
+  render(){
+    return (<View style={this.props.view}></View>)
+  }
+}
+
 
 
 
