@@ -237,7 +237,7 @@ function unwrap_dynamically(value,default_value){
         
  <TouchableOpacity
           
-          onPress = { function(){"; that.forceUpdate(); }}  
+          onPress = { function(){ that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS

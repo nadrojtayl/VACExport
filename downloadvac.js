@@ -391,7 +391,7 @@ function exportElemToExpo(name,int, page, childrenAdditionalStyle, clickfunction
             flexDirection: 'row',
             position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},`+ JSON.stringify(childrenAdditionalStyle) +`]}
         >
-        <Text style = {{color:`+color+`}}>
+        <Text style = {{color:"`+color+`"}}>
 
         {`+ (childrenAdditionalStyle.innerText !== undefined ? childrenAdditionalStyle.innerText:"")
         +  `}

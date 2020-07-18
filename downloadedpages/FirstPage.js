@@ -229,7 +229,7 @@ function unwrap_dynamically(value,default_value){
       </Image>
  <TouchableOpacity
           
-          onPress = { function(){[; that.forceUpdate(); }}  
+          onPress = { function(){ that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -242,7 +242,7 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"69.84%","left":"30.45%","backgroundColor":"black","innerText":"'Press to start'","color":"white","height":200,"width":200,"fontSize":50,"borderColor":"grey","borderRadius":20}]}
         >
-        <Text style = {{color:white}}>
+        <Text style = {{color:"white"}}>
 
         {'Press to start'}
 
