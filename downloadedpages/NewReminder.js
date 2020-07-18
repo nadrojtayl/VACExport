@@ -195,13 +195,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class SMGs extends React.Component {
+ class NewReminder extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","filterWeapons":[{"Category":"SMG","Weapon":"MP5","URL":"https://www.bestgamingsettings.com/wp-content/uploads/2019/11/BestCallofDutyWeapons2.jpg"},{"Category":"SMG","Weapon":"MP7","URL":"https://images2.minutemediacdn.com/image/upload/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/shape/cover/sport/dataimagepngbase64iVBORw0KGgoAAAANSUhEUgAABfwAAALN-8ca14c02b643a8e14761fa10ba1f7b6d.jpg "},{"Category":"SMG","Weapon":"AUG","URL":"https://i.redd.it/hy87xeob93y31.png "},{"Category":"SMG","Weapon":"P90","URL":"https://img.gfinityesports.com/upload/_resized/640x360-nc/_other/class-1-p90.png "},{"Category":"SMG","Weapon":"PP19 Bizon","URL":"https://i.redd.it/5l44l6zcfh641.jpg"},{"Category":"SMG","Weapon":"Uzi","URL":"https://i.redd.it/4ee7is8vs5741.jpg "},{"Category":"SMG","Weapon":"Striker 45 ","URL":"https://img.gfinityesports.com/upload/_resized/640x360-nc/_other/striker-45-class-1.png"}],"Image":"https://static.invenglobal.com/upload/image/2020/03/17/o1584461057831302.png","Weapon":""}
+        this.state = {"displayText":"Brush Teeth","ReminderDetailsinput2":"Select","ReminderDetailspicker3":"Select","ReminderDetailsswitch4":true,"ReminderDetailsswitch3":true,"ReminderDetailsinput3":"TESTtest","ReminderDetailsswitch2":false,"ReminderDetailsswitch6":false,"ReminderDetailsswitch7":false,"ReminderDetailsswitch8":false,"ReminderDetailsswitch9":false,"ReminderDetailsswitch10":false,"ReminderDetailsswitch11":false,"ReminderDetailspicker19":"10:00 PM","accentColor":"#ADD8E6","lightBlueColor":"#ADD8E6","ReminderDetailspicker22":"4 times per day","ReminderDetailspicker25":"","ReminderDetailspicker26":"Option1","ReminderDetailspicker27":"","ReminderDetailspicker28":"","ReminderDetailspicker29":"","ReminderDetailspicker30":"","ReminderDetailspicker31":"","ReminderDetailspicker32":"","filter":[{"Name":"Mason","Day Taken":"","How Often":"","Time Taken":"","Index":0},{"Name":"Mason","Day Taken":"","How Often":"","Time Taken":"","Index":2}],"userInformation":[{"Name":"Mason","Day Taken":"","How Often":"","Time Taken":"","Index":0},{"Name":"Mason","Day Taken":"","How Often":"","Time Taken":"","Index":2}],"Welcomeinput2":"k ladjfkdajs;dfj","FirstPageinput3":"Select"}
     }
 
 
@@ -218,140 +218,15 @@ function unwrap_dynamically(value,default_value){
         return(<View><Text>LOADING</Text></View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"grey"}}>
-       <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("MPFIVE"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"17.44%","left":"34%","innerText":"'MP5'"}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {'MP5'}
-
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("MPSEVEN"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"25.79%","left":"34%","innerText":"'MP7'"}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {'MP7'}
-
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("AUG"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"34.73%","left":"34.57%","innerText":"'AUG'"}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {'AUG'}
-
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"44.08%","left":"34.57%","innerText":"'P90'"}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {'P90'}
-
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"53.42%","left":"33.42%","innerText":"'PP19 Bizon'"}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {'PP19 Bizon'}
-
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"63.17%","left":"34%","innerText":"'Uzi'"}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {'Uzi'}
-
-       </Text>
-        </TouchableOpacity>
-<Text
-          style= {[{position:'absolute'},{"top":"2.72%","left":"18.01%","innerText":"'Select your SMG'","fontSize":30}]}
-        > {'Select your SMG'} </Text>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#A8A8A8"}}>
+      <Text
+          style= {[{position:'absolute'},{"innerText":"'New Reminder'","top":"9%","left":"0%","fontSize":22,"fontFamily":"Garamond","width":"100%","textAlign":"center"}]}
+        > {'New Reminder'} </Text>
         
  <TouchableOpacity
           
-          onPress = { function(){; that.forceUpdate(); }}  
+          onPress = { function(){appData.displayText = "Vitamin";
+that.props.goTo("ReminderDetails");; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -362,11 +237,142 @@ function unwrap_dynamically(value,default_value){
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"72.91%","left":"34.57%","innerText":"'Striker 45'"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Vitamin'","top":"20%","left":"20%","justifyContent":"enum: left","backgroundColor":" appData.lightBlueColor;","width":"60%"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Striker 45'}
+        {'Vitamin'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){appData.displayText = "Medication";
+that.props.goTo("ReminderDetails");; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Medication'","top":"32%","left":"20%","backgroundColor":" appData.lightBlueColor;","width":"60%"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Medication'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){appData.displayText = "Brush Teeth";
+that.props.goTo("ReminderDetails");; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Brush Teeth'","top":"44%","left":"20%","backgroundColor":" appData.lightBlueColor;","width":"60%"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Brush Teeth'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){appData.displayText = "Floss";
+that.props.goTo("ReminderDetails");; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"56%","left":"20%","innerText":"'Floss'","backgroundColor":" appData.lightBlueColor;","width":"60%"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Floss'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){appData.displayText = "Doctors Appointment";
+that.props.goTo("ReminderDetails");; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Doctors Appointment'","top":"68%","left":"20%","backgroundColor":" appData.lightBlueColor;","width":"60%"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Doctors Appointment'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){appData.displayText = "Other";
+that.props.goTo("ReminderDetails");; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Other'","top":"80%","left":"20%","backgroundColor":" appData.lightBlueColor;","width":"60%"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Other'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo('Home');; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Previous'","backgroundColor":"#ADD8E6","top":"1.86%","left":"2.19%"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Previous'}
 
        </Text>
         </TouchableOpacity>
@@ -374,7 +380,7 @@ function unwrap_dynamically(value,default_value){
         )
     }
   }
-    export default SMGs; 
+    export default NewReminder; 
 
 
 

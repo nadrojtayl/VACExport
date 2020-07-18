@@ -1,6 +1,6 @@
 var axios = require('axios');
 var fs = require('fs');
-var name = "Jack_Yoon";
+var name = "mason-herzog";
 axios.get('https://streamedbooks.herokuapp.com/apps?name=' + name)
 .then(function (response) {
   
@@ -370,13 +370,21 @@ function exportElemToExpo(name,int, page, childrenAdditionalStyle, clickfunction
     }
 
     if(name === "image"){
+
+
       var link = (childrenAdditionalStyle.source === undefined ? "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png": (childrenAdditionalStyle.source.indexOf("appData") !== -1 || childrenAdditionalStyle.source.indexOf("[") !== -1 ) ? childrenAdditionalStyle.source.replace(";","") : "'" + childrenAdditionalStyle.source + "'" )
+
       return `
+
+
       <Image
         style= {[{width:"20%",height:"20%"}, `+ JSON.stringify(childrenAdditionalStyle) +`]}
         source = {{uri:`+ link +`}}
       >
-      </Image>`
+      </Image>
+
+
+      `
     }
 
     if(name === "input"){

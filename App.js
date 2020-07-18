@@ -4,25 +4,9 @@
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 import FirstPage from './downloadedpages/FirstPage.js'
-import TWO from './downloadedpages/TWO.js'
-import ARs from './downloadedpages/ARs.js'
-import MFOURAONE from './downloadedpages/MFOURAONE.js'
-import MTHIRTEEN from './downloadedpages/MTHIRTEEN.js'
-import AK from './downloadedpages/AK.js'
-import GRAU from './downloadedpages/GRAU.js'
-import ODEN from './downloadedpages/ODEN.js'
-import FRFIVEFIVESIX from './downloadedpages/FRFIVEFIVESIX.js'
-import FAL from './downloadedpages/FAL.js'
-import KILO from './downloadedpages/KILO.js'
-import SCAR from './downloadedpages/SCAR.js'
-import RAMSEVEN from './downloadedpages/RAMSEVEN.js'
-import SMGs from './downloadedpages/SMGs.js'
-import MPFIVE from './downloadedpages/MPFIVE.js'
-import PNINTY from './downloadedpages/PNINTY.js'
-import MPSEVEN from './downloadedpages/MPSEVEN.js'
-import BIZZON from './downloadedpages/BIZZON.js'
-import UZI from './downloadedpages/UZI.js'
-import THREE from './downloadedpages/THREE.js'
+import NewReminder from './downloadedpages/NewReminder.js'
+import ReminderDetails from './downloadedpages/ReminderDetails.js'
+import Welcome from './downloadedpages/Welcome.js'
 import appData from './downloadedpages/global.js';
 /*
 EXPORT PROCESS
@@ -107,7 +91,7 @@ this.state = {dbLinks:{}, loaded:false, page:"FirstPage"}
       componentDidMount(){
         
         var that = this;
-        var dbLinks = {"CallofDuty":"https://script.google.com/macros/s/AKfycbzDyMiWgXeE24lZvoLT6IoNJHlPZJUGxTOAmaaDtLToC1U4t-8a/exec?sheetName=Jack"}
+        var dbLinks = {"MasonDatabase":"https://docs.google.com/spreadsheets/d/1Z0pa2T6D2BJMiK-v0X0bv7mm_9OqppinX8GcKyZCq4Y/edit#gid=mason","mhDatabase":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbyFVwawpXitN2sUHK5S1HOse1k8TyhxsQ2SdF8/exec?sheetName=mason"}
         Object.keys(dbLinks).forEach(function(key){
           that.connectToDatabase(dbLinks[key], key);
         })
@@ -133,10 +117,10 @@ render(){
     
 
 
-    if(that.state.page === "TWO"){
+    if(that.state.page === "NewReminder"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <TWO goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></TWO>
+             <NewReminder goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NewReminder>
           </View>
         )
     }
@@ -146,10 +130,10 @@ render(){
     
 
 
-    if(that.state.page === "ARs"){
+    if(that.state.page === "ReminderDetails"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <ARs goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></ARs>
+             <ReminderDetails goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></ReminderDetails>
           </View>
         )
     }
@@ -159,244 +143,10 @@ render(){
     
 
 
-    if(that.state.page === "MFOURAONE"){
+    if(that.state.page === "Welcome"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <MFOURAONE goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></MFOURAONE>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "MFOURAONE"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <MFOURAONE goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></MFOURAONE>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "MFOURAONE"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <MFOURAONE goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></MFOURAONE>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "MTHIRTEEN"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <MTHIRTEEN goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></MTHIRTEEN>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "AK"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <AK goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></AK>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "GRAU"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <GRAU goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></GRAU>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "ODEN"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <ODEN goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></ODEN>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "FRFIVEFIVESIX"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <FRFIVEFIVESIX goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FRFIVEFIVESIX>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "FAL"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <FAL goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FAL>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "KILO"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <KILO goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></KILO>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "SCAR"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <SCAR goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SCAR>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "RAMSEVEN"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <RAMSEVEN goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RAMSEVEN>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "SMGs"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <SMGs goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SMGs>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "MPFIVE"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <MPFIVE goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></MPFIVE>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "PNINTY"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <PNINTY goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></PNINTY>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "MPSEVEN"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <MPSEVEN goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></MPSEVEN>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "BIZZON"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <BIZZON goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></BIZZON>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "UZI"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <UZI goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></UZI>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "THREE"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <THREE goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></THREE>
+             <Welcome goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Welcome>
           </View>
         )
     }

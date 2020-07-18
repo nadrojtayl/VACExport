@@ -195,13 +195,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class ODEN extends React.Component {
+ class Welcome extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","filterWeapons":[{"Category":"SMG","Weapon":"MP5","URL":"https://www.bestgamingsettings.com/wp-content/uploads/2019/11/BestCallofDutyWeapons2.jpg"},{"Category":"SMG","Weapon":"MP7","URL":"https://images2.minutemediacdn.com/image/upload/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/shape/cover/sport/dataimagepngbase64iVBORw0KGgoAAAANSUhEUgAABfwAAALN-8ca14c02b643a8e14761fa10ba1f7b6d.jpg "},{"Category":"SMG","Weapon":"AUG","URL":"https://i.redd.it/hy87xeob93y31.png "},{"Category":"SMG","Weapon":"P90","URL":"https://img.gfinityesports.com/upload/_resized/640x360-nc/_other/class-1-p90.png "},{"Category":"SMG","Weapon":"PP19 Bizon","URL":"https://i.redd.it/5l44l6zcfh641.jpg"},{"Category":"SMG","Weapon":"Uzi","URL":"https://i.redd.it/4ee7is8vs5741.jpg "},{"Category":"SMG","Weapon":"Striker 45 ","URL":"https://img.gfinityesports.com/upload/_resized/640x360-nc/_other/striker-45-class-1.png"}],"Image":"https://static.invenglobal.com/upload/image/2020/03/17/o1584461057831302.png","Weapon":""}
+        this.state = {"displayText":"Brush Teeth","ReminderDetailsinput2":"Select","ReminderDetailspicker3":"Select","ReminderDetailsswitch4":true,"ReminderDetailsswitch3":true,"ReminderDetailsinput3":"TESTtest","ReminderDetailsswitch2":false,"ReminderDetailsswitch6":false,"ReminderDetailsswitch7":false,"ReminderDetailsswitch8":false,"ReminderDetailsswitch9":false,"ReminderDetailsswitch10":false,"ReminderDetailsswitch11":false,"ReminderDetailspicker19":"10:00 PM","accentColor":"#ADD8E6","lightBlueColor":"#ADD8E6","ReminderDetailspicker22":"4 times per day","ReminderDetailspicker25":"","ReminderDetailspicker26":"Option1","ReminderDetailspicker27":"","ReminderDetailspicker28":"","ReminderDetailspicker29":"","ReminderDetailspicker30":"","ReminderDetailspicker31":"","ReminderDetailspicker32":"","filter":[{"Name":"Mason","Day Taken":"","How Often":"","Time Taken":"","Index":0},{"Name":"Mason","Day Taken":"","How Often":"","Time Taken":"","Index":2}],"userInformation":[{"Name":"Mason","Day Taken":"","How Often":"","Time Taken":"","Index":0},{"Name":"Mason","Day Taken":"","How Often":"","Time Taken":"","Index":2}],"Welcomeinput2":"k ladjfkdajs;dfj","FirstPageinput3":"Select"}
     }
 
 
@@ -218,18 +218,49 @@ function unwrap_dynamically(value,default_value){
         return(<View><Text>LOADING</Text></View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"grey"}}>
-      
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://img.gfinityesports.com/upload/_resized/640x360-nc/_other/class-1-oden.png","rotate":"\"90deg\"","height":"65%","width":"140%","top":"15.79%","left":"-19.42%"}]}
-        source = {{uri:'https://img.gfinityesports.com/upload/_resized/640x360-nc/_other/class-1-oden.png'}}
-      >
-      </Image>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#A8A8A8"}}>
+      <Text
+          style= {[{position:'absolute'},{"innerText":"'Welcome to Health Assistant!'","top":"9.31%","left":"27.82%"}]}
+        > {'Welcome to Health Assistant!'} </Text>
+        
+<Text
+          style= {[{position:'absolute'},{"innerText":"'Please enter your name below'","top":"20.78%","left":"16.81%"}]}
+        > {'Please enter your name below'} </Text>
+        
+<TextInput
+       style= {{"top":"25.75%","left":"16.81%"}}
+        value={that.state["Welcomeinput2"]}
+        onChangeText={function(val){that.setState({Welcomeinput2: val});  
+       }
+       }
+        />
+ <TouchableOpacity
+          
+          onPress = { function(){appData.filter = appData.filter_list_of_objs(mhDatabase,"Name of User",appData.Welcomeinput2);
+that.props.goTo("FirstPage");; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Confirm!!'","top":"76.76%","left":"35.25%"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Confirm!!'}
+
+       </Text>
+        </TouchableOpacity>
         </View>
         )
     }
   }
-    export default ODEN; 
+    export default Welcome; 
 
 
 
