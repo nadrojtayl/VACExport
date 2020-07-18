@@ -220,18 +220,39 @@ function unwrap_dynamically(value,default_value){
         return(<View><Text>LOADING</Text></View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", 
-      borderWidth:5, borderColor:"black", backgroundColor:"black"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"black"}}>
+      
       <Image
         style= {[{width:"20%",height:"20%"}, {"source":"https://cheshirelibraryblog.files.wordpress.com/2015/02/mystery_person.jpg","height":500,"width":600,"top":"-6.23%","left":"-3.42%"}]}
         source = {{uri:'https://cheshirelibraryblog.files.wordpress.com/2015/02/mystery_person.jpg'}}
       >
       </Image>
-      <Text
+ <TouchableOpacity
+          
+          onPress = { function(){[; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"69.84%","left":"30.45%","backgroundColor":"black","innerText":"'Press to start'","color":"white","height":200,"width":200,"fontSize":50,"borderColor":"grey","borderRadius":20}]}
+        >
+        <Text style = {{color:white}}>
+
+        {'Press to start'}
+
+       </Text>
+        </TouchableOpacity>
+<Text
           style= {[{position:'absolute'},{"top":"78.18%","left":"0.86%","innerText":" 'Top Score :'+ appData.topscore;","color":"white"}]}
         > { 'Top Score :'+ appData.topscore} </Text>
         
-      <Text
+<Text
           style= {[{position:'absolute'},{"top":"87.82%","left":"0.5%","innerText":" 'Last Score :'+appData.lastscore;","color":"white"}]}
         > { 'Last Score :'+appData.lastscore} </Text>
         

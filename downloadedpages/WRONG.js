@@ -235,7 +235,27 @@ function unwrap_dynamically(value,default_value){
           style= {[{position:'absolute'},{"fontSize":50,"color":"white","innerText":"  'Your Score:'+ appData.lastscore;","top":"21.65%","left":"24.75%"}]}
         > {  'Your Score:'+ appData.lastscore} </Text>
         
-Continue
+ <TouchableOpacity
+          
+          onPress = { function(){"; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"color":"Continue","innerText":"'Continue'","top":"76.88%","left":"39.37%","backgroundColor":"red"}]}
+        >
+        <Text style = {{color:Continue}}>
+
+        {'Continue'}
+
+       </Text>
+        </TouchableOpacity>
         </View>
         )
     }

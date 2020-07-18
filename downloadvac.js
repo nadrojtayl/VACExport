@@ -374,6 +374,8 @@ function exportElemToExpo(name,int, page, childrenAdditionalStyle, clickfunction
     }
 
     if(name === "button"){
+      var color = childrenAdditionalStyle.color ? childrenAdditionalStyle.color:"black";
+
       return` <TouchableOpacity
           
           onPress = { function(){`+ ((typeof clickfunction === "string") ? clickfunction.split("goTo").join("that.props.goTo"):"") + ";" +` that.forceUpdate(); }}  
@@ -388,8 +390,13 @@ function exportElemToExpo(name,int, page, childrenAdditionalStyle, clickfunction
             alignItems: 'center',
             flexDirection: 'row',
             position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},`+ JSON.stringify(childrenAdditionalStyle) +`]}
-        ><Text style = {{color:`+ childrenAdditionalStyle.color ? childrenAdditionalStyle.color:"black" +`}}>{`+ (childrenAdditionalStyle.innerText !== undefined ? childrenAdditionalStyle.innerText:"")
-        +  `}</Text>
+        >
+        <Text style = {{color:`+color+`}}>
+
+        {`+ (childrenAdditionalStyle.innerText !== undefined ? childrenAdditionalStyle.innerText:"")
+        +  `}
+
+       </Text>
         </TouchableOpacity>`
 
     }
