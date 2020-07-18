@@ -1087,6 +1087,10 @@ class Multiplier extends Component{
       }
     }
 
+    componentDidMount(){
+      global.goTo = this.props.goTo;
+    }
+
   renderElement(name,int, additionalStyle, clickfunctions,elem){
     var that = this;
    
@@ -1161,7 +1165,7 @@ class Multiplier extends Component{
     
       return(
         <TouchableOpacity
-        onPress = { function(){if(additionalStyle.onPress === undefined){alert("Put a real function here"); return;}   eval(additionalStyle.onPress); if(additionalStyle.onPress.indexOf("appData") !== -1){ console.log("UPDATING APP DATA"); that.forceUpdate(); window.updateAppData(); }   } }
+        onPress = { function(){if(additionalStyle.onPress === undefined){alert("Put a real function here"); return;}   eval(additionalStyle.onPress); if(additionalStyle.onPress.indexOf("appData") !== -1){ console.log("UPDATING APP DATA"); that.forceUpdate();}   } }
           
           key = {int}
           style={[{
