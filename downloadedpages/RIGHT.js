@@ -227,11 +227,11 @@ function unwrap_dynamically(value,default_value){
       >
       </Image>
 <Box
-         
+          style= {{}}
         >
         </Box>
 <Box
-         
+          style= {{}}
         >
         </Box>
 <Text

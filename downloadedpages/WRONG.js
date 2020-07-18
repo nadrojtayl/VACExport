@@ -22,7 +22,7 @@ global.inputs = {
   0:"This"
 }
 
-class Box{
+class Box extends React.Component{
   render(){
     return (<View style={this.props.view}></View>)
   }

@@ -22,7 +22,7 @@ global.inputs = {
   0:"This"
 }
 
-class Box{
+class Box extends React.Component{
   render(){
     return (<View style={this.props.view}></View>)
   }
@@ -151,7 +151,8 @@ function clone(arr){
 global.audio = [];
 async function play(url){
   
- try {
+  appData.soundObject = new Audio.Sound();
+       try {
     await appData.soundObject.loadAsync({uri:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"});
     await appData.soundObject.playAsync();
     // Your sound is playing!
@@ -160,12 +161,11 @@ async function play(url){
   }
 
 
+
 }
 
-function pause(){
-  window.audio.forEach(function(a){
-    a.pause();
-  })
+async function pause(){
+   await appData.soundObject.pauseAsync();
 }
 
 global.play = play;
@@ -204,12 +204,20 @@ function unwrap_dynamically(value,default_value){
         super(props);
         this.state = {"key":"value","RIGHTswitch0":"false","WRONGinput0":"Select","Index":0,"option":2,"answerlist":["Right answer","Wrong 1","Wrong 2","Wrong 3"],"clicked":0,"option3":0,"option4":2,"topscore":38,"lastscore":11,"randIndex":0,"option2":1,"opt1":1,"opt2":3,"opt3":0,"opt4":2,"randindex":118,"FirstPageswitch4":true}
     }
+
+   
       
   
-    async componentDidMount(){
-     appData.soundObject = new Audio.Sound();
-    }
 
+    async componentDidMount(){
+      appData.soundObject = new Audio.Sound();
+       try {
+        await appData.soundObject.loadAsync({uri:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"});
+        // Your sound is playing!
+      } catch (error) {
+        alert(error);
+      }
+    }
 
    
 
@@ -231,8 +239,8 @@ function unwrap_dynamically(value,default_value){
           
           onPress = { function(){appData.lastscore = 0
 
+           appData.soundObject.playAsync();
 
-            play("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3");
 that.props.goTo("QUESTIONUNO"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
