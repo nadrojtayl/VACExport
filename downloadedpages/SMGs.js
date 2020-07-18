@@ -4,6 +4,7 @@ import { Button, Picker, Switch, Image, ScrollView, TouchableOpacity, StyleSheet
 import Calendar from "./Calendar.js";
 import appData from "./global.js";
 import { Audio } from 'expo-av';
+import Multiplier from "./Multiplier.js";
 
 var d = new Date();
 var month = d.getMonth();
@@ -194,13 +195,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class Pagetwo extends React.Component {
+ class SMGs extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","Leung288":["nikhi","ryan","samatha","wesley"]}
+        this.state = {"key":"value","filterWeapons":[{"Category":"SMG","Weapon":"MP5","URL":"https://www.bestgamingsettings.com/wp-content/uploads/2019/11/BestCallofDutyWeapons2.jpg"},{"Category":"SMG","Weapon":"MP7","URL":"https://images2.minutemediacdn.com/image/upload/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/shape/cover/sport/dataimagepngbase64iVBORw0KGgoAAAANSUhEUgAABfwAAALN-8ca14c02b643a8e14761fa10ba1f7b6d.jpg "},{"Category":"SMG","Weapon":"AUG","URL":"https://i.redd.it/hy87xeob93y31.png "},{"Category":"SMG","Weapon":"P90","URL":"https://img.gfinityesports.com/upload/_resized/640x360-nc/_other/class-1-p90.png "},{"Category":"SMG","Weapon":"PP19 Bizon","URL":"https://i.redd.it/5l44l6zcfh641.jpg"},{"Category":"SMG","Weapon":"Uzi","URL":"https://i.redd.it/4ee7is8vs5741.jpg "},{"Category":"SMG","Weapon":"Striker 45 ","URL":"https://img.gfinityesports.com/upload/_resized/640x360-nc/_other/striker-45-class-1.png"}],"Image":"https://static.invenglobal.com/upload/image/2020/03/17/o1584461057831302.png","Weapon":""}
     }
 
 
@@ -217,10 +218,10 @@ function unwrap_dynamically(value,default_value){
         return(<View><Text>LOADING</Text></View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#32d9c8"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"grey"}}>
        <TouchableOpacity
           
-          onPress = { function(){play("https://www.mboxdrive.com/i-have-the-high-ground.mp3"); that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("MPFIVE"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -231,17 +232,17 @@ function unwrap_dynamically(value,default_value){
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'I have the high ground'","top":"24.25%","left":"10.13%","height":150,"width":150,"backgroundColor":"yellow"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"17.44%","left":"34%","innerText":"'MP5'"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'I have the high ground'}
+        {'MP5'}
 
        </Text>
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){play("https://www.mboxdrive.com/why-you-bully-me_tAonLVq.mp3"); that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("MPSEVEN"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -252,17 +253,17 @@ function unwrap_dynamically(value,default_value){
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"49.91%","left":"62.37%","repeaterfontSize":null,"innerText":"'Why you bully me?'","height":150,"width":150,"backgroundColor":"yellow"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"25.79%","left":"34%","innerText":"'MP7'"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Why you bully me?'}
+        {'MP7'}
 
        </Text>
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){play("https://www.mboxdrive.com/imogen-heap-hide-and-seek-mm-what-you-say.mp3"); that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("AUG"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -273,17 +274,17 @@ function unwrap_dynamically(value,default_value){
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"75.71%","left":"62.01%","innerText":"'MMM-What you sayyy?'","height":150,"width":150,"backgroundColor":"yellow"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"34.73%","left":"34.57%","innerText":"'AUG'"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'MMM-What you sayyy?'}
+        {'AUG'}
 
        </Text>
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){play("https://www.mboxdrive.com/victory_6.mp3"); that.forceUpdate(); }}  
+          onPress = { function(){; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -294,17 +295,17 @@ function unwrap_dynamically(value,default_value){
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Victory'","top":"49.13%","left":"9.95%","height":150,"width":150,"zIndex":null,"backgroundColor":"yellow"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"44.08%","left":"34.57%","innerText":"'P90'"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Victory'}
+        {'P90'}
 
        </Text>
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){play("https://www.mboxdrive.com/liedjes-voor-twitch-4.mp3"); that.forceUpdate(); }}  
+          onPress = { function(){; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -315,17 +316,17 @@ function unwrap_dynamically(value,default_value){
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Fortnite Loser'","top":"75.71%","left":"9.59%","height":150,"width":150,"backgroundColor":"yellow"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"53.42%","left":"33.42%","innerText":"'PP19 Bizon'"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Fortnite Loser'}
+        {'PP19 Bizon'}
 
        </Text>
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){play("https://www.mboxdrive.com/pk-fire.mp3"); that.forceUpdate(); }}  
+          onPress = { function(){; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -336,21 +337,21 @@ function unwrap_dynamically(value,default_value){
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"24.38%","left":"63.26%","display":null,"innerText":"'PK FIRE'","height":150,"width":150,"backgroundColor":"yellow","alignItems":"center","textAlign":"center","justifyContent":"center"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"63.17%","left":"34%","innerText":"'Uzi'"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'PK FIRE'}
+        {'Uzi'}
 
        </Text>
         </TouchableOpacity>
 <Text
-          style= {[{position:'absolute'},{"top":"0.55%","left":"12.8%","innerText":"'Meme Soundboard'","fontSize":50}]}
-        > {'Meme Soundboard'} </Text>
+          style= {[{position:'absolute'},{"top":"2.72%","left":"18.01%","innerText":"'Select your SMG'","fontSize":30}]}
+        > {'Select your SMG'} </Text>
         
  <TouchableOpacity
           
-          onPress = { function(){pause(); that.forceUpdate(); }}  
+          onPress = { function(){; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -361,11 +362,11 @@ function unwrap_dynamically(value,default_value){
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'STOP ALL'","top":"12.01%","left":"38.12%","backgroundColor":"red"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"72.91%","left":"34.57%","innerText":"'Striker 45'"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'STOP ALL'}
+        {'Striker 45'}
 
        </Text>
         </TouchableOpacity>
@@ -373,7 +374,7 @@ function unwrap_dynamically(value,default_value){
         )
     }
   }
-    export default Pagetwo; 
+    export default SMGs; 
 
 
 

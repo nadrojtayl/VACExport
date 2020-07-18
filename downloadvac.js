@@ -1,6 +1,6 @@
 var axios = require('axios');
 var fs = require('fs');
-var name = "WesleyLeung";
+var name = "Jack_Yoon";
 axios.get('https://streamedbooks.herokuapp.com/apps?name=' + name)
 .then(function (response) {
   
@@ -39,7 +39,8 @@ axios.get('https://streamedbooks.herokuapp.com/apps?name=' + name)
     
            fs.writeFileSync(__dirname + "/downloadedpages/global.js",`var global = `+ JSON.stringify(appdata) + `\n\n` + `export default global;`);
            fs.writeFileSync(__dirname + "/downloadedpages/Calendar.js",createCalendarPage());
-           fs.writeFileSync(__dirname + "/App.js",make_App_page(databases, response.data.map(function(data){return data.page}) ));
+          fs.writeFileSync(__dirname + "/downloadedpages/Multiplier.js",create_multiplier_page());
+          fs.writeFileSync(__dirname + "/App.js",make_App_page(databases, response.data.map(function(data){return data.page}) ));
         }
       })
      
@@ -60,6 +61,7 @@ import { Button, Picker, Switch, Image, ScrollView, TouchableOpacity, StyleSheet
 import Calendar from "./Calendar.js";
 import appData from "./global.js";
 import { Audio } from 'expo-av';
+import Multiplier from "./Multiplier.js";
 
 var d = new Date();
 var month = d.getMonth();
@@ -875,5 +877,192 @@ export default Calendar;
 
 
 
+
+
     `
   }
+
+
+function create_multiplier_page(){
+  return `
+
+
+import React, { Component } from "react";
+import { Button, Picker, Switch, Image, ScrollView, TouchableOpacity, StyleSheet, Text, View, TextInput, Dimensions } from "react-native";
+
+
+class Multiplier extends Component{
+    constructor(props){
+      super(props);
+      this.state = {
+        childrenAdditionalStyles: [],
+        clickfunctions: [],
+        textTreeChildren:[]
+      }
+    }
+
+  renderElement(name,int, additionalStyle, clickfunctions,elem){
+    var that = this;
+   
+ 
+    var copy = {};
+    additionalStyle.forEach(function(obj,ind){
+      // console.log(obj);
+      Object.keys(obj).forEach(function(key){
+   
+        if(key !== undefined && key.indexOf("repeater") !== -1){
+          copy[key.replace("repeater","")] = obj[key];
+        }
+
+      })
+    })
+    
+
+    additionalStyle = copy;
+   
+
+    Object.keys(additionalStyle).forEach(function(key){
+      if(key !== "onPress" && typeof additionalStyle[key] === "string" && (elem[additionalStyle[key]] !== undefined) ){
+        additionalStyle[key] = elem[additionalStyle[key]];
+      }
+    })
+
+
+    Object.keys(additionalStyle).forEach(function(key){
+      if( key !== "onPress" && typeof additionalStyle[key] === "string" && (additionalStyle[key].indexOf('elem') !== -1  || additionalStyle[key].indexOf('width') !== -1 || additionalStyle[key].indexOf('height') !== -1 ) ){
+        additionalStyle[key] = eval(additionalStyle[key])
+      }
+
+      if(typeof additionalStyle[key] === "object"){
+        additionalStyle[key] = JSON.stringify(additionalStyle[key]);
+      }
+    })
+    
+
+  
+
+    var innerText = additionalStyle.innerText;
+  
+
+     try {
+    
+     var evaled = eval(innerText)
+     innerText= evaled;
+   
+    } catch(e){
+
+    }
+
+
+
+
+    int = parseInt(int)
+    if(name === "text"){
+
+
+      return (
+        <Text
+          style={[{ height: 40, borderColor: 'black', backgroundColor:'white', color:'black', width:"100%", borderWidth: 5}, additionalStyle]}
+          key = {int}
+          selectable = {true}
+        >{  additionalStyle.innerText === undefined ? JSON.stringify(elem):additionalStyle.innerText }</Text>
+
+        )
+    }
+
+
+    if(name === "button"){
+    
+      return(
+        <TouchableOpacity
+        onPress = { function(){if(additionalStyle.onPress === undefined){alert("Put a real function here"); return;}   eval(additionalStyle.onPress); if(additionalStyle.onPress.indexOf("appData") !== -1){ console.log("UPDATING APP DATA"); that.forceUpdate(); window.updateAppData(); }   } }
+          
+          key = {int}
+          style={[{
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: 'white',
+            color:'black',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            borderRadius: 10,
+            borderColor: 'gray', borderWidth: 1}, additionalStyle]}
+        ><Text style = {{textAlign:'center'}}> { unwrap_dynamically(additionalStyle['innerText'])  }</Text>
+        </TouchableOpacity>
+      )
+    }
+
+    if(name === "image"){
+      return(
+       <Image
+          source = {{uri: additionalStyle['source'] === undefined ? ("https://i.imgur.com/89iERyb.png"):additionalStyle['source']}}
+          key = {int}
+          style={[{ width:'20%', height:'20%'}, additionalStyle]}
+        ></Image>
+     
+      )
+    }
+
+
+
+
+  }
+
+
+    render(){
+
+      var that = this;
+  
+     
+
+      if(!window.edit_mode && !window.drag_mode){
+
+        return (<View
+          style = {[{horizontal:true,position:'absolute', width:"100%",alignItems:"center"},that.props.style]}
+          >
+       <ScrollView 
+       style = {{height:"100%",width:"100%"}}
+       horizontal = {that.props.style[1].horizontal}>
+          {that.props.data.map(function(elem,ind){
+
+            return that.renderElement(that.props.type,ind,that.props.style, that.props.clickfunction, elem)
+          }) }
+        </ScrollView>
+        </View>
+        )
+
+
+      }
+
+
+
+      return (<TouchableOpacity
+      style = {[{horizontal:true,position:'absolute', width:"100%",alignItems:"center"},that.props.style]}
+      onPress = { function(){if(window.drag_mode){that.props.parent.setState({selectedElemToStyle:that.props.int}); return} if(window.edit_mode){ console.log("IND" + that.props.int); window.edit(that.props.int); return}  eval('(' + that.state.clickfunctions[that.props.int] + ')()'); if(that.state.clickfunctions[that.props.int].indexOf("appData") !== -1){ that.forceUpdate()}   } }
+
+      >
+        <ScrollView 
+        style = {{height:"100%",width:"100%"}}
+        horizontal = {that.props.style[1].horizontal}>
+          {that.props.data.map(function(elem,ind){
+        
+            
+            return that.renderElement(that.props.type,ind,that.props.style, that.props.clickfunction, elem)
+          }) }
+        </ScrollView>
+        </TouchableOpacity>
+        )
+    }
+
+  }
+
+
+  export default Multiplier;
+
+
+
+  `
+
+}

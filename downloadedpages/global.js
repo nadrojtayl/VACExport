@@ -1,3 +1,3 @@
-var global = {"key":"value","Leung288":["nikhi","ryan","samatha","wesley"]}
+var global = {"key":"value","filterWeapons":[{"Category":"Shotguns","Weapon":"Model 680","URL":"https://img.gfinityesports.com/upload/_resized/640x360-nc/_other/class-2-680.png","Index":27},{"Category":"Shotguns","Weapon":725,"URL":"https://img.gfinityesports.com/upload/_resized/640x360-nc/_other/class-2-725.png ","Index":28},{"Category":"Shotguns","Weapon":"R9-0 Shotgun","URL":"https://img.gfinityesports.com/upload/_resized/640x360-nc/_other/class-1-r9-0.png ","Index":29},{"Category":"Shotguns","Weapon":"Origin 12 Shotgun","URL":"https://img.gfinityesports.com/upload/_resized/640x360-nc/_other/class-1-origin.png","Index":30}],"Image":"https://www.bestgamingsettings.com/wp-content/uploads/2019/11/BestCallofDutyWeapons2.jpg","Weapon":""}
 
 export default global;
