@@ -3,10 +3,11 @@
 
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
+import SecondPage from './downloadedpages/SecondPage.js'
 import FirstPage from './downloadedpages/FirstPage.js'
-import NewReminder from './downloadedpages/NewReminder.js'
-import ReminderDetails from './downloadedpages/ReminderDetails.js'
-import Welcome from './downloadedpages/Welcome.js'
+import ThirdPage from './downloadedpages/ThirdPage.js'
+import FourthPage from './downloadedpages/FourthPage.js'
+import FifthPage from './downloadedpages/FifthPage.js'
 import appData from './downloadedpages/global.js';
 /*
 EXPORT PROCESS
@@ -91,7 +92,8 @@ this.state = {dbLinks:{}, loaded:false, page:"FirstPage"}
       componentDidMount(){
         
         var that = this;
-        var dbLinks = {"MasonDatabase":"https://docs.google.com/spreadsheets/d/1Z0pa2T6D2BJMiK-v0X0bv7mm_9OqppinX8GcKyZCq4Y/edit#gid=mason","mhDatabase":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbyFVwawpXitN2sUHK5S1HOse1k8TyhxsQ2SdF8/exec?sheetName=mason"}
+        var dbLinks = {"hairstyles":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbx8uQw_4uk3m3ApBlCl80x_3B6hpocK9onsdnja/exec?sheetName=Addyson",
+        "tutorials":"hairstyles[index]['tutorial link'];"}
         Object.keys(dbLinks).forEach(function(key){
           that.connectToDatabase(dbLinks[key], key);
         })
@@ -104,6 +106,19 @@ render(){
   var that = this; 
 
   
+    if(that.state.page === "SecondPage"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <SecondPage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SecondPage>
+          </View>
+        )
+    }
+
+
+
+    
+
+
     if(that.state.page === "FirstPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
@@ -117,10 +132,10 @@ render(){
     
 
 
-    if(that.state.page === "NewReminder"){
+    if(that.state.page === "ThirdPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <NewReminder goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NewReminder>
+             <ThirdPage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></ThirdPage>
           </View>
         )
     }
@@ -130,10 +145,10 @@ render(){
     
 
 
-    if(that.state.page === "ReminderDetails"){
+    if(that.state.page === "FourthPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <ReminderDetails goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></ReminderDetails>
+             <FourthPage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FourthPage>
           </View>
         )
     }
@@ -143,10 +158,10 @@ render(){
     
 
 
-    if(that.state.page === "Welcome"){
+    if(that.state.page === "FifthPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <Welcome goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Welcome>
+             <FifthPage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FifthPage>
           </View>
         )
     }

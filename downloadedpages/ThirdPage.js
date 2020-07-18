@@ -195,7 +195,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class ThirdPage extends React.Component {
      
 
     constructor(props)
@@ -219,93 +219,27 @@ function unwrap_dynamically(value,default_value){
       }
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
-      <TextInput
-       style= {{"top":"1.29%","left":"26.79%","innerText":"  appData.firstbutton;","backgroundColor":" appData.color ;"}}
-        value={that.state["FirstPageinput0"]}
-        onChangeText={function(val){that.setState({FirstPageinput0: val});  
-       }
-       }
-        />
+      
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"top":"24.49%","left":"36.82%","source":" \" hairstyles[appData.index].makeuplink;\";"}]}
+        source = {{uri: " hairstyles[appData.index].makeuplink"}}
+      >
+      </Image>
+
+
+      
 <Text
-          style= {[{position:'absolute'},{"top":"8.95%","left":"0.23%","innerText":"'Hi welcome to my app,  this app is for you to get hair ideas, makeup ideas, etc plus tutorials on how to do certain things so you can look even more fabulous than you already are'","color":" appData.color2;"}]}
-        > {'Hi welcome to my app,  this app is for you to get hair ideas, makeup ideas, etc plus tutorials on how to do certain things so you can look even more fabulous than you already are'} </Text>
+          style= {[{position:'absolute'},{"top":"5.12%","left":"-0.04%","borderStyle":"solid","backgroundColor":"pink","alignItems":"center","textAlign":"center","color":"purple","innerText":"'makeup inspo'"}]}
+        > {'makeup inspo'} </Text>
         
- <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("SecondPage");; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, 
-            backgroundColor:'#8fd158', 
-            alignItems:'center',justifyContent:'center', 
-            height: "7%",  title:'Test', 
-            borderColor: 'gray', color:'black'
-            , borderRadius:15, borderWidth: 1},{"top":"47.7%","left":"21.1%",
-            "innerText":"' \"hairstyles & hair tutorials\";'",
-            "height":"10%","backgroundColor":"black"}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {' "hairstyles & hair tutorials"'}
-
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("ThirdPage");; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"27.26%","left":"-1.39%","innerText":"'makeup inspiration'","backgroundColor":"  appData.color;","height":75}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {'makeup inspiration'}
-
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("FourthPage");; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"25.98%","left":"43.86%","innerText":"'nail isnpo'","backgroundColor":" appData.color;","height":75}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {'nail isnpo'}
-
-       </Text>
-        </TouchableOpacity>
 
 
 
       <Image
-        style= {[{width:"20%",height:"20%"}, {"top":"69.2%","left":"2.67%","source":"https://reviewed-com-res.cloudinary.com/image/fetch/s--QYmIHTUO--/b_white,c_limit,cs_srgb,f_auto,fl_progressive.strip_profile,g_center,q_auto,w_972/https://reviewed-production.s3.amazonaws.com/1548449044000/GettyImages-1024577404.jpg","height":100,"width":200}]}
-        source = {{uri:'https://reviewed-com-res.cloudinary.com/image/fetch/s--QYmIHTUO--/b_white,c_limit,cs_srgb,f_auto,fl_progressive.strip_profile,g_center,q_auto,w_972/https://reviewed-production.s3.amazonaws.com/1548449044000/GettyImages-1024577404.jpg'}}
+        style= {[{width:"20%",height:"20%"}, {"top":"23.43%","left":"37.63%","source":"  hairstyles[makeupappData.index][\"makeup link\"];"}]}
+        source = {{uri:  hairstyles[makeupappData.index]["makeup link"]}}
       >
       </Image>
 
@@ -315,39 +249,29 @@ function unwrap_dynamically(value,default_value){
 
 
       <Image
-        style= {[{width:"20%",height:"20%"}, {"top":"68.98%","left":"57.41%","source":"https://www.asiaone.com/sites/default/files/styles/a1_og_image/public/original_images/Jul2019/040719_makeup_pixabay.jpg?itok=mYDnv1qW","width":150,"height":100}]}
-        source = {{uri:'https://www.asiaone.com/sites/default/files/styles/a1_og_image/public/original_images/Jul2019/040719_makeup_pixabay.jpg?itok=mYDnv1qW'}}
+        style= {[{width:"20%",height:"20%"}, {"top":"27.26%","left":"35.73%","source":"  hairstyles[makeupappData.index][\"makeup link\"];"}]}
+        source = {{uri:  hairstyles[makeupappData.index]["makeup link"]}}
       >
       </Image>
 
 
       
- <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("FifthPage");; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"45.99%","left":"68.79%","innerText":"'beauty products'","height":75,"backgroundColor":"purple"}]}
-        >
-        <Text style = {{color:"black"}}>
 
-        {'beauty products'}
 
-       </Text>
-        </TouchableOpacity>
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"top":"16.83%","left":"-6%","source":"  hairstyles[appData.index][\"makeup link\"];","height":350,"width":400}]}
+        source = {{uri:  hairstyles[appData.index]["makeup link"]}}
+      >
+      </Image>
+
+
+      
         </View>
         )
     }
   }
-    export default FirstPage; 
+    export default ThirdPage; 
 
 
 
