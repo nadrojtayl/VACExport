@@ -4,9 +4,9 @@
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 import FirstPage from './downloadedpages/FirstPage.js'
-import QUESTIONUNO from './downloadedpages/QUESTIONUNO.js'
-import RIGHT from './downloadedpages/RIGHT.js'
-import WRONG from './downloadedpages/WRONG.js'
+import Pagetwo from './downloadedpages/Pagetwo.js'
+import Pagethree from './downloadedpages/Pagethree.js'
+import Pagefour from './downloadedpages/Pagefour.js'
 import appData from './downloadedpages/global.js';
 /*
 EXPORT PROCESS
@@ -91,7 +91,7 @@ this.state = {dbLinks:{}, loaded:false, page:"FirstPage"}
       componentDidMount(){
         
         var that = this;
-        var dbLinks = {"Flags":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbyqHioFIqkw3m8lrGXVOTx84AOJofqhk0t193anSw/exec?sheetName=Baptiste"}
+        var dbLinks = {"data":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbyFVwawpXitN2sUHK5S1HOse1k8TyhxsQ2SdF8/exec?sheetName=wesley"}
         Object.keys(dbLinks).forEach(function(key){
           that.connectToDatabase(dbLinks[key], key);
         })
@@ -117,10 +117,10 @@ render(){
     
 
 
-    if(that.state.page === "QUESTIONUNO"){
+    if(that.state.page === "Pagetwo"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <QUESTIONUNO goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></QUESTIONUNO>
+             <Pagetwo goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Pagetwo>
           </View>
         )
     }
@@ -130,10 +130,10 @@ render(){
     
 
 
-    if(that.state.page === "RIGHT"){
+    if(that.state.page === "Pagethree"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <RIGHT goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RIGHT>
+             <Pagethree goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Pagethree>
           </View>
         )
     }
@@ -143,10 +143,10 @@ render(){
     
 
 
-    if(that.state.page === "WRONG"){
+    if(that.state.page === "Pagefour"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <WRONG goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></WRONG>
+             <Pagefour goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Pagefour>
           </View>
         )
     }

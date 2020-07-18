@@ -150,9 +150,9 @@ function clone(arr){
 
 global.audio = [];
 async function play(url){
-  
+  appData.soundObject = new Audio.Sound();
  try {
-    await appData.soundObject.loadAsync({uri:url});
+    await appData.soundObject.loadAsync({uri:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"});
     await appData.soundObject.playAsync();
     // Your sound is playing!
   } catch (error) {
@@ -194,19 +194,16 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class QUESTIONUNO extends React.Component {
+ class Pagetwo extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","RIGHTswitch0":"false","WRONGinput0":"Select","Index":0,"option":2,"answerlist":["Right answer","Wrong 1","Wrong 2","Wrong 3"],"clicked":0,"option3":0,"option4":2,"topscore":38,"lastscore":11,"randIndex":0,"option2":1,"opt1":1,"opt2":3,"opt3":0,"opt4":2,"randindex":118,"FirstPageswitch4":true}
+        this.state = {"key":"value","Leung288":["nikhi","ryan","samatha","wesley"]}
     }
 
-    componentDidMount(){
-      appData.soundObject = new Audio.Sound();
 
-    }
       
   
 
@@ -220,16 +217,10 @@ function unwrap_dynamically(value,default_value){
         return(<View><Text>LOADING</Text></View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"black"}}>
-      
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"Flags[appData.randindex][\"Flag link\"];","top":"4.45%","left":"5.67%","width":500,"height":300}]}
-        source = {{uri:Flags[appData.randindex]["Flag link"]}}
-      >
-      </Image>
- <TouchableOpacity
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#32d9c8"}}>
+       <TouchableOpacity
           
-          onPress = { function(){if(appData.opt1== 0){    that.props.goTo("RIGHT")}else{    that.props.goTo("WRONG")}; that.forceUpdate(); }}  
+          onPress = { function(){play("https://www.mboxdrive.com/i-have-the-high-ground.mp3"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -240,17 +231,17 @@ function unwrap_dynamically(value,default_value){
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"51.35%","left":"16.55%","width":400,"backgroundColor":"#6E6E6E","innerText":"Flags[appData.randindex][appData.answerlist[appData.opt1]];","color":"white","borderRadius":1000,"borderColor":"black","borderStyle":"solid","source":null}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'I have the high ground'","top":"24.25%","left":"10.13%","height":150,"width":150,"backgroundColor":"yellow"}]}
         >
-        <Text style = {{color:"white"}}>
+        <Text style = {{color:"black"}}>
 
-        {Flags[appData.randindex][appData.answerlist[appData.opt1]]}
+        {'I have the high ground'}
 
        </Text>
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){if(appData.opt2 == 0){    that.props.goTo("RIGHT")}else{    that.props.goTo("WRONG")}; that.forceUpdate(); }}  
+          onPress = { function(){play("https://www.mboxdrive.com/why-you-bully-me_tAonLVq.mp3"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -261,17 +252,17 @@ function unwrap_dynamically(value,default_value){
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"62.55%","left":"17.26%","width":400,"backgroundColor":"#6E6E6E","borderRadius":1000,"borderColor":"black","color":"white","innerText":"Flags[appData.randindex][appData.answerlist[appData.opt2]];"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"49.91%","left":"62.37%","repeaterfontSize":null,"innerText":"'Why you bully me?'","height":150,"width":150,"backgroundColor":"yellow"}]}
         >
-        <Text style = {{color:"white"}}>
+        <Text style = {{color:"black"}}>
 
-        {Flags[appData.randindex][appData.answerlist[appData.opt2]]}
+        {'Why you bully me?'}
 
        </Text>
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){if(appData.opt3== 0){    that.props.goTo("RIGHT")}else{    that.props.goTo("WRONG")}; that.forceUpdate(); }}  
+          onPress = { function(){play("https://www.mboxdrive.com/imogen-heap-hide-and-seek-mm-what-you-say.mp3"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -282,17 +273,17 @@ function unwrap_dynamically(value,default_value){
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"75.31%","left":"17.44%","width":400,"borderColor":"black","backgroundColor":"#6E6E6E","borderRadius":1000,"color":"white","innerText":"Flags[appData.randindex][appData.answerlist[appData.opt3]];"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"75.71%","left":"62.01%","innerText":"'MMM-What you sayyy?'","height":150,"width":150,"backgroundColor":"yellow"}]}
         >
-        <Text style = {{color:"white"}}>
+        <Text style = {{color:"black"}}>
 
-        {Flags[appData.randindex][appData.answerlist[appData.opt3]]}
+        {'MMM-What you sayyy?'}
 
        </Text>
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){if(appData.opt4== 0){    that.props.goTo("RIGHT")}else{    that.props.goTo("WRONG")}; that.forceUpdate(); }}  
+          onPress = { function(){play("https://www.mboxdrive.com/victory_6.mp3"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -303,23 +294,86 @@ function unwrap_dynamically(value,default_value){
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"87.56%","left":"17.26%","width":400,"backgroundColor":"#6E6E6E","innerText":"Flags[appData.randindex][appData.answerlist[appData.opt4]];","color":"white","borderRadius":1000,"borderColor":"black","borderStyle":"solid"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Victory'","top":"49.13%","left":"9.95%","height":150,"width":150,"zIndex":null,"backgroundColor":"yellow"}]}
         >
-        <Text style = {{color:"white"}}>
+        <Text style = {{color:"black"}}>
 
-        {Flags[appData.randindex][appData.answerlist[appData.opt4]]}
+        {'Victory'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){play("https://www.mboxdrive.com/liedjes-voor-twitch-4.mp3"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Fortnite Loser'","top":"75.71%","left":"9.59%","height":150,"width":150,"backgroundColor":"yellow"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Fortnite Loser'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){play("https://www.mboxdrive.com/pk-fire.mp3"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"24.38%","left":"63.26%","display":null,"innerText":"'PK FIRE'","height":150,"width":150,"backgroundColor":"yellow","alignItems":"center","textAlign":"center","justifyContent":"center"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'PK FIRE'}
 
        </Text>
         </TouchableOpacity>
 <Text
-          style= {[{position:'absolute'},{"top":"94.07%","left":"3.18%","innerText":1}]}
-        > {1} </Text>
+          style= {[{position:'absolute'},{"top":"0.55%","left":"12.8%","innerText":"'Meme Soundboard'","fontSize":50}]}
+        > {'Meme Soundboard'} </Text>
         
+ <TouchableOpacity
+          
+          onPress = { function(){pause(); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'STOP ALL'","top":"12.01%","left":"38.12%","backgroundColor":"red"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'STOP ALL'}
+
+       </Text>
+        </TouchableOpacity>
         </View>
         )
     }
   }
-    export default QUESTIONUNO; 
+    export default Pagetwo; 
 
 
 

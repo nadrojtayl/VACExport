@@ -1,6 +1,6 @@
 var axios = require('axios');
 var fs = require('fs');
-var name = "Baptiste-Louis";
+var name = "WesleyLeung";
 axios.get('https://streamedbooks.herokuapp.com/apps?name=' + name)
 .then(function (response) {
   
@@ -206,9 +206,9 @@ function clone(arr){
 
 global.audio = [];
 async function play(url){
-  
+  appData.soundObject = new Audio.Sound();
  try {
-    await appData.soundObject.loadAsync({uri:url});
+    await appData.soundObject.loadAsync({uri:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"});
     await appData.soundObject.playAsync();
     // Your sound is playing!
   } catch (error) {
@@ -259,10 +259,7 @@ function unwrap_dynamically(value,default_value){
         this.state = ` + JSON.stringify(appdata) + `
     }
 
-    componentDidMount(){
-      appData.soundObject = new Audio.Sound();
 
-    }
       
   
 

@@ -194,7 +194,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class Pagethree extends React.Component {
      
 
     constructor(props)
@@ -220,7 +220,7 @@ function unwrap_dynamically(value,default_value){
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#32d9c8"}}>
        <TouchableOpacity
           
-          onPress = { function(){play("https://www.mboxdrive.com/nani_Pmxf5n3.mp3"); that.forceUpdate(); }}  
+          onPress = { function(){play("https://www.mboxdrive.com/henchman_dbno_enter_010.mp3"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -231,17 +231,17 @@ function unwrap_dynamically(value,default_value){
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"23.25%","left":"61.3%","backgroundColor":"#fffa00","innerText":"'NANI'","height":"20%","width":"27%"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Fortnite Henchman'","top":"51.86%","left":"11.02%","height":150,"width":150,"backgroundColor":"yellow"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'NANI'}
+        {'Fortnite Henchman'}
 
        </Text>
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){play("https://www.mboxdrive.com/roblox-death-sound_1.mp3"); that.forceUpdate(); }}  
+          onPress = { function(){play("https://www.mboxdrive.com/johncenaprankcall_cutted.mp3"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -252,17 +252,17 @@ function unwrap_dynamically(value,default_value){
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"49.38%","left":"11.2%","backgroundColor":"#fffa00","height":"20%","innerText":"'OOF'","containerStyle":null,"width":"27%"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'John Cena'","height":150,"width":150,"top":"76.75%","left":"60.94%","backgroundColor":"yellow"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'OOF'}
+        {'John Cena'}
 
        </Text>
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){play("https://www.mboxdrive.com/musica_1 (1).mp3"); that.forceUpdate(); }}  
+          onPress = { function(){play("https://www.mboxdrive.com/wii-sports-theme-roblox-death-sound-edition-audiotrimmer_pvK4V0Q.mp3"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -273,17 +273,17 @@ function unwrap_dynamically(value,default_value){
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"49.66%","left":"61.83%","innerText":"'Windows Error Song'","backgroundColor":"#fffa00","height":"20%","color":"black","width":"27%"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Wii Sports Roblox Death'","height":150,"color":"black","top":"27.37%","left":"59.51%","width":150,"backgroundColor":"yellow"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Windows Error Song'}
+        {'Wii Sports Roblox Death'}
 
        </Text>
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){play("https://www.mboxdrive.com/classic_hurt.mp3"); that.forceUpdate(); }}  
+          onPress = { function(){play("https://www.mboxdrive.com/anime-wow-sound-effect.mp3"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -294,17 +294,17 @@ function unwrap_dynamically(value,default_value){
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"22.42%","left":"10.49%","backgroundColor":"#fffa00","height":"20%","fontFamily":null,"innerText":"'Minecraft Hurt'","width":"27%"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Anime WOW'","height":150,"source":null,"width":150,"top":"52.96%","left":"60.94%","backgroundColor":"yellow"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Minecraft Hurt'}
+        {'Anime WOW'}
 
        </Text>
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){play("https://www.mboxdrive.com/perfect-fart.mp3"); that.forceUpdate(); }}  
+          onPress = { function(){play("https://www.mboxdrive.com/r2d2_scream_converted.mp3"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -315,17 +315,17 @@ function unwrap_dynamically(value,default_value){
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Fart'","top":"77.16%","left":"11.38%","backgroundColor":"#fffa00","height":"20%","width":"27%"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'R2D2 Scream'","height":150,"width":150,"top":"76.34%","left":"10.84%","backgroundColor":"yellow"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Fart'}
+        {'R2D2 Scream'}
 
        </Text>
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){play("https://www.mboxdrive.com/movie_1.mp3"); that.forceUpdate(); }}  
+          onPress = { function(){play("https://www.mboxdrive.com/yeet-sound-effect.mp3"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -336,22 +336,21 @@ function unwrap_dynamically(value,default_value){
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"77.03%","left":"62.37%","height":150,"backgroundColor":"#fffa00","innerText":"'Bruh'","width":"27%"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'YEET'","height":150,"width":150,"top":"26.82%","left":"11.02%","borderStyle":null,"backgroundColor":"yellow"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Bruh'}
+        {'YEET'}
 
        </Text>
         </TouchableOpacity>
 <Text
-          style= {[{position:'absolute'},{"top":"1.1%","left":"11.73%","innerText":"'Meme Soundboard'","fontSize":50}]}
+          style= {[{position:'absolute'},{"top":"0.69%","left":"14.23%","innerText":"'Meme Soundboard'","fontSize":50}]}
         > {'Meme Soundboard'} </Text>
         
  <TouchableOpacity
           
-          onPress = { function(){pause()
-; that.forceUpdate(); }}  
+          onPress = { function(){pause(); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -362,7 +361,7 @@ function unwrap_dynamically(value,default_value){
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'STOP ALL'","top":"12.52%","left":"38.48%","backgroundColor":"red"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"14.58%","left":"38.66%","innerText":"'STOP ALL'","backgroundColor":"red"}]}
         >
         <Text style = {{color:"black"}}>
 
@@ -374,7 +373,7 @@ function unwrap_dynamically(value,default_value){
         )
     }
   }
-    export default FirstPage; 
+    export default Pagethree; 
 
 
 
