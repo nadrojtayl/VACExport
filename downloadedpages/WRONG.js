@@ -237,7 +237,10 @@ function unwrap_dynamically(value,default_value){
         
  <TouchableOpacity
           
-          onPress = { function(){ that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("FirstPage")
+if(appData.topscore<appData.lastscore){
+    appData.topscore=appData.lastscore
+}; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -250,7 +253,7 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"color":"Continue","innerText":"'Continue'","top":"76.88%","left":"39.37%","backgroundColor":"red"}]}
         >
-        <Text style = {{color:Continue}}>
+        <Text style = {{color:"Continue"}}>
 
         {'Continue'}
 

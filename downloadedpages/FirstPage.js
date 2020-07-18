@@ -229,7 +229,11 @@ function unwrap_dynamically(value,default_value){
       </Image>
  <TouchableOpacity
           
-          onPress = { function(){ that.forceUpdate(); }}  
+          onPress = { function(){appData.lastscore = 0
+
+
+
+that.props.goTo("QUESTIONUNO"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS

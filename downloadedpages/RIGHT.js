@@ -241,7 +241,24 @@ function unwrap_dynamically(value,default_value){
         
  <TouchableOpacity
           
-          onPress = { function(){that.forceUpdate(); }}  
+          onPress = { function(){
+
+var lst = [0, 1, 2, 3];
+for(let i =lst.length - 1; i > 0; i--){
+  const j = Math.floor(Math.random() * i)
+  const temp = lst[i]
+    lst[i] = lst[j]
+    lst[j] = temp
+}
+appData.opt1 = lst[0];
+appData.opt2 = lst[1];
+appData.opt3 = lst[2];
+appData.opt4 = lst[3];
+appData.randindex= Math.floor(Math.random()*Flags.length)
+
+appData.lastscore += 1
+
+that.props.goTo("QUESTIONUNO"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -254,7 +271,7 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Continue'","top":"72.84%","left":"38.83%"}]}
         >
-        <Text style = {{color:black}}>
+        <Text style = {{color:"black"}}>
 
         {'Continue'}
 

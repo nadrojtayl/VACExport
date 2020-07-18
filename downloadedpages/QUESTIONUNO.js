@@ -229,7 +229,7 @@ function unwrap_dynamically(value,default_value){
       </Image>
  <TouchableOpacity
           
-          onPress = { function(){ that.forceUpdate(); }}  
+          onPress = { function(){if(appData.opt1== 0){    that.props.goTo("RIGHT")}else{    that.props.goTo("WRONG")}; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -242,15 +242,15 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"51.35%","left":"16.55%","width":400,"backgroundColor":"#6E6E6E","innerText":"Flags[appData.randindex][appData.answerlist[appData.opt1]];","color":"white","borderRadius":1000,"borderColor":"black","borderStyle":"solid","source":null}]}
         >
-        <Text style = {{color:white}}>
+        <Text style = {{color:"white"}}>
 
-        {Flags[appData.randindex][appData.answerlist[appData.opt1]]}
+        {Flags[appData.randindex][appData.answerlist[appData.opt1]];}
 
        </Text>
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){ that.forceUpdate(); }}  
+          onPress = { function(){if(appData.opt2 == 0){    that.props.goTo("RIGHT")}else{    that.props.goTo("WRONG")}; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -263,15 +263,15 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"62.55%","left":"17.26%","width":400,"backgroundColor":"#6E6E6E","borderRadius":1000,"borderColor":"black","color":"white","innerText":"Flags[appData.randindex][appData.answerlist[appData.opt2]];"}]}
         >
-        <Text style = {{color:white}}>
+        <Text style = {{color:"white"}}>
 
-        {Flags[appData.randindex][appData.answerlist[appData.opt2]]}
+        {Flags[appData.randindex][appData.answerlist[appData.opt2]];}
 
        </Text>
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){ that.forceUpdate(); }}  
+          onPress = { function(){if(appData.opt3== 0){    that.props.goTo("RIGHT")}else{    that.props.goTo("WRONG")}; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -284,15 +284,15 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"75.31%","left":"17.44%","width":400,"borderColor":"black","backgroundColor":"#6E6E6E","borderRadius":1000,"color":"white","innerText":"Flags[appData.randindex][appData.answerlist[appData.opt3]];"}]}
         >
-        <Text style = {{color:white}}>
+        <Text style = {{color:"white"}}>
 
-        {Flags[appData.randindex][appData.answerlist[appData.opt3]]}
+        {Flags[appData.randindex][appData.answerlist[appData.opt3]];}
 
        </Text>
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){ that.forceUpdate(); }}  
+          onPress = { function(){if(appData.opt4== 0){    that.props.goTo("RIGHT")}else{    that.props.goTo("WRONG")}; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -305,9 +305,9 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"87.56%","left":"17.26%","width":400,"backgroundColor":"#6E6E6E","innerText":"Flags[appData.randindex][appData.answerlist[appData.opt4]];","color":"white","borderRadius":1000,"borderColor":"black","borderStyle":"solid"}]}
         >
-        <Text style = {{color:white}}>
+        <Text style = {{color:"white"}}>
 
-        {Flags[appData.randindex][appData.answerlist[appData.opt4]]}
+        {Flags[appData.randindex][appData.answerlist[appData.opt4]];}
 
        </Text>
         </TouchableOpacity>

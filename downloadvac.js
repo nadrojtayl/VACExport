@@ -20,6 +20,7 @@ axios.get('https://streamedbooks.herokuapp.com/apps?name=' + name)
         app_children = JSON.parse(app_children);
         appdata = JSON.parse(appdata);
         app_styles = JSON.parse(app_styles);
+        clickfunctions = JSON.parse(clickfunctions);
         fs.writeFileSync(__dirname + "/downloadedpages/" +page +".js",translate_page(page,app_children,app_styles,clickfunctions,databases,appdata,color));
         if(int === response.data.length-1){
           console.log(databases);
@@ -375,7 +376,7 @@ function exportElemToExpo(name,int, page, childrenAdditionalStyle, clickfunction
 
     if(name === "button"){
       var color = childrenAdditionalStyle.color ? childrenAdditionalStyle.color:"black";
-
+      console.log(clickfunction);
       return` <TouchableOpacity
           
           onPress = { function(){`+ ((typeof clickfunction === "string") ? clickfunction.split("goTo").join("that.props.goTo"):"") + ";" +` that.forceUpdate(); }}  
