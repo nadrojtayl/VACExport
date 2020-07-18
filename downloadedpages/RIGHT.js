@@ -233,14 +233,7 @@ function unwrap_dynamically(value,default_value){
         source = {{uri:'https://assets.wallpapersin4k.org/uploads/2017/04/Bright-Lime-Green-Wallpaper-13.jpg'}}
       >
       </Image>
-<Box
-          style= {{}}
-        >
-        </Box>
-<Box
-          style= {{}}
-        >
-        </Box>
+
 <Text
           style= {[{position:'absolute'},{"fontSize":100,"innerText":"'CORRECT'","color":"white","top":"41.97%","left":"12.09%"}]}
         > {'CORRECT'} </Text>
