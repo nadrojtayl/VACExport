@@ -6,14 +6,20 @@ const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
-rl.question("What is the name of the app? ", function(name) {;
+
+rl.question("What is the name of the app? ", function(name) {
     load_app(name);
 });
+
+
 
 function load_app(name){
   axios.get('https://streamedbooks.herokuapp.com/apps?name=' + name)
 .then(function (response) {
-  
+   if(response.data.length === 0){
+    console.log("app not found");
+    return 
+   }
    var appdata = null;
    var files = fs.readdirSync(__dirname + "/downloadedpages");
    console.log(files);
@@ -51,9 +57,10 @@ function load_app(name){
            fs.writeFileSync(__dirname + "/downloadedpages/Calendar.js",createCalendarPage());
           fs.writeFileSync(__dirname + "/downloadedpages/Multiplier.js",create_multiplier_page());
           fs.writeFileSync(__dirname + "/App.js",make_App_page(databases, response.data.map(function(data){return data.page}) ));
+          produceAppJSONFile();
         }
       })
- rl.close();
+
 
      
        
@@ -1279,5 +1286,54 @@ class Multiplier extends Component{
 
 
   `
+
+}
+
+function produceAppJSONFile(){
+  rl.question("What is the print name of the app (that will appear on the AppStore)? ", function(printname) {
+   rl.question("What is the bundle identifier in the AppStore? ", function(bundlename) {
+
+var appData = `  {
+  "expo": {
+    "name": "`+ printname +`",
+    "slug": "`+printname+`",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/ficon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "`+bundlename+`"
+    },
+    "android": {
+      "package": "`+bundlename+`"
+    },
+    "entryPoint": "node_modules/expo/AppEntry.js"
+  }
+}`
+
+ fs.writeFileSync(__dirname +"/app.json",appData);
+
+ rl.close();
+
+})
+
+
+});
 
 }
