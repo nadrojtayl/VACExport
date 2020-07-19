@@ -195,13 +195,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class SMGs extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","filterWeapons":[{"Category":"Shotguns","Weapon":"Model 680","URL":"https://img.gfinityesports.com/upload/_resized/640x360-nc/_other/class-2-680.png","Index":27},{"Category":"Shotguns","Weapon":725,"URL":"https://img.gfinityesports.com/upload/_resized/640x360-nc/_other/class-2-725.png ","Index":28},{"Category":"Shotguns","Weapon":"R9-0 Shotgun","URL":"https://img.gfinityesports.com/upload/_resized/640x360-nc/_other/class-1-r9-0.png ","Index":29},{"Category":"Shotguns","Weapon":"Origin 12 Shotgun","URL":"https://img.gfinityesports.com/upload/_resized/640x360-nc/_other/class-1-origin.png","Index":30}],"Image":"https://www.bestgamingsettings.com/wp-content/uploads/2019/11/BestCallofDutyWeapons2.jpg","Weapon":""}
+        this.state = {"key":"value","filterWeapons":[{"Category":"SMG","Weapon":"MP5","URL":"https://www.bestgamingsettings.com/wp-content/uploads/2019/11/BestCallofDutyWeapons2.jpg"},{"Category":"SMG","Weapon":"MP7","URL":"https://images2.minutemediacdn.com/image/upload/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/shape/cover/sport/dataimagepngbase64iVBORw0KGgoAAAANSUhEUgAABfwAAALN-8ca14c02b643a8e14761fa10ba1f7b6d.jpg "},{"Category":"SMG","Weapon":"AUG","URL":"https://i.redd.it/hy87xeob93y31.png "},{"Category":"SMG","Weapon":"P90","URL":"https://img.gfinityesports.com/upload/_resized/640x360-nc/_other/class-1-p90.png "},{"Category":"SMG","Weapon":"PP19 Bizon","URL":"https://i.redd.it/5l44l6zcfh641.jpg"},{"Category":"SMG","Weapon":"Uzi","URL":"https://i.redd.it/4ee7is8vs5741.jpg "},{"Category":"SMG","Weapon":"Striker 45 ","URL":"https://img.gfinityesports.com/upload/_resized/640x360-nc/_other/striker-45-class-1.png"}],"Image":"https://static.invenglobal.com/upload/image/2020/03/17/o1584461057831302.png","Weapon":""}
     }
 
 
@@ -219,18 +219,139 @@ function unwrap_dynamically(value,default_value){
       }
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"grey"}}>
-      <Text
-          style= {[{position:'absolute'},{"innerText":"'BEST CLASS SETUPS '","top":-0.3120000000000118,"left":41.105399999999975,"fontSize":30}]}
-        > {'BEST CLASS SETUPS '} </Text>
-        
+       <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo("MPFIVE"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"17.44%","left":"34%","innerText":"'MP5'"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'MP5'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo("MPSEVEN"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"25.79%","left":"34%","innerText":"'MP7'"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'MP7'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo("AUG"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"34.73%","left":"34.57%","innerText":"'AUG'"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'AUG'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"44.08%","left":"34.57%","innerText":"'P90'"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'P90'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"53.42%","left":"33.42%","innerText":"'PP19 Bizon'"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'PP19 Bizon'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"63.17%","left":"34%","innerText":"'Uzi'"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Uzi'}
+
+       </Text>
+        </TouchableOpacity>
 <Text
-          style= {[{position:'absolute'},{"top":"6.9%","left":"26.57%","innerText":"'Select a Type of Weapon'"}]}
-        > {'Select a Type of Weapon'} </Text>
+          style= {[{position:'absolute'},{"top":"2.72%","left":"18.01%","innerText":"'Select your SMG'","fontSize":30}]}
+        > {'Select your SMG'} </Text>
         
  <TouchableOpacity
           
-          onPress = { function(){appData.filterWeapons = filter_list_of_objs(CallofDuty,"Category","AR");
-that.props.goTo("TWO");; that.forceUpdate(); }}  
+          onPress = { function(){; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -241,162 +362,19 @@ that.props.goTo("TWO");; that.forceUpdate(); }}
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"54.42%","left":"1.74%","innerText":"'ARs'","backgroundColor":"#0a4a08","color":"white"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"72.91%","left":"34.57%","innerText":"'Striker 45'"}]}
         >
-        <Text style = {{color:"white"}}>
+        <Text style = {{color:"black"}}>
 
-        {'ARs'}
+        {'Striker 45'}
 
        </Text>
         </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){appData.filterWeapons = filter_list_of_objs(CallofDuty,"Category","SMG");
-that.props.goTo("TWO");; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"54.82%","left":"35.99%","innerText":"'SMGs'","backgroundColor":"#0a4a08","color":"white"}]}
-        >
-        <Text style = {{color:"white"}}>
-
-        {'SMGs'}
-
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){appData.filterWeapons = filter_list_of_objs(CallofDuty,"Category","LMG");
-that.props.goTo("TWO");; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"55.21%","left":"68.82%","innerText":"'LMGs'","backgroundColor":"#0a4a08","color":"white"}]}
-        >
-        <Text style = {{color:"white"}}>
-
-        {'LMGs'}
-
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){appData.filterWeapons = filter_list_of_objs(CallofDuty,"Category","Marksman");
-that.props.goTo("TWO");; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"70.52%","left":"1.46%","innerText":"'Marksmen Rifles'","fontSize":13,"backgroundColor":"#0a4a08","color":"white"}]}
-        >
-        <Text style = {{color:"white"}}>
-
-        {'Marksmen Rifles'}
-
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){appData.filterWeapons = filter_list_of_objs(CallofDuty,"Category","Sniper");
-that.props.goTo("TWO");; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"70.72%","left":"34.85%","innerText":"'Snipers'","backgroundColor":"#0a4a08","color":"white"}]}
-        >
-        <Text style = {{color:"white"}}>
-
-        {'Snipers'}
-
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){appData.filterWeapons = filter_list_of_objs(CallofDuty,"Category","Pistols");
-that.props.goTo("TWO");; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"70.72%","left":"67.39%","innerText":"'Pistols'","source":null,"backgroundColor":"#0a4a08","color":"white"}]}
-        >
-        <Text style = {{color:"white"}}>
-
-        {'Pistols'}
-
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){appData.filterWeapons = filter_list_of_objs(CallofDuty,"Category","Shotguns");
-that.props.goTo("TWO");; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"82.25%","left":"34.57%","innerText":"'Shotguns'","backgroundColor":"#0a4a08","color":"white"}]}
-        >
-        <Text style = {{color:"white"}}>
-
-        {'Shotguns'}
-
-       </Text>
-        </TouchableOpacity>
-
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/35271885-b64b-49da-b43d-e9aa8fa4d471/ddtf89c-ca90d3f4-ef60-438a-b0e1-a9608e54ae79.jpg/v1/fill/w_1280,h_720,q_75,strp/call_of_duty_modern_warfare_warzone__wallpaper_2_by_thetruemask_ddtf89c-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD03MjAiLCJwYXRoIjoiXC9mXC8zNTI3MTg4NS1iNjRiLTQ5ZGEtYjQzZC1lOWFhOGZhNGQ0NzFcL2RkdGY4OWMtY2E5MGQzZjQtZWY2MC00MzhhLWIwZTEtYTk2MDhlNTRhZTc5LmpwZyIsIndpZHRoIjoiPD0xMjgwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.czhZx5kzJpUFE6TpCyAGsqjcakkMbN88uxoXl-EWvcc","top":"13.46%","left":"0.03%","width":"100%","height":"30%"}]}
-        source = {{uri:'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/35271885-b64b-49da-b43d-e9aa8fa4d471/ddtf89c-ca90d3f4-ef60-438a-b0e1-a9608e54ae79.jpg/v1/fill/w_1280,h_720,q_75,strp/call_of_duty_modern_warfare_warzone__wallpaper_2_by_thetruemask_ddtf89c-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD03MjAiLCJwYXRoIjoiXC9mXC8zNTI3MTg4NS1iNjRiLTQ5ZGEtYjQzZC1lOWFhOGZhNGQ0NzFcL2RkdGY4OWMtY2E5MGQzZjQtZWY2MC00MzhhLWIwZTEtYTk2MDhlNTRhZTc5LmpwZyIsIndpZHRoIjoiPD0xMjgwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.czhZx5kzJpUFE6TpCyAGsqjcakkMbN88uxoXl-EWvcc'}}
-      >
-      </Image>
-
-
-      
         </View>
         )
     }
   }
-    export default FirstPage; 
+    export default SMGs; 
 
 
 

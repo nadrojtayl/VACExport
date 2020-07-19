@@ -195,13 +195,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class Sad extends React.Component {
+ class AK extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","index":2,"today":16,"anger":16,"Quoteoftheday":16,"NewIndex":1}
+        this.state = {"key":"value","filterWeapons":[{"Category":"SMG","Weapon":"MP5","URL":"https://www.bestgamingsettings.com/wp-content/uploads/2019/11/BestCallofDutyWeapons2.jpg"},{"Category":"SMG","Weapon":"MP7","URL":"https://images2.minutemediacdn.com/image/upload/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/shape/cover/sport/dataimagepngbase64iVBORw0KGgoAAAANSUhEUgAABfwAAALN-8ca14c02b643a8e14761fa10ba1f7b6d.jpg "},{"Category":"SMG","Weapon":"AUG","URL":"https://i.redd.it/hy87xeob93y31.png "},{"Category":"SMG","Weapon":"P90","URL":"https://img.gfinityesports.com/upload/_resized/640x360-nc/_other/class-1-p90.png "},{"Category":"SMG","Weapon":"PP19 Bizon","URL":"https://i.redd.it/5l44l6zcfh641.jpg"},{"Category":"SMG","Weapon":"Uzi","URL":"https://i.redd.it/4ee7is8vs5741.jpg "},{"Category":"SMG","Weapon":"Striker 45 ","URL":"https://img.gfinityesports.com/upload/_resized/640x360-nc/_other/striker-45-class-1.png"}],"Image":"https://static.invenglobal.com/upload/image/2020/03/17/o1584461057831302.png","Weapon":""}
     }
 
 
@@ -218,75 +218,23 @@ function unwrap_dynamically(value,default_value){
         return(<View><Text>LOADING</Text></View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
-       <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("FirstPage"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Go back'"}]}
-        >
-        <Text style = {{color:"black"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"grey"}}>
+      
 
-        {'Go back'}
 
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("Sadquote"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"30.56%","left":"13.13%","height":120,"innerText":"'Click here to have a quote that resonates wiht how you feel'","width":100}]}
-        >
-        <Text style = {{color:"black"}}>
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"containerStyle":null,"rotate":"\"90deg\"","height":"50%","width":"130%","display":null,"source":"https://img.resized.co/dexerto/eyJkYXRhIjoie1widXJsXCI6XCJodHRwczpcXFwvXFxcL2kuZ3lhem8uY29tXFxcLzYwZTZlMWNiOWUxMjk1MWY3NmQ4NTYwN2ZjZjEwNjE3LnBuZ1wiLFwid2lkdGhcIjpcIlwiLFwiaGVpZ2h0XCI6XCJcIixcImRlZmF1bHRcIjpcImh0dHBzOlxcXC9cXFwvczMtZXUtd2VzdC0xLmFtYXpvbmF3cy5jb21cXFwvcHBsdXMuaW1hZ2VzLmRleGVydG8uY29tXFxcL3VwbG9hZHNcXFwvMjAxOVxcXC8xMVxcXC8xMTIxNDk0M1xcXC9wbGFjZWhvbGRlci5qcGdcIixcIm9wdGlvbnNcIjpbXX0iLCJoYXNoIjoiYWFjZGNjNmI1ODY1ODNiZTJmM2IyOGU4MGMzOTk0MTFkOTRhZmE2MCJ9/60e6e1cb9e12951f76d85607fcf10617.png","top":"23.439999999999998%","left":"-15.4%"}]}
+        source = {{uri:'https://img.resized.co/dexerto/eyJkYXRhIjoie1widXJsXCI6XCJodHRwczpcXFwvXFxcL2kuZ3lhem8uY29tXFxcLzYwZTZlMWNiOWUxMjk1MWY3NmQ4NTYwN2ZjZjEwNjE3LnBuZ1wiLFwid2lkdGhcIjpcIlwiLFwiaGVpZ2h0XCI6XCJcIixcImRlZmF1bHRcIjpcImh0dHBzOlxcXC9cXFwvczMtZXUtd2VzdC0xLmFtYXpvbmF3cy5jb21cXFwvcHBsdXMuaW1hZ2VzLmRleGVydG8uY29tXFxcL3VwbG9hZHNcXFwvMjAxOVxcXC8xMVxcXC8xMTIxNDk0M1xcXC9wbGFjZWhvbGRlci5qcGdcIixcIm9wdGlvbnNcIjpbXX0iLCJoYXNoIjoiYWFjZGNjNmI1ODY1ODNiZTJmM2IyOGU4MGMzOTk0MTFkOTRhZmE2MCJ9/60e6e1cb9e12951f76d85607fcf10617.png'}}
+      >
+      </Image>
 
-        {'Click here to have a quote that resonates wiht how you feel'}
 
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("SadQuote"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"29.95%","left":"56.63%","innerText":"'Click here for a quote that gets you out of your mood'","height":120}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {'Click here for a quote that gets you out of your mood'}
-
-       </Text>
-        </TouchableOpacity>
+      
         </View>
         )
     }
   }
-    export default Sad; 
+    export default AK; 
 
 
 

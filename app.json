@@ -1,7 +1,7 @@
   {
   "expo": {
-    "name": "EmotionQuote",
-    "slug": "EmotionQuote",
+    "name": "COD Gun Database",
+    "slug": "CODGunDatabase",
     "platforms": [
       "ios",
       "android",
@@ -23,10 +23,10 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "emotionquote.emotionquote"
+      "bundleIdentifier": "com.codguns.codguns"
     },
     "android": {
-      "package": "emotionquote.emotionquote"
+      "package": "com.codguns.codguns"
     },
     "entryPoint": "node_modules/expo/AppEntry.js"
   }

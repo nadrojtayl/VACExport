@@ -4,13 +4,25 @@
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 import FirstPage from './downloadedpages/FirstPage.js'
-import Page from './downloadedpages/Page.js'
-import Happy from './downloadedpages/Happy.js'
-import Sad from './downloadedpages/Sad.js'
-import SadQuote from './downloadedpages/SadQuote.js'
-import Sadquote from './downloadedpages/Sadquote.js'
-import Bored from './downloadedpages/Bored.js'
-import Angry from './downloadedpages/Angry.js'
+import TWO from './downloadedpages/TWO.js'
+import ARs from './downloadedpages/ARs.js'
+import MFOURAONE from './downloadedpages/MFOURAONE.js'
+import MTHIRTEEN from './downloadedpages/MTHIRTEEN.js'
+import AK from './downloadedpages/AK.js'
+import GRAU from './downloadedpages/GRAU.js'
+import ODEN from './downloadedpages/ODEN.js'
+import FRFIVEFIVESIX from './downloadedpages/FRFIVEFIVESIX.js'
+import FAL from './downloadedpages/FAL.js'
+import KILO from './downloadedpages/KILO.js'
+import SCAR from './downloadedpages/SCAR.js'
+import RAMSEVEN from './downloadedpages/RAMSEVEN.js'
+import SMGs from './downloadedpages/SMGs.js'
+import MPFIVE from './downloadedpages/MPFIVE.js'
+import PNINTY from './downloadedpages/PNINTY.js'
+import MPSEVEN from './downloadedpages/MPSEVEN.js'
+import BIZZON from './downloadedpages/BIZZON.js'
+import UZI from './downloadedpages/UZI.js'
+import THREE from './downloadedpages/THREE.js'
 import appData from './downloadedpages/global.js';
 /*
 EXPORT PROCESS
@@ -95,14 +107,7 @@ this.state = {dbLinks:{}, loaded:false, page:"FirstPage", numLoaded:0}
       componentDidMount(){
         
         var that = this;
-        var dbLinks = {
-        "angry":"https://script.google.com/macros/s/AKfycbwXr5OuCmNOeg-WjgEaQju0Xy77OKeBsHJTW6QKRVsERZDD9ew/exec?sheetName=EliasAngry",
-        "happy":"https://script.google.com/macros/s/AKfycbwXr5OuCmNOeg-WjgEaQju0Xy77OKeBsHJTW6QKRVsERZDD9ew/exec?sheetName=Eliashappy",
-        "QOTD":"https://script.google.com/macros/s/AKfycbwXr5OuCmNOeg-WjgEaQju0Xy77OKeBsHJTW6QKRVsERZDD9ew/exec?sheetName=Eliasquoteofday",
-        "Boredquotes":"https://script.google.com/macros/s/AKfycbwXr5OuCmNOeg-WjgEaQju0Xy77OKeBsHJTW6QKRVsERZDD9ew/exec?sheetName=Eliasbored",
-        "Sadresonate":"https://script.google.com/macros/s/AKfycbwXr5OuCmNOeg-WjgEaQju0Xy77OKeBsHJTW6QKRVsERZDD9ew/exec?sheetName=Eliassadresonate",
-        "SOOM":"https://script.google.com/macros/s/AKfycbwXr5OuCmNOeg-WjgEaQju0Xy77OKeBsHJTW6QKRVsERZDD9ew/exec?sheetName=Eliassadgetoutofmood",
-        "BORED":"https://script.google.com/macros/s/AKfycbwXr5OuCmNOeg-WjgEaQju0Xy77OKeBsHJTW6QKRVsERZDD9ew/exec?sheetName=Eliasbored"}
+        var dbLinks = {"CallofDuty":"https://script.google.com/macros/s/AKfycbzDyMiWgXeE24lZvoLT6IoNJHlPZJUGxTOAmaaDtLToC1U4t-8a/exec?sheetName=Jack"}
         Object.keys(dbLinks).forEach(function(key){
           that.connectToDatabase(dbLinks[key], key);
         })
@@ -128,10 +133,10 @@ render(){
     
 
 
-    if(that.state.page === "Page"){
+    if(that.state.page === "TWO"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <Page goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Page>
+             <TWO goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></TWO>
           </View>
         )
     }
@@ -141,10 +146,10 @@ render(){
     
 
 
-    if(that.state.page === "Happy"){
+    if(that.state.page === "ARs"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <Happy goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Happy>
+             <ARs goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></ARs>
           </View>
         )
     }
@@ -154,10 +159,10 @@ render(){
     
 
 
-    if(that.state.page === "Sad"){
+    if(that.state.page === "MFOURAONE"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <Sad goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Sad>
+             <MFOURAONE goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></MFOURAONE>
           </View>
         )
     }
@@ -167,10 +172,10 @@ render(){
     
 
 
-    if(that.state.page === "SadQuote"){
+    if(that.state.page === "MFOURAONE"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <SadQuote goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SadQuote>
+             <MFOURAONE goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></MFOURAONE>
           </View>
         )
     }
@@ -180,10 +185,10 @@ render(){
     
 
 
-    if(that.state.page === "Sadquote"){
+    if(that.state.page === "MFOURAONE"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <Sadquote goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Sadquote>
+             <MFOURAONE goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></MFOURAONE>
           </View>
         )
     }
@@ -193,10 +198,10 @@ render(){
     
 
 
-    if(that.state.page === "Bored"){
+    if(that.state.page === "MTHIRTEEN"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <Bored goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Bored>
+             <MTHIRTEEN goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></MTHIRTEEN>
           </View>
         )
     }
@@ -206,10 +211,192 @@ render(){
     
 
 
-    if(that.state.page === "Angry"){
+    if(that.state.page === "AK"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <Angry goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Angry>
+             <AK goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></AK>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "GRAU"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <GRAU goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></GRAU>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "ODEN"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <ODEN goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></ODEN>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "FRFIVEFIVESIX"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <FRFIVEFIVESIX goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FRFIVEFIVESIX>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "FAL"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <FAL goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FAL>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "KILO"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <KILO goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></KILO>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "SCAR"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <SCAR goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SCAR>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "RAMSEVEN"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <RAMSEVEN goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RAMSEVEN>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "SMGs"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <SMGs goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SMGs>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "MPFIVE"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <MPFIVE goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></MPFIVE>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "PNINTY"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <PNINTY goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></PNINTY>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "MPSEVEN"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <MPSEVEN goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></MPSEVEN>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "BIZZON"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <BIZZON goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></BIZZON>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "UZI"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <UZI goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></UZI>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "THREE"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <THREE goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></THREE>
           </View>
         )
     }

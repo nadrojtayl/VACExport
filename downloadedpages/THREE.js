@@ -195,13 +195,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class Bored extends React.Component {
+ class THREE extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","index":2,"today":16,"anger":16,"Quoteoftheday":16,"NewIndex":1}
+        this.state = {"key":"value","filterWeapons":[{"Category":"Shotguns","Weapon":"Model 680","URL":"https://img.gfinityesports.com/upload/_resized/640x360-nc/_other/class-2-680.png","Index":27},{"Category":"Shotguns","Weapon":725,"URL":"https://img.gfinityesports.com/upload/_resized/640x360-nc/_other/class-2-725.png ","Index":28},{"Category":"Shotguns","Weapon":"R9-0 Shotgun","URL":"https://img.gfinityesports.com/upload/_resized/640x360-nc/_other/class-1-r9-0.png ","Index":29},{"Category":"Shotguns","Weapon":"Origin 12 Shotgun","URL":"https://img.gfinityesports.com/upload/_resized/640x360-nc/_other/class-1-origin.png","Index":30}],"Image":"https://www.bestgamingsettings.com/wp-content/uploads/2019/11/BestCallofDutyWeapons2.jpg","Weapon":""}
     }
 
 
@@ -218,11 +218,21 @@ function unwrap_dynamically(value,default_value){
         return(<View><Text>LOADING</Text></View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
-       <TouchableOpacity
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"grey"}}>
+      
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"source":"appData.Image","top":"23.770000000000003%","left":"-22.46%","width":"145%","height":"50%","rotate":"\"90deg\"","color":null}]}
+        source = {{uri:appData.Image}}
+      >
+      </Image>
+
+
+      
+ <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("FirstPage")
-; that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("FirstPage"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -233,11 +243,11 @@ function unwrap_dynamically(value,default_value){
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"91.2%","left":"71.67%","innerText":"'Home'"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {}
+        {'Home'}
 
        </Text>
         </TouchableOpacity>
@@ -245,7 +255,7 @@ function unwrap_dynamically(value,default_value){
         )
     }
   }
-    export default Bored; 
+    export default THREE; 
 
 
 
