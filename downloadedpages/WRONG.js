@@ -195,13 +195,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class ThirdPage extends React.Component {
+ class WRONG extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"addyson":"beauty bar byappData.addyson","FirstPageinput0":"  beauty bar byappData.addyson ","color":"pink","color2":"purple","button1":"hairstyles & hair tutorials","button2":"makeup looks & tutorials","button3":"skincare","button4":"purchase products","firstbutton":"beauty bar byappData.addyson","index":13,"imageurl1":["https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSfQu2CblPy7_PXtk08x5XKd4pQjdArYMygEw&usqp=CAU","https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ48rYcHkJ2yjKkQZekm9HPrFlQBeg_ErN13Q&usqp=CAU","https://i.pinimg.com/736x/f4/b4/26/f4b42627d71cc86ee52a412c00597005.jpg","https://i.pinimg.com/736x/81/87/75/8187751d1056f9f37fd9a0b3bcc5239d.jpg","https://i.ytimg.com/vi/HuA2A9WY2yI/hqdefault.jpg","https://i.pinimg.com/564x/c5/ab/72/c5ab72699e110c38d1c6331cd790fd40.jpg","https://i.pinimg.com/564x/93/14/02/93140262f948ff928547cbb37ff08c68.jpg","https://i.pinimg.com/564x/8c/38/a1/8c38a103670a318d22cadadf3aa27e0a.jpg","https://i.pinimg.com/736x/7f/d0/bd/7fd0bd6780dcd7218a14c701bb271048.jpg","https://i.pinimg.com/564x/6d/ac/75/6dac7544b357097d1b9a66feca864b67.jpg","https://i.pinimg.com/564x/1f/b6/9c/1fb69ce783bbf826b09a7f7432841cf3.jpg","https://i.pinimg.com/736x/73/63/05/7363057da054ba310f4c99b21c1594ed.jpg","https://i.pinimg.com/originals/08/53/1e/08531e3e1a65dede0d777fd61e14e423.jpg","https://i.pinimg.com/564x/a0/12/6d/a0126d9aa234a17ea88cbf0fd8d071cf.jpg","https://i.pinimg.com/originals/35/82/90/35829090c685b42759428ddac5d0db7c.jpg","https://i.pinimg.com/564x/76/75/0d/76750d85f64fbfb8cb172d86bb2f4478.jpg","https://storage.googleapis.com/prose-blog-media/1/2019/03/Webp.net-resizeimage-copy-7.jpg","https://i.pinimg.com/564x/4d/2d/b0/4d2db04e26fc63cb3fd87506d97a1625.jpg"],"addyson1":2,"picurls":["https://i.pinimg.com/736x/f4/b4/26/f4b42627d71cc86ee52a412c00597005.jpg"],"button5":"nail inspo","makeupindex":0,"nailindex":0,"nail_index":0,"inspo":2}
+        this.state = {"key":"value","RIGHTswitch0":"false","WRONGinput0":"Select","Index":0,"option":2,"answerlist":["Right answer","Wrong 1","Wrong 2","Wrong 3"],"clicked":0,"option3":0,"option4":2,"topscore":38,"lastscore":11,"randIndex":0,"option2":1,"opt1":1,"opt2":3,"opt3":0,"opt4":2,"randindex":118,"FirstPageswitch4":true}
     }
 
 
@@ -218,60 +218,55 @@ function unwrap_dynamically(value,default_value){
         return(<View><Text>LOADING</Text></View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"black"}}>
       
 
 
       <Image
-        style= {[{width:"20%",height:"20%"}, {"top":"24.49%","left":"36.82%","source":" \" hairstyles[appData.index].makeuplink;\";"}]}
-        source = {{uri: " hairstyles[appData.index].makeuplink"}}
+        style= {[{width:"20%",height:"20%"}, {"source":"https://media.idownloadblog.com/wp-content/uploads/2017/03/Red-Product-iPad-Wallpaper-without-apple-logo.jpg","height":1000,"width":1000,"top":"-6.23%","left":"-4.85%"}]}
+        source = {{uri:'https://media.idownloadblog.com/wp-content/uploads/2017/03/Red-Product-iPad-Wallpaper-without-apple-logo.jpg'}}
       >
       </Image>
 
 
       
 <Text
-          style= {[{position:'absolute'},{"top":"5.12%","left":"-0.04%","borderStyle":"solid","backgroundColor":"pink","alignItems":"center","textAlign":"center","color":"purple","innerText":"'makeup inspo'"}]}
-        > {'makeup inspo'} </Text>
+          style= {[{position:'absolute'},{"top":"48.09%","left":"14.94%","fontSize":100,"color":"white","innerText":"'WRONG!'"}]}
+        > {'WRONG!'} </Text>
         
+<Text
+          style= {[{position:'absolute'},{"fontSize":50,"color":"white","innerText":"  'Your Score:'+ appData.lastscore;","top":"21.65%","left":"24.75%"}]}
+        > {  'Your Score:'+ appData.lastscore} </Text>
+        
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo("FirstPage")
+if(appData.topscore<appData.lastscore){
+    appData.topscore=appData.lastscore
+}; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"color":"Continue","innerText":"'Continue'","top":"76.88%","left":"39.37%","backgroundColor":"red"}]}
+        >
+        <Text style = {{color:"Continue"}}>
 
+        {'Continue'}
 
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"top":"23.43%","left":"37.63%","source":"  hairstyles[makeupappData.index][\"makeup link\"];"}]}
-        source = {{uri:  hairstyles[makeupappData.index]["makeup link"]}}
-      >
-      </Image>
-
-
-      
-
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"top":"27.26%","left":"35.73%","source":"  hairstyles[makeupappData.index][\"makeup link\"];"}]}
-        source = {{uri:  hairstyles[makeupappData.index]["makeup link"]}}
-      >
-      </Image>
-
-
-      
-
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"top":"16.83%","left":"-6%","source":"  hairstyles[appData.index][\"makeup link\"];","height":350,"width":400}]}
-        source = {{uri:  hairstyles[appData.index]["makeup link"]}}
-      >
-      </Image>
-
-
-      
+       </Text>
+        </TouchableOpacity>
         </View>
         )
     }
   }
-    export default ThirdPage; 
+    export default WRONG; 
 
 
 

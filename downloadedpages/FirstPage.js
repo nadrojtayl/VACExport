@@ -201,7 +201,7 @@ function unwrap_dynamically(value,default_value){
     constructor(props)
     {
         super(props);
-        this.state = {"addyson":"beauty bar byappData.addyson","FirstPageinput0":"  beauty bar byappData.addyson ","color":"pink","color2":"purple","button1":"hairstyles & hair tutorials","button2":"makeup looks & tutorials","button3":"skincare","button4":"purchase products","firstbutton":"beauty bar byappData.addyson","index":13,"imageurl1":["https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSfQu2CblPy7_PXtk08x5XKd4pQjdArYMygEw&usqp=CAU","https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ48rYcHkJ2yjKkQZekm9HPrFlQBeg_ErN13Q&usqp=CAU","https://i.pinimg.com/736x/f4/b4/26/f4b42627d71cc86ee52a412c00597005.jpg","https://i.pinimg.com/736x/81/87/75/8187751d1056f9f37fd9a0b3bcc5239d.jpg","https://i.ytimg.com/vi/HuA2A9WY2yI/hqdefault.jpg","https://i.pinimg.com/564x/c5/ab/72/c5ab72699e110c38d1c6331cd790fd40.jpg","https://i.pinimg.com/564x/93/14/02/93140262f948ff928547cbb37ff08c68.jpg","https://i.pinimg.com/564x/8c/38/a1/8c38a103670a318d22cadadf3aa27e0a.jpg","https://i.pinimg.com/736x/7f/d0/bd/7fd0bd6780dcd7218a14c701bb271048.jpg","https://i.pinimg.com/564x/6d/ac/75/6dac7544b357097d1b9a66feca864b67.jpg","https://i.pinimg.com/564x/1f/b6/9c/1fb69ce783bbf826b09a7f7432841cf3.jpg","https://i.pinimg.com/736x/73/63/05/7363057da054ba310f4c99b21c1594ed.jpg","https://i.pinimg.com/originals/08/53/1e/08531e3e1a65dede0d777fd61e14e423.jpg","https://i.pinimg.com/564x/a0/12/6d/a0126d9aa234a17ea88cbf0fd8d071cf.jpg","https://i.pinimg.com/originals/35/82/90/35829090c685b42759428ddac5d0db7c.jpg","https://i.pinimg.com/564x/76/75/0d/76750d85f64fbfb8cb172d86bb2f4478.jpg","https://storage.googleapis.com/prose-blog-media/1/2019/03/Webp.net-resizeimage-copy-7.jpg","https://i.pinimg.com/564x/4d/2d/b0/4d2db04e26fc63cb3fd87506d97a1625.jpg"],"addyson1":2,"picurls":["https://i.pinimg.com/736x/f4/b4/26/f4b42627d71cc86ee52a412c00597005.jpg"],"button5":"nail inspo","makeupindex":0,"nailindex":0,"nail_index":0,"inspo":2}
+        this.state = {"key":"value","RIGHTswitch0":"false","WRONGinput0":"Select","Index":0,"option":2,"answerlist":["Right answer","Wrong 1","Wrong 2","Wrong 3"],"clicked":0,"option3":0,"option4":2,"topscore":38,"lastscore":11,"randIndex":0,"option2":1,"opt1":1,"opt2":3,"opt3":0,"opt4":2,"randindex":118,"FirstPageswitch4":true}
     }
 
 
@@ -218,131 +218,51 @@ function unwrap_dynamically(value,default_value){
         return(<View><Text>LOADING</Text></View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
-      <TextInput
-       style= {{"top":"1.29%","left":"26.79%","innerText":"  appData.firstbutton;","backgroundColor":" appData.color ;"}}
-        value={that.state["FirstPageinput0"]}
-        onChangeText={function(val){that.setState({FirstPageinput0: val});  
-       }
-       }
-        />
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"black"}}>
+      
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"source":"https://cheshirelibraryblog.files.wordpress.com/2015/02/mystery_person.jpg","height":500,"width":600,"top":"-6.23%","left":"-3.42%"}]}
+        source = {{uri:'https://cheshirelibraryblog.files.wordpress.com/2015/02/mystery_person.jpg'}}
+      >
+      </Image>
+
+
+      
+ <TouchableOpacity
+          
+          onPress = { function(){appData.lastscore = 0
+
+
+
+that.props.goTo("QUESTIONUNO"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"69.84%","left":"30.45%","backgroundColor":"black","innerText":"'Press to start'","color":"white","height":200,"width":200,"fontSize":50,"borderColor":"grey","borderRadius":20}]}
+        >
+        <Text style = {{color:"white"}}>
+
+        {'Press to start'}
+
+       </Text>
+        </TouchableOpacity>
 <Text
-          style= {[{position:'absolute'},{"top":"8.95%","left":"0.23%","innerText":"'Hi welcome to my app,  this app is for you to get hair ideas, makeup ideas, etc plus tutorials on how to do certain things so you can look even more fabulous than you already are'","color":" appData.color2;"}]}
-        > {'Hi welcome to my app,  this app is for you to get hair ideas, makeup ideas, etc plus tutorials on how to do certain things so you can look even more fabulous than you already are'} </Text>
+          style= {[{position:'absolute'},{"top":"78.18%","left":"0.86%","innerText":" 'Top Score :'+ appData.topscore;","color":"white"}]}
+        > { 'Top Score :'+ appData.topscore} </Text>
         
- <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("SecondPage");; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, 
-            backgroundColor:'#8fd158', 
-            alignItems:'center',justifyContent:'center', 
-            height: "7%",  title:'Test', 
-            borderColor: 'gray', color:'black'
-            , borderRadius:15, borderWidth: 1},{"top":"47.7%","left":"21.1%",
-            "innerText":"' \"hairstyles & hair tutorials\";'",
-            "height":"10%","backgroundColor":"black"}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {' "hairstyles & hair tutorials"'}
-
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("ThirdPage");; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"27.26%","left":"-1.39%","innerText":"'makeup inspiration'","backgroundColor":"  appData.color;","height":75}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {'makeup inspiration'}
-
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("FourthPage");; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"25.98%","left":"43.86%","innerText":"'nail isnpo'","backgroundColor":" appData.color;","height":75}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {'nail isnpo'}
-
-       </Text>
-        </TouchableOpacity>
-
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"top":"69.2%","left":"2.67%","source":"https://reviewed-com-res.cloudinary.com/image/fetch/s--QYmIHTUO--/b_white,c_limit,cs_srgb,f_auto,fl_progressive.strip_profile,g_center,q_auto,w_972/https://reviewed-production.s3.amazonaws.com/1548449044000/GettyImages-1024577404.jpg","height":100,"width":200}]}
-        source = {{uri:'https://reviewed-com-res.cloudinary.com/image/fetch/s--QYmIHTUO--/b_white,c_limit,cs_srgb,f_auto,fl_progressive.strip_profile,g_center,q_auto,w_972/https://reviewed-production.s3.amazonaws.com/1548449044000/GettyImages-1024577404.jpg'}}
-      >
-      </Image>
-
-
-      
-
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"top":"68.98%","left":"57.41%","source":"https://www.asiaone.com/sites/default/files/styles/a1_og_image/public/original_images/Jul2019/040719_makeup_pixabay.jpg?itok=mYDnv1qW","width":150,"height":100}]}
-        source = {{uri:'https://www.asiaone.com/sites/default/files/styles/a1_og_image/public/original_images/Jul2019/040719_makeup_pixabay.jpg?itok=mYDnv1qW'}}
-      >
-      </Image>
-
-
-      
- <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("FifthPage");; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"45.99%","left":"68.79%","innerText":"'beauty products'","height":75,"backgroundColor":"purple"}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {'beauty products'}
-
-       </Text>
-        </TouchableOpacity>
+<Text
+          style= {[{position:'absolute'},{"top":"87.82%","left":"0.5%","innerText":" 'Last Score :'+appData.lastscore;","color":"white"}]}
+        > { 'Last Score :'+appData.lastscore} </Text>
+        
         </View>
         )
     }

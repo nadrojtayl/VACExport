@@ -3,11 +3,10 @@
 
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
-import SecondPage from './downloadedpages/SecondPage.js'
 import FirstPage from './downloadedpages/FirstPage.js'
-import ThirdPage from './downloadedpages/ThirdPage.js'
-import FourthPage from './downloadedpages/FourthPage.js'
-import FifthPage from './downloadedpages/FifthPage.js'
+import QUESTIONUNO from './downloadedpages/QUESTIONUNO.js'
+import RIGHT from './downloadedpages/RIGHT.js'
+import WRONG from './downloadedpages/WRONG.js'
 import appData from './downloadedpages/global.js';
 /*
 EXPORT PROCESS
@@ -92,8 +91,7 @@ this.state = {dbLinks:{}, loaded:false, page:"FirstPage"}
       componentDidMount(){
         
         var that = this;
-        var dbLinks = {"hairstyles":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbx8uQw_4uk3m3ApBlCl80x_3B6hpocK9onsdnja/exec?sheetName=Addyson",
-        "tutorials":"hairstyles[index]['tutorial link'];"}
+        var dbLinks = {"Flags":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbyqHioFIqkw3m8lrGXVOTx84AOJofqhk0t193anSw/exec?sheetName=Baptiste"}
         Object.keys(dbLinks).forEach(function(key){
           that.connectToDatabase(dbLinks[key], key);
         })
@@ -106,19 +104,6 @@ render(){
   var that = this; 
 
   
-    if(that.state.page === "SecondPage"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <SecondPage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SecondPage>
-          </View>
-        )
-    }
-
-
-
-    
-
-
     if(that.state.page === "FirstPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
@@ -132,10 +117,10 @@ render(){
     
 
 
-    if(that.state.page === "ThirdPage"){
+    if(that.state.page === "QUESTIONUNO"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <ThirdPage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></ThirdPage>
+             <QUESTIONUNO goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></QUESTIONUNO>
           </View>
         )
     }
@@ -145,10 +130,10 @@ render(){
     
 
 
-    if(that.state.page === "FourthPage"){
+    if(that.state.page === "RIGHT"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <FourthPage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FourthPage>
+             <RIGHT goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RIGHT>
           </View>
         )
     }
@@ -158,10 +143,10 @@ render(){
     
 
 
-    if(that.state.page === "FifthPage"){
+    if(that.state.page === "WRONG"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <FifthPage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FifthPage>
+             <WRONG goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></WRONG>
           </View>
         )
     }

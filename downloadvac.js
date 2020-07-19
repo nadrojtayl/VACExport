@@ -1,7 +1,17 @@
 var axios = require('axios');
 var fs = require('fs');
-var name = "addyson_hassanali";
-axios.get('https://streamedbooks.herokuapp.com/apps?name=' + name)
+
+const readline = require("readline");
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+rl.question("What is the name of the app? ", function(name) {;
+    load_app(name);
+});
+
+function load_app(name){
+  axios.get('https://streamedbooks.herokuapp.com/apps?name=' + name)
 .then(function (response) {
   
    var appdata = null;
@@ -43,13 +53,20 @@ axios.get('https://streamedbooks.herokuapp.com/apps?name=' + name)
           fs.writeFileSync(__dirname + "/App.js",make_App_page(databases, response.data.map(function(data){return data.page}) ));
         }
       })
+ rl.close();
+
      
-     
-      
-})
-.catch(function (error) {
-  console.log(error);
-});
+       
+        
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+}
+
+
+
+
 
 
 
