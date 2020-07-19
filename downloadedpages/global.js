@@ -1,3 +1,3 @@
-var global = {"key":"value","index":2,"today":16,"anger":16,"Quoteoftheday":16,"NewIndex":1}
+var global = {"key":"value","Leung288":["nikhi","ryan","samatha","wesley"]}
 
 export default global;
