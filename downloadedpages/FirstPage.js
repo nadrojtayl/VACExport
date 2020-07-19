@@ -201,7 +201,7 @@ function unwrap_dynamically(value,default_value){
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","index":2,"today":16,"anger":16,"Quoteoftheday":16,"NewIndex":1}
+        this.state = {"key":"value","RIGHTswitch0":"false","WRONGinput0":"Select","Index":0,"option":2,"answerlist":["Right answer","Wrong 1","Wrong 2","Wrong 3"],"clicked":0,"option3":0,"option4":2,"topscore":38,"lastscore":11,"randIndex":0,"option2":1,"opt1":1,"opt2":3,"opt3":0,"opt4":2,"randindex":118,"FirstPageswitch4":true}
     }
 
 
@@ -218,38 +218,25 @@ function unwrap_dynamically(value,default_value){
         return(<View><Text>LOADING</Text></View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
-       <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("Sad"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":148,"left":96.82049999999998,"fontWeight":null,"innerText":"'Sad'","color":"blue","backgroundColor":"black","height":100}]}
-        >
-        <Text style = {{color:"blue"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"black"}}>
+      
 
-        {'Sad'}
 
-       </Text>
-        </TouchableOpacity>
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"source":"https://cheshirelibraryblog.files.wordpress.com/2015/02/mystery_person.jpg","height":500,"width":600,"top":"-6.23%","left":"-3.42%"}]}
+        source = {{uri:'https://cheshirelibraryblog.files.wordpress.com/2015/02/mystery_person.jpg'}}
+      >
+      </Image>
+
+
+      
  <TouchableOpacity
           
-          onPress = { function(){if(appData.today!==day){
-    appData.index=appData.index+1;
-    if(appData.index>=happy.length ){
-        appData.index=0
-    }
-    that.props.goTo("Happy");
-    appData.today=day;
-}; that.forceUpdate(); }}  
+          onPress = { function(){appData.lastscore = 0
+
+
+
+that.props.goTo("QUESTIONUNO"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -260,109 +247,21 @@ function unwrap_dynamically(value,default_value){
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":147,"left":-2.1795000000000186,"innerText":"'Happy'","height":100,"color":"purple","fontSize":null,"backgroundColor":"yellow","borderStyle":null,"fontStyle":null}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"69.84%","left":"30.45%","backgroundColor":"black","innerText":"'Press to start!'","color":"white","height":200,"width":200,"fontSize":50,"borderColor":"grey","borderRadius":20}]}
         >
-        <Text style = {{color:"purple"}}>
+        <Text style = {{color:"white"}}>
 
-        {'Happy'}
+        {'Press to start!'}
 
        </Text>
         </TouchableOpacity>
 <Text
-          style= {[{position:'absolute'},{"innerText":null}]}
-        > {null} </Text>
+          style= {[{position:'absolute'},{"top":"78.18%","left":"0.86%","innerText":" 'Top Score :'+ appData.topscore;","color":"white"}]}
+        > { 'Top Score :'+ appData.topscore} </Text>
         
 <Text
-          style= {[{position:'absolute'},{"innerText":"'Click whatever emotion your feeling to see an inspirational quote about it!'","top":18,"left":9.820499999999981,"height":null,"fontSize":20,"backgroundColor":"none"}]}
-        > {'Click whatever emotion your feeling to see an inspirational quote about it!'} </Text>
-        
- <TouchableOpacity
-          
-          onPress = { function(){if(appData.anger!==day){
-    appData.index=appData.index+1;
-    if(appData.index>=angry.length ){
-        appData.index=0
-    }
-    that.props.goTo("Angry");
-    appData.anger=day;
-}; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":149,"left":297.8205,"fontWeight":"bold","color":"red","borderColor":"gray","innerText":"'Angry'","height":100,"backgroundColor":"gray"}]}
-        >
-        <Text style = {{color:"red"}}>
-
-        {'Angry'}
-
-       </Text>
-        </TouchableOpacity>
-<Text
-          style= {[{position:'absolute'},{"innerText":"'Quote of the day:'","top":284,"left":133.82049999999998}]}
-        > {'Quote of the day:'} </Text>
-        
-<Text
-          style= {[{position:'absolute'},{"innerText":" QOTD[appData.NewIndex].Quote;","top":304,"left":16.82049999999998}]}
-        > { QOTD[appData.NewIndex].Quote} </Text>
-        
- <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("Bored"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"source":null,"innerText":"'Bored'","top":150,"left":197.82049999999998,"height":100}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {'Bored'}
-
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){if(appData.Quoteoftheday!==day){
-    appData.NewIndex=appData.NewIndex+1;
-    if(appData.NewIndex>=QOTD.length ){
-        appData.NewIndex=0
-    }
-    appData.Quoteoftheday=day;
-}; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"73.51%","left":"35.93%","height":100,"innerText":"'Click here for quote fo the day!'"}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {'Click here for quote fo the day!'}
-
-       </Text>
-        </TouchableOpacity>
-<Text
-          style= {[{position:'absolute'},{"top":"64.86%","left":"72.16%","innerText":"  QOTD[appData.index].Author;"}]}
-        > {  QOTD[appData.index].Author} </Text>
+          style= {[{position:'absolute'},{"top":"87.82%","left":"0.5%","innerText":" 'Last Score :'+appData.lastscore;","color":"white"}]}
+        > { 'Last Score :'+appData.lastscore} </Text>
         
         </View>
         )
