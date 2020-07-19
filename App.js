@@ -4,9 +4,13 @@
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 import FirstPage from './downloadedpages/FirstPage.js'
-import QUESTIONUNO from './downloadedpages/QUESTIONUNO.js'
-import RIGHT from './downloadedpages/RIGHT.js'
-import WRONG from './downloadedpages/WRONG.js'
+import Page from './downloadedpages/Page.js'
+import Happy from './downloadedpages/Happy.js'
+import Sad from './downloadedpages/Sad.js'
+import SadQuote from './downloadedpages/SadQuote.js'
+import Sadquote from './downloadedpages/Sadquote.js'
+import Bored from './downloadedpages/Bored.js'
+import Angry from './downloadedpages/Angry.js'
 import appData from './downloadedpages/global.js';
 /*
 EXPORT PROCESS
@@ -85,13 +89,20 @@ class App extends React.Component {
 
 constructor(props){
 super(props);
-this.state = {dbLinks:{}, loaded:false, page:"FirstPage"}
+this.state = {dbLinks:{}, loaded:false, page:"FirstPage", numLoaded:0}
 }
 
       componentDidMount(){
         
         var that = this;
-        var dbLinks = {"Flags":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbyqHioFIqkw3m8lrGXVOTx84AOJofqhk0t193anSw/exec?sheetName=Baptiste"}
+        var dbLinks = {
+        "angry":"https://script.google.com/macros/s/AKfycbwXr5OuCmNOeg-WjgEaQju0Xy77OKeBsHJTW6QKRVsERZDD9ew/exec?sheetName=EliasAngry",
+        "happy":"https://script.google.com/macros/s/AKfycbwXr5OuCmNOeg-WjgEaQju0Xy77OKeBsHJTW6QKRVsERZDD9ew/exec?sheetName=Eliashappy",
+        "QOTD":"https://script.google.com/macros/s/AKfycbwXr5OuCmNOeg-WjgEaQju0Xy77OKeBsHJTW6QKRVsERZDD9ew/exec?sheetName=Eliasquoteofday",
+        "Boredquotes":"https://script.google.com/macros/s/AKfycbwXr5OuCmNOeg-WjgEaQju0Xy77OKeBsHJTW6QKRVsERZDD9ew/exec?sheetName=Eliasbored",
+        "Sadresonate":"https://script.google.com/macros/s/AKfycbwXr5OuCmNOeg-WjgEaQju0Xy77OKeBsHJTW6QKRVsERZDD9ew/exec?sheetName=Eliassadresonate",
+        "SOOM":"https://script.google.com/macros/s/AKfycbwXr5OuCmNOeg-WjgEaQju0Xy77OKeBsHJTW6QKRVsERZDD9ew/exec?sheetName=Eliassadgetoutofmood",
+        "BORED":"https://script.google.com/macros/s/AKfycbwXr5OuCmNOeg-WjgEaQju0Xy77OKeBsHJTW6QKRVsERZDD9ew/exec?sheetName=Eliasbored"}
         Object.keys(dbLinks).forEach(function(key){
           that.connectToDatabase(dbLinks[key], key);
         })
@@ -117,10 +128,10 @@ render(){
     
 
 
-    if(that.state.page === "QUESTIONUNO"){
+    if(that.state.page === "Page"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <QUESTIONUNO goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></QUESTIONUNO>
+             <Page goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Page>
           </View>
         )
     }
@@ -130,10 +141,10 @@ render(){
     
 
 
-    if(that.state.page === "RIGHT"){
+    if(that.state.page === "Happy"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <RIGHT goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RIGHT>
+             <Happy goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Happy>
           </View>
         )
     }
@@ -143,10 +154,62 @@ render(){
     
 
 
-    if(that.state.page === "WRONG"){
+    if(that.state.page === "Sad"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <WRONG goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></WRONG>
+             <Sad goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Sad>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "SadQuote"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <SadQuote goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SadQuote>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Sadquote"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Sadquote goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Sadquote>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Bored"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Bored goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Bored>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Angry"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Angry goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Angry>
           </View>
         )
     }
@@ -206,8 +269,12 @@ connectToDatabase(db_link,name){
             window[name] = data_arr;
 
             that.forceUpdate();
-            that.setState({dbLinks:that.state.dbLinks, loaded:true})
             
+          if(that.state.numLoaded === Object.keys(that.state.dbLinks).length-1){
+            that.setState({dbLinks:that.state.dbLinks, loaded:true})
+          } else {
+            that.setState({dbLinks:that.state.dbLinks, numLoaded:that.state.numLoaded + 1});
+          }
 
 
           })
@@ -230,9 +297,14 @@ connectToDatabase(db_link,name){
           res.forEach(function(obj,index){
             obj["Index"] = index;
           })
-          that.forceUpdate();
-          that.setState({dbLinks:that.state.dbLinks, loaded:true})
-         
+          
+
+          
+          if(that.state.numLoaded === Object.keys(that.state.dbLinks).length-1){
+            that.setState({dbLinks:that.state.dbLinks, loaded:true})
+          } else {
+            that.setState({dbLinks:that.state.dbLinks, numLoaded:that.state.numLoaded + 1});
+          }
 
 
         })

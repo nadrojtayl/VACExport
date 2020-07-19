@@ -49,6 +49,7 @@ function load_app(name){
         databases} = response.data[int];
 
 
+
         app_children = JSON.parse(app_children);
         appdata = JSON.parse(appdata);
         app_styles = JSON.parse(app_styles);
@@ -475,6 +476,7 @@ function exportElemToExpo(name,int, page, childrenAdditionalStyle, clickfunction
 
 
   function make_App_page(dbLinks,pages){
+    console.log(dbLinks);
   return `
 
 
@@ -563,7 +565,7 @@ class App extends React.Component {
 
 constructor(props){
 super(props);
-this.state = {dbLinks:{}, loaded:false, page:"FirstPage"}
+this.state = {dbLinks:{}, loaded:false, page:"FirstPage", numLoaded:0}
 }
 
       componentDidMount(){
@@ -650,8 +652,12 @@ connectToDatabase(db_link,name){
             window[name] = data_arr;
 
             that.forceUpdate();
-            that.setState({dbLinks:that.state.dbLinks, loaded:true})
             
+          if(that.state.numLoaded === Object.keys(that.state.dbLinks).length-1){
+            that.setState({dbLinks:that.state.dbLinks, loaded:true})
+          } else {
+            that.setState({dbLinks:that.state.dbLinks, numLoaded:that.state.numLoaded + 1});
+          }
 
 
           })
@@ -674,9 +680,14 @@ connectToDatabase(db_link,name){
           res.forEach(function(obj,index){
             obj["Index"] = index;
           })
-          that.forceUpdate();
-          that.setState({dbLinks:that.state.dbLinks, loaded:true})
-         
+          
+
+          
+          if(that.state.numLoaded === Object.keys(that.state.dbLinks).length-1){
+            that.setState({dbLinks:that.state.dbLinks, loaded:true})
+          } else {
+            that.setState({dbLinks:that.state.dbLinks, numLoaded:that.state.numLoaded + 1});
+          }
 
 
         })
