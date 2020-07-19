@@ -1,7 +1,7 @@
   {
   "expo": {
-    "name": "FlagQuizGame",
-    "slug": "FlagQuizGame",
+    "name": "FlagQuizRun",
+    "slug": "FlagQuizRun",
     "platforms": [
       "ios",
       "android",
@@ -23,10 +23,10 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "flag.quiz.game"
+      "bundleIdentifier": "flagquizrun.flagquizrun"
     },
     "android": {
-      "package": "flag.quiz.game"
+      "package": "flagquizrun.flagquizrun"
     },
     "entryPoint": "node_modules/expo/AppEntry.js"
   }

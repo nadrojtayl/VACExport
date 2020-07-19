@@ -6,6 +6,8 @@ const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
+var exec = require('child_process').exec;
+
 
 rl.question("What is the name of the app? ", function(name) {
     load_app(name);
@@ -18,6 +20,7 @@ function load_app(name){
 .then(function (response) {
    if(response.data.length === 0){
     console.log("app not found");
+    rl.close();
     return 
    }
    var appdata = null;
@@ -58,6 +61,14 @@ function load_app(name){
           fs.writeFileSync(__dirname + "/downloadedpages/Multiplier.js",create_multiplier_page());
           fs.writeFileSync(__dirname + "/App.js",make_App_page(databases, response.data.map(function(data){return data.page}) ));
           produceAppJSONFile();
+          exec('expo start', function callback(error, stdout, stderr){
+              console.log(stdout);
+                console.log(error);
+                console.log(stderr);
+             });
+
+
+
         }
       })
 
@@ -1326,10 +1337,11 @@ var appData = `  {
     "entryPoint": "node_modules/expo/AppEntry.js"
   }
 }`
+ rl.close();
 
  fs.writeFileSync(__dirname +"/app.json",appData);
 
- rl.close();
+
 
 })
 
