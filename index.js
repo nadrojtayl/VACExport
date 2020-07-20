@@ -1,8 +1,16 @@
-import { registerRootComponent } from 'expo';
+"use strict";
+// translate_twilio_num("+13304003271");
+var express = require("express");
+var app = express();
+var fs = require('fs');
+var cors = require('cors');
+app.use(cors());
 
-import App from './App';
 
-// registerRootComponent calls AppRegistry.registerComponent('main', () => App);
-// It also ensures that whether you load the app in the Expo client or in a native build,
-// the environment is set up appropriately
-registerRootComponent(App);
+
+app.get("/",function(req,res){
+	res.send("HERE");
+})
+
+
+app.listen(process.env.PORT || 5000);
