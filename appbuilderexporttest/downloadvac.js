@@ -318,7 +318,10 @@ function unwrap_dynamically(value,default_value){
       var that = this; 
       
       if(!that.props.loaded){
-        return(<View style = {{height:'100%',width:'100%', alignItems:'center',justifyContent:'center'}}><Text style = {{textAlign:'center'}}>Are you a student? Build an app with VineyardAppCamp.com</Text></View>)
+        return(<View style = {{height:'100%',width:'100%', alignItems:'center',justifyContent:'center'}}>
+        <ActivityIndicator size="large" />
+        <Text style = {{textAlign:'center'}}>Are you a student? Build an app with VineyardAppCamp.com</Text>
+        </View>)
       }
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"` + color +`"}}>
