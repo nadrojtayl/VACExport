@@ -30,4 +30,4 @@ app.get("/",function(req,res){
 })
 
 // console.log("Listening");
-// app.listen(process.env.PORT || 5000);
+app.listen(process.env.PORT || 5000);
