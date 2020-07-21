@@ -1,21 +1,29 @@
 var axios = require('axios');
 var fs = require('fs');
+var args = process.argv;
+
+
 
 const readline = require("readline");
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
-var exec = require('child_process').exec;
+
+if(args[2] !== undefined && args[3] !== undefined){
+  var name = args[2], printname = args[3], bundleId = args[4];
+  load_app(name, printname,bundleId);
+} else {
+  rl.question("What is the name of the app? ", function(name) {
+      load_app(name);
+  });
+}
 
 
-rl.question("What is the name of the app? ", function(name) {
-    load_app(name);
-});
 
 
 
-function load_app(name){
+function load_app(name, printname, bundleId){
   axios.get('https://streamedbooks.herokuapp.com/apps?name=' + name)
 .then(function (response) {
    if(response.data.length === 0){
@@ -61,12 +69,8 @@ function load_app(name){
            fs.writeFileSync(__dirname + "/downloadedpages/Calendar.js",createCalendarPage());
           fs.writeFileSync(__dirname + "/downloadedpages/Multiplier.js",create_multiplier_page());
           fs.writeFileSync(__dirname + "/App.js",make_App_page(databases, response.data.map(function(data){return data.page}) ));
-          produceAppJSONFile();
-          exec('expo start', function callback(error, stdout, stderr){
-              console.log(stdout);
-                console.log(error);
-                console.log(stderr);
-             });
+          produceAppJSONFile(printname,bundleId);
+          
 
 
 
@@ -1311,11 +1315,8 @@ class Multiplier extends Component{
 
 }
 
-function produceAppJSONFile(){
-  rl.question("What is the print name of the app (that will appear on the AppStore)? ", function(printname) {
-   rl.question("What is the bundle identifier in the AppStore? ", function(bundlename) {
-
-var appData = `  {
+function produceAppJSONFile(printname,bundleId){
+  var appData = `  {
   "expo": {
     "name": "`+ printname +`",
     "slug": "`+printname+`",
@@ -1340,19 +1341,59 @@ var appData = `  {
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "`+bundlename+`"
+      "bundleIdentifier": "`+bundleId+`"
     },
     "android": {
-      "package": "`+bundlename+`"
+      "package": "`+bundleId+`"
     },
     "entryPoint": "node_modules/expo/AppEntry.js"
   }
 }`
+
+  if(printname && bundleId){
+   fs.writeFileSync(__dirname +"/app.json",appData);
+   return;
+
+  }
+
+  rl.question("What is the print name of the app (that will appear on the AppStore)? ", function(printname) {
+   rl.question("What is the bundle identifier in the AppStore? ", function(bundlename) {
+      var appData = `  {
+      "expo": {
+        "name": "`+ printname +`",
+        "slug": "`+printname+`",
+        "platforms": [
+          "ios",
+          "android",
+          "web"
+        ],
+        "version": "1.0.0",
+        "orientation": "portrait",
+        "icon": "./assets/ficon.png",
+        "splash": {
+          "image": "./assets/splash.png",
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
+        },
+        "updates": {
+          "fallbackToCacheTimeout": 0
+        },
+        "assetBundlePatterns": [
+          "**/*"
+        ],
+        "ios": {
+          "supportsTablet": true,
+          "bundleIdentifier": "`+bundlename+`"
+        },
+        "android": {
+          "package": "`+bundlename+`"
+        },
+        "entryPoint": "node_modules/expo/AppEntry.js"
+      }
+    }`
  rl.close();
 
  fs.writeFileSync(__dirname +"/app.json",appData);
-
-
 
 })
 

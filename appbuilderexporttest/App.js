@@ -4,13 +4,10 @@
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 import FirstPage from './downloadedpages/FirstPage.js'
-import Page from './downloadedpages/Page.js'
-import Happy from './downloadedpages/Happy.js'
-import Sad from './downloadedpages/Sad.js'
-import SadQuote from './downloadedpages/SadQuote.js'
-import Sadquote from './downloadedpages/Sadquote.js'
-import Bored from './downloadedpages/Bored.js'
-import Angry from './downloadedpages/Angry.js'
+import QUESTIONUNO from './downloadedpages/QUESTIONUNO.js'
+import RIGHT from './downloadedpages/RIGHT.js'
+import WRONG from './downloadedpages/WRONG.js'
+import Style from './downloadedpages/Style.js'
 import appData from './downloadedpages/global.js';
 /*
 EXPORT PROCESS
@@ -95,14 +92,7 @@ this.state = {dbLinks:{}, loaded:false, page:"FirstPage", numLoaded:0}
       componentDidMount(){
         
         var that = this;
-        var dbLinks = {
-        "angry":"https://script.google.com/macros/s/AKfycbwXr5OuCmNOeg-WjgEaQju0Xy77OKeBsHJTW6QKRVsERZDD9ew/exec?sheetName=EliasAngry",
-        "happy":"https://script.google.com/macros/s/AKfycbwXr5OuCmNOeg-WjgEaQju0Xy77OKeBsHJTW6QKRVsERZDD9ew/exec?sheetName=Eliashappy",
-        "QOTD":"https://script.google.com/macros/s/AKfycbwXr5OuCmNOeg-WjgEaQju0Xy77OKeBsHJTW6QKRVsERZDD9ew/exec?sheetName=Eliasquoteofday",
-        "Boredquotes":"https://script.google.com/macros/s/AKfycbwXr5OuCmNOeg-WjgEaQju0Xy77OKeBsHJTW6QKRVsERZDD9ew/exec?sheetName=Eliasbored",
-        "Sadresonate":"https://script.google.com/macros/s/AKfycbwXr5OuCmNOeg-WjgEaQju0Xy77OKeBsHJTW6QKRVsERZDD9ew/exec?sheetName=Eliassadresonate",
-        "SOOM":"https://script.google.com/macros/s/AKfycbwXr5OuCmNOeg-WjgEaQju0Xy77OKeBsHJTW6QKRVsERZDD9ew/exec?sheetName=Eliassadgetoutofmood",
-        "BORED":"https://script.google.com/macros/s/AKfycbwXr5OuCmNOeg-WjgEaQju0Xy77OKeBsHJTW6QKRVsERZDD9ew/exec?sheetName=Eliasbored"}
+        var dbLinks = {"Flags":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbyqHioFIqkw3m8lrGXVOTx84AOJofqhk0t193anSw/exec?sheetName=Baptiste"}
         Object.keys(dbLinks).forEach(function(key){
           that.connectToDatabase(dbLinks[key], key);
         })
@@ -128,10 +118,10 @@ render(){
     
 
 
-    if(that.state.page === "Page"){
+    if(that.state.page === "QUESTIONUNO"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <Page goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Page>
+             <QUESTIONUNO goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></QUESTIONUNO>
           </View>
         )
     }
@@ -141,10 +131,10 @@ render(){
     
 
 
-    if(that.state.page === "Happy"){
+    if(that.state.page === "RIGHT"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <Happy goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Happy>
+             <RIGHT goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RIGHT>
           </View>
         )
     }
@@ -154,10 +144,10 @@ render(){
     
 
 
-    if(that.state.page === "Sad"){
+    if(that.state.page === "WRONG"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <Sad goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Sad>
+             <WRONG goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></WRONG>
           </View>
         )
     }
@@ -167,49 +157,10 @@ render(){
     
 
 
-    if(that.state.page === "SadQuote"){
+    if(that.state.page === "Style"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <SadQuote goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SadQuote>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "Sadquote"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <Sadquote goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Sadquote>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "Bored"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <Bored goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Bored>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "Angry"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <Angry goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Angry>
+             <Style goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Style>
           </View>
         )
     }

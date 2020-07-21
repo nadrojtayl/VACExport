@@ -1,33 +1,33 @@
   {
-  "expo": {
-    "name": "EmotionQuote",
-    "slug": "EmotionQuote",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/ficon.png",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "emotionquote.emotionquote"
-    },
-    "android": {
-      "package": "emotionquote.emotionquote"
-    },
-    "entryPoint": "node_modules/expo/AppEntry.js"
-  }
-}
+      "expo": {
+        "name": "FlagGame",
+        "slug": "FlagGame",
+        "platforms": [
+          "ios",
+          "android",
+          "web"
+        ],
+        "version": "1.0.0",
+        "orientation": "portrait",
+        "icon": "./assets/ficon.png",
+        "splash": {
+          "image": "./assets/splash.png",
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
+        },
+        "updates": {
+          "fallbackToCacheTimeout": 0
+        },
+        "assetBundlePatterns": [
+          "**/*"
+        ],
+        "ios": {
+          "supportsTablet": true,
+          "bundleIdentifier": "flaggame.flaggame"
+        },
+        "android": {
+          "package": "flaggame.flaggame"
+        },
+        "entryPoint": "node_modules/expo/AppEntry.js"
+      }
+    }

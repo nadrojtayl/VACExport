@@ -195,13 +195,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class Bored extends React.Component {
+ class Style extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","index":2,"today":16,"anger":16,"Quoteoftheday":16,"NewIndex":1}
+        this.state = {"key":"value","RIGHTswitch0":"false","WRONGinput0":"Select","Index":0,"option":2,"answerlist":["Right answer","Wrong 1","Wrong 2","Wrong 3"],"clicked":0,"option3":0,"option4":2,"topscore":38,"lastscore":8,"randIndex":0,"option2":1,"opt1":2,"opt2":3,"opt3":1,"opt4":0,"randindex":34,"FirstPageswitch4":true}
     }
 
 
@@ -218,11 +218,10 @@ function unwrap_dynamically(value,default_value){
         return(<View><Text>LOADING</Text></View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"black"}}>
        <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("FirstPage")
-; that.forceUpdate(); }}  
+          onPress = { function(){; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -233,19 +232,93 @@ function unwrap_dynamically(value,default_value){
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"backgroundColor":"#6E6E6E","width":400,"top":"41.84%","left":"23.09%","borderRadius":1000,"innerText":"'ij'","color":"white"}]}
         >
-        <Text style = {{color:"black"}}>
+        <Text style = {{color:"white"}}>
 
-        {}
+        {'ij'}
 
        </Text>
         </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"backgroundColor":"#6E6E6E","width":400,"top":"56.04%","left":"22.84%","borderRadius":1000,"innerText":"'ij'","color":"white"}]}
+        >
+        <Text style = {{color:"white"}}>
+
+        {'ij'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"backgroundColor":"#6E6E6E","width":400,"top":"83.91%","left":"22.33%","borderRadius":1000,"innerText":"'ij'","color":"white"}]}
+        >
+        <Text style = {{color:"white"}}>
+
+        {'ij'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"backgroundColor":"#6E6E6E","width":400,"top":"69.45%","left":"22.84%","borderRadius":1000,"innerText":"'ij'","color":"white"}]}
+        >
+        <Text style = {{color:"white"}}>
+
+        {'ij'}
+
+       </Text>
+        </TouchableOpacity>
+
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"width":370,"height":270,"top":"2.5%","left":"2.55%"}]}
+        source = {{uri:https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png}}
+      >
+      </Image>
+
+
+      
         </View>
         )
     }
   }
-    export default Bored; 
+    export default Style; 
 
 
 

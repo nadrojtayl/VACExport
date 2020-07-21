@@ -195,13 +195,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class Page extends React.Component {
+ class WRONG extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","index":2,"today":16,"anger":16,"Quoteoftheday":16,"NewIndex":1}
+        this.state = {"key":"value","RIGHTswitch0":"false","WRONGinput0":"Select","Index":0,"option":2,"answerlist":["Right answer","Wrong 1","Wrong 2","Wrong 3"],"clicked":0,"option3":0,"option4":2,"topscore":38,"lastscore":8,"randIndex":0,"option2":1,"opt1":2,"opt2":3,"opt3":1,"opt4":0,"randindex":34,"FirstPageswitch4":true}
     }
 
 
@@ -218,10 +218,32 @@ function unwrap_dynamically(value,default_value){
         return(<View><Text>LOADING</Text></View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
-       <TouchableOpacity
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"black"}}>
+      
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"source":"https://media.idownloadblog.com/wp-content/uploads/2017/03/Red-Product-iPad-Wallpaper-without-apple-logo.jpg","height":1000,"width":1000,"top":"-6.23%","left":"-4.85%"}]}
+        source = {{uri:'https://media.idownloadblog.com/wp-content/uploads/2017/03/Red-Product-iPad-Wallpaper-without-apple-logo.jpg'}}
+      >
+      </Image>
+
+
+      
+<Text
+          style= {[{position:'absolute'},{"top":"38.06%","left":"9.14%","fontSize":80,"color":"white","innerText":"'WRONG!'"}]}
+        > {'WRONG!'} </Text>
+        
+<Text
+          style= {[{position:'absolute'},{"fontSize":50,"color":"white","innerText":"  'Your Score:'+ appData.lastscore;","top":"26.99%","left":"13.71%"}]}
+        > {  'Your Score:'+ appData.lastscore} </Text>
+        
+ <TouchableOpacity
           
-          onPress = { function(){; that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("FirstPage")
+if(appData.topscore<appData.lastscore){
+    appData.topscore=appData.lastscore
+}; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -232,11 +254,11 @@ function unwrap_dynamically(value,default_value){
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Back'","backgroundColor":"white"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"color":"Continue","innerText":"'Continue'","top":"76.88%","left":"39.37%","backgroundColor":"red"}]}
         >
-        <Text style = {{color:"black"}}>
+        <Text style = {{color:"Continue"}}>
 
-        {'Back'}
+        {'Continue'}
 
        </Text>
         </TouchableOpacity>
@@ -244,7 +266,7 @@ function unwrap_dynamically(value,default_value){
         )
     }
   }
-    export default Page; 
+    export default WRONG; 
 
 
 

@@ -195,13 +195,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class Sadquote extends React.Component {
+ class RIGHT extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","index":2,"today":16,"anger":16,"Quoteoftheday":16,"NewIndex":1}
+        this.state = {"key":"value","RIGHTswitch0":"false","WRONGinput0":"Select","Index":0,"option":2,"answerlist":["Right answer","Wrong 1","Wrong 2","Wrong 3"],"clicked":0,"option3":0,"option4":2,"topscore":38,"lastscore":8,"randIndex":0,"option2":1,"opt1":2,"opt2":3,"opt3":1,"opt4":0,"randindex":34,"FirstPageswitch4":true}
     }
 
 
@@ -218,10 +218,50 @@ function unwrap_dynamically(value,default_value){
         return(<View><Text>LOADING</Text></View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
-       <TouchableOpacity
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"black"}}>
+      
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"top":"-5.19%","left":"-0.75%","source":"https://assets.wallpapersin4k.org/uploads/2017/04/Bright-Lime-Green-Wallpaper-13.jpg","height":1000,"width":1000}]}
+        source = {{uri:'https://assets.wallpapersin4k.org/uploads/2017/04/Bright-Lime-Green-Wallpaper-13.jpg'}}
+      >
+      </Image>
+
+
+      
+<Box
+          style= {{}}
+        >
+        </Box>
+<Box
+          style= {{}}
+        >
+        </Box>
+<Text
+          style= {[{position:'absolute'},{"fontSize":80,"innerText":"'CORRECT'","color":"white","top":"27.38%","left":"9.91%"}]}
+        > {'CORRECT'} </Text>
+        
+ <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("Sad"); that.forceUpdate(); }}  
+          onPress = { function(){
+
+var lst = [0, 1, 2, 3];
+for(let i =lst.length - 1; i > 0; i--){
+  const j = Math.floor(Math.random() * i)
+  const temp = lst[i]
+    lst[i] = lst[j]
+    lst[j] = temp
+}
+appData.opt1 = lst[0];
+appData.opt2 = lst[1];
+appData.opt3 = lst[2];
+appData.opt4 = lst[3];
+appData.randindex= Math.floor(Math.random()*Flags.length)
+
+appData.lastscore += 1
+
+that.props.goTo("QUESTIONUNO"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -232,11 +272,11 @@ function unwrap_dynamically(value,default_value){
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Go back'"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Continue'","top":"72.84%","left":"38.83%"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Go back'}
+        {'Continue'}
 
        </Text>
         </TouchableOpacity>
@@ -244,7 +284,7 @@ function unwrap_dynamically(value,default_value){
         )
     }
   }
-    export default Sadquote; 
+    export default RIGHT; 
 
 
 
