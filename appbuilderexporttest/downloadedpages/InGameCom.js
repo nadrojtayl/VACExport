@@ -201,7 +201,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class Results extends React.Component {
+ class InGameCom extends React.Component {
      
 
     constructor(props)
@@ -225,59 +225,114 @@ function unwrap_dynamically(value,default_value){
       }
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
-      <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"21.52%","left":"34.55%","innerText":"'Congratulations! You won:'"}]}
-        > {'Congratulations! You won:'} </Text>
+       <TouchableOpacity
+          
+          onPress = { function(){; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"width":200,"top":"81.96%","left":"53.1%"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"width":200,"top":"81.44%","left":"8.52%"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"width":200,"top":"70.49%","left":"53.27%"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"width":200,"top":"70.36%","left":"8.88%","innerText":" '  JSON.parse(JSON.stringify(Data[appData.QuestionCountercom1][\"Question List\"]));';"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        { '  JSON.parse(JSON.stringify(Data[appData.QuestionCountercom1]["Question List"]))'}
+
+       </Text>
+        </TouchableOpacity>
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"33.5%","left":"44.54%"}]}
+        > {} </Text>
         
-
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://o.remove.bg/downloads/641dc187-3d4f-42f7-b8cf-662b272dd677/image-removebg-preview.png","backgroundColor":"transparent","top":"26.99%","left":"11.730.5%","height":400,"width":400}]}
-        source = {{uri:'https://o.remove.bg/downloads/641dc187-3d4f-42f7-b8cf-662b272dd677/image-removebg-preview.png'}}
-      >
-      </Image>
-
-
-      
-
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://o.remove.bg/downloads/6acda313-66f4-4545-803d-5e3db0b7dede/image-removebg-preview.png","top":"-6.88%","left":"43.29%"}]}
-        source = {{uri:'https://o.remove.bg/downloads/6acda313-66f4-4545-803d-5e3db0b7dede/image-removebg-preview.png'}}
-      >
-      </Image>
-
-
-      
-
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://o.remove.bg/downloads/4e93d81b-cfb3-4f37-bd0e-13c16f518bf2/image-removebg-preview.png","top":"28.94%","left":"14.23%","height":400,"width":400}]}
-        source = {{uri:'https://o.remove.bg/downloads/4e93d81b-cfb3-4f37-bd0e-13c16f518bf2/image-removebg-preview.png'}}
-      >
-      </Image>
-
-
-      
-
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":" appData.Imglink;","top":"30.9%","left":"35.27%"}]}
-        source = {{uri: appData.Imglink}}
-      >
-      </Image>
-
-
-      
+<View
+        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{"height":50,"width":1000,"backgroundColor":"#FD8A83","borderColor":"#FD8A83"}]}
+        ></View>
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"color":"white","top":"0.55%","left":"19.76%"}]}
+        > {} </Text>
+        
         </View>
         )
     }
   }
-    export default Results; 
+    export default InGameCom; 
 
 
 

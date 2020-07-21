@@ -201,7 +201,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class Results extends React.Component {
+ class PlayGameChoice extends React.Component {
      
 
     constructor(props)
@@ -225,59 +225,90 @@ function unwrap_dynamically(value,default_value){
       }
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
-      <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"21.52%","left":"34.55%","innerText":"'Congratulations! You won:'"}]}
-        > {'Congratulations! You won:'} </Text>
+       <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo("InGameLegendary"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Legendary'","top":"60.2%","left":"22.61%","backgroundColor":"#FBBBB8","height":75,"source":null,"width":300,"fontSize":40,"fontFamily":"impact","color":"white"}]}
+        >
+        <Text style = {{color:"white"}}>
+
+        {'Legendary'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){
+; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Common'","top":"26.6%","left":"22.61%","backgroundColor":"#FBBBB8","height":75,"width":300,"fontSize":40,"fontFamily":"impact","color":"white"}]}
+        >
+        <Text style = {{color:"white"}}>
+
+        {'Common'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){appData.QuestionCountercom4 = Math.floor(Math.random() *10)
+appData.QuestionCounter = 1
+clearInterval(appData.QuestionCountercom78)
+    appData.QuestionCounterleg1 = 30
+      appData.QuestionCountercom78 = runWithInterval(`appData.QuestionCounterleg1 -= 1;
+    if (appData.QuestionCounterleg1 === 0) {
         
+        that.props.goTo("Incorrect")}`,1000)
+that.props.goTo("InGame")
+appData.QuestionCountercom7 = 0; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"42.88%","left":"22.43%","innerText":"'Rare'","backgroundColor":"#FBBBB8","fontFamily":"impact","fontSize":40,"height":75,"width":300,"color":"white"}]}
+        >
+        <Text style = {{color:"white"}}>
 
+        {'Rare'}
 
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://o.remove.bg/downloads/641dc187-3d4f-42f7-b8cf-662b272dd677/image-removebg-preview.png","backgroundColor":"transparent","top":"26.99%","left":"11.730.5%","height":400,"width":400}]}
-        source = {{uri:'https://o.remove.bg/downloads/641dc187-3d4f-42f7-b8cf-662b272dd677/image-removebg-preview.png'}}
-      >
-      </Image>
-
-
-      
-
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://o.remove.bg/downloads/6acda313-66f4-4545-803d-5e3db0b7dede/image-removebg-preview.png","top":"-6.88%","left":"43.29%"}]}
-        source = {{uri:'https://o.remove.bg/downloads/6acda313-66f4-4545-803d-5e3db0b7dede/image-removebg-preview.png'}}
-      >
-      </Image>
-
-
-      
-
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://o.remove.bg/downloads/4e93d81b-cfb3-4f37-bd0e-13c16f518bf2/image-removebg-preview.png","top":"28.94%","left":"14.23%","height":400,"width":400}]}
-        source = {{uri:'https://o.remove.bg/downloads/4e93d81b-cfb3-4f37-bd0e-13c16f518bf2/image-removebg-preview.png'}}
-      >
-      </Image>
-
-
-      
-
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":" appData.Imglink;","top":"30.9%","left":"35.27%"}]}
-        source = {{uri: appData.Imglink}}
-      >
-      </Image>
-
-
-      
+       </Text>
+        </TouchableOpacity>
         </View>
         )
     }
   }
-    export default Results; 
+    export default PlayGameChoice; 
 
 
 

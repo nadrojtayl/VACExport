@@ -33,7 +33,7 @@ class Box extends React.Component{
 //https://spreadsheets.google.com/feeds/cells/1P0tGuikrAg5ZGpC2fHxLY49Osp6nhwseK2DSr34HM-o/1/public/full?alt=json
 
 function runWithInterval(script_string,interval){
-  var script_string = script_string + "; window.FrontPage.forceUpdate(); window.updateAppData();"
+  var script_string = script_string + ";"
     try{
         eval("function y(){"+script_string+"}")
         return setInterval(function(){ eval(script_string)},interval);
@@ -42,6 +42,12 @@ function runWithInterval(script_string,interval){
       }
 }
 
+
+function realEval(str){
+  return eval(str);
+}
+
+window.realEval = realEval.bind(this);
 window.runWithInterval = runWithInterval;
 runWithInterval = runWithInterval;
 

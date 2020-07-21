@@ -1,6 +1,6 @@
 
 import React, { Component } from "react";
-import { Button, Picker, Switch, Image, ScrollView, TouchableOpacity, StyleSheet, Text, View, TextInput, Dimensions } from "react-native";
+import { ActivityIndicator, Button, Picker, Switch, Image, ScrollView, TouchableOpacity, StyleSheet, Text, View, TextInput, Dimensions } from "react-native";
 import Calendar from "./Calendar.js";
 import appData from "./global.js";
 import { Audio } from 'expo-av';
@@ -36,7 +36,7 @@ class Box extends React.Component{
 //https://spreadsheets.google.com/feeds/cells/1P0tGuikrAg5ZGpC2fHxLY49Osp6nhwseK2DSr34HM-o/1/public/full?alt=json
 
 function runWithInterval(script_string,interval){
-  var script_string = script_string + "; window.FrontPage.forceUpdate(); window.updateAppData();"
+  var script_string = script_string + ";"
     try{
         eval("function y(){"+script_string+"}")
         return setInterval(function(){ eval(script_string)},interval);
@@ -47,6 +47,12 @@ function runWithInterval(script_string,interval){
 
 window.runWithInterval = runWithInterval;
 runWithInterval = runWithInterval;
+
+function realEval(str){
+  return eval(str);
+}
+
+window.realEval = realEval.bind(this);
 
 function try_eval(input){
   try {
@@ -195,13 +201,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class Basketball extends React.Component {
+ class Correct extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","Baseballinput6":"","Baseballinput7":"","Baseballinput8":"","Baseballinput9":"","Baseballinput10":"","Baseballinput12":"Giancarlo Stanton","Baseballinput13":"Gleyber Torres","Baseballinput14":"Nolan Arrenado","Baseballinput15":"Anthony Rendon","Baseballinput16":"Mookie Betts","Baseballinput2":"","Baseballinput3":"","Baseballinput4":"","Baseballinput5":"","Baseballinput11":"","Sport":"Baseball","PlayerResults":[1,2,3],"Resultspicker0":"Tennis","SportOptions":["Baseball","Hockey","Tennis","Basketball","Cricket","Football"],"filtered_list":[{"Sport":"Baseball","Player":"Nolan Arrenado","Rank":8},{"Sport":"Baseball","Player":"Aroldis Chapman","Rank":5},{"Sport":"Baseball","Player":"Gleyber Torres","Rank":7},{"Sport":"Baseball","Player":"Anthony Rendon","Rank":9},{"Sport":"Baseball","Player":"Mike Trout","Rank":2},{"Sport":"Baseball","Player":"Aaron Judge","Rank":1},{"Sport":"Baseball","Player":"Christian Yelich","Rank":4},{"Sport":"Baseball","Player":"Mookie Betts","Rank":10},{"Sport":"Baseball","Player":"Gerrit Cole","Rank":3},{"Sport":"Baseball","Player":"Giancarlo Stanton","Rank":6},{"Sport":"Baseball","Player":"Aaron Judge","Rank":1},{"Sport":"Baseball","Player":"Gleyber Torres","Rank":7},{"Sport":"Baseball","Player":"Gerrit Cole","Rank":3},{"Sport":"Baseball","Player":"Nolan Arrenado","Rank":8},{"Sport":"Baseball","Player":"Giancarlo Stanton","Rank":6},{"Sport":"Baseball","Player":"Mookie Betts","Rank":10},{"Sport":"Baseball","Player":"e","Rank":4},{"Sport":"Baseball","Player":"Anthony Rendon","Rank":9},{"Sport":"Baseball","Player":"f","Rank":5},{"Sport":"Baseball","Player":"Mike Trout","Rank":2},{"Sport":"Baseball","Player":"Gleyber Torres","Rank":7},{"Sport":"Baseball","Player":"Giancarlo Stanton","Rank":6},{"Sport":"Baseball","Player":"g","Rank":3},{"Sport":"Baseball","Player":"h","Rank":4},{"Sport":"Baseball","Player":"i","Rank":5},{"Sport":"Baseball","Player":"Nolan Arrenado","Rank":8},{"Sport":"Baseball","Player":"e","Rank":1},{"Sport":"Baseball","Player":"Anthony Rendon","Rank":9},{"Sport":"Baseball","Player":"Mookie Betts","Rank":10},{"Sport":"Baseball","Player":"f","Rank":2},{"Sport":"Baseball","Player":"j","Rank":10},{"Sport":"Baseball","Player":"b","Rank":2},{"Sport":"Baseball","Player":"d","Rank":4},{"Sport":"Baseball","Player":"a","Rank":1},{"Sport":"Baseball","Player":"h","Rank":8},{"Sport":"Baseball","Player":"g","Rank":7},{"Sport":"Baseball","Player":"f","Rank":6},{"Sport":"Baseball","Player":"","Rank":5},{"Sport":"Baseball","Player":"i","Rank":9},{"Sport":"Baseball","Player":"c","Rank":3},{"Sport":"Baseball","Player":"b","Rank":2},{"Sport":"Baseball","Player":"h","Rank":8},{"Sport":"Baseball","Player":"e","Rank":5},{"Sport":"Baseball","Player":"i","Rank":9},{"Sport":"Baseball","Player":"j","Rank":10},{"Sport":"Baseball","Player":"c","Rank":3},{"Sport":"Baseball","Player":"a","Rank":1},{"Sport":"Baseball","Player":"g","Rank":7},{"Sport":"Baseball","Player":"f","Rank":6},{"Sport":"Baseball","Player":"d","Rank":4}]}
+        this.state = {"key":"value","buttonColor":"#FFDFF7","question":14,"fontsize":20,"QuestionCounter":2,"TopicRange":{"Literature":0,"History":10,"Science":20,"Geography":30,"Math/Logic":40,"Sports + Pop Culture":50},"TopicRangemax":{"Literature":9,"History":19,"Science":29,"Geography":39,"Math/Logic":49,"Sports + Pop Culture":59},"TopicRangemin":{"Literature":0,"History":10,"Science":20,"Geography":30,"Math/Logic":40,"Sports + Pop Culture":50},"TopicRangemaximum":{"Literature":9,"History":19,"Science":29,"Geography":39,"Math/Logic":49,"Sports + Pop Culture":59},"test":5,"Score":2,"FontSizeofq":40,"questionleg":60,"QuestionCounterleg":1,"QuestionRangeleg":{"Literature":61,"History":71,"Science":81,"Geography":91,"Math/Logic":101,"Sports + Pop Culture":111},"prizes":[],"questioncom":121,"QuestionCountercom":1,"TopicRangecom":{"Literature":121,"History":131,"Science":141,"Geography":151,"Math/Logic":161,"Sports + Pop Culture":171},"Usernameinput0":"User","QuestionCountercom4":0,"QuestionCountercom7":0,"Timer":29,"timerid":89,"QuestionCounterleg1":26,"QuestionCountercom78":82,"Imglink":"https://mail.google.com/mail/u/0?ui=2&ik=7e77258b62&attid=0.8&permmsgid=msg-a:r-7293815653329665889&th=1736d32c6499dc0e&view=fimg&sz=s0-l75-ft&attbid=ANGjdJ_LFjAQ2tXrNxs07QoA-m3WrTs85i3pOWX4QpIlD3Q9qwZ_5wQ4cjnccszSL0lhMKB4oVTbvYZoGETfepcelfmLSNw8Kk0jVvvoKiLQ59rpbM_oP7aj2wBfDKk&disp=emb&realattid=1736d3257043c9f5d266"}
     }
 
 
@@ -215,13 +221,31 @@ function unwrap_dynamically(value,default_value){
       var that = this; 
       
       if(!that.props.loaded){
-        return(<View><Text>LOADING</Text></View>)
+        return(<View style = {{height:'100%',width:'100%', alignItems:'center',justifyContent:'center'}}><Text style = {{textAlign:'center'}}>Are you a student? Build an app with VineyardAppCamp.com</Text></View>)
       }
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
-       <TouchableOpacity
+      <Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'Correct! Good Job!'","top":"29.07%","left":"27.24%","fontSize":30}]}
+        > {'Correct! Good Job!'} </Text>
+        
+ <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("FirstPage"); that.forceUpdate(); }}  
+          onPress = { function(){if (appData.QuestionCounter == 6 && appData.QuestionCountercom7 > 4){
+    that.props.goTo("Results")
+    saveTo("UserPrizes",{"Username":appData.Usernameinput0, "Animals": "Lion"})
+}
+else {
+    clearInterval(appData.QuestionCountercom78)
+    appData.QuestionCounterleg1 = 30
+      appData.QuestionCountercom78 = runWithInterval(`appData.QuestionCounterleg1 -= 1;
+    if (appData.QuestionCounterleg1 === 0) {
+        
+        that.props.goTo("Incorrect")}`,1000)
+    that.props.goTo("InGame")
+    
+}
+; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -232,20 +256,32 @@ function unwrap_dynamically(value,default_value){
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
+            height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"92.53%","left":"70.41%","innerText":"'Go to home'","color":"black","backgroundColor":"#8a2101"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"40.41%","left":"33.31%","innerText":"'Next'","backgroundColor":"#FFDFF7"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Go to home'}
+        {'Next'}
 
        </Text>
         </TouchableOpacity>
+
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"source":"https://static.wixstatic.com/media/8a96c5_3f7f1c920c6941aca953dcda5f0569e8.gif","top":"16.96%","left":"30.99%","height":100,"width":200}]}
+        source = {{uri:'https://static.wixstatic.com/media/8a96c5_3f7f1c920c6941aca953dcda5f0569e8.gif'}}
+      >
+      </Image>
+
+
+      
         </View>
         )
     }
   }
-    export default Basketball; 
+    export default Correct; 
 
 
 

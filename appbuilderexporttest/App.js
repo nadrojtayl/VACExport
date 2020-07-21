@@ -4,13 +4,16 @@
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 import FirstPage from './downloadedpages/FirstPage.js'
-import Baseball from './downloadedpages/Baseball.js'
-import Football from './downloadedpages/Football.js'
-import Cricket from './downloadedpages/Cricket.js'
-import Basketball from './downloadedpages/Basketball.js'
-import Hockey from './downloadedpages/Hockey.js'
-import Tennis from './downloadedpages/Tennis.js'
+import MyHome from './downloadedpages/MyHome.js'
+import PlayGameChoice from './downloadedpages/PlayGameChoice.js'
+import InGame from './downloadedpages/InGame.js'
+import Correct from './downloadedpages/Correct.js'
 import Results from './downloadedpages/Results.js'
+import Incorrect from './downloadedpages/Incorrect.js'
+import YouLost from './downloadedpages/YouLost.js'
+import InGameLegendary from './downloadedpages/InGameLegendary.js'
+import Username from './downloadedpages/Username.js'
+import InGameCom from './downloadedpages/InGameCom.js'
 import appData from './downloadedpages/global.js';
 /*
 EXPORT PROCESS
@@ -95,7 +98,7 @@ this.state = {dbLinks:{}, loaded:false, page:"FirstPage", numLoaded:0}
       componentDidMount(){
         
         var that = this;
-        var dbLinks = {"Sports":"https://script.google.com/macros/s/AKfycbzDyMiWgXeE24lZvoLT6IoNJHlPZJUGxTOAmaaDtLToC1U4t-8a/exec?sheetName=Raghav"}
+        var dbLinks = {"Data":"https://script.googleusercontent.com/macros/echo?user_content_key=YDfKwivu2Rf6_AhDYKNgGGJtEyY0IzolhAjn4uXaMgYV1DBBZl73iZwi0l7oJCX2OhRdbqrb7WUJJvDcpu7vxjY9el_dcYfKm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnNc4QVkQcQoq96yvGrbFWwm4uiRHdlehP2o4YvXoAJsmaKro2WtbIagTEih7QiyCq8LKBORzzn2Eoo6uV5BOEzc&lib=MXc5HCTc2_Heu8Q3HMtlEa0XCaJ-4jKQR","UserPrizes":"https://script.googleusercontent.com/macros/echo?user_content_key=-tOfjcBcBOhYBFOquCWbKXDaZQtHHQUu6tRvSUvETvQudsmu5b1A0_wuntZnrU_elck9rGqGUOy0CyCU4KZm3aZHnk5X76Hcm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnNc4QVkQcQoq96yvGrbFWwm4uiRHdlehP2o4YvXoAJsmaKro2WtbIagTEih7QiyCq8LKBORzzn2EvFJRaUOgXBM&lib=MXc5HCTc2_Heu8Q3HMtlEa0XCaJ-4jKQR","PrizeList":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbzDpmx5Lz6rtjtErMkdSt2ksR6qZEwupA2atqdD9Q/exec?sheetName=Sheet3"}
         Object.keys(dbLinks).forEach(function(key){
           that.connectToDatabase(dbLinks[key], key);
         })
@@ -121,10 +124,10 @@ render(){
     
 
 
-    if(that.state.page === "Baseball"){
+    if(that.state.page === "MyHome"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <Baseball goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Baseball>
+             <MyHome goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></MyHome>
           </View>
         )
     }
@@ -134,10 +137,10 @@ render(){
     
 
 
-    if(that.state.page === "Football"){
+    if(that.state.page === "PlayGameChoice"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <Football goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Football>
+             <PlayGameChoice goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></PlayGameChoice>
           </View>
         )
     }
@@ -147,10 +150,10 @@ render(){
     
 
 
-    if(that.state.page === "Cricket"){
+    if(that.state.page === "InGame"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <Cricket goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Cricket>
+             <InGame goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></InGame>
           </View>
         )
     }
@@ -160,36 +163,10 @@ render(){
     
 
 
-    if(that.state.page === "Basketball"){
+    if(that.state.page === "Correct"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <Basketball goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Basketball>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "Hockey"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <Hockey goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Hockey>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "Tennis"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <Tennis goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Tennis>
+             <Correct goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Correct>
           </View>
         )
     }
@@ -203,6 +180,71 @@ render(){
         return(
           <View style = {{width:"100%",height:"100%"}}>
              <Results goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Results>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Incorrect"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Incorrect goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Incorrect>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "YouLost"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <YouLost goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></YouLost>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "InGameLegendary"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <InGameLegendary goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></InGameLegendary>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Username"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Username goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Username>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "InGameCom"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <InGameCom goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></InGameCom>
           </View>
         )
     }

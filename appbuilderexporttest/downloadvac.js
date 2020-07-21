@@ -97,7 +97,7 @@ function load_app(name, printname, bundleId){
 function translate_page(page_name,children,childrenAdditionalStyles,clickfunctions,databases,appdata,color){
   return `
 import React, { Component } from "react";
-import { Button, Picker, Switch, Image, ScrollView, TouchableOpacity, StyleSheet, Text, View, TextInput, Dimensions } from "react-native";
+import { ActivityIndicator, Button, Picker, Switch, Image, ScrollView, TouchableOpacity, StyleSheet, Text, View, TextInput, Dimensions } from "react-native";
 import Calendar from "./Calendar.js";
 import appData from "./global.js";
 import { Audio } from 'expo-av';
@@ -133,7 +133,7 @@ class Box extends React.Component{
 //https://spreadsheets.google.com/feeds/cells/1P0tGuikrAg5ZGpC2fHxLY49Osp6nhwseK2DSr34HM-o/1/public/full?alt=json
 
 function runWithInterval(script_string,interval){
-  var script_string = script_string + "; window.FrontPage.forceUpdate(); window.updateAppData();"
+  var script_string = script_string + ";"
     try{
         eval("function y(){"+script_string+"}")
         return setInterval(function(){ eval(script_string)},interval);
@@ -144,6 +144,12 @@ function runWithInterval(script_string,interval){
 
 window.runWithInterval = runWithInterval;
 runWithInterval = runWithInterval;
+
+function realEval(str){
+  return eval(str);
+}
+
+window.realEval = realEval.bind(this);
 
 function try_eval(input){
   try {
@@ -312,7 +318,7 @@ function unwrap_dynamically(value,default_value){
       var that = this; 
       
       if(!that.props.loaded){
-        return(<View><Text>LOADING</Text></View>)
+        return(<View style = {{height:'100%',width:'100%', alignItems:'center',justifyContent:'center'}}><Text style = {{textAlign:'center'}}>Are you a student? Build an app with VineyardAppCamp.com</Text></View>)
       }
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"` + color +`"}}>
@@ -349,12 +355,13 @@ function exportElemToExpo(name,int, page, childrenAdditionalStyle, clickfunction
       
     })
 
+    
 
   
     if(name === "text"){
      
       return `<Text
-          style= {[{position:'absolute'},`+ JSON.stringify(childrenAdditionalStyle) +`]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},`+ JSON.stringify(childrenAdditionalStyle) +`]}
         > {` + (childrenAdditionalStyle.innerText !== undefined ? (typeof childrenAdditionalStyle.innerText === "string"? childrenAdditionalStyle.innerText.replace(";","") : childrenAdditionalStyle.innerText ) :"")  + `} </Text>
         `
 
@@ -367,8 +374,18 @@ function exportElemToExpo(name,int, page, childrenAdditionalStyle, clickfunction
         `<Switch
          value={that.state["` + page + "switch" + int + `"]}
          onValueChange={function(val){that.setState({` + page + "switch" + int + `: val})}}   
-        style= {`+ JSON.stringify(childrenAdditionalStyle) +`}
+        style= [{position:'absolute',width:'30%'},`+ JSON.stringify(childrenAdditionalStyle) +`]
         ></Switch>`
+
+        )
+    }
+
+    if(name === "box"){
+
+      return (
+        `<View
+        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},`+ JSON.stringify(childrenAdditionalStyle) +`]}
+        ></View>`
 
         )
     }
@@ -378,7 +395,7 @@ function exportElemToExpo(name,int, page, childrenAdditionalStyle, clickfunction
       var options = eval(options)
    return `<Picker
         value={that.state["` + page + "picker" + int + `"]}
-        style= {`+ JSON.stringify(childrenAdditionalStyle) +`}
+        style= [{position:'absolute',height:'5%',width:'50%'}, `+ JSON.stringify(childrenAdditionalStyle) +`]
         onValueChange={function(val){that.setState({` + page + "picker" + int + `: val})}}  
       > 
         <Picker.Item label={"Select"} value={"Select"} />
@@ -403,7 +420,7 @@ function exportElemToExpo(name,int, page, childrenAdditionalStyle, clickfunction
       goTo = {that.props.goTo}
       type = {"`+type+`"}
       data = {`+options+`}
-      style = {[{alignItems:'center'},`+JSON.stringify(childrenAdditionalStyle) + `]}
+      style = {[{alignItems:'center',position:'absolute',height:'60%',width:'80%'},`+JSON.stringify(childrenAdditionalStyle) + `]}
       clickfunction = {function(){`+clickfunction +`}}
       >
       </Multiplier>`
@@ -431,7 +448,7 @@ function exportElemToExpo(name,int, page, childrenAdditionalStyle, clickfunction
     if(name === "input"){
 
       return `<TextInput
-       style= {`+ JSON.stringify(childrenAdditionalStyle) +`}
+       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},`+ JSON.stringify(childrenAdditionalStyle) +`]}
         value={that.state["` + page + "input" + int + `"]}
         onChangeText={function(val){that.setState({` + page + "input" + int + `: val});  
        }
@@ -442,7 +459,7 @@ function exportElemToExpo(name,int, page, childrenAdditionalStyle, clickfunction
     if(name === "button"){
       var color = childrenAdditionalStyle.color ? childrenAdditionalStyle.color:"black";
       var innerText = childrenAdditionalStyle.innerText !== undefined ? childrenAdditionalStyle.innerText.replace(";",""):"";
-     
+   
       return` <TouchableOpacity
           
           onPress = { function(){`+ ((typeof clickfunction === "string") ? clickfunction.split("goTo").join("that.props.goTo"):"") + ";" +` that.forceUpdate(); }}  
@@ -456,26 +473,20 @@ function exportElemToExpo(name,int, page, childrenAdditionalStyle, clickfunction
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
+            height:"7%",
             width:"30%",
             position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},`+ JSON.stringify(childrenAdditionalStyle) +`]}
         >
         <Text style = {{color:"`+color+`"}}>
 
-        {`+ innerText +  `}
+        {`+ innerText.replace(";","") +  `}
 
        </Text>
         </TouchableOpacity>`
 
     }
 
-    if(name === "box"){
-      return `<Box
-          style= {`+ JSON.stringify(childrenAdditionalStyle) +`}
-        >
-        </Box>`
-
-
-    }
+    
 
 
   }
@@ -981,7 +992,7 @@ class Box extends React.Component{
 //https://spreadsheets.google.com/feeds/cells/1P0tGuikrAg5ZGpC2fHxLY49Osp6nhwseK2DSr34HM-o/1/public/full?alt=json
 
 function runWithInterval(script_string,interval){
-  var script_string = script_string + "; window.FrontPage.forceUpdate(); window.updateAppData();"
+  var script_string = script_string + ";"
     try{
         eval("function y(){"+script_string+"}")
         return setInterval(function(){ eval(script_string)},interval);
@@ -990,6 +1001,12 @@ function runWithInterval(script_string,interval){
       }
 }
 
+
+function realEval(str){
+  return eval(str);
+}
+
+window.realEval = realEval.bind(this);
 window.runWithInterval = runWithInterval;
 runWithInterval = runWithInterval;
 
