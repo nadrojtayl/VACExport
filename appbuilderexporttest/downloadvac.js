@@ -318,7 +318,7 @@ function unwrap_dynamically(value,default_value){
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"` + color +`"}}>
       `+
     children.map(function(child,int){
-      return exportElemToExpo(child,int,page_name,childrenAdditionalStyles[int],clickfunctions[int],databases)
+      return exportElemToExpo(child,int,page_name,childrenAdditionalStyles[int],clickfunctions[int],databases,appdata)
     }).join("\n")
       +`
         </View>
@@ -335,9 +335,10 @@ function unwrap_dynamically(value,default_value){
 }
 
 
-function exportElemToExpo(name,int, page, childrenAdditionalStyle, clickfunction,databases){
+function exportElemToExpo(name,int, page, childrenAdditionalStyle, clickfunction,databases, appData){
   
     int = parseInt(int)
+
 
     Object.keys(childrenAdditionalStyle).forEach(function(key){
       var value = childrenAdditionalStyle[key];
@@ -455,6 +456,7 @@ function exportElemToExpo(name,int, page, childrenAdditionalStyle, clickfunction
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
+            width:"30%",
             position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},`+ JSON.stringify(childrenAdditionalStyle) +`]}
         >
         <Text style = {{color:"`+color+`"}}>
@@ -1236,6 +1238,7 @@ class Multiplier extends Component{
             justifyContent: 'center',
             alignItems: 'center',
             borderRadius: 10,
+            width:"30%",
             borderColor: 'gray', borderWidth: 1}, additionalStyle]}
         ><Text style = {{textAlign:'center'}}> { unwrap_dynamically(additionalStyle['innerText'])  }</Text>
         </TouchableOpacity>

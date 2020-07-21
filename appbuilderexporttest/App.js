@@ -4,10 +4,13 @@
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 import FirstPage from './downloadedpages/FirstPage.js'
-import QUESTIONUNO from './downloadedpages/QUESTIONUNO.js'
-import RIGHT from './downloadedpages/RIGHT.js'
-import WRONG from './downloadedpages/WRONG.js'
-import Style from './downloadedpages/Style.js'
+import Baseball from './downloadedpages/Baseball.js'
+import Football from './downloadedpages/Football.js'
+import Cricket from './downloadedpages/Cricket.js'
+import Basketball from './downloadedpages/Basketball.js'
+import Hockey from './downloadedpages/Hockey.js'
+import Tennis from './downloadedpages/Tennis.js'
+import Results from './downloadedpages/Results.js'
 import appData from './downloadedpages/global.js';
 /*
 EXPORT PROCESS
@@ -92,7 +95,7 @@ this.state = {dbLinks:{}, loaded:false, page:"FirstPage", numLoaded:0}
       componentDidMount(){
         
         var that = this;
-        var dbLinks = {"Flags":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbyqHioFIqkw3m8lrGXVOTx84AOJofqhk0t193anSw/exec?sheetName=Baptiste"}
+        var dbLinks = {"Sports":"https://script.google.com/macros/s/AKfycbzDyMiWgXeE24lZvoLT6IoNJHlPZJUGxTOAmaaDtLToC1U4t-8a/exec?sheetName=Raghav"}
         Object.keys(dbLinks).forEach(function(key){
           that.connectToDatabase(dbLinks[key], key);
         })
@@ -118,10 +121,10 @@ render(){
     
 
 
-    if(that.state.page === "QUESTIONUNO"){
+    if(that.state.page === "Baseball"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <QUESTIONUNO goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></QUESTIONUNO>
+             <Baseball goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Baseball>
           </View>
         )
     }
@@ -131,10 +134,10 @@ render(){
     
 
 
-    if(that.state.page === "RIGHT"){
+    if(that.state.page === "Football"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <RIGHT goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RIGHT>
+             <Football goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Football>
           </View>
         )
     }
@@ -144,10 +147,10 @@ render(){
     
 
 
-    if(that.state.page === "WRONG"){
+    if(that.state.page === "Cricket"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <WRONG goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></WRONG>
+             <Cricket goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Cricket>
           </View>
         )
     }
@@ -157,10 +160,49 @@ render(){
     
 
 
-    if(that.state.page === "Style"){
+    if(that.state.page === "Basketball"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <Style goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Style>
+             <Basketball goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Basketball>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Hockey"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Hockey goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Hockey>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Tennis"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Tennis goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Tennis>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Results"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Results goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Results>
           </View>
         )
     }

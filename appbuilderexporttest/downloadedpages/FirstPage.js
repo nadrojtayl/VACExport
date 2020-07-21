@@ -201,7 +201,7 @@ function unwrap_dynamically(value,default_value){
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","RIGHTswitch0":"false","WRONGinput0":"Select","Index":0,"option":2,"answerlist":["Right answer","Wrong 1","Wrong 2","Wrong 3"],"clicked":0,"option3":0,"option4":2,"topscore":38,"lastscore":8,"randIndex":0,"option2":1,"opt1":2,"opt2":3,"opt3":1,"opt4":0,"randindex":34,"FirstPageswitch4":true}
+        this.state = {"key":"value","Baseballinput6":"","Baseballinput7":"","Baseballinput8":"","Baseballinput9":"","Baseballinput10":"","Baseballinput12":"Giancarlo Stanton","Baseballinput13":"Gleyber Torres","Baseballinput14":"Nolan Arrenado","Baseballinput15":"Anthony Rendon","Baseballinput16":"Mookie Betts","Baseballinput2":"","Baseballinput3":"","Baseballinput4":"","Baseballinput5":"","Baseballinput11":"","Sport":"Baseball","PlayerResults":[1,2,3],"Resultspicker0":"Tennis","SportOptions":["Baseball","Hockey","Tennis","Basketball","Cricket","Football"],"filtered_list":[{"Sport":"Baseball","Player":"Nolan Arrenado","Rank":8},{"Sport":"Baseball","Player":"Aroldis Chapman","Rank":5},{"Sport":"Baseball","Player":"Gleyber Torres","Rank":7},{"Sport":"Baseball","Player":"Anthony Rendon","Rank":9},{"Sport":"Baseball","Player":"Mike Trout","Rank":2},{"Sport":"Baseball","Player":"Aaron Judge","Rank":1},{"Sport":"Baseball","Player":"Christian Yelich","Rank":4},{"Sport":"Baseball","Player":"Mookie Betts","Rank":10},{"Sport":"Baseball","Player":"Gerrit Cole","Rank":3},{"Sport":"Baseball","Player":"Giancarlo Stanton","Rank":6},{"Sport":"Baseball","Player":"Aaron Judge","Rank":1},{"Sport":"Baseball","Player":"Gleyber Torres","Rank":7},{"Sport":"Baseball","Player":"Gerrit Cole","Rank":3},{"Sport":"Baseball","Player":"Nolan Arrenado","Rank":8},{"Sport":"Baseball","Player":"Giancarlo Stanton","Rank":6},{"Sport":"Baseball","Player":"Mookie Betts","Rank":10},{"Sport":"Baseball","Player":"e","Rank":4},{"Sport":"Baseball","Player":"Anthony Rendon","Rank":9},{"Sport":"Baseball","Player":"f","Rank":5},{"Sport":"Baseball","Player":"Mike Trout","Rank":2},{"Sport":"Baseball","Player":"Gleyber Torres","Rank":7},{"Sport":"Baseball","Player":"Giancarlo Stanton","Rank":6},{"Sport":"Baseball","Player":"g","Rank":3},{"Sport":"Baseball","Player":"h","Rank":4},{"Sport":"Baseball","Player":"i","Rank":5},{"Sport":"Baseball","Player":"Nolan Arrenado","Rank":8},{"Sport":"Baseball","Player":"e","Rank":1},{"Sport":"Baseball","Player":"Anthony Rendon","Rank":9},{"Sport":"Baseball","Player":"Mookie Betts","Rank":10},{"Sport":"Baseball","Player":"f","Rank":2},{"Sport":"Baseball","Player":"j","Rank":10},{"Sport":"Baseball","Player":"b","Rank":2},{"Sport":"Baseball","Player":"d","Rank":4},{"Sport":"Baseball","Player":"a","Rank":1},{"Sport":"Baseball","Player":"h","Rank":8},{"Sport":"Baseball","Player":"g","Rank":7},{"Sport":"Baseball","Player":"f","Rank":6},{"Sport":"Baseball","Player":"","Rank":5},{"Sport":"Baseball","Player":"i","Rank":9},{"Sport":"Baseball","Player":"c","Rank":3},{"Sport":"Baseball","Player":"b","Rank":2},{"Sport":"Baseball","Player":"h","Rank":8},{"Sport":"Baseball","Player":"e","Rank":5},{"Sport":"Baseball","Player":"i","Rank":9},{"Sport":"Baseball","Player":"j","Rank":10},{"Sport":"Baseball","Player":"c","Rank":3},{"Sport":"Baseball","Player":"a","Rank":1},{"Sport":"Baseball","Player":"g","Rank":7},{"Sport":"Baseball","Player":"f","Rank":6},{"Sport":"Baseball","Player":"d","Rank":4}]}
     }
 
 
@@ -218,25 +218,10 @@ function unwrap_dynamically(value,default_value){
         return(<View><Text>LOADING</Text></View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"black"}}>
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://cheshirelibraryblog.files.wordpress.com/2015/02/mystery_person.jpg","height":500,"width":600,"top":"-6.23%","left":"-3.42%"}]}
-        source = {{uri:'https://cheshirelibraryblog.files.wordpress.com/2015/02/mystery_person.jpg'}}
-      >
-      </Image>
-
-
-      
- <TouchableOpacity
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
+       <TouchableOpacity
           
-          onPress = { function(){appData.lastscore = 0
-
-
-
-that.props.goTo("QUESTIONUNO"); that.forceUpdate(); }}  
+          onPress = { function(){appData.Sport="Baseball"; that.props.goTo("Baseball");; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -247,22 +232,155 @@ that.props.goTo("QUESTIONUNO"); that.forceUpdate(); }}
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"69.84%","left":"30.45%","backgroundColor":"black","innerText":"'Press to start!'","color":"white","height":200,"width":200,"fontSize":50,"borderColor":"grey","borderRadius":20}]}
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Baseball'","top":134.92,"left":45.037485000000004,"fontStyle":null,"backgroundColor":"#ff0000","color":null}]}
         >
-        <Text style = {{color:"white"}}>
+        <Text style = {{color:"black"}}>
 
-        {'Press to start!'}
+        {'Baseball'}
 
        </Text>
         </TouchableOpacity>
 <Text
-          style= {[{position:'absolute'},{"top":"78.18%","left":"0.86%","innerText":" 'Top Score :'+ appData.topscore;","color":"white"}]}
-        > { 'Top Score :'+ appData.topscore} </Text>
+          style= {[{position:'absolute'},{"fontSize":40,"top":"2.63%","left":"5.01%","color":"#0096ad","innerText":"'Top 10 Sports Ratings'"}]}
+        > {'Top 10 Sports Ratings'} </Text>
         
+ <TouchableOpacity
+          
+          onPress = { function(){appData.Sport="Football"; that.props.goTo("Baseball"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":133.92,"left":194.037485,"innerText":"'Football'","backgroundColor":"brown","color":null}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Football'}
+
+       </Text>
+        </TouchableOpacity>
 <Text
-          style= {[{position:'absolute'},{"top":"87.82%","left":"0.5%","innerText":" 'Last Score :'+appData.lastscore;","color":"white"}]}
-        > { 'Last Score :'+appData.lastscore} </Text>
+          style= {[{position:'absolute'},{"top":-33.08000000000001,"left":28.037485000000004}]}
+        > {} </Text>
         
+ <TouchableOpacity
+          
+          onPress = { function(){appData.Sport="Basketball"; that.props.goTo("Baseball"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":202.92,"left":42.037485000000004,"innerText":"'Basketball'","color":"#000000","backgroundColor":"#8c2800"}]}
+        >
+        <Text style = {{color:"#000000"}}>
+
+        {'Basketball'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){appData.Sport="Tennis"; that.props.goTo("Baseball"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"40.41%","left":"55.76%","fontFamily":null,"innerText":"'Tennis'","color":"","backgroundColor":"#00ad20"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Tennis'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){appData.Sport="Cricket"; that.props.goTo("Baseball"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"53.1%","left":"57.48%","color":"red","innerText":"'Cricket'","backgroundColor":"white"}]}
+        >
+        <Text style = {{color:"red"}}>
+
+        {'Cricket'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){appData.Sport="Hockey"; that.props.goTo("Baseball"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"53.29%","left":"12.65%","color":"black","innerText":"'Hockey'","backgroundColor":"white"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Hockey'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo("Results"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"64.59%","left":"12.94%","innerText":"'Results'","backgroundColor":"black","color":"white"}]}
+        >
+        <Text style = {{color:"white"}}>
+
+        {'Results'}
+
+       </Text>
+        </TouchableOpacity>
         </View>
         )
     }

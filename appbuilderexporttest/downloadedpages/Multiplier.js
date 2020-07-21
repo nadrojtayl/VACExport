@@ -290,6 +290,7 @@ class Multiplier extends Component{
             justifyContent: 'center',
             alignItems: 'center',
             borderRadius: 10,
+            width:"30%",
             borderColor: 'gray', borderWidth: 1}, additionalStyle]}
         ><Text style = {{textAlign:'center'}}> { unwrap_dynamically(additionalStyle['innerText'])  }</Text>
         </TouchableOpacity>
