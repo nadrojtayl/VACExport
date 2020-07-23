@@ -267,12 +267,17 @@ clearInterval(appData.thet);; that.forceUpdate(); }}
         </TouchableOpacity>
 
 
-
+      <TouchableOpacity
+      style= {[{width:"20%",height:"20%", position:'absolute',top:"55%",left:"appData.X"}]}
+       onPress = { function(){appData.X = appData.X + 10; that.forceUpdate(); }}  
+      >
       <Image
-        style= {[{width:"20%",height:"20%"}, {"top":"55%","left":"appData.X","source":"https://i.imgur.com/cQs1QEn.png","resizeMode":"contain","backgroundColor":"tranparent"}]}
-        source = {{uri:"'https://i.imgur.com/cQs1QEn.png'"}}
+        style= {[{width:"100%",height:"100%"}, {"top":"55%","left":"appData.X","source":"https://i.imgur.com/cQs1QEn.png","resizeMode":"contain","backgroundColor":"tranparent"}]}
+        source = {{uri:'https://i.imgur.com/cQs1QEn.png'}}
+       
       >
       </Image>
+      </TouchableOpacity>
 
 
       
@@ -391,540 +396,589 @@ removeOffScreen();
         </TouchableOpacity>
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":"appData.Move2","left":"20%","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
 
 
-      
 
+      
 
 
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":840,"left":"65%","resizeMode":"contain","backgroundColor":"tranparent","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
 
 
-      
 
+      
 
 
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":720,"left":"65%","resizeMode":"contain","backgroundColor":"tranparent","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
 
 
-      
 
+      
 
 
       <Image
         style= {[{width:"20%",height:"20%"}, {"top":600,"left":"20%","resizeMode":"contain","backgroundColor":"tranparent","source":"https://i.imgur.com/SGCjjSN.gif"}]}
-        source = {{uri:"'https://i.imgur.com/SGCjjSN.gif'"}}
+        source = {{uri:'https://i.imgur.com/SGCjjSN.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"source":"https://i.imgur.com/khLWbCD.gif","width":"100%","height":"100%","zIndex":-1000000000}]}
-        source = {{uri:"'https://i.imgur.com/khLWbCD.gif'"}}
+        source = {{uri:'https://i.imgur.com/khLWbCD.gif'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       

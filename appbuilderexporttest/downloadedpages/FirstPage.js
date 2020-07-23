@@ -239,12 +239,17 @@ function unwrap_dynamically(value,default_value){
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"grey"}}>
       
 
-
+      <TouchableOpacity
+      style= {[{width:"30%",height:"30%", position:'absolute',top:"31.75%",left:"35.36%"}]}
+       onPress = { function(){that.props.goTo("Main"); that.forceUpdate(); }}  
+      >
       <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://i.imgur.com/aGSr19H.gif","backgroundColor":"transparent","top":"31.75%","left":"35.36%","resizeMode":"contain","alignItems":null,"height":"30%","width":"30%"}]}
-        source = {{uri:"'https://i.imgur.com/aGSr19H.gif'"}}
+        style= {[{width:"100%",height:"100%"}, {"source":"https://i.imgur.com/aGSr19H.gif","backgroundColor":"transparent","top":"31.75%","left":"35.36%","resizeMode":"contain","alignItems":null,"height":"30%","width":"30%"}]}
+        source = {{uri:'https://i.imgur.com/aGSr19H.gif'}}
+       
       >
       </Image>
+      </TouchableOpacity>
 
 
       
@@ -259,34 +264,37 @@ function unwrap_dynamically(value,default_value){
         
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"source":"https://i.imgur.com/cQs1QEn.png","top":"16.06%","left":"10.19%","backgroundColor":"transparent","resizeMode":"contain"}]}
-        source = {{uri:"'https://i.imgur.com/cQs1QEn.png'"}}
+        source = {{uri:'https://i.imgur.com/cQs1QEn.png'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
 
 
-      
 
+      
 
 
       <Image
         style= {[{width:"20%",height:"20%"}, {"source":"https://i.imgur.com/KbSqCge.jpg","resizeMode":"contain","top":"-55.45%","left":"0.2%","fontSize":"resizeFont(null)","width":"100%","backgroundColor":"transparent","zIndex":-10000}]}
-        source = {{uri:"'https://i.imgur.com/KbSqCge.jpg'"}}
+        source = {{uri:'https://i.imgur.com/KbSqCge.jpg'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"source":"https://cdn1.vectorstock.com/i/1000x1000/52/10/game-scene-pixelated-background-vector-12125210.jpg","height":"100%","width":"100%","top":"15.42%","left":"0.3%","backgroundColor":"transparent","zIndex":-10000000}]}
-        source = {{uri:"'https://cdn1.vectorstock.com/i/1000x1000/52/10/game-scene-pixelated-background-vector-12125210.jpg'"}}
+        source = {{uri:'https://cdn1.vectorstock.com/i/1000x1000/52/10/game-scene-pixelated-background-vector-12125210.jpg'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
@@ -315,12 +323,13 @@ function unwrap_dynamically(value,default_value){
         </TouchableOpacity>
 
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"source":"https://i.imgur.com/KbSqCge.jpg","top":"-3.51%","left":"0.08%","width":"100%"}]}
-        source = {{uri:"'https://i.imgur.com/KbSqCge.jpg'"}}
+        source = {{uri:'https://i.imgur.com/KbSqCge.jpg'}}
+        onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
       
