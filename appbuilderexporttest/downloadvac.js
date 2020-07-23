@@ -518,6 +518,8 @@ function exportElemToExpo(name,int, page, childrenAdditionalStyle, clickfunction
 
   function make_App_page(dbLinks,pages){
     console.log(dbLinks);
+    console.log("HEREN");
+    console.log(typeof dbLinks)
   return `
 
 
@@ -606,7 +608,7 @@ class App extends React.Component {
 
 constructor(props){
 super(props);
-this.state = {dbLinks:{}, loaded:false, page:"FirstPage", numLoaded:0}
+this.state = {dbLinks:{}, loaded:`+ (dbLinks === "{}" ? true:false) +`, page:"FirstPage", numLoaded:0}
 }
 
 componentDidMount(){

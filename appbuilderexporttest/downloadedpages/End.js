@@ -209,7 +209,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class End extends React.Component {
      
 
     constructor(props)
@@ -237,62 +237,10 @@ function unwrap_dynamically(value,default_value){
       }
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"grey"}}>
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://i.imgur.com/aGSr19H.gif","backgroundColor":"transparent","top":"31.75%","left":"35.36%","resizeMode":"contain","alignItems":null,"height":"30%","width":"30%"}]}
-        source = {{uri:"'https://i.imgur.com/aGSr19H.gif'"}}
-      >
-      </Image>
-
-
-      
-<TextInput
-       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"30.64%","left":"36.87%","borderColor":"black"}]}
-        value={appData["FirstPageinput1"]}
-         onChangeText={function(val){ appData["FirstPageinput1"] = val; that.forceUpdate();   } }
-        />
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"26.99%","left":"47.57%","innerText":"'Name'"}]}
-        > {'Name'} </Text>
-        
-
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://i.imgur.com/cQs1QEn.png","top":"16.06%","left":"10.19%","backgroundColor":"transparent","resizeMode":"contain"}]}
-        source = {{uri:"'https://i.imgur.com/cQs1QEn.png'"}}
-      >
-      </Image>
-
-
-      
-
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://i.imgur.com/KbSqCge.jpg","resizeMode":"contain","top":"-55.45%","left":"0.2%","fontSize":"resizeFont(null)","width":"100%","backgroundColor":"transparent","zIndex":-10000}]}
-        source = {{uri:"'https://i.imgur.com/KbSqCge.jpg'"}}
-      >
-      </Image>
-
-
-      
-
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://cdn1.vectorstock.com/i/1000x1000/52/10/game-scene-pixelated-background-vector-12125210.jpg","height":"100%","width":"100%","top":"15.42%","left":"0.3%","backgroundColor":"transparent","zIndex":-10000000}]}
-        source = {{uri:"'https://cdn1.vectorstock.com/i/1000x1000/52/10/game-scene-pixelated-background-vector-12125210.jpg'"}}
-      >
-      </Image>
-
-
-      
- <TouchableOpacity
+       <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("Settings"); that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("Main");
+; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -305,30 +253,50 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"57.3%","left":"40.3%","innerText":"'Settings'"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"23.34%","left":"39.87%","innerText":"'Retry'"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Settings'}
+        {'Retry'}
 
        </Text>
         </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo("FirstPage");; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"48.41%","left":"39.87%","innerText":"'Go to home'"}]}
+        >
+        <Text style = {{color:"black"}}>
 
+        {'Go to home'}
 
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://i.imgur.com/KbSqCge.jpg","top":"-3.51%","left":"0.08%","width":"100%"}]}
-        source = {{uri:"'https://i.imgur.com/KbSqCge.jpg'"}}
-      >
-      </Image>
-
-
-      
+       </Text>
+        </TouchableOpacity>
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":" appData.spawned;","top":"16.87%","left":"52.61%"}]}
+        > { appData.spawned} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"12.18%","left":"45.99%","innerText":"'Score'"}]}
+        > {'Score'} </Text>
+        
         </View>
         )
     }
   }
-    export default FirstPage; 
+    export default End; 
 
 
 

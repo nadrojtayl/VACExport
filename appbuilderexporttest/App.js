@@ -4,10 +4,10 @@
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 import FirstPage from './downloadedpages/FirstPage.js'
-import Profile from './downloadedpages/Profile.js'
-import SavedGrants from './downloadedpages/SavedGrants.js'
-import GrantTemplate from './downloadedpages/GrantTemplate.js'
-import LoginScreen from './downloadedpages/LoginScreen.js'
+import Main from './downloadedpages/Main.js'
+import Settings from './downloadedpages/Settings.js'
+import Pause from './downloadedpages/Pause.js'
+import End from './downloadedpages/End.js'
 import appData from './downloadedpages/global.js';
 /*
 EXPORT PROCESS
@@ -86,13 +86,13 @@ class App extends React.Component {
 
 constructor(props){
 super(props);
-this.state = {dbLinks:{}, loaded:false, page:"FirstPage", numLoaded:0}
+this.state = {dbLinks:{}, loaded:true, page:"FirstPage", numLoaded:0}
 }
 
 componentDidMount(){
   
   var that = this;
-  var dbLinks = {"data":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbzDpmx5Lz6rtjtErMkdSt2ksR6qZEwupA2atqdD9Q/exec?sheetName=Aaron","userdata":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbzDpmx5Lz6rtjtErMkdSt2ksR6qZEwupA2atqdD9Q/exec?sheetName=AaronUser"}
+  var dbLinks = {}
   Object.keys(dbLinks).forEach(function(key){
     that.connectToDatabase(dbLinks[key], key);
   })
@@ -137,10 +137,10 @@ render(){
     
 
 
-    if(that.state.page === "Profile"){
+    if(that.state.page === "Main"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <Profile  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Profile>
+             <Main  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Main>
           </View>
         )
     }
@@ -150,10 +150,10 @@ render(){
     
 
 
-    if(that.state.page === "Saved Grants"){
+    if(that.state.page === "Settings"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <SavedGrants  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SavedGrants>
+             <Settings  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Settings>
           </View>
         )
     }
@@ -163,10 +163,10 @@ render(){
     
 
 
-    if(that.state.page === "GrantTemplate"){
+    if(that.state.page === "Pause"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <GrantTemplate  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></GrantTemplate>
+             <Pause  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Pause>
           </View>
         )
     }
@@ -176,10 +176,10 @@ render(){
     
 
 
-    if(that.state.page === "LoginScreen"){
+    if(that.state.page === "End"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <LoginScreen  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></LoginScreen>
+             <End  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></End>
           </View>
         )
     }
