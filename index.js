@@ -12,7 +12,7 @@ const { exec } = require("child_process");
 
 app.get("/",function(req,res){
 	res.send("HERE");
-	exec("node downloadvac.js Baptiste-Louis FlagRunGame flagrung.flagrung.com; expo publish",{
+	exec("node downloadvac.js Baptiste-Louis FlagRunGame flagrung.flagrung.com; expo start",{
 	  cwd: __dirname + "/appbuilderexporttest"
 	}, (error, stdout, stderr) => {
 		    if (error) {
