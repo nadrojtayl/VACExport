@@ -459,6 +459,7 @@ function exportElemToExpo(name,int, page, childrenAdditionalStyle, clickfunction
       var link = (childrenAdditionalStyle.source === undefined ? "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png": (childrenAdditionalStyle.source.indexOf("appData") !== -1 || childrenAdditionalStyle.source.indexOf("[") !== -1 ) ? childrenAdditionalStyle.source.replace(";","") : "'" + childrenAdditionalStyle.source + "'" )
 
       return `
+      
 
       <TouchableOpacity
       style= {[{width:"`+(childrenAdditionalStyle.width ? childrenAdditionalStyle.width: "20%")+`",height:"`+ (childrenAdditionalStyle.height ? childrenAdditionalStyle.height: "20%") +`", position:'absolute',top:"`+childrenAdditionalStyle.top+`",left:"`+childrenAdditionalStyle.left+`"}]}
