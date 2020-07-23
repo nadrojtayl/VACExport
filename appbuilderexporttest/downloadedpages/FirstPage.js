@@ -17,8 +17,15 @@ function hasNumber(myString) {
 }
 
 
+
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
+
+function resizeFont(num){
+  return num / (640/height)
+}
+
+
 global.inputs = {
   0:"This"
 }
@@ -37,6 +44,7 @@ class Box extends React.Component{
 
 function runWithInterval(script_string,interval){
   var script_string = script_string + ";"
+  var that = appData.this;
     try{
         eval("function y(){"+script_string+"}")
         return setInterval(function(){ eval(script_string)},interval);
@@ -207,7 +215,7 @@ function unwrap_dynamically(value,default_value){
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","buttonColor":"#FFDFF7","question":14,"fontsize":20,"QuestionCounter":2,"TopicRange":{"Literature":0,"History":10,"Science":20,"Geography":30,"Math/Logic":40,"Sports + Pop Culture":50},"TopicRangemax":{"Literature":9,"History":19,"Science":29,"Geography":39,"Math/Logic":49,"Sports + Pop Culture":59},"TopicRangemin":{"Literature":0,"History":10,"Science":20,"Geography":30,"Math/Logic":40,"Sports + Pop Culture":50},"TopicRangemaximum":{"Literature":9,"History":19,"Science":29,"Geography":39,"Math/Logic":49,"Sports + Pop Culture":59},"test":5,"Score":2,"FontSizeofq":40,"questionleg":60,"QuestionCounterleg":1,"QuestionRangeleg":{"Literature":61,"History":71,"Science":81,"Geography":91,"Math/Logic":101,"Sports + Pop Culture":111},"prizes":[],"questioncom":121,"QuestionCountercom":1,"TopicRangecom":{"Literature":121,"History":131,"Science":141,"Geography":151,"Math/Logic":161,"Sports + Pop Culture":171},"Usernameinput0":"User","QuestionCountercom4":0,"QuestionCountercom7":0,"Timer":29,"timerid":89,"QuestionCounterleg1":26,"QuestionCountercom78":82,"Imglink":"https://mail.google.com/mail/u/0?ui=2&ik=7e77258b62&attid=0.8&permmsgid=msg-a:r-7293815653329665889&th=1736d32c6499dc0e&view=fimg&sz=s0-l75-ft&attbid=ANGjdJ_LFjAQ2tXrNxs07QoA-m3WrTs85i3pOWX4QpIlD3Q9qwZ_5wQ4cjnccszSL0lhMKB4oVTbvYZoGETfepcelfmLSNw8Kk0jVvvoKiLQ59rpbM_oP7aj2wBfDKk&disp=emb&realattid=1736d3257043c9f5d266"}
+        this.state = {"key":"value","FirstPageinput4":"Select","FirstPageinput2":"Select","Profileinput4":"Select","Profilepicker5":"","Profileinput7":"Select","Profileinput8":"Select","Saved Grantsinput2":"","grantList":["The 100,000 Strong in the Americas Innovation Fund","AAA Foundation for Traffic Safety","AARP Purpose Prize","AARP Community Challenge","Abbott Grants Programs","The Academy of American Poets","ACM Lifting Lives","The Academy of General Dentistry Foundation","The Academy Grants Program ","The Access Fund's Climbing Conservation Grant Program","AccessLex Institute","Acción Cultural Española (Spanish Cultural Action)","Accion International","Steven B. Achelis Foundation","A Community Thrives","Acorn Foundation","Action for Healthy Kids: School Grants for Healthy Kids","Action For Nature: International Young Eco-Hero Award Program","Actors' Equity Foundation","Adobe Product Donations","AFS Prize for Young Global Citizens","Agricultural and Applied Economics Association Trust","AHRA and Canon Medical Systems USA, Inc. Putting Patients First Program","Aidsfonds","AIDS United","Aid to the Church in Need","AIG Sponsorships Program","Air Force Association: Educator Grant Program","Air France Corporate Foundation","The Alcon Foundation","Alert Fund for Youth","Alexia Foundation for World Peace","Alex's Lemonade Stand Foundation","A Little Hope","Alkermes Inspiration Grants","Allard Prize for International Integrity","Allegany Franciscan Ministries","Allen Foundation","Rita Allen Foundation","Alliance for Cancer Gene Therapy Research Grants","The Alliance for Young Artists & Writers: The Scholastic Art & Writing Awards","Alliant Credit Union Foundation","Allstate Foundation: Executive Leadership Program","The Alo Grant","The Alongside Wildlife Foundation","Alternatives Research and Development Foundation","Alwaleed Philanthropies","Alzheimer's Association","Alzheimer's Foundation of America","AMA (American Medical Association) Foundation","AMC Cares Charitable Fund","American Academy in Rome: The Rome Prize","American Academy of Arts and Letters","American Academy of Pediatric Dentistry (AAPD) Foundation","American Academy of Dermatology: Shade Structure Grant Program","American Academy of Family Physicians Foundation: Family Medicine Cares USA","American Academy of Pediatrics: Community Access to Child Health (CATCH)","Americana Foundation","American Alliance of Museums: Museum Assessment Program","American Alpine Club Grant Program","The American Antiquarian Society Fellowship Program","American Arbitration Association-International Centre for Dispute Resolution Foundation","American Association for Cancer Research","American Association of Community Colleges Grant Programs","American Association of People with Disabilities Programs","American Association of Retired Persons (AARP) Foundation","American Association of School Librarians","American Association of University Women","American Bar Endowment: Opportunity Grant Program","American Battlefield Trust: Field Trip Fund","American Cancer Society Research Grants Program","American Chemical Society","American Climate Leadership Awards","American College of Bankruptcy Foundation: Pro Bono Grant Program","American Composers Forum","American Conservation Association"],"firstGrant":65,"index":76,"testList":[1,2,3],"LoginScreeninput2":"","FirstPageinput1":"AA","myresult":[{"Grantor Name":"AAA Foundation for Traffic Safety","Who the grant is for":"Nonprofit & Government organizations, for-profit research research institutions","Deadline to apply for grant":"Suspended till further notice","Grant description ":"The AAA Foundation for Traffic Safety is a not-for-profit, publicly supported charitable research and education organization dedicated to saving lives by preventing traffic crashes and reducing injuries when crashes occur.","Grant focus areas (location)":"USA","Amount provided by grants":"Not listed","":"","Index":1},{"Grantor Name":"AARP Purpose Prize","Who the grant is for":"Individuals","Deadline to apply for grant":"March 32, 2020. Deadline for 2021 available in the Fall.","Grant description ":"The AARP® Purpose Prize® award supports AARP's mission by honoring extraordinary people ages 50 and older who tap into the power of life experience to build a better future for us all.","Grant focus areas (location)":"USA","Amount provided by grants":"Award of $5,000 and $50,000 are given.","":"","Index":2},{"Grantor Name":"AARP Community Challenge","Who the grant is for":"Nonprofit organizations and government agencies","Deadline to apply for grant":"May 15, 2020. Deadline for 2021 available later this year.","Grant description ":"The AARP Community Challenge provides small grants to fund \"quick-action\" projects that can help communities become more livable for people of all ages. Applications are being accepted for projects to improve housing, transportation, public space, technology (\"smart cities\"), civic engagement and more.","Grant focus areas (location)":"USA","Amount provided by grants":"Awards range from hundreds of dollars to tens of thousands.","":"","Index":3},{"Grantor Name":"American Academy of Pediatric Dentistry (AAPD) Foundation","Who the grant is for":"Nonprofit organizations, government agencies, hospitals and clinics, colleges of dentistry and medicine, and dental societies","Deadline to apply for grant":"Available in Fall","Grant description ":"The American Academy of Pediatric Dentistry (AAPD) Foundation is committed to supporting community-based initiatives providing Dental Homes to children whose families cannot afford dental care.","Grant focus areas (location)":"USA","Amount provided by grants":"Grants range up to $20,000.","":"","Index":53},{"Grantor Name":"American Association of Retired Persons (AARP) Foundation","Who the grant is for":"Nonprofit organizations, government agencies, and educational institutions","Deadline to apply for grant":"Varies by request for proposals","Grant description ":"The mission of the American Association of Retired Persons (AARP) Foundation is to work toward a country free of poverty, where no older person feels vulnerable.","Grant focus areas (location)":"USA","Amount provided by grants":"Not listed","":"","Index":65}],"savedgrants":[],"grantindexes":[],"grantdata":[],"searchresult":[]}
     }
 
 
@@ -219,6 +227,7 @@ function unwrap_dynamically(value,default_value){
 
     render(){ 
       var that = this; 
+      appData.this = this;
       
       if(!that.props.loaded){
         return(<View style = {{height:'100%',width:'100%', alignItems:'center',justifyContent:'center'}}>
@@ -228,9 +237,38 @@ function unwrap_dynamically(value,default_value){
       }
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
-       <TouchableOpacity
+      <Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'GrantFinder'","color":"orange","fontSize":"resizeFont(20)","fontWeight":"bold","top":-2.975999999999999,"left":154.16250000000002}]}
+        > {'GrantFinder'} </Text>
+        
+<TextInput
+       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"innerText":"'Search for grants'","top":28.024,"left":10.162500000000023,"width":400}]}
+        value={appData["FirstPageinput1"]}
+         onChangeText={function(val){ appData["FirstPageinput1"] = val; that.forceUpdate();   } }
+        />
+<View
+        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{"top":"14.89%","left":"2.19%","width":400,"height":"75%"}]}
+        ></View>
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"  \"Showing \" + appData.myresult.length + \" Results\";","color":"orange","top":"10.55%","left":"33.09%","fontWeight":"bold"}]}
+        > {  "Showing " + appData.myresult.length + " Results"} </Text>
+        
+<Multiplier
+      goTo = {that.props.goTo}
+      type = {"button"}
+      data = { appData.myresult}
+      style = {[{alignItems:'center',position:'absolute',height:'60%',width:'80%'},{"top":"16.6%","left":"12.73%","options":" appData.myresult;","repeaterinnerText":"   elem[\"Grantor Name\"];","repeaterType":"button","repeaterbackgroundColor":"#ffbb00","repeaterwidth":"90%","repeatertextDecorationStyle":"italic","repeaterfontSize":16,"repeateronPress":"appData.firstGrant = elem[\"Index\"];\ngoTo(\"GrantTemplate\");\n","repeaterheight":50,"height":"70%"}]}
+      clickfunction = {function(){}}
+      >
+      </Multiplier>
+ <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("PlayGameChoice"); that.forceUpdate(); }}  
+          onPress = { function(){if (appData.FirstPageinput1 === "") {
+    appData.myresult = data;
+} else {
+    appData.myresult = filter_obj_by_phrase(data,"Grantor Name",appData.FirstPageinput1);
+}
+; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -243,17 +281,17 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Play Game'","color":"white","backgroundColor":"#FBBBB8","top":"48.29%","left":"18.56%","height":75,"fontSize":40,"width":"60%","fontFamily":"SYNCOPATE","borderStyle":"solid","borderRadius":4}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"height":"4%","innerText":"'Search'","top":"4.66%","left":"67.58%","backgroundColor":"#ffbb00"}]}
         >
-        <Text style = {{color:"white"}}>
+        <Text style = {{color:"black"}}>
 
-        {'Play Game'}
+        {'Search'}
 
        </Text>
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("MyHome"); that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo('LoginScreen'); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -266,30 +304,14 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"height":75,"width":"60%","innerText":"'My Home'","fontSize":40,"fontFamily":"syncopate","color":"white","backgroundColor":"#FBBBB8","top":"68.78%","left":"18.77%","borderRadius":4}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"91.34%","left":"32.37%","innerText":"'Logout'","backgroundColor":"#ffbb00"}]}
         >
-        <Text style = {{color:"white"}}>
+        <Text style = {{color:"black"}}>
 
-        {'My Home'}
+        {'Logout'}
 
        </Text>
         </TouchableOpacity>
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"fontSize":60,"innerText":"'Trivia Zoo!'","fontFamily":"Arial","top":"17.4%","left":"14.03%","borderRadius":5}]}
-        > {'Trivia Zoo!'} </Text>
-        
-<View
-        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{"height":1000,"backgroundColor":"#FD8A83","borderColor":"#FD8A83","top":"1.65%","left":"-2.56%","width":112}]}
-        ></View>
-<View
-        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{"width":1000,"height":75,"backgroundColor":"#FD8A83","borderColor":"#FD8A83","top":"-0.63%","left":"-5.74%"}]}
-        ></View>
-<View
-        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{"height":1000,"top":"5.63%","left":"85.9%","backgroundColor":"#FD8A83","borderColor":"#FD8A83","width":112}]}
-        ></View>
-<View
-        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{"width":1000,"top":"86.39%","left":"4.25%","height":200,"backgroundColor":"#FD8A83","borderColor":"#FD8A83"}]}
-        ></View>
         </View>
         )
     }

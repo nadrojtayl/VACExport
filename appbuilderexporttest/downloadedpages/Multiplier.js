@@ -34,6 +34,7 @@ class Box extends React.Component{
 
 function runWithInterval(script_string,interval){
   var script_string = script_string + ";"
+  var that = appData.this;
     try{
         eval("function y(){"+script_string+"}")
         return setInterval(function(){ eval(script_string)},interval);

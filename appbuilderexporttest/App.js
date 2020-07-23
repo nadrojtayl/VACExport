@@ -4,16 +4,10 @@
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 import FirstPage from './downloadedpages/FirstPage.js'
-import MyHome from './downloadedpages/MyHome.js'
-import PlayGameChoice from './downloadedpages/PlayGameChoice.js'
-import InGame from './downloadedpages/InGame.js'
-import Correct from './downloadedpages/Correct.js'
-import Results from './downloadedpages/Results.js'
-import Incorrect from './downloadedpages/Incorrect.js'
-import YouLost from './downloadedpages/YouLost.js'
-import InGameLegendary from './downloadedpages/InGameLegendary.js'
-import Username from './downloadedpages/Username.js'
-import InGameCom from './downloadedpages/InGameCom.js'
+import Profile from './downloadedpages/Profile.js'
+import SavedGrants from './downloadedpages/SavedGrants.js'
+import GrantTemplate from './downloadedpages/GrantTemplate.js'
+import LoginScreen from './downloadedpages/LoginScreen.js'
 import appData from './downloadedpages/global.js';
 /*
 EXPORT PROCESS
@@ -95,14 +89,33 @@ super(props);
 this.state = {dbLinks:{}, loaded:false, page:"FirstPage", numLoaded:0}
 }
 
-      componentDidMount(){
-        
-        var that = this;
-        var dbLinks = {"Data":"https://script.googleusercontent.com/macros/echo?user_content_key=YDfKwivu2Rf6_AhDYKNgGGJtEyY0IzolhAjn4uXaMgYV1DBBZl73iZwi0l7oJCX2OhRdbqrb7WUJJvDcpu7vxjY9el_dcYfKm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnNc4QVkQcQoq96yvGrbFWwm4uiRHdlehP2o4YvXoAJsmaKro2WtbIagTEih7QiyCq8LKBORzzn2Eoo6uV5BOEzc&lib=MXc5HCTc2_Heu8Q3HMtlEa0XCaJ-4jKQR","UserPrizes":"https://script.googleusercontent.com/macros/echo?user_content_key=-tOfjcBcBOhYBFOquCWbKXDaZQtHHQUu6tRvSUvETvQudsmu5b1A0_wuntZnrU_elck9rGqGUOy0CyCU4KZm3aZHnk5X76Hcm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnNc4QVkQcQoq96yvGrbFWwm4uiRHdlehP2o4YvXoAJsmaKro2WtbIagTEih7QiyCq8LKBORzzn2EvFJRaUOgXBM&lib=MXc5HCTc2_Heu8Q3HMtlEa0XCaJ-4jKQR","PrizeList":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbzDpmx5Lz6rtjtErMkdSt2ksR6qZEwupA2atqdD9Q/exec?sheetName=Sheet3"}
-        Object.keys(dbLinks).forEach(function(key){
-          that.connectToDatabase(dbLinks[key], key);
-        })
-      };
+componentDidMount(){
+  
+  var that = this;
+  var dbLinks = {"data":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbzDpmx5Lz6rtjtErMkdSt2ksR6qZEwupA2atqdD9Q/exec?sheetName=Aaron","userdata":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbzDpmx5Lz6rtjtErMkdSt2ksR6qZEwupA2atqdD9Q/exec?sheetName=AaronUser"}
+  Object.keys(dbLinks).forEach(function(key){
+    that.connectToDatabase(dbLinks[key], key);
+  })
+};
+
+sendToDatabase(name,obj){
+    var that = this;
+    var url = that.state.dbLinks[name];
+   
+    var schema = fetch(url, {
+                method: 'POST',
+                body:JSON.stringify(obj),
+                headers: {
+                  "Content-Type": "application/x-www-form-urlencoded",
+                  "Accept": "application/json"
+                }
+      }).then(async function(res){
+       
+        that.forceUpdate();
+
+
+      })
+  }
 
 
 
@@ -114,7 +127,7 @@ render(){
     if(that.state.page === "FirstPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <FirstPage goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FirstPage>
+             <FirstPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FirstPage>
           </View>
         )
     }
@@ -124,10 +137,10 @@ render(){
     
 
 
-    if(that.state.page === "MyHome"){
+    if(that.state.page === "Profile"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <MyHome goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></MyHome>
+             <Profile  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Profile>
           </View>
         )
     }
@@ -137,10 +150,10 @@ render(){
     
 
 
-    if(that.state.page === "PlayGameChoice"){
+    if(that.state.page === "Saved Grants"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <PlayGameChoice goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></PlayGameChoice>
+             <SavedGrants  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SavedGrants>
           </View>
         )
     }
@@ -150,10 +163,10 @@ render(){
     
 
 
-    if(that.state.page === "InGame"){
+    if(that.state.page === "GrantTemplate"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <InGame goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></InGame>
+             <GrantTemplate  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></GrantTemplate>
           </View>
         )
     }
@@ -163,88 +176,10 @@ render(){
     
 
 
-    if(that.state.page === "Correct"){
+    if(that.state.page === "LoginScreen"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <Correct goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Correct>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "Results"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <Results goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Results>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "Incorrect"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <Incorrect goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Incorrect>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "YouLost"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <YouLost goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></YouLost>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "InGameLegendary"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <InGameLegendary goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></InGameLegendary>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "Username"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <Username goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Username>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "InGameCom"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <InGameCom goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></InGameCom>
+             <LoginScreen  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></LoginScreen>
           </View>
         )
     }

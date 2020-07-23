@@ -114,8 +114,15 @@ function hasNumber(myString) {
 }
 
 
+
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
+
+function resizeFont(num){
+  return num / (640/height)
+}
+
+
 global.inputs = {
   0:"This"
 }
@@ -134,6 +141,7 @@ class Box extends React.Component{
 
 function runWithInterval(script_string,interval){
   var script_string = script_string + ";"
+  var that = appData.this;
     try{
         eval("function y(){"+script_string+"}")
         return setInterval(function(){ eval(script_string)},interval);
@@ -316,6 +324,7 @@ function unwrap_dynamically(value,default_value){
 
     render(){ 
       var that = this; 
+      appData.this = this;
       
       if(!that.props.loaded){
         return(<View style = {{height:'100%',width:'100%', alignItems:'center',justifyContent:'center'}}>
@@ -348,6 +357,9 @@ function exportElemToExpo(name,int, page, childrenAdditionalStyle, clickfunction
   
     int = parseInt(int)
 
+    if(typeof clickfunction === "string"){
+      clickfunction  = clickfunction.replace("saveTo","that.props.saveTo")
+    }
 
     Object.keys(childrenAdditionalStyle).forEach(function(key){
       var value = childrenAdditionalStyle[key];
@@ -355,6 +367,16 @@ function exportElemToExpo(name,int, page, childrenAdditionalStyle, clickfunction
       if(key === "innerText" && typeof value === "string" && value.indexOf("appData") === -1 && databases[key] === undefined){
         childrenAdditionalStyle[key] = ("'" + childrenAdditionalStyle[key] + "'")
       }
+
+       if(key === "fontSize"){
+        childrenAdditionalStyle[key] = "resizeFont(" + childrenAdditionalStyle[key]  + ")"
+      }
+
+      if(key === "onPress" || key === "repeater:onPress"){
+        childrenAdditionalStyle[key] = childrenAdditionalStyle[key].replace("saveTo","that.props.saveTo")
+      }
+
+
       
     })
 
@@ -374,10 +396,10 @@ function exportElemToExpo(name,int, page, childrenAdditionalStyle, clickfunction
     if(name === "switch"){
 
       return (
-        `<Switch
-         value={that.state["` + page + "switch" + int + `"]}
-         onValueChange={function(val){that.setState({` + page + "switch" + int + `: val})}}   
-        style= [{position:'absolute',width:'30%'},`+ JSON.stringify(childrenAdditionalStyle) +`]
+        `<Switch 
+         value={appData["` + page + "switch" + int + `"]}
+         onValueChange={function(val){ appData["` + page + "switch" + int + `"] = val; that.forceUpdate();   } }
+        style= {[{position:'absolute',width:'30%'},`+ JSON.stringify(childrenAdditionalStyle) +`]}
         ></Switch>`
 
         )
@@ -397,9 +419,10 @@ function exportElemToExpo(name,int, page, childrenAdditionalStyle, clickfunction
       var options = childrenAdditionalStyle['options'] !== undefined ? childrenAdditionalStyle['options']:["example"];
       var options = eval(options)
    return `<Picker
-        value={that.state["` + page + "picker" + int + `"]}
-        style= [{position:'absolute',height:'5%',width:'50%'}, `+ JSON.stringify(childrenAdditionalStyle) +`]
-        onValueChange={function(val){that.setState({` + page + "picker" + int + `: val})}}  
+         value={appData["` + page + "picker" + int + `"]}
+         onValueChange={function(val){ appData["` + page + "picker" + int + `"] = val; that.forceUpdate();   } }
+        style= {[{position:'absolute',height:'5%',width:'50%'}, `+ JSON.stringify(childrenAdditionalStyle) +`]}
+        
       > 
         <Picker.Item label={"Select"} value={"Select"} />
         <Picker.Item label={"Option1"} value={"Option1"} />
@@ -415,7 +438,7 @@ function exportElemToExpo(name,int, page, childrenAdditionalStyle, clickfunction
 
     if(name === "repeater"){
       console.log("click"+clickfunction);
-      var options = childrenAdditionalStyle['options'] !== undefined ? childrenAdditionalStyle['options']:["example"];
+      var options = childrenAdditionalStyle['options'] !== undefined ? childrenAdditionalStyle['options'].replace(";",""):["example"];
      
       var type = childrenAdditionalStyle["repeaterType"] === undefined ? ("text"): (childrenAdditionalStyle["repeaterType"]);
       
@@ -440,7 +463,7 @@ function exportElemToExpo(name,int, page, childrenAdditionalStyle, clickfunction
 
       <Image
         style= {[{width:"20%",height:"20%"}, `+ JSON.stringify(childrenAdditionalStyle) +`]}
-        source = {{uri:`+ link +`}}
+        source = {{uri:"`+ link +`"}}
       >
       </Image>
 
@@ -452,10 +475,8 @@ function exportElemToExpo(name,int, page, childrenAdditionalStyle, clickfunction
 
       return `<TextInput
        style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},`+ JSON.stringify(childrenAdditionalStyle) +`]}
-        value={that.state["` + page + "input" + int + `"]}
-        onChangeText={function(val){that.setState({` + page + "input" + int + `: val});  
-       }
-       }
+        value={appData["` + page + "input" + int + `"]}
+         onChangeText={function(val){ appData["` + page + "input" + int + `"] = val; that.forceUpdate();   } }
         />`
     }
 
@@ -588,14 +609,33 @@ super(props);
 this.state = {dbLinks:{}, loaded:false, page:"FirstPage", numLoaded:0}
 }
 
-      componentDidMount(){
-        
-        var that = this;
-        var dbLinks = `+ dbLinks +`
-        Object.keys(dbLinks).forEach(function(key){
-          that.connectToDatabase(dbLinks[key], key);
-        })
-      };
+componentDidMount(){
+  
+  var that = this;
+  var dbLinks = `+ dbLinks +`
+  Object.keys(dbLinks).forEach(function(key){
+    that.connectToDatabase(dbLinks[key], key);
+  })
+};
+
+sendToDatabase(name,obj){
+    var that = this;
+    var url = that.state.dbLinks[name];
+   
+    var schema = fetch(url, {
+                method: 'POST',
+                body:JSON.stringify(obj),
+                headers: {
+                  "Content-Type": "application/x-www-form-urlencoded",
+                  "Accept": "application/json"
+                }
+      }).then(async function(res){
+       
+        that.forceUpdate();
+
+
+      })
+  }
 
 
 
@@ -609,7 +649,7 @@ render(){
     if(that.state.page === "`+page+`"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <`+page+` goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></`+page+`>
+             <`+page+`  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></`+page+`>
           </View>
         )
     }
@@ -996,6 +1036,7 @@ class Box extends React.Component{
 
 function runWithInterval(script_string,interval){
   var script_string = script_string + ";"
+  var that = appData.this;
     try{
         eval("function y(){"+script_string+"}")
         return setInterval(function(){ eval(script_string)},interval);
