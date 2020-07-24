@@ -209,7 +209,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class RIGHT extends React.Component {
      
 
     constructor(props)
@@ -240,8 +240,8 @@ function unwrap_dynamically(value,default_value){
       
 
       <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://cheshirelibraryblog.files.wordpress.com/2015/02/mystery_person.jpg","height":500,"width":600,"top":"-6.23%","left":"-3.42%"}]}
-        source = {{uri:'https://cheshirelibraryblog.files.wordpress.com/2015/02/mystery_person.jpg'}}
+        style= {[{width:"20%",height:"20%"}, {"top":"-5.19%","left":"-0.75%","source":"https://assets.wallpapersin4k.org/uploads/2017/04/Bright-Lime-Green-Wallpaper-13.jpg","height":1000,"width":1000}]}
+        source = {{uri:'https://assets.wallpapersin4k.org/uploads/2017/04/Bright-Lime-Green-Wallpaper-13.jpg'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
@@ -249,11 +249,49 @@ function unwrap_dynamically(value,default_value){
 
 
       
+<View
+        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{}]}
+        ></View>
+<View
+        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{}]}
+        ></View>
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"fontSize":"resizeFont(80)","innerText":"'CORRECT'","color":"white","top":"27.38%","left":"9.91%"}]}
+        > {'CORRECT'} </Text>
+        
  <TouchableOpacity
           
-          onPress = { function(){appData.lastscore = 0
+          onPress = { function(){
+
+var lst = [0, 1, 2, 3];
+for(let i =lst.length - 1; i > 0; i--){
+  const j = Math.floor(Math.random() * i)
+  const temp = lst[i]
+    lst[i] = lst[j]
+    lst[j] = temp
+}
+appData.opt1 = lst[0];
+appData.opt2 = lst[1];
+appData.opt3 = lst[2];
+appData.opt4 = lst[3];
+
+var randomnumber = Math.random();
+console.log(randomnumber);
+if(randomnumber < 0.5) {
+    appData.randindex= Math.floor(Math.random()*Flags[0]["Flag question count"]);
+    appData.imagelink = Flags[appData.randindex]["Flag link"];
+        appData.answerlist = appData.countryanswerlist;    
+    }
+
+else{
+    appData.randindex= Math.floor(Math.random()*Flags[0]["Style question count"]);
+    appData.imagelink = Flags[appData.randindex]["Style link"];
+    appData.answerlist = appData.styleanswerlist;
+}
 
 
+
+appData.lastscore += 1
 
 that.props.goTo("QUESTIONUNO"); that.forceUpdate(); }}  
           style= {[{
@@ -268,27 +306,19 @@ that.props.goTo("QUESTIONUNO"); that.forceUpdate(); }}
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"69.84%","left":"30.45%","backgroundColor":"black","innerText":"'Press to start!'","color":"white","height":200,"width":200,"fontSize":"resizeFont(50)","borderColor":"grey","borderRadius":20}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Continue'","top":"72.84%","left":"38.83%"}]}
         >
-        <Text style = {{color:"white"}}>
+        <Text style = {{color:"black"}}>
 
-        {'Press to start!'}
+        {'Continue'}
 
        </Text>
         </TouchableOpacity>
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"78.18%","left":"0.86%","innerText":" 'Top Score :'+ appData.topscore;","color":"white"}]}
-        > { 'Top Score :'+ appData.topscore} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"87.82%","left":"0.5%","innerText":" 'Last Score :'+appData.lastscore;","color":"white"}]}
-        > { 'Last Score :'+appData.lastscore} </Text>
-        
         </View>
         )
     }
   }
-    export default FirstPage; 
+    export default RIGHT; 
 
 
 

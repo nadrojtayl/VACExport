@@ -1,3 +1,3 @@
-var global = {"key":"value","FirstPageinput1":"hhhhhhi","Settingsswitch0":true,"Settingsswitch2":true,"X":330,"Move":105,"Move2":1310,"Mainswitch78":true,"inter":4014,"inter2":0,"loaded":false,"dbLinks":{},"tomove2":365,"yeet":2666,"thet":2667,"enemies":[54,55,56,55,56,57,58],"spawned":4,"ended":true,"done":false}
+var global = {"key":"value","RIGHTswitch0":"false","WRONGinput0":"Select","Index":0,"option":2,"answerlist":["Right answer2","Wrong4","Wrong5","Wrong6"],"clicked":0,"option3":0,"option4":2,"topscore":137,"lastscore":17,"randIndex":0,"option2":1,"opt1":2,"opt2":3,"opt3":1,"opt4":0,"randindex":6,"FirstPageswitch4":true,"kitkat":0,"styleanswerlist":["Right answer2","Wrong4","Wrong5","Wrong6"],"countryanswerlist":["Right answer","Wrong 1","Wrong 2","Wrong 3"],"imagelink":"https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Flag_of_Sweden.svg/1200px-Flag_of_Sweden.svg.png"}
 
 export default global;

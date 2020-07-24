@@ -209,13 +209,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class Pause extends React.Component {
+ class QUESTIONUNO extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","FirstPageinput1":"hhhhhhi","Settingsswitch0":true,"Settingsswitch2":true,"X":330,"Move":105,"Move2":1310,"Mainswitch78":true,"inter":4014,"inter2":0,"loaded":false,"dbLinks":{},"tomove2":365,"yeet":2666,"thet":2667,"enemies":[54,55,56,55,56,57,58],"spawned":4,"ended":true,"done":false}
+        this.state = {"key":"value","RIGHTswitch0":"false","WRONGinput0":"Select","Index":0,"option":2,"answerlist":["Right answer2","Wrong4","Wrong5","Wrong6"],"clicked":0,"option3":0,"option4":2,"topscore":137,"lastscore":17,"randIndex":0,"option2":1,"opt1":2,"opt2":3,"opt3":1,"opt4":0,"randindex":6,"FirstPageswitch4":true,"kitkat":0,"styleanswerlist":["Right answer2","Wrong4","Wrong5","Wrong6"],"countryanswerlist":["Right answer","Wrong 1","Wrong 2","Wrong 3"],"imagelink":"https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Flag_of_Sweden.svg/1200px-Flag_of_Sweden.svg.png"}
     }
 
 
@@ -236,12 +236,22 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"grey"}}>
-       <TouchableOpacity
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"black"}}>
+      
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"source":" appData.imagelink;","top":"7.58%","left":"2.3%","width":370,"height":230}]}
+        source = {{uri: appData.imagelink}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+ <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("Main")
-pause("https://vgmdownloads.com/soundtracks/wii-music-collection/tasdctcp/04.%20Mii%20Plaza.mp3")
-clearInterval(appData.inter); that.forceUpdate(); }}  
+          onPress = { function(){if(appData.opt1== 0){    that.props.goTo("RIGHT")}else{    that.props.goTo("WRONG")}; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -254,20 +264,17 @@ clearInterval(appData.inter); that.forceUpdate(); }}
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Back to game'","top":"41.32%","left":"42.22%"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"51.35%","left":"16.55%","width":400,"backgroundColor":"#6E6E6E","innerText":"Flags[appData.randindex][appData.answerlist[appData.opt1]];","color":"white","borderRadius":1000,"borderColor":"black","borderStyle":"solid","source":null}]}
         >
-        <Text style = {{color:"black"}}>
+        <Text style = {{color:"white"}}>
 
-        {'Back to game'}
+        {Flags[appData.randindex][appData.answerlist[appData.opt1]]}
 
        </Text>
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("FirstPage");
-pause("https://vgmdownloads.com/soundtracks/wii-music-collection/tasdctcp/04.%20Mii%20Plaza.mp3");
-pause();
-clearInterval(appData.inter); that.forceUpdate(); }}  
+          onPress = { function(){if(appData.opt2 == 0){    that.props.goTo("RIGHT")}else{    that.props.goTo("WRONG")}; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -280,19 +287,69 @@ clearInterval(appData.inter); that.forceUpdate(); }}
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"17.09%","left":"41.86%","innerText":"'Back To Home'"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"63.33%","left":"15.74%","width":400,"backgroundColor":"#6E6E6E","borderRadius":1000,"borderColor":"black","color":"white","innerText":"Flags[appData.randindex][appData.answerlist[appData.opt2]];"}]}
         >
-        <Text style = {{color:"black"}}>
+        <Text style = {{color:"white"}}>
 
-        {'Back To Home'}
+        {Flags[appData.randindex][appData.answerlist[appData.opt2]]}
 
        </Text>
         </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){if(appData.opt3== 0){    that.props.goTo("RIGHT")}else{    that.props.goTo("WRONG")}; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"75.31%","left":"17.44%","width":400,"borderColor":"black","backgroundColor":"#6E6E6E","borderRadius":1000,"color":"white","innerText":"Flags[appData.randindex][appData.answerlist[appData.opt3]];"}]}
+        >
+        <Text style = {{color:"white"}}>
+
+        {Flags[appData.randindex][appData.answerlist[appData.opt3]]}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){if(appData.opt4== 0){    that.props.goTo("RIGHT")}else{    that.props.goTo("WRONG")}; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"87.56%","left":"17.26%","width":400,"backgroundColor":"#6E6E6E","innerText":"Flags[appData.randindex][appData.answerlist[appData.opt4]];","color":"white","borderRadius":1000,"borderColor":"black","borderStyle":"solid"}]}
+        >
+        <Text style = {{color:"white"}}>
+
+        {Flags[appData.randindex][appData.answerlist[appData.opt4]]}
+
+       </Text>
+        </TouchableOpacity>
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"94.07%","left":"3.18%","innerText":1}]}
+        > {1} </Text>
+        
         </View>
         )
     }
   }
-    export default Pause; 
+    export default QUESTIONUNO; 
 
 
 

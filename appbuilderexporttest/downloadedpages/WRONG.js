@@ -209,13 +209,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class End extends React.Component {
+ class WRONG extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","FirstPageinput1":"hhhhhhi","Settingsswitch0":true,"Settingsswitch2":true,"X":330,"Move":105,"Move2":1310,"Mainswitch78":true,"inter":4014,"inter2":0,"loaded":false,"dbLinks":{},"tomove2":365,"yeet":2666,"thet":2667,"enemies":[54,55,56,55,56,57,58],"spawned":4,"ended":true,"done":false}
+        this.state = {"key":"value","RIGHTswitch0":"false","WRONGinput0":"Select","Index":0,"option":2,"answerlist":["Right answer2","Wrong4","Wrong5","Wrong6"],"clicked":0,"option3":0,"option4":2,"topscore":137,"lastscore":17,"randIndex":0,"option2":1,"opt1":2,"opt2":3,"opt3":1,"opt4":0,"randindex":6,"FirstPageswitch4":true,"kitkat":0,"styleanswerlist":["Right answer2","Wrong4","Wrong5","Wrong6"],"countryanswerlist":["Right answer","Wrong 1","Wrong 2","Wrong 3"],"imagelink":"https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Flag_of_Sweden.svg/1200px-Flag_of_Sweden.svg.png"}
     }
 
 
@@ -236,34 +236,33 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"grey"}}>
-       <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("Main");
-; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"23.34%","left":"39.87%","innerText":"'Retry'"}]}
-        >
-        <Text style = {{color:"black"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"black"}}>
+      
 
-        {'Retry'}
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"source":"https://media.idownloadblog.com/wp-content/uploads/2017/03/Red-Product-iPad-Wallpaper-without-apple-logo.jpg","height":1000,"width":1000,"top":"-6.23%","left":"-4.85%"}]}
+        source = {{uri:'https://media.idownloadblog.com/wp-content/uploads/2017/03/Red-Product-iPad-Wallpaper-without-apple-logo.jpg'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
 
-       </Text>
-        </TouchableOpacity>
+
+
+      
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"38.06%","left":"9.14%","fontSize":"resizeFont(80)","color":"white","innerText":"'WRONG!'"}]}
+        > {'WRONG!'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"fontSize":"resizeFont(50)","color":"white","innerText":"  'Your Score:'+ appData.lastscore;","top":"26.99%","left":"13.71%"}]}
+        > {  'Your Score:'+ appData.lastscore} </Text>
+        
  <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("FirstPage");; that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("FirstPage")
+if(appData.topscore<appData.lastscore){
+    appData.topscore=appData.lastscore
+}; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -276,27 +275,19 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"48.41%","left":"39.87%","innerText":"'Go to home'"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"color":"Continue","innerText":"'Continue'","top":"76.88%","left":"39.37%","backgroundColor":"red"}]}
         >
-        <Text style = {{color:"black"}}>
+        <Text style = {{color:"Continue"}}>
 
-        {'Go to home'}
+        {'Continue'}
 
        </Text>
         </TouchableOpacity>
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":" appData.spawned;","top":"16.87%","left":"52.61%"}]}
-        > { appData.spawned} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"12.18%","left":"45.99%","innerText":"'Score'"}]}
-        > {'Score'} </Text>
-        
         </View>
         )
     }
   }
-    export default End; 
+    export default WRONG; 
 
 
 

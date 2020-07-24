@@ -209,13 +209,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class Settings extends React.Component {
+ class Style extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","FirstPageinput1":"hhhhhhi","Settingsswitch0":true,"Settingsswitch2":true,"X":330,"Move":105,"Move2":1310,"Mainswitch78":true,"inter":4014,"inter2":0,"loaded":false,"dbLinks":{},"tomove2":365,"yeet":2666,"thet":2667,"enemies":[54,55,56,55,56,57,58],"spawned":4,"ended":true,"done":false}
+        this.state = {"key":"value","RIGHTswitch0":"false","WRONGinput0":"Select","Index":0,"option":2,"answerlist":["Right answer2","Wrong4","Wrong5","Wrong6"],"clicked":0,"option3":0,"option4":2,"topscore":137,"lastscore":17,"randIndex":0,"option2":1,"opt1":2,"opt2":3,"opt3":1,"opt4":0,"randindex":6,"FirstPageswitch4":true,"kitkat":0,"styleanswerlist":["Right answer2","Wrong4","Wrong5","Wrong6"],"countryanswerlist":["Right answer","Wrong 1","Wrong 2","Wrong 3"],"imagelink":"https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Flag_of_Sweden.svg/1200px-Flag_of_Sweden.svg.png"}
     }
 
 
@@ -236,27 +236,10 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"grey"}}>
-      <Switch 
-         value={appData["Settingsswitch0"]}
-         onValueChange={function(val){ appData["Settingsswitch0"] = val; that.forceUpdate();   } }
-        style= {[{position:'absolute',width:'30%'},{"top":"39.49%","left":"44.72%"}]}
-        ></Switch>
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"35.59%","left":"43.65%","innerText":"'Audio'"}]}
-        > {'Audio'} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"34.8%","left":"43.65%","innerText":"'Audio'"}]}
-        > {'Audio'} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"34.54%","left":"45.43%","innerText":"'\"Audio\"'"}]}
-        > {'"Audio"'} </Text>
-        
- <TouchableOpacity
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"black"}}>
+       <TouchableOpacity
           
-          onPress = { function(){that.props.goTo ("FirstPage");; that.forceUpdate(); }}  
+          onPress = { function(){; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -269,19 +252,100 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'To Home'","top":"50.3%","left":"40.97%"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"backgroundColor":"#6E6E6E","width":400,"top":"41.84%","left":"23.09%","borderRadius":1000,"innerText":"'ij'","color":"white"}]}
         >
-        <Text style = {{color:"black"}}>
+        <Text style = {{color:"white"}}>
 
-        {'To Home'}
+        {'ij'}
 
        </Text>
         </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"backgroundColor":"#6E6E6E","width":400,"top":"56.04%","left":"22.84%","borderRadius":1000,"innerText":"'ij'","color":"white"}]}
+        >
+        <Text style = {{color:"white"}}>
+
+        {'ij'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"backgroundColor":"#6E6E6E","width":400,"top":"83.91%","left":"22.33%","borderRadius":1000,"innerText":"'ij'","color":"white"}]}
+        >
+        <Text style = {{color:"white"}}>
+
+        {'ij'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"backgroundColor":"#6E6E6E","width":400,"top":"69.45%","left":"22.84%","borderRadius":1000,"innerText":"'ij'","color":"white"}]}
+        >
+        <Text style = {{color:"white"}}>
+
+        {'ij'}
+
+       </Text>
+        </TouchableOpacity>
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"width":370,"height":270,"top":"2.5%","left":"2.55%"}]}
+        source = {{uri:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png"}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
         </View>
         )
     }
   }
-    export default Settings; 
+    export default Style; 
 
 
 
