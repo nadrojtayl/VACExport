@@ -209,13 +209,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class RIGHT extends React.Component {
+ class FifthPage extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","RIGHTswitch0":"false","WRONGinput0":"Select","Index":0,"option":2,"answerlist":["Right answer2","Wrong4","Wrong5","Wrong6"],"clicked":0,"option3":0,"option4":2,"topscore":137,"lastscore":17,"randIndex":0,"option2":1,"opt1":2,"opt2":3,"opt3":1,"opt4":0,"randindex":6,"FirstPageswitch4":true,"kitkat":0,"styleanswerlist":["Right answer2","Wrong4","Wrong5","Wrong6"],"countryanswerlist":["Right answer","Wrong 1","Wrong 2","Wrong 3"],"imagelink":"https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Flag_of_Sweden.svg/1200px-Flag_of_Sweden.svg.png"}
+        this.state = {"addyson":"beauty bar byappData.addyson","FirstPageinput0":"  beauty bar byappData.addyson ","color":"pink","color2":"purple","button1":"hairstyles & hair tutorials","button2":"makeup looks & tutorials","button3":"skincare","button4":"purchase products","firstbutton":"beauty bar byappData.addyson","index":13,"imageurl1":["https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSfQu2CblPy7_PXtk08x5XKd4pQjdArYMygEw&usqp=CAU","https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ48rYcHkJ2yjKkQZekm9HPrFlQBeg_ErN13Q&usqp=CAU","https://i.pinimg.com/736x/f4/b4/26/f4b42627d71cc86ee52a412c00597005.jpg","https://i.pinimg.com/736x/81/87/75/8187751d1056f9f37fd9a0b3bcc5239d.jpg","https://i.ytimg.com/vi/HuA2A9WY2yI/hqdefault.jpg","https://i.pinimg.com/564x/c5/ab/72/c5ab72699e110c38d1c6331cd790fd40.jpg","https://i.pinimg.com/564x/93/14/02/93140262f948ff928547cbb37ff08c68.jpg","https://i.pinimg.com/564x/8c/38/a1/8c38a103670a318d22cadadf3aa27e0a.jpg","https://i.pinimg.com/736x/7f/d0/bd/7fd0bd6780dcd7218a14c701bb271048.jpg","https://i.pinimg.com/564x/6d/ac/75/6dac7544b357097d1b9a66feca864b67.jpg","https://i.pinimg.com/564x/1f/b6/9c/1fb69ce783bbf826b09a7f7432841cf3.jpg","https://i.pinimg.com/736x/73/63/05/7363057da054ba310f4c99b21c1594ed.jpg","https://i.pinimg.com/originals/08/53/1e/08531e3e1a65dede0d777fd61e14e423.jpg","https://i.pinimg.com/564x/a0/12/6d/a0126d9aa234a17ea88cbf0fd8d071cf.jpg","https://i.pinimg.com/originals/35/82/90/35829090c685b42759428ddac5d0db7c.jpg","https://i.pinimg.com/564x/76/75/0d/76750d85f64fbfb8cb172d86bb2f4478.jpg","https://storage.googleapis.com/prose-blog-media/1/2019/03/Webp.net-resizeimage-copy-7.jpg","https://i.pinimg.com/564x/4d/2d/b0/4d2db04e26fc63cb3fd87506d97a1625.jpg"],"addyson1":2,"picurls":["https://i.pinimg.com/736x/f4/b4/26/f4b42627d71cc86ee52a412c00597005.jpg"],"button5":"nail inspo","makeupindex":0,"nailindex":0,"nail_index":0,"inspo":10}
     }
 
 
@@ -236,12 +236,37 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"black"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
+      <Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"3.84%","left":"-0.04%","borderStyle":"solid","backgroundColor":"pink","color":"purple","textAlign":"center","innerText":"'reccomended beauty productys'"}]}
+        > {'reccomended beauty productys'} </Text>
+        
+
       
 
+      <TouchableOpacity
+      style= {[{width:"125",height:"115", position:'absolute',top:"10.44%",left:"1.04%"}]}
+       onPress = { function(){; that.forceUpdate(); }}  
+      >
       <Image
-        style= {[{width:"20%",height:"20%"}, {"top":"-5.19%","left":"-0.75%","source":"https://assets.wallpapersin4k.org/uploads/2017/04/Bright-Lime-Green-Wallpaper-13.jpg","height":1000,"width":1000}]}
-        source = {{uri:'https://assets.wallpapersin4k.org/uploads/2017/04/Bright-Lime-Green-Wallpaper-13.jpg'}}
+        style= {[{width:"100%",height:"100%"}, {"top":"10.44%","left":"1.04%","source":"https://sep.yimg.com/ay/yhst-17606501929367/ecoco-eco-styler-styling-gel-5lb-13.jpg","width":125,"height":115}]}
+        source = {{uri:'https://sep.yimg.com/ay/yhst-17606501929367/ecoco-eco-styler-styling-gel-5lb-13.jpg'}}
+       
+      >
+      </Image>
+      </TouchableOpacity>
+
+
+      
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"34.71%","left":"2.67%","innerText":"'eco styling gel you can buy at a beauty supply store , target , walmart and many more'","width":115,"color":"purple"}]}
+        > {'eco styling gel you can buy at a beauty supply store , target , walmart and many more'} </Text>
+        
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"top":"10.44%","left":"49.82%","source":"https://m.media-amazon.com/images/I/916W5hhy1pL._AC_UL480_FMwebp_QL65_.jpg","width":145,"height":115}]}
+        source = {{uri:'https://m.media-amazon.com/images/I/916W5hhy1pL._AC_UL480_FMwebp_QL65_.jpg'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
@@ -249,76 +274,31 @@ function unwrap_dynamically(value,default_value){
 
 
       
-<View
-        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{}]}
-        ></View>
-<View
-        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{}]}
-        ></View>
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"fontSize":"resizeFont(80)","innerText":"'CORRECT'","color":"white","top":"27.38%","left":"9.91%"}]}
-        > {'CORRECT'} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"36.63%","left":"51.18%","color":"purple","innerText":"'this is a hair accesory kit that you can purchase on amazon'","width":115}]}
+        > {'this is a hair accesory kit that you can purchase on amazon'} </Text>
         
- <TouchableOpacity
-          
-          onPress = { function(){
 
-var lst = [0, 1, 2, 3];
-for(let i =lst.length - 1; i > 0; i--){
-  const j = Math.floor(Math.random() * i)
-  const temp = lst[i]
-    lst[i] = lst[j]
-    lst[j] = temp
-}
-appData.opt1 = lst[0];
-appData.opt2 = lst[1];
-appData.opt3 = lst[2];
-appData.opt4 = lst[3];
 
-var randomnumber = Math.random();
-console.log(randomnumber);
-if(randomnumber < 0.5) {
-    appData.randindex= Math.floor(Math.random()*Flags[0]["Flag question count"]);
-    appData.imagelink = Flags[appData.randindex]["Flag link"];
-        appData.answerlist = appData.countryanswerlist;    
-    }
-
-else{
-    appData.randindex= Math.floor(Math.random()*Flags[0]["Style question count"]);
-    appData.imagelink = Flags[appData.randindex]["Style link"];
-    appData.answerlist = appData.styleanswerlist;
-}
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"top":"56.21%","left":"28.42%","source":"https://contestimg.wish.com/api/webimage/5b9396ce6ee7bf328db43564-large.jpg?cache_buster=70433c0838f8570e17f76c828aaefdf8","width":125,"height":105}]}
+        source = {{uri:'https://contestimg.wish.com/api/webimage/5b9396ce6ee7bf328db43564-large.jpg?cache_buster=70433c0838f8570e17f76c828aaefdf8'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
 
 
 
-appData.lastscore += 1
-
-that.props.goTo("QUESTIONUNO"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Continue'","top":"72.84%","left":"38.83%"}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {'Continue'}
-
-       </Text>
-        </TouchableOpacity>
+      
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"77.29%","left":"33.29%","innerText":"'these are makeup brushes you can get these all over at target , walmart , amazon , five below and many more'","width":155,"color":"purple"}]}
+        > {'these are makeup brushes you can get these all over at target , walmart , amazon , five below and many more'} </Text>
+        
         </View>
         )
     }
   }
-    export default RIGHT; 
+    export default FifthPage; 
 
 
 

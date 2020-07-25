@@ -209,13 +209,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class QUESTIONUNO extends React.Component {
+ class SecondPage extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","RIGHTswitch0":"false","WRONGinput0":"Select","Index":0,"option":2,"answerlist":["Right answer2","Wrong4","Wrong5","Wrong6"],"clicked":0,"option3":0,"option4":2,"topscore":137,"lastscore":17,"randIndex":0,"option2":1,"opt1":2,"opt2":3,"opt3":1,"opt4":0,"randindex":6,"FirstPageswitch4":true,"kitkat":0,"styleanswerlist":["Right answer2","Wrong4","Wrong5","Wrong6"],"countryanswerlist":["Right answer","Wrong 1","Wrong 2","Wrong 3"],"imagelink":"https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Flag_of_Sweden.svg/1200px-Flag_of_Sweden.svg.png"}
+        this.state = {"addyson":"beauty bar byappData.addyson","FirstPageinput0":"  beauty bar byappData.addyson ","color":"pink","color2":"purple","button1":"hairstyles & hair tutorials","button2":"makeup looks & tutorials","button3":"skincare","button4":"purchase products","firstbutton":"beauty bar byappData.addyson","index":13,"imageurl1":["https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSfQu2CblPy7_PXtk08x5XKd4pQjdArYMygEw&usqp=CAU","https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ48rYcHkJ2yjKkQZekm9HPrFlQBeg_ErN13Q&usqp=CAU","https://i.pinimg.com/736x/f4/b4/26/f4b42627d71cc86ee52a412c00597005.jpg","https://i.pinimg.com/736x/81/87/75/8187751d1056f9f37fd9a0b3bcc5239d.jpg","https://i.ytimg.com/vi/HuA2A9WY2yI/hqdefault.jpg","https://i.pinimg.com/564x/c5/ab/72/c5ab72699e110c38d1c6331cd790fd40.jpg","https://i.pinimg.com/564x/93/14/02/93140262f948ff928547cbb37ff08c68.jpg","https://i.pinimg.com/564x/8c/38/a1/8c38a103670a318d22cadadf3aa27e0a.jpg","https://i.pinimg.com/736x/7f/d0/bd/7fd0bd6780dcd7218a14c701bb271048.jpg","https://i.pinimg.com/564x/6d/ac/75/6dac7544b357097d1b9a66feca864b67.jpg","https://i.pinimg.com/564x/1f/b6/9c/1fb69ce783bbf826b09a7f7432841cf3.jpg","https://i.pinimg.com/736x/73/63/05/7363057da054ba310f4c99b21c1594ed.jpg","https://i.pinimg.com/originals/08/53/1e/08531e3e1a65dede0d777fd61e14e423.jpg","https://i.pinimg.com/564x/a0/12/6d/a0126d9aa234a17ea88cbf0fd8d071cf.jpg","https://i.pinimg.com/originals/35/82/90/35829090c685b42759428ddac5d0db7c.jpg","https://i.pinimg.com/564x/76/75/0d/76750d85f64fbfb8cb172d86bb2f4478.jpg","https://storage.googleapis.com/prose-blog-media/1/2019/03/Webp.net-resizeimage-copy-7.jpg","https://i.pinimg.com/564x/4d/2d/b0/4d2db04e26fc63cb3fd87506d97a1625.jpg"],"addyson1":2,"picurls":["https://i.pinimg.com/736x/f4/b4/26/f4b42627d71cc86ee52a412c00597005.jpg"],"button5":"nail inspo","makeupindex":0,"nailindex":0,"nail_index":0,"inspo":10}
     }
 
 
@@ -236,120 +236,84 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"black"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
+      <Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"4.27%","left":"-0.31%","innerText":"                   appData.button1 ;","borderStyle":"solid","backgroundColor":"  appData.color;","color":" appData.color2;","textAlign":"center"}]}
+        > {                   appData.button1 } </Text>
+        
+
       
 
+      <TouchableOpacity
+      style= {[{width:"355",height:"325", position:'absolute',top:"10.23%",left:"1.86%"}]}
+       onPress = { function(){appData.index ++ ;
+appData.index = appData.index % hairstyles.length ;; that.forceUpdate(); }}  
+      >
       <Image
-        style= {[{width:"20%",height:"20%"}, {"source":" appData.imagelink;","top":"7.58%","left":"2.3%","width":370,"height":230}]}
-        source = {{uri: appData.imagelink}}
-        onPress = { function(){; that.forceUpdate(); }}  
+        style= {[{width:"100%",height:"100%"}, {"top":"10.23%","left":"1.86%","source":"        hairstyles[appData.index].Link;","height":325,"width":355}]}
+        source = {{uri:        hairstyles[appData.index].Link}}
+       
       >
       </Image>
-
+      </TouchableOpacity>
 
 
       
- <TouchableOpacity
-          
-          onPress = { function(){if(appData.opt1== 0){    that.props.goTo("RIGHT")}else{    that.props.goTo("WRONG")}; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"51.35%","left":"16.55%","width":400,"backgroundColor":"#6E6E6E","innerText":"Flags[appData.randindex][appData.answerlist[appData.opt1]];","color":"white","borderRadius":1000,"borderColor":"black","borderStyle":"solid","source":null}]}
-        >
-        <Text style = {{color:"white"}}>
-
-        {Flags[appData.randindex][appData.answerlist[appData.opt1]]}
-
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){if(appData.opt2 == 0){    that.props.goTo("RIGHT")}else{    that.props.goTo("WRONG")}; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"63.33%","left":"15.74%","width":400,"backgroundColor":"#6E6E6E","borderRadius":1000,"borderColor":"black","color":"white","innerText":"Flags[appData.randindex][appData.answerlist[appData.opt2]];"}]}
-        >
-        <Text style = {{color:"white"}}>
-
-        {Flags[appData.randindex][appData.answerlist[appData.opt2]]}
-
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){if(appData.opt3== 0){    that.props.goTo("RIGHT")}else{    that.props.goTo("WRONG")}; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"75.31%","left":"17.44%","width":400,"borderColor":"black","backgroundColor":"#6E6E6E","borderRadius":1000,"color":"white","innerText":"Flags[appData.randindex][appData.answerlist[appData.opt3]];"}]}
-        >
-        <Text style = {{color:"white"}}>
-
-        {Flags[appData.randindex][appData.answerlist[appData.opt3]]}
-
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){if(appData.opt4== 0){    that.props.goTo("RIGHT")}else{    that.props.goTo("WRONG")}; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"87.56%","left":"17.26%","width":400,"backgroundColor":"#6E6E6E","innerText":"Flags[appData.randindex][appData.answerlist[appData.opt4]];","color":"white","borderRadius":1000,"borderColor":"black","borderStyle":"solid"}]}
-        >
-        <Text style = {{color:"white"}}>
-
-        {Flags[appData.randindex][appData.answerlist[appData.opt4]]}
-
-       </Text>
-        </TouchableOpacity>
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"94.07%","left":"3.18%","innerText":1}]}
-        > {1} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'click on the link to get the tutorial'","top":"87.72%","left":"37.9%","color":" appData.color2 ;"}]}
+        > {'click on the link to get the tutorial'} </Text>
         
+ <TouchableOpacity
+          
+          onPress = { function(){window.open(hairstyles[appData.index]["tutorial link"]);; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'go to tutorial'","top":"85.59%","left":"2.4%","height":30,"backgroundColor":" appData.color;","color":" appData.color2 ;"}]}
+        >
+        <Text style = {{color:" appData.color2 ;"}}>
+
+        {'go to tutorial'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"80.48%","left":"55.24%"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {}
+
+       </Text>
+        </TouchableOpacity>
         </View>
         )
     }
   }
-    export default QUESTIONUNO; 
+    export default SecondPage; 
 
 
 
