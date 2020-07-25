@@ -237,10 +237,10 @@ function unwrap_dynamically(value,default_value){
       }
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"pink"}}>
-      <Text style = {{fontSize:30, position:'absolute',top:'5%', left:"30%"}}>Beauty Bar</Text>
+      <Text style = {{fontSize:30, position:'absolute',top:'5%', left:"30%", fontWeight:'bold', color:'purple'}}>Beauty Bar</Text>
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{textAlign:'center', "top":"12.95%","left":"0.23%","innerText":"'Hi welcome to my app,  this app is for you to get hair ideas, makeup ideas, etc plus tutorials on how to do certain things so you can look even more fabulous than you already are'","color":" appData.color2;"}]}
-        > {'Hi welcome to my app,  this app is for you to get hair ideas, makeup ideas, etc plus tutorials on how to do certain things so you can look even more fabulous than you already are'} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{textAlign:'center', "top":"12.95%","left":"0.23%","innerText":"'Hi welcome to my app,  this app is for you to get hair ideas, makeup ideas, etc plus tutorials on how to do certain things so you can look even more fabulous than you already are'","color":"grey"}]}
+        > {'Get hair ideas, makeup ideas, etc. Enjoy tutorials on how to do certain things so you can look even more fabulous than you already are'} </Text>
         
  <TouchableOpacity
           
