@@ -238,15 +238,16 @@ function unwrap_dynamically(value,default_value){
       }
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
-      <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"4.27%","left":"-0.31%","innerText":"                   appData.button1 ;","borderStyle":"solid","backgroundColor":"  appData.color;","color":" appData.color2;","textAlign":"center"}]}
-        > {                   appData.button1 } </Text>
+       <Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"5.12%","left":"-0.04%","borderStyle":"solid","textAlign":"center","innerText":"'nail inspo'","backgroundColor":"pink","color":"black"}]}
+        > {'hair inspo'} </Text>
+
         
 
       
 
       <TouchableOpacity
-      style= {[{width:"40%",height:"40%", position:'absolute',top:"10.23%",left:"1.86%"}]}
+      style= {[{width:"40%",height:"40%", position:'absolute',top:"10.23%",left:"0%"}]}
        onPress = { function(){appData.index ++ ;
 appData.index = appData.index % hairstyles.length ;; that.forceUpdate(); }}  
       >

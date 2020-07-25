@@ -244,13 +244,16 @@ function unwrap_dynamically(value,default_value){
 
       
 
+     
+
+
       <TouchableOpacity
-      style= {[{width:"70%",height:"60%", position:'absolute',top:"0%",left:"19.55%"}]}
-       onPress = { function(){appData.inspo++;
-appData.inspo = appData.inspo% hairstyles.length;; that.forceUpdate(); }}  
+      style= {[{width:"40%",height:"40%", position:'absolute',top:"10.23%",left:"0%"}]}
+       onPress = { function(){appData.index ++ ;
+appData.index = appData.index % hairstyles.length ;; that.forceUpdate(); }}  
       >
       <Image
-        style= {[{width:"100%",height:"100%"}, {"height":"100%","width":"100%",resizeMode:'contain'}]}
+        style= {[{width:"100%",height:"100%"}, {"top":"10.23%","left":"0%","source":"hairstyles[appData.index].Link;","height":325,"width":355}]}
         source = {{uri: hairstyles[appData.inspo]["nail link"]}}
        
       >

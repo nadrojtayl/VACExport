@@ -240,19 +240,20 @@ function unwrap_dynamically(value,default_value){
       
       
 
-      <TouchableOpacity
-      style= {[{width:"20%",height:"20%", position:'absolute',top:"24.49%",left:"36.82%"}]}
+      
+
+<TouchableOpacity
+      style= {[{width:"100%",height:"40%", position:'absolute',top:"10.23%",left:"0%"}]}
        onPress = { function(){appData.index ++ ;
 appData.index = appData.index % hairstyles.length ;; that.forceUpdate(); }}  
       >
       <Image
-        style= {[{width:"100%",height:"100%"}, {"top":"24.49%","left":"36.82%","source":" \" hairstyles[appData.index].makeuplink;\";"}]}
+        style= {[{width:"100%",height:"100%"}, {resizeMode:'cover', "top":"10.23%","left":"1.86%","source":"        hairstyles[appData.index].Link;","height":325,"width":355}]}
         source = {{uri: hairstyles[appData.index].makeuplink}}
        
       >
       </Image>
       </TouchableOpacity>
-
 
       
 <Text

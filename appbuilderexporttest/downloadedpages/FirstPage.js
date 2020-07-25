@@ -236,11 +236,11 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"pink"}}>
-      <Text style = {{fontSize:30, position:'absolute',top:'5%', left:"30%", fontWeight:'bold', color:'purple'}}>Beauty Bar</Text>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
+      <Text style = {{fontSize:60, width:"100%", position:'absolute',top:'5%', left:"0%", fontWeight:'bold', textAlign:'center', color:'purple'}}>Beauty Bar</Text>
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{textAlign:'center', "top":"12.95%","left":"0.23%","innerText":"'Hi welcome to my app,  this app is for you to get hair ideas, makeup ideas, etc plus tutorials on how to do certain things so you can look even more fabulous than you already are'","color":"grey"}]}
-        > {'Get hair ideas, makeup ideas, etc. Enjoy tutorials on how to do certain things so you can look even more fabulous than you already are'} </Text>
+          style= {[{color:'white', position:'absolute',zIndex:100,width:'100%'},{textAlign:'center', "top":"15%","left":"0.23%","innerText":"'Hi welcome to my app,  this app is for you to get hair ideas, makeup ideas, etc plus tutorials on how to do certain things so you can look even more fabulous than you already are'","color":"black"}]}
+        > {'Monthly ideas to look even more fabulous than you already are'} </Text>
         
  <TouchableOpacity
           
@@ -259,7 +259,7 @@ function unwrap_dynamically(value,default_value){
             width:"30%",
             position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  
             title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{
-              "top":"45%","left":"10%","innerText":"' \"hairstyles & hair tutorials\";'","height":"20%","backgroundColor":"purple"}]}
+              "top":"27%","left":"10%","innerText":"' \"hairstyles & hair tutorials\";'","height":"27%","backgroundColor":"purple"}]}
         >
         <Text style = {{textAlign:'center', color:"white"}}>
 
@@ -267,34 +267,7 @@ function unwrap_dynamically(value,default_value){
 
        </Text>
         </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("ThirdPage");; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', 
-            alignItems:'center',justifyContent:'center', height: "7%",
-              title:'Test', borderColor: 'gray', color:'black', borderRadius:15, 
-              borderWidth: 1},{"top":"27%","left":"10%",
-              "innerText":"'makeup inspiration'",
-              "backgroundColor":"purple","height":75}]}
-        >
-        <Text style = {{color:"white"}}>
 
-        {'makeup inspiration'}
-
-       </Text>
-        </TouchableOpacity>
  <TouchableOpacity
           
           onPress = { function(){that.props.goTo("FourthPage");; that.forceUpdate(); }}  
