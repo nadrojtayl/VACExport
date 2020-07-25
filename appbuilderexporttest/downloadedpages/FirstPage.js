@@ -236,7 +236,7 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"pink"}}>
       <Text style = {{fontSize:30, position:'absolute',top:'5%', left:"30%"}}>Beauty Bar</Text>
 <Text
           style= {[{position:'absolute',zIndex:100,width:'100%'},{textAlign:'center', "top":"12.95%","left":"0.23%","innerText":"'Hi welcome to my app,  this app is for you to get hair ideas, makeup ideas, etc plus tutorials on how to do certain things so you can look even more fabulous than you already are'","color":" appData.color2;"}]}
@@ -259,9 +259,9 @@ function unwrap_dynamically(value,default_value){
             width:"30%",
             position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  
             title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{
-              "top":"45%","left":"10%","innerText":"' \"hairstyles & hair tutorials\";'","height":"20%","backgroundColor":"  appData.color2;"}]}
+              "top":"45%","left":"10%","innerText":"' \"hairstyles & hair tutorials\";'","height":"20%","backgroundColor":"purple"}]}
         >
-        <Text style = {{textAlign:'center', color:"black"}}>
+        <Text style = {{textAlign:'center', color:"white"}}>
 
         {"hairstyles & hair tutorials"}
 
@@ -287,9 +287,9 @@ function unwrap_dynamically(value,default_value){
               title:'Test', borderColor: 'gray', color:'black', borderRadius:15, 
               borderWidth: 1},{"top":"27%","left":"10%",
               "innerText":"'makeup inspiration'",
-              "backgroundColor":"  appData.color;","height":75}]}
+              "backgroundColor":"purple","height":75}]}
         >
-        <Text style = {{color:"black"}}>
+        <Text style = {{color:"white"}}>
 
         {'makeup inspiration'}
 
@@ -313,10 +313,10 @@ function unwrap_dynamically(value,default_value){
             position:'absolute',top:"30%",left:0, backgroundColor:'#8fd158', 
             alignItems:'center',justifyContent:'center', height: "7%",  
             title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{
-              "top":"27%","left":"55%","innerText":"'nail isnpo'","backgroundColor":" appData.color;",
+              "top":"27%","left":"55%","innerText":"'nail isnpo'","backgroundColor":"purple",
             "height":75}]}
         >
-        <Text style = {{color:"black"}}>
+        <Text style = {{color:"white"}}>
 
         {'nail inspo'}
 
@@ -363,11 +363,11 @@ function unwrap_dynamically(value,default_value){
             width:"30%",
             position:'absolute',top:0,left:0, backgroundColor:'#8fd158', 
             alignItems:'center',justifyContent:'center', height: "7%", 
-             title:'Test', borderColor: 'gray', color:'black', borderRadius:15,
+             title:'Test', borderColor: 'gray', color:'white', borderRadius:15,
               borderWidth: 1},{"top":"45%","left":"55%",
-              "innerText":"'beauty products'","height":75,"backgroundColor":"purple"}]}
+              "innerText":"'beauty products'","height":75, "backgroundColor":"purple"}]}
         >
-        <Text style = {{color:"black"}}>
+        <Text style = {{color:"white"}}>
 
         {'beauty products'}
 
