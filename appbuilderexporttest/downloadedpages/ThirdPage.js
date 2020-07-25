@@ -268,8 +268,8 @@ appData.index = appData.index % hairstyles.length ;; that.forceUpdate(); }}
 appData.index= appData.index% hairstyles.length;; that.forceUpdate(); }}  
       >
       <Image
-        style= {[{width:"100%",height:"100%"}, {"top":"23.43%","left":"37.63%","source":"  hairstyles[makeupappData.index][\"makeup link\"];"}]}
-        source = {{uri:  hairstyles[makeupappData.index]["makeup link"]}}
+        style= {[{width:"100%",height:"100%"}, {"top":"23.43%","left":"37.63%","source":"  hairstyles[appData.makeupindex][\"makeup link\"];"}]}
+        source = {{uri:  hairstyles[appData.makeupindex]["makeup link"]}}
        
       >
       </Image>
@@ -286,8 +286,8 @@ appData.index= appData.index% hairstyles.length;; that.forceUpdate(); }}
 appData.index=appData.index%hairstyles.length;; that.forceUpdate(); }}  
       >
       <Image
-        style= {[{width:"100%",height:"100%"}, {"top":"27.26%","left":"35.73%","source":"  hairstyles[makeupappData.index][\"makeup link\"];"}]}
-        source = {{uri:  hairstyles[makeupappData.index]["makeup link"]}}
+        style= {[{width:"100%",height:"100%"}, {"top":"27.26%","left":"35.73%","source":"  hairstyles[appData.makeupindex][\"makeup link\"];"}]}
+        source = {{uri:  hairstyles[appData.makeupindex]["makeup link"]}}
        
       >
       </Image>
@@ -299,7 +299,7 @@ appData.index=appData.index%hairstyles.length;; that.forceUpdate(); }}
       
 
       <TouchableOpacity
-      style= {[{width:"400",height:"350", position:'absolute',top:"16.83%",left:"-6%"}]}
+      style= {[{width:"40%",height:"30%", position:'absolute',top:"16.83%",left:"0%"}]}
        onPress = { function(){appData.index++;
 appData.index=appData.index% hairstyles.length;; that.forceUpdate(); }}  
       >
@@ -310,7 +310,33 @@ appData.index=appData.index% hairstyles.length;; that.forceUpdate(); }}
       >
       </Image>
       </TouchableOpacity>
+      <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo("FirstPage");; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', 
+            alignItems:'center',justifyContent:'center', height: "7%", 
+             title:'Test', borderColor: 'gray', color:'black', borderRadius:15,
+              borderWidth: 1},{"top":"85%","left":"35%",
+              "innerText":"'beauty products'","height":75,"backgroundColor":"purple"}]}
+        >
+        <Text style = {{color:"black"}}>
 
+        {'Back'}
+
+       </Text>
+        </TouchableOpacity>
 
       
         </View>

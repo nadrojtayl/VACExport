@@ -5,6 +5,7 @@ import Calendar from "./Calendar.js";
 import appData from "./global.js";
 import { Audio } from 'expo-av';
 import Multiplier from "./Multiplier.js";
+import * as Linking from 'expo-linking';
 
 var d = new Date();
 var month = d.getMonth();
@@ -245,7 +246,7 @@ function unwrap_dynamically(value,default_value){
       
 
       <TouchableOpacity
-      style= {[{width:"355",height:"325", position:'absolute',top:"10.23%",left:"1.86%"}]}
+      style= {[{width:"40%",height:"40%", position:'absolute',top:"10.23%",left:"1.86%"}]}
        onPress = { function(){appData.index ++ ;
 appData.index = appData.index % hairstyles.length ;; that.forceUpdate(); }}  
       >
@@ -259,13 +260,11 @@ appData.index = appData.index % hairstyles.length ;; that.forceUpdate(); }}
 
 
       
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'click on the link to get the tutorial'","top":"87.72%","left":"37.9%","color":" appData.color2 ;"}]}
-        > {'click on the link to get the tutorial'} </Text>
+
         
  <TouchableOpacity
           
-          onPress = { function(){window.open(hairstyles[appData.index]["tutorial link"]);; that.forceUpdate(); }}  
+          onPress = { function(){Linking.openURL(hairstyles[appData.index]["tutorial link"]);; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -286,9 +285,10 @@ appData.index = appData.index % hairstyles.length ;; that.forceUpdate(); }}
 
        </Text>
         </TouchableOpacity>
- <TouchableOpacity
+
+        <TouchableOpacity
           
-          onPress = { function(){; that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("FirstPage");; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -301,14 +301,19 @@ appData.index = appData.index % hairstyles.length ;; that.forceUpdate(); }}
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"80.48%","left":"55.24%"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', 
+            alignItems:'center',justifyContent:'center', height: "7%", 
+             title:'Test', borderColor: 'gray', color:'black', borderRadius:15,
+              borderWidth: 1},{"top":"85%","left":"35%",
+              "innerText":"'beauty products'","height":75,"backgroundColor":"purple"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {}
+        {'Back'}
 
        </Text>
         </TouchableOpacity>
+
         </View>
         )
     }
