@@ -86,6 +86,12 @@ function filter(arr,phrase){
   })
 }
 
+
+function modifyPercentage(percent,change){
+  return (parseInt(percent.replace("#","")) + change) + "%"
+
+}
+
 window.filter = filter;
 
 function onlyUnique(value, index, self) { 
@@ -222,7 +228,14 @@ function unwrap_dynamically(value,default_value){
 
       
   
-
+    componentDidMount(){
+      appData.page = this;
+      setInterval(function(){
+       
+       appData.wiggle = (appData.wiggle === 4 ? 0: 4);
+       appData.page.forceUpdate();
+      },2000)
+    }
 
    
 
@@ -242,7 +255,7 @@ function unwrap_dynamically(value,default_value){
       
 
       <TouchableOpacity
-      style= {[{width:"20%",height:"20%", position:'absolute',top:"24.42%",left:"12.12%"}]}
+      style= {[{width:"20%",height:"20%", position:'absolute',top:"24.42%",left:modifyPercentage("12.12%",appData.wiggle)}]}
        onPress = { function(){Linking.openURL(link[5]["Url"]);; that.forceUpdate(); }}  
       >
       <Image
@@ -259,7 +272,7 @@ function unwrap_dynamically(value,default_value){
       
 
       <TouchableOpacity
-      style= {[{width:"20%",height:"20%", position:'absolute',top:"75.42%",left:"68.87%"}]}
+      style= {[{width:"20%",height:"20%", position:'absolute',top:"75.42%",left:modifyPercentage("68.87%",appData.wiggle)}]}
        onPress = { function(){Linking.openURL(link[9]["Url"]);; that.forceUpdate(); }}  
       >
       <Image
@@ -293,7 +306,7 @@ function unwrap_dynamically(value,default_value){
       
 
       <TouchableOpacity
-      style= {[{width:"20%",height:"20%", position:'absolute',top:"26.29%",left:"69.88%"}]}
+      style= {[{width:"20%",height:"20%", position:'absolute',top:"26.29%",left: modifyPercentage("69.88%",appData.wiggle)}]}
        onPress = { function(){Linking.openURL(link[6]["Url"]); that.forceUpdate(); }}  
       >
       <Image
@@ -310,7 +323,7 @@ function unwrap_dynamically(value,default_value){
       
 
       <TouchableOpacity
-      style= {[{width:"20%",height:"20%", position:'absolute',top:"75.04%",left:"13.38%"}]}
+      style= {[{width:"20%",height:"20%", position:'absolute',top:"75.04%",left:modifyPercentage("13.38%",appData.wiggle)}]}
        onPress = { function(){Linking.openURL(link[8]["Url"]);; that.forceUpdate(); }}  
       >
       <Image
@@ -322,7 +335,7 @@ function unwrap_dynamically(value,default_value){
       </TouchableOpacity>
 
       <TouchableOpacity
-      style= {[{width:"20%",height:"20%", position:'absolute',top:"49.04%",left:"45.38%"}]}
+      style= {[{width:"20%",height:"20%", position:'absolute',top:"49.04%",left:modifyPercentage("45.38%",appData.wiggle)}]}
        onPress = { function(){Linking.openURL(link[8]["Url"]);; that.forceUpdate(); }}  
       >
       <Image
@@ -336,27 +349,27 @@ function unwrap_dynamically(value,default_value){
 
       
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"72.06%","left":"69.88%","innerText":"' link[9][\"Name\"];'"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline', "top":"72.06%","left":"69.88%","innerText":"' link[9][\"Name\"];'"}]}
         > {link[9]["Name"]} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"71.31%","left":"9.08%","innerText":"' link[8][\"Name\"];'"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"71.31%","left":"9.08%","innerText":"' link[8][\"Name\"];'"}]}
         > { link[8]["Name"]} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"47.02%","left":"38.97%","innerText":"' link[7][\"Name\"];'"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"47.02%","left":"38.97%","innerText":"' link[7][\"Name\"];'"}]}
         > {link[7]["Name"]} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"21.8%","left":"68.11%","innerText":"'Albrecht Dürer'"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"21.8%","left":"68.11%","innerText":"'Albrecht Dürer'"}]}
         > {'Albrecht Dürer'} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"21.06%","left":"10.6%","innerText":"' link[5][\"Name\"];'"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline', "top":"21.06%","left":"10.6%","innerText":"' link[5][\"Name\"];'"}]}
         > {link[5]["Name"]} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"7.79%","left":"38.72%","innerText":"'DRAWERS'","fontSize":"resizeFont(20)","color":"green"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"6.79%","left":"38.72%","innerText":"'DRAWERS'","fontSize":resizeFont(30),"color":"green"}]}
         > {'DRAWERS'} </Text>
         
  <TouchableOpacity

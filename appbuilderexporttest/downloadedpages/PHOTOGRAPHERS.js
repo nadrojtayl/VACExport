@@ -22,6 +22,12 @@ function hasNumber(myString) {
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 
+
+function modifyPercentage(percent,change){
+  return (parseInt(percent.replace("#","")) + change) + "%"
+
+}
+
 function resizeFont(num){
   return num / (640/height)
 }
@@ -224,6 +230,28 @@ function unwrap_dynamically(value,default_value){
   
 
 
+      
+  
+    componentDidMount(){
+      appData.page = this;
+      setInterval(function(){
+       
+       appData.wiggle = (appData.wiggle === 4 ? 0: 4);
+       appData.page.forceUpdate();
+      },2000)
+    }
+   
+    
+      
+  
+    componentDidMount(){
+      appData.page = this;
+      setInterval(function(){
+       
+       appData.wiggle = (appData.wiggle === 4 ? 0: 4);
+       appData.page.forceUpdate();
+      },2000)
+    }
    
 
     render(){ 
@@ -239,34 +267,34 @@ function unwrap_dynamically(value,default_value){
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#C8A2C8"}}>
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"8.54%","left":"35.93%","innerText":"'PHOTOGRAPHERS'","color":"purple","fontSize":"resizeFont(20)"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"7.54%","left":"35.93%","innerText":"'PHOTOGRAPHERS'","color":"purple","fontSize":resizeFont(20)}]}
         > {'PHOTOGRAPHERS'} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"73.36%","left":"72.67%","innerText":"'Diane Arbus'"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"73.36%","left":"72.67%","innerText":"'Diane Arbus'"}]}
         > {'Diane Arbus'} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"71.68%","left":"17.18%","innerText":"'Robert Frank'"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"71.68%","left":"17.18%","innerText":"'Robert Frank'"}]}
         > {'Robert Frank'} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"50.01%","left":"44.04%","source":"Steve McCurry","innerText":"'Steve McCurry'"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"50.01%","left":"44.04%","source":"Steve McCurry","innerText":"'Steve McCurry'"}]}
         > {'Steve McCurry'} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"24.42%","left":"66.59%","innerText":"'Dorothea Lange'"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"24.42%","left":"66.59%","innerText":"'Dorothea Lange'"}]}
         > {'Dorothea Lange'} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"23.3%","left":"15.41%","innerText":"'Annie Leibovitz'"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"23.3%","left":"15.41%","innerText":"'Annie Leibovitz'"}]}
         > {'Annie Leibovitz'} </Text>
         
 
       
 
       <TouchableOpacity
-      style= {[{width:"20%",height:"20%", position:'absolute',top:"27.97%",left:"68.62%"}]}
+      style= {[{width:"20%",height:"20%", position:'absolute',top:"27.97%",left:modifyPercentage("68.62%",appData.wiggle)}]}
        onPress = { function(){Linking.openURL(link[16]["Url"]); that.forceUpdate(); }}  
       >
       <Image
@@ -283,7 +311,7 @@ function unwrap_dynamically(value,default_value){
       
 
       <TouchableOpacity
-      style= {[{width:"20%",height:"20%", position:'absolute',top:"27.78%",left:"18.2%"}]}
+      style= {[{width:"20%",height:"20%", position:'absolute',top:"27.78%",left:modifyPercentage("18.2%", appData.wiggle)}]}
        onPress = { function(){Linking.openURL(link[15]["Url"]); that.forceUpdate(); }}  
       >
       <Image
@@ -300,7 +328,7 @@ function unwrap_dynamically(value,default_value){
       
 
       <TouchableOpacity
-      style= {[{width:"20%",height:"20%", position:'absolute',top:"76.17%",left:"15.92%"}]}
+      style= {[{width:"20%",height:"20%", position:'absolute',top:"76.17%",left:modifyPercentage("15.92%", appData.wiggle)}]}
        onPress = { function(){Linking.openURL(link[18]["Url"]); that.forceUpdate(); }}  
       >
       <Image
@@ -317,7 +345,7 @@ function unwrap_dynamically(value,default_value){
       
 
       <TouchableOpacity
-      style= {[{width:"20%",height:"20%", position:'absolute',top:"76.73%",left:"71.91%"}]}
+      style= {[{width:"20%",height:"20%", position:'absolute',top:"76.73%",left:modifyPercentage("71.91%",appData.wiggle)}]}
        onPress = { function(){Linking.openURL(link[19]["Url"]); that.forceUpdate(); }}  
       >
       <Image
@@ -334,7 +362,7 @@ function unwrap_dynamically(value,default_value){
       
 
       <TouchableOpacity
-      style= {[{width:"20%",height:"20%", position:'absolute',top:"53.19%",left:"42.77%"}]}
+      style= {[{width:"20%",height:"20%", position:'absolute',top:"53.19%",left:modifyPercentage("42.77%",appData.wiggle)}]}
        onPress = { function(){Linking.openURL(link[17]["Url"]); that.forceUpdate(); }}  
       >
       <Image

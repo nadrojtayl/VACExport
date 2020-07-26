@@ -10,7 +10,7 @@ import VIDEOGRAPHERS from './downloadedpages/VIDEOGRAPHERS.js'
 import SCULPTORS from './downloadedpages/SCULPTORS.js'
 import PHOTOGRAPHERS from './downloadedpages/PHOTOGRAPHERS.js'
 import DaVinciDetails from './downloadedpages/DaVinciDetails.js'
-import Scuptors from './downloadedpages/Scuptors.js'
+import Sculptors from './downloadedpages/Scuptors.js'
 import appData from './downloadedpages/global.js';
 /*
 EXPORT PROCESS
@@ -83,6 +83,10 @@ function unwrap_dynamically(value,default_value){
   return try_eval(value) === undefined ? (default_value):  try_eval(value) 
 }
 
+function modifyPercentage(percent,change){
+  return (parseInt(percent.replace("#","")) + change) + "%"
+}
+
 
 //prettifier: https://www.prettifier.net/js/
 class App extends React.Component {
@@ -93,7 +97,12 @@ this.state = {dbLinks:{}, loaded:false, page:"FirstPage", numLoaded:0}
 }
 
 componentDidMount(){
-  
+  var that = this;
+  setInterval(function(){
+   
+   appData.wiggle === 2 ? 0: 2;
+   that.forceUpdate();
+  },1000)
   var that = this;
   var dbLinks = {"data":"https://script.googleusercontent.com/a/macros/digitaltechhs.org/echo?user_content_key=TJ1016nYZ0DZbO4hzbuwXhn4w8GjDHf5tmhmvMpRJDGUTdsmaO0-eyTgEsB1D6ENPgZh0BqII6nVgZSiALqhZJMREqMeOpD1m5_BxDlH2jW0nuo2oDemN9CCS2h10ox_AUoGWcFkcRNXRXZ8MY7GJqi0KLuFqxv7xbbXQd4eZLDMLbD0tVjOiHhJreuiblCRxGEhNZKuDLliWZdKcaAJdWjzvu2sAxXIBaXBGGtuoifvYXGi_Aw5AmD053358BwcG7RcrVv2q0M&lib=MuTl0KbzMb0P-1mM6u-JMf9ycmz3e6ipK","link":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbx8uQw_4uk3m3ApBlCl80x_3B6hpocK9onsdnja/exec?sheetName=TJ"}
   Object.keys(dbLinks).forEach(function(key){
