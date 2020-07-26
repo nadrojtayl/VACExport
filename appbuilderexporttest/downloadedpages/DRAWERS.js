@@ -362,27 +362,27 @@ function unwrap_dynamically(value,default_value){
 
       
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline', "top":"72.06%","left":"69.88%","innerText":"' link[9][\"Name\"];'"}]}
+          style= {[{fontFamily:'Bradley Hand', fontSize:resizeFont(12),position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline', "top":"72.06%","left":"69.88%","innerText":"' link[9][\"Name\"];'"}]}
         > {link[9]["Name"]} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"71.31%","left":"9.08%","innerText":"' link[8][\"Name\"];'"}]}
+          style= {[{fontFamily:'Bradley Hand', fontSize:resizeFont(12),position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"71.31%","left":"9.08%","innerText":"' link[8][\"Name\"];'"}]}
         > { link[8]["Name"]} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"47.02%","left":"38.97%","innerText":"' link[7][\"Name\"];'"}]}
+          style= {[{fontFamily:'Bradley Hand', fontSize:resizeFont(12),position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"47.02%","left":"38.97%","innerText":"' link[7][\"Name\"];'"}]}
         > {link[7]["Name"]} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"21.8%","left":"68.11%","innerText":"'Albrecht Dürer'"}]}
+          style= {[{fontFamily:'Bradley Hand', fontSize:resizeFont(12), position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"21.8%","left":"68.11%","innerText":"'Albrecht Dürer'"}]}
         > {'Albrecht Dürer'} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline', "top":"21.06%","left":"10.6%","innerText":"' link[5][\"Name\"];'"}]}
+          style= {[{fontFamily:'Bradley Hand',position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline', "top":"21.06%","left":"10.6%","innerText":"' link[5][\"Name\"];'"}]}
         > {link[5]["Name"]} </Text>
         
 <Text
-          style= {[{textDecorationLine:'underline',position:'absolute',zIndex:100,width:'100%'},{"top":"6.79%","left":"38.72%","innerText":"'DRAWERS'","fontSize":resizeFont(30),"color":"green"}]}
+          style= {[{fontFamily:'Baskerville-SemiBoldItalic', textDecorationLine:'underline',position:'absolute',zIndex:100,width:'100%'},{"top":"6.79%","left":"38.72%","innerText":"'DRAWERS'","fontSize":resizeFont(30),"color":"green"}]}
         > {'DRAWERS'} </Text>
         
  <TouchableOpacity
@@ -439,20 +439,7 @@ function unwrap_dynamically(value,default_value){
           var data =  
           museums.filter(function(obj){
             return obj[appData.selectedArtist] !== "" && obj[appData.selectedArtist].indexOf("Download") === -1 && obj[appData.selectedArtist].indexOf("online") === -1;
-          }).slice(0,20).map(function(obj,ind){
-            checked.push(false);
-            return (
-              <View style = {{flexDirection:'row', backgroundColor:'transparent'}}>
-              <CheckBox
-                checked={checked[ind]}
-                onPress={function(){appData.checked[ind] = true; appData.museums.forceUpdate();} }
-              />
-              <Text style = {{color:'black', marginTop:'5%'}}>{obj[appData.selectedArtist]}</Text>
-              
-              </View>
-              )
-
-          })
+          }).slice(0,20)
           
 
           appData.data = data;

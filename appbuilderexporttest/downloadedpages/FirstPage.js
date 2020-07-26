@@ -312,7 +312,7 @@ function unwrap_dynamically(value,default_value){
        </Text>
         </TouchableOpacity>
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"15%","left":"2.23%","innerText":"'Click an art medium to see different artists who use it'","fontSize":resizeFont(20),"justifyContent":"center","textAlign":"center"}]}
+          style= {[{fontFamily:'Baskerville-SemiBoldItalic', position:'absolute',zIndex:100,width:'100%'},{"top":"15%","left":"2.23%","innerText":"'Click an art medium to see different artists who use it'","fontSize":resizeFont(20),"justifyContent":"center","textAlign":"center"}]}
         > {'Explore artists!'} </Text>
         <Image
         style = {{height:'100%',width:'20%', position:'absolute',"top":"0%","left":"0%"}}

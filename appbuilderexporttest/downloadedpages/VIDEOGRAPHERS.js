@@ -272,7 +272,20 @@ function unwrap_dynamically(value,default_value){
         </TouchableOpacity>
         <View style = {{position:'absolute',marginTop:'50%', width:'100%', alignItems:'center'}}>
         <ScrollView>
-        {appData.data}
+        {appData.data.map(function(obj,ind){
+            return (
+              <View style = {{flexDirection:'row', backgroundColor:'transparent'}}>
+              <CheckBox
+                checked={appData.checked[ind]}
+                onPress={function(){appData.checked[ind] = true; appData.museums.forceUpdate();} }
+              />
+              <Text style = {{color:'black', marginTop:'5%'}}>{obj[appData.selectedArtist]}</Text>
+              
+              </View>
+
+
+              )
+          })}
         </ScrollView>
         </View>
         

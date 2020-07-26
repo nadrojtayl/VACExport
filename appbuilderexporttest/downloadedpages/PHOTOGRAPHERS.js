@@ -251,27 +251,27 @@ function unwrap_dynamically(value,default_value){
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
       <Text
-          style= {[{textDecorationLine:'underline',position:'absolute',zIndex:100,width:'100%'},{"top":"7.54%","left":"35.93%","innerText":"'PHOTOGRAPHERS'","color":"purple","fontSize":resizeFont(20)}]}
+          style= {[{fontFamily:'Baskerville-SemiBoldItalic', textDecorationLine:'underline',position:'absolute',zIndex:100,width:'100%'},{"top":"7.54%","left":"30.93%","innerText":"'PHOTOGRAPHERS'","color":"purple","fontSize":resizeFont(20)}]}
         > {'PHOTOGRAPHERS'} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"73.36%","left":"72.67%","innerText":"'Diane Arbus'"}]}
+          style= {[{fontFamily:'Bradley Hand', fontSize:resizeFont(12),position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"73.36%","left":"72.67%","innerText":"'Diane Arbus'"}]}
         > {'Diane Arbus'} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"71.68%","left":"17.18%","innerText":"'Robert Frank'"}]}
+          style= {[{fontFamily:'Bradley Hand', fontSize:resizeFont(12),position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"71.68%","left":"12.18%","innerText":"'Robert Frank'"}]}
         > {'Robert Frank'} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"50.01%","left":"44.04%","source":"Steve McCurry","innerText":"'Steve McCurry'"}]}
+          style= {[{fontFamily:'Bradley Hand', fontSize:resizeFont(12),position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"50.01%","left":"38.04%","source":"Steve McCurry","innerText":"'Steve McCurry'"}]}
         > {'Steve McCurry'} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"24.42%","left":"66.59%","innerText":"'Dorothea Lange'"}]}
+          style= {[{fontFamily:'Bradley Hand', fontSize:resizeFont(12),position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"24.42%","left":"66.59%","innerText":"'Dorothea Lange'"}]}
         > {'Dorothea Lange'} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"23.3%","left":"15.41%","innerText":"'Annie Leibovitz'"}]}
+          style= {[{fontFamily:'Bradley Hand', fontSize:resizeFont(12),position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"23.3%","left":"15.41%","innerText":"'Annie Leibovitz'"}]}
         > {'Annie Leibovitz'} </Text>
         
 
@@ -413,19 +413,7 @@ function unwrap_dynamically(value,default_value){
             var data =  
           museums.filter(function(obj){
             return obj[appData.selectedArtist] !== "";
-          }).slice(0,5).map(function(obj, ind){
-            return (
-              <View style = {{flexDirection:'row', backgroundColor:'transparent'}}>
-              <CheckBox
-                checked={checked[ind]}
-                onPress={function(){appData.checked[ind] = true; appData.museums.forceUpdate();} }
-              />
-              <Text style = {{color:'black', marginTop:'5%'}}>{obj[appData.selectedArtist]}</Text>
-              
-              </View>
-
-              )
-          })
+          }).slice(0,5)
           
 
           appData.data = data;

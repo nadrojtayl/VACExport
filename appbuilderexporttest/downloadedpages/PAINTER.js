@@ -246,7 +246,7 @@ function unwrap_dynamically(value,default_value){
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline', "top":"6.51%","left":"33.65%","fontSize":resizeFont(25),"innerText":"'PAINTERS'","color":"blue"}]}
+          style= {[{fontFamily:'Baskerville-SemiBoldItalic', position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline', "top":"6.51%","left":"33.65%","fontSize":resizeFont(25),"innerText":"'PAINTERS'","color":"blue"}]}
         > {'PAINTERS'} </Text>
         
 
@@ -322,7 +322,7 @@ function unwrap_dynamically(value,default_value){
 
       <TouchableOpacity
       style= {[{width:"20%",height:"20%", position:'absolute',top:"59.8%",left:modifyPercentage("69.47%",appData.wiggle)}]}
-       onPress = { function(){appData.selectedBio = link[4]["Url"]; appData.selectedArtist = link[4].Name;   that.forceUpdate(); }}  
+       onPress = { function(){appData.selectedBio = link[4]["Url"]; appData.selectedArtist = "Georgia O'Keefe";   that.forceUpdate(); }}  
       >
       <Image
         style= {[{width:"100%",height:"100%"}, {"source":" link[4][\"image\"];"}]}
@@ -335,23 +335,23 @@ function unwrap_dynamically(value,default_value){
 
       
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"13.21%","left":"13.38%","innerText":"' link[0][\"Name\"];'"}]}
+          style= {[{fontFamily:'Bradley Hand', fontSize:resizeFont(12),position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"13.21%","left":"13.38%","innerText":"' link[0][\"Name\"];'"}]}
         > {link[0]["Name"]} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"14.33%","left":"70.9%","innerText":"' link[1][\"Name\"];'"}]}
+          style= {[{fontFamily:'Bradley Hand', fontSize:resizeFont(12),position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"14.33%","left":"70.9%","innerText":"' link[1][\"Name\"];'"}]}
         > {link[1]["Name"]} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"67.01%","left":"11.1%","innerText":"' link[3][\"Name\"];'"}]}
+          style= {[{fontFamily:'Bradley Hand', fontSize:resizeFont(12),position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"67.01%","left":"11.1%","innerText":"' link[3][\"Name\"];'"}]}
         > {link[3]["Name"]} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"38.99%","left":"24.29%","innerText":"' link[2][\"Name\"];'"}]}
+          style= {[{fontFamily:'Bradley Hand', fontSize:resizeFont(12),position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"38.99%","left":"24.29%","innerText":"' link[2][\"Name\"];'"}]}
         > { link[2]["Name"]} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"58.07%","left":"61.4%","innerText":"' link[4][\"Name\"];'"}]}
+          style= {[{fontFamily:'Bradley Hand', fontSize:resizeFont(12),position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"58.07%","left":"61.4%","innerText":"' link[4][\"Name\"];'"}]}
         > {link[4]["Name"]} </Text>
         
  <TouchableOpacity
@@ -410,21 +410,8 @@ function unwrap_dynamically(value,default_value){
              var checked = [];
               var data =  
           museums.filter(function(obj){
-            return obj[appData.selectedArtist] !== "";
-          }).slice(0,5).map(function(obj,ind){
-            return (
-              <View style = {{flexDirection:'row', backgroundColor:'transparent'}}>
-              <CheckBox
-                checked={checked[ind]}
-                onPress={function(){appData.checked[ind] = true; appData.museums.forceUpdate();} }
-              />
-              <Text style = {{color:'black', marginTop:'5%'}}>{obj[appData.selectedArtist]}</Text>
-              
-              </View>
-
-
-              )
-          })
+            return obj[appData.selectedArtist] !== "" && obj[appData.selectedArtist].indexOf("link") === -1;
+          }).slice(0,5)
           
 
           appData.data = data;
