@@ -239,7 +239,7 @@ function unwrap_dynamically(value,default_value){
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
       <Text
           style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"3.84%","left":"-0.04%","borderStyle":"solid","backgroundColor":"pink","color":"purple","textAlign":"center","innerText":"'reccomended beauty productys'"}]}
-        > {'reccomended beauty productys'} </Text>
+        > {'Monthly Reccomended Beauty Products'} </Text>
         
 
       
@@ -259,7 +259,7 @@ function unwrap_dynamically(value,default_value){
 
       
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"34.71%","left":"2.67%","innerText":"'eco styling gel you can buy at a beauty supply store , target , walmart and many more'","width":115,"color":"purple"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"29.71%","left":"2.67%","innerText":"'eco styling gel you can buy at a beauty supply store , target , walmart and many more'","width":115,"color":"purple"}]}
         > {'eco styling gel you can buy at a beauty supply store , target , walmart and many more'} </Text>
         
 
@@ -274,14 +274,14 @@ function unwrap_dynamically(value,default_value){
 
 
       
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"36.63%","left":"51.18%","color":"purple","innerText":"'this is a hair accesory kit that you can purchase on amazon'","width":115}]}
-        > {'this is a hair accesory kit that you can purchase on amazon'} </Text>
+      <Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"30.63%","left":"58.18%","color":"purple","innerText":"'this is a hair accesory kit that you can purchase on amazon'","width":115}]}
+        > {'this is a hair accessory kit that you can purchase on amazon'} </Text>
         
 
 
       <Image
-        style= {[{width:"20%",height:"20%"}, {"top":"56.21%","left":"28.42%","source":"https://contestimg.wish.com/api/webimage/5b9396ce6ee7bf328db43564-large.jpg?cache_buster=70433c0838f8570e17f76c828aaefdf8","width":125,"height":105}]}
+        style= {[{width:"20%",height:"20%"}, {"top":"0%","left":"58.42%","source":"https://contestimg.wish.com/api/webimage/5b9396ce6ee7bf328db43564-large.jpg?cache_buster=70433c0838f8570e17f76c828aaefdf8","width":125,"height":105}]}
         source = {{uri:'https://contestimg.wish.com/api/webimage/5b9396ce6ee7bf328db43564-large.jpg?cache_buster=70433c0838f8570e17f76c828aaefdf8'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >
@@ -290,9 +290,7 @@ function unwrap_dynamically(value,default_value){
 
 
       
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"77.29%","left":"33.29%","innerText":"'these are makeup brushes you can get these all over at target , walmart , amazon , five below and many more'","width":155,"color":"purple"}]}
-        > {'these are makeup brushes you can get these all over at target , walmart , amazon , five below and many more'} </Text>
+
         <TouchableOpacity
           
           onPress = { function(){that.props.goTo("FirstPage");; that.forceUpdate(); }}  

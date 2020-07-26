@@ -236,10 +236,12 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
-      <Text style = {{fontSize:60, width:"100%", position:'absolute',top:'5%', left:"0%", fontWeight:'bold', textAlign:'center', color:'purple'}}>Beauty Bar</Text>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#f5dced"}}>
+      <View style = {{width:"100%", height:'15%', position:'absolute',top:'0%', paddingTop:'8%', left:"0%", backgroundColor:'purple'}}>
+        <Text style = {{fontSize:60, fontWeight:'bold', textAlign:'center', color:'white'}}>Beauty Bar</Text>
+      </View>
 <Text
-          style= {[{color:'white', position:'absolute',zIndex:100,width:'100%'},{textAlign:'center', "top":"15%","left":"0.23%","innerText":"'Hi welcome to my app,  this app is for you to get hair ideas, makeup ideas, etc plus tutorials on how to do certain things so you can look even more fabulous than you already are'","color":"black"}]}
+          style= {[{color:'white', position:'absolute',zIndex:100,width:'100%'},{textAlign:'center', "top":"18%","left":"0.23%","innerText":"'Hi welcome to my app,  this app is for you to get hair ideas, makeup ideas, etc plus tutorials on how to do certain things so you can look even more fabulous than you already are'","color":"black"}]}
         > {'Monthly ideas to look even more fabulous than you already are'} </Text>
         
  <TouchableOpacity
