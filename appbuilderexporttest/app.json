@@ -1,7 +1,7 @@
   {
   "expo": {
-    "name": "GrantFindr",
-    "slug": "GrantFindr",
+    "name": "TJArtistFindr",
+    "slug": "TJArtistFindr",
     "platforms": [
       "ios",
       "android",
@@ -23,10 +23,10 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "grantfindr.grantfindr.com"
+      "bundleIdentifier": "tjartistfindr.tjartistfindr.com"
     },
     "android": {
-      "package": "grantfindr.grantfindr.com"
+      "package": "tjartistfindr.tjartistfindr.com"
     },
     "entryPoint": "node_modules/expo/AppEntry.js"
   }

@@ -4,10 +4,13 @@
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 import FirstPage from './downloadedpages/FirstPage.js'
-import Profile from './downloadedpages/Profile.js'
-import SavedGrants from './downloadedpages/Saved Grants.js'
-import GrantTemplate from './downloadedpages/GrantTemplate.js'
-import LoginScreen from './downloadedpages/LoginScreen.js'
+import PAINTER from './downloadedpages/PAINTER.js'
+import DRAWERS from './downloadedpages/DRAWERS.js'
+import VIDEOGRAPHERS from './downloadedpages/VIDEOGRAPHERS.js'
+import SCULPTORS from './downloadedpages/SCULPTORS.js'
+import PHOTOGRAPHERS from './downloadedpages/PHOTOGRAPHERS.js'
+import DaVinciDetails from './downloadedpages/DaVinciDetails.js'
+import Scuptors from './downloadedpages/Scuptors.js'
 import appData from './downloadedpages/global.js';
 /*
 EXPORT PROCESS
@@ -86,13 +89,13 @@ class App extends React.Component {
 
 constructor(props){
 super(props);
-this.state = {dbLinks:{}, loaded:false, page:"LoginScreen", numLoaded:0}
+this.state = {dbLinks:{}, loaded:false, page:"FirstPage", numLoaded:0}
 }
 
 componentDidMount(){
   
   var that = this;
-  var dbLinks = {"data":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbzDpmx5Lz6rtjtErMkdSt2ksR6qZEwupA2atqdD9Q/exec?sheetName=Aaron","userdata":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbzDpmx5Lz6rtjtErMkdSt2ksR6qZEwupA2atqdD9Q/exec?sheetName=AaronUser"}
+  var dbLinks = {"data":"https://script.googleusercontent.com/a/macros/digitaltechhs.org/echo?user_content_key=TJ1016nYZ0DZbO4hzbuwXhn4w8GjDHf5tmhmvMpRJDGUTdsmaO0-eyTgEsB1D6ENPgZh0BqII6nVgZSiALqhZJMREqMeOpD1m5_BxDlH2jW0nuo2oDemN9CCS2h10ox_AUoGWcFkcRNXRXZ8MY7GJqi0KLuFqxv7xbbXQd4eZLDMLbD0tVjOiHhJreuiblCRxGEhNZKuDLliWZdKcaAJdWjzvu2sAxXIBaXBGGtuoifvYXGi_Aw5AmD053358BwcG7RcrVv2q0M&lib=MuTl0KbzMb0P-1mM6u-JMf9ycmz3e6ipK","link":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbx8uQw_4uk3m3ApBlCl80x_3B6hpocK9onsdnja/exec?sheetName=TJ"}
   Object.keys(dbLinks).forEach(function(key){
     that.connectToDatabase(dbLinks[key], key);
   })
@@ -137,10 +140,10 @@ render(){
     
 
 
-    if(that.state.page === "Profile"){
+    if(that.state.page === "PAINTER"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <Profile  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Profile>
+             <PAINTER  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></PAINTER>
           </View>
         )
     }
@@ -150,10 +153,10 @@ render(){
     
 
 
-    if(that.state.page === "Saved Grants"){
+    if(that.state.page === "DRAWERS"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <SavedGrants  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SavedGrants>
+             <DRAWERS  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></DRAWERS>
           </View>
         )
     }
@@ -163,10 +166,10 @@ render(){
     
 
 
-    if(that.state.page === "GrantTemplate"){
+    if(that.state.page === "VIDEOGRAPHERS"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <GrantTemplate  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></GrantTemplate>
+             <VIDEOGRAPHERS  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></VIDEOGRAPHERS>
           </View>
         )
     }
@@ -176,10 +179,75 @@ render(){
     
 
 
-    if(that.state.page === "LoginScreen"){
+    if(that.state.page === "SCULPTORS"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <LoginScreen  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></LoginScreen>
+             <SCULPTORS  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SCULPTORS>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "SCULPTORS"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <SCULPTORS  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SCULPTORS>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "PHOTOGRAPHERS"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <PHOTOGRAPHERS  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></PHOTOGRAPHERS>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "DaVinciDetails"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <DaVinciDetails  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></DaVinciDetails>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "DaVinciDetails"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <DaVinciDetails  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></DaVinciDetails>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Scuptors"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Scuptors  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Scuptors>
           </View>
         )
     }
