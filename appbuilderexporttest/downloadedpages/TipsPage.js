@@ -274,6 +274,7 @@ function unwrap_dynamically(value,default_value){
       style = {[{alignItems:'center',position:'absolute',
       height:'60%',width:'80%'},{
         "top":"21.24%","left":"13.31%",
+        repeatertype:'button',
         repeatermarginTop:"5%",
          "repeaterinnerText":" \"Triggerd by...\" + elem[\"Trigger\"] + \";\" + \"It helps me when I \" + elem[\"Tip\"];","options":" appData.filteredList;","backgroundColor":"white"}]}
       clickfunction = {function(){}}
