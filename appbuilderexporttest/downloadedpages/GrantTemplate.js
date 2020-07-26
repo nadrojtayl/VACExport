@@ -209,7 +209,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class GrantTemplate extends React.Component {
      
 
     constructor(props)
@@ -238,39 +238,59 @@ function unwrap_dynamically(value,default_value){
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'GrantFinder'","color":"orange","fontSize":"resizeFont(20)","fontWeight":"bold","top":-2.975999999999999,"left":154.16250000000002}]}
-        > {'GrantFinder'} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{
+            "innerText":"  JSON.parse(JSON.stringify(data[appData.firstGrant][\"Who the grant is for\"]));","top":"14.43%","left":"5.31%","height":"3%","width":"80%"}]}
+        > {  JSON.parse(JSON.stringify(data[appData.firstGrant]["Who the grant is for"]))} </Text>
         
-<TextInput
-       style= {[{width:"60%", height:"5%", width:'60%', 
-       backgroundColor:'white',borderColor:'grey',borderWidth:1},{
-        "innerText":"'Search for grants'","top":28.024,"left":0,"width":"100%"}]}
-        value={appData["FirstPageinput1"]}
-         onChangeText={function(val){ appData["FirstPageinput1"] = val; that.forceUpdate();   } }
-        />
-<View
-        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{"top":"14.89%","left":"2.19%","width":400,"height":"75%"}]}
-        ></View>
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"  \"Showing \" + appData.myresult.length + \" Results\";","color":"orange","top":"10.55%","left":"33.09%","fontWeight":"bold"}]}
-        > {  "Showing " + appData.myresult.length + " Results"} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{
+            "innerText":"JSON.parse(JSON.stringify(data[appData.firstGrant][\"Deadline to apply for grant\"]))","top":"24.04%","left":"6.03%"}]}
+        > {JSON.parse(JSON.stringify(data[appData.firstGrant]["Deadline to apply for grant"]))} </Text>
         
-<Multiplier
-      goTo = {that.props.goTo}
-      type = {"button"}
-      data = { appData.myresult}
-      style = {[{alignItems:'center',position:'absolute',height:'60%',width:'80%'},{"top":"16.6%","left":"12.73%","options":" appData.myresult;","repeaterinnerText":"   elem[\"Grantor Name\"];","repeaterType":"button","repeaterbackgroundColor":"#ffbb00","repeaterwidth":"90%","repeatertextDecorationStyle":"italic","repeaterfontSize":16,"repeateronPress":"appData.firstGrant = elem[\"Index\"];\ngoTo(\"GrantTemplate\");\n","repeaterheight":50,"height":"70%"}]}
-      clickfunction = {function(){}}
-      >
-      </Multiplier>
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"JSON.parse(JSON.stringify(data[appData.firstGrant][\"Grant description \"]))","top":"33.96%","left":"5.79%","width":375}]}
+        > {JSON.parse(JSON.stringify(data[appData.firstGrant]["Grant description "]))} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{
+            "innerText":"JSON.parse(JSON.stringify(data[appData.firstGrant][\"Grant focus areas (location)\"]))",
+          "top":"52.2%","left":"6.03%"}]}
+        > {JSON.parse(JSON.stringify(data[appData.firstGrant]["Grant focus areas (location)"]))} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{
+            "innerText":"JSON.parse(JSON.stringify(data[appData.firstGrant][\"Amount provided by grants\"]))","top":"62.21%","left":"6.51%"}]}
+        > {JSON.parse(JSON.stringify(data[appData.firstGrant]["Amount provided by grants"]))} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{
+            "innerText":"'Recipient Type:'","top":"11.63%","left":"5.55%",
+            "color":"orange","fontWeight":"bold","height":"3%","textAlign":"left"}]}
+        > {'Recipient Type:'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'Deadline:'","top":"21.09%","left":"5.79%","color":"orange","fontWeight":"bold"}]}
+        > {'Deadline:'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'Grant Description:'","top":"30.86%","left":"5.79%","color":"orange","fontWeight":"bold"}]}
+        > {'Grant Description:'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'Geograhic Scope:'","top":"48.88%","left":"5.55%","height":25,"color":"orange","fontWeight":"bold"}]}
+        > {'Geographic Scope:'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{
+            "innerText":"'Grant amount:'","top":"58.73%","left":"6.27%","color":"orange","fontWeight":"bold"}]}
+        > {'Grant amount:'} </Text>
+        
+<View
+        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{"height":475,"width":400,"top":"9.93%","left":"2.43%"}]}
+        ></View>
  <TouchableOpacity
           
-          onPress = { function(){if (appData.FirstPageinput1 === "") {
-    appData.myresult = data;
-} else {
-    appData.myresult = filter_obj_by_phrase(data,"Grantor Name",appData.FirstPageinput1);
-}
-; that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("FirstPage");; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -283,21 +303,28 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', 
-            alignItems:'center',justifyContent:'center', height: "7%",  
-            title:'Test', borderColor: 'gray', color:'black', borderRadius:15, 
-            borderWidth: 1},{"height":"4%","innerText":"'Search'","top":"4%",
-            "left":"69%","backgroundColor":"#ffbb00"}]}
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', 
+            height: "7%",  title:'Test', borderColor: 'gray', color:'black', 
+            borderRadius:15, borderWidth: 1},{"innerText":"'Return to Search'",
+            "top":"86.69%","left":"36%"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Search'}
+        {'Return to Search'}
 
        </Text>
         </TouchableOpacity>
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"textAlign":"center","innerText":" JSON.parse(JSON.stringify(data[appData.firstGrant][\"Grantor Name\"]));","color":"orange","fontWeight":"bold","top":"5%","left":"11.06%", fontSize:resizeFont(16), "width":"80%"}]}
+        > { JSON.parse(JSON.stringify(data[appData.firstGrant]["Grantor Name"]))} </Text>
+        
  <TouchableOpacity
           
-          onPress = { function(){that.props.goTo('LoginScreen'); that.forceUpdate(); }}  
+          onPress = { function(){
+            that.props.saveTo("userdata",{"Username": appData.LoginScreeninput2, "Grant Indexes": appData.firstGrant});
+            appData.grantdata.push(data[appData.firstGrant]);
+             that.props.goTo("Saved Grants"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -310,11 +337,11 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"91.34%","left":"32.37%","innerText":"'Logout'","backgroundColor":"#ffbb00"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"68.55%","left":"36%","innerText":"'Save Grant'"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Logout'}
+        {'Save Grant'}
 
        </Text>
         </TouchableOpacity>
@@ -322,7 +349,7 @@ function unwrap_dynamically(value,default_value){
         )
     }
   }
-    export default FirstPage; 
+    export default GrantTemplate; 
 
 
 

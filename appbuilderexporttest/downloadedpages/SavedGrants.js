@@ -209,7 +209,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class SavedGrants extends React.Component {
      
 
     constructor(props)
@@ -238,39 +238,28 @@ function unwrap_dynamically(value,default_value){
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'GrantFinder'","color":"orange","fontSize":"resizeFont(20)","fontWeight":"bold","top":-2.975999999999999,"left":154.16250000000002}]}
-        > {'GrantFinder'} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'My Grants'","color":"orange","fontWeight":"bold","fontSize":"resizeFont(20)","top":10.024000000000001,"left":155.16250000000002}]}
+        > {'My Grants'} </Text>
         
-<TextInput
-       style= {[{width:"60%", height:"5%", width:'60%', 
-       backgroundColor:'white',borderColor:'grey',borderWidth:1},{
-        "innerText":"'Search for grants'","top":28.024,"left":0,"width":"100%"}]}
-        value={appData["FirstPageinput1"]}
-         onChangeText={function(val){ appData["FirstPageinput1"] = val; that.forceUpdate();   } }
-        />
 <View
-        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{"top":"14.89%","left":"2.19%","width":400,"height":"75%"}]}
+        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{"width":400,"height":475,"top":109.024,"left":7.162500000000023,"repeateronPress":"appData.firstGrant = elem[\"Index\"];\ngoTo(\"GrantTemplate\");\n","options":" appData.grantdata;","repeaterinnerText":" elem[\"Grantor Name\"];"}]}
         ></View>
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"  \"Showing \" + appData.myresult.length + \" Results\";","color":"orange","top":"10.55%","left":"33.09%","fontWeight":"bold"}]}
-        > {  "Showing " + appData.myresult.length + " Results"} </Text>
-        
+<TextInput
+       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"width":400,"top":51.024,"left":8.162500000000023}]}
+        value={appData["Saved Grantsinput2"]}
+         onChangeText={function(val){ appData["Saved Grantsinput2"] = val; that.forceUpdate();   } }
+        />
 <Multiplier
       goTo = {that.props.goTo}
       type = {"button"}
-      data = { appData.myresult}
-      style = {[{alignItems:'center',position:'absolute',height:'60%',width:'80%'},{"top":"16.6%","left":"12.73%","options":" appData.myresult;","repeaterinnerText":"   elem[\"Grantor Name\"];","repeaterType":"button","repeaterbackgroundColor":"#ffbb00","repeaterwidth":"90%","repeatertextDecorationStyle":"italic","repeaterfontSize":16,"repeateronPress":"appData.firstGrant = elem[\"Index\"];\ngoTo(\"GrantTemplate\");\n","repeaterheight":50,"height":"70%"}]}
+      data = { appData.grantdata}
+      style = {[{alignItems:'center',position:'absolute',height:'60%',width:'80%'},{"top":"19.85%","left":"8.9%","options":" appData.grantdata;","repeaterinnerText":" elem[\"Grantor Name\"];","repeaterType":"button","repeateronPress":"appData.firstGrant = elem[\"Index\"];\ngoTo(\"GrantTemplate\");\n","backgroundColor":"white","repeaterbackgroundColor":"#ffbb00","height":"65%"}]}
       clickfunction = {function(){}}
       >
       </Multiplier>
  <TouchableOpacity
           
-          onPress = { function(){if (appData.FirstPageinput1 === "") {
-    appData.myresult = data;
-} else {
-    appData.myresult = filter_obj_by_phrase(data,"Grantor Name",appData.FirstPageinput1);
-}
-; that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("FirstPage"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -283,38 +272,11 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', 
-            alignItems:'center',justifyContent:'center', height: "7%",  
-            title:'Test', borderColor: 'gray', color:'black', borderRadius:15, 
-            borderWidth: 1},{"height":"4%","innerText":"'Search'","top":"4%",
-            "left":"69%","backgroundColor":"#ffbb00"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"91.96%","left":"34.53%","innerText":"'Return to Search'","backgroundColor":"#ffbb00"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Search'}
-
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo('LoginScreen'); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"91.34%","left":"32.37%","innerText":"'Logout'","backgroundColor":"#ffbb00"}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {'Logout'}
+        {'Return to Search'}
 
        </Text>
         </TouchableOpacity>
@@ -322,7 +284,7 @@ function unwrap_dynamically(value,default_value){
         )
     }
   }
-    export default FirstPage; 
+    export default SavedGrants; 
 
 
 

@@ -266,29 +266,25 @@ class Multiplier extends Component{
 
 
     int = parseInt(int)
-    if(false){
+    if(name === "text"){
 
 
       return (
-       <ScrollView>
         <Text
-          style={[{ height: 40, borderColor: 'black', backgroundColor:'white', 
-          color:'black', width:"100%", borderWidth: 5}, additionalStyle]}
+          style={[{ height: 40, borderColor: 'black', backgroundColor:'white', color:'black', width:"100%", borderWidth: 5}, additionalStyle]}
           key = {int}
           selectable = {true}
         >{  additionalStyle.innerText === undefined ? JSON.stringify(elem):additionalStyle.innerText }</Text>
-        </ScrollView>
 
         )
     }
 
 
-    if(name === "text"){
+    if(name === "button"){
     
       return(
         <TouchableOpacity
-        onPress = { function(){if(additionalStyle.onPress === undefined){
-          alert("Triggerd by..." + elem["Trigger"] + ";" + "It helps me when I " + elem["Tip"]); return;}   eval(additionalStyle.onPress); if(additionalStyle.onPress.indexOf("appData") !== -1){ console.log("UPDATING APP DATA"); that.forceUpdate();}   } }
+        onPress = { function(){if(additionalStyle.onPress === undefined){alert("Put a real function here"); return;}   eval(additionalStyle.onPress); if(additionalStyle.onPress.indexOf("appData") !== -1){ console.log("UPDATING APP DATA"); that.forceUpdate();}   } }
           
           key = {int}
           style={[{
@@ -301,10 +297,8 @@ class Multiplier extends Component{
             justifyContent: 'center',
             alignItems: 'center',
             borderRadius: 10,
-            width:"90%", 
-            marginTop:"5%",
-            height:'50%',
-            borderColor: 'gray', borderWidth: 1}]}
+            width:"30%",
+            borderColor: 'gray', borderWidth: 1}, additionalStyle]}
         ><Text style = {{textAlign:'center'}}> { unwrap_dynamically(additionalStyle['innerText'])  }</Text>
         </TouchableOpacity>
       )

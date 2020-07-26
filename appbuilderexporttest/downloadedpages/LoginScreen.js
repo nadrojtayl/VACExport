@@ -209,7 +209,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class LoginScreen extends React.Component {
      
 
     constructor(props)
@@ -237,38 +237,19 @@ function unwrap_dynamically(value,default_value){
       }
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
-      <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'GrantFinder'","color":"orange","fontSize":"resizeFont(20)","fontWeight":"bold","top":-2.975999999999999,"left":154.16250000000002}]}
-        > {'GrantFinder'} </Text>
-        
-<TextInput
-       style= {[{width:"60%", height:"5%", width:'60%', 
-       backgroundColor:'white',borderColor:'grey',borderWidth:1},{
-        "innerText":"'Search for grants'","top":28.024,"left":0,"width":"100%"}]}
-        value={appData["FirstPageinput1"]}
-         onChangeText={function(val){ appData["FirstPageinput1"] = val; that.forceUpdate();   } }
-        />
-<View
-        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{"top":"14.89%","left":"2.19%","width":400,"height":"75%"}]}
-        ></View>
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"  \"Showing \" + appData.myresult.length + \" Results\";","color":"orange","top":"10.55%","left":"33.09%","fontWeight":"bold"}]}
-        > {  "Showing " + appData.myresult.length + " Results"} </Text>
-        
-<Multiplier
-      goTo = {that.props.goTo}
-      type = {"button"}
-      data = { appData.myresult}
-      style = {[{alignItems:'center',position:'absolute',height:'60%',width:'80%'},{"top":"16.6%","left":"12.73%","options":" appData.myresult;","repeaterinnerText":"   elem[\"Grantor Name\"];","repeaterType":"button","repeaterbackgroundColor":"#ffbb00","repeaterwidth":"90%","repeatertextDecorationStyle":"italic","repeaterfontSize":16,"repeateronPress":"appData.firstGrant = elem[\"Index\"];\ngoTo(\"GrantTemplate\");\n","repeaterheight":50,"height":"70%"}]}
-      clickfunction = {function(){}}
-      >
-      </Multiplier>
- <TouchableOpacity
+       <TouchableOpacity
           
-          onPress = { function(){if (appData.FirstPageinput1 === "") {
-    appData.myresult = data;
+          onPress = { function(){var username = appData.LoginScreeninput2;
+appData.savedgrants = filter_list_of_objs(userdata,"Username",username);
+appData.grantindexes = map_list_of_objs(appData.savedgrants,"Grant Indexes");
+appData.grantdata = [];
+for (var i = 0; i < appData.grantindexes.length; i++) {
+    appData.grantdata.push(data[appData.grantindexes[i]]);
+}
+if (appData.savedgrants.length > 0) {
+    that.props.goTo("Saved Grants")
 } else {
-    appData.myresult = filter_obj_by_phrase(data,"Grantor Name",appData.FirstPageinput1);
+    that.props.goTo("FirstPage");
 }
 ; that.forceUpdate(); }}  
           style= {[{
@@ -283,21 +264,18 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', 
-            alignItems:'center',justifyContent:'center', height: "7%",  
-            title:'Test', borderColor: 'gray', color:'black', borderRadius:15, 
-            borderWidth: 1},{"height":"4%","innerText":"'Search'","top":"4%",
-            "left":"69%","backgroundColor":"#ffbb00"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"48.7%","left":"35.01%","innerText":"'Enter as user'","backgroundColor":"#ffbb00"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Search'}
+        {'Enter as user'}
 
        </Text>
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){that.props.goTo('LoginScreen'); that.forceUpdate(); }}  
+          onPress = { function(){appData.myresult = data;
+that.props.goTo("FirstPage");; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -310,19 +288,41 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"91.34%","left":"32.37%","innerText":"'Logout'","backgroundColor":"#ffbb00"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"66.06%","left":"35.49%","innerText":"'Enter as guest'","backgroundColor":"#ffbb00"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Logout'}
+        {'Enter as guest'}
 
        </Text>
         </TouchableOpacity>
+<TextInput
+       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"39.86%","left":"20.4%"}]}
+        value={appData["LoginScreeninput2"]}
+         onChangeText={function(val){ appData["LoginScreeninput2"] = val; that.forceUpdate();   } }
+        />
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {
+          "source":"https://perfect.org/assets/perfect2-logos/downloadable/displayimage/perfect-appicon-Orange.jpg","top":"-10.87%","left":"-1.16%","height":"120%","zIndex":-100,"width":"102%","innerText":200}]}
+        source = {{uri:'https://perfect.org/assets/perfect2-logos/downloadable/displayimage/perfect-appicon-Orange.jpg'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'GrantFinder'","top":"32.88%","left":"37.64%","fontSize":"resizeFont(20)","fontWeight":"bold","color":"orange"}]}
+        > {'GrantFinder'} </Text>
+        
         </View>
         )
     }
   }
-    export default FirstPage; 
+    export default LoginScreen; 
 
 
 

@@ -209,7 +209,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class Profile extends React.Component {
      
 
     constructor(props)
@@ -237,92 +237,52 @@ function unwrap_dynamically(value,default_value){
       }
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
-      <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'GrantFinder'","color":"orange","fontSize":"resizeFont(20)","fontWeight":"bold","top":-2.975999999999999,"left":154.16250000000002}]}
-        > {'GrantFinder'} </Text>
-        
-<TextInput
-       style= {[{width:"60%", height:"5%", width:'60%', 
-       backgroundColor:'white',borderColor:'grey',borderWidth:1},{
-        "innerText":"'Search for grants'","top":28.024,"left":0,"width":"100%"}]}
-        value={appData["FirstPageinput1"]}
-         onChangeText={function(val){ appData["FirstPageinput1"] = val; that.forceUpdate();   } }
-        />
+      <View
+        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{"width":100,"height":100,"top":26.024,"left":20.162500000000023}]}
+        ></View>
 <View
-        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{"top":"14.89%","left":"2.19%","width":400,"height":"75%"}]}
+        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{"height":50,"width":200,"top":27.024,"left":179.16250000000002}]}
         ></View>
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"  \"Showing \" + appData.myresult.length + \" Results\";","color":"orange","top":"10.55%","left":"33.09%","fontWeight":"bold"}]}
-        > {  "Showing " + appData.myresult.length + " Results"} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'{{Username}}'","color":"orange","top":40.024,"left":236.16250000000002,"fontWeight":"bold"}]}
+        > {'{{Username}}'} </Text>
         
-<Multiplier
-      goTo = {that.props.goTo}
-      type = {"button"}
-      data = { appData.myresult}
-      style = {[{alignItems:'center',position:'absolute',height:'60%',width:'80%'},{"top":"16.6%","left":"12.73%","options":" appData.myresult;","repeaterinnerText":"   elem[\"Grantor Name\"];","repeaterType":"button","repeaterbackgroundColor":"#ffbb00","repeaterwidth":"90%","repeatertextDecorationStyle":"italic","repeaterfontSize":16,"repeateronPress":"appData.firstGrant = elem[\"Index\"];\ngoTo(\"GrantTemplate\");\n","repeaterheight":50,"height":"70%"}]}
-      clickfunction = {function(){}}
-      >
-      </Multiplier>
- <TouchableOpacity
-          
-          onPress = { function(){if (appData.FirstPageinput1 === "") {
-    appData.myresult = data;
-} else {
-    appData.myresult = filter_obj_by_phrase(data,"Grantor Name",appData.FirstPageinput1);
-}
-; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', 
-            alignItems:'center',justifyContent:'center', height: "7%",  
-            title:'Test', borderColor: 'gray', color:'black', borderRadius:15, 
-            borderWidth: 1},{"height":"4%","innerText":"'Search'","top":"4%",
-            "left":"69%","backgroundColor":"#ffbb00"}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {'Search'}
-
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo('LoginScreen'); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"91.34%","left":"32.37%","innerText":"'Logout'","backgroundColor":"#ffbb00"}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {'Logout'}
-
-       </Text>
-        </TouchableOpacity>
+<Picker
+         value={appData["Profilepicker3"]}
+         onValueChange={function(val){ appData["Profilepicker3"] = val; that.forceUpdate();   } }
+        style= {[{position:'absolute',height:'5%',width:'50%'}, {}]}
+        
+      > 
+        <Picker.Item label={"Select"} value={"Select"} />
+        <Picker.Item label={"Option1"} value={"Option1"} />
+        <Picker.Item label={"example"} value={"example"} />
+      </Picker>
+<View
+        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{"width":400,"height":475,"top":158.024,"left":8.162500000000023}]}
+        ></View>
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'Name'","top":175.024,"left":25.162500000000023,"fontFamily":null,"color":"orange"}]}
+        > {'Name'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'Description'","top":279.024,"left":26.162500000000023,"color":"orange"}]}
+        > {'Description'} </Text>
+        
+<TextInput
+       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"width":375,"top":212.024,"left":21.162500000000023}]}
+        value={appData["Profileinput7"]}
+         onChangeText={function(val){ appData["Profileinput7"] = val; that.forceUpdate();   } }
+        />
+<TextInput
+       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"width":375,"height":300,"top":307.024,"left":21.162500000000023}]}
+        value={appData["Profileinput8"]}
+         onChangeText={function(val){ appData["Profileinput8"] = val; that.forceUpdate();   } }
+        />
         </View>
         )
     }
   }
-    export default FirstPage; 
+    export default Profile; 
 
 
 

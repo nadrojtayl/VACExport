@@ -1,7 +1,7 @@
-{
+  {
   "expo": {
-    "name": "MentalHealthProtect",
-    "slug": "MentalHealthProtect",
+    "name": "GrantFindr",
+    "slug": "GrantFindr",
     "platforms": [
       "ios",
       "android",
@@ -23,10 +23,10 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "mentalhealthprotect.mentalhealthprotect.com"
+      "bundleIdentifier": "grantfindr.grantfindr.com"
     },
     "android": {
-      "package": "mentalhealthprotect.mentalhealthprotect.com"
+      "package": "grantfindr.grantfindr.com"
     },
     "entryPoint": "node_modules/expo/AppEntry.js"
   }
