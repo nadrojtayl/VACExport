@@ -209,7 +209,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class NewReminder extends React.Component {
      
 
     constructor(props)
@@ -238,21 +238,13 @@ function unwrap_dynamically(value,default_value){
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'Welcome to Health Assistant'","top":"9%","left":"0%","fontSize":"resizeFont(22)","width":"100%","textAlign":"center"}]}
-        > {'Welcome to Health Assistant'} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'New Reminder'","top":"9%","left":"0%","fontSize":"resizeFont(22)","width":"100%","textAlign":"center","height":"5%"}]}
+        > {'New Reminder'} </Text>
         
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'Please enter your name below:'","top":"46.99%","left":"13%"}]}
-        > {'Please enter your name below:'} </Text>
-        
-<TextInput
-       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"51.64%","left":"13%"}]}
-        value={appData["FirstPageinput2"]}
-         onChangeText={function(val){ appData["FirstPageinput2"] = val; that.forceUpdate();   } }
-        />
  <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("Home");; that.forceUpdate(); }}  
+          onPress = { function(){appData.displayText = "Vitamin";
+that.props.goTo("ReminderDetails");; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -265,23 +257,138 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Confirm'","top":"83.28%","left":"34.24%","backgroundColor":"#ADD8E6"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Vitamin'","top":"20%","left":"20%","justifyContent":"enum: left","backgroundColor":" appData.lightBlueColor;","width":"60%"}]}
         >
-        <Text style = {{color:"black"}}>
+        <Text style = {{color:"black", alignItems:'center', textAlign:'center'}}>
 
-        {'Confirm'}
+        {'Vitamin'}
 
        </Text>
         </TouchableOpacity>
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'A simple app that reminds you to complete tasks that benefit your health.  Add any reminder, whether it be from our preset reminders, or just by choosing other.  Hit save reminder, and you will never forget to complete simple tasks that will benefit your health again.'","top":"20.78%","left":"13%","height":"22%","width":"74%","justifyContent":"center","alignItems":"center"}]}
-        > {'A simple app that reminds you to complete tasks that benefit your health.  Add any reminder, whether it be from our preset reminders, or just by choosing other.  Hit save reminder, and you will never forget to complete simple tasks that will benefit your health again.'} </Text>
-        
+ <TouchableOpacity
+          
+          onPress = { function(){appData.displayText = "Medication";
+that.props.goTo("ReminderDetails");; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Medication'","top":"35%","left":"20%","backgroundColor":" appData.lightBlueColor;","width":"60%"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Medication'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){appData.displayText = "Brush Teeth";
+that.props.goTo("ReminderDetails");; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Brush Teeth'","top":"65%","left":"20%","backgroundColor":" appData.lightBlueColor;","width":"60%"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Brush Teeth'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){appData.displayText = "Floss";
+that.props.goTo("ReminderDetails");; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"50%","left":"20%","innerText":"'Floss'","backgroundColor":" appData.lightBlueColor;","width":"60%"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Floss'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){appData.displayText = "Other";
+that.props.goTo("ReminderDetails");; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Other'","top":"80%","left":"20%","backgroundColor":" appData.lightBlueColor;","width":"60%"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Other'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo('Home');; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Previous'","backgroundColor":"#ADD8E6","top":"1.86%","left":"2.19%","fontSize":"resizeFont(14)","width":"25%","height":"5%"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Previous'}
+
+       </Text>
+        </TouchableOpacity>
         </View>
         )
     }
   }
-    export default FirstPage; 
+    export default NewReminder; 
 
 
 

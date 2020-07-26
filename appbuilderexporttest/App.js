@@ -4,13 +4,10 @@
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 import FirstPage from './downloadedpages/FirstPage.js'
-import PAINTER from './downloadedpages/PAINTER.js'
-import DRAWERS from './downloadedpages/DRAWERS.js'
-import VIDEOGRAPHERS from './downloadedpages/VIDEOGRAPHERS.js'
-import SCULPTORS from './downloadedpages/SCULPTORS.js'
-import PHOTOGRAPHERS from './downloadedpages/PHOTOGRAPHERS.js'
-import DaVinciDetails from './downloadedpages/DaVinciDetails.js'
-import Sculptors from './downloadedpages/Scuptors.js'
+import NewReminder from './downloadedpages/NewReminder.js'
+import ReminderDetails from './downloadedpages/ReminderDetails.js'
+import Welcome from './downloadedpages/Welcome.js'
+import Home from './downloadedpages/Home.js'
 import appData from './downloadedpages/global.js';
 /*
 EXPORT PROCESS
@@ -83,10 +80,6 @@ function unwrap_dynamically(value,default_value){
   return try_eval(value) === undefined ? (default_value):  try_eval(value) 
 }
 
-function modifyPercentage(percent,change){
-  return (parseInt(percent.replace("#","")) + change) + "%"
-}
-
 
 //prettifier: https://www.prettifier.net/js/
 class App extends React.Component {
@@ -97,8 +90,9 @@ this.state = {dbLinks:{}, loaded:false, page:"FirstPage", numLoaded:0}
 }
 
 componentDidMount(){
+  
   var that = this;
-  var dbLinks = {museums:"https://script.google.com/macros/s/AKfycbwGDmTBl5IV95GKMBdxpMP5VelXYZHDJ5qE8ECjEYjpLmHo-MQ/exec?sheetName=museums","data":"https://script.googleusercontent.com/a/macros/digitaltechhs.org/echo?user_content_key=TJ1016nYZ0DZbO4hzbuwXhn4w8GjDHf5tmhmvMpRJDGUTdsmaO0-eyTgEsB1D6ENPgZh0BqII6nVgZSiALqhZJMREqMeOpD1m5_BxDlH2jW0nuo2oDemN9CCS2h10ox_AUoGWcFkcRNXRXZ8MY7GJqi0KLuFqxv7xbbXQd4eZLDMLbD0tVjOiHhJreuiblCRxGEhNZKuDLliWZdKcaAJdWjzvu2sAxXIBaXBGGtuoifvYXGi_Aw5AmD053358BwcG7RcrVv2q0M&lib=MuTl0KbzMb0P-1mM6u-JMf9ycmz3e6ipK","link":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbx8uQw_4uk3m3ApBlCl80x_3B6hpocK9onsdnja/exec?sheetName=TJ"}
+  var dbLinks = {"mhDatabase":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbyFVwawpXitN2sUHK5S1HOse1k8TyhxsQ2SdF8/exec?sheetName=mason","database":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbyFVwawpXitN2sUHK5S1HOse1k8TyhxsQ2SdF8/exec?sheetName=mason"}
   Object.keys(dbLinks).forEach(function(key){
     that.connectToDatabase(dbLinks[key], key);
   })
@@ -143,10 +137,10 @@ render(){
     
 
 
-    if(that.state.page === "PAINTER"){
+    if(that.state.page === "NewReminder"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <PAINTER  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></PAINTER>
+             <NewReminder  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NewReminder>
           </View>
         )
     }
@@ -156,10 +150,10 @@ render(){
     
 
 
-    if(that.state.page === "DRAWERS"){
+    if(that.state.page === "ReminderDetails"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <DRAWERS  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></DRAWERS>
+             <ReminderDetails  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></ReminderDetails>
           </View>
         )
     }
@@ -169,10 +163,10 @@ render(){
     
 
 
-    if(that.state.page === "VIDEOGRAPHERS"){
+    if(that.state.page === "Welcome"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <VIDEOGRAPHERS  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></VIDEOGRAPHERS>
+             <Welcome  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Welcome>
           </View>
         )
     }
@@ -182,75 +176,10 @@ render(){
     
 
 
-    if(that.state.page === "SCULPTORS"){
+    if(that.state.page === "Home"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <SCULPTORS  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SCULPTORS>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "SCULPTORS"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <SCULPTORS  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SCULPTORS>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "PHOTOGRAPHERS"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <PHOTOGRAPHERS  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></PHOTOGRAPHERS>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "DaVinciDetails"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <DaVinciDetails  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></DaVinciDetails>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "DaVinciDetails"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <DaVinciDetails  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></DaVinciDetails>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "Scuptors"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <Scuptors  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Scuptors>
+             <Home  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Home>
           </View>
         )
     }

@@ -209,13 +209,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class DaVinciDetails extends React.Component {
+ class Home extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"FirstPageinput0":"","details":"im the first image"}
+        this.state = {"displayText":"Brush Teeth","ReminderDetailsinput2":"Select","ReminderDetailspicker3":"Select","ReminderDetailsswitch4":true,"ReminderDetailsswitch3":true,"ReminderDetailsinput3":"","ReminderDetailsswitch2":false,"ReminderDetailsswitch6":false,"ReminderDetailsswitch7":false,"ReminderDetailsswitch8":false,"ReminderDetailsswitch9":false,"ReminderDetailsswitch10":false,"ReminderDetailsswitch11":false,"ReminderDetailspicker19":"12:00 AM","accentColor":"#ADD8E6","lightBlueColor":"#ADD8E6","ReminderDetailspicker22":"Twice per day","ReminderDetailspicker25":"12:00 AM","ReminderDetailspicker26":"12:00 AM","ReminderDetailspicker27":"12:00 AM","ReminderDetailspicker28":"","ReminderDetailspicker29":"","ReminderDetailspicker30":"","ReminderDetailspicker31":"","ReminderDetailspicker32":"","filter":[{"Name":"Mason","Day Taken":"","How Often":"","Time Taken":"","Index":0},{"Name":"Mason","Day Taken":"","How Often":"","Time Taken":"","Index":2}],"userInformation":[{"Name":"Mason","Day Taken":"","How Often":"","Time Taken":"","Index":0},{"Name":"Mason","Day Taken":"","How Often":"","Time Taken":"","Index":2}],"Welcomeinput2":"k ladjfkdajs;dfj","FirstPageinput3":"Select","pickerB":-1,"FirstPageinput2":"Mason","pickerC":-1,"pickerD":-1}
     }
 
 
@@ -238,14 +238,45 @@ function unwrap_dynamically(value,default_value){
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":" appData.details;"}]}
-        > { appData.details} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'My Reminders'","top":"6.05%","left":"0%","fontSize":resizeFont(22),"width":"100%","textAlign":"center"}]}
+        > {'My Reminders'} </Text>
         
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo('NewReminder'); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'New Reminder'","top":"86.53%","left":"35.42%","backgroundColor":"#ADD8E6","height":"9%"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'New Reminder'}
+
+       </Text>
+        </TouchableOpacity>
+<Multiplier
+      goTo = {that.props.goTo}
+      type = {"text"}
+      data = { mhDatabase}
+      style = {[{alignItems:'center',position:'absolute',height:'60%',width:'80%'},{"top":"15.82%","left":"2.5%","options":" mhDatabase;","repeaterinnerText":"  elem[\"Name\"]+\" taken on \"+elem[\"Day Taken\"].replace(\"[\",\"\").replace(\"]\",\"\").split('\"').join(\"\").split(',').join(', ')+\", \"+elem[\"How Often\"]+\" at \"+elem[\"Time Taken\"].replace(\"[\",\"\").replace(\"]\",\"\").split('\"').join(\"\").split(',').join(', ');\n//styleValue = elem[\"Name\"]+\": \"+elem[\"How Often\"]+\" at \"+elem[\"Time Taken\"].replace(\"[\",\"\").replace(\"]\",\"\").split('\"').join(\"\").split(',').join(', ')\" on \"+elem[\"Day Taken\"].replace(\"[\",\"\").replace(\"]\",\"\").split('\"').join(\"\").split(',').join(', ');\nstyleValue = elem[\"Name\"]+\": \"+elem[\"How Often\"]+\" at \"+elem[\"Time Taken\"].replace(\"[\",\"\").replace(\"]\",\"\").split('\"').join(\"\").split(',').join(', ')+\" on \"+elem[\"Day Taken\"].replace(\"[\",\"\").replace(\"]\",\"\").split('\"').join(\"\").split(',').join(', ');","backgroundColor":"transparent","repeateropacity":"","repeaterbackgroundColor":"transparent","repeaterwidth":"100%","width":"95%","height":"67%","repeaterscroll":{"background":"#ADD8E6"},"repeatermarginTop":"7%","fontSize":"resizeFont(8)","repeaterfontSize":12.25}]}
+      clickfunction = {function(){}}
+      >
+      </Multiplier>
         </View>
         )
     }
   }
-    export default DaVinciDetails; 
+    export default Home; 
 
 
 

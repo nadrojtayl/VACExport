@@ -5,7 +5,6 @@ import Calendar from "./Calendar.js";
 import appData from "./global.js";
 import { Audio } from 'expo-av';
 import Multiplier from "./Multiplier.js";
-import { CheckBox } from 'react-native-elements';
 
 var d = new Date();
 var month = d.getMonth();
@@ -210,22 +209,20 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class VIDEOGRAPHERS extends React.Component {
+ class Welcome extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"FirstPageinput0":"","details":"Leonardo DaVinci"}
+        this.state = {"displayText":"Brush Teeth","ReminderDetailsinput2":"Select","ReminderDetailspicker3":"Select","ReminderDetailsswitch4":true,"ReminderDetailsswitch3":true,"ReminderDetailsinput3":"","ReminderDetailsswitch2":false,"ReminderDetailsswitch6":false,"ReminderDetailsswitch7":false,"ReminderDetailsswitch8":false,"ReminderDetailsswitch9":false,"ReminderDetailsswitch10":false,"ReminderDetailsswitch11":false,"ReminderDetailspicker19":"12:00 AM","accentColor":"#ADD8E6","lightBlueColor":"#ADD8E6","ReminderDetailspicker22":"Twice per day","ReminderDetailspicker25":"12:00 AM","ReminderDetailspicker26":"12:00 AM","ReminderDetailspicker27":"12:00 AM","ReminderDetailspicker28":"","ReminderDetailspicker29":"","ReminderDetailspicker30":"","ReminderDetailspicker31":"","ReminderDetailspicker32":"","filter":[{"Name":"Mason","Day Taken":"","How Often":"","Time Taken":"","Index":0},{"Name":"Mason","Day Taken":"","How Often":"","Time Taken":"","Index":2}],"userInformation":[{"Name":"Mason","Day Taken":"","How Often":"","Time Taken":"","Index":0},{"Name":"Mason","Day Taken":"","How Often":"","Time Taken":"","Index":2}],"Welcomeinput2":"k ladjfkdajs;dfj","FirstPageinput3":"Select","pickerB":-1,"FirstPageinput2":"Mason","pickerC":-1,"pickerD":-1}
     }
 
 
       
   
 
-    componentDidMount(){
-      appData.museums = this;
-    }
+
    
 
     render(){ 
@@ -241,12 +238,22 @@ function unwrap_dynamically(value,default_value){
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
       <Text
-          style= {[{ position:'absolute',zIndex:100,width:'100%'},{"top":"15.54%","left":"0%", textAlign:'center', "innerText":"'VIDEOGRAPHERS'","color":"purple","fontSize":resizeFont(20)}]}
-        > {'Museums with ' + appData.selectedArtist} </Text>
-         <TouchableOpacity
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'Welcome to Health Assistant!'","top":"9.31%","left":"27.82%"}]}
+        > {'Welcome to Health Assistant!'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'Please enter your name below'","top":"20.78%","left":"16.81%"}]}
+        > {'Please enter your name below'} </Text>
+        
+<TextInput
+       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"25.75%","left":"16.81%"}]}
+        value={appData["Welcomeinput2"]}
+         onChangeText={function(val){ appData["Welcomeinput2"] = val; that.forceUpdate();   } }
+        />
+ <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("FirstPage")
-; that.forceUpdate(); }}  
+          onPress = { function(){appData.filter = appData.filter_list_of_objs(mhDatabase,"Name of User",appData.Welcomeinput2);
+that.props.goTo("FirstPage");; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -259,45 +266,19 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:"5%",left:0, backgroundColor:'#8fd158', 
-            alignItems:'center',justifyContent:'center', height: "7%", 
-             title:'Test', borderColor: 'gray', color:'black', 
-             borderRadius:15, borderWidth: 1},{"innerText":"'Home'"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Confirm!!'","top":"76.76%","left":"35.25%"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Home'}
+        {'Confirm!!'}
 
        </Text>
         </TouchableOpacity>
-        <View style = {{position:'absolute',marginTop:'50%', width:'100%', alignItems:'center'}}>
-        <ScrollView>
-        {appData.data.map(function(obj,ind){
-            return (
-              <View style = {{flexDirection:'row', backgroundColor:'transparent'}}>
-              <CheckBox
-                checked={appData.checked[ind]}
-                onPress={function(){appData.checked[ind] = true; appData.museums.forceUpdate();} }
-              />
-              <Text style = {{color:'black', marginTop:'5%'}}>{obj[appData.selectedArtist]}</Text>
-              
-              </View>
-
-
-              )
-          })}
-        </ScrollView>
-        </View>
-        
-
-
-
-      
         </View>
         )
     }
   }
-    export default VIDEOGRAPHERS; 
+    export default Welcome; 
 
 
 

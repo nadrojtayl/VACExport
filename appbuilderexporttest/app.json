@@ -1,7 +1,7 @@
-{
+  {
   "expo": {
-    "name": "TJArtistFindr",
-    "slug": "TJArtistFindr",
+    "name": "HealthReminderAssistant",
+    "slug": "HealthReminderAssistant",
     "platforms": [
       "ios",
       "android",
@@ -23,10 +23,10 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "tjartistfindr.tjartistfindr.com"
+      "bundleIdentifier": "healthreminderassistant.healthreminderassistant.com"
     },
     "android": {
-      "package": "tjartistfindr.tjartistfindr.com"
+      "package": "healthreminderassistant.healthreminderassistant.com"
     },
     "entryPoint": "node_modules/expo/AppEntry.js"
   }
