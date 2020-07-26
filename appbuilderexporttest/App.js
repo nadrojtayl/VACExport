@@ -98,12 +98,6 @@ this.state = {dbLinks:{}, loaded:false, page:"FirstPage", numLoaded:0}
 
 componentDidMount(){
   var that = this;
-  setInterval(function(){
-
-   appData.wiggle === 2 ? 0: 2;
-   that.forceUpdate();
-  },1000)
-  var that = this;
   var dbLinks = {museums:"https://script.google.com/macros/s/AKfycbwGDmTBl5IV95GKMBdxpMP5VelXYZHDJ5qE8ECjEYjpLmHo-MQ/exec?sheetName=museums","data":"https://script.googleusercontent.com/a/macros/digitaltechhs.org/echo?user_content_key=TJ1016nYZ0DZbO4hzbuwXhn4w8GjDHf5tmhmvMpRJDGUTdsmaO0-eyTgEsB1D6ENPgZh0BqII6nVgZSiALqhZJMREqMeOpD1m5_BxDlH2jW0nuo2oDemN9CCS2h10ox_AUoGWcFkcRNXRXZ8MY7GJqi0KLuFqxv7xbbXQd4eZLDMLbD0tVjOiHhJreuiblCRxGEhNZKuDLliWZdKcaAJdWjzvu2sAxXIBaXBGGtuoifvYXGi_Aw5AmD053358BwcG7RcrVv2q0M&lib=MuTl0KbzMb0P-1mM6u-JMf9ycmz3e6ipK","link":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbx8uQw_4uk3m3ApBlCl80x_3B6hpocK9onsdnja/exec?sheetName=TJ"}
   Object.keys(dbLinks).forEach(function(key){
     that.connectToDatabase(dbLinks[key], key);

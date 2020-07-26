@@ -5,6 +5,7 @@ import Calendar from "./Calendar.js";
 import appData from "./global.js";
 import { Audio } from 'expo-av';
 import Multiplier from "./Multiplier.js";
+import { CheckBox } from 'react-native-elements'
 import * as Linking from 'expo-linking';
 
 var d = new Date();
@@ -232,26 +233,9 @@ function unwrap_dynamically(value,default_value){
 
       
   
-    componentDidMount(){
-      appData.page = this;
-      setInterval(function(){
-       
-       appData.wiggle = (appData.wiggle === 4 ? 0: 4);
-       appData.page.forceUpdate();
-      },2000)
-    }
    
 
-      
-  
-    componentDidMount(){
-      appData.page = this;
-      setInterval(function(){
-       
-       appData.wiggle = (appData.wiggle === 4 ? 0: 4);
-       appData.page.forceUpdate();
-      },2000)
-    }
+
    
 
     render(){ 
@@ -265,7 +249,7 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#C8A2C8"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
       <Text
           style= {[{textDecorationLine:'underline',position:'absolute',zIndex:100,width:'100%'},{"top":"7.54%","left":"35.93%","innerText":"'PHOTOGRAPHERS'","color":"purple","fontSize":resizeFont(20)}]}
         > {'PHOTOGRAPHERS'} </Text>
@@ -424,15 +408,29 @@ function unwrap_dynamically(value,default_value){
              <TouchableOpacity
           
           onPress = {function(){
-          alert(
-          JSON.stringify(
+             var checked = [];
+
+            var data =  
           museums.filter(function(obj){
             return obj[appData.selectedArtist] !== "";
-          }).map(function(obj){
-            return obj[appData.selectedArtist]
-          }).join("\n\n")
-          )
-          )
+          }).slice(0,5).map(function(obj, ind){
+            return (
+              <View style = {{flexDirection:'row', backgroundColor:'transparent'}}>
+              <CheckBox
+                checked={checked[ind]}
+                onPress={function(){appData.checked[ind] = true; appData.museums.forceUpdate();} }
+              />
+              <Text style = {{color:'black', marginTop:'5%'}}>{obj[appData.selectedArtist]}</Text>
+              
+              </View>
+
+              )
+          })
+          
+
+          appData.data = data;
+          that.props.goTo("VIDEOGRAPHERS")
+          
         }}
 
           style= {[{

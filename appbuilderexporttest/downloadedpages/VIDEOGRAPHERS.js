@@ -5,6 +5,7 @@ import Calendar from "./Calendar.js";
 import appData from "./global.js";
 import { Audio } from 'expo-av';
 import Multiplier from "./Multiplier.js";
+import { CheckBox } from 'react-native-elements';
 
 var d = new Date();
 var month = d.getMonth();
@@ -222,7 +223,9 @@ function unwrap_dynamically(value,default_value){
       
   
 
-
+    componentDidMount(){
+      appData.museums = this;
+    }
    
 
     render(){ 
@@ -236,87 +239,43 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#C8A2C8"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"8.54%","left":"31.63%","innerText":"'VIDEOGRAPHERS'","color":"purple","fontSize":"resizeFont(20)"}]}
-        > {'VIDEOGRAPHERS'} </Text>
+          style= {[{ position:'absolute',zIndex:100,width:'100%'},{"top":"15.54%","left":"0%", textAlign:'center', "innerText":"'VIDEOGRAPHERS'","color":"purple","fontSize":resizeFont(20)}]}
+        > {'Museums with ' + appData.selectedArtist} </Text>
+         <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo("FirstPage")
+; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:"5%",left:0, backgroundColor:'#8fd158', 
+            alignItems:'center',justifyContent:'center', height: "7%", 
+             title:'Test', borderColor: 'gray', color:'black', 
+             borderRadius:15, borderWidth: 1},{"innerText":"'Home'"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Home'}
+
+       </Text>
+        </TouchableOpacity>
+        <View style = {{position:'absolute',marginTop:'50%', width:'100%', alignItems:'center'}}>
+        <ScrollView>
+        {appData.data}
+        </ScrollView>
+        </View>
         
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"73.36%","left":"72.67%"}]}
-        > {} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"72.24%","left":"16.68%"}]}
-        > {} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"50.01%","left":"44.04%"}]}
-        > {} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"24.42%","left":"66.59%"}]}
-        > {} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"23.67%","left":"20.22%"}]}
-        > {} </Text>
-        
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"top":"27.78%","left":"64.56%"}]}
-        source = {{uri:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png"}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"top":"27.22%","left":"18.96%"}]}
-        source = {{uri:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png"}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"top":"75.61%","left":"13.89%"}]}
-        source = {{uri:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png"}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"top":"77.66%","left":"71.15%"}]}
-        source = {{uri:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png"}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"top":"53.75%","left":"42.01%"}]}
-        source = {{uri:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png"}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
 
 
 

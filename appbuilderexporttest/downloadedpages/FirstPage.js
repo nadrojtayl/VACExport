@@ -236,7 +236,7 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#C8A2C8"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
        <TouchableOpacity
           
           onPress = { function(){appData.selectedArtist = ""; that.props.goTo("PAINTER"); that.forceUpdate(); }}  
