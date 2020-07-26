@@ -346,7 +346,7 @@ function unwrap_dynamically(value,default_value){
 
       <TouchableOpacity
       style= {[{width:"20%",height:"20%", position:'absolute',top:"76.73%",left:modifyPercentage("71.91%",appData.wiggle)}]}
-       onPress = { function(){appData.selectedBio = link[19].Url; appData.selectedArtist = link[19].Name;  hat.forceUpdate(); }}  
+       onPress = { function(){appData.selectedBio = link[19].Url; appData.selectedArtist = link[19].Name;  that.forceUpdate(); }}  
       >
       <Image
         style= {[{width:"100%",height:"100%"}, {"source":"https://upload.wikimedia.org/wikipedia/en/thumb/a/ac/Diane-Arbus-1949.jpg/220px-Diane-Arbus-1949.jpg"}]}
