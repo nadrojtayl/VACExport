@@ -3,11 +3,15 @@
 
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
-import SecondPage from './downloadedpages/SecondPage.js'
 import FirstPage from './downloadedpages/FirstPage.js'
+import SecondPage from './downloadedpages/SecondPage.js'
 import ThirdPage from './downloadedpages/ThirdPage.js'
 import FourthPage from './downloadedpages/FourthPage.js'
 import FifthPage from './downloadedpages/FifthPage.js'
+import SixthPage from './downloadedpages/SixthPage.js'
+import PageSeven from './downloadedpages/PageSeven.js'
+import PageEight from './downloadedpages/PageEight.js'
+import TipsPage from './downloadedpages/TipsPage.js'
 import appData from './downloadedpages/global.js';
 /*
 EXPORT PROCESS
@@ -92,7 +96,7 @@ this.state = {dbLinks:{}, loaded:false, page:"FirstPage", numLoaded:0}
 componentDidMount(){
   
   var that = this;
-  var dbLinks = {"hairstyles":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbx8uQw_4uk3m3ApBlCl80x_3B6hpocK9onsdnja/exec?sheetName=Addyson"}
+  var dbLinks = {"MentalHealth":"https://script.googleusercontent.com/macros/echo?user_content_key=ybH1ORoGFiTZfvwfNiB8qDz5q8u3I_mdOEiGyjuSlQym4h91lCay1I3iySFvFXkHSrwfIhaDtc5-ryfdpYQBzOa2aZFXxRcrm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnK_8y770ElvCWCOhOrz6ruVUJ33XNKZQOZCm3eZ1Vppk1f49R16KIeoTEih7QiyCq8LKBORzzn2EAlGpZyD7m54&lib=Mso0aDquZWKdJQqsLHXWT3UXCaJ-4jKQR","Tips":"https://script.google.com/macros/s/AKfycbzzXLj81t5Qd9fLuCWTecbZrocYNnJthZRuvO03cLwd_9vOrEc/exec?sheetName=Naiya2"}
   Object.keys(dbLinks).forEach(function(key){
     that.connectToDatabase(dbLinks[key], key);
   })
@@ -124,10 +128,10 @@ render(){
   var that = this; 
 
   
-    if(that.state.page === "SecondPage"){
+    if(that.state.page === "FirstPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <SecondPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SecondPage>
+             <FirstPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FirstPage>
           </View>
         )
     }
@@ -137,10 +141,10 @@ render(){
     
 
 
-    if(that.state.page === "FirstPage"){
+    if(that.state.page === "SecondPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <FirstPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FirstPage>
+             <SecondPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SecondPage>
           </View>
         )
     }
@@ -180,6 +184,58 @@ render(){
         return(
           <View style = {{width:"100%",height:"100%"}}>
              <FifthPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FifthPage>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "SixthPage"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <SixthPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SixthPage>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "PageSeven"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <PageSeven  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></PageSeven>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "PageEight"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <PageEight  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></PageEight>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "TipsPage"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <TipsPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></TipsPage>
           </View>
         )
     }

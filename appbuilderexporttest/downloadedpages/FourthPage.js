@@ -5,7 +5,6 @@ import Calendar from "./Calendar.js";
 import appData from "./global.js";
 import { Audio } from 'expo-av';
 import Multiplier from "./Multiplier.js";
-import * as Linking from 'expo-linking';
 
 var d = new Date();
 var month = d.getMonth();
@@ -216,7 +215,7 @@ function unwrap_dynamically(value,default_value){
     constructor(props)
     {
         super(props);
-        this.state = {"addyson":"beauty bar byappData.addyson","FirstPageinput0":"  beauty bar byappData.addyson ","color":"pink","color2":"purple","button1":"hairstyles & hair tutorials","button2":"makeup looks & tutorials","button3":"skincare","button4":"purchase products","firstbutton":"beauty bar byappData.addyson","index":13,"imageurl1":["https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSfQu2CblPy7_PXtk08x5XKd4pQjdArYMygEw&usqp=CAU","https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ48rYcHkJ2yjKkQZekm9HPrFlQBeg_ErN13Q&usqp=CAU","https://i.pinimg.com/736x/f4/b4/26/f4b42627d71cc86ee52a412c00597005.jpg","https://i.pinimg.com/736x/81/87/75/8187751d1056f9f37fd9a0b3bcc5239d.jpg","https://i.ytimg.com/vi/HuA2A9WY2yI/hqdefault.jpg","https://i.pinimg.com/564x/c5/ab/72/c5ab72699e110c38d1c6331cd790fd40.jpg","https://i.pinimg.com/564x/93/14/02/93140262f948ff928547cbb37ff08c68.jpg","https://i.pinimg.com/564x/8c/38/a1/8c38a103670a318d22cadadf3aa27e0a.jpg","https://i.pinimg.com/736x/7f/d0/bd/7fd0bd6780dcd7218a14c701bb271048.jpg","https://i.pinimg.com/564x/6d/ac/75/6dac7544b357097d1b9a66feca864b67.jpg","https://i.pinimg.com/564x/1f/b6/9c/1fb69ce783bbf826b09a7f7432841cf3.jpg","https://i.pinimg.com/736x/73/63/05/7363057da054ba310f4c99b21c1594ed.jpg","https://i.pinimg.com/originals/08/53/1e/08531e3e1a65dede0d777fd61e14e423.jpg","https://i.pinimg.com/564x/a0/12/6d/a0126d9aa234a17ea88cbf0fd8d071cf.jpg","https://i.pinimg.com/originals/35/82/90/35829090c685b42759428ddac5d0db7c.jpg","https://i.pinimg.com/564x/76/75/0d/76750d85f64fbfb8cb172d86bb2f4478.jpg","https://storage.googleapis.com/prose-blog-media/1/2019/03/Webp.net-resizeimage-copy-7.jpg","https://i.pinimg.com/564x/4d/2d/b0/4d2db04e26fc63cb3fd87506d97a1625.jpg"],"addyson1":2,"picurls":["https://i.pinimg.com/736x/f4/b4/26/f4b42627d71cc86ee52a412c00597005.jpg"],"button5":"nail inspo","makeupindex":0,"nailindex":0,"nail_index":0,"inspo":10}
+        this.state = {"SecondPageinput12":"feel","SecondPageinput11":"suppress","SecondPageinput10":"trigger","ThirdPageinput11":"Select","ThirdPageinput12":"Select","ThirdPageinput13":"Selectd","ThirdPageinput14":"Select","FourthPageinput7":"Select","FourthPageinput8":"Select","FourthPageinput9":"Select","FourthPageinput10":"Select","FifthPageinput7":"Select","FifthPageinput8":"Select","FifthPageinput9":"Select","FifthPageinput10":"Select","TipsPagepicker1":"Depression","selectedCondition":"Depression","filteredList":[{"Condition":"Depression","Tip":"suppress","Trigger":"trigger","Experience":"feel","Index":4}]}
     }
 
 
@@ -238,33 +237,32 @@ function unwrap_dynamically(value,default_value){
       }
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
-      <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"5.12%","left":"-0.04%","borderStyle":"solid","textAlign":"center","innerText":"'nail inspo'","backgroundColor":"pink","color":"purple"}]}
-        > {'Monthly Nail Inspo'} </Text>
-        
+       <TouchableOpacity
+          
+          onPress = { function(){; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Bipolar '","top":"6.73%","left":"34.32%","width":200}]}
+        >
+        <Text style = {{color:"black"}}>
 
-      
+        {'Bipolar '}
 
-     
-
-
-      <TouchableOpacity
-      style= {[{width:"40%",height:"40%", position:'absolute',top:"10.23%",left:"0%"}]}
-       onPress = { function(){appData.index ++ ;
-appData.index = appData.index % hairstyles.length; that.forceUpdate(); }}  
-      >
-      <Image
-        style= {[{width:"100%",height:"100%"}, {"top":"10.23%","left":"0%","source":"hairstyles[appData.index].Link;","height":325,"width":width}]}
-        source = {{uri: hairstyles[appData.index]["nail link"]}}
-       
-      >
-      </Image>
-      </TouchableOpacity>
-
-      
+       </Text>
+        </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){Linking.openURL(hairstyles[appData.index]["tutorial link"]);; that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo('FirstPage'); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -277,21 +275,33 @@ appData.index = appData.index % hairstyles.length; that.forceUpdate(); }}
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', 
-            alignItems:'center',justifyContent:'center', height: "7%", 
-             title:'Test', borderColor: 'gray', color:'black', borderRadius:15, 
-             borderWidth: 1},{"innerText":"'go to tutorial'","top":"68%","left":"2.4%","height":30,"backgroundColor":" appData.color;","color":" appData.color2 ;"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Go back to home page '","top":"-0.05%","left":"84.45%"}]}
         >
-        <Text style = {{color:" appData.color2 ;"}}>
+        <Text style = {{color:"black"}}>
 
-        {'go to tutorial'}
+        {'Go back to home page '}
 
        </Text>
         </TouchableOpacity>
-
-        <TouchableOpacity
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"16.51%","left":"2.23%"}]}
+        > {} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"29.28%","left":"2.63%"}]}
+        > {} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"44.84%","left":"3.3%"}]}
+        > {} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"58%","left":"3.7%"}]}
+        > {} </Text>
+        
+ <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("FirstPage");; that.forceUpdate(); }}  
+          onPress = { function(){; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -304,48 +314,34 @@ appData.index = appData.index % hairstyles.length; that.forceUpdate(); }}
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', 
-            alignItems:'center',justifyContent:'center', height: "7%", 
-             title:'Test', borderColor: 'gray', color:'black', borderRadius:15,
-              borderWidth: 1},{"top":"75%","left":"35%",
-              "innerText":"'beauty products'","height":75,"backgroundColor":"purple"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"73.46%","left":"3.44%","innerText":"'Tips '"}]}
         >
-        <Text style = {{color:"white"}}>
+        <Text style = {{color:"black"}}>
 
-        {'Back'}
+        {'Tips '}
 
        </Text>
         </TouchableOpacity>
-         <TouchableOpacity
-          
-          onPress = { function(){appData.index ++ ;
-appData.index = appData.index % hairstyles.length ;; that.forceUpdate(); }} 
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', 
-            alignItems:'center',justifyContent:'center', height: "7%", 
-             title:'Test', borderColor: 'gray', color:'black', borderRadius:15,
-              borderWidth: 1},{"top":"65%","left":"68%",
-              "innerText":"'beauty products'","height":75,"backgroundColor":"purple"}]}
-        >
-        <Text style = {{color:"white"}}>
-
-        {'Next'}
-
-       </Text>
-        </TouchableOpacity>
-
-      
+<TextInput
+       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"20.1%","left":"1.83%"}]}
+        value={appData["FourthPageinput7"]}
+         onChangeText={function(val){ appData["FourthPageinput7"] = val; that.forceUpdate();   } }
+        />
+<TextInput
+       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"34.26%","left":"2.9%"}]}
+        value={appData["FourthPageinput8"]}
+         onChangeText={function(val){ appData["FourthPageinput8"] = val; that.forceUpdate();   } }
+        />
+<TextInput
+       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"49.52%","left":"3.44%"}]}
+        value={appData["FourthPageinput9"]}
+         onChangeText={function(val){ appData["FourthPageinput9"] = val; that.forceUpdate();   } }
+        />
+<TextInput
+       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"63.19%","left":"2.9%"}]}
+        value={appData["FourthPageinput10"]}
+         onChangeText={function(val){ appData["FourthPageinput10"] = val; that.forceUpdate();   } }
+        />
         </View>
         )
     }

@@ -215,7 +215,7 @@ function unwrap_dynamically(value,default_value){
     constructor(props)
     {
         super(props);
-        this.state = {"addyson":"beauty bar byappData.addyson","FirstPageinput0":"  beauty bar byappData.addyson ","color":"pink","color2":"purple","button1":"hairstyles & hair tutorials","button2":"makeup looks & tutorials","button3":"skincare","button4":"purchase products","firstbutton":"beauty bar byappData.addyson","index":13,"imageurl1":["https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSfQu2CblPy7_PXtk08x5XKd4pQjdArYMygEw&usqp=CAU","https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ48rYcHkJ2yjKkQZekm9HPrFlQBeg_ErN13Q&usqp=CAU","https://i.pinimg.com/736x/f4/b4/26/f4b42627d71cc86ee52a412c00597005.jpg","https://i.pinimg.com/736x/81/87/75/8187751d1056f9f37fd9a0b3bcc5239d.jpg","https://i.ytimg.com/vi/HuA2A9WY2yI/hqdefault.jpg","https://i.pinimg.com/564x/c5/ab/72/c5ab72699e110c38d1c6331cd790fd40.jpg","https://i.pinimg.com/564x/93/14/02/93140262f948ff928547cbb37ff08c68.jpg","https://i.pinimg.com/564x/8c/38/a1/8c38a103670a318d22cadadf3aa27e0a.jpg","https://i.pinimg.com/736x/7f/d0/bd/7fd0bd6780dcd7218a14c701bb271048.jpg","https://i.pinimg.com/564x/6d/ac/75/6dac7544b357097d1b9a66feca864b67.jpg","https://i.pinimg.com/564x/1f/b6/9c/1fb69ce783bbf826b09a7f7432841cf3.jpg","https://i.pinimg.com/736x/73/63/05/7363057da054ba310f4c99b21c1594ed.jpg","https://i.pinimg.com/originals/08/53/1e/08531e3e1a65dede0d777fd61e14e423.jpg","https://i.pinimg.com/564x/a0/12/6d/a0126d9aa234a17ea88cbf0fd8d071cf.jpg","https://i.pinimg.com/originals/35/82/90/35829090c685b42759428ddac5d0db7c.jpg","https://i.pinimg.com/564x/76/75/0d/76750d85f64fbfb8cb172d86bb2f4478.jpg","https://storage.googleapis.com/prose-blog-media/1/2019/03/Webp.net-resizeimage-copy-7.jpg","https://i.pinimg.com/564x/4d/2d/b0/4d2db04e26fc63cb3fd87506d97a1625.jpg"],"addyson1":2,"picurls":["https://i.pinimg.com/736x/f4/b4/26/f4b42627d71cc86ee52a412c00597005.jpg"],"button5":"nail inspo","makeupindex":0,"nailindex":0,"nail_index":0,"inspo":10}
+        this.state = {"SecondPageinput12":"feel","SecondPageinput11":"suppress","SecondPageinput10":"trigger","ThirdPageinput11":"Select","ThirdPageinput12":"Select","ThirdPageinput13":"Selectd","ThirdPageinput14":"Select","FourthPageinput7":"Select","FourthPageinput8":"Select","FourthPageinput9":"Select","FourthPageinput10":"Select","FifthPageinput7":"Select","FifthPageinput8":"Select","FifthPageinput9":"Select","FifthPageinput10":"Select","TipsPagepicker1":"Depression","selectedCondition":"Depression","filteredList":[{"Condition":"Depression","Tip":"suppress","Trigger":"trigger","Experience":"feel","Index":4}]}
     }
 
 
@@ -237,63 +237,9 @@ function unwrap_dynamically(value,default_value){
       }
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
-      <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"3.84%","left":"-0.04%","borderStyle":"solid","backgroundColor":"pink","color":"purple","textAlign":"center","innerText":"'reccomended beauty productys'"}]}
-        > {'Monthly Reccomended Beauty Products'} </Text>
-        
-
-      
-
-      <TouchableOpacity
-      style= {[{width:"10%",height:"10%", position:'absolute',top:"10.44%",left:"1.04%"}]}
-       onPress = { function(){; that.forceUpdate(); }}  
-      >
-      <Image
-        style= {[{width:"100%",height:"100%"}, {"top":"10.44%","left":"1.04%","source":"https://sep.yimg.com/ay/yhst-17606501929367/ecoco-eco-styler-styling-gel-5lb-13.jpg","width":125,"height":115}]}
-        source = {{uri:'https://sep.yimg.com/ay/yhst-17606501929367/ecoco-eco-styler-styling-gel-5lb-13.jpg'}}
-       
-      >
-      </Image>
-      </TouchableOpacity>
-
-
-      
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"29.71%","left":"2.67%","innerText":"'eco styling gel you can buy at a beauty supply store , target , walmart and many more'","width":115,"color":"purple"}]}
-        > {'eco styling gel you can buy at a beauty supply store , target , walmart and many more'} </Text>
-        
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"top":"10.44%","left":"49.82%","source":"https://m.media-amazon.com/images/I/916W5hhy1pL._AC_UL480_FMwebp_QL65_.jpg","width":145,"height":115}]}
-        source = {{uri:'https://m.media-amazon.com/images/I/916W5hhy1pL._AC_UL480_FMwebp_QL65_.jpg'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-      <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"30.63%","left":"58.18%","color":"purple","innerText":"'this is a hair accesory kit that you can purchase on amazon'","width":115}]}
-        > {'this is a hair accessory kit that you can purchase on amazon'} </Text>
-        
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"top":"0%","left":"58.42%","source":"https://contestimg.wish.com/api/webimage/5b9396ce6ee7bf328db43564-large.jpg?cache_buster=70433c0838f8570e17f76c828aaefdf8","width":125,"height":105}]}
-        source = {{uri:'https://contestimg.wish.com/api/webimage/5b9396ce6ee7bf328db43564-large.jpg?cache_buster=70433c0838f8570e17f76c828aaefdf8'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-        <TouchableOpacity
+       <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("FirstPage");; that.forceUpdate(); }}  
+          onPress = { function(){; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -306,19 +252,96 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', 
-            alignItems:'center',justifyContent:'center', height: "7%", 
-             title:'Test', borderColor: 'gray', color:'black', borderRadius:15,
-              borderWidth: 1},{"top":"85%","left":"35%",
-              "innerText":"'beauty products'","height":75,"backgroundColor":"purple"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"4.94%","left":"33.38%","innerText":"'PTSD '","width":200,"backgroundColor":"#1f99f0"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Back'}
+        {'PTSD '}
 
        </Text>
         </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo('FirstPage'); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"0.35%","left":"84.72%","innerText":"'Go back to home page '"}]}
+        >
+        <Text style = {{color:"black"}}>
 
+        {'Go back to home page '}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"81.54%","left":"5.84%","innerText":"'Tips'"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Tips'}
+
+       </Text>
+        </TouchableOpacity>
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"15.21%","left":"3.97%"}]}
+        > {} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"27.98%","left":"4.77%"}]}
+        > {} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"42.64%","left":"5.31%"}]}
+        > {} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"57.1%","left":"5.44%"}]}
+        > {} </Text>
+        
+<TextInput
+       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"61.39%","left":"5.31%"}]}
+        value={appData["FifthPageinput7"]}
+         onChangeText={function(val){ appData["FifthPageinput7"] = val; that.forceUpdate();   } }
+        />
+<TextInput
+       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"47.43%","left":"3.97%"}]}
+        value={appData["FifthPageinput8"]}
+         onChangeText={function(val){ appData["FifthPageinput8"] = val; that.forceUpdate();   } }
+        />
+<TextInput
+       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"32.47%","left":"4.24%"}]}
+        value={appData["FifthPageinput9"]}
+         onChangeText={function(val){ appData["FifthPageinput9"] = val; that.forceUpdate();   } }
+        />
+<TextInput
+       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"19.3%","left":"3.84%"}]}
+        value={appData["FifthPageinput10"]}
+         onChangeText={function(val){ appData["FifthPageinput10"] = val; that.forceUpdate();   } }
+        />
         </View>
         )
     }
