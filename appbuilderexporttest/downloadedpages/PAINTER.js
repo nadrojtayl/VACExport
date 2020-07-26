@@ -263,7 +263,7 @@ function unwrap_dynamically(value,default_value){
 
       <TouchableOpacity
       style= {[{width:"20%",height:"20%", position:'absolute',top:"17.69%",left:modifyPercentage("19.97%",appData.wiggle)}]}
-       onPress = { function(){Linking.openURL(link[0]["Url"]); that.forceUpdate(); }}  
+       onPress = { function(){appData.selectedBio = link[1].Url;  that.forceUpdate(); }}  
       >
       <Image
         style= {[{width:"100%",height:"100%"}, {"source":" link[0][\"image\"];"}]}
@@ -280,7 +280,7 @@ function unwrap_dynamically(value,default_value){
 
       <TouchableOpacity
       style= {[{width:"20%",height:"20%", position:'absolute',top:"18.25%",left:modifyPercentage("70.39%",appData.wiggle)}]}
-       onPress = { function(){Linking.openURL(link[1]["Url"]); that.forceUpdate(); }}  
+       onPress = { function(){appData.selectedBio = link[1]["Url"]; that.forceUpdate(); }}  
       >
       <Image
         style= {[{width:"100%",height:"100%"}, {"source":" link[1][\"image\"];"}]}
@@ -296,8 +296,8 @@ function unwrap_dynamically(value,default_value){
       
 
       <TouchableOpacity
-      style= {[{width:"20%",height:"20%", position:'absolute',top:"43.29%",left:modifyPercentage("46.32%",appData.wiggle)}]}
-       onPress = { function(){Linking.openURL(link[2]["Url"]); that.forceUpdate(); }}  
+      style= {[{width:"20%",height:"20%", position:'absolute',top:"43.29%",left:modifyPercentage("26.32%",appData.wiggle)}]}
+       onPress = { function(){appData.selectedBio = link[2]["Url"]; that.forceUpdate(); }}  
       >
       <Image
         style= {[{width:"100%",height:"100%"}, {"source":" link[2][\"image\"];"}]}
@@ -314,7 +314,7 @@ function unwrap_dynamically(value,default_value){
 
       <TouchableOpacity
       style= {[{width:"20%",height:"20%", position:'absolute',top:"71.5%",left:modifyPercentage("12.88%",appData.wiggle)}]}
-       onPress = { function(){Linking.openURL(link[3]["Url"]); that.forceUpdate(); }}  
+       onPress = { function(){appData.selectedBio = link[3]["Url"]; that.forceUpdate(); }}  
       >
       <Image
         style= {[{width:"100%",height:"100%"}, {"source":" link[3][\"image\"];"}]}
@@ -330,8 +330,8 @@ function unwrap_dynamically(value,default_value){
       
 
       <TouchableOpacity
-      style= {[{width:"20%",height:"20%", position:'absolute',top:"59.8%",left:modifyPercentage("76.47%",appData.wiggle)}]}
-       onPress = { function(){Linking.openURL(link[4]["Url"]); that.forceUpdate(); }}  
+      style= {[{width:"20%",height:"20%", position:'absolute',top:"59.8%",left:modifyPercentage("69.47%",appData.wiggle)}]}
+       onPress = { function(){appData.selectedBio = link[4]["Url"]; that.forceUpdate(); }}  
       >
       <Image
         style= {[{width:"100%",height:"100%"}, {"source":" link[4][\"image\"];"}]}
@@ -356,11 +356,11 @@ function unwrap_dynamically(value,default_value){
         > {link[3]["Name"]} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"38.99%","left":"44.29%","innerText":"' link[2][\"Name\"];'"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"38.99%","left":"24.29%","innerText":"' link[2][\"Name\"];'"}]}
         > { link[2]["Name"]} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"58.07%","left":"71.4%","innerText":"' link[4][\"Name\"];'"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"58.07%","left":"61.4%","innerText":"' link[4][\"Name\"];'"}]}
         > {link[4]["Name"]} </Text>
         
  <TouchableOpacity
@@ -390,6 +390,12 @@ function unwrap_dynamically(value,default_value){
 
        </Text>
         </TouchableOpacity>
+        <View style = {{display:'flex',position:'absolute', top:'93%',width:"100%", flexDirection:'row', justifyContent:"space-evenly"}}>
+        <Button onPress = {function(){
+          Linking.openURL(appData.selectedBio);
+        }} title = {"Learn More"}>Learn more</Button>
+        <Button title = {"Museum Search"}>> Museum Search</Button>
+        </View>
         </View>
         )
     }
