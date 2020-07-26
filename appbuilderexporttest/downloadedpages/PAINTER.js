@@ -255,7 +255,7 @@ function unwrap_dynamically(value,default_value){
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#C8A2C8"}}>
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"6.51%","left":"33.65%","fontSize":resizeFont(25),"innerText":"'PAINTERS'","color":"blue"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline', "top":"6.51%","left":"33.65%","fontSize":resizeFont(25),"innerText":"'PAINTERS'","color":"blue"}]}
         > {'PAINTERS'} </Text>
         
 
@@ -263,7 +263,7 @@ function unwrap_dynamically(value,default_value){
 
       <TouchableOpacity
       style= {[{width:"20%",height:"20%", position:'absolute',top:"17.69%",left:modifyPercentage("19.97%",appData.wiggle)}]}
-       onPress = { function(){appData.selectedBio = link[1].Url;  that.forceUpdate(); }}  
+       onPress = { function(){appData.selectedBio = link[0].Url; appData.selectedArtist = link[0].Name;  that.forceUpdate(); }}  
       >
       <Image
         style= {[{width:"100%",height:"100%"}, {"source":" link[0][\"image\"];"}]}
@@ -280,7 +280,7 @@ function unwrap_dynamically(value,default_value){
 
       <TouchableOpacity
       style= {[{width:"20%",height:"20%", position:'absolute',top:"18.25%",left:modifyPercentage("70.39%",appData.wiggle)}]}
-       onPress = { function(){appData.selectedBio = link[1]["Url"]; that.forceUpdate(); }}  
+       onPress = { function(){appData.selectedBio = link[1]["Url"]; appData.selectedArtist = link[1].Name;   that.forceUpdate(); }}  
       >
       <Image
         style= {[{width:"100%",height:"100%"}, {"source":" link[1][\"image\"];"}]}
@@ -297,7 +297,7 @@ function unwrap_dynamically(value,default_value){
 
       <TouchableOpacity
       style= {[{width:"20%",height:"20%", position:'absolute',top:"43.29%",left:modifyPercentage("26.32%",appData.wiggle)}]}
-       onPress = { function(){appData.selectedBio = link[2]["Url"]; that.forceUpdate(); }}  
+       onPress = { function(){appData.selectedBio = link[2]["Url"]; appData.selectedArtist = link[2].Name;   that.forceUpdate(); }}  
       >
       <Image
         style= {[{width:"100%",height:"100%"}, {"source":" link[2][\"image\"];"}]}
@@ -314,7 +314,7 @@ function unwrap_dynamically(value,default_value){
 
       <TouchableOpacity
       style= {[{width:"20%",height:"20%", position:'absolute',top:"71.5%",left:modifyPercentage("12.88%",appData.wiggle)}]}
-       onPress = { function(){appData.selectedBio = link[3]["Url"]; that.forceUpdate(); }}  
+       onPress = { function(){appData.selectedBio = link[3]["Url"]; appData.selectedArtist = link[3].Name;   that.forceUpdate(); }}  
       >
       <Image
         style= {[{width:"100%",height:"100%"}, {"source":" link[3][\"image\"];"}]}
@@ -331,7 +331,7 @@ function unwrap_dynamically(value,default_value){
 
       <TouchableOpacity
       style= {[{width:"20%",height:"20%", position:'absolute',top:"59.8%",left:modifyPercentage("69.47%",appData.wiggle)}]}
-       onPress = { function(){appData.selectedBio = link[4]["Url"]; that.forceUpdate(); }}  
+       onPress = { function(){appData.selectedBio = link[4]["Url"]; appData.selectedArtist = link[4].Name;   that.forceUpdate(); }}  
       >
       <Image
         style= {[{width:"100%",height:"100%"}, {"source":" link[4][\"image\"];"}]}
@@ -390,11 +390,59 @@ function unwrap_dynamically(value,default_value){
 
        </Text>
         </TouchableOpacity>
-        <View style = {{display:'flex',position:'absolute', top:'93%',width:"100%", flexDirection:'row', justifyContent:"space-evenly"}}>
-        <Button onPress = {function(){
+        <View style = {{display:appData.selectedArtist !== "" ? "flex":"none",position:'absolute', top:'95%',width:"100%", flexDirection:'row', justifyContent:"space-evenly"}}>
+        <TouchableOpacity
+          
+         onPress = {function(){
           Linking.openURL(appData.selectedBio);
-        }} title = {"Learn More"}>Learn more</Button>
-        <Button title = {"Museum Search"}>> Museum Search</Button>
+        }}
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+       
+            backgroundColor:'#8fd158', 
+             title:'Test', borderColor: 'gray', color:'black', 
+             borderRadius:15, borderWidth: 1},{"innerText":"'Home'"}]}
+             >
+             <Text>Learn More</Text>
+             </TouchableOpacity>
+             <TouchableOpacity
+          
+          onPress = {function(){
+          alert(
+          JSON.stringify(
+          museums.filter(function(obj){
+            return obj[appData.selectedArtist] !== "";
+          }).map(function(obj){
+            return obj[appData.selectedArtist]
+          }).join("\n\n")
+          )
+          )
+        }}
+
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+           backgroundColor:'#8fd158', 
+            alignItems:'center',justifyContent:'center', 
+             title:'Test', borderColor: 'gray', color:'black', 
+             borderRadius:15, borderWidth: 1},{"innerText":"'Home'"}]}
+             >
+             <Text>Museum Journey</Text>
+             </TouchableOpacity>
+        
+     
         </View>
         </View>
         )

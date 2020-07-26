@@ -241,7 +241,7 @@ function unwrap_dynamically(value,default_value){
       },2000)
     }
    
-    
+
       
   
     componentDidMount(){
@@ -267,7 +267,7 @@ function unwrap_dynamically(value,default_value){
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#C8A2C8"}}>
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"7.54%","left":"35.93%","innerText":"'PHOTOGRAPHERS'","color":"purple","fontSize":resizeFont(20)}]}
+          style= {[{textDecorationLine:'underline',position:'absolute',zIndex:100,width:'100%'},{"top":"7.54%","left":"35.93%","innerText":"'PHOTOGRAPHERS'","color":"purple","fontSize":resizeFont(20)}]}
         > {'PHOTOGRAPHERS'} </Text>
         
 <Text
@@ -295,7 +295,7 @@ function unwrap_dynamically(value,default_value){
 
       <TouchableOpacity
       style= {[{width:"20%",height:"20%", position:'absolute',top:"27.97%",left:modifyPercentage("68.62%",appData.wiggle)}]}
-       onPress = { function(){Linking.openURL(link[16]["Url"]); that.forceUpdate(); }}  
+       onPress = { function(){appData.selectedBio = link[16].Url; appData.selectedArtist = link[16].Name;  that.forceUpdate(); }}  
       >
       <Image
         style= {[{width:"100%",height:"100%"}, {"source":"https://www.biography.com/.image/t_share/MTQyOTgwMzM3MTg4NzQyMzQ5/dorothea-lange-gettyimages-117134032_1600jpg.jpg"}]}
@@ -312,7 +312,7 @@ function unwrap_dynamically(value,default_value){
 
       <TouchableOpacity
       style= {[{width:"20%",height:"20%", position:'absolute',top:"27.78%",left:modifyPercentage("18.2%", appData.wiggle)}]}
-       onPress = { function(){Linking.openURL(link[15]["Url"]); that.forceUpdate(); }}  
+       onPress = { function(){appData.selectedBio = link[15].Url; appData.selectedArtist = link[15].Name;   that.forceUpdate(); }}  
       >
       <Image
         style= {[{width:"100%",height:"100%"}, {"source":"https://www.dw.com/image/50660880_303.jpg"}]}
@@ -329,7 +329,7 @@ function unwrap_dynamically(value,default_value){
 
       <TouchableOpacity
       style= {[{width:"20%",height:"20%", position:'absolute',top:"76.17%",left:modifyPercentage("15.92%", appData.wiggle)}]}
-       onPress = { function(){Linking.openURL(link[18]["Url"]); that.forceUpdate(); }}  
+       onPress = { function(){appData.selectedBio = link[18].Url; appData.selectedArtist = link[18].Name;   that.forceUpdate(); }}  
       >
       <Image
         style= {[{width:"100%",height:"100%"}, {"source":"https://iphf.org/wp-content/uploads/2016/08/Robert-Frank.jpg"}]}
@@ -346,7 +346,7 @@ function unwrap_dynamically(value,default_value){
 
       <TouchableOpacity
       style= {[{width:"20%",height:"20%", position:'absolute',top:"76.73%",left:modifyPercentage("71.91%",appData.wiggle)}]}
-       onPress = { function(){Linking.openURL(link[19]["Url"]); that.forceUpdate(); }}  
+       onPress = { function(){appData.selectedBio = link[19].Url; appData.selectedArtist = link[19].Name;  hat.forceUpdate(); }}  
       >
       <Image
         style= {[{width:"100%",height:"100%"}, {"source":"https://upload.wikimedia.org/wikipedia/en/thumb/a/ac/Diane-Arbus-1949.jpg/220px-Diane-Arbus-1949.jpg"}]}
@@ -363,7 +363,7 @@ function unwrap_dynamically(value,default_value){
 
       <TouchableOpacity
       style= {[{width:"20%",height:"20%", position:'absolute',top:"53.19%",left:modifyPercentage("42.77%",appData.wiggle)}]}
-       onPress = { function(){Linking.openURL(link[17]["Url"]); that.forceUpdate(); }}  
+       onPress = { function(){appData.selectedBio = link[17].Url; appData.selectedArtist = link[17].Name;  that.forceUpdate(); }}  
       >
       <Image
         style= {[{width:"100%",height:"100%"}, {"source":"https://upload.wikimedia.org/wikipedia/commons/e/e1/Steve_McCurry_%285824371040%29.jpg"}]}
@@ -398,6 +398,61 @@ function unwrap_dynamically(value,default_value){
 
        </Text>
         </TouchableOpacity>
+         <View style = {{display:appData.selectedArtist !== "" ? "flex":"none",position:'absolute', top:'15%',width:"100%", flexDirection:'row', justifyContent:"space-evenly"}}>
+        <TouchableOpacity
+          
+         onPress = {function(){
+          Linking.openURL(appData.selectedBio);
+        }}
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+       
+            backgroundColor:'#8fd158', 
+             title:'Test', borderColor: 'gray', color:'black', 
+             borderRadius:15, borderWidth: 1},{"innerText":"'Home'"}]}
+             >
+             <Text>Learn More</Text>
+             </TouchableOpacity>
+             <TouchableOpacity
+          
+          onPress = {function(){
+          alert(
+          JSON.stringify(
+          museums.filter(function(obj){
+            return obj[appData.selectedArtist] !== "";
+          }).map(function(obj){
+            return obj[appData.selectedArtist]
+          }).join("\n\n")
+          )
+          )
+        }}
+
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+           backgroundColor:'#8fd158', 
+            alignItems:'center',justifyContent:'center', 
+             title:'Test', borderColor: 'gray', color:'black', 
+             borderRadius:15, borderWidth: 1},{"innerText":"'Home'"}]}
+             >
+             <Text>Museum Journey</Text>
+             </TouchableOpacity>
+        
+     
+        </View>
+
         </View>
         )
     }

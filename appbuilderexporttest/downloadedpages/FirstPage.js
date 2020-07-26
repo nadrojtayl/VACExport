@@ -239,7 +239,7 @@ function unwrap_dynamically(value,default_value){
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#C8A2C8"}}>
        <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("PAINTER"); that.forceUpdate(); }}  
+          onPress = { function(){appData.selectedArtist = ""; that.props.goTo("PAINTER"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -262,7 +262,7 @@ function unwrap_dynamically(value,default_value){
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("DRAWERS"); that.forceUpdate(); }}  
+          onPress = { function(){appData.selectedArtist = ""; that.props.goTo("DRAWERS"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -286,7 +286,7 @@ function unwrap_dynamically(value,default_value){
 
  <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("PHOTOGRAPHERS"); that.forceUpdate(); }}  
+          onPress = { function(){appData.selectedArtist = ""; that.props.goTo("PHOTOGRAPHERS"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
