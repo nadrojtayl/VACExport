@@ -241,15 +241,9 @@ function unwrap_dynamically(value,default_value){
           style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'Welcome to Health Assistant!'","top":"9.31%","left":"27.82%"}]}
         > {'Welcome to Health Assistant!'} </Text>
         
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'Please enter your name below'","top":"20.78%","left":"16.81%"}]}
-        > {'Please enter your name below'} </Text>
+
         
-<TextInput
-       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"25.75%","left":"16.81%"}]}
-        value={appData["Welcomeinput2"]}
-         onChangeText={function(val){ appData["Welcomeinput2"] = val; that.forceUpdate();   } }
-        />
+
  <TouchableOpacity
           
           onPress = { function(){appData.filter = appData.filter_list_of_objs(mhDatabase,"Name of User",appData.Welcomeinput2);

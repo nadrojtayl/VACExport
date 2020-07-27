@@ -228,7 +228,7 @@ function unwrap_dynamically(value,default_value){
     render(){ 
       var that = this; 
       appData.this = this;
-      alert(JSON.stringify(mhDatabase));
+      
       if(!that.props.loaded){
         return(<View style = {{height:'100%',width:'100%', alignItems:'center',justifyContent:'center'}}>
         <ActivityIndicator size="large" />
@@ -238,8 +238,12 @@ function unwrap_dynamically(value,default_value){
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'My Reminders'","top":"6.05%","left":"0%","fontSize":resizeFont(22),"width":"100%","textAlign":"center"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline', "innerText":"'My Reminders'","top":"6.05%","left":"0%","fontSize":resizeFont(22),"width":"100%","textAlign":"center"}]}
         > {'My Reminders'} </Text>
+        <Text
+        style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'My Reminders'","top":"10.05%","left":"0%","fontSize":resizeFont(12),"width":"100%","textAlign":"center"}]}
+
+        >Expect text reminders</Text>
         
  <TouchableOpacity
           
@@ -269,8 +273,7 @@ function unwrap_dynamically(value,default_value){
          <View style = {{alignItems:'center', justifyContent:'center'}}>
           {
             mhDatabase.filter(function(obj){
-              alert(appData["Welcomeinput2"]);
-              return obj["Name"] === appData["Welcomeinput2"];
+              return obj["Name of User"] === appData["FirstPageinput2"];
             }).map(function(elem){
               return (<Text style = {{textAlign:'center', marginTop:"5%"}}>{elem["Name"]+" taken on "+elem["Day Taken"].replace("[","").replace("]","").split('"').join("").split(',').join(', ')+", "+elem["How Often"]+" at "+elem["Time Taken"].replace("[","").replace("]","").split('"').join("").split(',').join(', ')}</Text>)
             })
