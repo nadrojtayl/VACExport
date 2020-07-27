@@ -341,6 +341,7 @@ function unwrap_dynamically(value,default_value){
         > {'Sunday'} </Text>
         
 <Picker
+      itemStyle = {{height:"100%"}}
          value={appData["ReminderDetailspicker19"]}
          onValueChange={function(val){ appData["ReminderDetailspicker19"] = val; that.forceUpdate();   } }
         style= {[{position:'absolute',height:'5%',width:'50%'}, {"top":"68.24%","left":"13.38%","options":["12:00 AM","12:30 AM","1:00 AM","1:30 AM","2:00 AM","2:30 AM","3:00 AM","3:30 AM","4:00 AM","4:30 AM","5:00 AM","5:30 AM","6:00 AM","6:30 AM","7:00 AM","7:30 AM","8:00 AM","8:30 AM","9:00 AM","9:30 AM","10:00 AM","10:30 AM","11:00 AM","11:30 AM","12:00 PM","12:30 PM","1:00 PM","1:30 PM","2:00 PM","2:30 PM","3:00 PM","3:30 PM","4:00 PM","4:30 PM","5:00 PM","5:30 PM","6:00 PM","6:30 PM","7:00 PM","7:30 PM","8:00 PM","8:30 PM","9:00 PM","9:30 PM","10:00 PM","10:30 PM","11:00 PM","11:30 PM"],"innerText":"'undefined'","backgroundColor":"#ADD8E6","color":"black","height":"7%","width":"35%"}]}
@@ -361,8 +362,8 @@ function unwrap_dynamically(value,default_value){
 <Picker
          value={appData["ReminderDetailspicker22"]}
          onValueChange={function(val){ appData["ReminderDetailspicker22"] = val; that.forceUpdate();   } }
-        style= {[{position:'absolute',height:'5%',width:'50%'}, {"top":"46.84%","left":"12.44%","backgroundColor":"#ADD8E6","color":"black","options":["Once per day","Twice per day","3 times per day","4 times per day"],"height":"7%"}]}
-        
+        style= {[{position:'absolute',height:'5%',width:'40%'}, {"top":"53.84%","left":"12.44%","backgroundColor":"#ADD8E6","color":"black","options":["Once per day","Twice per day","3 times per day","4 times per day"],"height":"7%"}]}
+        itemStyle = {{height:"100%"}}
       > 
         <Picker.Item label={"Select"} value={"Select"} />
         <Picker.Item label={"Option1"} value={"Option1"} />
