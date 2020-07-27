@@ -157,6 +157,8 @@ function map_list_of_objs(arr,key){
   })
 }
 
+global.created = [];
+
 global.map_list_of_objs = map_list_of_objs;
 
 function clone(arr){
@@ -219,7 +221,22 @@ function unwrap_dynamically(value,default_value){
     }
 
 
+    createElement(picker,style){
+      var that = this;
+      global.created.push(
+
+        <Picker
+        style = {style}
+        >
+        {style.options.map(function(option){
+          return (<Picker.Item label={option} value={option} />)
+        })}
+        </Picker>
+        )
+      that.forceUpdate();
+      alert('here')
       
+    }
   
 
 
@@ -235,6 +252,7 @@ function unwrap_dynamically(value,default_value){
         <Text style = {{textAlign:'center'}}>Are you a student? Build an app with VineyardAppCamp.com</Text>
         </View>)
       }
+      var that = this;
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
       <Text
@@ -339,35 +357,152 @@ function unwrap_dynamically(value,default_value){
 <Text
           style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"36.45%","left":"13%","innerText":"'Sunday'","width":"25%"}]}
         > {'Sunday'} </Text>
-        
-<Picker
-      itemStyle = {{height:"100%"}}
-         value={appData["ReminderDetailspicker19"]}
-         onValueChange={function(val){ appData["ReminderDetailspicker19"] = val; that.forceUpdate();   } }
-        style= {[{position:'absolute',height:'5%',width:'50%'}, {"top":"68.24%","left":"13.38%","options":["12:00 AM","12:30 AM","1:00 AM","1:30 AM","2:00 AM","2:30 AM","3:00 AM","3:30 AM","4:00 AM","4:30 AM","5:00 AM","5:30 AM","6:00 AM","6:30 AM","7:00 AM","7:30 AM","8:00 AM","8:30 AM","9:00 AM","9:30 AM","10:00 AM","10:30 AM","11:00 AM","11:30 AM","12:00 PM","12:30 PM","1:00 PM","1:30 PM","2:00 PM","2:30 PM","3:00 PM","3:30 PM","4:00 PM","4:30 PM","5:00 PM","5:30 PM","6:00 PM","6:30 PM","7:00 PM","7:30 PM","8:00 PM","8:30 PM","9:00 PM","9:30 PM","10:00 PM","10:30 PM","11:00 PM","11:30 PM"],"innerText":"'undefined'","backgroundColor":"#ADD8E6","color":"black","height":"7%","width":"35%"}]}
-        
-      > 
-        <Picker.Item label={"Select"} value={"Select"} />
-        <Picker.Item label={"Option1"} value={"Option1"} />
-        <Picker.Item label={"12:00 AM"} value={"12:00 AM"} /><Picker.Item label={"12:30 AM"} value={"12:30 AM"} /><Picker.Item label={"1:00 AM"} value={"1:00 AM"} /><Picker.Item label={"1:30 AM"} value={"1:30 AM"} /><Picker.Item label={"2:00 AM"} value={"2:00 AM"} /><Picker.Item label={"2:30 AM"} value={"2:30 AM"} /><Picker.Item label={"3:00 AM"} value={"3:00 AM"} /><Picker.Item label={"3:30 AM"} value={"3:30 AM"} /><Picker.Item label={"4:00 AM"} value={"4:00 AM"} /><Picker.Item label={"4:30 AM"} value={"4:30 AM"} /><Picker.Item label={"5:00 AM"} value={"5:00 AM"} /><Picker.Item label={"5:30 AM"} value={"5:30 AM"} /><Picker.Item label={"6:00 AM"} value={"6:00 AM"} /><Picker.Item label={"6:30 AM"} value={"6:30 AM"} /><Picker.Item label={"7:00 AM"} value={"7:00 AM"} /><Picker.Item label={"7:30 AM"} value={"7:30 AM"} /><Picker.Item label={"8:00 AM"} value={"8:00 AM"} /><Picker.Item label={"8:30 AM"} value={"8:30 AM"} /><Picker.Item label={"9:00 AM"} value={"9:00 AM"} /><Picker.Item label={"9:30 AM"} value={"9:30 AM"} /><Picker.Item label={"10:00 AM"} value={"10:00 AM"} /><Picker.Item label={"10:30 AM"} value={"10:30 AM"} /><Picker.Item label={"11:00 AM"} value={"11:00 AM"} /><Picker.Item label={"11:30 AM"} value={"11:30 AM"} /><Picker.Item label={"12:00 PM"} value={"12:00 PM"} /><Picker.Item label={"12:30 PM"} value={"12:30 PM"} /><Picker.Item label={"1:00 PM"} value={"1:00 PM"} /><Picker.Item label={"1:30 PM"} value={"1:30 PM"} /><Picker.Item label={"2:00 PM"} value={"2:00 PM"} /><Picker.Item label={"2:30 PM"} value={"2:30 PM"} /><Picker.Item label={"3:00 PM"} value={"3:00 PM"} /><Picker.Item label={"3:30 PM"} value={"3:30 PM"} /><Picker.Item label={"4:00 PM"} value={"4:00 PM"} /><Picker.Item label={"4:30 PM"} value={"4:30 PM"} /><Picker.Item label={"5:00 PM"} value={"5:00 PM"} /><Picker.Item label={"5:30 PM"} value={"5:30 PM"} /><Picker.Item label={"6:00 PM"} value={"6:00 PM"} /><Picker.Item label={"6:30 PM"} value={"6:30 PM"} /><Picker.Item label={"7:00 PM"} value={"7:00 PM"} /><Picker.Item label={"7:30 PM"} value={"7:30 PM"} /><Picker.Item label={"8:00 PM"} value={"8:00 PM"} /><Picker.Item label={"8:30 PM"} value={"8:30 PM"} /><Picker.Item label={"9:00 PM"} value={"9:00 PM"} /><Picker.Item label={"9:30 PM"} value={"9:30 PM"} /><Picker.Item label={"10:00 PM"} value={"10:00 PM"} /><Picker.Item label={"10:30 PM"} value={"10:30 PM"} /><Picker.Item label={"11:00 PM"} value={"11:00 PM"} /><Picker.Item label={"11:30 PM"} value={"11:30 PM"} />
-      </Picker>
 <Text
           style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'Time:'","top":"65.29%","left":"13.15%","width":"100%"}]}
         > {'Time:'} </Text>
         
+<Picker
+      itemStyle = {{height:"100%"}}
+         selectedValue={appData["ReminderDetailspicker19"]}
+         onValueChange={function(val){  appData["ReminderDetailspicker19"] = val; that.forceUpdate();   } }
+        style= {[{position:'absolute',height:'5%',width:'50%'}, 
+        {"top":"68.24%","left":"13.38%","options":
+        ["12:00 AM","12:30 AM","1:00 AM","1:30 AM","2:00 AM","2:30 AM","3:00 AM","3:30 AM","4:00 AM","4:30 AM","5:00 AM","5:30 AM","6:00 AM","6:30 AM","7:00 AM","7:30 AM","8:00 AM","8:30 AM","9:00 AM","9:30 AM","10:00 AM","10:30 AM","11:00 AM","11:30 AM","12:00 PM","12:30 PM","1:00 PM","1:30 PM","2:00 PM","2:30 PM","3:00 PM","3:30 PM","4:00 PM","4:30 PM","5:00 PM","5:30 PM","6:00 PM","6:30 PM","7:00 PM","7:30 PM","8:00 PM","8:30 PM","9:00 PM","9:30 PM","10:00 PM","10:30 PM","11:00 PM","11:30 PM"],"innerText":"'undefined'","backgroundColor":"#ADD8E6","color":"black","height":"7%","width":"35%"}]}
+        
+      > 
+     
+        <Picker.Item label={"12:00 AM"} value={"12:00 AM"} />
+        <Picker.Item label={"12:30 AM"} value={"12:30 AM"} />
+        <Picker.Item label={"1:00 AM"} value={"1:00 AM"} />
+        <Picker.Item label={"1:30 AM"} value={"1:30 AM"} />
+        <Picker.Item label={"2:00 AM"} value={"2:00 AM"} />
+        <Picker.Item label={"2:30 AM"} value={"2:30 AM"} />
+        <Picker.Item label={"3:00 AM"} value={"3:00 AM"} />
+        <Picker.Item label={"3:30 AM"} value={"3:30 AM"} />
+        <Picker.Item label={"4:00 AM"} value={"4:00 AM"} />
+        <Picker.Item label={"4:30 AM"} value={"4:30 AM"} />
+        <Picker.Item label={"5:00 AM"} value={"5:00 AM"} />
+        <Picker.Item label={"5:30 AM"} value={"5:30 AM"} />
+        <Picker.Item label={"6:00 AM"} value={"6:00 AM"} />
+        <Picker.Item label={"6:30 AM"} value={"6:30 AM"} />
+        <Picker.Item label={"7:00 AM"} value={"7:00 AM"} />
+        <Picker.Item label={"7:30 AM"} value={"7:30 AM"} /><Picker.Item label={"8:00 AM"} value={"8:00 AM"} /><Picker.Item label={"8:30 AM"} value={"8:30 AM"} /><Picker.Item label={"9:00 AM"} value={"9:00 AM"} /><Picker.Item label={"9:30 AM"} value={"9:30 AM"} /><Picker.Item label={"10:00 AM"} value={"10:00 AM"} /><Picker.Item label={"10:30 AM"} value={"10:30 AM"} /><Picker.Item label={"11:00 AM"} value={"11:00 AM"} /><Picker.Item label={"11:30 AM"} value={"11:30 AM"} /><Picker.Item label={"12:00 PM"} value={"12:00 PM"} /><Picker.Item label={"12:30 PM"} value={"12:30 PM"} /><Picker.Item label={"1:00 PM"} value={"1:00 PM"} /><Picker.Item label={"1:30 PM"} value={"1:30 PM"} /><Picker.Item label={"2:00 PM"} value={"2:00 PM"} /><Picker.Item label={"2:30 PM"} value={"2:30 PM"} /><Picker.Item label={"3:00 PM"} value={"3:00 PM"} /><Picker.Item label={"3:30 PM"} value={"3:30 PM"} /><Picker.Item label={"4:00 PM"} value={"4:00 PM"} /><Picker.Item label={"4:30 PM"} value={"4:30 PM"} /><Picker.Item label={"5:00 PM"} value={"5:00 PM"} /><Picker.Item label={"5:30 PM"} value={"5:30 PM"} /><Picker.Item label={"6:00 PM"} value={"6:00 PM"} /><Picker.Item label={"6:30 PM"} value={"6:30 PM"} /><Picker.Item label={"7:00 PM"} value={"7:00 PM"} /><Picker.Item label={"7:30 PM"} value={"7:30 PM"} /><Picker.Item label={"8:00 PM"} value={"8:00 PM"} /><Picker.Item label={"8:30 PM"} value={"8:30 PM"} /><Picker.Item label={"9:00 PM"} value={"9:00 PM"} /><Picker.Item label={"9:30 PM"} value={"9:30 PM"} /><Picker.Item label={"10:00 PM"} value={"10:00 PM"} /><Picker.Item label={"10:30 PM"} value={"10:30 PM"} /><Picker.Item label={"11:00 PM"} value={"11:00 PM"} /><Picker.Item label={"11:30 PM"} value={"11:30 PM"} />
+      </Picker>
+
+      <Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'Time:'","top":"65.29%","left":"53.15%","width":"100%"}]}
+        > {'2nd Time:'} </Text>
+        
+<Picker
+      itemStyle = {{height:"100%"}}
+         selectedValue={appData["ReminderDetailspicker19"]}
+         onValueChange={function(val){  appData["ReminderDetailspicker19"] = val; that.forceUpdate();   } }
+        style= {[{position:'absolute',height:'5%',width:'50%'}, 
+        {"top":"68.24%","left":"53.38%","options":
+        ["12:00 AM","12:30 AM","1:00 AM","1:30 AM","2:00 AM","2:30 AM","3:00 AM","3:30 AM","4:00 AM","4:30 AM","5:00 AM","5:30 AM","6:00 AM","6:30 AM","7:00 AM","7:30 AM","8:00 AM","8:30 AM","9:00 AM","9:30 AM","10:00 AM","10:30 AM","11:00 AM","11:30 AM","12:00 PM","12:30 PM","1:00 PM","1:30 PM","2:00 PM","2:30 PM","3:00 PM","3:30 PM","4:00 PM","4:30 PM","5:00 PM","5:30 PM","6:00 PM","6:30 PM","7:00 PM","7:30 PM","8:00 PM","8:30 PM","9:00 PM","9:30 PM","10:00 PM","10:30 PM","11:00 PM","11:30 PM"],"innerText":"'undefined'","backgroundColor":"#ADD8E6","color":"black","height":"7%","width":"35%"}]}
+        
+      > 
+     
+        <Picker.Item label={"12:00 AM"} value={"12:00 AM"} />
+        <Picker.Item label={"12:30 AM"} value={"12:30 AM"} />
+        <Picker.Item label={"1:00 AM"} value={"1:00 AM"} />
+        <Picker.Item label={"1:30 AM"} value={"1:30 AM"} />
+        <Picker.Item label={"2:00 AM"} value={"2:00 AM"} />
+        <Picker.Item label={"2:30 AM"} value={"2:30 AM"} />
+        <Picker.Item label={"3:00 AM"} value={"3:00 AM"} />
+        <Picker.Item label={"3:30 AM"} value={"3:30 AM"} />
+        <Picker.Item label={"4:00 AM"} value={"4:00 AM"} />
+        <Picker.Item label={"4:30 AM"} value={"4:30 AM"} />
+        <Picker.Item label={"5:00 AM"} value={"5:00 AM"} />
+        <Picker.Item label={"5:30 AM"} value={"5:30 AM"} />
+        <Picker.Item label={"6:00 AM"} value={"6:00 AM"} />
+        <Picker.Item label={"6:30 AM"} value={"6:30 AM"} />
+        <Picker.Item label={"7:00 AM"} value={"7:00 AM"} />
+        <Picker.Item label={"7:30 AM"} value={"7:30 AM"} /><Picker.Item label={"8:00 AM"} value={"8:00 AM"} /><Picker.Item label={"8:30 AM"} value={"8:30 AM"} /><Picker.Item label={"9:00 AM"} value={"9:00 AM"} /><Picker.Item label={"9:30 AM"} value={"9:30 AM"} /><Picker.Item label={"10:00 AM"} value={"10:00 AM"} /><Picker.Item label={"10:30 AM"} value={"10:30 AM"} /><Picker.Item label={"11:00 AM"} value={"11:00 AM"} /><Picker.Item label={"11:30 AM"} value={"11:30 AM"} /><Picker.Item label={"12:00 PM"} value={"12:00 PM"} /><Picker.Item label={"12:30 PM"} value={"12:30 PM"} /><Picker.Item label={"1:00 PM"} value={"1:00 PM"} /><Picker.Item label={"1:30 PM"} value={"1:30 PM"} /><Picker.Item label={"2:00 PM"} value={"2:00 PM"} /><Picker.Item label={"2:30 PM"} value={"2:30 PM"} /><Picker.Item label={"3:00 PM"} value={"3:00 PM"} /><Picker.Item label={"3:30 PM"} value={"3:30 PM"} /><Picker.Item label={"4:00 PM"} value={"4:00 PM"} /><Picker.Item label={"4:30 PM"} value={"4:30 PM"} /><Picker.Item label={"5:00 PM"} value={"5:00 PM"} /><Picker.Item label={"5:30 PM"} value={"5:30 PM"} /><Picker.Item label={"6:00 PM"} value={"6:00 PM"} /><Picker.Item label={"6:30 PM"} value={"6:30 PM"} /><Picker.Item label={"7:00 PM"} value={"7:00 PM"} /><Picker.Item label={"7:30 PM"} value={"7:30 PM"} /><Picker.Item label={"8:00 PM"} value={"8:00 PM"} /><Picker.Item label={"8:30 PM"} value={"8:30 PM"} /><Picker.Item label={"9:00 PM"} value={"9:00 PM"} /><Picker.Item label={"9:30 PM"} value={"9:30 PM"} /><Picker.Item label={"10:00 PM"} value={"10:00 PM"} /><Picker.Item label={"10:30 PM"} value={"10:30 PM"} /><Picker.Item label={"11:00 PM"} value={"11:00 PM"} /><Picker.Item label={"11:30 PM"} value={"11:30 PM"} />
+      </Picker>
+
+      <Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'Time:'","top":"77.29%","left":"13.15%","width":"100%"}]}
+        > {'3rd Time:'} </Text>
+        
+<Picker
+      itemStyle = {{height:"100%"}}
+         selectedValue={appData["ReminderDetailspicker19"]}
+         onValueChange={function(val){  appData["ReminderDetailspicker19"] = val; that.forceUpdate();   } }
+        style= {[{position:'absolute',height:'5%',width:'50%'}, 
+        {"top":"80%","left":"13.38%","options":
+        ["12:00 AM","12:30 AM","1:00 AM","1:30 AM","2:00 AM","2:30 AM","3:00 AM","3:30 AM","4:00 AM","4:30 AM","5:00 AM","5:30 AM","6:00 AM","6:30 AM","7:00 AM","7:30 AM","8:00 AM","8:30 AM","9:00 AM","9:30 AM","10:00 AM","10:30 AM","11:00 AM","11:30 AM","12:00 PM","12:30 PM","1:00 PM","1:30 PM","2:00 PM","2:30 PM","3:00 PM","3:30 PM","4:00 PM","4:30 PM","5:00 PM","5:30 PM","6:00 PM","6:30 PM","7:00 PM","7:30 PM","8:00 PM","8:30 PM","9:00 PM","9:30 PM","10:00 PM","10:30 PM","11:00 PM","11:30 PM"],"innerText":"'undefined'","backgroundColor":"#ADD8E6","color":"black","height":"7%","width":"35%"}]}
+        
+      > 
+     
+        <Picker.Item label={"12:00 AM"} value={"12:00 AM"} />
+        <Picker.Item label={"12:30 AM"} value={"12:30 AM"} />
+        <Picker.Item label={"1:00 AM"} value={"1:00 AM"} />
+        <Picker.Item label={"1:30 AM"} value={"1:30 AM"} />
+        <Picker.Item label={"2:00 AM"} value={"2:00 AM"} />
+        <Picker.Item label={"2:30 AM"} value={"2:30 AM"} />
+        <Picker.Item label={"3:00 AM"} value={"3:00 AM"} />
+        <Picker.Item label={"3:30 AM"} value={"3:30 AM"} />
+        <Picker.Item label={"4:00 AM"} value={"4:00 AM"} />
+        <Picker.Item label={"4:30 AM"} value={"4:30 AM"} />
+        <Picker.Item label={"5:00 AM"} value={"5:00 AM"} />
+        <Picker.Item label={"5:30 AM"} value={"5:30 AM"} />
+        <Picker.Item label={"6:00 AM"} value={"6:00 AM"} />
+        <Picker.Item label={"6:30 AM"} value={"6:30 AM"} />
+        <Picker.Item label={"7:00 AM"} value={"7:00 AM"} />
+        <Picker.Item label={"7:30 AM"} value={"7:30 AM"} /><Picker.Item label={"8:00 AM"} value={"8:00 AM"} /><Picker.Item label={"8:30 AM"} value={"8:30 AM"} /><Picker.Item label={"9:00 AM"} value={"9:00 AM"} /><Picker.Item label={"9:30 AM"} value={"9:30 AM"} /><Picker.Item label={"10:00 AM"} value={"10:00 AM"} /><Picker.Item label={"10:30 AM"} value={"10:30 AM"} /><Picker.Item label={"11:00 AM"} value={"11:00 AM"} /><Picker.Item label={"11:30 AM"} value={"11:30 AM"} /><Picker.Item label={"12:00 PM"} value={"12:00 PM"} /><Picker.Item label={"12:30 PM"} value={"12:30 PM"} /><Picker.Item label={"1:00 PM"} value={"1:00 PM"} /><Picker.Item label={"1:30 PM"} value={"1:30 PM"} /><Picker.Item label={"2:00 PM"} value={"2:00 PM"} /><Picker.Item label={"2:30 PM"} value={"2:30 PM"} /><Picker.Item label={"3:00 PM"} value={"3:00 PM"} /><Picker.Item label={"3:30 PM"} value={"3:30 PM"} /><Picker.Item label={"4:00 PM"} value={"4:00 PM"} /><Picker.Item label={"4:30 PM"} value={"4:30 PM"} /><Picker.Item label={"5:00 PM"} value={"5:00 PM"} /><Picker.Item label={"5:30 PM"} value={"5:30 PM"} /><Picker.Item label={"6:00 PM"} value={"6:00 PM"} /><Picker.Item label={"6:30 PM"} value={"6:30 PM"} /><Picker.Item label={"7:00 PM"} value={"7:00 PM"} /><Picker.Item label={"7:30 PM"} value={"7:30 PM"} /><Picker.Item label={"8:00 PM"} value={"8:00 PM"} /><Picker.Item label={"8:30 PM"} value={"8:30 PM"} /><Picker.Item label={"9:00 PM"} value={"9:00 PM"} /><Picker.Item label={"9:30 PM"} value={"9:30 PM"} /><Picker.Item label={"10:00 PM"} value={"10:00 PM"} /><Picker.Item label={"10:30 PM"} value={"10:30 PM"} /><Picker.Item label={"11:00 PM"} value={"11:00 PM"} /><Picker.Item label={"11:30 PM"} value={"11:30 PM"} />
+      </Picker>
+
+      <Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'Time:'","top":"77.29%","left":"53.15%","width":"100%"}]}
+        > {'4th Time:'} </Text>
+        
+<Picker
+      itemStyle = {{height:"100%"}}
+         selectedValue={appData["ReminderDetailspicker19"]}
+         onValueChange={function(val){  appData["ReminderDetailspicker19"] = val; that.forceUpdate();   } }
+        style= {[{position:'absolute',height:'5%',width:'50%'}, 
+        {"top":"80%","left":"53.38%","options":
+        ["12:00 AM","12:30 AM","1:00 AM","1:30 AM","2:00 AM","2:30 AM","3:00 AM","3:30 AM","4:00 AM","4:30 AM","5:00 AM","5:30 AM","6:00 AM","6:30 AM","7:00 AM","7:30 AM","8:00 AM","8:30 AM","9:00 AM","9:30 AM","10:00 AM","10:30 AM","11:00 AM","11:30 AM","12:00 PM","12:30 PM","1:00 PM","1:30 PM","2:00 PM","2:30 PM","3:00 PM","3:30 PM","4:00 PM","4:30 PM","5:00 PM","5:30 PM","6:00 PM","6:30 PM","7:00 PM","7:30 PM","8:00 PM","8:30 PM","9:00 PM","9:30 PM","10:00 PM","10:30 PM","11:00 PM","11:30 PM"],"innerText":"'undefined'","backgroundColor":"#ADD8E6","color":"black","height":"7%","width":"35%"}]}
+        
+      > 
+     
+        <Picker.Item label={"12:00 AM"} value={"12:00 AM"} />
+        <Picker.Item label={"12:30 AM"} value={"12:30 AM"} />
+        <Picker.Item label={"1:00 AM"} value={"1:00 AM"} />
+        <Picker.Item label={"1:30 AM"} value={"1:30 AM"} />
+        <Picker.Item label={"2:00 AM"} value={"2:00 AM"} />
+        <Picker.Item label={"2:30 AM"} value={"2:30 AM"} />
+        <Picker.Item label={"3:00 AM"} value={"3:00 AM"} />
+        <Picker.Item label={"3:30 AM"} value={"3:30 AM"} />
+        <Picker.Item label={"4:00 AM"} value={"4:00 AM"} />
+        <Picker.Item label={"4:30 AM"} value={"4:30 AM"} />
+        <Picker.Item label={"5:00 AM"} value={"5:00 AM"} />
+        <Picker.Item label={"5:30 AM"} value={"5:30 AM"} />
+        <Picker.Item label={"6:00 AM"} value={"6:00 AM"} />
+        <Picker.Item label={"6:30 AM"} value={"6:30 AM"} />
+        <Picker.Item label={"7:00 AM"} value={"7:00 AM"} />
+        <Picker.Item label={"7:30 AM"} value={"7:30 AM"} /><Picker.Item label={"8:00 AM"} value={"8:00 AM"} /><Picker.Item label={"8:30 AM"} value={"8:30 AM"} /><Picker.Item label={"9:00 AM"} value={"9:00 AM"} /><Picker.Item label={"9:30 AM"} value={"9:30 AM"} /><Picker.Item label={"10:00 AM"} value={"10:00 AM"} /><Picker.Item label={"10:30 AM"} value={"10:30 AM"} /><Picker.Item label={"11:00 AM"} value={"11:00 AM"} /><Picker.Item label={"11:30 AM"} value={"11:30 AM"} /><Picker.Item label={"12:00 PM"} value={"12:00 PM"} /><Picker.Item label={"12:30 PM"} value={"12:30 PM"} /><Picker.Item label={"1:00 PM"} value={"1:00 PM"} /><Picker.Item label={"1:30 PM"} value={"1:30 PM"} /><Picker.Item label={"2:00 PM"} value={"2:00 PM"} /><Picker.Item label={"2:30 PM"} value={"2:30 PM"} /><Picker.Item label={"3:00 PM"} value={"3:00 PM"} /><Picker.Item label={"3:30 PM"} value={"3:30 PM"} /><Picker.Item label={"4:00 PM"} value={"4:00 PM"} /><Picker.Item label={"4:30 PM"} value={"4:30 PM"} /><Picker.Item label={"5:00 PM"} value={"5:00 PM"} /><Picker.Item label={"5:30 PM"} value={"5:30 PM"} /><Picker.Item label={"6:00 PM"} value={"6:00 PM"} /><Picker.Item label={"6:30 PM"} value={"6:30 PM"} /><Picker.Item label={"7:00 PM"} value={"7:00 PM"} /><Picker.Item label={"7:30 PM"} value={"7:30 PM"} /><Picker.Item label={"8:00 PM"} value={"8:00 PM"} /><Picker.Item label={"8:30 PM"} value={"8:30 PM"} /><Picker.Item label={"9:00 PM"} value={"9:00 PM"} /><Picker.Item label={"9:30 PM"} value={"9:30 PM"} /><Picker.Item label={"10:00 PM"} value={"10:00 PM"} /><Picker.Item label={"10:30 PM"} value={"10:30 PM"} /><Picker.Item label={"11:00 PM"} value={"11:00 PM"} /><Picker.Item label={"11:30 PM"} value={"11:30 PM"} />
+      </Picker>
+
+
+
+
 <Text
           style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'How Often:'","top":"51.64%","left":"13%","width":"100%"}]}
         > {'How Often:'} </Text>
+
+
         
 <Picker
-         value={appData["ReminderDetailspicker22"]}
+         selectedValue={appData["ReminderDetailspicker22"]}
          onValueChange={function(val){ appData["ReminderDetailspicker22"] = val; that.forceUpdate();   } }
         style= {[{position:'absolute',height:'5%',width:'40%'}, {"top":"53.84%","left":"12.44%","backgroundColor":"#ADD8E6","color":"black","options":["Once per day","Twice per day","3 times per day","4 times per day"],"height":"7%"}]}
         itemStyle = {{height:"100%"}}
       > 
-        <Picker.Item label={"Select"} value={"Select"} />
-        <Picker.Item label={"Option1"} value={"Option1"} />
-        <Picker.Item label={"Once per day"} value={"Once per day"} /><Picker.Item label={"Twice per day"} value={"Twice per day"} /><Picker.Item label={"3 times per day"} value={"3 times per day"} /><Picker.Item label={"4 times per day"} value={"4 times per day"} />
+        <Picker.Item label={"Once per day"} value={"Once per day"} />
+        <Picker.Item label={"Twice per day"} value={"Twice per day"} />
+        <Picker.Item label={"3 times per day"} value={"3 times per day"} /><Picker.Item label={"4 times per day"} value={"4 times per day"} />
       </Picker>
  <TouchableOpacity
           
@@ -422,21 +557,7 @@ timeAndDate.getFullYear(); timeAndDate.getMonth(); timeAndDate.getDate(); timeAn
 console.log(timeAndDate);
 appData.ReminderDetailsinput3 = "";
 appData.ReminderDetailspicker19 = "12:00 AM";
-if (appData.pickerB > 0) {
-    appData.ReminderDetailspicker25 = "12:00 AM";
-    removeElement(appData.pickerB);
-    appData.pickerB = -1;
-}
-if (appData.pickerC > 0) {
-    appData.ReminderDetailspicker26 = "12:00 AM";
-    removeElement(appData.pickerC);
-    appData.pickerC = -1;
-}
-if (appData.pickerD > 0) {
-    appData.ReminderDetailspicker27 = "12:00 AM";
-    removeElement(appData.pickerD);
-    appData.pickerD = -1;
-}
+
 that.props.goTo('Home');; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
@@ -450,7 +571,10 @@ that.props.goTo('Home');; that.forceUpdate(); }}
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Save Reminder'","top":"87.77%","left":"36.13%","backgroundColor":"#ADD8E6","height":"9%"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', 
+            alignItems:'center',justifyContent:'center', height: "7%",  
+            title:'Test', borderColor: 'gray', color:'black', borderRadius:15, 
+            borderWidth: 1},{"innerText":"'Save Reminder'","top":"89.07%","left":"36.13%","backgroundColor":"#ADD8E6","height":"9%"}]}
         >
         <Text style = {{color:"black"}}>
 
@@ -460,7 +584,10 @@ that.props.goTo('Home');; that.forceUpdate(); }}
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){if (appData.ReminderDetailspicker22 == "Once per day") {
+          onPress = { function(){
+
+            if (appData.ReminderDetailspicker22 == "Once per day") {
+  
     if (appData.pickerB > 0) {
         removeElement(appData.pickerB);
         appData.pickerB = -1;
@@ -476,7 +603,7 @@ that.props.goTo('Home');; that.forceUpdate(); }}
 }
 if (appData.ReminderDetailspicker22 == "Twice per day") {
     if (appData.pickerB < 0) {
-       appData.pickerB = createElement("picker", {"top":"54.43%","left":"56.04%","width":"35%","height":"7%","options":["12:00 AM","12:30 AM","1:00 AM","1:30 AM","2:00 AM","2:30 AM","3:00 AM","3:30 AM","4:00 AM","4:30 AM","5:00 AM","5:30 AM","6:00 AM","6:30 AM","7:00 AM","7:30 AM","8:00 AM","8:30 AM","9:00 AM","9:30 AM","10:00 AM","10:30 AM","11:00 AM","11:30 AM","12:00 PM","12:30 PM","1:00 PM","1:30 PM","2:00 PM","2:30 PM","3:00 PM","3:30 PM","4:00 PM","4:30 PM","5:00 PM","5:30 PM","6:00 PM","6:30 PM","7:00 PM","7:30 PM","8:00 PM","8:30 PM","9:00 PM","9:30 PM","10:00 PM","10:30 PM","11:00 PM","11:30 PM"],"innerText":"undefined","backgroundColor":"#ADD8E6","color":"black"});
+       appData.pickerB = that.createElement.bind(that)("picker", {"top":"54.43%","left":"56.04%","width":"35%","height":"7%","options":["12:00 AM","12:30 AM","1:00 AM","1:30 AM","2:00 AM","2:30 AM","3:00 AM","3:30 AM","4:00 AM","4:30 AM","5:00 AM","5:30 AM","6:00 AM","6:30 AM","7:00 AM","7:30 AM","8:00 AM","8:30 AM","9:00 AM","9:30 AM","10:00 AM","10:30 AM","11:00 AM","11:30 AM","12:00 PM","12:30 PM","1:00 PM","1:30 PM","2:00 PM","2:30 PM","3:00 PM","3:30 PM","4:00 PM","4:30 PM","5:00 PM","5:30 PM","6:00 PM","6:30 PM","7:00 PM","7:30 PM","8:00 PM","8:30 PM","9:00 PM","9:30 PM","10:00 PM","10:30 PM","11:00 PM","11:30 PM"],"innerText":"undefined","backgroundColor":"#ADD8E6","color":"black"});
     }
     if (appData.pickerC > 0) {
         removeElement(appData.pickerC);
@@ -490,10 +617,10 @@ if (appData.ReminderDetailspicker22 == "Twice per day") {
 }
 if (appData.ReminderDetailspicker22 == "3 times per day") {
   if (appData.pickerB < 0) {
-       appData.pickerB = createElement("picker", {"top":"54.43%","left":"56.04%","width":"35%","height":"7%","options":["12:00 AM","12:30 AM","1:00 AM","1:30 AM","2:00 AM","2:30 AM","3:00 AM","3:30 AM","4:00 AM","4:30 AM","5:00 AM","5:30 AM","6:00 AM","6:30 AM","7:00 AM","7:30 AM","8:00 AM","8:30 AM","9:00 AM","9:30 AM","10:00 AM","10:30 AM","11:00 AM","11:30 AM","12:00 PM","12:30 PM","1:00 PM","1:30 PM","2:00 PM","2:30 PM","3:00 PM","3:30 PM","4:00 PM","4:30 PM","5:00 PM","5:30 PM","6:00 PM","6:30 PM","7:00 PM","7:30 PM","8:00 PM","8:30 PM","9:00 PM","9:30 PM","10:00 PM","10:30 PM","11:00 PM","11:30 PM"],"innerText":"undefined","backgroundColor":"#ADD8E6","color":"black"});
+       appData.pickerB = that.createElement.bind(that)("picker", {"top":"54.43%","left":"56.04%","width":"35%","height":"7%","options":["12:00 AM","12:30 AM","1:00 AM","1:30 AM","2:00 AM","2:30 AM","3:00 AM","3:30 AM","4:00 AM","4:30 AM","5:00 AM","5:30 AM","6:00 AM","6:30 AM","7:00 AM","7:30 AM","8:00 AM","8:30 AM","9:00 AM","9:30 AM","10:00 AM","10:30 AM","11:00 AM","11:30 AM","12:00 PM","12:30 PM","1:00 PM","1:30 PM","2:00 PM","2:30 PM","3:00 PM","3:30 PM","4:00 PM","4:30 PM","5:00 PM","5:30 PM","6:00 PM","6:30 PM","7:00 PM","7:30 PM","8:00 PM","8:30 PM","9:00 PM","9:30 PM","10:00 PM","10:30 PM","11:00 PM","11:30 PM"],"innerText":"undefined","backgroundColor":"#ADD8E6","color":"black"});
     }
     if (appData.pickerC < 0) {
-       appData.pickerC = createElement("picker",{"top":"56.61%","left":"13.38%","width":"35%","height":"7%","options":["12:00 AM","12:30 AM","1:00 AM","1:30 AM","2:00 AM","2:30 AM","3:00 AM","3:30 AM","4:00 AM","4:30 AM","5:00 AM","5:30 AM","6:00 AM","6:30 AM","7:00 AM","7:30 AM","8:00 AM","8:30 AM","9:00 AM","9:30 AM","10:00 AM","10:30 AM","11:00 AM","11:30 AM","12:00 PM","12:30 PM","1:00 PM","1:30 PM","2:00 PM","2:30 PM","3:00 PM","3:30 PM","4:00 PM","4:30 PM","5:00 PM","5:30 PM","6:00 PM","6:30 PM","7:00 PM","7:30 PM","8:00 PM","8:30 PM","9:00 PM","9:30 PM","10:00 PM","10:30 PM","11:00 PM","11:30 PM"],"innerText":"undefined","backgroundColor":"#ADD8E6","color":"black"});
+       appData.pickerC = that.createElement.bind(that)("picker",{"top":"56.61%","left":"13.38%","width":"35%","height":"7%","options":["12:00 AM","12:30 AM","1:00 AM","1:30 AM","2:00 AM","2:30 AM","3:00 AM","3:30 AM","4:00 AM","4:30 AM","5:00 AM","5:30 AM","6:00 AM","6:30 AM","7:00 AM","7:30 AM","8:00 AM","8:30 AM","9:00 AM","9:30 AM","10:00 AM","10:30 AM","11:00 AM","11:30 AM","12:00 PM","12:30 PM","1:00 PM","1:30 PM","2:00 PM","2:30 PM","3:00 PM","3:30 PM","4:00 PM","4:30 PM","5:00 PM","5:30 PM","6:00 PM","6:30 PM","7:00 PM","7:30 PM","8:00 PM","8:30 PM","9:00 PM","9:30 PM","10:00 PM","10:30 PM","11:00 PM","11:30 PM"],"innerText":"undefined","backgroundColor":"#ADD8E6","color":"black"});
     }
     if (appData.pickerD > 0) {
         removeElement(appData.pickerD);
@@ -502,13 +629,13 @@ if (appData.ReminderDetailspicker22 == "3 times per day") {
 }
 if (appData.ReminderDetailspicker22 == "4 times per day") {
     if (appData.pickerB < 0) {
-        appData.pickerB = createElement("picker", {"top":"54.43%","left":"56.04%","width":"35%","height":"7%","options":["12:00 AM","12:30 AM","1:00 AM","1:30 AM","2:00 AM","2:30 AM","3:00 AM","3:30 AM","4:00 AM","4:30 AM","5:00 AM","5:30 AM","6:00 AM","6:30 AM","7:00 AM","7:30 AM","8:00 AM","8:30 AM","9:00 AM","9:30 AM","10:00 AM","10:30 AM","11:00 AM","11:30 AM","12:00 PM","12:30 PM","1:00 PM","1:30 PM","2:00 PM","2:30 PM","3:00 PM","3:30 PM","4:00 PM","4:30 PM","5:00 PM","5:30 PM","6:00 PM","6:30 PM","7:00 PM","7:30 PM","8:00 PM","8:30 PM","9:00 PM","9:30 PM","10:00 PM","10:30 PM","11:00 PM","11:30 PM"],"innerText":"undefined","backgroundColor":"#ADD8E6","color":"black"});
+        appData.pickerB = that.createElement.bind(that)("picker", {"top":"54.43%","left":"56.04%","width":"35%","height":"7%","options":["12:00 AM","12:30 AM","1:00 AM","1:30 AM","2:00 AM","2:30 AM","3:00 AM","3:30 AM","4:00 AM","4:30 AM","5:00 AM","5:30 AM","6:00 AM","6:30 AM","7:00 AM","7:30 AM","8:00 AM","8:30 AM","9:00 AM","9:30 AM","10:00 AM","10:30 AM","11:00 AM","11:30 AM","12:00 PM","12:30 PM","1:00 PM","1:30 PM","2:00 PM","2:30 PM","3:00 PM","3:30 PM","4:00 PM","4:30 PM","5:00 PM","5:30 PM","6:00 PM","6:30 PM","7:00 PM","7:30 PM","8:00 PM","8:30 PM","9:00 PM","9:30 PM","10:00 PM","10:30 PM","11:00 PM","11:30 PM"],"innerText":"undefined","backgroundColor":"#ADD8E6","color":"black"});
     }
     if (appData.pickerC < 0) {
-       appData.pickerC = createElement("picker",{"top":"56.61%","left":"13.38%","width":"35%","height":"7%","options":["12:00 AM","12:30 AM","1:00 AM","1:30 AM","2:00 AM","2:30 AM","3:00 AM","3:30 AM","4:00 AM","4:30 AM","5:00 AM","5:30 AM","6:00 AM","6:30 AM","7:00 AM","7:30 AM","8:00 AM","8:30 AM","9:00 AM","9:30 AM","10:00 AM","10:30 AM","11:00 AM","11:30 AM","12:00 PM","12:30 PM","1:00 PM","1:30 PM","2:00 PM","2:30 PM","3:00 PM","3:30 PM","4:00 PM","4:30 PM","5:00 PM","5:30 PM","6:00 PM","6:30 PM","7:00 PM","7:30 PM","8:00 PM","8:30 PM","9:00 PM","9:30 PM","10:00 PM","10:30 PM","11:00 PM","11:30 PM"],"innerText":"undefined","backgroundColor":"#ADD8E6","color":"black"});
+       appData.pickerC = that.createElement.bind(that)("picker",{"top":"56.61%","left":"13.38%","width":"35%","height":"7%","options":["12:00 AM","12:30 AM","1:00 AM","1:30 AM","2:00 AM","2:30 AM","3:00 AM","3:30 AM","4:00 AM","4:30 AM","5:00 AM","5:30 AM","6:00 AM","6:30 AM","7:00 AM","7:30 AM","8:00 AM","8:30 AM","9:00 AM","9:30 AM","10:00 AM","10:30 AM","11:00 AM","11:30 AM","12:00 PM","12:30 PM","1:00 PM","1:30 PM","2:00 PM","2:30 PM","3:00 PM","3:30 PM","4:00 PM","4:30 PM","5:00 PM","5:30 PM","6:00 PM","6:30 PM","7:00 PM","7:30 PM","8:00 PM","8:30 PM","9:00 PM","9:30 PM","10:00 PM","10:30 PM","11:00 PM","11:30 PM"],"innerText":"undefined","backgroundColor":"#ADD8E6","color":"black"});
     }
     if (appData.pickerD < 0) {
-        appData.pickerD = createElement("picker",{"top":"49.63%","width":"35%","height":"7%","left":"56.27%","options":["12:00 AM","12:30 AM","1:00 AM","1:30 AM","2:00 AM","2:30 AM","3:00 AM","3:30 AM","4:00 AM","4:30 AM","5:00 AM","5:30 AM","6:00 AM","6:30 AM","7:00 AM","7:30 AM","8:00 AM","8:30 AM","9:00 AM","9:30 AM","10:00 AM","10:30 AM","11:00 AM","11:30 AM","12:00 PM","12:30 PM","1:00 PM","1:30 PM","2:00 PM","2:30 PM","3:00 PM","3:30 PM","4:00 PM","4:30 PM","5:00 PM","5:30 PM","6:00 PM","6:30 PM","7:00 PM","7:30 PM","8:00 PM","8:30 PM","9:00 PM","9:30 PM","10:00 PM","10:30 PM","11:00 PM","11:30 PM"],"innerText":"undefined","backgroundColor":"#ADD8E6","color":"black"});
+        appData.pickerD = that.createElement.bind(that)("picker",{"top":"49.63%","width":"35%","height":"7%","left":"56.27%","options":["12:00 AM","12:30 AM","1:00 AM","1:30 AM","2:00 AM","2:30 AM","3:00 AM","3:30 AM","4:00 AM","4:30 AM","5:00 AM","5:30 AM","6:00 AM","6:30 AM","7:00 AM","7:30 AM","8:00 AM","8:30 AM","9:00 AM","9:30 AM","10:00 AM","10:30 AM","11:00 AM","11:30 AM","12:00 PM","12:30 PM","1:00 PM","1:30 PM","2:00 PM","2:30 PM","3:00 PM","3:30 PM","4:00 PM","4:30 PM","5:00 PM","5:30 PM","6:00 PM","6:30 PM","7:00 PM","7:30 PM","8:00 PM","8:30 PM","9:00 PM","9:30 PM","10:00 PM","10:30 PM","11:00 PM","11:30 PM"],"innerText":"undefined","backgroundColor":"#ADD8E6","color":"black"});
     }
 }; that.forceUpdate(); }}  
           style= {[{
@@ -523,7 +650,10 @@ if (appData.ReminderDetailspicker22 == "4 times per day") {
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"55.05%","left":"68.6%","innerText":"'Confirm'","backgroundColor":"#ADD8E6","width":"23%","fontSize":"resizeFont(13.5)"}]}
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center',
+             height: "7%",  title:'Test', borderColor: 'gray', color:'black', 
+             borderRadius:15, borderWidth: 1},{"top":"54.05%","left":"68.6%","innerText":"'Confirm'","backgroundColor":"#ADD8E6","width":"23%","fontSize":"resizeFont(13.5)"}]}
         >
         <Text style = {{color:"black"}}>
 
@@ -531,6 +661,7 @@ if (appData.ReminderDetailspicker22 == "4 times per day") {
 
        </Text>
         </TouchableOpacity>
+        {global.created}
         </View>
         )
     }

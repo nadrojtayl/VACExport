@@ -259,7 +259,7 @@ that.props.goTo("ReminderDetails");; that.forceUpdate(); }}
             width:"30%",
             position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Vitamin'","top":"20%","left":"20%","justifyContent":"enum: left","backgroundColor":" appData.lightBlueColor;","width":"60%"}]}
         >
-        <Text style = {{color:"black", alignItems:'center', textAlign:'center'}}>
+        <Text style = {{color:"black", alignItems:'center', width:"100%", textAlign:'center'}}>
 
         {'Vitamin'}
 

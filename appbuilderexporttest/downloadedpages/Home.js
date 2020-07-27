@@ -228,7 +228,7 @@ function unwrap_dynamically(value,default_value){
     render(){ 
       var that = this; 
       appData.this = this;
-      
+      alert(JSON.stringify(mhDatabase));
       if(!that.props.loaded){
         return(<View style = {{height:'100%',width:'100%', alignItems:'center',justifyContent:'center'}}>
         <ActivityIndicator size="large" />
@@ -264,14 +264,20 @@ function unwrap_dynamically(value,default_value){
 
        </Text>
         </TouchableOpacity>
-<Multiplier
-      goTo = {that.props.goTo}
-      type = {"text"}
-      data = { mhDatabase}
-      style = {[{alignItems:'center',position:'absolute',height:'60%',width:'80%'},{"top":"15.82%","left":"2.5%","options":" mhDatabase;","repeaterinnerText":"  elem[\"Name\"]+\" taken on \"+elem[\"Day Taken\"].replace(\"[\",\"\").replace(\"]\",\"\").split('\"').join(\"\").split(',').join(', ')+\", \"+elem[\"How Often\"]+\" at \"+elem[\"Time Taken\"].replace(\"[\",\"\").replace(\"]\",\"\").split('\"').join(\"\").split(',').join(', ');\n//styleValue = elem[\"Name\"]+\": \"+elem[\"How Often\"]+\" at \"+elem[\"Time Taken\"].replace(\"[\",\"\").replace(\"]\",\"\").split('\"').join(\"\").split(',').join(', ')\" on \"+elem[\"Day Taken\"].replace(\"[\",\"\").replace(\"]\",\"\").split('\"').join(\"\").split(',').join(', ');\nstyleValue = elem[\"Name\"]+\": \"+elem[\"How Often\"]+\" at \"+elem[\"Time Taken\"].replace(\"[\",\"\").replace(\"]\",\"\").split('\"').join(\"\").split(',').join(', ')+\" on \"+elem[\"Day Taken\"].replace(\"[\",\"\").replace(\"]\",\"\").split('\"').join(\"\").split(',').join(', ');","backgroundColor":"transparent","repeateropacity":"","repeaterbackgroundColor":"transparent","repeaterwidth":"100%","width":"95%","height":"67%","repeaterscroll":{"background":"#ADD8E6"},"repeatermarginTop":"7%","fontSize":"resizeFont(8)","repeaterfontSize":12.25}]}
-      clickfunction = {function(){}}
-      >
-      </Multiplier>
+        <View style = {{height:"70%", backgroundColor:'grey',position:'absolute',top:"15%", alignItems:'center'}}>
+         <ScrollView >
+         <View style = {{alignItems:'center', justifyContent:'center'}}>
+          {
+            mhDatabase.filter(function(obj){
+              alert(appData["Welcomeinput2"]);
+              return obj["Name"] === appData["Welcomeinput2"];
+            }).map(function(elem){
+              return (<Text style = {{textAlign:'center', marginTop:"5%"}}>{elem["Name"]+" taken on "+elem["Day Taken"].replace("[","").replace("]","").split('"').join("").split(',').join(', ')+", "+elem["How Often"]+" at "+elem["Time Taken"].replace("[","").replace("]","").split('"').join("").split(',').join(', ')}</Text>)
+            })
+          }
+          </View>
+          </ScrollView>
+          </View>
         </View>
         )
     }
