@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import { ActivityIndicator, Button, Picker, Switch, Image, ScrollView, TouchableOpacity, StyleSheet, Text, View, TextInput, Dimensions } from "react-native";
 import Calendar from "./Calendar.js";
@@ -208,7 +209,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class Museums extends React.Component {
      
 
     constructor(props)
@@ -235,10 +236,16 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
-       <TouchableOpacity
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#C8A2C8"}}>
+        <TouchableOpacity
           
-          onPress = { function(){appData.selectedArtist = ""; that.props.goTo("PAINTER"); that.forceUpdate(); }}  
+          onPress = { function(){
+           
+          
+
+         that.props.goTo("FirstPage");
+
+          }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -249,113 +256,37 @@ function unwrap_dynamically(value,default_value){
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            height:"7%",
+            height:"5%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"24.98%","left":"34.16%","innerText":"'Painters'","source":"https://cdn11.bigcommerce.com/s-5qg929/images/stencil/1280x1280/products/166/2390/wide_paint_brush__21198.1507840591.jpg?c=2&imbypass=on","width":100,"justifyContent":"center","backgroundColor":"#749be8"}]}
+            position:'absolute',
+            top:'5%',
+            backgroundColor:'#8fd158', 
+            alignItems:'center',justifyContent:'center',  
+             title:'Test', borderColor: 'gray',
+              color:'black', 
+             borderRadius:15, borderWidth: 1},{
+              "innerText":"'Home'"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Painters'}
+        {'Back'}
 
        </Text>
         </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){appData.selectedArtist = ""; that.props.goTo("PAINTER"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"39.74%","left":"35.43%","innerText":"'Drawers'","backgroundColor":"#70cf7f"}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {'Drawers'}
-
-       </Text>
-        </TouchableOpacity>
-
-<TouchableOpacity
-          
-          onPress = { function(){appData.selectedArtist = ""; that.props.goTo("Museums"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0,
-             backgroundColor:'red', alignItems:'center',
-             justifyContent:'center', height: "7%",  title:'Test',
-              borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{
-                "top":"68.2%","left":"36.19%","innerText":"'Photographers'","width":125,"height":40,"backgroundColor":"white"}]}
-        >
-        <Text style = {{textAlign:'center', color:"black"}}>
-
-        {'Recommended museums'}
-
-       </Text>
-        </TouchableOpacity>
-
- <TouchableOpacity
-          
-          onPress = { function(){appData.selectedArtist = ""; that.props.goTo("PAINTER"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0,
-             backgroundColor:'#8fd158', alignItems:'center',
-             justifyContent:'center', height: "7%",  title:'Test',
-              borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{
-                "top":"54.2%","left":"36.19%","innerText":"'Photographers'","width":125,"height":40,"backgroundColor":"#fab169"}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {'Photographers'}
-
-       </Text>
-        </TouchableOpacity>
-<Text
-          style= {[{fontFamily:'Baskerville-SemiBoldItalic', position:'absolute',zIndex:100,width:'100%'},{"top":"15%","left":"2.23%","innerText":"'Click an art medium to see different artists who use it'","fontSize":resizeFont(20),"justifyContent":"center","textAlign":"center"}]}
-        > {'Explore artists!'} </Text>
-        <Image
-        style = {{height:'100%',width:'20%', position:'absolute',"top":"0%","left":"0%"}}
-        source = {{uri:link[0]["image"]}}
-        >
-        </Image>
-
-        <Image
-        style = {{height:'100%',width:'20%', position:'absolute',"top":"0%","left":"80%"}}
-        source = {{uri:link[1]["image"]}}
-        >
-        </Image>
-        
+        <View style = {{marginTop:'43%', height:"100%"}}>
+        <Text style = {{textAlign:'center', fontWeight:'bold', textDecorationLine:'underline', fontSize:resizeFont(20)}}>Recommended Museums</Text>
+        {
+          appData.recommendedMuseums.map(function(museum){
+            return (<Text style = {{marginTop:height*0.02, textAlign:'center', fontSize:resizeFont(16)}}>{museum}</Text>)
+          })
+        }
+        </View>
         </View>
         )
     }
   }
-    export default FirstPage; 
+    export default Museums; 
 
+
+
+  

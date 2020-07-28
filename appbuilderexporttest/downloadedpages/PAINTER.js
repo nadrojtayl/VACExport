@@ -297,10 +297,22 @@ export default class PAINTER extends Component {
       </Image>
       </TouchableOpacity>
 
+       <Text style = {{width:'30%', left:'65%', textDecorationLine:'underline', fontWeight:'bold', fontSize:resizeFont(14), backgroundColor:'white', position:'absolute', top:'39%', textAlign:'center'}}>Early Works</Text>
+      <ScrollView style = {{height:'7%',position:'absolute', top:'42%', left:"65%", width:'30%'}}>
+        <Text style = {{backgroundColor:'white',  textAlign:'center'}}>{artist["Early works"]}</Text>
+      </ScrollView>
 
 
-      <Text style = {{backgroundColor:'white', position:'absolute', top:'57%', textAlign:'center'}}>{artist["Blurb"]}</Text>
-      
+      <Text style = {{width:'30%', left:'5%', textDecorationLine:'underline', fontWeight:'bold', fontSize:resizeFont(14), backgroundColor:'white', position:'absolute', top:'42%', textAlign:'center'}}>Style</Text>
+      <ScrollView style = {{height:'20%',position:'absolute', top:'45%', left:"5%", width:'30%'}}>
+        <Text style = {{backgroundColor:'white',  textAlign:'center'}}>{artist["Style"]}</Text>
+      </ScrollView>
+
+
+      <Text style = {{textDecorationLine:'underline', fontWeight:'bold', fontSize:resizeFont(14), backgroundColor:'white', position:'absolute', top:'53%', textAlign:'center'}}>Overview</Text>
+      <ScrollView style = {{height:'10%',position:'absolute', top:'57%',}}>
+        <Text style = {{backgroundColor:'white',  textAlign:'center'}}>{artist["Blurb"]}</Text>
+      </ScrollView>
 
       <TouchableOpacity
           
@@ -321,13 +333,14 @@ export default class PAINTER extends Component {
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            height:"2%",
+            height:"5%",
             width:"30%",
             position:'absolute',
             top:'5%',
             backgroundColor:'#8fd158', 
             alignItems:'center',justifyContent:'center',  
-             title:'Test', borderColor: 'gray', color:'black', 
+             title:'Test', borderColor: 'gray',
+              color:'black', 
              borderRadius:15, borderWidth: 1},{
               "innerText":"'Home'"}]}
         >
@@ -354,8 +367,9 @@ export default class PAINTER extends Component {
           
 
           appData.data = data;
-          alert("\nClosest museums:\n\n\n" + data[0] + "\n\n" + data[1] + "\n\n" + data[3] );
-
+          appData.recommendedMuseums.push(data[0],data[1],data[2]);
+          // alert("\nClosest museums:\n\n\n" + data[0] + "\n\n" + data[1] + "\n\n" + data[3] );
+          alert("OK Saved!");
 
           }}  
           style= {[{
@@ -371,14 +385,52 @@ export default class PAINTER extends Component {
             height:"7%",
             width:"30%",
             backgroundColor:'#8fd158', 
-            alignItems:'center',justifyContent:'center', height: "200%", 
+            alignItems:'center',justifyContent:'center', height: "100%", 
              title:'Test', borderColor: 'gray', color:'black', 
              borderRadius:15, borderWidth: 1},{
               "innerText":"'Home'"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Like'}
+        {'Save to my list'}
+
+       </Text>
+        </TouchableOpacity>
+         <TouchableOpacity
+          
+          onPress = { function(){
+           var data =  
+          museums.filter(function(obj){
+            return obj[artist["Name"]] !== "";
+          }).slice(0,5).map(function(obj){
+            return obj[artist["Name"]]
+          })
+          
+
+          that.props.goTo("Museums");
+
+          }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            backgroundColor:'#8fd158', 
+            alignItems:'center',justifyContent:'center', height: "100%", 
+             title:'Test', borderColor: 'gray', color:'black', 
+             borderRadius:15, borderWidth: 1},{
+              "innerText":"'Home'"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'See my recommended museums'}
 
        </Text>
         </TouchableOpacity>
