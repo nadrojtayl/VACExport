@@ -246,11 +246,11 @@ function unwrap_dynamically(value,default_value){
           style= {[{position:'absolute',zIndex:100,width:'100%'},{
             "innerText":"JSON.parse(JSON.stringify(data[appData.firstGrant][\"Deadline to apply for grant\"]))","top":"24.04%","left":"6.03%"}]}
         > {JSON.parse(JSON.stringify(data[appData.firstGrant]["Deadline to apply for grant"]))} </Text>
-        
+<ScrollView style= {[{height:'10%', position:'absolute'},{"innerText":"JSON.parse(JSON.stringify(data[appData.firstGrant][\"Grant description \"]))","top":"33.96%","left":"5.79%","width":375}]}>
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"JSON.parse(JSON.stringify(data[appData.firstGrant][\"Grant description \"]))","top":"33.96%","left":"5.79%","width":375}]}
+          style= {[{"innerText":"JSON.parse(JSON.stringify(data[appData.firstGrant][\"Grant description \"]))","width":375}]}
         > {JSON.parse(JSON.stringify(data[appData.firstGrant]["Grant description "]))} </Text>
-        
+</ScrollView> 
 <Text
           style= {[{position:'absolute',zIndex:100,width:'100%'},{
             "innerText":"JSON.parse(JSON.stringify(data[appData.firstGrant][\"Grant focus areas (location)\"]))",
@@ -274,7 +274,7 @@ function unwrap_dynamically(value,default_value){
         
 <Text
           style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'Grant Description:'","top":"30.86%","left":"5.79%","color":"orange","fontWeight":"bold"}]}
-        > {'Grant Description:'} </Text>
+        > {'Grant Description (can scroll):'} </Text>
         
 <Text
           style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'Geograhic Scope:'","top":"48.88%","left":"5.55%","height":25,"color":"orange","fontWeight":"bold"}]}
@@ -337,7 +337,9 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"68.55%","left":"36%","innerText":"'Save Grant'"}]}
+            position:'absolute',top:0,left:0,
+             backgroundColor:'#8fd158', 
+             alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"78.65%","left":"36%","innerText":"'Save Grant'"}]}
         >
         <Text style = {{color:"black"}}>
 

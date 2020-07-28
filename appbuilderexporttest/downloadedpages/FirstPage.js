@@ -259,7 +259,11 @@ function unwrap_dynamically(value,default_value){
       goTo = {that.props.goTo}
       type = {"button"}
       data = { appData.myresult}
-      style = {[{alignItems:'center',position:'absolute',height:'60%',width:'80%'},{"top":"16.6%","left":"12.73%","options":" appData.myresult;","repeaterinnerText":"   elem[\"Grantor Name\"];","repeaterType":"button","repeaterbackgroundColor":"#ffbb00","repeaterwidth":"90%","repeatertextDecorationStyle":"italic","repeaterfontSize":16,"repeateronPress":"appData.firstGrant = elem[\"Index\"];\ngoTo(\"GrantTemplate\");\n","repeaterheight":50,"height":"70%"}]}
+      style = {[{alignItems:'center', position:'absolute',
+      height:'40%',width:'80%'},{
+        "top":"22.6%","left":"12.73%","options":" appData.myresult;",
+        "repeaterinnerText":"   elem[\"Grantor Name\"];","repeaterType":"button","repeaterbackgroundColor":"#ffbb00","repeaterwidth":"90%","repeatertextDecorationStyle":"italic","repeaterfontSize":16,"repeateronPress":"appData.firstGrant = elem[\"Index\"];\ngoTo(\"GrantTemplate\");\n",
+      "repeaterheight":height*0.05, repeatermarginTop:height*0.02, "height":"60%"}]}
       clickfunction = {function(){}}
       >
       </Multiplier>
@@ -286,8 +290,9 @@ function unwrap_dynamically(value,default_value){
             position:'absolute',top:0,left:0, backgroundColor:'#8fd158', 
             alignItems:'center',justifyContent:'center', height: "7%",  
             title:'Test', borderColor: 'gray', color:'black', borderRadius:15, 
-            borderWidth: 1},{"height":"4%","innerText":"'Search'","top":"4%",
-            "left":"69%","backgroundColor":"#ffbb00"}]}
+            borderWidth: 1},{
+              "height":"4%","innerText":"'Search'","top":"14%",
+            "left":"39%","backgroundColor":"#ffbb00"}]}
         >
         <Text style = {{color:"black"}}>
 
