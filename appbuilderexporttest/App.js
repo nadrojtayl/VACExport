@@ -9,6 +9,9 @@ import PHOTOGRAPHERS from './downloadedpages/PHOTOGRAPHERS.js'
 import DaVinciDetails from './downloadedpages/DaVinciDetails.js'
 import Sculptors from './downloadedpages/Scuptors.js'
 import appData from './downloadedpages/global.js';
+import Museums from './downloadedpages/Museums.js';
+
+
 /*
 EXPORT PROCESS
 1. Click export in AppBuilder
@@ -86,6 +89,7 @@ this.state = {dbLinks:{}, loaded:false, page:"FirstPage", numLoaded:0}
 }
 
 componentDidMount(){
+  appData.recommendedMuseums = [];
   var that = this;
   var dbLinks = {museums:"https://script.google.com/macros/s/AKfycbwGDmTBl5IV95GKMBdxpMP5VelXYZHDJ5qE8ECjEYjpLmHo-MQ/exec?sheetName=museums","data":"https://script.googleusercontent.com/a/macros/digitaltechhs.org/echo?user_content_key=TJ1016nYZ0DZbO4hzbuwXhn4w8GjDHf5tmhmvMpRJDGUTdsmaO0-eyTgEsB1D6ENPgZh0BqII6nVgZSiALqhZJMREqMeOpD1m5_BxDlH2jW0nuo2oDemN9CCS2h10ox_AUoGWcFkcRNXRXZ8MY7GJqi0KLuFqxv7xbbXQd4eZLDMLbD0tVjOiHhJreuiblCRxGEhNZKuDLliWZdKcaAJdWjzvu2sAxXIBaXBGGtuoifvYXGi_Aw5AmD053358BwcG7RcrVv2q0M&lib=MuTl0KbzMb0P-1mM6u-JMf9ycmz3e6ipK","link":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbx8uQw_4uk3m3ApBlCl80x_3B6hpocK9onsdnja/exec?sheetName=TJ"}
   Object.keys(dbLinks).forEach(function(key){
@@ -227,6 +231,14 @@ render(){
         return(
           <View style = {{width:"100%",height:"100%"}}>
              <DaVinciDetails  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></DaVinciDetails>
+          </View>
+        )
+    }
+
+     if(that.state.page === "Museums"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Museums  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Museums>
           </View>
         )
     }
