@@ -320,7 +320,13 @@ appData.index = appData.index % hairstyles.length ;; that.forceUpdate(); }}
         
  <TouchableOpacity
           
-          onPress = { function(){Linking.openURL(hairstyle["tutorial link"]);; that.forceUpdate(); }}  
+          onPress = { function(){
+
+            if(hairstyle["description"]){
+              alert(hairstyle["description"])
+              return;
+            }
+            Linking.openURL(hairstyle["tutorial link"]);; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
