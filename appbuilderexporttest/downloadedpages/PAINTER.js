@@ -278,15 +278,15 @@ export default class PAINTER extends Component {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#97CAE5'
+    backgroundColor: 'white'
   }}>
 
           <Text
-          style= {[{fontFamily:'Bradley Hand', fontSize:resizeFont(20),position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"13.21%","left":"22.38%","innerText":"' link[0][\"Name\"];'"}]}
+          style= {[{fontFamily:'Bradley Hand', alignItems:'center', color:'white', fontSize:resizeFont(30),position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"13.21%","left":"0%", width:'100%', textAlign:'center', "innerText":"' link[0][\"Name\"];'"}]}
         > {artist["Name"]} </Text>
 
         <TouchableOpacity
-      style= {[{width:"100%",height:"60%", position:'absolute',top:"20.8%",left:modifyPercentage("0%",appData.wiggle)}]}
+      style= {[{width:"100%",height:"100%", position:'absolute',top:"0%",left:modifyPercentage("0%",appData.wiggle)}]}
        onPress = { function(){appData.selectedBio = artist["Url"]; appData.selectedArtist = artist["Name"];   that.forceUpdate(); }}  
       >
       <Image
@@ -321,7 +321,7 @@ export default class PAINTER extends Component {
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            height:"7%",
+            height:"2%",
             width:"30%",
             position:'absolute',
             top:'5%',
