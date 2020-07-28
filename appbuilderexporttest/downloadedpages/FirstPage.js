@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import { ActivityIndicator, Button, Picker, Switch, Image, ScrollView, TouchableOpacity, StyleSheet, Text, View, TextInput, Dimensions } from "react-native";
 import Calendar from "./Calendar.js";
@@ -262,7 +261,7 @@ function unwrap_dynamically(value,default_value){
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){appData.selectedArtist = ""; that.props.goTo("DRAWERS"); that.forceUpdate(); }}  
+          onPress = { function(){appData.selectedArtist = ""; that.props.goTo("PAINTER"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -286,7 +285,7 @@ function unwrap_dynamically(value,default_value){
 
  <TouchableOpacity
           
-          onPress = { function(){appData.selectedArtist = ""; that.props.goTo("PHOTOGRAPHERS"); that.forceUpdate(); }}  
+          onPress = { function(){appData.selectedArtist = ""; that.props.goTo("PAINTER"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -332,6 +331,3 @@ function unwrap_dynamically(value,default_value){
   }
     export default FirstPage; 
 
-
-
-  

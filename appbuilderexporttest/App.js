@@ -1,6 +1,3 @@
-
-
-
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 import FirstPage from './downloadedpages/FirstPage.js'
@@ -14,20 +11,12 @@ import Sculptors from './downloadedpages/Scuptors.js'
 import appData from './downloadedpages/global.js';
 /*
 EXPORT PROCESS
-
 1. Click export in AppBuilder
-
 2. Go through all the pages in the app, click export, and copy the page code into their own files in downloaded pages directory
-
 3. Import pages. In the render function of class App, add if statements that wil render the pages if that.state.page is changed.
-
 4. Fix errors (Adding quotation marks and semicolons where necessary). Go through every page code and replace 'goTo' with 'that.props.goTo'
-
-
 5. Take the generated componentdidmount from the class and paste it over the App class's componentdidmount
-
 6. Delete componentdidmount from generated classes
-
 */
 
 
@@ -372,10 +361,3 @@ const styles = StyleSheet.create({
 
 export default App;
 
-
-
-
-
-
-
-  
