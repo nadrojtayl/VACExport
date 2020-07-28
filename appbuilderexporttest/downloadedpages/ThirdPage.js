@@ -5,6 +5,7 @@ import Calendar from "./Calendar.js";
 import appData from "./global.js";
 import { Audio } from 'expo-av';
 import Multiplier from "./Multiplier.js";
+import Swiper from 'react-native-swiper';
 
 var d = new Date();
 var month = d.getMonth();
@@ -219,12 +220,6 @@ function unwrap_dynamically(value,default_value){
     }
 
 
-      
-  
-
-
-   
-
     render(){ 
       var that = this; 
       appData.this = this;
@@ -237,40 +232,49 @@ function unwrap_dynamically(value,default_value){
       }
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
-      
-      
-
-      
-
-<TouchableOpacity
-      style= {[{width:"100%",height:"40%", position:'absolute',top:"10.23%",left:"0%"}]}
-       onPress = { function(){appData.index ++ ;
-appData.index = appData.index % hairstyles.length ;; that.forceUpdate(); }}  
-      >
-      <Image
-        style= {[{width:"100%",height:"100%"}, {resizeMode:'cover', "top":"10.23%","left":"1.86%","source":"        hairstyles[appData.index].Link;","height":325,"width":355}]}
-        source = {{uri: hairstyles[appData.index].makeuplink}}
        
-      >
-      </Image>
-      </TouchableOpacity>
 
-      
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"5.12%","left":"-0.04%","borderStyle":"solid","backgroundColor":"pink","alignItems":"center","textAlign":"center","color":"purple","innerText":"'makeup inspo'"}]}
-        > {'makeup inspo'} </Text>
+
+
+  <Swiper showsPagination = {false} style={styles.wrapper} showsButtons={false}>
+        {
+          hairstyles.map(function(hairstyle,int){
+
+            return (
+
+              <View style={{
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white'
+  }}>
+
+
+
+
+
+
+
+
+
+
+
+       <Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"5.12%","left":"-0.04%","borderStyle":"solid","textAlign":"center","innerText":"'nail inspo'","backgroundColor":"pink","color":"black"}]}
+        > {'Monthly Hair Inspo'} </Text>
+
         
 
       
 
       <TouchableOpacity
-      style= {[{width:"20%",height:"20%", position:'absolute',top:"23.43%",left:"37.63%"}]}
-       onPress = { function(){appData.index++;
-appData.index= appData.index% hairstyles.length;; that.forceUpdate(); }}  
+      style= {[{width:"100%",height:"40%", position:'absolute',top:"10.23%",left:"0%"}]}
+       onPress = { function(){appData.index ++ ;
+appData.index = appData.index % hairstyles.length ;; that.forceUpdate(); }}  
       >
       <Image
-        style= {[{width:"100%",height:"100%"}, {"top":"23.43%","left":"37.63%","source":"  hairstyles[appData.makeupindex][\"makeup link\"];"}]}
-        source = {{uri:  hairstyles[appData.makeupindex]["makeup link"]}}
+        style= {[{width:"100%",height:"100%"}, {"top":"10.23%","left":"0%","source":"hairstyles[appData.index].Link;","height":325}]}
+        source = {{uri:hairstyle.makeuplink}}
        
       >
       </Image>
@@ -279,39 +283,36 @@ appData.index= appData.index% hairstyles.length;; that.forceUpdate(); }}
 
       
 
-      
+        
+ <TouchableOpacity
+          
+          onPress = { function(){Linking.openURL(hairstyle["makeuplink"]); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', 
+            alignItems:'center',justifyContent:'center', height: "7%", 
+             title:'Test', borderColor: 'gray', color:'black', borderRadius:15, 
+             borderWidth: 1},{"innerText":"'go to tutorial'","top":"68%",
+             "left":"35.4%","height":30,"backgroundColor":" appData.color;","color":" appData.color2 ;"}]}
+        >
+        <Text style = {{color:" appData.color2 ;"}}>
 
-      <TouchableOpacity
-      style= {[{width:"20%",height:"20%", position:'absolute',top:"27.26%",left:"35.73%"}]}
-       onPress = { function(){appData.index++;
-appData.index=appData.index%hairstyles.length;; that.forceUpdate(); }}  
-      >
-      <Image
-        style= {[{width:"100%",height:"100%"}, {"top":"27.26%","left":"35.73%","source":"  hairstyles[appData.makeupindex][\"makeup link\"];"}]}
-        source = {{uri:  hairstyles[appData.makeupindex]["makeup link"]}}
-       
-      >
-      </Image>
-      </TouchableOpacity>
+        {'Show me'}
 
+       </Text>
+        </TouchableOpacity>
 
-      
-
-      
-
-      <TouchableOpacity
-      style= {[{width:"40%",height:"30%", position:'absolute',top:"16.83%",left:"0%"}]}
-       onPress = { function(){appData.index++;
-appData.index=appData.index% hairstyles.length;; that.forceUpdate(); }}  
-      >
-      <Image
-        style= {[{width:"100%",height:"100%"}, {"top":"16.83%","left":"-6%","source":"  hairstyles[appData.index][\"makeup link\"];","height":350,"width":400}]}
-        source = {{uri:  hairstyles[appData.index]["makeup link"]}}
-       
-      >
-      </Image>
-      </TouchableOpacity>
-      <TouchableOpacity
+        <TouchableOpacity
           
           onPress = { function(){that.props.goTo("FirstPage");; that.forceUpdate(); }}  
           style= {[{
@@ -329,20 +330,58 @@ appData.index=appData.index% hairstyles.length;; that.forceUpdate(); }}
             position:'absolute',top:0,left:0, backgroundColor:'#8fd158', 
             alignItems:'center',justifyContent:'center', height: "7%", 
              title:'Test', borderColor: 'gray', color:'black', borderRadius:15,
-              borderWidth: 1},{"top":"85%","left":"35%",
+              borderWidth: 1},{"top":"75%","left":"35%",
               "innerText":"'beauty products'","height":75,"backgroundColor":"purple"}]}
         >
-        <Text style = {{color:"black"}}>
+        <Text style = {{color:"white"}}>
 
         {'Back'}
 
        </Text>
         </TouchableOpacity>
+         
 
-      
+
+
+
+
+
+
+
+        </View>
+
+
+
+
+              )
+
+
+
+
+
+          })
+        }
+        
+      </Swiper>
+
+
+
+
+
+
+
+
+
+
         </View>
         )
     }
+  
+
+
+   
+
+    
   }
     export default ThirdPage; 
 

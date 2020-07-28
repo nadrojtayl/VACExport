@@ -238,7 +238,7 @@ function unwrap_dynamically(value,default_value){
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#f5dced"}}>
       <View style = {{width:"100%", height:'15%', position:'absolute',top:'0%', paddingTop:'8%', left:"0%", backgroundColor:'purple'}}>
-        <Text style = {{fontSize:60, fontWeight:'bold', textAlign:'center', color:'white'}}>Beauty Bar</Text>
+        <Text style = {{fontFamily:"Avenir",fontSize:60, fontWeight:'bold', textAlign:'center', color:'white'}}>Beauty Bar</Text>
       </View>
 <Text
           style= {[{color:'white', position:'absolute',zIndex:100,width:'100%'},{textAlign:'center', "top":"18%","left":"0.23%","innerText":"'Hi welcome to my app,  this app is for you to get hair ideas, makeup ideas, etc plus tutorials on how to do certain things so you can look even more fabulous than you already are'","color":"black"}]}
@@ -263,7 +263,7 @@ function unwrap_dynamically(value,default_value){
             title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{
               "top":"27%","left":"10%","innerText":"' \"hairstyles & hair tutorials\";'","height":"27%","backgroundColor":"purple"}]}
         >
-        <Text style = {{textAlign:'center', color:"white"}}>
+        <Text style = {{fontFamily:"Avenir", textAlign:'center', color:"white"}}>
 
         {"hairstyles & hair tutorials"}
 
@@ -291,7 +291,7 @@ function unwrap_dynamically(value,default_value){
               "top":"27%","left":"55%","innerText":"'nail isnpo'","backgroundColor":"purple",
             "height":75}]}
         >
-        <Text style = {{color:"white"}}>
+        <Text style = {{fontFamily:"Avenir",color:"white"}}>
 
         {'nail inspo'}
 
@@ -350,7 +350,7 @@ function unwrap_dynamically(value,default_value){
               borderWidth: 1},{"top":"45%","left":"55%",
               "innerText":"'beauty products'","height":75, "backgroundColor":"purple"}]}
         >
-        <Text style = {{color:"white"}}>
+        <Text style = {{fontFamily:"Avenir",color:"white"}}>
 
         {'beauty products'}
 

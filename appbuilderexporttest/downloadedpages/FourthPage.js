@@ -6,6 +6,36 @@ import appData from "./global.js";
 import { Audio } from 'expo-av';
 import Multiplier from "./Multiplier.js";
 import * as Linking from 'expo-linking';
+import Swiper from 'react-native-swiper';
+
+
+const styles = StyleSheet.create({
+  wrapper: {},
+  slide1: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#9DD6EB'
+  },
+  slide2: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#97CAE5'
+  },
+  slide3: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#92BBD9'
+  },
+  text: {
+    color: '#fff',
+    fontSize: 30,
+    fontWeight: 'bold'
+  }
+})
+
 
 var d = new Date();
 var month = d.getMonth();
@@ -224,8 +254,6 @@ function unwrap_dynamically(value,default_value){
   
 
 
-   
-
     render(){ 
       var that = this; 
       appData.this = this;
@@ -238,33 +266,61 @@ function unwrap_dynamically(value,default_value){
       }
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
-      <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"5.12%","left":"-0.04%","borderStyle":"solid","textAlign":"center","innerText":"'nail inspo'","backgroundColor":"pink","color":"purple"}]}
-        > {'Monthly Nail Inspo'} </Text>
+       
+
+
+
+  <Swiper showsPagination = {false} style={styles.wrapper} showsButtons={false}>
+        {
+          hairstyles.map(function(hairstyle,int){
+
+            return (
+
+              <View style={{
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white'
+  }}>
+
+
+
+
+
+
+
+
+
+
+
+       <Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"5.12%","left":"-0.04%","borderStyle":"solid","textAlign":"center","innerText":"'nail inspo'","backgroundColor":"pink","color":"black"}]}
+        > {'Monthly Hair Inspo'} </Text>
+
         
 
       
 
-     
-
-
       <TouchableOpacity
-      style= {[{width:"40%",height:"40%", position:'absolute',top:"10.23%",left:"0%"}]}
+      style= {[{width:"100%",height:"40%", position:'absolute',top:"10.23%",left:"0%"}]}
        onPress = { function(){appData.index ++ ;
-appData.index = appData.index % hairstyles.length; that.forceUpdate(); }}  
+appData.index = appData.index % hairstyles.length ;; that.forceUpdate(); }}  
       >
       <Image
-        style= {[{width:"100%",height:"100%"}, {"top":"10.23%","left":"0%","source":"hairstyles[appData.index].Link;","height":325,"width":width}]}
-        source = {{uri: hairstyles[appData.index]["nail link"]}}
+        style= {[{width:"100%",height:"100%"}, {"top":"10.23%","left":"0%","source":"hairstyles[appData.index].Link;","height":325}]}
+        source = {{uri:hairstyle["nail link"]}}
        
       >
       </Image>
       </TouchableOpacity>
 
+
       
+
+        
  <TouchableOpacity
           
-          onPress = { function(){Linking.openURL(hairstyles[appData.index]["tutorial link"]);; that.forceUpdate(); }}  
+          onPress = { function(){Linking.openURL(hairstyle["nail link"]); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -280,11 +336,12 @@ appData.index = appData.index % hairstyles.length; that.forceUpdate(); }}
             position:'absolute',top:0,left:0, backgroundColor:'#8fd158', 
             alignItems:'center',justifyContent:'center', height: "7%", 
              title:'Test', borderColor: 'gray', color:'black', borderRadius:15, 
-             borderWidth: 1},{"innerText":"'go to tutorial'","top":"68%","left":"2.4%","height":30,"backgroundColor":" appData.color;","color":" appData.color2 ;"}]}
+             borderWidth: 1},{"innerText":"'go to tutorial'","top":"68%",
+             "left":"35.4%","height":30,"backgroundColor":" appData.color;","color":" appData.color2 ;"}]}
         >
         <Text style = {{color:" appData.color2 ;"}}>
 
-        {'go to tutorial'}
+        {'Show me'}
 
        </Text>
         </TouchableOpacity>
@@ -316,39 +373,47 @@ appData.index = appData.index % hairstyles.length; that.forceUpdate(); }}
 
        </Text>
         </TouchableOpacity>
-         <TouchableOpacity
-          
-          onPress = { function(){appData.index ++ ;
-appData.index = appData.index % hairstyles.length ;; that.forceUpdate(); }} 
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', 
-            alignItems:'center',justifyContent:'center', height: "7%", 
-             title:'Test', borderColor: 'gray', color:'black', borderRadius:15,
-              borderWidth: 1},{"top":"65%","left":"68%",
-              "innerText":"'beauty products'","height":75,"backgroundColor":"purple"}]}
-        >
-        <Text style = {{color:"white"}}>
+         
 
-        {'Next'}
 
-       </Text>
-        </TouchableOpacity>
 
-      
+
+
+
+
+
+        </View>
+
+
+
+
+              )
+
+
+
+
+
+          })
+        }
+        
+      </Swiper>
+
+
+
+
+
+
+
+
+
+
         </View>
         )
     }
+
+   
+
+    
   }
     export default FourthPage; 
 
