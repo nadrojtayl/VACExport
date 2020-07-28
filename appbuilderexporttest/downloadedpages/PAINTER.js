@@ -382,33 +382,7 @@ export default class PAINTER extends Component {
 
        </Text>
         </TouchableOpacity>
-         <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("FirstPage")
-; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            backgroundColor:'#8fd158', 
-            alignItems:'center',justifyContent:'center', height: "200%", 
-             title:'Test', borderColor: 'gray', color:'black', 
-             borderRadius:15, borderWidth: 1},{"innerText":"'Home'"}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {'Next'}
-
-       </Text>
-        </TouchableOpacity>
+        
       </View>
         </View>
 
