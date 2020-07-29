@@ -7,6 +7,10 @@ import Multiplier from "./Multiplier.js";
 import * as Linking from 'expo-linking';
 import { CheckBox } from 'react-native-elements'
 import Swiper from 'react-native-swiper';
+import * as SMS from 'expo-sms';
+import * as Speech from 'expo-speech';
+import * as MailComposer from 'expo-mail-composer';
+
 
 var d = new Date();
 var month = d.getMonth();
@@ -274,12 +278,12 @@ export default class PAINTER extends Component {
 
             return (
 
-              <View style={{
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'white'
-  }}>
+          <View style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: 'white'
+          }}>
 
           <Text
           style= {[{fontFamily:'Bradley Hand', alignItems:'center', color:'white', fontSize:resizeFont(30),position:'absolute',zIndex:100,width:'100%'},{textDecorationLine:'underline',"top":"13.21%","left":"0%", width:'100%', textAlign:'center', "innerText":"' link[0][\"Name\"];'"}]}
@@ -350,9 +354,44 @@ export default class PAINTER extends Component {
 
        </Text>
         </TouchableOpacity>
+         <TouchableOpacity
+          
+          onPress = { function(){
+          Speech.speak(artist["Blurb"]);
+          }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            position:'absolute',
+            top:'78%',
+            height:"7%",
+            width:"30%",
+            backgroundColor:'#8fd158', 
+            alignItems:'center',justifyContent:'center', height: "5%", 
+             title:'Test', borderColor: 'gray', color:'black', 
+             borderRadius:15, borderWidth: 1},{
+              "innerText":"'Home'"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Hear bio'}
+
+       </Text>
+        </TouchableOpacity>
 
 
       <View style = {{position:'absolute',top:'85%',width:'100%',flexDirection:'row',justifyContent:'space-evenly'}}>
+
+
+
+
 
 
        <TouchableOpacity
@@ -396,6 +435,59 @@ export default class PAINTER extends Component {
 
        </Text>
         </TouchableOpacity>
+
+         <TouchableOpacity
+          
+          onPress = { async function(){
+              var data =  
+          museums.filter(function(obj){
+            return obj[artist["Name"]] !== "";
+          }).slice(0,5).map(function(obj){
+            return obj[artist["Name"]]
+          })
+           const isAvailable = await SMS.isAvailableAsync();
+           MailComposer.composeAsync({
+            subject:"Museum Recommendations",
+            body:`
+Here's your museum bucket list. They have a lot of great works by `+artist["Name"]+`.
+
+`+ data.join("\n\n") +`
+
+`
+           })
+            if (isAvailable) {
+              SMS.sendSMSAsync([""],`
+
+
+                `)
+            } else {
+              // misfortune... there's no SMS available on this device
+            }
+          }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            backgroundColor:'#8fd158', 
+            alignItems:'center',justifyContent:'center', height: "100%", 
+             title:'Test', borderColor: 'gray', color:'black', 
+             borderRadius:15, borderWidth: 1},{
+              "innerText":"'Home'"}]}
+        >
+        <Text style = {{color:"black", textAlign:'center'}}>
+
+        {'Email recs'}
+
+       </Text>
+        </TouchableOpacity>
          <TouchableOpacity
           
           onPress = { function(){
@@ -428,12 +520,14 @@ export default class PAINTER extends Component {
              borderRadius:15, borderWidth: 1},{
               "innerText":"'Home'"}]}
         >
-        <Text style = {{color:"black"}}>
+        <Text style = {{color:"black", textAlign:'center'}}>
 
         {'See my recommended museums'}
 
        </Text>
         </TouchableOpacity>
+
+      
         
       </View>
         </View>

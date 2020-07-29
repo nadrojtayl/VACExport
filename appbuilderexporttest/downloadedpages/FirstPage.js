@@ -4,6 +4,7 @@ import Calendar from "./Calendar.js";
 import appData from "./global.js";
 import { Audio } from 'expo-av';
 import Multiplier from "./Multiplier.js";
+import * as SMS from 'expo-sms';
 
 var d = new Date();
 var month = d.getMonth();
