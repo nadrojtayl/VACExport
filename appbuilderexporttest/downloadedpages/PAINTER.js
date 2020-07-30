@@ -6,7 +6,6 @@ import Multiplier from "./Multiplier.js";
 import * as Linking from 'expo-linking';
 import { CheckBox } from 'react-native-elements'
 import Swiper from 'react-native-swiper';
-import * as SMS from 'expo-sms';
 import * as Speech from 'expo-speech';
 import * as MailComposer from 'expo-mail-composer';
 
@@ -444,7 +443,7 @@ export default class PAINTER extends Component {
           }).slice(0,5).map(function(obj){
             return obj[artist["Name"]]
           })
-           const isAvailable = await SMS.isAvailableAsync();
+           
            MailComposer.composeAsync({
             subject:"Museum Recommendations",
             body:`
@@ -454,14 +453,7 @@ Here's your museum bucket list. They have a lot of great works by `+artist["Name
 
 `
            })
-            if (isAvailable) {
-              SMS.sendSMSAsync([""],`
-
-
-                `)
-            } else {
-              // misfortune... there's no SMS available on this device
-            }
+            
           }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
