@@ -23,7 +23,10 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "tjartistfindr.tjartistfindr.com"
+      "bundleIdentifier": "tjartistfindr.tjartistfindr.com",
+      "infoPlist": {
+         "NSMicrophoneUsageDescription": "We will only use your microphone to allow accessibility for blind users",
+       },   
     },
     "android": {
       "package": "tjartistfindr.tjartistfindr.com"
