@@ -1,22 +1,20 @@
 {
-  "main": "node_modules/expo/AppEntry.js",
+  "name": "launchproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
-    "eject": "expo eject"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "expo": "~37.0.3",
-    "react": "~16.9.0",
-    "react-dom": "~16.9.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.1.tar.gz",
-    "react-native-web": "~0.11.7"
-  },
-  "devDependencies": {
-    "babel-preset-expo": "~8.1.0",
-    "@babel/core": "^7.8.6"
-  },
-  "private": true
+    "axios": "^0.19.2",
+    "cors": "^2.8.5",
+    "expo": "^38.0.8",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "react-native-picker-select": "^7.0.0"
+  }
 }
