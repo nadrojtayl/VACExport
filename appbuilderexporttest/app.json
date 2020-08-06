@@ -1,0 +1,36 @@
+{
+  "expo": {
+    "name": "TJArtistFindr",
+    "slug": "TJArtistFindr",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/ficon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "tjartistfindr.tjartistfindr.com",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "We will only use your microphone to allow accessibility for blind users"
+      }
+    },
+    "android": {
+      "package": "tjartistfindr.tjartistfindr.com"
+    },
+    "entryPoint": "node_modules/expo/AppEntry.js"
+  }
+}

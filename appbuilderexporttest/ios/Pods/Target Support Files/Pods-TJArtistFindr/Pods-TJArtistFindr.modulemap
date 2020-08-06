@@ -1,0 +1,6 @@
+module Pods_TJArtistFindr {
+  umbrella header "Pods-TJArtistFindr-umbrella.h"
+
+  export *
+  module * { export * }
+}
