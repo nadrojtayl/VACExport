@@ -208,7 +208,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class Pagetwo extends React.Component {
      
 
     constructor(props)
@@ -238,7 +238,7 @@ function unwrap_dynamically(value,default_value){
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#32d9c8"}}>
        <TouchableOpacity
           
-          onPress = { function(){play("https://www.mboxdrive.com/nani_Pmxf5n3.mp3"); that.forceUpdate(); }}  
+          onPress = { function(){play("https://www.mboxdrive.com/i-have-the-high-ground.mp3"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -251,17 +251,17 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"3.25%","left":"61.3%","backgroundColor":"#fffa00","innerText":"'NANI'","height":"80%","width":"27%"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'I have the high ground'","top":"24.25%","left":"10.13%","height":150,"width":150,"backgroundColor":"yellow"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'NANI TEST'}
+        {'I have the high ground'}
 
        </Text>
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){play("https://www.mboxdrive.com/roblox-death-sound_1.mp3"); that.forceUpdate(); }}  
+          onPress = { function(){play("https://www.mboxdrive.com/why-you-bully-me_tAonLVq.mp3"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -274,17 +274,17 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"49.38%","left":"11.2%","backgroundColor":"#fffa00","height":"20%","innerText":"'OOF'","containerStyle":null,"width":"27%"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"49.91%","left":"62.37%","repeaterfontSize":null,"innerText":"'Why you bully me?'","height":150,"width":150,"backgroundColor":"yellow"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'OOF'}
+        {'Why you bully me?'}
 
        </Text>
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){play("https://www.mboxdrive.com/musica_1 (1).mp3"); that.forceUpdate(); }}  
+          onPress = { function(){play("https://www.mboxdrive.com/imogen-heap-hide-and-seek-mm-what-you-say.mp3"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -297,17 +297,17 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"49.66%","left":"61.83%","innerText":"'Windows Error Song'","backgroundColor":"#fffa00","height":"20%","color":"black","width":"27%"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"75.71%","left":"62.01%","innerText":"'MMM-What you sayyy?'","height":150,"width":150,"backgroundColor":"yellow"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Windows Error Song'}
+        {'MMM-What you sayyy?'}
 
        </Text>
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){play("https://www.mboxdrive.com/classic_hurt.mp3"); that.forceUpdate(); }}  
+          onPress = { function(){play("https://www.mboxdrive.com/victory_6.mp3"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -320,17 +320,17 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"22.42%","left":"10.49%","backgroundColor":"#fffa00","height":"20%","fontFamily":null,"innerText":"'Minecraft Hurt'","width":"27%"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Victory'","top":"49.13%","left":"9.95%","height":150,"width":150,"zIndex":null,"backgroundColor":"yellow"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Minecraft Hurt'}
+        {'Victory'}
 
        </Text>
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){play("https://www.mboxdrive.com/perfect-fart.mp3"); that.forceUpdate(); }}  
+          onPress = { function(){play("https://www.mboxdrive.com/liedjes-voor-twitch-4.mp3"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -343,17 +343,17 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Fart'","top":"77.16%","left":"11.38%","backgroundColor":"#fffa00","height":"20%","width":"27%"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Fortnite Loser'","top":"75.71%","left":"9.59%","height":150,"width":150,"backgroundColor":"yellow"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Fart'}
+        {'Fortnite Loser'}
 
        </Text>
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){play("https://www.mboxdrive.com/movie_1.mp3"); that.forceUpdate(); }}  
+          onPress = { function(){play("https://www.mboxdrive.com/pk-fire.mp3"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -366,22 +366,21 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"77.03%","left":"62.37%","height":150,"backgroundColor":"#fffa00","innerText":"'Bruh'","width":"27%"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"24.38%","left":"63.26%","display":null,"innerText":"'PK FIRE'","height":150,"width":150,"backgroundColor":"yellow","alignItems":"center","textAlign":"center","justifyContent":"center"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Bruh'}
+        {'PK FIRE'}
 
        </Text>
         </TouchableOpacity>
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"1.1%","left":"11.73%","innerText":"'Meme Soundboard'","fontSize":"resizeFont(50)"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"0.55%","left":"12.8%","innerText":"'Meme Soundboard'","fontSize":"resizeFont(50)"}]}
         > {'Meme Soundboard'} </Text>
         
  <TouchableOpacity
           
-          onPress = { function(){pause()
-; that.forceUpdate(); }}  
+          onPress = { function(){pause(); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -394,7 +393,7 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'STOP ALL'","top":"12.52%","left":"38.48%","backgroundColor":"red"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'STOP ALL'","top":"12.01%","left":"38.12%","backgroundColor":"red"}]}
         >
         <Text style = {{color:"black"}}>
 
@@ -406,7 +405,7 @@ function unwrap_dynamically(value,default_value){
         )
     }
   }
-    export default FirstPage; 
+    export default Pagetwo; 
 
 
 

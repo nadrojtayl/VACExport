@@ -1,3 +1,3 @@
-var global = {checked:[], selectedArtist:"", selectedBio:undefined,selectedMuseums:undefined, wiggle:0, "FirstPageinput0":"","details":"Leonardo DaVinci"}
+var global = {"key":"value","Leung288":["nikhi","ryan","samatha","wesley"]}
 
 export default global;
