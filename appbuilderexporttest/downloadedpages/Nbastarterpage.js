@@ -267,7 +267,7 @@ function unwrap_dynamically(value,default_value){
       {this.state.createdelems}
 
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"9.57%","left":"36.3%","innerText":"'NBA'","fontSize":"resizeFont(40)"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"9.57%","left":"36.3%","innerText":"'NBA'","fontSize":resizeFont(40)}]}
         > {'NBA'} </Text>
         
  <TouchableOpacity
@@ -330,7 +330,7 @@ appData.counter=0; that.forceUpdate(); }}
        </Text>
         </TouchableOpacity>
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"20.19%","left":"24%","innerText":"'Think you're an NBA wiz? Lets put that to the test and see how much you truly know'","width":"50%","fontSize":"resizeFont(20)"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"20.19%","left":"10%","innerText":"'Think you're an NBA wiz? Lets put that to the test and see how much you truly know'","width":"80%","fontSize":resizeFont(20)}]}
         > {'Think youre an NBA wiz? Lets put that to the test and see how much you truly know'} </Text>
         
         </View>

@@ -267,7 +267,7 @@ function unwrap_dynamically(value,default_value){
       {this.state.createdelems}
 
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"               JSON.parse(JSON.stringify(appData.selected[appData.counter][\"question\"]));","height":"30%","fontSize":"resizeFont(30)","top":"0.74%","left":"1.27%"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"               JSON.parse(JSON.stringify(appData.selected[appData.counter][\"question\"]));","height":"30%","fontSize":resizeFont(30),"top":"5%","left":"1.27%"}]}
         > {               JSON.parse(JSON.stringify(appData.selected[appData.counter]["question"]))} </Text>
         
  <TouchableOpacity
@@ -399,9 +399,8 @@ if(appData.catchosen === "Basketball"){
             backgroundColor:'#8fd158',
              alignItems:'center',
              justifyContent:'center', height: "7%",  
-             title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"57.59%","left":"2.07%","innerText":"   JSON.parse(JSON.stringify(appData.selected[appData.counter][\"choice 3\"])) ;"}]}
+              {"top":"57.59%","left":"2.07%","innerText":"JSON.parse(JSON.stringify(appData.selected[appData.counter][\"choice 3\"])) ;"}]}
         >
         <Text style = {{color:"black"}}>
 

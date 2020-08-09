@@ -267,7 +267,7 @@ function unwrap_dynamically(value,default_value){
       {this.state.createdelems}
 
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"2.46%","left":"2.34%","innerText":"    JSON.parse(JSON.stringify(appData.selected[appData.vgcounter][\"question\"]));","fontSize":"resizeFont(30)","height":"30%","width":"90%"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"2.46%","left":"2.34%","innerText":"    JSON.parse(JSON.stringify(appData.selected[appData.vgcounter][\"question\"]));","fontSize":resizeFont(30),"height":"30%","width":"90%"}]}
         > {    JSON.parse(JSON.stringify(appData.selected[appData.vgcounter]["question"]))} </Text>
         
  <TouchableOpacity
@@ -311,7 +311,7 @@ appData.counter=appData.counter+1}; that.forceUpdate(); }}
         >
         <Text style = {{color:"black"}}>
 
-        { appData.selected[appData.counter]["choice 1"]}
+        { JSON.parse(JSON.stringify(appData.selected[appData.counter]["choice 1"]))}
 
        </Text>
         </TouchableOpacity>

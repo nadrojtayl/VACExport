@@ -296,13 +296,17 @@ function unwrap_dynamically(value,default_value){
        </Text>
         </TouchableOpacity>
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"fontSize":"resizeFont(50)","innerText":"'Video Games'","top":"5.05%","left":"12.5%"}]}
+          style= {[{position:'absolute', textAlign:'center', zIndex:100,width:'100%'},{"fontSize":resizeFont(50),"innerText":"'Video Games'","top":"5.05%","left":"0%"}]}
         > {'Video Games'} </Text>
+
+        <Text
+          style= {[{position:'absolute', textAlign:'center', zIndex:100,width:'100%'},{"fontSize":resizeFont(20),"innerText":"'Video Games'","top":"35.05%","left":"0%"}]}
+        > {'Are you a video game wiz? Time to prove it'} </Text>
         
  <TouchableOpacity
           
           onPress = { function(){that.props.goTo("VGONE")
-appData.counter=19; that.forceUpdate(); }}  
+appData.counter=0; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -321,7 +325,8 @@ appData.counter=19; that.forceUpdate(); }}
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"28.46%","left":"30.68%","innerText":"'Get Started'"}]}
+              {"top":"68.46%","left":"30.68%",
+              "innerText":"'Get Started'"}]}
         >
         <Text style = {{color:"black"}}>
 

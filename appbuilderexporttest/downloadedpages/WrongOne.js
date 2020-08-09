@@ -267,7 +267,7 @@ function unwrap_dynamically(value,default_value){
       {this.state.createdelems}
 
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'Incorrect'","fontSize":"resizeFont(35)","color":"red","top":"19.04%","left":"30.42%"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'Incorrect'","fontSize":resizeFont(35),"color":"red","top":"19.04%","left":"30.42%"}]}
         > {'Incorrect'} </Text>
         
 <Text

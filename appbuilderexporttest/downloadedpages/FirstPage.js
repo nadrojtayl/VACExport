@@ -354,15 +354,15 @@ that.props.goTo("Tvshowstarterpage"); that.forceUpdate(); }}
 
       
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"backgroundColor":"purple","height":"15%","innerText":"'NBA-VideoGame Trivia'","color":"white","textAlign":"center","fontFamily":"Cochin","fontSize":"resizeFont(32)"}]}
+          style= {[{position:'absolute', paddingTop:'5%', zIndex:100,width:'100%'},{"backgroundColor":"purple","height":"15%","innerText":"'NBA-VideoGame Trivia'","color":"white","textAlign":"center","fontFamily":"Cochin","fontSize":resizeFont(32)}]}
         > {'NBA-VideoGame Trivia'} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"79.87%","left":"19.15%","innerText":" \"Score: \" + appData.nbastreakscore;","backgroundColor":"white","width":"15%"}]}
+          style= {[{textAlign:'center', position:'absolute',zIndex:100,width:'100%'},{"top":"79.87%","left":"19.15%","innerText":" \"Score: \" + appData.nbastreakscore;","backgroundColor":"white","width":"15%"}]}
         > { "Score: " + appData.nbastreakscore} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"79.47%","left":"67.7%","backgroundColor":"white","width":"15%","innerText":" \"Score: \" + appData.vbstreakscore;"}]}
+          style= {[{textAlign:'center', position:'absolute',zIndex:100,width:'100%'},{"top":"79.47%","left":"67.7%","backgroundColor":"white","width":"15%","innerText":" \"Score: \" + appData.vbstreakscore;"}]}
         > { "Score: " + appData.vbstreakscore} </Text>
         
         </View>
