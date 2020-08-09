@@ -95,6 +95,7 @@ function load_app(name, printname, bundleId){
 
 
 function translate_page(page_name,children,childrenAdditionalStyles,clickfunctions,databases,appdata,color){
+ appdata["created"] = [];
   return `
 import React, { Component } from "react";
 import { ActivityIndicator, Button, Picker, Switch, Image, ScrollView, TouchableOpacity, StyleSheet, Text, View, TextInput, Dimensions } from "react-native";
@@ -173,6 +174,7 @@ function try_eval(input){
     return elem[key_name].indexOf(phrase) !== -1;
   })
 }
+
 
 
 function filter(arr,phrase){
@@ -317,7 +319,23 @@ function unwrap_dynamically(value,default_value){
 
       
   
+    createElement(name, style_obj){
+      if(name === 'image'){
+        this.state.created.push(
+        (<Image style = {style_obj}></Image>)
+        )
+      }
 
+       if(name === 'text'){
+        this.state.created.push(
+        (<Text style = {style_obj}></Text>)
+        )
+      }
+     
+
+
+
+    }
 
    
 
@@ -333,6 +351,8 @@ function unwrap_dynamically(value,default_value){
       }
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"` + color +`"}}>
+      {this.state.created}
+
       `+
     children.map(function(child,int){
       return exportElemToExpo(child,int,page_name,childrenAdditionalStyles[int],clickfunctions[int],databases,appdata)
