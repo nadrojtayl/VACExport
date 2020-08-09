@@ -270,7 +270,11 @@ function unwrap_dynamically(value,default_value){
       goTo = {that.props.goTo}
       type = {"text"}
       data = {window["MyChats"]}
-      style = {[{alignItems:'center',position:'absolute',height:'60%',width:'80%'},{"options":"Chats","repeaterinnerText":"\"[\" +elem.name + \"] \" + elem.message"}]}
+      style = {[{
+        alignItems:'center',
+        position:'absolute',height:'60%',width:'100%'},{
+          "options":"Chats",
+          "repeaterinnerText":"\"[\" +elem.name + \"] \" + elem.message"}]}
       clickfunction = {function(){}}
       >
       </Multiplier>

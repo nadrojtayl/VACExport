@@ -303,11 +303,12 @@ function unwrap_dynamically(value,default_value){
        </Text>
         </TouchableOpacity>
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"14.27%","left":"-0.03%","innerText":"'Hello Gamers This Is For My People To Type while Gaming '","fontSize":"resizeFont(20)","color":"white","textAlign":"center","backgroundColor":"purple"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"15.27%","left":"-0.03%","innerText":"'Hello Gamers This Is For My People To Type while Gaming '","fontSize":"resizeFont(20)","color":"white","textAlign":"center", fontSize:resizeFont(20), "backgroundColor":"purple"}]}
         > {'Hello Gamers This Is For My People To Type while Gaming '} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"-0.4%","left":"-0.03%","innerText":"'Gamers Lounge'","fontSize":"resizeFont(54)","color":"white","backgroundColor":"purple","textAlign":"center"}]}
+          style= {[{position:'absolute',zIndex:100,
+          width:'100%'},{"top":"5%","left":"-0.03%","innerText":"'Gamers Lounge'","fontSize":resizeFont(54),"color":"white","backgroundColor":"purple","textAlign":"center"}]}
         > {'Gamers Lounge'} </Text>
         
 
