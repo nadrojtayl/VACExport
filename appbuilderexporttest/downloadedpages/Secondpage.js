@@ -171,10 +171,41 @@ function clone(arr){
 global.audio = [];
 async function play(url){
   appData.soundObject = new Audio.Sound();
+  var rand = Math.floor(Math.random() * 3);
  try {
-    await appData.soundObject.loadAsync({uri:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"});
-    await appData.soundObject.playAsync();
+   if(rand === 0){
+     await appData.soundObject.loadAsync(require("../assets/classical1.mp3"));
+     await appData.soundObject.playAsync();
+    }
+
+    if(rand === 1){
+     await appData.soundObject.loadAsync(require("../assets/classical2.mp3"));
+     await appData.soundObject.playAsync();
+    }
+
+    if(rand === 2){
+     await appData.soundObject.loadAsync(require("../assets/classical3.mp3"));
+     await appData.soundObject.playAsync();
+    }
+   
+   
+   
+    
     // Your sound is playing!
+  } catch (error) {
+    alert(error);
+  }
+
+
+}
+
+async function playbad(url){
+  appData.soundObject = new Audio.Sound();
+ try {
+     await appData.soundObject.loadAsync(require("../assets/annoying.mp3"));
+     await appData.soundObject.playAsync();
+
+
   } catch (error) {
     alert(error);
   }
@@ -270,8 +301,10 @@ function unwrap_dynamically(value,default_value){
           
           onPress = { function(){if (appData.bindex1==0){
 that.props.goTo('Right') 
+play();
 } else {
 that.props.goTo('Wrong')
+playbad('../classical1.mp3');
 } ; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
@@ -303,8 +336,10 @@ that.props.goTo('Wrong')
           
           onPress = { function(){if (appData.bindex2==0){
 that.props.goTo('Right') 
+play();
 } else {
 that.props.goTo('Wrong')
+playbad('../classical1.mp3');
 } ; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
@@ -335,9 +370,11 @@ that.props.goTo('Wrong')
  <TouchableOpacity
           
           onPress = { function(){if (appData.bindex3==0){
-that.props.goTo('Right') 
+that.props.goTo('Right'); 
+play('../classical1.mp3');
 } else {
 that.props.goTo('Wrong')
+playbad('../classical1.mp3');
 } ; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
@@ -372,9 +409,11 @@ that.props.goTo('Wrong')
  <TouchableOpacity
           
           onPress = { function(){if (appData.bindex4==0){
-that.props.goTo('Right') 
+that.props.goTo('Right');
+play('../assets/classical1.mp3');
 } else {
 that.props.goTo('Wrong')
+play('../assets/classical1.mp3');
 } ; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
