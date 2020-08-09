@@ -91,7 +91,7 @@ class App extends React.Component {
 
 constructor(props){
 super(props);
-this.state = {dbLinks:{}, loaded:false, page:"FirstPage", numLoaded:0}
+this.state = {dbLinks:{}, loaded:false, page:"StartPage", numLoaded:0}
 }
 
 componentDidMount(){

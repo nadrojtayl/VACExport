@@ -267,7 +267,7 @@ function unwrap_dynamically(value,default_value){
       {this.state.createdelems}
 
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"8.22%","left":"0.82%","innerText":" JSON.parse(JSON.stringify(Data[appData.counter][\"Question\"])) ;","height":"30%","fontSize":"resizeFont(35)"}]}
+          style= {[{position:'absolute', textAlign:'center', zIndex:100,width:'100%'},{"top":"8.22%","left":"0.82%","innerText":" JSON.parse(JSON.stringify(Data[appData.counter][\"Question\"])) ;","height":"30%","fontSize":resizeFont(35)}]}
         > { JSON.parse(JSON.stringify(Data[appData.counter]["Question"])) } </Text>
         
  <TouchableOpacity
@@ -305,7 +305,9 @@ else{if(appData.SecondChance!=1){
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"34.47%","left":"31.87%","innerText":" JSON.parse(JSON.stringify(Data[appData.counter][\"Answer 1\"])) ;","backgroundColor":"purple","color":"yellow"}]}
+              {"top":"34.47%","left":"31.87%",
+              "innerText":" JSON.parse(JSON.stringify(Data[appData.counter][\"Answer 1\"])) ;",
+              "backgroundColor":"purple","color":"yellow"}]}
         >
         <Text style = {{color:"yellow"}}>
 

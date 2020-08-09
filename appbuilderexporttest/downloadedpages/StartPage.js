@@ -269,7 +269,7 @@ function unwrap_dynamically(value,default_value){
       
 
       <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"source":"https://www.freepnglogos.com/uploads/nba-logo-png/nba-all-star-game-full-team-lebron-team-giannis-18.png","height":"70%","top":"-5.92%","left":"3.91%","width":"90%"}]}
+        style= {[{width:"20%",height:"20%",position:'absolute'}, {"source":"https://www.freepnglogos.com/uploads/nba-logo-png/nba-all-star-game-full-team-lebron-team-giannis-18.png","height":"70%","top":"-5.92%","left":"3.91%","width":"90%", resizeMode:'contain'}]}
         source = {{uri:'https://www.freepnglogos.com/uploads/nba-logo-png/nba-all-star-game-full-team-lebron-team-giannis-18.png'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >
@@ -282,11 +282,11 @@ function unwrap_dynamically(value,default_value){
       
 
       <TouchableOpacity
-      style= {[{width:"40%",height:"30%", position:'absolute',top:"62.44%",left:"29.26%"}]}
+      style= {[{width:"100%",height:"55%", position:'absolute',top:"12.44%",left:"-0.26%", resizeMode:'contain'}]}
        onPress = { function(){that.props.goTo("FirstPage"); that.forceUpdate(); }}  
       >
       <Image
-        style= {[{width:"100%",height:"100%"}, {"source":"https://a2.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnba%2F500%2Fphx.png","top":"\"62.44%\"","left":"\"29.26%\"","width":"40%","height":"30%"}]}
+        style= {[{width:"100%",height:"100%"}, {"source":"https://a2.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnba%2F500%2Fphx.png","top":"62.44%","left":"29.26%","width":"40%","height":"30%"}]}
         source = {{uri:'https://a2.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnba%2F500%2Fphx.png'}}
        
       >
