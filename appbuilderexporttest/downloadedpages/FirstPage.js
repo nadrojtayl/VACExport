@@ -282,8 +282,8 @@ function unwrap_dynamically(value,default_value){
          onChangeText={function(val){ appData["FirstPageinput1"] = val; that.forceUpdate();   } }
         />
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"26.99%","left":"47.57%","innerText":"'Name'"}]}
-        > {'Name'} </Text>
+          style= {[{position:'absolute', color:'red', zIndex:100,width:'100%'},{"top":"26.99%","left":"47.57%","innerText":"'Name'"}]}
+        > {'Enter your Name, Duck'} </Text>
         
 
 
@@ -312,7 +312,13 @@ function unwrap_dynamically(value,default_value){
 
 
       <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://cdn1.vectorstock.com/i/1000x1000/52/10/game-scene-pixelated-background-vector-12125210.jpg","height":"100%","width":"100%","top":"15.42%","left":"0.3%","backgroundColor":"transparent","zIndex":-10000000}]}
+        style= {[{width:"20%",height:"20%"}, {
+          "source":"https://cdn1.vectorstock.com/i/1000x1000/52/10/game-scene-pixelated-background-vector-12125210.jpg",
+          "height":"110%",
+          "width":"100%",
+          position:'absolute',
+          "top":"0%","left":"0.3%",
+          "backgroundColor":"transparent","zIndex":-10000000}]}
         source = {{uri:'https://cdn1.vectorstock.com/i/1000x1000/52/10/game-scene-pixelated-background-vector-12125210.jpg'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >
@@ -347,7 +353,8 @@ function unwrap_dynamically(value,default_value){
 
 
       <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://i.imgur.com/KbSqCge.jpg","top":"-3.51%","left":"0.08%","width":"100%"}]}
+        style= {[{width:"20%",height:"20%"}, {
+          position:'absolute',"source":"https://i.imgur.com/KbSqCge.jpg","top":"-3.51%","left":"0.08%","width":"100%"}]}
         source = {{uri:'https://i.imgur.com/KbSqCge.jpg'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >

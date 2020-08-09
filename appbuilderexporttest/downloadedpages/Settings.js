@@ -268,13 +268,7 @@ function unwrap_dynamically(value,default_value){
           style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"35.59%","left":"43.65%","innerText":"'Audio'"}]}
         > {'Audio'} </Text>
         
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"34.8%","left":"43.65%","innerText":"'Audio'"}]}
-        > {'Audio'} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"34.54%","left":"45.43%","innerText":"'\"Audio\"'"}]}
-        > {'"Audio"'} </Text>
+
         
  <TouchableOpacity
           

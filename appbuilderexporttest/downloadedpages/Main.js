@@ -291,7 +291,12 @@ clearInterval(appData.thet);; that.forceUpdate(); }}
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Pause'","top":"0.05%","left":"0.08%"}]}
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158', alignItems:'center',
+            justifyContent:'center', height: "7%",  
+            title:'Test', borderColor: 'gray', 
+            color:'black', borderRadius:15, borderWidth: 1},{
+              "innerText":"'Pause'","top":"5%","left":"0.08%"}]}
         >
         <Text style = {{color:"black"}}>
 
@@ -303,11 +308,12 @@ clearInterval(appData.thet);; that.forceUpdate(); }}
       
 
       <TouchableOpacity
-      style= {[{width:"20%",height:"20%", position:'absolute',top:"55%",left:appData.X}]}
+      style= {[{width:"20%",height:"20%", 
+      position:'absolute',top:"55%",left:appData.X}]}
        onPress = { function(){appData.X = appData.X + 10; that.forceUpdate(); }}  
       >
       <Image
-        style= {[{width:"100%",height:"100%"}, {"top":"55%","left":"appData.X","source":"https://i.imgur.com/cQs1QEn.png","resizeMode":"contain","backgroundColor":"tranparent"}]}
+        style= {[{width:"100%",height:"100%"}, {"top":"55%","left":appData.X,"source":"https://i.imgur.com/cQs1QEn.png","resizeMode":"contain","backgroundColor":"tranparent"}]}
         source = {{uri:'https://i.imgur.com/cQs1QEn.png'}}
        
       >
@@ -322,8 +328,8 @@ clearInterval(appData.thet);; that.forceUpdate(); }}
           
           onPress = { function(){
 
-if(appData.X === "25%"){
-    appData.X = "70%"
+if(appData.X === "20%"){
+    appData.X = "65%"
 }
     
     
@@ -341,7 +347,12 @@ if(appData.X === "25%"){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"78.83%","left":"63.08%","innerText":"'->'","backgroundColor":"yellow","zIndex":2}]}
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158', 
+            alignItems:'center',justifyContent:'center', 
+            height: "7%",  title:'Test', 
+            borderColor: 'gray', color:'black', 
+            borderRadius:15, borderWidth: 1},{"top":"78.83%","left":"63.08%","innerText":"'->'","backgroundColor":"yellow","zIndex":2}]}
         >
         <Text style = {{color:"black"}}>
 
@@ -352,8 +363,8 @@ if(appData.X === "25%"){
  <TouchableOpacity
           
           onPress = { function(){
-            if(appData.X === "70%"){
-    appData.X = "25%"
+            if(appData.X === "65%"){
+    appData.X = "20%"
 }; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
@@ -376,7 +387,10 @@ if(appData.X === "25%"){
        </Text>
         </TouchableOpacity>
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"65%","left":"appData.X","innerText":"appData.FirstPageinput1","marginLeft":"5%"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{
+            "top":"65%",
+            color:'red',
+          "left":appData.X,"innerText":"appData.FirstPageinput1","marginLeft":"5%"}]}
         > {appData.FirstPageinput1} </Text>
         
  <TouchableOpacity
@@ -387,7 +401,7 @@ appData.yeet = runWithInterval(`
 for(var i = 0;i<created.length;i++){
    created[i].top += 20;
 
-   var samelane = (created[i].left === "20%") === (appData.X === "25%");
+   var samelane = (created[i].left === "20%") === (appData.X === "20%");
    if(samelane && created[i].top >= (height*.5) && created[i].top <= (height*.55)  ){
        appData.ended = true;
       if(appData.ended === true){
@@ -429,7 +443,14 @@ if(0.5>Math.random()){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"0.29%","left":"81.44%","innerText":"'Play'"}]}
+            position:'absolute',
+            top:0,left:0, backgroundColor:'#8fd158', 
+            alignItems:'center',justifyContent:'center', 
+            height: "7%",  
+            title:'Test', 
+            borderColor: 'gray', color:'black', 
+            borderRadius:15, borderWidth: 1},{
+              "top":"5%","left":"70%","innerText":"'Play'"}]}
         >
         <Text style = {{color:"black"}}>
 
