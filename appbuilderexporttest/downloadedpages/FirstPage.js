@@ -267,7 +267,7 @@ function unwrap_dynamically(value,default_value){
       {this.state.createdelems}
 
       <Text
-          style= {[{position:'absolute', textAlign:'center', zIndex:100,width:'100%'},{"top":"8.22%","left":"0.82%","innerText":" JSON.parse(JSON.stringify(Data[appData.counter][\"Question\"])) ;","height":"30%","fontSize":resizeFont(35)}]}
+          style= {[{position:'absolute', textAlign:'center', zIndex:100,width:'100%'},{"top":"13.22%","left":"0.82%","innerText":" JSON.parse(JSON.stringify(Data[appData.counter][\"Question\"])) ;","height":"30%","fontSize":resizeFont(25)}]}
         > { JSON.parse(JSON.stringify(Data[appData.counter]["Question"])) } </Text>
         
  <TouchableOpacity
@@ -463,7 +463,7 @@ else{if(appData.SecondChance!=1){
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"innerText":"'Back'","top":"-0.5%","left":"0.11%","backgroundColor":"yellow"}]}
+              {"innerText":"'Back'","top":"2.5%","left":"0.11%","backgroundColor":"yellow"}]}
         >
         <Text style = {{color:"black"}}>
 
@@ -472,15 +472,15 @@ else{if(appData.SecondChance!=1){
        </Text>
         </TouchableOpacity>
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"-4.94%","left":"71.91%","innerText":" appData.Zoins;"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"5%","left":"71.91%","innerText":" appData.Zoins;"}]}
         > { appData.Zoins} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"2.2%","left":"64.57%","innerText":"'Zoins:'"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"5%","left":"64.57%","innerText":"'Zoins:'"}]}
         > {'Zoins:'} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":" appData.coins;","top":"2.2%","left":"75.23%"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":" appData.coins;","top":"5%","left":"76.3%"}]}
         > { appData.coins} </Text>
         
  <TouchableOpacity
