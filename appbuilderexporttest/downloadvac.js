@@ -552,7 +552,7 @@ function exportElemToExpo(name,int, page, childrenAdditionalStyle, clickfunction
     if(name === "input"){
 
       return `<TextInput
-       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},`+ JSON.stringify(childrenAdditionalStyle) +`]}
+       style= {[{position:'absolute', width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},`+ JSON.stringify(childrenAdditionalStyle) +`]}
         value={appData["` + page + "input" + int + `"]}
          onChangeText={function(val){ appData["` + page + "input" + int + `"] = val; that.forceUpdate();   } }
         />`

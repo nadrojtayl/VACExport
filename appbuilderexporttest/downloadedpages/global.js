@@ -1,3 +1,3 @@
-var global = {"selectedSkin":"https://i.imgur.com/mkHo4H8.gif","skinPosition":"25%","batPosition":0,"meters":0,"interval":352,"lane":"25%","batPosition2":0,"bulldog":353,"lane2":230,"hard":"hard","easy":"easy","medium":"medium","uses":"easy","createdelems":[]}
+var global = {"FirstPageinput2":"","dbkeys":["right","wrong1","wrong2","wrong3"],"bindex1":3,"bindex2":2,"bindex3":0,"bindex4":1,"questionindex":10,"createdelems":[]}
 
 export default global;

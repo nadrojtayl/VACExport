@@ -214,13 +214,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FinalPage extends React.Component {
+ class Right extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"selectedSkin":"https://i.imgur.com/mkHo4H8.gif","skinPosition":230,"batPosition":0,"meters":0,"interval":352,"lane":350,"batPosition2":0,"bulldog":353,"lane2":230,"hard":"hard","easy":"easy","medium":"medium","uses":"easy","createdelems":[]}
+        this.state = {"FirstPageinput2":"","dbkeys":["right","wrong1","wrong2","wrong3"],"bindex1":3,"bindex2":2,"bindex3":0,"bindex4":1,"questionindex":10,"createdelems":[]}
     }
 
     componentDidMount(){
@@ -263,25 +263,28 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"rgb(208, 226, 242)"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#00affa"}}>
       {this.state.createdelems}
 
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%', textAlign:'center'},
-          {"top":"29.92%","left":"0%","innerText":"'   CONGRATULATIONS'","fontSize":"resizeFont(50)","color":"purple","fontWeight":"bold",fontSize:30}]}
-        > {'CONGRATULATIONS'} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":" 'YOU RAN '+appData.meters+' METERS';","top":"38.96%","left":"30.33%","color":"red","fontSize":"resizeFont(20)"}]}
-        > { 'YOU RAN '+appData.meters+' METERS'} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"18.58%","left":"33.15%","innerText":"'RIGHT!'","fontSize":"resizeFont(42)","color":"#ffd414","fontFamily":"COMIC SANS MS"}]}
+        > {'RIGHT!'} </Text>
         
  <TouchableOpacity
           
-          onPress = { function(){pause("https://vgmdownloads.com/soundtracks/wii-music-collection/tasdctcp/04.%20Mii%20Plaza.mp3");
-if(appData.meters>Emet[0]["high Score"])
-{updateDatabase("Emet",{"high Score": Emet[0]["high Score"]},{"high Score": appData.meters})}
-appData.meters = 0;
-that.props.goTo('FirstPage');; that.forceUpdate(); }}  
+          onPress = { function(){var lst = [0, 1, 2, 3];
+for(let i =lst.length - 1; i > 0; i--){
+  const j = Math.floor(Math.random() * i)
+  const temp = lst[i]
+    lst[i] = lst[j]
+    lst[j] = temp
+}
+appData.bindex1 = lst[0];
+appData.bindex2 = lst[1];
+appData.bindex3 = lst[2];
+appData.bindex4 = lst[3];
+appData.questionindex=Math.floor(Math.random()*questions.length)
+that.props.goTo('Secondpage'); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -300,101 +303,19 @@ that.props.goTo('FirstPage');; that.forceUpdate(); }}
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"47.02%","left":"33.92%","innerText":"'HOME'","backgroundColor":"purple","color":"red"}]}
+              {"top":"51.99%","left":"36.07%","innerText":"'Next'","backgroundColor":"#ffd414"}]}
         >
-        <Text style = {{color:"red"}}>
+        <Text style = {{color:"black"}}>
 
-        {'HOME'}
+        {'Next'}
 
        </Text>
         </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){if(appData.meters>Emet[0]["high Score"])
-{updateDatabase("Emet",{"high Score": Emet[0]["high Score"]},{"high Score": appData.meters})}
-appData.meters = 0;
-that.props.goTo('PlayPage');; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, 
-            backgroundColor:'#8fd158',
-             alignItems:'center',
-             justifyContent:'center', height: "7%",  
-             title:'Test', borderColor: 'gray', color:'black',
-              borderRadius:15, borderWidth: 1},
-              {"top":"57.23%","left":"34.48%","innerText":"'TRY AGAIN'","backgroundColor":"purple","color":"red"}]}
-        >
-        <Text style = {{color:"red"}}>
-
-        {'TRY AGAIN'}
-
-       </Text>
-        </TouchableOpacity>
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {position:'absolute',resizeMode:'contain', "source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"45.12%","left":"13.74%"}]}
-        source = {{position:'absolute',resizeMode:'contain',uri:'http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{position:'absolute',resizeMode:'contain',width:"20%",height:"20%"}, {"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"44.68%","left":"66.35%"}]}
-        source = {{uri:'http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{position:'absolute',resizeMode:'contain',width:"20%",height:"20%"}, {"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"9.72%","left":"11.68%"}]}
-        source = {{uri:'http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{position:'absolute',resizeMode:'contain',width:"20%",height:"20%"}, {"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"9.93%","left":"66.35%"}]}
-        source = {{uri:'http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-        
         </View>
         )
     }
   }
-    export default FinalPage; 
+    export default Right; 
 
 
 

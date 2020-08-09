@@ -4,9 +4,9 @@
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 import FirstPage from './downloadedpages/FirstPage.js'
-import SkinsPage from './downloadedpages/SkinsPage.js'
-import PlayPage from './downloadedpages/PlayPage.js'
-import FinalPage from './downloadedpages/FinalPage.js'
+import Secondpage from './downloadedpages/Secondpage.js'
+import Wrong from './downloadedpages/Wrong.js'
+import Right from './downloadedpages/Right.js'
 import appData from './downloadedpages/global.js';
 /*
 EXPORT PROCESS
@@ -91,7 +91,7 @@ this.state = {dbLinks:{}, loaded:false, page:"FirstPage", numLoaded:0}
 componentDidMount(){
   
   var that = this;
-  var dbLinks = {"Emet":"https://script.google.com/macros/s/AKfycbye6vWLY4LINqbpbuEJjIMJvciFNsxxJAlFPatx4Wi3id1Z2C_q/exec?sheetName=Emet"}
+  var dbLinks = {"questions":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbwnU71tJvGzjIWhOCjYg3dQRYj9YjLru7mCrw3LdQ/exec?sheetName=Breanna"}
   Object.keys(dbLinks).forEach(function(key){
     that.connectToDatabase(dbLinks[key], key);
   })
@@ -136,10 +136,10 @@ render(){
     
 
 
-    if(that.state.page === "SkinsPage"){
+    if(that.state.page === "Secondpage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <SkinsPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SkinsPage>
+             <Secondpage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Secondpage>
           </View>
         )
     }
@@ -149,10 +149,10 @@ render(){
     
 
 
-    if(that.state.page === "PlayPage"){
+    if(that.state.page === "Wrong"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <PlayPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></PlayPage>
+             <Wrong  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Wrong>
           </View>
         )
     }
@@ -162,10 +162,10 @@ render(){
     
 
 
-    if(that.state.page === "FinalPage"){
+    if(that.state.page === "Right"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <FinalPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FinalPage>
+             <Right  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Right>
           </View>
         )
     }

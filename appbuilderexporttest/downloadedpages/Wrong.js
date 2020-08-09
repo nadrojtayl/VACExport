@@ -214,7 +214,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class Wrong extends React.Component {
      
 
     constructor(props)
@@ -267,18 +267,9 @@ function unwrap_dynamically(value,default_value){
       {this.state.createdelems}
 
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"-1.24%","left":"1.48%","innerText":"'Math SAT Question a Day'","fontSize":"resizeFont(75)","textAlign":"center","fontFamily":"Comic Sans MS","color":"#ffd414"}]}
-        > {'Math SAT Question a Day'} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'WRONG!'","top":"18.24%","left":"20.97%","color":"#ffd414","fontFamily":"COMIC SANS MS","fontSize":"resizeFont(42)"}]}
+        > {'WRONG!'} </Text>
         
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"54.12%","left":"39.08%","innerText":"'Name'","fontSize":"resizeFont(35)","fontFamily":"Comic Sans MS","color":"#ffd414"}]}
-        > {'Name'} </Text>
-        
-<TextInput
-       style= {[{position:'absolute', width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"62.65%","left":"11.78%","borderColor":"#ffd414","color":"#ffd414","fontSize":"resizeFont(25)","textAlign":"center","fontFamily":"Comic Sans MS"}]}
-        value={appData["FirstPageinput2"]}
-         onChangeText={function(val){ appData["FirstPageinput2"] = val; that.forceUpdate();   } }
-        />
  <TouchableOpacity
           
           onPress = { function(){var lst = [0, 1, 2, 3];
@@ -312,11 +303,11 @@ that.props.goTo('Secondpage'); that.forceUpdate(); }}
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"71.49%","left":"4.83%","innerText":"'Get question of the day'","height":"25%","width":"90%","backgroundColor":"#ffd414","fontSize":"resizeFont(30)","textAlign":"center","color":"#00affa","fontFamily":"Comic Sans MS"}]}
+              {"top":"55.4%","left":"37.29%","backgroundColor":"#ffd414","innerText":"'Next'"}]}
         >
-        <Text style = {{color:"#00affa"}}>
+        <Text style = {{color:"black"}}>
 
-        {'Get question of the day'}
+        {'Next'}
 
        </Text>
         </TouchableOpacity>
@@ -324,7 +315,7 @@ that.props.goTo('Secondpage'); that.forceUpdate(); }}
         )
     }
   }
-    export default FirstPage; 
+    export default Wrong; 
 
 
 

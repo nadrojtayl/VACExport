@@ -1,7 +1,7 @@
   {
       "expo": {
-        "name": "PineappleRush",
-        "slug": "PineappleRush",
+        "name": "QuestionADayMusic",
+        "slug": "QuestionADayMusic",
         "platforms": [
           "ios",
           "android",
@@ -23,10 +23,10 @@
         ],
         "ios": {
           "supportsTablet": true,
-          "bundleIdentifier": "com.pineapplerush.pineapplerush"
+          "bundleIdentifier": "com.questionadaymusic.questionadaymusic"
         },
         "android": {
-          "package": "com.pineapplerush.pineapplerush"
+          "package": "com.questionadaymusic.questionadaymusic"
         },
         "entryPoint": "node_modules/expo/AppEntry.js"
       }

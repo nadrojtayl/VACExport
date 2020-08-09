@@ -214,13 +214,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class SkinsPage extends React.Component {
+ class Secondpage extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"selectedSkin":"https://i.imgur.com/mkHo4H8.gif","skinPosition":230,"batPosition":0,"meters":0,"interval":352,"lane":350,"batPosition2":0,"bulldog":353,"lane2":230,"hard":"hard","easy":"easy","medium":"medium","uses":"easy","createdelems":[]}
+        this.state = {"FirstPageinput2":"","dbkeys":["right","wrong1","wrong2","wrong3"],"bindex1":3,"bindex2":2,"bindex3":0,"bindex4":1,"questionindex":10,"createdelems":[]}
     }
 
     componentDidMount(){
@@ -263,52 +263,16 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"rgb(208, 226, 242)"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#00affa"}}>
       {this.state.createdelems}
 
-      <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"fontSize":"resizeFont(56)","top":"12.33%","left":"38.25%","innerText":"'Skins'","color":"red"}]}
-        > {'Select A Skin'} </Text>
-        
-
-      
-
-      <TouchableOpacity
-      style= {[{position:'absolute',width:"20%",height:"20%", position:'absolute',top:"34.22%",left:"15.72%"}]}
-       onPress = { function(){appData.selectedSkin = "https://i.imgur.com/mkHo4H8.gif";
-that.props.goTo('FirstPage'); that.forceUpdate(); }}  
-      >
-      <Image
-        style= {[{width:"100%",height:"100%"}, {resizeMode:'contain', "top":"34.22%","left":"-1.72%","source":"https://i.imgur.com/mkHo4H8.gif"}]}
-        source = {{uri:'https://i.imgur.com/mkHo4H8.gif'}}
-       
-      >
-      </Image>
-      </TouchableOpacity>
-
-
-      
-
-      
-
-      <TouchableOpacity
-      style= {[{position:'absolute',width:"20%",height:"20%", position:'absolute',top:"35.98%",left:"54.66%"}]}
-       onPress = { function(){that.props.goTo("FirstPage")
-appData.selectedSkin = "https://i.imgur.com/KXcppEK.gif"; that.forceUpdate(); }}  
-      >
-      <Image
-        style= {[{width:"100%",height:"100%"}, {resizeMode:'contain',"source":"https://i.imgur.com/KXcppEK.gifhttps://i.imgur.com/KXcppEK.gif","top":"35.98%","left":"54.66%"}]}
-        source = {{uri:'https://i.imgur.com/KXcppEK.gifhttps://i.imgur.com/KXcppEK.gif'}}
-       
-      >
-      </Image>
-      </TouchableOpacity>
-
-
-      
- <TouchableOpacity
+       <TouchableOpacity
           
-          onPress = { function(){that.props.goTo('FirstPage'); that.forceUpdate(); }}  
+          onPress = { function(){if (appData.bindex1==0){
+that.props.goTo('Right') 
+} else {
+that.props.goTo('Wrong')
+} ; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -327,84 +291,122 @@ appData.selectedSkin = "https://i.imgur.com/KXcppEK.gif"; that.forceUpdate(); }}
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"68.41%","left":"36.74%","innerText":"'Home'"}]}
+              {"top":"70.1%","left":"17.52%","innerText":"  questions[appData.questionindex][appData.dbkeys[appData.bindex1]];"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Home'}
+        {  questions[appData.questionindex][appData.dbkeys[appData.bindex1]]}
 
        </Text>
         </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){if (appData.bindex2==0){
+that.props.goTo('Right') 
+} else {
+that.props.goTo('Wrong')
+} ; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"69.79%","left":"61.84%","innerText":"  questions[appData.questionindex][appData.dbkeys[appData.bindex2]];"}]}
+        >
+        <Text style = {{color:"black"}}>
 
+        {  questions[appData.questionindex][appData.dbkeys[appData.bindex2]]}
 
-      <Image
-        style= {[{resizeMode:'contain', position:'absolute',
-        width:"20%",
-        height:"20%"}, {"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png",
-        "top":"2.31%","left":"12.61%"}]}
-        source = {{ 
-          uri:'http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){if (appData.bindex3==0){
+that.props.goTo('Right') 
+} else {
+that.props.goTo('Wrong')
+} ; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"85.29%","left":"17.28%","innerText":"  questions[appData.questionindex][appData.dbkeys[appData.bindex3]];"}]}
+        >
+        <Text style = {{color:"black"}}>
 
+        {  questions[appData.questionindex][appData.dbkeys[appData.bindex3]]}
 
+       </Text>
+        </TouchableOpacity>
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"15.2%","left":"0.52%","innerText":"  questions[appData.questionindex][\"question\"];","fontSize":"resizeFont(18)","textAlign":"center","borderStyle":"solid"}]}
+        > {  questions[appData.questionindex]["question"]} </Text>
+        
+ <TouchableOpacity
+          
+          onPress = { function(){if (appData.bindex4==0){
+that.props.goTo('Right') 
+} else {
+that.props.goTo('Wrong')
+} ; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"85.29%","left":"59.92%","innerText":"  questions[appData.questionindex][appData.dbkeys[appData.bindex4]];"}]}
+        >
+        <Text style = {{color:"black"}}>
 
-      
+        {  questions[appData.questionindex][appData.dbkeys[appData.bindex4]]}
 
-
-      <Image
-        style= {[{position:'absolute',width:"20%",height:"20%"}, {resizeMode:'contain',"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"2.98%","left":"69.37%"}]}
-        source = {{uri:'http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-      
-
-      <TouchableOpacity
-      style= {[{position:'absolute',width:"20%",height:"20%", position:'absolute',top:"16.34%",left:"13.16%"}]}
-       onPress = { function(){appData.selectedSkin = "https://piskel-imgstore-b.appspot.com/img/11610bca-ccf4-11ea-bed0-8faa2d9b7894.gif"
-that.props.goTo('FirstPage'); that.forceUpdate(); }}  
-      >
-      <Image
-        style= {[{width:"100%",height:"100%"}, {resizeMode:'contain',"source":"https://piskel-imgstore-b.appspot.com/img/11610bca-ccf4-11ea-bed0-8faa2d9b7894.gif","top":"36.34%","left":"33.16%"}]}
-        source = {{uri:'https://piskel-imgstore-b.appspot.com/img/11610bca-ccf4-11ea-bed0-8faa2d9b7894.gif'}}
-       
-      >
-      </Image>
-      </TouchableOpacity>
-
-
-      
-
-      
-
-      <TouchableOpacity
-      style= {[{position:'absolute',
-      width:"80%",height:"80%", position:'absolute',top:"-6.86%",left:"70.02%"}]}
-       onPress = { function(){appData.selectedSkin = "https://piskel-imgstore-b.appspot.com/img/8517a69c-cdb3-11ea-bec3-752299450aeb.gif";
-that.props.goTo('FirstPage'); that.forceUpdate(); }}  
-      >
-      <Image
-        style= {[{width:"100%",height:"100%"}, { resizeMode:'contain', "source":"https://piskel-imgstore-b.appspot.com/img/8517a69c-cdb3-11ea-bec3-752299450aeb.gif","width":"30%"}]}
-        source = {{uri:'https://piskel-imgstore-b.appspot.com/img/8517a69c-cdb3-11ea-bec3-752299450aeb.gif'}}
-       
-      >
-      </Image>
-      </TouchableOpacity>
-
-
-      
+       </Text>
+        </TouchableOpacity>
         </View>
         )
     }
   }
-    export default SkinsPage; 
+    export default Secondpage; 
 
 
 
