@@ -44,10 +44,11 @@ class Box extends React.Component{
 //https://spreadsheets.google.com/feeds/cells/1P0tGuikrAg5ZGpC2fHxLY49Osp6nhwseK2DSr34HM-o/1/public/full?alt=json
 
 function runWithInterval(script_string,interval){
-  var script_string = script_string + ";"
+  var script_string = script_string + "; global.thisapp.forceUpdate();"
   var that = appData.this;
     try{
         eval("function y(){"+script_string+"}")
+
         return setInterval(function(){ eval(script_string)},interval);
       } catch(e){
         alert("There was an error trying to run this!" + e);
@@ -385,17 +386,19 @@ appData.ended = false;
 appData.yeet = runWithInterval(`
 for(var i = 0;i<created.length;i++){
    created[i].top += 20;
-   var samelane = (created[i].left == "20%") == (appData.X < 200);
-   if(samelane && created[i].top >= 360 && created[i].top <= 380){
-       appData.ended = true;
-      if(appData.ended === true){
-          clearInterval(appData.yeet)
-          clearInterval(appData.thet)
-          delete window.created;
-          window.created = [];
-          that.props.goTo("End")
-      }
-   }
+
+   // var samelane = (created[i].left == "20%") == (appData.X < 200);
+   // if(samelane && created[i].top >= 360 && created[i].top <= 380){
+   //     appData.ended = true;
+   //    if(appData.ended === true){
+   //        clearInterval(appData.yeet)
+   //        clearInterval(appData.thet)
+   //        delete window.created;
+   //        window.created = [];
+   //        that.props.goTo("End")
+   //    }
+   // }
+
 }
 `,500);
 appData.thet = runWithInterval(`

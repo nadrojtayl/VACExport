@@ -142,10 +142,11 @@ class Box extends React.Component{
 //https://spreadsheets.google.com/feeds/cells/1P0tGuikrAg5ZGpC2fHxLY49Osp6nhwseK2DSr34HM-o/1/public/full?alt=json
 
 function runWithInterval(script_string,interval){
-  var script_string = script_string + ";"
+  var script_string = script_string + "; global.thisapp.forceUpdate();"
   var that = appData.this;
     try{
         eval("function y(){"+script_string+"}")
+        global.thisapp.forceUpdate();
         return setInterval(function(){ eval(script_string)},interval);
       } catch(e){
         alert("There was an error trying to run this!" + e);
@@ -316,6 +317,10 @@ function unwrap_dynamically(value,default_value){
     {
         super(props);
         this.state = ` + JSON.stringify(appdata) + `
+    }
+
+    componentDidMount(){
+      global.thisapp = this;
     }
 
 
