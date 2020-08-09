@@ -324,7 +324,7 @@ function unwrap_dynamically(value,default_value){
     createElement(name, style_obj){
       if(name === 'image'){
         this.state.createdelems.push(
-        (<Image style = {style_obj}></Image>)
+        (<Image style = {[{position:'absolute', width:"20%",height:"20%"}, style_obj]}></Image>)
         )
       }
 

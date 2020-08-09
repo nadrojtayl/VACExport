@@ -228,9 +228,10 @@ function unwrap_dynamically(value,default_value){
       
   
     createElement(name, style_obj){
+
       if(name === 'image'){
         this.state.createdelems.push(
-        (<Image style = {style_obj}></Image>)
+        style_obj
         )
       }
 
@@ -239,6 +240,7 @@ function unwrap_dynamically(value,default_value){
         (<Text style = {style_obj}></Text>)
         )
       }
+
 
       global.created.push(style_obj);
      
@@ -252,6 +254,7 @@ function unwrap_dynamically(value,default_value){
     render(){ 
       var that = this; 
       appData.this = this;
+      // alert(this.state.createdelems)
       
       if(!that.props.loaded){
         return(<View style = {{height:'100%',width:'100%', alignItems:'center',justifyContent:'center'}}>
@@ -261,7 +264,11 @@ function unwrap_dynamically(value,default_value){
       }
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"grey"}}>
-      {this.state.createdelems}
+      {this.state.createdelems.map(function(style){
+
+        return (<Image source = {{uri:style.source}} 
+          style = {[style,{zIndex:5000,position:'absolute', width:"20%",height:"20%"}]}></Image>)
+      })} 
 
        <TouchableOpacity
           
@@ -305,6 +312,8 @@ clearInterval(appData.thet);; that.forceUpdate(); }}
       >
       </Image>
       </TouchableOpacity>
+ 
+    
 
 
       
@@ -392,11 +401,13 @@ for(var i = 0;i<created.length;i++){
 appData.thet = runWithInterval(`
 if(0.5>Math.random()){
     appData.spawned ++;
-   var lid = global.thisapp.createElement("image", { "top": 100, "left": "65%" ,"resizeMode":"contain","backgroundColor":"tranparent", "source":"https://i.imgur.com/SGCjjSN.gif", "zIndex":-10000000})
+   var lid = global.thisapp.createElement("image", { "top": 100, "left": "65%" ,"resizeMode":"contain","backgroundColor":"tranparent", "source":"https://i.imgur.com/SGCjjSN.gif", "zIndex":1000})
+   global.thisapp.forceUpdate();
    appData.enemies.push(lid)
 } else {
     appData.spawned ++;
-    var lid = global.thisapp.createElement("image", { "top": 100, "left": "20%" ,"resizeMode":"contain","backgroundColor":"tranparent", "source":"https://i.imgur.com/SGCjjSN.gif", "zIndex":-10000000})
+    var lid = global.thisapp.createElement("image", { "top": 100, "left": "20%" ,"resizeMode":"contain","backgroundColor":"tranparent", "source":"https://i.imgur.com/SGCjjSN.gif", "zIndex":1000})
+    global.thisapp.forceUpdate();
     appData.enemies.push(lid)
 }
 //removeOffScreen();
@@ -434,13 +445,13 @@ if(0.5>Math.random()){
 
       
 
-
       <Image
         style= {[{width:"20%",height:"20%"}, {"source":"https://i.imgur.com/khLWbCD.gif","width":"100%","height":"100%","zIndex":-1000000000}]}
         source = {{uri:'https://i.imgur.com/khLWbCD.gif'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
 
 
 
