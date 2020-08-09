@@ -387,17 +387,17 @@ appData.yeet = runWithInterval(`
 for(var i = 0;i<created.length;i++){
    created[i].top += 20;
 
-   // var samelane = (created[i].left == "20%") == (appData.X < 200);
-   // if(samelane && created[i].top >= 360 && created[i].top <= 380){
-   //     appData.ended = true;
-   //    if(appData.ended === true){
-   //        clearInterval(appData.yeet)
-   //        clearInterval(appData.thet)
-   //        delete window.created;
-   //        window.created = [];
-   //        that.props.goTo("End")
-   //    }
-   // }
+   var samelane = (created[i].left === "20%") === (appData.X === "25%");
+   if(samelane && created[i].top >= (height*.5) && created[i].top <= (height*.55)  ){
+       appData.ended = true;
+      if(appData.ended === true){
+          clearInterval(appData.yeet)
+          clearInterval(appData.thet)
+          delete window.created;
+          window.created = [];
+          that.props.goTo("End")
+      }
+   }
 
 }
 `,500);
