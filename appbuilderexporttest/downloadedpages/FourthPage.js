@@ -214,13 +214,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class CorrectOne extends React.Component {
+ class FourthPage extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"counter":0,"vgcounter":0,"selected":[{"question":"what game company contributed to creating call of duty","choice 1":"Activision","choice 2":"Epic Games","choice 3":"Krafton","choice 4":"Insomniac Games","answer":"Activision","Category ":"Video Games","Index":19},{"question":"What game holds the record for the most sales ","choice 1":"Fortnite ","choice 2":"Minecraft","choice 3":"Call of Duty ","choice 4":"Mortal Kombat X ","answer":"Minecraft","Category ":"Video Games","Index":20}],"nbastreakscore":0,"vbstreakscore":1,"catchosen":"Video Games","createdelems":[]}
+        this.state = {"counter":4,"coins":0,"SecondChance":1,"visible":0,"createdelems":[]}
     }
 
     componentDidMount(){
@@ -266,85 +266,12 @@ function unwrap_dynamically(value,default_value){
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
       {this.state.createdelems}
 
-      <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'correct'","top":"10.6%","left":"32.29%","fontSize":resizeFont(35),"color":"green"}]}
-        > {'correct'} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"20.07%","left":"18.39%","innerText":"'congrats you've earned your points '","color":"green"}]}
-        > {'congrats youve earned your points '} </Text>
-        
- <TouchableOpacity
-          
-          onPress = { function(){if(appData.counter==18){that.props.goTo("FirstPage")
-    appData.counter=0
-}
-else{
-that.props.goTo("NbaOne")}; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, 
-            backgroundColor:'#8fd158',
-             alignItems:'center',
-             justifyContent:'center', height: "7%",  
-             title:'Test', borderColor: 'gray', color:'black',
-              borderRadius:15, borderWidth: 1},
-              {"top":"87.89%","left":"3.68%","innerText":"'Back'"}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {'Back'}
-
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){if(appData.counter==18){that.props.goTo("FirstPage")
-    appData.counter=0
-} 
-else{
-that.props.goTo("NbaOne")}; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, 
-            backgroundColor:'#8fd158',
-             alignItems:'center',
-             justifyContent:'center', height: "7%",  
-             title:'Test', borderColor: 'gray', color:'black',
-              borderRadius:15, borderWidth: 1},
-              {"top":"88.06%","left":"64.91%","innerText":"'Continue'"}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {'Continue'}
-
-       </Text>
-        </TouchableOpacity>
+      
         </View>
         )
     }
   }
-    export default CorrectOne; 
+    export default FourthPage; 
 
 
 

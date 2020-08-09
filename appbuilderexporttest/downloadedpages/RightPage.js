@@ -214,13 +214,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class NbaTwo extends React.Component {
+ class RightPage extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"counter":0,"vgcounter":0,"selected":[{"question":"what game company contributed to creating call of duty","choice 1":"Activision","choice 2":"Epic Games","choice 3":"Krafton","choice 4":"Insomniac Games","answer":"Activision","Category ":"Video Games","Index":19},{"question":"What game holds the record for the most sales ","choice 1":"Fortnite ","choice 2":"Minecraft","choice 3":"Call of Duty ","choice 4":"Mortal Kombat X ","answer":"Minecraft","Category ":"Video Games","Index":20}],"nbastreakscore":0,"vbstreakscore":1,"catchosen":"Video Games","createdelems":[]}
+        this.state = {"counter":4,"coins":0,"SecondChance":1,"visible":0,"createdelems":[]}
     }
 
     componentDidMount(){
@@ -267,16 +267,16 @@ function unwrap_dynamically(value,default_value){
       {this.state.createdelems}
 
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'who holds the record for the most threes made in a season'","height":"30%","fontSize":"resizeFont(30)","top":"2.68%","left":"2.88%"}]}
-        > {'who holds the record for the most threes made in a season'} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'CONGRATULATIONS You Got It Correct !!!'","fontSize":"resizeFont(25)","top":"59.43%","left":"2.96%","color":"green"}]}
+        > {'CONGRATULATIONS You Got It Correct !!!'} </Text>
         
  <TouchableOpacity
           
-          onPress = { function(){if(JSON.parse(JSON.stringify(Data[appData.counter]["answer"])).localeCompare(JSON.parse(JSON.stringify(Data[appData.counter]["choice 1"]))) == 0 ){
-that.props.goTo("CorrectOne") 
-appData.counter=appData.counter+1}
-else {that.props.goTo("WrongOne")
-appData.counter=appData.counter+1}; that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("FirstPage")
+appData.visible=0
+if(appData.counter>9){
+    appData.counter=0
+}; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -295,135 +295,31 @@ appData.counter=appData.counter+1}; that.forceUpdate(); }}
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"39.18%","left":"2.61%","innerText":"'Reggie Miller'"}]}
+              {"innerText":"'Next'","top":"73.38%","left":"68.36%","backgroundColor":"yellow"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Reggie Miller'}
+        {'Next'}
 
        </Text>
         </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("WrongOne"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, 
-            backgroundColor:'#8fd158',
-             alignItems:'center',
-             justifyContent:'center', height: "7%",  
-             title:'Test', borderColor: 'gray', color:'black',
-              borderRadius:15, borderWidth: 1},
-              {"top":"51.4%","left":"2.34%","innerText":"'Kyle Korver'"}]}
-        >
-        <Text style = {{color:"black"}}>
 
-        {'Kyle Korver'}
 
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("WrongOne"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, 
-            backgroundColor:'#8fd158',
-             alignItems:'center',
-             justifyContent:'center', height: "7%",  
-             title:'Test', borderColor: 'gray', color:'black',
-              borderRadius:15, borderWidth: 1},
-              {"top":"63.45%","left":"1.81%","innerText":"'Damian Lillard'"}]}
-        >
-        <Text style = {{color:"black"}}>
+      <Image
+        style= {[{width:"20%",height:"20%",position:'absolute'}, {"source":"https://cdn.vox-cdn.com/thumbor/iAnFy2VvfBelUdmc5eFdT2mG6Ws=/0x0:2234x3000/1200x800/filters:focal(968x577:1324x933)/cdn.vox-cdn.com/uploads/chorus_image/image/66235882/577439892.jpg.0.jpg","height":"60%","top":"-1.13%","left":"-0.12%","width":"100%"}]}
+        source = {{uri:'https://cdn.vox-cdn.com/thumbor/iAnFy2VvfBelUdmc5eFdT2mG6Ws=/0x0:2234x3000/1200x800/filters:focal(968x577:1324x933)/cdn.vox-cdn.com/uploads/chorus_image/image/66235882/577439892.jpg.0.jpg'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
 
-        {'Damian Lillard'}
 
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("CorrectOne"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, 
-            backgroundColor:'#8fd158',
-             alignItems:'center',
-             justifyContent:'center', height: "7%",  
-             title:'Test', borderColor: 'gray', color:'black',
-              borderRadius:15, borderWidth: 1},
-              {"top":"75.67%","left":"2.34%","innerText":"'Stephen Curry'"}]}
-        >
-        <Text style = {{color:"black"}}>
 
-        {'Stephen Curry'}
-
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("Nbastarterpage"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, 
-            backgroundColor:'#8fd158',
-             alignItems:'center',
-             justifyContent:'center', height: "7%",  
-             title:'Test', borderColor: 'gray', color:'black',
-              borderRadius:15, borderWidth: 1},
-              {"top":"91.11%","left":"65.71%","innerText":"'Back'"}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {'Back'}
-
-       </Text>
-        </TouchableOpacity>
+      
         </View>
         )
     }
   }
-    export default NbaTwo; 
+    export default RightPage; 
 
 
 

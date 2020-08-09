@@ -214,13 +214,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class Nbastarterpage extends React.Component {
+ class StartPage extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"counter":19,"vgcounter":21,"createdelems":[]}
+        this.state = {"counter":4,"coins":0,"SecondChance":1,"visible":0,"createdelems":[]}
     }
 
     componentDidMount(){
@@ -266,78 +266,40 @@ function unwrap_dynamically(value,default_value){
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
       {this.state.createdelems}
 
-      <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"9.57%","left":"36.3%","innerText":"'NBA'","fontSize":resizeFont(40)}]}
-        > {'NBA'} </Text>
-        
- <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo('NbaOne')
-appData.counter=0; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, 
-            backgroundColor:'#8fd158',
-             alignItems:'center',
-             justifyContent:'center', height: "7%",  
-             title:'Test', borderColor: 'gray', color:'black',
-              borderRadius:15, borderWidth: 1},
-              {"top":"43.77%","left":"32.82%","innerText":"'Get Started'"}]}
-        >
-        <Text style = {{color:"black"}}>
+      
 
-        {'Get Started'}
+      <Image
+        style= {[{width:"20%",height:"20%",position:'absolute'}, {"source":"https://www.freepnglogos.com/uploads/nba-logo-png/nba-all-star-game-full-team-lebron-team-giannis-18.png","height":"70%","top":"-5.92%","left":"3.91%","width":"90%"}]}
+        source = {{uri:'https://www.freepnglogos.com/uploads/nba-logo-png/nba-all-star-game-full-team-lebron-team-giannis-18.png'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
 
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("FirstPage"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, 
-            backgroundColor:'#8fd158',
-             alignItems:'center',
-             justifyContent:'center', height: "7%",  
-             title:'Test', borderColor: 'gray', color:'black',
-              borderRadius:15, borderWidth: 1},
-              {"top":"89.61%","left":"3.68%","innerText":"'Back'"}]}
-        >
-        <Text style = {{color:"black"}}>
 
-        {'Back'}
 
-       </Text>
-        </TouchableOpacity>
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"20.19%","left":"10%","innerText":"'Think you're an NBA wiz? Lets put that to the test and see how much you truly know'","width":"80%","fontSize":resizeFont(20)}]}
-        > {'Think youre an NBA wiz? Lets put that to the test and see how much you truly know'} </Text>
-        
+      
+
+      
+
+      <TouchableOpacity
+      style= {[{width:"40%",height:"30%", position:'absolute',top:"62.44%",left:"29.26%"}]}
+       onPress = { function(){that.props.goTo("FirstPage"); that.forceUpdate(); }}  
+      >
+      <Image
+        style= {[{width:"100%",height:"100%"}, {"source":"https://a2.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnba%2F500%2Fphx.png","top":"\"62.44%\"","left":"\"29.26%\"","width":"40%","height":"30%"}]}
+        source = {{uri:'https://a2.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnba%2F500%2Fphx.png'}}
+       
+      >
+      </Image>
+      </TouchableOpacity>
+
+
+      
         </View>
         )
     }
   }
-    export default Nbastarterpage; 
+    export default StartPage; 
 
 
 

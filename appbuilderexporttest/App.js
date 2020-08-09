@@ -4,17 +4,15 @@
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 import FirstPage from './downloadedpages/FirstPage.js'
-import Nbastarterpage from './downloadedpages/Nbastarterpage.js'
-import Settings from './downloadedpages/Settings.js'
-import Tvshowstarterpage from './downloadedpages/Tvshowstarterpage.js'
-import Animestarterpage from './downloadedpages/Animestarterpage.js'
-import NbaPage from './downloadedpages/NbaPage.js'
-import WrongOne from './downloadedpages/WrongOne.js'
-import CorrectOne from './downloadedpages/CorrectOne.js'
-import NbaTwo from './downloadedpages/NbaTwo.js'
-import NbaThree from './downloadedpages/NbaThree.js'
-import Dictionary from './downloadedpages/Dictionary.js'
-import VGONE from './downloadedpages/VGONE.js'
+import FifthPage from './downloadedpages/FifthPage.js'
+import FourthPage from './downloadedpages/FourthPage.js'
+import ThirdPage from './downloadedpages/ThirdPage.js'
+import RightPage from './downloadedpages/RightPage.js'
+import CorrectPage from './downloadedpages/CorrectPage.js'
+import StartPage from './downloadedpages/StartPage.js'
+
+import SecondPage from './downloadedpages/SecondPage.js'
+import IncorrectPage from './downloadedpages/IncorrectPage.js'
 import appData from './downloadedpages/global.js';
 /*
 EXPORT PROCESS
@@ -99,7 +97,7 @@ this.state = {dbLinks:{}, loaded:false, page:"FirstPage", numLoaded:0}
 componentDidMount(){
   
   var that = this;
-  var dbLinks = {"Data":"https://script.google.com/macros/s/AKfycbwvcQ_o7_rei93TxzJpJEL1zVupgA4bZeB94__ra6ZFU-RN_vw/exec?sheetName=Shallarh"}
+  var dbLinks = {"Data":"https://script.google.com/macros/s/AKfycbwvcQ_o7_rei93TxzJpJEL1zVupgA4bZeB94__ra6ZFU-RN_vw/exec?sheetName=Alonzo"}
   Object.keys(dbLinks).forEach(function(key){
     that.connectToDatabase(dbLinks[key], key);
   })
@@ -144,10 +142,10 @@ render(){
     
 
 
-    if(that.state.page === "Nbastarterpage"){
+    if(that.state.page === "FifthPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <Nbastarterpage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Nbastarterpage>
+             <FifthPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FifthPage>
           </View>
         )
     }
@@ -157,10 +155,10 @@ render(){
     
 
 
-    if(that.state.page === "Settings"){
+    if(that.state.page === "FourthPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <Settings  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Settings>
+             <FourthPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FourthPage>
           </View>
         )
     }
@@ -170,10 +168,10 @@ render(){
     
 
 
-    if(that.state.page === "Tvshowstarterpage"){
+    if(that.state.page === "ThirdPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <Tvshowstarterpage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Tvshowstarterpage>
+             <ThirdPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></ThirdPage>
           </View>
         )
     }
@@ -183,10 +181,10 @@ render(){
     
 
 
-    if(that.state.page === "Animestarterpage"){
+    if(that.state.page === "RightPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <Animestarterpage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Animestarterpage>
+             <RightPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RightPage>
           </View>
         )
     }
@@ -196,10 +194,35 @@ render(){
     
 
 
-    if(that.state.page === "NbaOne"){
+    if(that.state.page === "CorrectPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <NbaPage saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NbaPage>
+             <CorrectPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></CorrectPage>
+          </View>
+        )
+    }
+
+
+
+    if(that.state.page === "StartPage"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <StartPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></StartPage>
+          </View>
+        )
+    }
+
+
+
+
+
+    
+
+
+    if(that.state.page === "SecondPage"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <SecondPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SecondPage>
           </View>
         )
     }
@@ -209,10 +232,24 @@ render(){
     
 
 
-    if(that.state.page === "WrongOne"){
+    if(that.state.page === "RightPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <WrongOne  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></WrongOne>
+             <RightPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RightPage>
+          </View>
+        )
+    }
+
+
+
+   
+    
+
+
+    if(that.state.page === "StartPage"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <StartPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></StartPage>
           </View>
         )
     }
@@ -222,10 +259,10 @@ render(){
     
 
 
-    if(that.state.page === "CorrectOne"){
+    if(that.state.page === "RightPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <CorrectOne  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></CorrectOne>
+             <RightPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RightPage>
           </View>
         )
     }
@@ -235,10 +272,10 @@ render(){
     
 
 
-    if(that.state.page === "NbaTwo"){
+    if(that.state.page === "RightPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <NbaTwo  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NbaTwo>
+             <RightPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RightPage>
           </View>
         )
     }
@@ -248,10 +285,10 @@ render(){
     
 
 
-    if(that.state.page === "NbaThree"){
+    if(that.state.page === "RightPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <NbaThree  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NbaThree>
+             <RightPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RightPage>
           </View>
         )
     }
@@ -261,10 +298,10 @@ render(){
     
 
 
-    if(that.state.page === "NbaThree"){
+    if(that.state.page === "RightPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <NbaThree  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NbaThree>
+             <RightPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RightPage>
           </View>
         )
     }
@@ -274,10 +311,10 @@ render(){
     
 
 
-    if(that.state.page === "Dictionary"){
+    if(that.state.page === "RightPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <Dictionary  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Dictionary>
+             <RightPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RightPage>
           </View>
         )
     }
@@ -287,10 +324,95 @@ render(){
     
 
 
-    if(that.state.page === "VGONE"){
+    if(that.state.page === "RightPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <VGONE  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></VGONE>
+             <RightPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RightPage>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "RightPage"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <RightPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RightPage>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "RightPage"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <RightPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RightPage>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "RightPage"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <RightPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RightPage>
+          </View>
+        )
+    }
+
+
+
+       if(that.state.page === "IncorrectPage"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <IncorrectPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></IncorrectPage>
+          </View>
+        )
+    }
+    
+
+
+    if(that.state.page === "RightPage"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <RightPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RightPage>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "RightPage"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <RightPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RightPage>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "RightPage"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <RightPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RightPage>
           </View>
         )
     }

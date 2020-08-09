@@ -214,13 +214,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class Animestarterpage extends React.Component {
+ class FifthPage extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"counter":0,"vgcounter":0,"selected":[{"question":"what game company contributed to creating call of duty","choice 1":"Activision","choice 2":"Epic Games","choice 3":"Krafton","choice 4":"Insomniac Games","answer":"Activision","Category ":"Video Games","Index":19},{"question":"What game holds the record for the most sales ","choice 1":"Fortnite ","choice 2":"Minecraft","choice 3":"Call of Duty ","choice 4":"Mortal Kombat X ","answer":"Minecraft","Category ":"Video Games","Index":20}],"nbastreakscore":0,"vbstreakscore":1,"catchosen":"Video Games","createdelems":[]}
+        this.state = {"counter":4,"coins":0,"SecondChance":1,"visible":0,"createdelems":[]}
     }
 
     componentDidMount(){
@@ -266,40 +266,12 @@ function unwrap_dynamically(value,default_value){
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
       {this.state.createdelems}
 
-       <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("FirstPage"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, 
-            backgroundColor:'#8fd158',
-             alignItems:'center',
-             justifyContent:'center', height: "7%",  
-             title:'Test', borderColor: 'gray', color:'black',
-              borderRadius:15, borderWidth: 1},
-              {"top":"91.97%","left":"68.39%","innerText":"'Back'"}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {'Back'}
-
-       </Text>
-        </TouchableOpacity>
+      
         </View>
         )
     }
   }
-    export default Animestarterpage; 
+    export default FifthPage; 
 
 
 

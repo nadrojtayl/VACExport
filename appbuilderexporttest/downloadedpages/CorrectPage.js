@@ -214,13 +214,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class Tvshowstarterpage extends React.Component {
+ class CorrectPage extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"counter":2,"vgcounter":21,"createdelems":[]}
+        this.state = {"counter":4,"coins":0,"SecondChance":1,"visible":0,"createdelems":[]}
     }
 
     componentDidMount(){
@@ -266,79 +266,12 @@ function unwrap_dynamically(value,default_value){
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
       {this.state.createdelems}
 
-       <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("FirstPage"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, 
-            backgroundColor:'#8fd158',
-             alignItems:'center',
-             justifyContent:'center', height: "7%",  
-             title:'Test', borderColor: 'gray', color:'black',
-              borderRadius:15, borderWidth: 1},
-              {"top":"91.28%","left":"67.85%","innerText":"'Back'"}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {'Back'}
-
-       </Text>
-        </TouchableOpacity>
-<Text
-          style= {[{position:'absolute', textAlign:'center', zIndex:100,width:'100%'},{"fontSize":resizeFont(50),"innerText":"'Video Games'","top":"5.05%","left":"0%"}]}
-        > {'Video Games'} </Text>
-
-        <Text
-          style= {[{position:'absolute', textAlign:'center', zIndex:100,width:'100%'},{"fontSize":resizeFont(20),"innerText":"'Video Games'","top":"35.05%","left":"0%"}]}
-        > {'Are you a video game wiz? Time to prove it'} </Text>
-        
- <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("VGONE")
-appData.counter=0; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, 
-            backgroundColor:'#8fd158',
-             alignItems:'center',
-             justifyContent:'center', height: "7%",  
-             title:'Test', borderColor: 'gray', color:'black',
-              borderRadius:15, borderWidth: 1},
-              {"top":"68.46%","left":"30.68%",
-              "innerText":"'Get Started'"}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {'Get Started'}
-
-       </Text>
-        </TouchableOpacity>
+      
         </View>
         )
     }
   }
-    export default Tvshowstarterpage; 
+    export default CorrectPage; 
 
 
 

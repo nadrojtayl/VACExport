@@ -214,13 +214,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class Dictionary extends React.Component {
+ class SecondPage extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"counter":0,"vgcounter":0,"selected":[{"question":"what game company contributed to creating call of duty","choice 1":"Activision","choice 2":"Epic Games","choice 3":"Krafton","choice 4":"Insomniac Games","answer":"Activision","Category ":"Video Games","Index":19},{"question":"What game holds the record for the most sales ","choice 1":"Fortnite ","choice 2":"Minecraft","choice 3":"Call of Duty ","choice 4":"Mortal Kombat X ","answer":"Minecraft","Category ":"Video Games","Index":20}],"nbastreakscore":0,"vbstreakscore":1,"catchosen":"Video Games","createdelems":[]}
+        this.state = {"counter":4,"coins":0,"SecondChance":1,"visible":0,"createdelems":[]}
     }
 
     componentDidMount(){
@@ -264,12 +264,14 @@ function unwrap_dynamically(value,default_value){
       }
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
- 
+      {this.state.createdelems}
+
+      
         </View>
         )
     }
   }
-    export default Dictionary; 
+    export default SecondPage; 
 
 
 

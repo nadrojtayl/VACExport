@@ -214,13 +214,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class NbaThree extends React.Component {
+ class IncorrectPage extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"counter":0,"vgcounter":0,"selected":[{"question":"what game company contributed to creating call of duty","choice 1":"Activision","choice 2":"Epic Games","choice 3":"Krafton","choice 4":"Insomniac Games","answer":"Activision","Category ":"Video Games","Index":19},{"question":"What game holds the record for the most sales ","choice 1":"Fortnite ","choice 2":"Minecraft","choice 3":"Call of Duty ","choice 4":"Mortal Kombat X ","answer":"Minecraft","Category ":"Video Games","Index":20}],"nbastreakscore":0,"vbstreakscore":1,"catchosen":"Video Games","createdelems":[]}
+        this.state = {"counter":4,"coins":0,"SecondChance":1,"visible":0,"createdelems":[]}
     }
 
     componentDidMount(){
@@ -266,160 +266,60 @@ function unwrap_dynamically(value,default_value){
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
       {this.state.createdelems}
 
-      <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'whos the only player in the NBA to record a 60 point triple double '","height":"30%","fontSize":"resizeFont(30)"}]}
-        > {'whos the only player in the NBA to record a 60 point triple double '} </Text>
+       <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo("FirstPage")
+appData.visible=0
+if(appData.counter>9){
+    appData.counter=0
+}; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"83.79%","left":"66.7%","innerText":"'Next'","backgroundColor":"yellow"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Next'}
+
+       </Text>
+        </TouchableOpacity>
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"74.02%","left":"0.59%","innerText":"'Whoops So Close!!!!'","fontSize":"resizeFont(30)","color":"red","backgroundColor":"white"}]}
+        > {'Whoops So Close!!!!'} </Text>
         
- <TouchableOpacity
-          
-          onPress = { function(){; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, 
-            backgroundColor:'#8fd158',
-             alignItems:'center',
-             justifyContent:'center', height: "7%",  
-             title:'Test', borderColor: 'gray', color:'black',
-              borderRadius:15, borderWidth: 1},
-              {"top":"43.09%","left":"1.81%","innerText":"'LeBron James'"}]}
-        >
-        <Text style = {{color:"black"}}>
 
-        {'LeBron James'}
 
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, 
-            backgroundColor:'#8fd158',
-             alignItems:'center',
-             justifyContent:'center', height: "7%",  
-             title:'Test', borderColor: 'gray', color:'black',
-              borderRadius:15, borderWidth: 1},
-              {"top":"52.55%","left":"1.27%","innerText":"'Russell Westbrook'"}]}
-        >
-        <Text style = {{color:"black"}}>
+      <Image
+        style= {[{width:"20%",height:"20%",position:'absolute'}, {"source":"https://pbs.twimg.com/profile_images/3292148099/9dd84e51596afa0bf4b576673f7153d1_400x400.jpeg","width":"100%","top":"-6.08%","left":"-0.12%","height":"80%"}]}
+        source = {{uri:'https://pbs.twimg.com/profile_images/3292148099/9dd84e51596afa0bf4b576673f7153d1_400x400.jpeg'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
 
-        {'Russell Westbrook'}
 
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, 
-            backgroundColor:'#8fd158',
-             alignItems:'center',
-             justifyContent:'center', height: "7%",  
-             title:'Test', borderColor: 'gray', color:'black',
-              borderRadius:15, borderWidth: 1},
-              {"top":"62.71%","left":"1.01%","innerText":"'Oscar Robertson'"}]}
-        >
-        <Text style = {{color:"black"}}>
 
-        {'Oscar Robertson'}
-
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("CorrectOne"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, 
-            backgroundColor:'#8fd158',
-             alignItems:'center',
-             justifyContent:'center', height: "7%",  
-             title:'Test', borderColor: 'gray', color:'black',
-              borderRadius:15, borderWidth: 1},
-              {"top":"72.69%","left":"0.2%","innerText":"'James Harden'"}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {'James Harden'}
-
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("Nbastarterpage"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, 
-            backgroundColor:'#8fd158',
-             alignItems:'center',
-             justifyContent:'center', height: "7%",  
-             title:'Test', borderColor: 'gray', color:'black',
-              borderRadius:15, borderWidth: 1},
-              {"top":"91.46%","left":"65.98%","innerText":"'back'"}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {'back'}
-
-       </Text>
-        </TouchableOpacity>
+      
         </View>
         )
     }
   }
-    export default NbaThree; 
+    export default IncorrectPage; 
 
 
 
