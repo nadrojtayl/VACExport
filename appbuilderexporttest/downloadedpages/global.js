@@ -1,3 +1,3 @@
-var global = {"key":"value","Chatsinput1":"Your Chat","Chatsinput3":"Your Name","loaded":false,"dbLinks":{},"FirstPageinput4":"Enter the password","createdelems":[]}
+var global = {"counter":0,"vgcounter":0,"selected":[{"question":"what game company contributed to creating call of duty","choice 1":"Activision","choice 2":"Epic Games","choice 3":"Krafton","choice 4":"Insomniac Games","answer":"Activision","Category ":"Video Games","Index":19},{"question":"What game holds the record for the most sales ","choice 1":"Fortnite ","choice 2":"Minecraft","choice 3":"Call of Duty ","choice 4":"Mortal Kombat X ","answer":"Minecraft","Category ":"Video Games","Index":20}],"nbastreakscore":0,"vbstreakscore":1,"catchosen":"Video Games","createdelems":[]}
 
 export default global;

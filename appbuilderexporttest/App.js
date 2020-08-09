@@ -4,7 +4,17 @@
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 import FirstPage from './downloadedpages/FirstPage.js'
-import Chats from './downloadedpages/Chats.js'
+import Nbastarterpage from './downloadedpages/Nbastarterpage.js'
+import Settings from './downloadedpages/Settings.js'
+import Tvshowstarterpage from './downloadedpages/Tvshowstarterpage.js'
+import Animestarterpage from './downloadedpages/Animestarterpage.js'
+import NbaOne from './downloadedpages/NbaOne.js'
+import WrongOne from './downloadedpages/WrongOne.js'
+import CorrectOne from './downloadedpages/CorrectOne.js'
+import NbaTwo from './downloadedpages/NbaTwo.js'
+import NbaThree from './downloadedpages/NbaThree.js'
+import Dictionary from './downloadedpages/Dictionary.js'
+import VGONE from './downloadedpages/VGONE.js'
 import appData from './downloadedpages/global.js';
 /*
 EXPORT PROCESS
@@ -89,17 +99,16 @@ this.state = {dbLinks:{}, loaded:false, page:"FirstPage", numLoaded:0}
 componentDidMount(){
   
   var that = this;
-  var dbLinks = {"MyChats":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbwn8TFA886W8H_6ECMvW0gGoRGK6B7L2Gc8aUQbMA/exec?sheetName=James"}
+  var dbLinks = {"Data":"https://script.google.com/macros/s/AKfycbwvcQ_o7_rei93TxzJpJEL1zVupgA4bZeB94__ra6ZFU-RN_vw/exec?sheetName=Shallarh"}
   Object.keys(dbLinks).forEach(function(key){
     that.connectToDatabase(dbLinks[key], key);
   })
 };
 
 sendToDatabase(name,obj){
-
     var that = this;
     var url = that.state.dbLinks[name];
-    // alert(url);
+   
     var schema = fetch(url, {
                 method: 'POST',
                 body:JSON.stringify(obj),
@@ -109,7 +118,6 @@ sendToDatabase(name,obj){
                 }
       }).then(async function(res){
        
-       window[name].push(obj);
         that.forceUpdate();
 
 
@@ -136,10 +144,153 @@ render(){
     
 
 
-    if(that.state.page === "Chats"){
+    if(that.state.page === "Nbastarterpage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <Chats  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Chats>
+             <Nbastarterpage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Nbastarterpage>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Settings"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Settings  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Settings>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Tvshowstarterpage"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Tvshowstarterpage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Tvshowstarterpage>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Animestarterpage"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Animestarterpage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Animestarterpage>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "NbaOne"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <NbaOne  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NbaOne>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "WrongOne"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <WrongOne  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></WrongOne>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "CorrectOne"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <CorrectOne  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></CorrectOne>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "NbaTwo"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <NbaTwo  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NbaTwo>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "NbaThree"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <NbaThree  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NbaThree>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "NbaThree"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <NbaThree  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NbaThree>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Dictionary"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Dictionary  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Dictionary>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "VGONE"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <VGONE  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></VGONE>
           </View>
         )
     }
@@ -166,7 +317,6 @@ connectToDatabase(db_link,name){
             
  
            var res = await res.json();
-
            var cols = {};
            var data = res.feed.entry.map(convert_spreadsheet_data_to_obj);
            var output = {};
@@ -224,9 +374,7 @@ connectToDatabase(db_link,name){
         }).then(async function(res){
         
           res = await res.json();
-
           window[name] = res;
-
           res.forEach(function(obj,index){
             obj["Index"] = index;
           })

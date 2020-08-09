@@ -271,9 +271,7 @@ class Multiplier extends Component{
 
       return (
         <Text
-          style={[{ height: 40, 
-            borderColor: 'black', 
-            backgroundColor:'white', color:'black', width:"100%", borderWidth: 1}, additionalStyle]}
+          style={[{ height: 40, borderColor: 'black', backgroundColor:'white', color:'black', width:"100%", borderWidth: 5}, additionalStyle]}
           key = {int}
           selectable = {true}
         >{  additionalStyle.innerText === undefined ? JSON.stringify(elem):additionalStyle.innerText }</Text>

@@ -214,13 +214,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class Nbastarterpage extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"counter":0,"vgcounter":0,"selected":[{"question":"what game company contributed to creating call of duty","choice 1":"Activision","choice 2":"Epic Games","choice 3":"Krafton","choice 4":"Insomniac Games","answer":"Activision","Category ":"Video Games","Index":19},{"question":"What game holds the record for the most sales ","choice 1":"Fortnite ","choice 2":"Minecraft","choice 3":"Call of Duty ","choice 4":"Mortal Kombat X ","answer":"Minecraft","Category ":"Video Games","Index":20}],"nbastreakscore":0,"vbstreakscore":1,"catchosen":"Video Games","createdelems":[]}
+        this.state = {"counter":19,"vgcounter":21,"createdelems":[]}
     }
 
     componentDidMount(){
@@ -266,11 +266,14 @@ function unwrap_dynamically(value,default_value){
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
       {this.state.createdelems}
 
-       <TouchableOpacity
+      <Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"9.57%","left":"36.3%","innerText":"'NBA'","fontSize":"resizeFont(40)"}]}
+        > {'NBA'} </Text>
+        
+ <TouchableOpacity
           
-          onPress = { function(){appData.selected = filter_list_of_objs(Data,"Category ","Basketball");
-appData.catchosen = "Basketball"
-that.props.goTo('Nbastarterpage'); that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo('NbaOne')
+appData.counter=0; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -289,20 +292,17 @@ that.props.goTo('Nbastarterpage'); that.forceUpdate(); }}
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"70.63%","left":"11.1%","innerText":"'NBA'"}]}
+              {"top":"43.77%","left":"32.82%","innerText":"'Get Started'"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'NBA'}
+        {'Get Started'}
 
        </Text>
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){appData.counter = 0;
-appData.selected = filter_list_of_objs(Data,"Category ","Video Games");
-appData.catchosen = "Video Games"
-that.props.goTo("Tvshowstarterpage"); that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("FirstPage"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -321,55 +321,23 @@ that.props.goTo("Tvshowstarterpage"); that.forceUpdate(); }}
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"71.03%","left":"61.78%","innerText":"'Video Games'"}]}
+              {"top":"89.61%","left":"3.68%","innerText":"'Back'"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Video Games'}
+        {'Back'}
 
        </Text>
         </TouchableOpacity>
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"source":"https://clutchpoints.com/wp-content/uploads/2019/08/THUMBNAIL_077-3.jpg","zIndex":-300,"height":"100%","width":"50%"}]}
-        source = {{uri:'https://clutchpoints.com/wp-content/uploads/2019/08/THUMBNAIL_077-3.jpg'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"source":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Pac_Man.svg/1200px-Pac_Man.svg.png","top":"7.57%","left":"49.94%","height":"100%","width":"50%","zIndex":-500}]}
-        source = {{uri:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Pac_Man.svg/1200px-Pac_Man.svg.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"backgroundColor":"purple","height":"15%","innerText":"'NBA-VideoGame Trivia'","color":"white","textAlign":"center","fontFamily":"Cochin","fontSize":"resizeFont(32)"}]}
-        > {'NBA-VideoGame Trivia'} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"79.87%","left":"19.15%","innerText":" \"Score: \" + appData.nbastreakscore;","backgroundColor":"white","width":"15%"}]}
-        > { "Score: " + appData.nbastreakscore} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"79.47%","left":"67.7%","backgroundColor":"white","width":"15%","innerText":" \"Score: \" + appData.vbstreakscore;"}]}
-        > { "Score: " + appData.vbstreakscore} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"20.19%","left":"24%","innerText":"'Think you're an NBA wiz? Lets put that to the test and see how much you truly know'","width":"50%","fontSize":"resizeFont(20)"}]}
+        > {'Think youre an NBA wiz? Lets put that to the test and see how much you truly know'} </Text>
         
         </View>
         )
     }
   }
-    export default FirstPage; 
+    export default Nbastarterpage; 
 
 
 

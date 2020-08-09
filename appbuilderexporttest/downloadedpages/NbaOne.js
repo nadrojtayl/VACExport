@@ -214,7 +214,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class NbaOne extends React.Component {
      
 
     constructor(props)
@@ -266,11 +266,29 @@ function unwrap_dynamically(value,default_value){
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
       {this.state.createdelems}
 
-       <TouchableOpacity
+      <Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"               JSON.parse(JSON.stringify(appData.selected[appData.counter][\"question\"]));","height":"30%","fontSize":"resizeFont(30)","top":"0.74%","left":"1.27%"}]}
+        > {               JSON.parse(JSON.stringify(appData.selected[appData.counter]["question"]))} </Text>
+        
+ <TouchableOpacity
           
-          onPress = { function(){appData.selected = filter_list_of_objs(Data,"Category ","Basketball");
-appData.catchosen = "Basketball"
-that.props.goTo('Nbastarterpage'); that.forceUpdate(); }}  
+          onPress = { function(){if(JSON.parse(JSON.stringify(appData.selected[appData.counter]["answer"])).localeCompare(JSON.parse(JSON.stringify(appData.selected[appData.counter]["choice 1"]))) == 0 ){
+that.props.goTo("CorrectOne") 
+appData.counter=Math.floor(Math.random() * appData.selected.length)
+    if(appData.catchosen === "Basketball"){
+        appData.nbastreakscore++;
+    } else {
+        appData.vbstreakscore++;     
+    }
+}
+else {that.props.goTo("WrongOne")
+appData.counter=Math.floor(Math.random() * appData.selected.length);
+    if(appData.catchosen === "Basketball"){
+        appData.nbastreakscore = 0;
+    } else {
+        appData.vbstreakscore = 0;     
+    }
+}; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -289,20 +307,35 @@ that.props.goTo('Nbastarterpage'); that.forceUpdate(); }}
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"70.63%","left":"11.1%","innerText":"'NBA'"}]}
+              {"top":"33.67%","left":"2.61%","innerText":"  JSON.parse(JSON.stringify(appData.selected[appData.counter][\"choice 1\"])) ;"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'NBA'}
+        {  JSON.parse(JSON.stringify(appData.selected[appData.counter]["choice 1"])) }
 
        </Text>
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){appData.counter = 0;
-appData.selected = filter_list_of_objs(Data,"Category ","Video Games");
-appData.catchosen = "Video Games"
-that.props.goTo("Tvshowstarterpage"); that.forceUpdate(); }}  
+          onPress = { function(){if(JSON.parse(JSON.stringify(appData.selected[appData.counter]["choice 2"])) === JSON.parse(JSON.stringify(appData.selected[appData.counter]["answer"]))){
+that.props.goTo("CorrectOne") 
+appData.counter=Math.floor(Math.random() * appData.selected.length)
+if(appData.catchosen === "Basketball"){
+        appData.nbastreakscore++;
+    } else {
+        appData.vbstreakscore++;     
+    }
+    
+}
+else {that.props.goTo("WrongOne")
+appData.counter=Math.floor(Math.random() * appData.selected.length);
+if(appData.catchosen === "Basketball"){
+        appData.nbastreakscore = 0;
+    } else {
+        appData.vbstreakscore = 0;     
+    }
+    
+}; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -321,55 +354,146 @@ that.props.goTo("Tvshowstarterpage"); that.forceUpdate(); }}
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"71.03%","left":"61.78%","innerText":"'Video Games'"}]}
+              {"top":"45.2%","left":"2.07%","innerText":"       JSON.parse(JSON.stringify(appData.selected[appData.counter][\"choice 2\"]));"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Video Games'}
+        {       JSON.parse(JSON.stringify(appData.selected[appData.counter]["choice 2"]))}
 
        </Text>
         </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){if(JSON.parse(JSON.stringify(appData.selected[appData.counter]["answer"])).localeCompare(JSON.parse(JSON.stringify(appData.selected[appData.counter]["choice 3"]))) == 0 ){
+that.props.goTo("CorrectOne") 
+appData.counter=Math.floor(Math.random() * appData.selected.length)
+if(appData.catchosen === "Basketball"){
+        appData.nbastreakscore++;
+    } else {
+        appData.vbstreakscore++;     
+    }
+    
+}
+else {that.props.goTo("WrongOne")
+appData.counter=Math.floor(Math.random() * appData.selected.length);
+if(appData.catchosen === "Basketball"){
+        appData.nbastreakscore = 0;
+    } else {
+        appData.vbstreakscore = 0;     
+    }
+    
+}; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"57.59%","left":"2.07%","innerText":"   JSON.parse(JSON.stringify(appData.selected[appData.counter][\"choice 3\"])) ;"}]}
+        >
+        <Text style = {{color:"black"}}>
 
+        {   JSON.parse(JSON.stringify(appData.selected[appData.counter]["choice 3"])) }
 
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"source":"https://clutchpoints.com/wp-content/uploads/2019/08/THUMBNAIL_077-3.jpg","zIndex":-300,"height":"100%","width":"50%"}]}
-        source = {{uri:'https://clutchpoints.com/wp-content/uploads/2019/08/THUMBNAIL_077-3.jpg'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){if(JSON.parse(JSON.stringify(appData.selected[appData.counter]["answer"])).localeCompare(JSON.parse(JSON.stringify(appData.selected[appData.counter]["choice 4"]))) == 0 ){
+that.props.goTo("CorrectOne") 
+appData.counter=Math.floor(Math.random() * appData.selected.length);
+    if(appData.catchosen === "Basketball"){
+        appData.nbastreakscore++;
+    } else {
+        appData.vbstreakscore++;     
+    }
+}
+else {
+    that.props.goTo("WrongOne")
+appData.counter=Math.floor(Math.random() * appData.selected.length);
+if(appData.catchosen === "Basketball"){
+        appData.nbastreakscore = 0;
+    } else {
+        appData.vbstreakscore = 0;     
+    }
+    
+}; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"69.47%","left":"1.81%","innerText":"   JSON.parse(JSON.stringify(appData.selected[appData.counter][\"choice 4\"])) ;"}]}
+        >
+        <Text style = {{color:"black"}}>
 
+        {   JSON.parse(JSON.stringify(appData.selected[appData.counter]["choice 4"])) }
 
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo("FirstPage");; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"90.42%","left":"65.98%","innerText":"'Back'"}]}
+        >
+        <Text style = {{color:"black"}}>
 
-      
+        {'Back'}
 
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"source":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Pac_Man.svg/1200px-Pac_Man.svg.png","top":"7.57%","left":"49.94%","height":"100%","width":"50%","zIndex":-500}]}
-        source = {{uri:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Pac_Man.svg/1200px-Pac_Man.svg.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
+       </Text>
+        </TouchableOpacity>
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"backgroundColor":"purple","height":"15%","innerText":"'NBA-VideoGame Trivia'","color":"white","textAlign":"center","fontFamily":"Cochin","fontSize":"resizeFont(32)"}]}
-        > {'NBA-VideoGame Trivia'} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"79.87%","left":"19.15%","innerText":" \"Score: \" + appData.nbastreakscore;","backgroundColor":"white","width":"15%"}]}
-        > { "Score: " + appData.nbastreakscore} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"79.47%","left":"67.7%","backgroundColor":"white","width":"15%","innerText":" \"Score: \" + appData.vbstreakscore;"}]}
-        > { "Score: " + appData.vbstreakscore} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"81.48%","left":"36.44%","innerText":"  'Streak score: ' + (appData.catchosen === \"Video Games\" ? appData.vbstreakscore:appData.nbastreakscore);"}]}
+        > {  'Streak score: ' + (appData.catchosen === "Video Games" ? appData.vbstreakscore:appData.nbastreakscore)} </Text>
         
         </View>
         )
     }
   }
-    export default FirstPage; 
+    export default NbaOne; 
 
 
 

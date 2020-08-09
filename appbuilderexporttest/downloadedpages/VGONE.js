@@ -214,13 +214,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class Chats extends React.Component {
+ class VGONE extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","Chatsinput1":"how is your day ","Chatsinput3":"James ","loaded":false,"dbLinks":{},"FirstPageinput4":"gamersrule","createdelems":[]}
+        this.state = {"counter":0,"vgcounter":0,"selected":[{"question":"what game company contributed to creating call of duty","choice 1":"Activision","choice 2":"Epic Games","choice 3":"Krafton","choice 4":"Insomniac Games","answer":"Activision","Category ":"Video Games","Index":19},{"question":"What game holds the record for the most sales ","choice 1":"Fortnite ","choice 2":"Minecraft","choice 3":"Call of Duty ","choice 4":"Mortal Kombat X ","answer":"Minecraft","Category ":"Video Games","Index":20}],"nbastreakscore":0,"vbstreakscore":1,"catchosen":"Video Games","createdelems":[]}
     }
 
     componentDidMount(){
@@ -266,32 +266,29 @@ function unwrap_dynamically(value,default_value){
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
       {this.state.createdelems}
 
-      <Multiplier
-      goTo = {that.props.goTo}
-      type = {"text"}
-      data = {window["MyChats"]}
-      style = {[{
-        alignItems:'center',
-        position:'absolute',height:'80%',width:'100%'},{
-          "options":"Chats",
-          "repeaterinnerText":"\"[\" +elem.name + \"] \" + elem.message"}]}
-      clickfunction = {function(){}}
-      >
-      </Multiplier>
-<TextInput
-       style= {[{position:'absolute', width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"93.05%","left":"1.37%","innerText":"'yellow'","color":"black"}]}
-        value={appData["Chatsinput1"]}
-         onChangeText={function(val){ appData["Chatsinput1"] = val; that.forceUpdate();   } }
-        />
+      <Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"2.46%","left":"2.34%","innerText":"    JSON.parse(JSON.stringify(appData.selected[appData.vgcounter][\"question\"]));","fontSize":"resizeFont(30)","height":"30%","width":"90%"}]}
+        > {    JSON.parse(JSON.stringify(appData.selected[appData.vgcounter]["question"]))} </Text>
+        
  <TouchableOpacity
           
-          onPress = { 
-            function(){
-              that.props.saveTo("MyChats",{"name":appData.Chatsinput3,"message":appData.Chatsinput1}); that.forceUpdate(); 
-              appData.Chatsinput3 = "";
-              appData.Chatsinput1 = "";
-            }}  
-            
+          onPress = { function(){if(JSON.parse(JSON.stringify(appData.selected[appData.counter]["answer"])).localeCompare(JSON.parse(JSON.stringify(appData.selected[appData.counter]["choice 1"]))) == 0 ){
+that.props.goTo("CorrectOne") 
+appData.counter=Math.floor(Math.random() * appData.selected.length)
+if(appData.catchosen === "Basketball"){
+        appData.nbastreakscore++;
+    } else {
+        appData.vbstreakscore++;     
+    }
+    
+}
+else {that.props.goTo("WrongOne")
+if(appData.catchosen === "Basketball"){
+        appData.nbastreakscore = 0;
+    } else {
+        appData.vbstreakscore = 0;     
+    }
+appData.counter=appData.counter+1}; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -310,29 +307,35 @@ function unwrap_dynamically(value,default_value){
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"90.38%","left":"67.98%","innerText":"'Send '","fontSize":"resizeFont(null)"}]}
+              {"top":"42.4%","left":"1.81%","innerText":" appData.selected[appData.counter][\"choice 1\"];"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Send '}
+        { appData.selected[appData.counter]["choice 1"]}
 
        </Text>
         </TouchableOpacity>
-<TextInput
-       style= {[{position:'absolute', width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"85.93%","left":"1%","color":"black"}]}
-        value={appData["Chatsinput3"]}
-         onChangeText={function(val){ appData["Chatsinput3"] = val; that.forceUpdate();   } }
-        />
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"81.66%","left":"1%","innerText":"'Type Your Name Here '","color":"yellow"}]}
-        > {'Type Your Name Here '} </Text>
-        
-<View
-        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{"top":"81.47%","left":"0.03%","backgroundColor":"purple","height":"20%","width":"100%"}]}
-        ></View>
  <TouchableOpacity
           
-          onPress = { function(){user_text("973768820","Hey you want to game right now?");; that.forceUpdate(); }}  
+          onPress = { function(){if(JSON.parse(JSON.stringify(appData.selected[appData.counter]["answer"])).localeCompare(JSON.parse(JSON.stringify(appData.selected[appData.counter]["choice 2"]))) == 0 ){
+that.props.goTo("CorrectOne") 
+appData.counter=Math.floor(Math.random() * appData.selected.length)
+if(appData.catchosen === "Basketball"){
+        appData.nbastreakscore++;
+    } else {
+        appData.vbstreakscore++;     
+    }
+    
+}
+else {that.props.goTo("WrongOne")
+appData.counter=appData.counter+1
+    
+    if(appData.catchosen === "Basketball"){
+        appData.nbastreakscore = 0;
+    } else {
+        appData.vbstreakscore = 0;     
+    }
+}; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -351,11 +354,130 @@ function unwrap_dynamically(value,default_value){
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"82.22%","left":"67.73%","innerText":"'Send invite text'"}]}
+              {"top":"52.73%","left":"1.81%","innerText":" appData.selected[appData.counter][\"choice 2\"];"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Send invite text'}
+        { appData.selected[appData.counter]["choice 2"]}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){if(JSON.parse(JSON.stringify(appData.selected[appData.counter]["answer"])).localeCompare(JSON.parse(JSON.stringify(appData.selected[appData.counter]["choice 3"]))) == 0 ){
+that.props.goTo("CorrectOne") 
+appData.counter=Math.floor(Math.random() * appData.selected.length)
+    if(appData.catchosen === "Basketball"){
+        appData.nbastreakscore++;
+    } else {
+        appData.vbstreakscore++;     
+    }
+}
+else {that.props.goTo("WrongOne")
+appData.counter=appData.counter+1
+    if(appData.catchosen === "Basketball"){
+        appData.nbastreakscore = 0;
+    } else {
+        appData.vbstreakscore = 0;     
+    }
+}; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"62.71%","left":"1.27%","innerText":" appData.selected[appData.counter][\"choice 3\"];"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        { appData.selected[appData.counter]["choice 3"]}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){if(JSON.parse(JSON.stringify(appData.selected[appData.counter]["answer"])).localeCompare(JSON.parse(JSON.stringify(appData.selected[appData.counter]["choice 4"]))) == 0 ){
+that.props.goTo("CorrectOne") 
+appData.counter=Math.floor(Math.random() * appData.selected.length)
+if(appData.catchosen === "Basketball"){
+        appData.nbastreakscore++;
+    } else {
+        appData.vbstreakscore++;     
+    }
+    
+}
+else {that.props.goTo("WrongOne")
+if(appData.catchosen === "Basketball"){
+        appData.nbastreakscore = 0;
+    } else {
+        appData.vbstreakscore = 0;     
+    }
+appData.counter=appData.counter+1}; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"73.73%","left":"1.54%","innerText":" appData.selected[appData.counter][\"choice 4\"];"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        { appData.selected[appData.counter]["choice 4"]}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo("FirstPage");; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"90.94%","left":"65.98%","innerText":"'Back'"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Back'}
 
        </Text>
         </TouchableOpacity>
@@ -363,7 +485,7 @@ function unwrap_dynamically(value,default_value){
         )
     }
   }
-    export default Chats; 
+    export default VGONE; 
 
 
 

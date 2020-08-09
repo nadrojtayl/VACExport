@@ -1,7 +1,7 @@
   {
       "expo": {
-        "name": "GamersLoungeNYC",
-        "slug": "GamersLoungeNYC",
+        "name": "NBAVideoGameTrivia",
+        "slug": "NBAVideoGameTrivia",
         "platforms": [
           "ios",
           "android",
@@ -23,10 +23,10 @@
         ],
         "ios": {
           "supportsTablet": true,
-          "bundleIdentifier": "com.gamerslounge.gamerslounge"
+          "bundleIdentifier": "com.nbavgtrivia.nbavgtrivia"
         },
         "android": {
-          "package": "com.gamerslounge.gamerslounge"
+          "package": "com.nbavgtrivia.nbavgtrivia"
         },
         "entryPoint": "node_modules/expo/AppEntry.js"
       }
