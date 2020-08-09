@@ -4,6 +4,7 @@ import { ActivityIndicator, Button, Picker, Switch, Image, ScrollView, Touchable
 import Calendar from "./Calendar.js";
 import appData from "./global.js";
 import Multiplier from "./Multiplier.js";
+import { Audio } from 'expo-av'; 
 
 
 var d = new Date();
@@ -44,10 +45,12 @@ class Box extends React.Component{
 //https://spreadsheets.google.com/feeds/cells/1P0tGuikrAg5ZGpC2fHxLY49Osp6nhwseK2DSr34HM-o/1/public/full?alt=json
 
 function runWithInterval(script_string,interval){
-  var script_string = script_string + ";"
+  var script_string = script_string + "; global.thisapp.forceUpdate();"
+  script_string = script_string.split("createElement").join("global.thisapp.createElement");
   var that = appData.this;
     try{
         eval("function y(){"+script_string+"}")
+        global.thisapp.forceUpdate();
         return setInterval(function(){ eval(script_string)},interval);
       } catch(e){
         alert("There was an error trying to run this!" + e);
@@ -211,13 +214,17 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class Pause extends React.Component {
+ class FinalPage extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","FirstPageinput1":"hhhhhhi","Settingsswitch0":true,"Settingsswitch2":true,"X":330,"Move":105,"Move2":1310,"Mainswitch78":true,"inter":4014,"inter2":0,"loaded":false,"dbLinks":{},"tomove2":365,"yeet":2666,"thet":2667,"enemies":[54,55,56,55,56,57,58],"spawned":4,"ended":true,"done":false,"createdelems":[]}
+        this.state = {"selectedSkin":"https://i.imgur.com/mkHo4H8.gif","skinPosition":230,"batPosition":0,"meters":0,"interval":352,"lane":350,"batPosition2":0,"bulldog":353,"lane2":230,"hard":"hard","easy":"easy","medium":"medium","uses":"easy","createdelems":[]}
+    }
+
+    componentDidMount(){
+      global.thisapp = this;
     }
 
 
@@ -226,7 +233,7 @@ function unwrap_dynamically(value,default_value){
     createElement(name, style_obj){
       if(name === 'image'){
         this.state.createdelems.push(
-        (<Image style = {style_obj}></Image>)
+        (<Image style = {[{position:'absolute', width:"20%",height:"20%"}, style_obj]}></Image>)
         )
       }
 
@@ -256,14 +263,24 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"grey"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"rgb(208, 226, 242)"}}>
       {this.state.createdelems}
 
-       <TouchableOpacity
+      <Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"29.92%","left":"2.29%","innerText":"'   CONGRATULATIONS'","fontSize":"resizeFont(50)","color":"purple","fontWeight":"bold","backgroundColor":"red"}]}
+        > {'   CONGRATULATIONS'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":" 'YOU RAN '+appData.meters+' METERS';","top":"38.96%","left":"30.33%","color":"red","fontSize":"resizeFont(20)"}]}
+        > { 'YOU RAN '+appData.meters+' METERS'} </Text>
+        
+ <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("Main")
-pause("https://vgmdownloads.com/soundtracks/wii-music-collection/tasdctcp/04.%20Mii%20Plaza.mp3")
-clearInterval(appData.inter); that.forceUpdate(); }}  
+          onPress = { function(){pause("https://vgmdownloads.com/soundtracks/wii-music-collection/tasdctcp/04.%20Mii%20Plaza.mp3");
+if(appData.meters>Emet[0]["high Score"])
+{updateDatabase("Emet",{"high Score": Emet[0]["high Score"]},{"high Score": appData.meters})}
+appData.meters = 0;
+that.props.goTo('FirstPage');; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -276,20 +293,26 @@ clearInterval(appData.inter); that.forceUpdate(); }}
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Back to game'","top":"41.32%","left":"42.22%"}]}
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"47.02%","left":"33.92%","innerText":"'HOME'","backgroundColor":"purple","color":"red"}]}
         >
-        <Text style = {{color:"black"}}>
+        <Text style = {{color:"red"}}>
 
-        {'Back to game'}
+        {'HOME'}
 
        </Text>
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("FirstPage");
-pause("https://vgmdownloads.com/soundtracks/wii-music-collection/tasdctcp/04.%20Mii%20Plaza.mp3");
-pause();
-clearInterval(appData.inter); that.forceUpdate(); }}  
+          onPress = { function(){if(appData.meters>Emet[0]["high Score"])
+{updateDatabase("Emet",{"high Score": Emet[0]["high Score"]},{"high Score": appData.meters})}
+appData.meters = 0;
+that.props.goTo('PlayPage');; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -302,19 +325,89 @@ clearInterval(appData.inter); that.forceUpdate(); }}
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"17.09%","left":"41.86%","innerText":"'Back To Home'"}]}
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"57.23%","left":"34.48%","innerText":"'TRY AGAIN'","backgroundColor":"purple","color":"red"}]}
         >
-        <Text style = {{color:"black"}}>
+        <Text style = {{color:"red"}}>
 
-        {'Back To Home'}
+        {'TRY AGAIN'}
 
        </Text>
         </TouchableOpacity>
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"45.12%","left":"13.74%"}]}
+        source = {{uri:'http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"44.68%","left":"66.35%"}]}
+        source = {{uri:'http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"9.72%","left":"11.68%"}]}
+        source = {{uri:'http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"9.93%","left":"66.35%"}]}
+        source = {{uri:'http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"-5.28%","left":"1.61%"}]}
+        > {} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"-4.96%","left":"2.12%"}]}
+        > {} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"21.16%","left":"56.91%","innerText":"' Emet [0] [\"high Score\"];'","fontSize":"resizeFont(30)"}]}
+        > {' Emet [0] ["high Score"]'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"21.05%","left":"27.48%","innerText":"'High Score ='","fontSize":"resizeFont(30)"}]}
+        > {'High Score ='} </Text>
+        
         </View>
         )
     }
   }
-    export default Pause; 
+    export default FinalPage; 
 
 
 

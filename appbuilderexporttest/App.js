@@ -4,10 +4,9 @@
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 import FirstPage from './downloadedpages/FirstPage.js'
-import Main from './downloadedpages/Main.js'
-import Settings from './downloadedpages/Settings.js'
-import Pause from './downloadedpages/Pause.js'
-import End from './downloadedpages/End.js'
+import SkinsPage from './downloadedpages/SkinsPage.js'
+import PlayPage from './downloadedpages/PlayPage.js'
+import FinalPage from './downloadedpages/FinalPage.js'
 import appData from './downloadedpages/global.js';
 /*
 EXPORT PROCESS
@@ -86,13 +85,13 @@ class App extends React.Component {
 
 constructor(props){
 super(props);
-this.state = {dbLinks:{}, loaded:true, page:"FirstPage", numLoaded:0}
+this.state = {dbLinks:{}, loaded:false, page:"FirstPage", numLoaded:0}
 }
 
 componentDidMount(){
   
   var that = this;
-  var dbLinks = {}
+  var dbLinks = {"Emet":"https://script.google.com/macros/s/AKfycbye6vWLY4LINqbpbuEJjIMJvciFNsxxJAlFPatx4Wi3id1Z2C_q/exec?sheetName=Emet"}
   Object.keys(dbLinks).forEach(function(key){
     that.connectToDatabase(dbLinks[key], key);
   })
@@ -137,10 +136,10 @@ render(){
     
 
 
-    if(that.state.page === "Main"){
+    if(that.state.page === "SkinsPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <Main  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Main>
+             <SkinsPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SkinsPage>
           </View>
         )
     }
@@ -150,10 +149,10 @@ render(){
     
 
 
-    if(that.state.page === "Settings"){
+    if(that.state.page === "PlayPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <Settings  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Settings>
+             <PlayPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></PlayPage>
           </View>
         )
     }
@@ -163,23 +162,10 @@ render(){
     
 
 
-    if(that.state.page === "Pause"){
+    if(that.state.page === "FinalPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <Pause  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Pause>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "End"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <End  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></End>
+             <FinalPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FinalPage>
           </View>
         )
     }

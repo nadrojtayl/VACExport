@@ -102,6 +102,7 @@ import { ActivityIndicator, Button, Picker, Switch, Image, ScrollView, Touchable
 import Calendar from "./Calendar.js";
 import appData from "./global.js";
 import Multiplier from "./Multiplier.js";
+import { Audio } from 'expo-av'; 
 
 
 var d = new Date();
@@ -143,6 +144,7 @@ class Box extends React.Component{
 
 function runWithInterval(script_string,interval){
   var script_string = script_string + "; global.thisapp.forceUpdate();"
+  script_string = script_string.split("createElement").join("global.thisapp.createElement");
   var that = appData.this;
     try{
         eval("function y(){"+script_string+"}")
@@ -404,6 +406,11 @@ function exportElemToExpo(name,int, page, childrenAdditionalStyle, clickfunction
         childrenAdditionalStyle[key] = childrenAdditionalStyle[key].replace("saveTo","that.props.saveTo")
       }
 
+      // if(typeof value === "string" && (key === "left" || key === "top") && value.indexOf('appData') === -1 && value.indexOf('"') === -1 && value.indexOf("'") === -1){
+      //   console.log()
+      //   childrenAdditionalStyle[key] = '"' + childrenAdditionalStyle[key] + '"';
+      // }
+
 
       
     })
@@ -486,11 +493,29 @@ function exportElemToExpo(name,int, page, childrenAdditionalStyle, clickfunction
 
       var link = (childrenAdditionalStyle.source === undefined ? "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png": (childrenAdditionalStyle.source.indexOf("appData") !== -1 || childrenAdditionalStyle.source.indexOf("[") !== -1 ) ? childrenAdditionalStyle.source.replace(";","") : "'" + childrenAdditionalStyle.source + "'" )
 
+      if(typeof childrenAdditionalStyle.top === "string" && childrenAdditionalStyle.top.indexOf("appData") === -1){
+        childrenAdditionalStyle.top = '"' + childrenAdditionalStyle.top +'"';
+      }
+
+      if(typeof childrenAdditionalStyle.left === "string" && childrenAdditionalStyle.left.indexOf("appData") === -1){
+        console.log(childrenAdditionalStyle.left)
+        childrenAdditionalStyle.left = '"' + childrenAdditionalStyle.left+'"';
+      }
+
+       if(typeof childrenAdditionalStyle.top === "string" && childrenAdditionalStyle.top.indexOf("appData") !== -1){
+        childrenAdditionalStyle.top = childrenAdditionalStyle.top.split('"').replace("").split("'").replace("")
+      }
+
+      if(typeof childrenAdditionalStyle.left === "string" && childrenAdditionalStyle.left.indexOf("appData") !== -1){
+        console.log(childrenAdditionalStyle.left)
+        childrenAdditionalStyle.left = childrenAdditionalStyle.left.split('"').replace("").split("'").replace("")
+      }
+
       return `
       
 
       <TouchableOpacity
-      style= {[{width:"`+(childrenAdditionalStyle.width ? childrenAdditionalStyle.width: "20%")+`",height:"`+ (childrenAdditionalStyle.height ? childrenAdditionalStyle.height: "20%") +`", position:'absolute',top:"`+childrenAdditionalStyle.top+`",left:"`+childrenAdditionalStyle.left+`"}]}
+      style= {[{width:"`+(childrenAdditionalStyle.width ? childrenAdditionalStyle.width: "20%")+`",height:"`+ (childrenAdditionalStyle.height ? childrenAdditionalStyle.height: "20%") +`", position:'absolute',top:`+childrenAdditionalStyle.top+`,left:`+childrenAdditionalStyle.left+`}]}
        onPress = { function(){`+ ((typeof clickfunction === "string") ? clickfunction.split("goTo").join("that.props.goTo"):"") + ";" +` that.forceUpdate(); }}  
       >
       <Image
@@ -513,7 +538,7 @@ function exportElemToExpo(name,int, page, childrenAdditionalStyle, clickfunction
       return `
 
       <Image
-        style= {[{width:"20%",height:"20%"}, `+ JSON.stringify(childrenAdditionalStyle) +`]}
+        style= {[{width:"20%",height:"20%",position:'absolute'}, `+ JSON.stringify(childrenAdditionalStyle) +`]}
         source = {{uri:`+ link +`}}
         onPress = { function(){`+ ((typeof clickfunction === "string") ? clickfunction.split("goTo").join("that.props.goTo"):"") + ";" +` that.forceUpdate(); }}  
       >
@@ -552,7 +577,13 @@ function exportElemToExpo(name,int, page, childrenAdditionalStyle, clickfunction
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},`+ JSON.stringify(childrenAdditionalStyle) +`]}
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              `+ JSON.stringify(childrenAdditionalStyle) +`]}
         >
         <Text style = {{color:"`+color+`"}}>
 

@@ -4,6 +4,7 @@ import { ActivityIndicator, Button, Picker, Switch, Image, ScrollView, Touchable
 import Calendar from "./Calendar.js";
 import appData from "./global.js";
 import Multiplier from "./Multiplier.js";
+import { Audio } from 'expo-av'; 
 
 
 var d = new Date();
@@ -44,10 +45,12 @@ class Box extends React.Component{
 //https://spreadsheets.google.com/feeds/cells/1P0tGuikrAg5ZGpC2fHxLY49Osp6nhwseK2DSr34HM-o/1/public/full?alt=json
 
 function runWithInterval(script_string,interval){
-  var script_string = script_string + ";"
+  var script_string = script_string + "; global.thisapp.forceUpdate();"
+  script_string = script_string.split("createElement").join("global.thisapp.createElement");
   var that = appData.this;
     try{
         eval("function y(){"+script_string+"}")
+        global.thisapp.forceUpdate();
         return setInterval(function(){ eval(script_string)},interval);
       } catch(e){
         alert("There was an error trying to run this!" + e);
@@ -217,7 +220,11 @@ function unwrap_dynamically(value,default_value){
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","FirstPageinput1":"hhhhhhi","Settingsswitch0":true,"Settingsswitch2":true,"X":330,"Move":105,"Move2":1310,"Mainswitch78":true,"inter":4014,"inter2":0,"loaded":false,"dbLinks":{},"tomove2":365,"yeet":2666,"thet":2667,"enemies":[54,55,56,55,56,57,58],"spawned":4,"ended":true,"done":false,"createdelems":[]}
+        this.state = {"selectedSkin":"https://i.imgur.com/mkHo4H8.gif","skinPosition":230,"batPosition":0,"meters":0,"interval":352,"lane":350,"batPosition2":0,"bulldog":353,"lane2":230,"hard":"hard","easy":"easy","medium":"medium","uses":"easy","createdelems":[]}
+    }
+
+    componentDidMount(){
+      global.thisapp = this;
     }
 
 
@@ -226,7 +233,7 @@ function unwrap_dynamically(value,default_value){
     createElement(name, style_obj){
       if(name === 'image'){
         this.state.createdelems.push(
-        (<Image style = {style_obj}></Image>)
+        (<Image style = {[{position:'absolute', width:"20%",height:"20%"}, style_obj]}></Image>)
         )
       }
 
@@ -256,19 +263,20 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"grey"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"rgb(208, 226, 242)"}}>
       {this.state.createdelems}
 
       
       
 
       <TouchableOpacity
-      style= {[{width:"30%",height:"30%", position:'absolute',top:"31.75%",left:"35.36%"}]}
-       onPress = { function(){that.props.goTo("Main"); that.forceUpdate(); }}  
+      style= {[{width:"100%",height:"20%", position:'absolute',top:"-0.1%",left:"0.03%"}]}
+       onPress = { function(){play("https://vgmdownloads.com/soundtracks/wii-music-collection/tasdctcp/04.%20Mii%20Plaza.mp3");
+that.props.goTo('PlayPage');; that.forceUpdate(); }}  
       >
       <Image
-        style= {[{width:"100%",height:"100%"}, {"source":"https://i.imgur.com/aGSr19H.gif","backgroundColor":"transparent","top":"31.75%","left":"35.36%","resizeMode":"contain","alignItems":null,"height":"30%","width":"30%"}]}
-        source = {{uri:'https://i.imgur.com/aGSr19H.gif'}}
+        style= {[{width:"100%",height:"100%"}, {"source":"https://i.imgur.com/FLTJaQE.png","width":"100%","resizeMode":"contain","innerText":"' \"PLAY\";'","backgroundColor":"green","top":"\"-0.1%\"","left":"\"0.03%\""}]}
+        source = {{uri:'https://i.imgur.com/FLTJaQE.png'}}
        
       >
       </Image>
@@ -276,93 +284,104 @@ function unwrap_dynamically(value,default_value){
 
 
       
-<TextInput
-       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"30.64%","left":"36.87%","borderColor":"black"}]}
-        value={appData["FirstPageinput1"]}
-         onChangeText={function(val){ appData["FirstPageinput1"] = val; that.forceUpdate();   } }
-        />
+
+      
+
+      <TouchableOpacity
+      style= {[{width:"100%",height:"20%", position:'absolute',top:"48.82%",left:"-0.03%"}]}
+       onPress = { function(){that.props.goTo('SkinsPage'); that.forceUpdate(); }}  
+      >
+      <Image
+        style= {[{width:"100%",height:"100%"}, {"top":"\"48.82%\"","left":"\"-0.03%\"","source":"https://i.imgur.com/39PimVl.png","width":"100%","resizeMode":"contain","backgroundColor":"green"}]}
+        source = {{uri:'https://i.imgur.com/39PimVl.png'}}
+       
+      >
+      </Image>
+      </TouchableOpacity>
+
+
+      
+
+      
+
+      <TouchableOpacity
+      style= {[{width:"230",height:"200", position:'absolute',top:"26.24%",left:"27.99%"}]}
+       onPress = { function(){ that.forceUpdate(); }}  
+      >
+      <Image
+        style= {[{width:"100%",height:"100%"}, {"top":"\"26.24%\"","left":"\"27.99%\"","source":" appData.selectedSkin;","width":230,"height":200}]}
+        source = {{uri: appData.selectedSkin}}
+       
+      >
+      </Image>
+      </TouchableOpacity>
+
+
+      
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"source":"https://i.imgur.com/IuMD92U.png","top":"72.19%","left":"41.63%","resizeMode":"contain","height":"80%","width":"40%"}]}
+        source = {{uri:'https://i.imgur.com/IuMD92U.png'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"23.27%","left":"13.17%"}]}
+        source = {{uri:'http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"23.38%","left":"68.42%"}]}
+        source = {{uri:'http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"68.88%","left":"28.82%"}]}
+        source = {{uri:'http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"68.88%","left":"55.79%"}]}
+        source = {{uri:'http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
 <Text
-          style= {[{position:'absolute', color:'red', zIndex:100,width:'100%'},{"top":"26.99%","left":"47.57%","innerText":"'Name'"}]}
-        > {'Enter your Name, Duck'} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"42.72%","left":"24.84%","innerText":"'PINEAPPLE RUSH'","fontSize":"resizeFont(35)","color":"green","fontWeight":"bold","fontStyle":"italic"}]}
+        > {'PINEAPPLE RUSH'} </Text>
         
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://i.imgur.com/cQs1QEn.png","top":"16.06%","left":"10.19%","backgroundColor":"transparent","resizeMode":"contain"}]}
-        source = {{uri:'https://i.imgur.com/cQs1QEn.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://i.imgur.com/KbSqCge.jpg","resizeMode":"contain","top":"-55.45%","left":"0.2%","fontSize":"resizeFont(null)","width":"100%","backgroundColor":"transparent","zIndex":-10000}]}
-        source = {{uri:'https://i.imgur.com/KbSqCge.jpg'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {
-          "source":"https://cdn1.vectorstock.com/i/1000x1000/52/10/game-scene-pixelated-background-vector-12125210.jpg",
-          "height":"110%",
-          "width":"100%",
-          position:'absolute',
-          "top":"0%","left":"0.3%",
-          "backgroundColor":"transparent","zIndex":-10000000}]}
-        source = {{uri:'https://cdn1.vectorstock.com/i/1000x1000/52/10/game-scene-pixelated-background-vector-12125210.jpg'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
- <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("Settings"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"57.3%","left":"40.3%","innerText":"'Settings'"}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {'Settings'}
-
-       </Text>
-        </TouchableOpacity>
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {
-          position:'absolute',"source":"https://i.imgur.com/KbSqCge.jpg","top":"-3.51%","left":"0.08%","width":"100%"}]}
-        source = {{uri:'https://i.imgur.com/KbSqCge.jpg'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
         </View>
         )
     }

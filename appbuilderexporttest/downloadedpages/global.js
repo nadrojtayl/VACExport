@@ -1,5 +1,3 @@
-var global = {
-	"key":"value",
-	"FirstPageinput1":"hhhhhhi","Settingsswitch0":true,"Settingsswitch2":true,"X":"20%","Move":105,"Move2":1310,"Mainswitch78":true,"inter":4014,"inter2":0,"loaded":false,"dbLinks":{},"tomove2":365,"yeet":2666,"thet":2667,"enemies":[54,55,56,55,56,57,58],"spawned":4,"ended":true,"done":false,"createdelems":[]}
+var global = {"selectedSkin":"https://i.imgur.com/mkHo4H8.gif","skinPosition":"15%","batPosition":0,"meters":0,"interval":352,"lane":350,"batPosition2":0,"bulldog":353,"lane2":230,"hard":"hard","easy":"easy","medium":"medium","uses":"easy","createdelems":[]}
 
 export default global;
