@@ -96,9 +96,10 @@ componentDidMount(){
 };
 
 sendToDatabase(name,obj){
+
     var that = this;
     var url = that.state.dbLinks[name];
-   
+    // alert(url);
     var schema = fetch(url, {
                 method: 'POST',
                 body:JSON.stringify(obj),
@@ -108,6 +109,7 @@ sendToDatabase(name,obj){
                 }
       }).then(async function(res){
        
+       window[name].push(obj);
         that.forceUpdate();
 
 
