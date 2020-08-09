@@ -272,7 +272,7 @@ function unwrap_dynamically(value,default_value){
       data = {window["MyChats"]}
       style = {[{
         alignItems:'center',
-        position:'absolute',height:'60%',width:'100%'},{
+        position:'absolute',height:'80%',width:'100%'},{
           "options":"Chats",
           "repeaterinnerText":"\"[\" +elem.name + \"] \" + elem.message"}]}
       clickfunction = {function(){}}
