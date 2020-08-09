@@ -267,19 +267,19 @@ function unwrap_dynamically(value,default_value){
       {this.state.createdelems}
 
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"fontSize":"resizeFont(56)","top":"9.33%","left":"38.25%","innerText":"'Skins'","color":"rgb(253, 255, 0)"}]}
-        > {'Skins'} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"fontSize":"resizeFont(56)","top":"12.33%","left":"38.25%","innerText":"'Skins'","color":"red"}]}
+        > {'Select A Skin'} </Text>
         
 
       
 
       <TouchableOpacity
-      style= {[{position:'absolute',width:"200",height:"20%", position:'absolute',top:"34.22%",left:"-1.72%"}]}
+      style= {[{position:'absolute',width:"20%",height:"20%", position:'absolute',top:"34.22%",left:"15.72%"}]}
        onPress = { function(){appData.selectedSkin = "https://i.imgur.com/mkHo4H8.gif";
-that.props.goTo('FirstPage');; that.forceUpdate(); }}  
+that.props.goTo('FirstPage'); that.forceUpdate(); }}  
       >
       <Image
-        style= {[{width:"100%",height:"100%"}, {"top":"\"34.22%\"","left":"\"-1.72%\"","source":"https://i.imgur.com/mkHo4H8.gif","width":200}]}
+        style= {[{width:"100%",height:"100%"}, {resizeMode:'contain', "top":"34.22%","left":"-1.72%","source":"https://i.imgur.com/mkHo4H8.gif"}]}
         source = {{uri:'https://i.imgur.com/mkHo4H8.gif'}}
        
       >
@@ -297,7 +297,7 @@ that.props.goTo('FirstPage');; that.forceUpdate(); }}
 appData.selectedSkin = "https://i.imgur.com/KXcppEK.gif"; that.forceUpdate(); }}  
       >
       <Image
-        style= {[{width:"100%",height:"100%"}, {"source":"https://i.imgur.com/KXcppEK.gifhttps://i.imgur.com/KXcppEK.gif","top":"\"35.98%\"","left":"\"54.66%\""}]}
+        style= {[{width:"100%",height:"100%"}, {resizeMode:'contain',"source":"https://i.imgur.com/KXcppEK.gifhttps://i.imgur.com/KXcppEK.gif","top":"35.98%","left":"54.66%"}]}
         source = {{uri:'https://i.imgur.com/KXcppEK.gifhttps://i.imgur.com/KXcppEK.gif'}}
        
       >
@@ -327,7 +327,7 @@ appData.selectedSkin = "https://i.imgur.com/KXcppEK.gif"; that.forceUpdate(); }}
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"58.41%","left":"36.74%","innerText":"'Home'"}]}
+              {"top":"68.41%","left":"36.74%","innerText":"'Home'"}]}
         >
         <Text style = {{color:"black"}}>
 
@@ -338,8 +338,12 @@ appData.selectedSkin = "https://i.imgur.com/KXcppEK.gif"; that.forceUpdate(); }}
 
 
       <Image
-        style= {[{resizeMode:'contain', position:'absolute',width:"20%",height:"20%"}, {"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"2.31%","left":"12.61%"}]}
-        source = {{ uri:'http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png'}}
+        style= {[{resizeMode:'contain', position:'absolute',
+        width:"20%",
+        height:"20%"}, {"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png",
+        "top":"2.31%","left":"12.61%"}]}
+        source = {{ 
+          uri:'http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
@@ -363,12 +367,12 @@ appData.selectedSkin = "https://i.imgur.com/KXcppEK.gif"; that.forceUpdate(); }}
       
 
       <TouchableOpacity
-      style= {[{position:'absolute',width:"20%",height:"20%", position:'absolute',top:"36.34%",left:"33.16%"}]}
+      style= {[{position:'absolute',width:"20%",height:"20%", position:'absolute',top:"16.34%",left:"13.16%"}]}
        onPress = { function(){appData.selectedSkin = "https://piskel-imgstore-b.appspot.com/img/11610bca-ccf4-11ea-bed0-8faa2d9b7894.gif"
 that.props.goTo('FirstPage'); that.forceUpdate(); }}  
       >
       <Image
-        style= {[{width:"100%",height:"100%"}, {"source":"https://piskel-imgstore-b.appspot.com/img/11610bca-ccf4-11ea-bed0-8faa2d9b7894.gif","top":"\"36.34%\"","left":"\"33.16%\""}]}
+        style= {[{width:"100%",height:"100%"}, {resizeMode:'contain',"source":"https://piskel-imgstore-b.appspot.com/img/11610bca-ccf4-11ea-bed0-8faa2d9b7894.gif","top":"36.34%","left":"33.16%"}]}
         source = {{uri:'https://piskel-imgstore-b.appspot.com/img/11610bca-ccf4-11ea-bed0-8faa2d9b7894.gif'}}
        
       >
@@ -381,12 +385,13 @@ that.props.goTo('FirstPage'); that.forceUpdate(); }}
       
 
       <TouchableOpacity
-      style= {[{position:'absolute',width:"30%",height:"20%", position:'absolute',top:"37.86%",left:"75.02%"}]}
+      style= {[{position:'absolute',
+      width:"80%",height:"80%", position:'absolute',top:"-6.86%",left:"70.02%"}]}
        onPress = { function(){appData.selectedSkin = "https://piskel-imgstore-b.appspot.com/img/8517a69c-cdb3-11ea-bec3-752299450aeb.gif";
 that.props.goTo('FirstPage'); that.forceUpdate(); }}  
       >
       <Image
-        style= {[{width:"100%",height:"100%"}, {"source":"https://piskel-imgstore-b.appspot.com/img/8517a69c-cdb3-11ea-bec3-752299450aeb.gif","top":"\"37.86%\"","left":"\"75.02%\"","width":"30%"}]}
+        style= {[{width:"100%",height:"100%"}, { resizeMode:'contain', "source":"https://piskel-imgstore-b.appspot.com/img/8517a69c-cdb3-11ea-bec3-752299450aeb.gif","width":"30%"}]}
         source = {{uri:'https://piskel-imgstore-b.appspot.com/img/8517a69c-cdb3-11ea-bec3-752299450aeb.gif'}}
        
       >

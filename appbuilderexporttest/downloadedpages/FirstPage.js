@@ -270,12 +270,13 @@ function unwrap_dynamically(value,default_value){
       
 
       <TouchableOpacity
-      style= {[{position:'absolute',width:"100%",height:"20%", position:'absolute',top:"-0.1%",left:"0.03%"}]}
+      style= {[{position:'absolute',width:"100%",
+      height:"20%", position:'absolute',top:"5%",left:"0.03%"}]}
        onPress = { function(){play("https://vgmdownloads.com/soundtracks/wii-music-collection/tasdctcp/04.%20Mii%20Plaza.mp3");
 that.props.goTo('PlayPage');; that.forceUpdate(); }}  
       >
       <Image
-        style= {[{width:"100%",height:"100%"}, {"source":"https://i.imgur.com/FLTJaQE.png","width":"100%","resizeMode":"contain","innerText":"' \"PLAY\";'","backgroundColor":"green","top":"\"-0.1%\"","left":"\"0.03%\""}]}
+        style= {[{width:"100%",height:"100%"}, {"source":"https://i.imgur.com/FLTJaQE.png","width":"100%","resizeMode":"contain","innerText":"' \"PLAY\";'","backgroundColor":"green","top":"-0.1%","left":"0.03%"}]}
         source = {{uri:'https://i.imgur.com/FLTJaQE.png'}}
        
       >
@@ -292,7 +293,7 @@ that.props.goTo('PlayPage');; that.forceUpdate(); }}
        onPress = { function(){that.props.goTo('SkinsPage'); that.forceUpdate(); }}  
       >
       <Image
-        style= {[{width:"100%",height:"100%"}, {"top":"\"48.82%\"","left":"\"-0.03%\"","source":"https://i.imgur.com/39PimVl.png","width":"100%","resizeMode":"contain","backgroundColor":"green"}]}
+        style= {[{width:"100%",height:"100%"}, {"top":"48.82%","left":"-0.03%","source":"https://i.imgur.com/39PimVl.png","width":"100%","resizeMode":"contain"}]}
         source = {{uri:'https://i.imgur.com/39PimVl.png'}}
        
       >
@@ -305,11 +306,11 @@ that.props.goTo('PlayPage');; that.forceUpdate(); }}
       
 
       <TouchableOpacity
-      style= {[{position:'absolute',width:"230",height:"200", position:'absolute',top:"26.24%",left:"27.99%"}]}
+      style= {[{position:'absolute',width:230,height:200, position:'absolute',top:"26.24%",left:"27.99%"}]}
        onPress = { function(){ that.forceUpdate(); }}  
       >
       <Image
-        style= {[{width:"100%",height:"100%"}, {"top":"\"26.24%\"","left":"\"27.99%\"","source":" appData.selectedSkin;","width":230,"height":200}]}
+        style= {[{width:"100%",height:"100%"}, {"top":"26.24%","left":"27.99%","source":" appData.selectedSkin;","width":"30%","height":"30%"}]}
         source = {{uri: appData.selectedSkin}}
        
       >
@@ -350,7 +351,7 @@ that.props.goTo('PlayPage');; that.forceUpdate(); }}
 
 
       <Image
-        style= {[{resizeMode:'contain',position:'absolute',width:"20%",height:"20%"}, {"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"68.88%","left":"28.82%"}]}
+        style= {[{resizeMode:'contain',position:'absolute',width:"20%",height:"20%"}, {"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"45.88%","left":"15.82%"}]}
         source = {{uri:'http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >
@@ -362,7 +363,7 @@ that.props.goTo('PlayPage');; that.forceUpdate(); }}
 
 
       <Image
-        style= {[{resizeMode:'contain',position:'absolute',width:"20%",height:"20%"}, {"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"68.88%","left":"55.79%"}]}
+        style= {[{resizeMode:'contain',position:'absolute',width:"20%",height:"20%"}, {"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"45.88%","left":"65.79%"}]}
         source = {{uri:'http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >

@@ -267,7 +267,8 @@ function unwrap_dynamically(value,default_value){
       {this.state.createdelems}
 
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"29.92%","left":"2.29%","innerText":"'   CONGRATULATIONS'","fontSize":"resizeFont(50)","color":"purple","fontWeight":"bold","backgroundColor":"red"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%', textAlign:'center'},
+          {"top":"29.92%","left":"0%","innerText":"'   CONGRATULATIONS'","fontSize":"resizeFont(50)","color":"purple","fontWeight":"bold",fontSize:30}]}
         > {'CONGRATULATIONS'} </Text>
         
 <Text
@@ -342,7 +343,7 @@ that.props.goTo('PlayPage');; that.forceUpdate(); }}
 
 
       <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"45.12%","left":"13.74%"}]}
+        style= {[{width:"20%",height:"20%"}, {position:'absolute',resizeMode:'contain', "source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"45.12%","left":"13.74%"}]}
         source = {{position:'absolute',resizeMode:'contain',uri:'http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >

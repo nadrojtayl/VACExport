@@ -303,7 +303,7 @@ that.props.goTo('SkinsPage');; that.forceUpdate(); }}
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"innerText":"'Change Skin'","top":"-0.16%","left":"70.31%","backgroundColor":"blue","color":"yellow"}]}
+              {"innerText":"'Change Skin'","top":"5%","left":"70.31%","backgroundColor":"blue","color":"yellow"}]}
         >
         <Text style = {{color:"yellow"}}>
 
@@ -336,7 +336,7 @@ that.props.goTo("FirstPage");; that.forceUpdate(); }}
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"-0.05%","left":"0.16%","innerText":"'Home'","backgroundColor":"blue","color":"yellow"}]}
+              {"top":"5%","left":"0.16%","innerText":"'Home'","backgroundColor":"blue","color":"yellow"}]}
         >
         <Text style = {{color:"yellow"}}>
 
@@ -363,15 +363,15 @@ else if (appData.skinPosition=="50%"){
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            height:"7%",
+            height:"5%",
             width:"30%",
             position:'absolute',top:0,left:0, 
             backgroundColor:'#8fd158',
              alignItems:'center',
-             justifyContent:'center', height: "7%",  
+             justifyContent:'center', height: "5%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"84.84%","left":"15%","innerText":"'<-'","backgroundColor":"yellow","color":"blue"}]}
+              {"top":"86.84%","left":"15%","innerText":"'<-'","backgroundColor":"yellow","color":"blue"}]}
         >
         <Text style = {{color:"blue"}}>
 
@@ -402,10 +402,10 @@ else if (appData.skinPosition=="50%"){
             position:'absolute',top:0,left:0, 
             backgroundColor:'#8fd158',
              alignItems:'center',
-             justifyContent:'center', height: "7%",  
+             justifyContent:'center', height: "5%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"84.95%","left":"57.3%","innerText":"'->'","backgroundColor":"yellow","color":"blue"}]}
+              {"top":"86.95%","left":"57.3%","innerText":"'->'","backgroundColor":"yellow","color":"blue"}]}
         >
         <Text style = {{color:"blue"}}>
 
@@ -628,7 +628,7 @@ that.props.goTo('FinalPage');}",20);; that.forceUpdate(); }}
 
 
       <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://piskel-imgstore-b.appspot.com/img/8d4e3121-d019-11ea-ab58-7bce0c6b7f53.gif","height":"25%","top":"   appData.batPosition2;","left":"   appData.lane2;","width":"10%","resizeMode":"contain"}]}
+        style= {[{width:"20%",height:"20%"}, {"source":"https://piskel-imgstore-b.appspot.com/img/8d4e3121-d019-11ea-ab58-7bce0c6b7f53.gif","height":"25%","top":appData.batPosition2,"left":appData.lane2,"width":"10%","resizeMode":"contain"}]}
         source = {{uri:'https://piskel-imgstore-b.appspot.com/img/8d4e3121-d019-11ea-ab58-7bce0c6b7f53.gif'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >
