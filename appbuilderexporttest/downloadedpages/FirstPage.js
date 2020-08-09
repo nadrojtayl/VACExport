@@ -277,7 +277,7 @@ function unwrap_dynamically(value,default_value){
       {this.state.createdelems}
 
       <Text
-          style= {[{position:'absolute', backgroundColor:'white', textAlign:'center', zIndex:100,width:'100%'},{"top":"13.22%","left":"0.82%","innerText":" JSON.parse(JSON.stringify(Data[appData.counter][\"Question\"])) ;","height":"15%","fontSize":resizeFont(25)}]}
+          style= {[{position:'absolute', backgroundColor:'white', textAlign:'center', zIndex:100,width:'100%'},{"top":"13.22%","left":"0.82%","height":"15%","fontSize":resizeFont(25)}]}
         > { JSON.parse(JSON.stringify(Data[appData.counter]["Question"])) } </Text>
         
         <Image 
@@ -320,7 +320,6 @@ else{if(appData.SecondChance!=1){
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
               {"top":"34.47%","left":"31.87%",
-              "innerText":" JSON.parse(JSON.stringify(Data[appData.counter][\"Answer 1\"])) ;",
               "backgroundColor":"purple","color":"yellow"}]}
         >
         <Text style = {{color:"yellow"}}>
@@ -363,7 +362,7 @@ else{if(appData.SecondChance!=1){
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"65.42%","left":"32.82%","innerText":" JSON.parse(JSON.stringify(Data[appData.counter][\"Answer 4\"])) ;","backgroundColor":"black","color":"red"}]}
+              {"top":"65.42%","left":"32.82%"}]}
         >
         <Text style = {{color:"red"}}>
 
@@ -405,7 +404,7 @@ else{if(appData.SecondChance!=1){
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"54.49%","left":"32.82%","innerText":" JSON.parse(JSON.stringify(Data[appData.counter][\"Answer 3\"])) ;","backgroundColor":"green","color":"white"}]}
+              {"top":"54.49%","left":"32.82%","backgroundColor":"green","color":"white"}]}
         >
         <Text style = {{color:"white"}}>
 
@@ -448,7 +447,7 @@ else{if(appData.SecondChance!=1){
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"44.23%","left":"32.1%","innerText":" JSON.parse(JSON.stringify(Data[appData.counter][\"Answer 2\"])) ;","backgroundColor":"blue","color":"yellow"}]}
+              {"top":"44.23%","left":"32.1%","backgroundColor":"blue","color":"yellow"}]}
         >
         <Text style = {{color:"yellow"}}>
 
@@ -481,16 +480,16 @@ else{if(appData.SecondChance!=1){
         >
         <Text style = {{color:"black"}}>
 
-        {'Back'}
+        {'Start Over'}
 
        </Text>
         </TouchableOpacity>
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"5%","left":"71.91%","innerText":" appData.Zoins;"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"5%","left":"71.91%"}]}
         > { appData.Zoins} </Text>
         
 <Text
-          style= {[{backgroundColor:'yellow', width:"2%", position:'absolute',zIndex:100,width:'18%', borderRadius:5},{"top":"5%","left":"74.57%","innerText":"'Zoins:'"}]}
+          style= {[{backgroundColor:'yellow', width:"2%", position:'absolute',zIndex:100,width:'18%', borderRadius:5},{"top":"5%","left":"74.57%"}]}
         > {'Zoins:'} </Text>
         
 <Text
@@ -522,7 +521,7 @@ else{if(appData.SecondChance!=1){
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"84.45%","left":"4.38%",
+              {"top":"84.45%","left":"0",
               "innerText":"'Second Chance= 15 Zoins'",
               "fontSize":"resizeFont(10)",
               "backgroundColor":"yellow"}]}
@@ -560,8 +559,8 @@ else{if(appData.SecondChance!=1){
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"84.45%","left":"64.38%",
-              "innerText":"'Second Chance= 15 Zoins'","fontSize":"resizeFont(10)","backgroundColor":"yellow"}]}
+              {"top":"84.45%","left":"70%"
+              ,"fontSize":"resizeFont(10)","backgroundColor":"yellow"}]}
         >
         <Text style = {{color:"black"}}>
 
@@ -570,7 +569,7 @@ else{if(appData.SecondChance!=1){
        </Text>
         </TouchableOpacity>
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"76.51%","left":"11.73%","innerText":"'You Got It Wrong But Try Again!!'","color":"red","opacity":" appData.visible;"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"76.51%","left":"11.73%","color":"red","opacity":" appData.visible;"}]}
         > {'You Got It Wrong But Try Again!!'} </Text>
         
         </View>
