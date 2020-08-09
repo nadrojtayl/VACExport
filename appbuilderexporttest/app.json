@@ -1,7 +1,7 @@
   {
       "expo": {
-        "name": "ChickenRaceGame",
-        "slug": "ChickenRaceGame",
+        "name": "DuckRunGame",
+        "slug": "DuckRunGame",
         "platforms": [
           "ios",
           "android",
@@ -23,7 +23,7 @@
         ],
         "ios": {
           "supportsTablet": true,
-          "bundleIdentifier": "com.chickenracegame.chickenracegame"
+          "bundleIdentifier": "com.duckrungame.duckrungame"
         },
         "android": {
           "package": "com.chickenracegame.chickenracegame"
