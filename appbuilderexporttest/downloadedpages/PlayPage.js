@@ -347,11 +347,11 @@ that.props.goTo("FirstPage");; that.forceUpdate(); }}
  <TouchableOpacity
           
           onPress = { function(){
-            if (appData.skinPosition=="20%"){
-    appData.skinPosition="15%";
+            if (appData.skinPosition=="75%"){
+    appData.skinPosition="50%";
 }
-else if (appData.skinPosition=="15%"){
-    appData.skinPosition="5%";
+else if (appData.skinPosition=="50%"){
+    appData.skinPosition="25%";
 }; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
@@ -381,11 +381,11 @@ else if (appData.skinPosition=="15%"){
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){if (appData.skinPosition=="5%"){
-    appData.skinPosition="15%";
+          onPress = { function(){if (appData.skinPosition=="25%"){
+    appData.skinPosition="50%";
 }
-else if (appData.skinPosition=="15%"){
-    appData.skinPosition="20%";
+else if (appData.skinPosition=="50%"){
+    appData.skinPosition="75%";
 }; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
@@ -419,9 +419,9 @@ else if (appData.skinPosition=="15%"){
 appData.meters=appData.meters+4;\
 if(appData.batPosition > 590){appData.batPosition = 0;\
     var rand = Math.floor(Math.random()*3);\
-if (rand==0){appData.lane='5%';}\
-    if (rand==1){appData.lane='15%';}\
-    if (rand==2){appData.lane='20%';}\
+if (rand==0){appData.lane='25%';}\
+    if (rand==1){appData.lane='50%';}\
+    if (rand==2){appData.lane='75%';}\
 }\
 if(appData.batPosition > 500 && appData.skinPosition == appData.lane){\
 clearInterval(appData.interval);\
@@ -431,8 +431,8 @@ appData.bulldog = runWithInterval("appData.batPosition2=appData.batPosition2+15;
 if(appData.batPosition2 > 590){appData.batPosition2 = 0;\
     var rand2 = Math.floor(Math.random()*3);\
 if (rand2==0){appData.lane2=100;}\
-    if (rand2==1){appData.lane2='15%';}\
-    if (rand2==2){appData.lane2='20%';}\
+    if (rand2==1){appData.lane2='50%';}\
+    if (rand2==2){appData.lane2='75%';}\
 }\
 if(appData.batPosition2 > 500 && appData.skinPosition == appData.lane2){\
 clearInterval(appData.bulldog);\
@@ -462,7 +462,7 @@ that.props.goTo('FinalPage');}",12);; that.forceUpdate(); }}
         >
         <Text style = {{color:"yellow"}}>
 
-        {' "MEDIUM"'}
+        {'MEDIUM'}
 
        </Text>
         </TouchableOpacity>
@@ -485,7 +485,7 @@ that.props.goTo('FinalPage');}",12);; that.forceUpdate(); }}
 
 
       <Image
-        style= {[{width:"20%",height:"20%"}, {position:'absolute',"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"17.78%","left":"27.88%"}]}
+        style= {[{resizeMode:'contain',width:"20%",height:"20%"}, {position:'absolute',"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"17.78%","left":"27.88%"}]}
         source = {{uri:'http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >
@@ -497,7 +497,7 @@ that.props.goTo('FinalPage');}",12);; that.forceUpdate(); }}
 
 
       <Image
-        style= {[{width:"20%",height:"20%"}, {position:'absolute',"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"41.09%","left":"27.88%"}]}
+        style= {[{resizeMode:'contain',width:"20%",height:"20%"}, {position:'absolute',"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"41.09%","left":"27.88%"}]}
         source = {{uri:'http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >
@@ -509,7 +509,7 @@ that.props.goTo('FinalPage');}",12);; that.forceUpdate(); }}
 
 
       <Image
-        style= {[{width:"20%",height:"20%"}, {position:'absolute',"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"41.42%","left":"51.83%"}]}
+        style= {[{resizeMode:'contain',width:"20%",height:"20%"}, {position:'absolute',"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"41.42%","left":"51.83%"}]}
         source = {{uri:'http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >
@@ -521,7 +521,7 @@ that.props.goTo('FinalPage');}",12);; that.forceUpdate(); }}
 
 
       <Image
-        style= {[{width:"20%",height:"20%"}, {position:'absolute',"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"17.66%","left":"52.21%"}]}
+        style= {[{resizeMode:'contain',width:"20%",height:"20%"}, {position:'absolute',"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"17.66%","left":"52.21%"}]}
         source = {{uri:'http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >
@@ -549,9 +549,9 @@ that.props.goTo('FinalPage');}",10);
 appData.bulldog = runWithInterval("appData.batPosition2=appData.batPosition2+16;\
 if(appData.batPosition2 > 590){appData.batPosition2 = 0;\
     var rand2 = Math.floor(Math.random()*3);\
-if (rand2==0){appData.lane2=100;}\
-    if (rand2==1){appData.lane2=230;}\
-    if (rand2==2){appData.lane2=350;}\
+if (rand2==0){appData.lane2='25%';}\
+    if (rand2==1){appData.lane2='50%';}\
+    if (rand2==2){appData.lane2='75%';}\
 }\
 if(appData.batPosition2 > 500 && appData.skinPosition == appData.lane2){\
 clearInterval(appData.bulldog);\
@@ -591,9 +591,9 @@ that.props.goTo('FinalPage');}",10);; that.forceUpdate(); }}
 appData.meters=appData.meters+2;\
 if(appData.batPosition > 590){appData.batPosition = 0;\
     var rand = Math.floor(Math.random()*3);\
-if (rand==0){appData.lane='5%';}\
-    if (rand==1){appData.lane='15%';}\
-    if (rand==2){appData.lane='20%';}\
+if (rand==0){appData.lane='25%';}\
+    if (rand==1){appData.lane='50%';}\
+    if (rand==2){appData.lane='75%';}\
 }\
 if(appData.batPosition > 500 && appData.skinPosition == appData.lane){\
 clearInterval(appData.interval);\

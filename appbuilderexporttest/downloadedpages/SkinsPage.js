@@ -274,7 +274,7 @@ function unwrap_dynamically(value,default_value){
       
 
       <TouchableOpacity
-      style= {[{width:"200",height:"20%", position:'absolute',top:"34.22%",left:"-1.72%"}]}
+      style= {[{position:'absolute',width:"200",height:"20%", position:'absolute',top:"34.22%",left:"-1.72%"}]}
        onPress = { function(){appData.selectedSkin = "https://i.imgur.com/mkHo4H8.gif";
 that.props.goTo('FirstPage');; that.forceUpdate(); }}  
       >
@@ -292,7 +292,7 @@ that.props.goTo('FirstPage');; that.forceUpdate(); }}
       
 
       <TouchableOpacity
-      style= {[{width:"20%",height:"20%", position:'absolute',top:"35.98%",left:"54.66%"}]}
+      style= {[{position:'absolute',width:"20%",height:"20%", position:'absolute',top:"35.98%",left:"54.66%"}]}
        onPress = { function(){that.props.goTo("FirstPage")
 appData.selectedSkin = "https://i.imgur.com/KXcppEK.gif"; that.forceUpdate(); }}  
       >
@@ -338,8 +338,8 @@ appData.selectedSkin = "https://i.imgur.com/KXcppEK.gif"; that.forceUpdate(); }}
 
 
       <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"2.31%","left":"12.61%"}]}
-        source = {{uri:'http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png'}}
+        style= {[{resizeMode:'contain', position:'absolute',width:"20%",height:"20%"}, {"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"2.31%","left":"12.61%"}]}
+        source = {{ uri:'http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
@@ -350,7 +350,7 @@ appData.selectedSkin = "https://i.imgur.com/KXcppEK.gif"; that.forceUpdate(); }}
 
 
       <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"2.98%","left":"69.37%"}]}
+        style= {[{position:'absolute',width:"20%",height:"20%"}, {resizeMode:'contain',"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"2.98%","left":"69.37%"}]}
         source = {{uri:'http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >
@@ -363,7 +363,7 @@ appData.selectedSkin = "https://i.imgur.com/KXcppEK.gif"; that.forceUpdate(); }}
       
 
       <TouchableOpacity
-      style= {[{width:"20%",height:"20%", position:'absolute',top:"36.34%",left:"33.16%"}]}
+      style= {[{position:'absolute',width:"20%",height:"20%", position:'absolute',top:"36.34%",left:"33.16%"}]}
        onPress = { function(){appData.selectedSkin = "https://piskel-imgstore-b.appspot.com/img/11610bca-ccf4-11ea-bed0-8faa2d9b7894.gif"
 that.props.goTo('FirstPage'); that.forceUpdate(); }}  
       >
@@ -381,7 +381,7 @@ that.props.goTo('FirstPage'); that.forceUpdate(); }}
       
 
       <TouchableOpacity
-      style= {[{width:"30%",height:"20%", position:'absolute',top:"37.86%",left:"75.02%"}]}
+      style= {[{position:'absolute',width:"30%",height:"20%", position:'absolute',top:"37.86%",left:"75.02%"}]}
        onPress = { function(){appData.selectedSkin = "https://piskel-imgstore-b.appspot.com/img/8517a69c-cdb3-11ea-bec3-752299450aeb.gif";
 that.props.goTo('FirstPage'); that.forceUpdate(); }}  
       >
