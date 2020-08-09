@@ -220,7 +220,7 @@ function unwrap_dynamically(value,default_value){
     constructor(props)
     {
         super(props);
-        this.state = {"FirstPageinput2":"","dbkeys":["right","wrong1","wrong2","wrong3"],"bindex1":3,"bindex2":2,"bindex3":0,"bindex4":1,"questionindex":10,"createdelems":[]}
+        this.state = {"key":"value","Chatsinput1":"how is your day ","Chatsinput3":"James ","loaded":false,"dbLinks":{},"FirstPageinput4":"gamersrule","createdelems":[]}
     }
 
     componentDidMount(){
@@ -263,40 +263,19 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#00affa"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
       {this.state.createdelems}
 
-      <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"10%","left":"1.48%", fontSize:42, "innerText":"'Math SAT Question a Day'","fontSize":resizeFont(45),"textAlign":"center","fontFamily":"Chalkboard SE","color":"#ffd414"}]}
-        > {'Math SAT Question a Day'} </Text>
-        
-<Text
-          style= {[{textAlign:'center', 
-          position:'absolute',zIndex:100,width:'100%'},{
-            "top":"58.12%","left":"-20%",
-            "innerText":"'Name'","fontSize":resizeFont(15),"fontFamily":"Chalkboard SE","color":"#ffd414"}]}
-        > {'Enter Your Name'} </Text>
-        
-<TextInput
-       style= {[{position:'absolute', width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"62.65%","left":"11.78%","borderColor":"#ffd414","color":"#ffd414","fontSize":"resizeFont(25)","textAlign":"center","fontFamily":"Chalkboard SE"}]}
-        value={appData["FirstPageinput2"]}
-         onChangeText={function(val){ appData["FirstPageinput2"] = val; that.forceUpdate();   } }
-        />
- <TouchableOpacity
+       <TouchableOpacity
           
-          onPress = { function(){var lst = [0, 1, 2, 3];
-for(let i =lst.length - 1; i > 0; i--){
-  const j = Math.floor(Math.random() * i)
-  const temp = lst[i]
-    lst[i] = lst[j]
-    lst[j] = temp
+          onPress = { function(){
+            if(appData.FirstPageinput4 === "gamersrule"){
+    that.props.goTo("Chats");
+} else {
+    alert("Wrong password! Play more games, and maybe someone will give you the password for this community of respectful gamers")
 }
-appData.bindex1 = lst[0];
-appData.bindex2 = lst[1];
-appData.bindex3 = lst[2];
-appData.bindex4 = lst[3];
-appData.questionindex=Math.floor(Math.random()*questions.length)
-that.props.goTo('Secondpage'); that.forceUpdate(); }}  
+
+; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -315,16 +294,39 @@ that.props.goTo('Secondpage'); that.forceUpdate(); }}
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"71.49%","left":"4.83%","innerText":"'Get question of the day'","height":"25%","width":"90%","backgroundColor":"#ffd414",
-              "fontSize":resizeFont(40),"textAlign":"center",
-              "color":"#00affa","fontFamily":"Chalkboard SE"}]}
+              {"top":"57.52%","left":"35.73%","innerText":"'Click Me To Start Talking '","fontSize":"resizeFont(10)","color":"black"}]}
         >
-        <Text style = {{color:"#00affa", fontSize:resizeFont(30), textAlign:'center'}}>
+        <Text style = {{color:"black"}}>
 
-        {'Get question of the day'}
+        {'Click Me To Start Talking '}
 
        </Text>
         </TouchableOpacity>
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"14.27%","left":"-0.03%","innerText":"'Hello Gamers This Is For My People To Type while Gaming '","fontSize":"resizeFont(20)","color":"white","textAlign":"center","backgroundColor":"purple"}]}
+        > {'Hello Gamers This Is For My People To Type while Gaming '} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"-0.4%","left":"-0.03%","innerText":"'Gamers Lounge'","fontSize":"resizeFont(54)","color":"white","backgroundColor":"purple","textAlign":"center"}]}
+        > {'Gamers Lounge'} </Text>
+        
+
+
+      <Image
+        style= {[{width:"20%",height:"20%",position:'absolute'}, {"source":"https://technabob.com/blog/wp-content/uploads/2013/08/lego_mosaic_2.jpg","zIndex":-500,"height":"100%","width":"100%"}]}
+        source = {{uri:'https://technabob.com/blog/wp-content/uploads/2013/08/lego_mosaic_2.jpg'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+<TextInput
+       style= {[{position:'absolute', width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"50.28%","left":"19.15%","backgroundColor":"white"}]}
+        value={appData["FirstPageinput4"]}
+         onChangeText={function(val){ appData["FirstPageinput4"] = val; that.forceUpdate();   } }
+        />
         </View>
         )
     }

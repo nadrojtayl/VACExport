@@ -1,7 +1,7 @@
   {
       "expo": {
-        "name": "QuestionADayMusic",
-        "slug": "QuestionADayMusic",
+        "name": "GamersLoungeNYC",
+        "slug": "GamersLoungeNYC",
         "platforms": [
           "ios",
           "android",
@@ -23,10 +23,10 @@
         ],
         "ios": {
           "supportsTablet": true,
-          "bundleIdentifier": "com.questionadaymusic.questionadaymusic"
+          "bundleIdentifier": "com.gamerslounge.gamerslounge"
         },
         "android": {
-          "package": "com.questionadaymusic.questionadaymusic"
+          "package": "com.gamerslounge.gamerslounge"
         },
         "entryPoint": "node_modules/expo/AppEntry.js"
       }
