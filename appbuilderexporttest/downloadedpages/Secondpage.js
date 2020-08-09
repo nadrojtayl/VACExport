@@ -366,7 +366,7 @@ that.props.goTo('Wrong')
        </Text>
         </TouchableOpacity>
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"15.2%","left":"0.52%","innerText":"  questions[appData.questionindex][\"question\"];","fontSize":"resizeFont(18)","textAlign":"center","borderStyle":"solid"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"15.2%","left":"0.52%","innerText":"  questions[appData.questionindex][\"question\"];","fontSize":resizeFont(18),"textAlign":"center","borderStyle":"solid"}]}
         > {  questions[appData.questionindex]["question"]} </Text>
         
  <TouchableOpacity

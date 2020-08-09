@@ -267,15 +267,18 @@ function unwrap_dynamically(value,default_value){
       {this.state.createdelems}
 
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"10%","left":"1.48%", fontSize:42, "innerText":"'Math SAT Question a Day'","fontSize":resizeFont(75),"textAlign":"center","fontFamily":"Comic Sans MS","color":"#ffd414"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"10%","left":"1.48%", fontSize:42, "innerText":"'Math SAT Question a Day'","fontSize":resizeFont(45),"textAlign":"center","fontFamily":"Chalkboard SE","color":"#ffd414"}]}
         > {'Math SAT Question a Day'} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"54.12%","left":"39.08%","innerText":"'Name'","fontSize":"resizeFont(35)","fontFamily":"Comic Sans MS","color":"#ffd414"}]}
-        > {'Name'} </Text>
+          style= {[{textAlign:'center', 
+          position:'absolute',zIndex:100,width:'100%'},{
+            "top":"58.12%","left":"-20%",
+            "innerText":"'Name'","fontSize":resizeFont(15),"fontFamily":"Chalkboard SE","color":"#ffd414"}]}
+        > {'Enter Your Name'} </Text>
         
 <TextInput
-       style= {[{position:'absolute', width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"62.65%","left":"11.78%","borderColor":"#ffd414","color":"#ffd414","fontSize":"resizeFont(25)","textAlign":"center","fontFamily":"Comic Sans MS"}]}
+       style= {[{position:'absolute', width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"62.65%","left":"11.78%","borderColor":"#ffd414","color":"#ffd414","fontSize":"resizeFont(25)","textAlign":"center","fontFamily":"Chalkboard SE"}]}
         value={appData["FirstPageinput2"]}
          onChangeText={function(val){ appData["FirstPageinput2"] = val; that.forceUpdate();   } }
         />
@@ -312,9 +315,11 @@ that.props.goTo('Secondpage'); that.forceUpdate(); }}
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"71.49%","left":"4.83%","innerText":"'Get question of the day'","height":"25%","width":"90%","backgroundColor":"#ffd414","fontSize":"resizeFont(30)","textAlign":"center","color":"#00affa","fontFamily":"Comic Sans MS"}]}
+              {"top":"71.49%","left":"4.83%","innerText":"'Get question of the day'","height":"25%","width":"90%","backgroundColor":"#ffd414",
+              "fontSize":resizeFont(40),"textAlign":"center",
+              "color":"#00affa","fontFamily":"Chalkboard SE"}]}
         >
-        <Text style = {{color:"#00affa"}}>
+        <Text style = {{color:"#00affa", fontSize:resizeFont(30), textAlign:'center'}}>
 
         {'Get question of the day'}
 

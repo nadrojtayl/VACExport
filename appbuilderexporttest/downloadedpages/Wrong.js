@@ -267,7 +267,7 @@ function unwrap_dynamically(value,default_value){
       {this.state.createdelems}
 
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'WRONG!'","top":"18.24%","left":"20.97%","color":"#ffd414","fontFamily":"COMIC SANS MS","fontSize":"resizeFont(42)"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'WRONG!'","top":"18.24%","left":"20.97%","color":"#ffd414","fontFamily":"Chalkboard SE","fontSize":resizeFont(42)}]}
         > {'WRONG!'} </Text>
         
  <TouchableOpacity
