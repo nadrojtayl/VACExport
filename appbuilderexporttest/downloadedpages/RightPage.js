@@ -267,8 +267,8 @@ function unwrap_dynamically(value,default_value){
       {this.state.createdelems}
 
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'CONGRATULATIONS You Got It Correct !!!'","fontSize":"resizeFont(25)","top":"59.43%","left":"2.96%","color":"green"}]}
-        > {'CONGRATULATIONS You Got It Correct !!!'} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'80%'},{"innerText":"'CONGRATULATIONS You Got It Correct !!!'","fontSize":resizeFont(25),"top":"59.43%","left":"2.96%","color":"green"}]}
+        > {'You Got It Correct !!!'} </Text>
         
  <TouchableOpacity
           

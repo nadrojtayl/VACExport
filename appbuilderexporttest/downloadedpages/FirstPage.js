@@ -5,6 +5,7 @@ import Calendar from "./Calendar.js";
 import appData from "./global.js";
 import Multiplier from "./Multiplier.js";
 import { Audio } from 'expo-av'; 
+import * as SMS from 'expo-sms';
 
 
 var d = new Date();
@@ -55,6 +56,15 @@ function runWithInterval(script_string,interval){
       } catch(e){
         alert("There was an error trying to run this!" + e);
       }
+}
+
+async function user_text(phone,message){
+  const isAvailable = await SMS.isAvailableAsync();
+    if (isAvailable) {
+      SMS.sendSMSAsync(phone, message);
+    } else {
+      alert("Texting isn't available on your device")
+    }
 }
 
 window.runWithInterval = runWithInterval;
@@ -267,9 +277,13 @@ function unwrap_dynamically(value,default_value){
       {this.state.createdelems}
 
       <Text
-          style= {[{position:'absolute', textAlign:'center', zIndex:100,width:'100%'},{"top":"13.22%","left":"0.82%","innerText":" JSON.parse(JSON.stringify(Data[appData.counter][\"Question\"])) ;","height":"30%","fontSize":resizeFont(25)}]}
+          style= {[{position:'absolute', backgroundColor:'white', textAlign:'center', zIndex:100,width:'100%'},{"top":"13.22%","left":"0.82%","innerText":" JSON.parse(JSON.stringify(Data[appData.counter][\"Question\"])) ;","height":"15%","fontSize":resizeFont(25)}]}
         > { JSON.parse(JSON.stringify(Data[appData.counter]["Question"])) } </Text>
         
+        <Image 
+        style = {{height:"100%",width:"100%",position:'absolute',top:0,left:0,zIndex:-500}}
+        source = {{uri:"https://i.pinimg.com/736x/0f/25/19/0f2519e9175416f12789f7706da5fad3.jpg"}}>
+        </Image>
  <TouchableOpacity
           
           onPress = { function(){if(JSON.parse(JSON.stringify(Data[appData.counter]["Answer 1"])) === JSON.parse(JSON.stringify(Data[appData.counter]["Correct Answer"]))  ){
@@ -476,13 +490,52 @@ else{if(appData.SecondChance!=1){
         > { appData.Zoins} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"5%","left":"64.57%","innerText":"'Zoins:'"}]}
+          style= {[{backgroundColor:'yellow', width:"2%", position:'absolute',zIndex:100,width:'18%', borderRadius:5},{"top":"5%","left":"74.57%","innerText":"'Zoins:'"}]}
         > {'Zoins:'} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":" appData.coins;","top":"5%","left":"76.3%"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":" appData.coins;","top":"5%","left":"86.3%"}]}
         > { appData.coins} </Text>
         
+
+ <TouchableOpacity
+          
+          onPress = { function(){
+
+            user_text("","This is an automated message from NBATriviaApp. I need your help with a question because I know you're an NBA whiz. Here's the question: " + JSON.parse(JSON.stringify(Data[appData.counter]["Question"] + "?")) );
+          }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"84.45%","left":"4.38%",
+              "innerText":"'Second Chance= 15 Zoins'",
+              "fontSize":"resizeFont(10)",
+              "backgroundColor":"yellow"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Text A Friend'}
+
+       </Text>
+        </TouchableOpacity>
+
+
+
  <TouchableOpacity
           
           onPress = { function(){if(appData.coins>=15){
@@ -507,7 +560,8 @@ else{if(appData.SecondChance!=1){
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"84.45%","left":"54.38%","innerText":"'Second Chance= 15 Zoins'","fontSize":"resizeFont(10)","backgroundColor":"yellow"}]}
+              {"top":"84.45%","left":"64.38%",
+              "innerText":"'Second Chance= 15 Zoins'","fontSize":"resizeFont(10)","backgroundColor":"yellow"}]}
         >
         <Text style = {{color:"black"}}>
 

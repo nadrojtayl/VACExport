@@ -300,7 +300,7 @@ if(appData.counter>9){
        </Text>
         </TouchableOpacity>
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"74.02%","left":"0.59%","innerText":"'Whoops So Close!!!!'","fontSize":"resizeFont(30)","color":"red","backgroundColor":"white"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"74.02%","left":"0.59%","innerText":"'Whoops So Close!!!!'","fontSize":resizeFont(30),"color":"red","backgroundColor":"white"}]}
         > {'Whoops So Close!!!!'} </Text>
         
 

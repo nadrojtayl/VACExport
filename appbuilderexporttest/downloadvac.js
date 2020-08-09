@@ -103,6 +103,7 @@ import Calendar from "./Calendar.js";
 import appData from "./global.js";
 import Multiplier from "./Multiplier.js";
 import { Audio } from 'expo-av'; 
+import * as SMS from 'expo-sms';
 
 
 var d = new Date();
