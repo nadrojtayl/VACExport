@@ -211,13 +211,17 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class Main extends React.Component {
      
 
     constructor(props)
     {
         super(props);
         this.state = {"key":"value","FirstPageinput1":"hhhhhhi","Settingsswitch0":true,"Settingsswitch2":true,"X":330,"Move":105,"Move2":1310,"Mainswitch78":true,"inter":4014,"inter2":0,"loaded":false,"dbLinks":{},"tomove2":365,"yeet":2666,"thet":2667,"enemies":[54,55,56,55,56,57,58],"spawned":4,"ended":true,"done":false,"createdelems":[]}
+    }
+
+    componentDidMount(){
+      global.thisapp = this;
     }
 
 
@@ -259,71 +263,14 @@ function unwrap_dynamically(value,default_value){
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"grey"}}>
       {this.state.createdelems}
 
-      
-      
-
-      <TouchableOpacity
-      style= {[{width:"30%",height:"30%", position:'absolute',top:"31.75%",left:"35.36%"}]}
-       onPress = { function(){that.props.goTo("Main"); that.forceUpdate(); }}  
-      >
-      <Image
-        style= {[{width:"100%",height:"100%"}, {"source":"https://i.imgur.com/aGSr19H.gif","backgroundColor":"transparent","top":"31.75%","left":"35.36%","resizeMode":"contain","alignItems":null,"height":"30%","width":"30%"}]}
-        source = {{uri:'https://i.imgur.com/aGSr19H.gif'}}
-       
-      >
-      </Image>
-      </TouchableOpacity>
-
-
-      
-<TextInput
-       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"30.64%","left":"36.87%","borderColor":"black"}]}
-        value={appData["FirstPageinput1"]}
-         onChangeText={function(val){ appData["FirstPageinput1"] = val; that.forceUpdate();   } }
-        />
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"26.99%","left":"47.57%","innerText":"'Name'"}]}
-        > {'Name'} </Text>
-        
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://i.imgur.com/cQs1QEn.png","top":"16.06%","left":"10.19%","backgroundColor":"transparent","resizeMode":"contain"}]}
-        source = {{uri:'https://i.imgur.com/cQs1QEn.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://i.imgur.com/KbSqCge.jpg","resizeMode":"contain","top":"-55.45%","left":"0.2%","fontSize":"resizeFont(null)","width":"100%","backgroundColor":"transparent","zIndex":-10000}]}
-        source = {{uri:'https://i.imgur.com/KbSqCge.jpg'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://cdn1.vectorstock.com/i/1000x1000/52/10/game-scene-pixelated-background-vector-12125210.jpg","height":"100%","width":"100%","top":"15.42%","left":"0.3%","backgroundColor":"transparent","zIndex":-10000000}]}
-        source = {{uri:'https://cdn1.vectorstock.com/i/1000x1000/52/10/game-scene-pixelated-background-vector-12125210.jpg'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
- <TouchableOpacity
+       <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("Settings"); that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("Pause");
+clearInterval(appData.inter);
+  play("https://vgmdownloads.com/soundtracks/wii-music-collection/tasdctcp/04.%20Mii%20Plaza.mp3");
+appData.inter = runWithInterval('play("https://vgmdownloads.com/soundtracks/wii-music-collection/tasdctcp/04.%20Mii%20Plaza.mp3")', 115000);
+clearInterval(appData.yeet);
+clearInterval(appData.thet);; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -336,19 +283,161 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"57.3%","left":"40.3%","innerText":"'Settings'"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Pause'","top":"0.05%","left":"0.08%"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Settings'}
+        {'Pause'}
+
+       </Text>
+        </TouchableOpacity>
+
+      
+
+      <TouchableOpacity
+      style= {[{width:"20%",height:"20%", position:'absolute',top:"55%",left:appData.X}]}
+       onPress = { function(){appData.X = appData.X + 10; that.forceUpdate(); }}  
+      >
+      <Image
+        style= {[{width:"100%",height:"100%"}, {"top":"55%","left":"appData.X","source":"https://i.imgur.com/cQs1QEn.png","resizeMode":"contain","backgroundColor":"tranparent"}]}
+        source = {{uri:'https://i.imgur.com/cQs1QEn.png'}}
+       
+      >
+      </Image>
+      </TouchableOpacity>
+
+
+      
+ <TouchableOpacity
+          
+          onPress = { function(){
+
+if(appData.X === "25%"){
+    appData.X = "70%"
+}
+    
+    
+
+; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"78.83%","left":"63.08%","innerText":"'->'","backgroundColor":"yellow","zIndex":2}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'->'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){
+            if(appData.X === "70%"){
+    appData.X = "25%"
+}; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"78.98%","left":"17.93%","innerText":"'<-'","source":"https://previews.123rf.com/images/eljanstock/eljanstock1811/eljanstock181109954/111879652-left-arrow-vector-icon-isolated-on-transparent-background-left-arrow-transparency-logo-concept.jpg","backgroundColor":"yellow","zIndex":2}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'<-'}
+
+       </Text>
+        </TouchableOpacity>
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"65%","left":"appData.X","innerText":"appData.FirstPageinput1","marginLeft":"5%"}]}
+        > {appData.FirstPageinput1} </Text>
+        
+ <TouchableOpacity
+          
+          onPress = { function(){appData.spawned = 0;
+appData.ended = false;
+appData.yeet = runWithInterval(`
+for(var i = 0;i<created.length;i++){
+   created[i].top += 20;
+   var samelane = (created[i].left == "20%") == (appData.X < 200);
+   if(samelane && created[i].top >= 360 && created[i].top <= 380){
+       appData.ended = true;
+      if(appData.ended === true){
+          clearInterval(appData.yeet)
+          clearInterval(appData.thet)
+          delete window.created;
+          window.created = [];
+          that.props.goTo("End")
+      }
+   }
+}
+`,500);
+appData.thet = runWithInterval(`
+if(0.5>Math.random()){
+    appData.spawned ++;
+   var lid = global.thisapp.createElement("image", { "top": 100, "left": "65%" ,"resizeMode":"contain","backgroundColor":"tranparent", "source":"https://i.imgur.com/SGCjjSN.gif", "zIndex":-10000000})
+   appData.enemies.push(lid)
+} else {
+    appData.spawned ++;
+    var lid = global.thisapp.createElement("image", { "top": 100, "left": "20%" ,"resizeMode":"contain","backgroundColor":"tranparent", "source":"https://i.imgur.com/SGCjjSN.gif", "zIndex":-10000000})
+    appData.enemies.push(lid)
+}
+//removeOffScreen();
+`,6000);
+
+; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"0.29%","left":"81.44%","innerText":"'Play'"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Play'}
 
        </Text>
         </TouchableOpacity>
 
 
+
+
+
+      
+
+
+
+      
+
+
       <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://i.imgur.com/KbSqCge.jpg","top":"-3.51%","left":"0.08%","width":"100%"}]}
-        source = {{uri:'https://i.imgur.com/KbSqCge.jpg'}}
+        style= {[{width:"20%",height:"20%"}, {"source":"https://i.imgur.com/khLWbCD.gif","width":"100%","height":"100%","zIndex":-1000000000}]}
+        source = {{uri:'https://i.imgur.com/khLWbCD.gif'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
@@ -360,7 +449,7 @@ function unwrap_dynamically(value,default_value){
         )
     }
   }
-    export default FirstPage; 
+    export default Main; 
 
 
 

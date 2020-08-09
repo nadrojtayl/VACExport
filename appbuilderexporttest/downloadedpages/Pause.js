@@ -5,11 +5,13 @@ import Calendar from "./Calendar.js";
 import appData from "./global.js";
 import Multiplier from "./Multiplier.js";
 
+
 var d = new Date();
 var month = d.getMonth();
 var day = d.getDate();
 global.month = d.getMonth();
 global.day = d.getDate();
+global.created = [];
 
 function hasNumber(myString) {
   return /d/.test(myString);
@@ -76,6 +78,7 @@ function try_eval(input){
     return elem[key_name].indexOf(phrase) !== -1;
   })
 }
+
 
 
 function filter(arr,phrase){
@@ -208,19 +211,37 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class Museums extends React.Component {
+ class Pause extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"FirstPageinput0":"","details":"Leonardo DaVinci"}
+        this.state = {"key":"value","FirstPageinput1":"hhhhhhi","Settingsswitch0":true,"Settingsswitch2":true,"X":330,"Move":105,"Move2":1310,"Mainswitch78":true,"inter":4014,"inter2":0,"loaded":false,"dbLinks":{},"tomove2":365,"yeet":2666,"thet":2667,"enemies":[54,55,56,55,56,57,58],"spawned":4,"ended":true,"done":false,"createdelems":[]}
     }
 
 
       
   
+    createElement(name, style_obj){
+      if(name === 'image'){
+        this.state.createdelems.push(
+        (<Image style = {style_obj}></Image>)
+        )
+      }
 
+       if(name === 'text'){
+        this.state.createdelems.push(
+        (<Text style = {style_obj}></Text>)
+        )
+      }
+
+      global.created.push(style_obj);
+     
+
+
+
+    }
 
    
 
@@ -235,16 +256,14 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#C8A2C8"}}>
-        <TouchableOpacity
-          
-          onPress = { function(){
-           
-          
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"grey"}}>
+      {this.state.createdelems}
 
-         that.props.goTo("FirstPage");
-
-          }}  
+       <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo("Main")
+pause("https://vgmdownloads.com/soundtracks/wii-music-collection/tasdctcp/04.%20Mii%20Plaza.mp3")
+clearInterval(appData.inter); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -255,36 +274,47 @@ function unwrap_dynamically(value,default_value){
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            height:"5%",
+            height:"7%",
             width:"30%",
-            position:'absolute',
-            top:'5%',
-            backgroundColor:'#8fd158', 
-            alignItems:'center',justifyContent:'center',  
-             title:'Test', borderColor: 'gray',
-              color:'black', 
-             borderRadius:15, borderWidth: 1},{
-              "innerText":"'Home'"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Back to game'","top":"41.32%","left":"42.22%"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Back'}
+        {'Back to game'}
 
        </Text>
         </TouchableOpacity>
-        <View style = {{marginTop:'43%', height:"100%"}}>
-        <Text style = {{textAlign:'center', fontWeight:'bold', textDecorationLine:'underline', fontSize:resizeFont(20)}}>Recommended Museums</Text>
-        {
-          appData.recommendedMuseums.map(function(museum){
-            return (<Text style = {{marginTop:height*0.02, textAlign:'center', fontSize:resizeFont(16)}}>{museum}</Text>)
-          })
-        }
-        </View>
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo("FirstPage");
+pause("https://vgmdownloads.com/soundtracks/wii-music-collection/tasdctcp/04.%20Mii%20Plaza.mp3");
+pause();
+clearInterval(appData.inter); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"17.09%","left":"41.86%","innerText":"'Back To Home'"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Back To Home'}
+
+       </Text>
+        </TouchableOpacity>
         </View>
         )
     }
   }
-    export default Museums; 
+    export default Pause; 
 
 
 

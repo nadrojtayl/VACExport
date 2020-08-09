@@ -5,11 +5,13 @@ import Calendar from "./Calendar.js";
 import appData from "./global.js";
 import Multiplier from "./Multiplier.js";
 
+
 var d = new Date();
 var month = d.getMonth();
 var day = d.getDate();
 global.month = d.getMonth();
 global.day = d.getDate();
+global.created = [];
 
 function hasNumber(myString) {
   return /d/.test(myString);
@@ -76,6 +78,7 @@ function try_eval(input){
     return elem[key_name].indexOf(phrase) !== -1;
   })
 }
+
 
 
 function filter(arr,phrase){
@@ -208,19 +211,37 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class SCULPTORS extends React.Component {
+ class End extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"FirstPageinput0":""}
+        this.state = {"key":"value","FirstPageinput1":"hhhhhhi","Settingsswitch0":true,"Settingsswitch2":true,"X":330,"Move":105,"Move2":1310,"Mainswitch78":true,"inter":4014,"inter2":0,"loaded":false,"dbLinks":{},"tomove2":365,"yeet":2666,"thet":2667,"enemies":[54,55,56,55,56,57,58],"spawned":4,"ended":true,"done":false,"createdelems":[]}
     }
 
 
       
   
+    createElement(name, style_obj){
+      if(name === 'image'){
+        this.state.createdelems.push(
+        (<Image style = {style_obj}></Image>)
+        )
+      }
 
+       if(name === 'text'){
+        this.state.createdelems.push(
+        (<Text style = {style_obj}></Text>)
+        )
+      }
+
+      global.created.push(style_obj);
+     
+
+
+
+    }
 
    
 
@@ -235,96 +256,69 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
-      <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"8.54%","left":"35.93%","innerText":"'SCULPTORS'","color":"purple","fontSize":"resizeFont(20)"}]}
-        > {'SCULPTORS'} </Text>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"grey"}}>
+      {this.state.createdelems}
+
+       <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo("Main");
+; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"23.34%","left":"39.87%","innerText":"'Retry'"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Retry'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo("FirstPage");; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"48.41%","left":"39.87%","innerText":"'Go to home'"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Go to home'}
+
+       </Text>
+        </TouchableOpacity>
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":" appData.spawned;","top":"16.87%","left":"52.61%"}]}
+        > { appData.spawned} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"73.36%","left":"72.67%"}]}
-        > {} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"12.18%","left":"45.99%","innerText":"'Score'"}]}
+        > {'Score'} </Text>
         
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"72.24%","left":"16.68%"}]}
-        > {} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"50.01%","left":"44.04%"}]}
-        > {} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"24.42%","left":"66.59%"}]}
-        > {} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"23.67%","left":"20.22%"}]}
-        > {} </Text>
-        
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"top":"26.66%","left":"63.3%"}]}
-        source = {{uri:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png"}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"top":"5.92%","left":"17.69%"}]}
-        source = {{uri:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png"}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"top":"36.75%","left":"70.39%"}]}
-        source = {{uri:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png"}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"top":"-6.78%","left":"41.25%"}]}
-        source = {{uri:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png"}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"top":"-3.79%","left":"14.65%"}]}
-        source = {{uri:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png"}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
         </View>
         )
     }
   }
-    export default SCULPTORS; 
+    export default End; 
 
 
 

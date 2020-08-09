@@ -5,11 +5,13 @@ import Calendar from "./Calendar.js";
 import appData from "./global.js";
 import Multiplier from "./Multiplier.js";
 
+
 var d = new Date();
 var month = d.getMonth();
 var day = d.getDate();
 global.month = d.getMonth();
 global.day = d.getDate();
+global.created = [];
 
 function hasNumber(myString) {
   return /d/.test(myString);
@@ -76,6 +78,7 @@ function try_eval(input){
     return elem[key_name].indexOf(phrase) !== -1;
   })
 }
+
 
 
 function filter(arr,phrase){
@@ -208,19 +211,37 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class Scuptors extends React.Component {
+ class Settings extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"FirstPageinput0":"","details":"Leonardo DaVinci"}
+        this.state = {"key":"value","FirstPageinput1":"hhhhhhi","Settingsswitch0":true,"Settingsswitch2":true,"X":330,"Move":105,"Move2":1310,"Mainswitch78":true,"inter":4014,"inter2":0,"loaded":false,"dbLinks":{},"tomove2":365,"yeet":2666,"thet":2667,"enemies":[54,55,56,55,56,57,58],"spawned":4,"ended":true,"done":false,"createdelems":[]}
     }
 
 
       
   
+    createElement(name, style_obj){
+      if(name === 'image'){
+        this.state.createdelems.push(
+        (<Image style = {style_obj}></Image>)
+        )
+      }
 
+       if(name === 'text'){
+        this.state.createdelems.push(
+        (<Text style = {style_obj}></Text>)
+        )
+      }
+
+      global.created.push(style_obj);
+     
+
+
+
+    }
 
    
 
@@ -235,13 +256,54 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#C8A2C8"}}>
-      
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"grey"}}>
+      {this.state.createdelems}
+
+      <Switch 
+         value={appData["Settingsswitch0"]}
+         onValueChange={function(val){ appData["Settingsswitch0"] = val; that.forceUpdate();   } }
+        style= {[{position:'absolute',width:'30%'},{"top":"39.49%","left":"44.72%"}]}
+        ></Switch>
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"35.59%","left":"43.65%","innerText":"'Audio'"}]}
+        > {'Audio'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"34.8%","left":"43.65%","innerText":"'Audio'"}]}
+        > {'Audio'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"34.54%","left":"45.43%","innerText":"'\"Audio\"'"}]}
+        > {'"Audio"'} </Text>
+        
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo ("FirstPage");; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'To Home'","top":"50.3%","left":"40.97%"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'To Home'}
+
+       </Text>
+        </TouchableOpacity>
         </View>
         )
     }
   }
-    export default Scuptors; 
+    export default Settings; 
 
 
 

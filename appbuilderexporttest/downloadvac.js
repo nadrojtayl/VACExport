@@ -95,7 +95,7 @@ function load_app(name, printname, bundleId){
 
 
 function translate_page(page_name,children,childrenAdditionalStyles,clickfunctions,databases,appdata,color){
- appdata["created"] = [];
+ appdata["createdelems"] = [];
   return `
 import React, { Component } from "react";
 import { ActivityIndicator, Button, Picker, Switch, Image, ScrollView, TouchableOpacity, StyleSheet, Text, View, TextInput, Dimensions } from "react-native";
@@ -103,11 +103,13 @@ import Calendar from "./Calendar.js";
 import appData from "./global.js";
 import Multiplier from "./Multiplier.js";
 
+
 var d = new Date();
 var month = d.getMonth();
 var day = d.getDate();
 global.month = d.getMonth();
 global.day = d.getDate();
+global.created = [];
 
 function hasNumber(myString) {
   return /\d/.test(myString);
@@ -321,16 +323,18 @@ function unwrap_dynamically(value,default_value){
   
     createElement(name, style_obj){
       if(name === 'image'){
-        this.state.created.push(
+        this.state.createdelems.push(
         (<Image style = {style_obj}></Image>)
         )
       }
 
        if(name === 'text'){
-        this.state.created.push(
+        this.state.createdelems.push(
         (<Text style = {style_obj}></Text>)
         )
       }
+
+      global.created.push(style_obj);
      
 
 
@@ -351,7 +355,7 @@ function unwrap_dynamically(value,default_value){
       }
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"` + color +`"}}>
-      {this.state.created}
+      {this.state.createdelems}
 
       `+
     children.map(function(child,int){
