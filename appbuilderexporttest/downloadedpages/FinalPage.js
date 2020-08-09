@@ -268,7 +268,7 @@ function unwrap_dynamically(value,default_value){
 
       <Text
           style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"29.92%","left":"2.29%","innerText":"'   CONGRATULATIONS'","fontSize":"resizeFont(50)","color":"purple","fontWeight":"bold","backgroundColor":"red"}]}
-        > {'   CONGRATULATIONS'} </Text>
+        > {'CONGRATULATIONS'} </Text>
         
 <Text
           style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":" 'YOU RAN '+appData.meters+' METERS';","top":"38.96%","left":"30.33%","color":"red","fontSize":"resizeFont(20)"}]}
@@ -343,6 +343,18 @@ that.props.goTo('PlayPage');; that.forceUpdate(); }}
 
       <Image
         style= {[{width:"20%",height:"20%"}, {"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"45.12%","left":"13.74%"}]}
+        source = {{position:'absolute',resizeMode:'contain',uri:'http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+
+
+      <Image
+        style= {[{position:'absolute',resizeMode:'contain',width:"20%",height:"20%"}, {"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"44.68%","left":"66.35%"}]}
         source = {{uri:'http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >
@@ -354,7 +366,7 @@ that.props.goTo('PlayPage');; that.forceUpdate(); }}
 
 
       <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"44.68%","left":"66.35%"}]}
+        style= {[{position:'absolute',resizeMode:'contain',width:"20%",height:"20%"}, {"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"9.72%","left":"11.68%"}]}
         source = {{uri:'http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >
@@ -366,7 +378,7 @@ that.props.goTo('PlayPage');; that.forceUpdate(); }}
 
 
       <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"9.72%","left":"11.68%"}]}
+        style= {[{position:'absolute',resizeMode:'contain',width:"20%",height:"20%"}, {"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"9.93%","left":"66.35%"}]}
         source = {{uri:'http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >
@@ -376,32 +388,6 @@ that.props.goTo('PlayPage');; that.forceUpdate(); }}
 
       
 
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png","top":"9.93%","left":"66.35%"}]}
-        source = {{uri:'http://www.pngmart.com/files/1/Transparent-Pineapple-PNG.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"-5.28%","left":"1.61%"}]}
-        > {} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"-4.96%","left":"2.12%"}]}
-        > {} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"21.16%","left":"56.91%","innerText":"' Emet [0] [\"high Score\"];'","fontSize":"resizeFont(30)"}]}
-        > {' Emet [0] ["high Score"]'} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"21.05%","left":"27.48%","innerText":"'High Score ='","fontSize":"resizeFont(30)"}]}
-        > {'High Score ='} </Text>
         
         </View>
         )
