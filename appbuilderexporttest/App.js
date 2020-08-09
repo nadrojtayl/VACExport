@@ -8,7 +8,7 @@ import Nbastarterpage from './downloadedpages/Nbastarterpage.js'
 import Settings from './downloadedpages/Settings.js'
 import Tvshowstarterpage from './downloadedpages/Tvshowstarterpage.js'
 import Animestarterpage from './downloadedpages/Animestarterpage.js'
-import NbaOne from './downloadedpages/NbaOne.js'
+import NbaPage from './downloadedpages/NbaPage.js'
 import WrongOne from './downloadedpages/WrongOne.js'
 import CorrectOne from './downloadedpages/CorrectOne.js'
 import NbaTwo from './downloadedpages/NbaTwo.js'
@@ -199,7 +199,7 @@ render(){
     if(that.state.page === "NbaOne"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <NbaOne  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NbaOne>
+             <NbaPage saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NbaPage>
           </View>
         )
     }

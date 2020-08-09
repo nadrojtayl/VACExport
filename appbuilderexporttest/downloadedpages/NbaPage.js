@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import { ActivityIndicator, Button, Picker, Switch, Image, ScrollView, TouchableOpacity, StyleSheet, Text, View, TextInput, Dimensions } from "react-native";
 import Calendar from "./Calendar.js";
@@ -214,7 +213,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class VGONE extends React.Component {
+ class NbaPage extends React.Component {
      
 
     constructor(props)
@@ -267,69 +266,22 @@ function unwrap_dynamically(value,default_value){
       {this.state.createdelems}
 
       <Text
-          style= {[{textAlign:'center', position:'absolute',zIndex:100,width:'100%'},{"top":"2.46%","left":"2.34%","innerText":"    JSON.parse(JSON.stringify(appData.selected[appData.vgcounter][\"question\"]));","fontSize":resizeFont(30),"height":"30%","width":"90%"}]}
-        > {    JSON.parse(JSON.stringify(appData.selected[appData.vgcounter]["question"]))} </Text>
+          style= {[{textAlign:'center', position:'absolute',zIndex:100,width:'100%'},{"innerText":"               JSON.parse(JSON.stringify(appData.selected[appData.counter][\"question\"]));","height":"30%","fontSize":resizeFont(30),"top":"5%","left":"1.27%"}]}
+        > {               JSON.parse(JSON.stringify(appData.selected[appData.counter]["question"]))} </Text>
         
  <TouchableOpacity
           
           onPress = { function(){if(JSON.parse(JSON.stringify(appData.selected[appData.counter]["answer"])).localeCompare(JSON.parse(JSON.stringify(appData.selected[appData.counter]["choice 1"]))) == 0 ){
 that.props.goTo("CorrectOne") 
 appData.counter=Math.floor(Math.random() * appData.selected.length)
-if(appData.catchosen === "Basketball"){
+    if(appData.catchosen === "Basketball"){
         appData.nbastreakscore++;
     } else {
         appData.vbstreakscore++;     
     }
-    
 }
 else {that.props.goTo("WrongOne")
-if(appData.catchosen === "Basketball"){
-        appData.nbastreakscore = 0;
-    } else {
-        appData.vbstreakscore = 0;     
-    }
-appData.counter=appData.counter+1}; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, 
-            backgroundColor:'#8fd158',
-             alignItems:'center',
-             justifyContent:'center', height: "7%",  
-             title:'Test', borderColor: 'gray', color:'black',
-              borderRadius:15, borderWidth: 1},
-              {"top":"42.4%","left":"1.81%","innerText":" appData.selected[appData.counter][\"choice 1\"];"}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        { JSON.parse(JSON.stringify(appData.selected[appData.counter]["choice 1"]))}
-
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){if(JSON.parse(JSON.stringify(appData.selected[appData.counter]["answer"])).localeCompare(JSON.parse(JSON.stringify(appData.selected[appData.counter]["choice 2"]))) == 0 ){
-that.props.goTo("CorrectOne") 
-appData.counter=Math.floor(Math.random() * appData.selected.length)
-if(appData.catchosen === "Basketball"){
-        appData.nbastreakscore++;
-    } else {
-        appData.vbstreakscore++;     
-    }
-    
-}
-else {that.props.goTo("WrongOne")
-appData.counter=appData.counter+1
-    
+appData.counter=Math.floor(Math.random() * appData.selected.length);
     if(appData.catchosen === "Basketball"){
         appData.nbastreakscore = 0;
     } else {
@@ -354,11 +306,58 @@ appData.counter=appData.counter+1
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"52.73%","left":"1.81%","innerText":" appData.selected[appData.counter][\"choice 2\"];"}]}
+              {"top":"33.67%","left":"2.61%"}]}
         >
         <Text style = {{color:"black"}}>
 
-        { appData.selected[appData.counter]["choice 2"]}
+        {  JSON.parse(JSON.stringify(appData.selected[appData.counter]["choice 1"])) }
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){if(JSON.parse(JSON.stringify(appData.selected[appData.counter]["choice 2"])) === JSON.parse(JSON.stringify(appData.selected[appData.counter]["answer"]))){
+that.props.goTo("CorrectOne") 
+appData.counter=Math.floor(Math.random() * appData.selected.length)
+if(appData.catchosen === "Basketball"){
+        appData.nbastreakscore++;
+    } else {
+        appData.vbstreakscore++;     
+    }
+    
+}
+else {that.props.goTo("WrongOne")
+appData.counter=Math.floor(Math.random() * appData.selected.length);
+if(appData.catchosen === "Basketball"){
+        appData.nbastreakscore = 0;
+    } else {
+        appData.vbstreakscore = 0;     
+    }
+    
+}; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"45.2%","left":"2.07%"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {       JSON.parse(JSON.stringify(appData.selected[appData.counter]["choice 2"]))}
 
        </Text>
         </TouchableOpacity>
@@ -367,19 +366,67 @@ appData.counter=appData.counter+1
           onPress = { function(){if(JSON.parse(JSON.stringify(appData.selected[appData.counter]["answer"])).localeCompare(JSON.parse(JSON.stringify(appData.selected[appData.counter]["choice 3"]))) == 0 ){
 that.props.goTo("CorrectOne") 
 appData.counter=Math.floor(Math.random() * appData.selected.length)
+if(appData.catchosen === "Basketball"){
+        appData.nbastreakscore++;
+    } else {
+        appData.vbstreakscore++;     
+    }
+    
+}
+else {that.props.goTo("WrongOne")
+appData.counter=Math.floor(Math.random() * appData.selected.length);
+if(appData.catchosen === "Basketball"){
+        appData.nbastreakscore = 0;
+    } else {
+        appData.vbstreakscore = 0;     
+    }
+    
+}; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+              borderRadius:15, borderWidth: 1},
+              {"top":"57.59%","left":"2.07%"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {   JSON.parse(JSON.stringify(appData.selected[appData.counter]["choice 3"])) }
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){if(JSON.parse(JSON.stringify(appData.selected[appData.counter]["answer"])).localeCompare(JSON.parse(JSON.stringify(appData.selected[appData.counter]["choice 4"]))) == 0 ){
+that.props.goTo("CorrectOne") 
+appData.counter=Math.floor(Math.random() * appData.selected.length);
     if(appData.catchosen === "Basketball"){
         appData.nbastreakscore++;
     } else {
         appData.vbstreakscore++;     
     }
 }
-else {that.props.goTo("WrongOne")
-appData.counter=appData.counter+1
-    if(appData.catchosen === "Basketball"){
+else {
+    that.props.goTo("WrongOne")
+appData.counter=Math.floor(Math.random() * appData.selected.length);
+if(appData.catchosen === "Basketball"){
         appData.nbastreakscore = 0;
     } else {
         appData.vbstreakscore = 0;     
     }
+    
 }; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
@@ -399,56 +446,11 @@ appData.counter=appData.counter+1
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"62.71%","left":"1.27%","innerText":" appData.selected[appData.counter][\"choice 3\"];"}]}
+              {"top":"69.47%","left":"1.81%"}]}
         >
         <Text style = {{color:"black"}}>
 
-        { appData.selected[appData.counter]["choice 3"]}
-
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){if(JSON.parse(JSON.stringify(appData.selected[appData.counter]["answer"])).localeCompare(JSON.parse(JSON.stringify(appData.selected[appData.counter]["choice 4"]))) == 0 ){
-that.props.goTo("CorrectOne") 
-appData.counter=Math.floor(Math.random() * appData.selected.length)
-if(appData.catchosen === "Basketball"){
-        appData.nbastreakscore++;
-    } else {
-        appData.vbstreakscore++;     
-    }
-    
-}
-else {that.props.goTo("WrongOne")
-if(appData.catchosen === "Basketball"){
-        appData.nbastreakscore = 0;
-    } else {
-        appData.vbstreakscore = 0;     
-    }
-appData.counter=appData.counter+1}; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, 
-            backgroundColor:'#8fd158',
-             alignItems:'center',
-             justifyContent:'center', height: "7%",  
-             title:'Test', borderColor: 'gray', color:'black',
-              borderRadius:15, borderWidth: 1},
-              {"top":"73.73%","left":"1.54%","innerText":" appData.selected[appData.counter][\"choice 4\"];"}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        { appData.selected[appData.counter]["choice 4"]}
+        {   JSON.parse(JSON.stringify(appData.selected[appData.counter]["choice 4"])) }
 
        </Text>
         </TouchableOpacity>
@@ -473,7 +475,7 @@ appData.counter=appData.counter+1}; that.forceUpdate(); }}
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"90.94%","left":"65.98%","innerText":"'Back'"}]}
+              {"top":"90.42%","left":"65.98%","innerText":"'Back'"}]}
         >
         <Text style = {{color:"black"}}>
 
@@ -481,12 +483,14 @@ appData.counter=appData.counter+1}; that.forceUpdate(); }}
 
        </Text>
         </TouchableOpacity>
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"81.48%","left":"36.44%","innerText":"  'Streak score: ' + (appData.catchosen === \"Video Games\" ? appData.vbstreakscore:appData.nbastreakscore);"}]}
+        > {  'Streak score: ' + (appData.catchosen === "Video Games" ? appData.vbstreakscore:appData.nbastreakscore)} </Text>
+        
         </View>
         )
     }
   }
-    export default VGONE; 
 
+export default NbaPage; 
 
-
-  

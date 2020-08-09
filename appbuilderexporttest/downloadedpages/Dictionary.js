@@ -264,12 +264,7 @@ function unwrap_dynamically(value,default_value){
       }
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
-      {this.state.createdelems}
-
-      <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"' JSON.parse(JSON.stringify(Data[0][\"question \"])) ;'"}]}
-        > {' JSON.parse(JSON.stringify(Data[0]["question "])) '} </Text>
-        
+ 
         </View>
         )
     }
