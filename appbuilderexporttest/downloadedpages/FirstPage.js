@@ -267,7 +267,7 @@ function unwrap_dynamically(value,default_value){
       {this.state.createdelems}
 
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"-1.24%","left":"1.48%","innerText":"'Math SAT Question a Day'","fontSize":"resizeFont(75)","textAlign":"center","fontFamily":"Comic Sans MS","color":"#ffd414"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"10%","left":"1.48%", fontSize:42, "innerText":"'Math SAT Question a Day'","fontSize":resizeFont(75),"textAlign":"center","fontFamily":"Comic Sans MS","color":"#ffd414"}]}
         > {'Math SAT Question a Day'} </Text>
         
 <Text
