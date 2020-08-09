@@ -14,6 +14,7 @@
     "axios": "^0.19.2",
     "cors": "^2.8.5",
     "expo": "^38.0.8",
+    "expo-av": "^8.4.0",
     "expo-mail-composer": "^8.3.0",
     "expo-speech": "^8.2.1",
     "expo-splash-screen": "~0.4.0",

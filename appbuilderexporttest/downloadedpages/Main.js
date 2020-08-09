@@ -4,6 +4,7 @@ import { ActivityIndicator, Button, Picker, Switch, Image, ScrollView, Touchable
 import Calendar from "./Calendar.js";
 import appData from "./global.js";
 import Multiplier from "./Multiplier.js";
+import { Audio } from 'expo-av'; 
 
 
 var d = new Date();
@@ -408,7 +409,7 @@ for(var i = 0;i<created.length;i++){
           clearInterval(appData.yeet)
           clearInterval(appData.thet)
           delete window.created;
-          window.created = [];
+          global.created = [];
           that.props.goTo("End")
       }
    }
