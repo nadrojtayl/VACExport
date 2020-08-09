@@ -284,6 +284,7 @@ appData.bindex2 = lst[1];
 appData.bindex3 = lst[2];
 appData.bindex4 = lst[3];
 appData.questionindex=Math.floor(Math.random()*questions.length)
+pause();
 that.props.goTo('Secondpage'); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
