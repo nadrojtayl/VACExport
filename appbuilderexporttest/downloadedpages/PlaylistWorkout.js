@@ -358,10 +358,10 @@ appData.workout.map(function(e){
             position:'absolute',top:0,left:0, 
             backgroundColor:'#8fd158',
              alignItems:'center',
-             justifyContent:'center', height: "7%",  
+             justifyContent:'center', height: "4%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"innerText":"'Back'","top":"1.54%","left":"34.47%"}]}
+              {"innerText":"'Back'","top":"4.54%","left":"34.47%"}]}
         >
         <Text style = {{color:"black"}}>
 
