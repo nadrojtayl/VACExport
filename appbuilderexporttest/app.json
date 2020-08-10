@@ -1,7 +1,7 @@
   {
       "expo": {
-        "name": "Strength EnhancerForDancers",
-        "slug": "Strength EnhancerForDancers",
+        "name": "StrengthEnhancerForDancers",
+        "slug": "StrengthEnhancerForDancers",
         "platforms": [
           "ios",
           "android",
