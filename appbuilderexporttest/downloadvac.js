@@ -117,6 +117,15 @@ function hasNumber(myString) {
   return /\d/.test(myString);
 }
 
+async function user_text(phone,message){
+  const isAvailable = await SMS.isAvailableAsync();
+  if (isAvailable) {
+    SMS.sendSMSAsync(phone, message)
+  } else {
+    alert("You don't have text on this device");
+  }
+}
+
 
 
 const width = Dimensions.get('window').width;

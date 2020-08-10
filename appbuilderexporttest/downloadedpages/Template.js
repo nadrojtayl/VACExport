@@ -267,9 +267,7 @@ function unwrap_dynamically(value,default_value){
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
       {this.state.createdelems}
 
-      <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"1.39%","left":"4.39%","innerText":"'Exercises:'","fontSize":"resizeFont(30)","color":"#30c2a2"}]}
-        > {'Exercises:'} </Text>
+  
         
 <Text
           style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"6.53%","left":"4.46%","innerText":" JSON.parse(JSON.stringify(Data[appData.index1][\"exercise\"])) ","fontSize":"resizeFont(15)","fontWeight":"bold"}]}
@@ -277,24 +275,11 @@ function unwrap_dynamically(value,default_value){
         
 
 
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"16.71%","left":"-20.62%"}]}
-        source = {{uri:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png"}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
+    
 
       
 
 
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"14.31%","left":"-19.87%"}]}
-        source = {{uri:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png"}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
 
 
 
@@ -346,25 +331,11 @@ function unwrap_dynamically(value,default_value){
         </TouchableOpacity>
 
 
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"9.69%","left":"-20.87%"}]}
-        source = {{uri:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png"}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
+  
 
 
 
       
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"7.85%","left":"-20.87%"}]}
-        source = {{uri:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png"}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
 
 
       

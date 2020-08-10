@@ -454,7 +454,7 @@ appData.index2=5; that.forceUpdate(); }}
        </Text>
         </TouchableOpacity>
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"15%","left":"9.59%","innerText":"'Select one of the following skills to work on today!'","fontSize":"resizeFont(15)"}]}
+          style= {[{textAlign:'center', position:'absolute',zIndex:100,width:'100%'},{"top":"15%","left":"0%","innerText":"'Select one of the following skills to work on today!'","fontSize":"resizeFont(15)"}]}
         > {'Select one of the following skills to work on today!'} </Text>
         
  <TouchableOpacity
@@ -582,7 +582,8 @@ appData.index2=9; that.forceUpdate(); }}
        </Text>
         </TouchableOpacity>
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"1.56%","left":"2.95%","innerText":"'Hello! Welcome to your personal Strengthening app!'","fontSize":"resizeFont(25)","textAlign":"center","fontWeight":"bold"}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{
+            "top":"8%","left":"0%","innerText":"'Hello! Welcome to your personal Strengthening app!'","fontSize":resizeFont(15),"textAlign":"center","fontWeight":"bold"}]}
         > {'Hello! Welcome to your personal Strengthening app!'} </Text>
         
 
@@ -599,24 +600,30 @@ appData.index2=9; that.forceUpdate(); }}
       
  <TouchableOpacity
           
-          onPress = { function(){var rand1 = Math.floor(Math.random() * appData.workout.length);
-var rand2 = Math.floor(Math.random() * appData.workout.length);
-var rand3 = Math.floor(Math.random() * appData.workout.length);
-var rand4 = Math.floor(Math.random() * appData.workout.length);
-var rand5 = Math.floor(Math.random() * appData.workout.length);
-var rand6 = Math.floor(Math.random() * appData.workout.length);
-var rand7 = Math.floor(Math.random() * appData.workout.length);
-var rand8 = Math.floor(Math.random() * appData.workout.length);
+          onPress = { function(){
+
+  var songs = {
+    "Four Leaf Clover":require("../assets/4_leaf_clover.mp3"),
+    "Let Me Be The One":require("../assets/let_me_be_the_one.mp3"),
+    "Cool It Now":require("../assets/cool_it_now.mp3"),
+    "Louder Than Love":require("../assets/louder_than_love.mp3"),
+    "Nocture":require("../assets/nocturne.mp3"),
+  }
+
+
+var song_names  = Object.keys(songs);
+
+
+
 appData.workout = [
-    Data[rand1],
-     Data[rand2],
-      Data[rand3],
-       Data[rand4],
-        Data[rand5],
-         Data[rand6],
-          Data[rand7],
-           Data[rand8],
     ];
+
+    for(var i = 0; i < 8; i ++){
+      var randSong = Math.floor(Math.random() * song_names.length);
+      var randExercise = Math.floor(Math.random() * Data.length);
+      
+      appData.workout.push({"Song": song_names[randSong], "Exercise": Data[randExercise].exercise})
+    }
 that.props.goTo("PlaylistWorkout");; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS

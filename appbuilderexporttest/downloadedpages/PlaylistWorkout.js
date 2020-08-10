@@ -7,6 +7,26 @@ import Multiplier from "./Multiplier.js";
 import { Audio } from 'expo-av'; 
 import * as SMS from 'expo-sms';
 
+global.timer = false;
+
+function StartTimer(){
+  if(!global.timer){
+    setInterval(function(){
+      appData.timer ++;
+      global.thisapp.forceUpdate();
+    },1000)
+    global.timer = true;
+  }
+}
+
+async function user_text(phone,message){
+  const isAvailable = await SMS.isAvailableAsync();
+  if (isAvailable) {
+    SMS.sendSMSAsync(phone, message)
+  } else {
+    alert("You don't have text on this device");
+  }
+}
 
 var d = new Date();
 var month = d.getMonth();
@@ -267,6 +287,59 @@ function unwrap_dynamically(value,default_value){
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
       {this.state.createdelems}
 
+   <TouchableOpacity
+          
+          onPress = { function(){
+            user_text("",`
+
+Here's the R&B Dance workout I did just now! Try it!
+
+I did this list of exercises, each for one minute, and listened to these songs.
+\n\n
+Exercises \n\n          `
+            +
+
+appData.workout.map(function(e){
+              return e.Exercise
+}).join("\n")
+
++ "\n\n\nSongs\n\n" + 
+
+appData.workout.map(function(e){
+              return e.Song
+}).join("\n")
+
+
+
+            ) }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"2%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#30c2a2',
+             alignItems:'center',
+             justifyContent:'center', height: "3%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"innerText":"'Back'","top":"10.54%","left":"34.47%"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Share workout'}
+
+       </Text>
+        </TouchableOpacity>
+
+
        <TouchableOpacity
           
           onPress = { function(){that.props.goTo("FirstPage");; that.forceUpdate(); }}  
@@ -300,9 +373,15 @@ function unwrap_dynamically(value,default_value){
           style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"27.45%","left":"47.98%","innerText":" appData.timer;","backgroundColor":"white","width":"10%","textAlign":"center"}]}
         > { appData.timer} </Text>
         
+
+
+
  <TouchableOpacity
           
-          onPress = { function(){; that.forceUpdate(); }}  
+          onPress = { function(){
+
+            StartTimer();
+            that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -316,7 +395,7 @@ function unwrap_dynamically(value,default_value){
             height:"7%",
             width:"30%",
             position:'absolute',top:0,left:0, 
-            backgroundColor:'#8fd158',
+            backgroundColor:'#30c2a2',
              alignItems:'center',
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
@@ -333,7 +412,11 @@ function unwrap_dynamically(value,default_value){
       goTo = {that.props.goTo}
       type = {"text"}
       data = { appData.workout}
-      style = {[{alignItems:'center',position:'absolute',height:'60%',width:'80%'},{"top":"34.6%","left":"10.78%","options":" appData.workout;","repeaterinnerText":" elem.exercise;"}]}
+      style = {[{alignItems:'center',
+      position:'absolute',height:'60%',width:'100%'},{
+        "top":"34.6%","left":"0%",
+        "options":" appData.workout;",
+        "repeaterinnerText":" elem.Exercise;"}]}
       clickfunction = {function(){}}
       >
       </Multiplier>
