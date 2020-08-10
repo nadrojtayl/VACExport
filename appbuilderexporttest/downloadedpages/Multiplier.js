@@ -270,12 +270,22 @@ class Multiplier extends Component{
 
 
       return (
+        <View style = {{flexDirection:'row',  borderWidth: 1, flexDirection:'row', justifyContent:'space-around', backgroundColor:'white'}}>
+        <TouchableOpacity style = {{ width:"10%", backgroundColor:'teal', borderRadius:10}}>
+        <Text style = {{textAlign:'center'}}>Play</Text>
+        </TouchableOpacity>
         <Text
-          style={[{ height: 40, borderColor: 'black', backgroundColor:'white', color:'black', width:"100%", borderWidth: 5}, additionalStyle]}
+          style={[{ height: 40, textAlign:'center', justifyContent:'center', borderColor: 'black', backgroundColor:'white', color:'black'}, additionalStyle]}
           key = {int}
           selectable = {true}
         >{  additionalStyle.innerText === undefined ? JSON.stringify(elem):additionalStyle.innerText }</Text>
-
+        <Text
+          style={[{ height: 40, textAlign:'center', justifyContent:'center', borderColor: 'black', backgroundColor:'white', color:'black'}, additionalStyle]}
+          key = {int}
+          selectable = {true}
+        >{ "Song"}</Text>
+       
+        </View>
         )
     }
 

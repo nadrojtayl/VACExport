@@ -5,6 +5,7 @@ import Calendar from "./Calendar.js";
 import appData from "./global.js";
 import Multiplier from "./Multiplier.js";
 import { Audio } from 'expo-av'; 
+import * as SMS from 'expo-sms';
 
 
 var d = new Date();
@@ -214,13 +215,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class RightPage extends React.Component {
+ class PlaylistWorkout extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"counter":4,"coins":0,"SecondChance":1,"visible":0,"createdelems":[]}
+        this.state = {"FirstPageinput1":"Balance","FirstPageinput2":"Control","FirstPageinput0":"Strength","FirstPageinput3":"","FirstPageinput4":"Selectd","FirstPageinput12":"Hello! Select the skill that you want to work on today!","index1":18,"index2":19,"timer":0,"workout":[{"skill":"","exercises/ workouts":"","":"","Description":"Start by lying down,  move your legs upward to transfer the ball from your ankles to your hands, then lower legs, and reverse. Challenge yourself and see how many reps you can do in 3.5 minutes. This is a good workout for your abdominals, as well as core and alignment. ","images ":"https://tone-and-tighten.com/wp-content/uploads/2015/06/exercise-swiss-ball-transfer-crunch-tone-tighten.jpg","exercise":"Exercise Ball Transfers ","category":"turns ","Index":5},{"skill":"","exercises/ workouts":"","":"","Description":"Lay down on your back, raise leg and hold on your ankle to bring leg closer. Keep supporting leg as well as working leg straightened. Hold for a minute (turned in and turned out slightly) and switch to next leg. ","images ":"https://www.indoindians.com/wp-content/uploads/2016/12/hamstring-e1481880080669.jpg ","exercise":"Devant (pulling of the leg towards yourself): Stretch","category":"extensions","Index":6},{"skill":"","exercises/ workouts":"","":"","Description":"Lay down on your stomach, push yoursef up from your hands, and arch your back. Then slowly come down. Complete by doing each rep 3 times, as well as holding each for 30 seconds to strengthen lower back muscles. ","images ":"https://images.squarespace-cdn.com/content/v1/5238dfcae4b0468ec26edfdb/1586347399244-ZVDG62XPHSBVIRA83AIF/ke17ZwdGBToddI8pDm48kDrVPZoV-BfLZ82S7aRQHOIUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcVJEZiH25S69c1xcTtd5uZJM9FDPi2aIfWB4DjA2FrXOuNS-11NoXlRvAQGc_D3Jb/523A1269_BLOG.jpg ","exercise":"Back Raises ","category":"extensions","Index":7},{"skill":"","exercises/ workouts":"","":"","Description":"Increase the stretch with a resistance TheraBand, the knee on the floor should be in a 90 degree. ","images ":"https://www.performancehealth.com/media/wysiwyg/blog/articles/tensor-fasciae-latae-tfl-turn-in-stretch-2.gif","exercise":"Tensor Fascie Latae (TFL) Turn-In Stretch","category":"turnout ","Index":2},{"skill":"","exercises/ workouts":"","":"","Description":"Increase the stretch with a resistance TheraBand, the knee on the floor should be in a 90 degree. ","images ":"https://www.performancehealth.com/media/wysiwyg/blog/articles/tensor-fasciae-latae-tfl-turn-in-stretch-2.gif","exercise":"Tensor Fascie Latae (TFL) Turn-In Stretch","category":"turnout ","Index":2},{"skill":"","exercises/ workouts":"","":"","Description":"12 reps (clapping over and under leg) and then switch to the next leg. ","images ":"https://media.self.com/photos/59414a68c529bf431f608cb8/master/w_400%2Cc_limit/Untitled-33.gif","exercise":"Standing Crunch With Under-the-Leg Clap","category":"balance ","Index":1},{"skill":"","exercises/ workouts":"","":"","Description":"12 reps (clapping over and under leg) and then switch to the next leg. ","images ":"https://media.self.com/photos/59414a68c529bf431f608cb8/master/w_400%2Cc_limit/Untitled-33.gif","exercise":"Standing Crunch With Under-the-Leg Clap","category":"balance ","Index":1},{"skill":"","exercises/ workouts":"","":"","Description":"12 reps (clapping over and under leg) and then switch to the next leg. ","images ":"https://media.self.com/photos/59414a68c529bf431f608cb8/master/w_400%2Cc_limit/Untitled-33.gif","exercise":"Standing Crunch With Under-the-Leg Clap","category":"balance ","Index":1}],"createdelems":[]}
     }
 
     componentDidMount(){
@@ -266,17 +267,9 @@ function unwrap_dynamically(value,default_value){
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
       {this.state.createdelems}
 
-      <Text
-          style= {[{position:'absolute',zIndex:100,width:'80%'},{"innerText":"'CONGRATULATIONS You Got It Correct !!!'","fontSize":resizeFont(25),"top":"59.43%","left":"2.96%","color":"green"}]}
-        > {'You Got It Correct !!!'} </Text>
-        
- <TouchableOpacity
+       <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("FirstPage")
-appData.visible=0
-if(appData.counter>9){
-    appData.counter=0
-}; that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("FirstPage");; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -295,19 +288,60 @@ if(appData.counter>9){
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"innerText":"'Next'","top":"73.38%","left":"68.36%","backgroundColor":"yellow"}]}
+              {"innerText":"'Back'","top":"1.54%","left":"34.47%"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Next'}
+        {'Back'}
 
        </Text>
         </TouchableOpacity>
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"27.45%","left":"47.98%","innerText":" appData.timer;","backgroundColor":"white","width":"10%","textAlign":"center"}]}
+        > { appData.timer} </Text>
+        
+ <TouchableOpacity
+          
+          onPress = { function(){; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"16.2%","left":"13.15%","innerText":"'Start workout'","width":"70%","height":"10%"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Start workout'}
+
+       </Text>
+        </TouchableOpacity>
+<Multiplier
+      goTo = {that.props.goTo}
+      type = {"text"}
+      data = { appData.workout}
+      style = {[{alignItems:'center',position:'absolute',height:'60%',width:'80%'},{"top":"34.6%","left":"10.78%","options":" appData.workout;","repeaterinnerText":" elem.exercise;"}]}
+      clickfunction = {function(){}}
+      >
+      </Multiplier>
 
 
       <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"source":"https://cdn.vox-cdn.com/thumbor/iAnFy2VvfBelUdmc5eFdT2mG6Ws=/0x0:2234x3000/1200x800/filters:focal(968x577:1324x933)/cdn.vox-cdn.com/uploads/chorus_image/image/66235882/577439892.jpg.0.jpg","height":"60%","top":"-1.13%","left":"-0.12%","width":"100%"}]}
-        source = {{uri:'https://cdn.vox-cdn.com/thumbor/iAnFy2VvfBelUdmc5eFdT2mG6Ws=/0x0:2234x3000/1200x800/filters:focal(968x577:1324x933)/cdn.vox-cdn.com/uploads/chorus_image/image/66235882/577439892.jpg.0.jpg'}}
+        style= {[{width:"20%",height:"20%",position:'absolute'}, {"source":"https://media1.giphy.com/media/fxTjIbF7S5IWn4iltt/giphy.gif","height":"100%","zIndex":-500,"width":"100%"}]}
+        source = {{uri:'https://media1.giphy.com/media/fxTjIbF7S5IWn4iltt/giphy.gif'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
@@ -319,7 +353,7 @@ if(appData.counter>9){
         )
     }
   }
-    export default RightPage; 
+    export default PlaylistWorkout; 
 
 
 

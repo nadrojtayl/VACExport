@@ -4,15 +4,20 @@
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 import FirstPage from './downloadedpages/FirstPage.js'
-import FifthPage from './downloadedpages/FifthPage.js'
-import FourthPage from './downloadedpages/FourthPage.js'
-import ThirdPage from './downloadedpages/ThirdPage.js'
-import RightPage from './downloadedpages/RightPage.js'
-import CorrectPage from './downloadedpages/CorrectPage.js'
-import StartPage from './downloadedpages/StartPage.js'
-
 import SecondPage from './downloadedpages/SecondPage.js'
-import IncorrectPage from './downloadedpages/IncorrectPage.js'
+import EighthPage from './downloadedpages/EighthPage.js'
+import SixthPage from './downloadedpages/SixthPage.js'
+import ThirdPage from './downloadedpages/ThirdPage.js'
+import SeventhPage from './downloadedpages/SeventhPage.js'
+import FourthPage from './downloadedpages/FourthPage.js'
+import FifthPage from './downloadedpages/FifthPage.js'
+import TwelfthPage from './downloadedpages/TwelfthPage.js'
+import ThirteenthPage from './downloadedpages/ThirteenthPage.js'
+import EleventhPage from './downloadedpages/EleventhPage.js'
+import TenthPage from './downloadedpages/TenthPage.js'
+import NInthPage from './downloadedpages/NInthPage.js'
+import Template from './downloadedpages/Template.js'
+import PlaylistWorkout from './downloadedpages/PlaylistWorkout.js'
 import appData from './downloadedpages/global.js';
 /*
 EXPORT PROCESS
@@ -91,13 +96,13 @@ class App extends React.Component {
 
 constructor(props){
 super(props);
-this.state = {dbLinks:{}, loaded:false, page:"StartPage", numLoaded:0}
+this.state = {dbLinks:{}, loaded:false, page:"FirstPage", numLoaded:0}
 }
 
 componentDidMount(){
   
   var that = this;
-  var dbLinks = {"Data":"https://script.google.com/macros/s/AKfycbwvcQ_o7_rei93TxzJpJEL1zVupgA4bZeB94__ra6ZFU-RN_vw/exec?sheetName=Alonzo"}
+  var dbLinks = {"Data":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbwnU71tJvGzjIWhOCjYg3dQRYj9YjLru7mCrw3LdQ/exec?sheetName=Janae","Janae's_Database":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbwnU71tJvGzjIWhOCjYg3dQRYj9YjLru7mCrw3LdQ/exec?sheetName=Janae"}
   Object.keys(dbLinks).forEach(function(key){
     that.connectToDatabase(dbLinks[key], key);
   })
@@ -142,10 +147,10 @@ render(){
     
 
 
-    if(that.state.page === "FifthPage"){
+    if(that.state.page === "SecondPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <FifthPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FifthPage>
+             <SecondPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SecondPage>
           </View>
         )
     }
@@ -155,10 +160,23 @@ render(){
     
 
 
-    if(that.state.page === "FourthPage"){
+    if(that.state.page === "EighthPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <FourthPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FourthPage>
+             <EighthPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></EighthPage>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "SixthPage"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <SixthPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SixthPage>
           </View>
         )
     }
@@ -181,10 +199,10 @@ render(){
     
 
 
-    if(that.state.page === "RightPage"){
+    if(that.state.page === "SeventhPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <RightPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RightPage>
+             <SeventhPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SeventhPage>
           </View>
         )
     }
@@ -194,35 +212,10 @@ render(){
     
 
 
-    if(that.state.page === "CorrectPage"){
+    if(that.state.page === "FourthPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <CorrectPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></CorrectPage>
-          </View>
-        )
-    }
-
-
-
-    if(that.state.page === "StartPage"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <StartPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></StartPage>
-          </View>
-        )
-    }
-
-
-
-
-
-    
-
-
-    if(that.state.page === "SecondPage"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <SecondPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SecondPage>
+             <FourthPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FourthPage>
           </View>
         )
     }
@@ -232,24 +225,10 @@ render(){
     
 
 
-    if(that.state.page === "RightPage"){
+    if(that.state.page === "FifthPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <RightPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RightPage>
-          </View>
-        )
-    }
-
-
-
-   
-    
-
-
-    if(that.state.page === "StartPage"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <StartPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></StartPage>
+             <FifthPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FifthPage>
           </View>
         )
     }
@@ -259,10 +238,10 @@ render(){
     
 
 
-    if(that.state.page === "RightPage"){
+    if(that.state.page === "TwelfthPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <RightPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RightPage>
+             <TwelfthPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></TwelfthPage>
           </View>
         )
     }
@@ -272,10 +251,10 @@ render(){
     
 
 
-    if(that.state.page === "RightPage"){
+    if(that.state.page === "ThirteenthPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <RightPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RightPage>
+             <ThirteenthPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></ThirteenthPage>
           </View>
         )
     }
@@ -285,10 +264,10 @@ render(){
     
 
 
-    if(that.state.page === "RightPage"){
+    if(that.state.page === "EleventhPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <RightPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RightPage>
+             <EleventhPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></EleventhPage>
           </View>
         )
     }
@@ -298,10 +277,10 @@ render(){
     
 
 
-    if(that.state.page === "RightPage"){
+    if(that.state.page === "TenthPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <RightPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RightPage>
+             <TenthPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></TenthPage>
           </View>
         )
     }
@@ -311,10 +290,10 @@ render(){
     
 
 
-    if(that.state.page === "RightPage"){
+    if(that.state.page === "NInthPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <RightPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RightPage>
+             <NInthPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NInthPage>
           </View>
         )
     }
@@ -324,10 +303,10 @@ render(){
     
 
 
-    if(that.state.page === "RightPage"){
+    if(that.state.page === "Template"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <RightPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RightPage>
+             <Template  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Template>
           </View>
         )
     }
@@ -337,82 +316,10 @@ render(){
     
 
 
-    if(that.state.page === "RightPage"){
+    if(that.state.page === "PlaylistWorkout"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <RightPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RightPage>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "RightPage"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <RightPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RightPage>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "RightPage"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <RightPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RightPage>
-          </View>
-        )
-    }
-
-
-
-       if(that.state.page === "IncorrectPage"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <IncorrectPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></IncorrectPage>
-          </View>
-        )
-    }
-    
-
-
-    if(that.state.page === "RightPage"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <RightPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RightPage>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "RightPage"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <RightPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RightPage>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "RightPage"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <RightPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></RightPage>
+             <PlaylistWorkout  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></PlaylistWorkout>
           </View>
         )
     }

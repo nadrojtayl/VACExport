@@ -215,7 +215,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FifthPage extends React.Component {
+ class SeventhPage extends React.Component {
      
 
     constructor(props)
@@ -268,11 +268,22 @@ function unwrap_dynamically(value,default_value){
       {this.state.createdelems}
 
       
+
+      <Image
+        style= {[{width:"20%",height:"20%",position:'absolute'}, {}]}
+        source = {{uri:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png"}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
         </View>
         )
     }
   }
-    export default FifthPage; 
+    export default SeventhPage; 
 
 
 

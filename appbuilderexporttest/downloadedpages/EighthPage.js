@@ -5,6 +5,7 @@ import Calendar from "./Calendar.js";
 import appData from "./global.js";
 import Multiplier from "./Multiplier.js";
 import { Audio } from 'expo-av'; 
+import * as SMS from 'expo-sms';
 
 
 var d = new Date();
@@ -214,13 +215,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class CorrectPage extends React.Component {
+ class EighthPage extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"counter":4,"coins":0,"SecondChance":1,"visible":0,"createdelems":[]}
+        this.state = {"FirstPageinput1":"Balance","FirstPageinput2":"Control","FirstPageinput0":"Strength","FirstPageinput3":"","FirstPageinput4":"Selectd","FirstPageinput12":"Hello! Select the skill that you want to work on today!","index1":18,"index2":19,"timer":0,"workout":[{"skill":"","exercises/ workouts":"","":"","Description":"Start by lying down,  move your legs upward to transfer the ball from your ankles to your hands, then lower legs, and reverse. Challenge yourself and see how many reps you can do in 3.5 minutes. This is a good workout for your abdominals, as well as core and alignment. ","images ":"https://tone-and-tighten.com/wp-content/uploads/2015/06/exercise-swiss-ball-transfer-crunch-tone-tighten.jpg","exercise":"Exercise Ball Transfers ","category":"turns ","Index":5},{"skill":"","exercises/ workouts":"","":"","Description":"Lay down on your back, raise leg and hold on your ankle to bring leg closer. Keep supporting leg as well as working leg straightened. Hold for a minute (turned in and turned out slightly) and switch to next leg. ","images ":"https://www.indoindians.com/wp-content/uploads/2016/12/hamstring-e1481880080669.jpg ","exercise":"Devant (pulling of the leg towards yourself): Stretch","category":"extensions","Index":6},{"skill":"","exercises/ workouts":"","":"","Description":"Lay down on your stomach, push yoursef up from your hands, and arch your back. Then slowly come down. Complete by doing each rep 3 times, as well as holding each for 30 seconds to strengthen lower back muscles. ","images ":"https://images.squarespace-cdn.com/content/v1/5238dfcae4b0468ec26edfdb/1586347399244-ZVDG62XPHSBVIRA83AIF/ke17ZwdGBToddI8pDm48kDrVPZoV-BfLZ82S7aRQHOIUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcVJEZiH25S69c1xcTtd5uZJM9FDPi2aIfWB4DjA2FrXOuNS-11NoXlRvAQGc_D3Jb/523A1269_BLOG.jpg ","exercise":"Back Raises ","category":"extensions","Index":7},{"skill":"","exercises/ workouts":"","":"","Description":"Increase the stretch with a resistance TheraBand, the knee on the floor should be in a 90 degree. ","images ":"https://www.performancehealth.com/media/wysiwyg/blog/articles/tensor-fasciae-latae-tfl-turn-in-stretch-2.gif","exercise":"Tensor Fascie Latae (TFL) Turn-In Stretch","category":"turnout ","Index":2},{"skill":"","exercises/ workouts":"","":"","Description":"Increase the stretch with a resistance TheraBand, the knee on the floor should be in a 90 degree. ","images ":"https://www.performancehealth.com/media/wysiwyg/blog/articles/tensor-fasciae-latae-tfl-turn-in-stretch-2.gif","exercise":"Tensor Fascie Latae (TFL) Turn-In Stretch","category":"turnout ","Index":2},{"skill":"","exercises/ workouts":"","":"","Description":"12 reps (clapping over and under leg) and then switch to the next leg. ","images ":"https://media.self.com/photos/59414a68c529bf431f608cb8/master/w_400%2Cc_limit/Untitled-33.gif","exercise":"Standing Crunch With Under-the-Leg Clap","category":"balance ","Index":1},{"skill":"","exercises/ workouts":"","":"","Description":"12 reps (clapping over and under leg) and then switch to the next leg. ","images ":"https://media.self.com/photos/59414a68c529bf431f608cb8/master/w_400%2Cc_limit/Untitled-33.gif","exercise":"Standing Crunch With Under-the-Leg Clap","category":"balance ","Index":1},{"skill":"","exercises/ workouts":"","":"","Description":"12 reps (clapping over and under leg) and then switch to the next leg. ","images ":"https://media.self.com/photos/59414a68c529bf431f608cb8/master/w_400%2Cc_limit/Untitled-33.gif","exercise":"Standing Crunch With Under-the-Leg Clap","category":"balance ","Index":1}],"createdelems":[]}
     }
 
     componentDidMount(){
@@ -271,7 +272,7 @@ function unwrap_dynamically(value,default_value){
         )
     }
   }
-    export default CorrectPage; 
+    export default EighthPage; 
 
 
 

@@ -1,7 +1,7 @@
   {
       "expo": {
-        "name": "NBASuperTrivia",
-        "slug": "NBASuperTrivia",
+        "name": "Strength EnhancerForDancers",
+        "slug": "Strength EnhancerForDancers",
         "platforms": [
           "ios",
           "android",
@@ -23,10 +23,10 @@
         ],
         "ios": {
           "supportsTablet": true,
-          "bundleIdentifier": "com.nbasupertrivia.nbasupertrivia"
+          "bundleIdentifier": "com.dancerstrengthenhancer.dancerstrengthenhancer"
         },
         "android": {
-          "package": "com.nbasupertrivia.nbasupertrivia"
+          "package": "com.dancerstrengthenhancer.dancerstrengthenhancer"
         },
         "entryPoint": "node_modules/expo/AppEntry.js"
       }

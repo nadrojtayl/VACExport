@@ -58,15 +58,6 @@ function runWithInterval(script_string,interval){
       }
 }
 
-async function user_text(phone,message){
-  const isAvailable = await SMS.isAvailableAsync();
-    if (isAvailable) {
-      SMS.sendSMSAsync(phone, message);
-    } else {
-      alert("Texting isn't available on your device")
-    }
-}
-
 window.runWithInterval = runWithInterval;
 runWithInterval = runWithInterval;
 
@@ -230,7 +221,7 @@ function unwrap_dynamically(value,default_value){
     constructor(props)
     {
         super(props);
-        this.state = {"counter":4,"coins":0,"SecondChance":1,"visible":0,"createdelems":[]}
+        this.state = {"FirstPageinput1":"Balance","FirstPageinput2":"Control","FirstPageinput0":"Strength","FirstPageinput3":"","FirstPageinput4":"Selectd","FirstPageinput12":"Hello! Select the skill that you want to work on today!","index1":18,"index2":19,"timer":0,"workout":[{"skill":"","exercises/ workouts":"","":"","Description":"Start by lying down,  move your legs upward to transfer the ball from your ankles to your hands, then lower legs, and reverse. Challenge yourself and see how many reps you can do in 3.5 minutes. This is a good workout for your abdominals, as well as core and alignment. ","images ":"https://tone-and-tighten.com/wp-content/uploads/2015/06/exercise-swiss-ball-transfer-crunch-tone-tighten.jpg","exercise":"Exercise Ball Transfers ","category":"turns ","Index":5},{"skill":"","exercises/ workouts":"","":"","Description":"Lay down on your back, raise leg and hold on your ankle to bring leg closer. Keep supporting leg as well as working leg straightened. Hold for a minute (turned in and turned out slightly) and switch to next leg. ","images ":"https://www.indoindians.com/wp-content/uploads/2016/12/hamstring-e1481880080669.jpg ","exercise":"Devant (pulling of the leg towards yourself): Stretch","category":"extensions","Index":6},{"skill":"","exercises/ workouts":"","":"","Description":"Lay down on your stomach, push yoursef up from your hands, and arch your back. Then slowly come down. Complete by doing each rep 3 times, as well as holding each for 30 seconds to strengthen lower back muscles. ","images ":"https://images.squarespace-cdn.com/content/v1/5238dfcae4b0468ec26edfdb/1586347399244-ZVDG62XPHSBVIRA83AIF/ke17ZwdGBToddI8pDm48kDrVPZoV-BfLZ82S7aRQHOIUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcVJEZiH25S69c1xcTtd5uZJM9FDPi2aIfWB4DjA2FrXOuNS-11NoXlRvAQGc_D3Jb/523A1269_BLOG.jpg ","exercise":"Back Raises ","category":"extensions","Index":7},{"skill":"","exercises/ workouts":"","":"","Description":"Increase the stretch with a resistance TheraBand, the knee on the floor should be in a 90 degree. ","images ":"https://www.performancehealth.com/media/wysiwyg/blog/articles/tensor-fasciae-latae-tfl-turn-in-stretch-2.gif","exercise":"Tensor Fascie Latae (TFL) Turn-In Stretch","category":"turnout ","Index":2},{"skill":"","exercises/ workouts":"","":"","Description":"Increase the stretch with a resistance TheraBand, the knee on the floor should be in a 90 degree. ","images ":"https://www.performancehealth.com/media/wysiwyg/blog/articles/tensor-fasciae-latae-tfl-turn-in-stretch-2.gif","exercise":"Tensor Fascie Latae (TFL) Turn-In Stretch","category":"turnout ","Index":2},{"skill":"","exercises/ workouts":"","":"","Description":"12 reps (clapping over and under leg) and then switch to the next leg. ","images ":"https://media.self.com/photos/59414a68c529bf431f608cb8/master/w_400%2Cc_limit/Untitled-33.gif","exercise":"Standing Crunch With Under-the-Leg Clap","category":"balance ","Index":1},{"skill":"","exercises/ workouts":"","":"","Description":"12 reps (clapping over and under leg) and then switch to the next leg. ","images ":"https://media.self.com/photos/59414a68c529bf431f608cb8/master/w_400%2Cc_limit/Untitled-33.gif","exercise":"Standing Crunch With Under-the-Leg Clap","category":"balance ","Index":1},{"skill":"","exercises/ workouts":"","":"","Description":"12 reps (clapping over and under leg) and then switch to the next leg. ","images ":"https://media.self.com/photos/59414a68c529bf431f608cb8/master/w_400%2Cc_limit/Untitled-33.gif","exercise":"Standing Crunch With Under-the-Leg Clap","category":"balance ","Index":1}],"createdelems":[]}
     }
 
     componentDidMount(){
@@ -276,31 +267,11 @@ function unwrap_dynamically(value,default_value){
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
       {this.state.createdelems}
 
-      <Text
-          style= {[{position:'absolute', backgroundColor:'white', textAlign:'center', zIndex:100,width:'100%'},{"top":"13.22%","left":"0.82%","height":"15%","fontSize":resizeFont(25)}]}
-        > { JSON.parse(JSON.stringify(Data[appData.counter]["Question"])) } </Text>
-        
-        <Image 
-        style = {{height:"100%",width:"100%",position:'absolute',top:0,left:0,zIndex:-500}}
-        source = {{uri:"https://i.pinimg.com/736x/0f/25/19/0f2519e9175416f12789f7706da5fad3.jpg"}}>
-        </Image>
- <TouchableOpacity
+       <TouchableOpacity
           
-          onPress = { function(){if(JSON.parse(JSON.stringify(Data[appData.counter]["Answer 1"])) === JSON.parse(JSON.stringify(Data[appData.counter]["Correct Answer"]))  ){
-    that.props.goTo("RightPage")
-    appData.counter=appData.counter+1
-    appData.coins=appData.coins+5
-    appData.visible=0
-}
-else{if(appData.SecondChance!=1){
-  that.props.goTo("IncorrectPage")
-    appData.counter=appData.counter+1  
-}
-    appData.SecondChance=0
-    appData.visible=1
-    
-   
-}; that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo('Template') 
+appData.index1=0
+appData.index2=1; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -319,190 +290,19 @@ else{if(appData.SecondChance!=1){
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"34.47%","left":"31.87%",
-              "backgroundColor":"purple","color":"yellow"}]}
-        >
-        <Text style = {{color:"yellow"}}>
-
-        { JSON.parse(JSON.stringify(Data[appData.counter]["Answer 1"])) }
-
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){if(JSON.parse(JSON.stringify(Data[appData.counter]["Correct Answer"])) === JSON.parse(JSON.stringify(Data[appData.counter]["Correct Answer"]))  ){
-    that.props.goTo("RightPage")
-    appData.counter=appData.counter+1
-    appData.coins= appData.coins+5
-    appData.visible=0
-}
-else{if(appData.SecondChance!=1){
-  that.props.goTo("IncorrectPage")
-    appData.counter=appData.counter+1  
-}
-    appData.SecondChance=0
-    appData.visible=1
-
-}; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, 
-            backgroundColor:'#8fd158',
-             alignItems:'center',
-             justifyContent:'center', height: "7%",  
-             title:'Test', borderColor: 'gray', color:'black',
-              borderRadius:15, borderWidth: 1},
-              {"top":"65.42%","left":"32.82%"}]}
-        >
-        <Text style = {{color:"red"}}>
-
-        { JSON.parse(JSON.stringify(Data[appData.counter]["Answer 4"])) }
-
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){if(JSON.parse(JSON.stringify(Data[appData.counter]["Answer 3"])) === JSON.parse(JSON.stringify(Data[appData.counter]["Correct Answer"]))  ){
-    that.props.goTo("RightPage")
-    appData.counter=appData.counter+1
-    appData.coins=appData.coins+5
-    appData.visible=0
-}
-else{if(appData.SecondChance!=1){
-  that.props.goTo("IncorrectPage")
-    appData.counter=appData.counter+1  
-}
-    appData.SecondChance=0
-    appData.visible=1
-
-}; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, 
-            backgroundColor:'#8fd158',
-             alignItems:'center',
-             justifyContent:'center', height: "7%",  
-             title:'Test', borderColor: 'gray', color:'black',
-              borderRadius:15, borderWidth: 1},
-              {"top":"54.49%","left":"32.82%","backgroundColor":"green","color":"white"}]}
-        >
-        <Text style = {{color:"white"}}>
-
-        { JSON.parse(JSON.stringify(Data[appData.counter]["Answer 3"])) }
-
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){if(JSON.parse(JSON.stringify(Data[appData.counter]["Answer 2"])) === JSON.parse(JSON.stringify(Data[appData.counter]["Correct Answer"]))  ){
-    that.props.goTo("RightPage")
-    appData.counter=appData.counter+1
-    appData.coins=appData.coins+5
-    appData.visible=0
-}
-else{if(appData.SecondChance!=1){
-  that.props.goTo("IncorrectPage")
-    appData.counter=appData.counter+1  
-}
-    appData.SecondChance=0
-    appData.visible=1
-
-}
-; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, 
-            backgroundColor:'#8fd158',
-             alignItems:'center',
-             justifyContent:'center', height: "7%",  
-             title:'Test', borderColor: 'gray', color:'black',
-              borderRadius:15, borderWidth: 1},
-              {"top":"44.23%","left":"32.1%","backgroundColor":"blue","color":"yellow"}]}
-        >
-        <Text style = {{color:"yellow"}}>
-
-        { JSON.parse(JSON.stringify(Data[appData.counter]["Answer 2"])) }
-
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("StartPage"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, 
-            backgroundColor:'#8fd158',
-             alignItems:'center',
-             justifyContent:'center', height: "7%",  
-             title:'Test', borderColor: 'gray', color:'black',
-              borderRadius:15, borderWidth: 1},
-              {"innerText":"'Back'","top":"2.5%","left":"0.11%","backgroundColor":"yellow"}]}
+              {"top":"42.95%","left":"3.19%","innerText":"'Balance'","width":150,"backgroundColor":"#30c2a2"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Start Over'}
+        {'Balance'}
 
        </Text>
         </TouchableOpacity>
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"5%","left":"71.91%"}]}
-        > { appData.Zoins} </Text>
-        
-<Text
-          style= {[{backgroundColor:'yellow', width:"2%", position:'absolute',zIndex:100,width:'18%', borderRadius:5},{"top":"5%","left":"74.57%"}]}
-        > {'Zoins:'} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":" appData.coins;","top":"5%","left":"86.3%"}]}
-        > { appData.coins} </Text>
-        
-
  <TouchableOpacity
           
-          onPress = { function(){
-
-            user_text("","This is an automated message from NBATriviaApp. I need your help with a question because I know you're an NBA whiz. Here's the question: " + JSON.parse(JSON.stringify(Data[appData.counter]["Question"] + "?")) );
-          }}  
+          onPress = { function(){ that.props.goTo('Template')
+appData.index1=18
+appData.index2=19; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -521,26 +321,19 @@ else{if(appData.SecondChance!=1){
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"84.45%","left":"0",
-              "innerText":"'Second Chance= 15 Zoins'",
-              "fontSize":"resizeFont(10)",
-              "backgroundColor":"yellow"}]}
+              {"top":"55.19%","left":"3.81%","innerText":"'Conditioning'","fontSize":"resizeFont(15)","width":150,"backgroundColor":"#30c2a2"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Text A Friend'}
+        {'Conditioning'}
 
        </Text>
         </TouchableOpacity>
-
-
-
  <TouchableOpacity
           
-          onPress = { function(){if(appData.coins>=15){
-    appData.coins=appData.coins-15
-    appData.SecondChance=1
-}; that.forceUpdate(); }}  
+          onPress = { function(){ that.props.goTo('Template')
+ appData.index1=16
+ appData.index2=17; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -559,19 +352,298 @@ else{if(appData.SecondChance!=1){
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"84.45%","left":"70%"
-              ,"fontSize":"resizeFont(10)","backgroundColor":"yellow"}]}
+              {"top":"68.69%","left":"3.67%","innerText":"'Core'","width":150,"backgroundColor":"#30c2a2"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Second Chance= 15 Zoins'}
+        {'Core'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo('Template') 
+appData.index1=6
+appData.index2=7; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"innerText":"'Extensions'","top":"81.64%","left":"4.14%","width":150,"backgroundColor":"#30c2a2"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Extensions'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo('Template') 
+appData.index1=2
+appData.index2=3; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"68.52%","left":"56.27%","innerText":"'Turnout'","width":150,"backgroundColor":"#30c2a2"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Turnout'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo('Template')
+appData.index1=4
+appData.index2=5; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"80.96%","left":"57.7%","innerText":"'Turns'","width":150,"backgroundColor":"#30c2a2"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Turns'}
 
        </Text>
         </TouchableOpacity>
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"76.51%","left":"11.73%","color":"red","opacity":" appData.visible;"}]}
-        > {'You Got It Wrong But Try Again!!'} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"15%","left":"9.59%","innerText":"'Select one of the following skills to work on today!'","fontSize":"resizeFont(15)"}]}
+        > {'Select one of the following skills to work on today!'} </Text>
         
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo('Template')
+appData.index1=10
+appData.index2=11; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"54.73%","left":"56.91%","innerText":"'Strength'","width":150,"backgroundColor":"#30c2a2"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Strength'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo('Template')
+appData.index1=12
+appData.index2=13; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"28.81%","left":"57.22%","innerText":"'Flexibility'","width":150,"backgroundColor":"#30c2a2"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Flexibility'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo('Template')
+appData.index1=14
+appData.index2=15; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"42.95%","left":"57.46%","innerText":"'Feet'","fontSize":"resizeFont(15)","width":150,"backgroundColor":"#30c2a2"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Feet'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo('Template') 
+appData.index1=8
+appData.index2=9; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"innerText":"'Alignment'","top":"29.49%","left":"3.19%","width":150,"color":"","backgroundColor":"#30c2a2"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Alignment'}
+
+       </Text>
+        </TouchableOpacity>
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"1.56%","left":"2.95%","innerText":"'Hello! Welcome to your personal Strengthening app!'","fontSize":"resizeFont(25)","textAlign":"center","fontWeight":"bold"}]}
+        > {'Hello! Welcome to your personal Strengthening app!'} </Text>
+        
+
+
+      <Image
+        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"25.4%","left":"8.88%","source":"https://danceblogcom.files.wordpress.com/2017/03/cropped-g.jpeg","width":"75%","zIndex":-500,"height":"60%"}]}
+        source = {{uri:'https://danceblogcom.files.wordpress.com/2017/03/cropped-g.jpeg'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+ <TouchableOpacity
+          
+          onPress = { function(){var rand1 = Math.floor(Math.random() * appData.workout.length);
+var rand2 = Math.floor(Math.random() * appData.workout.length);
+var rand3 = Math.floor(Math.random() * appData.workout.length);
+var rand4 = Math.floor(Math.random() * appData.workout.length);
+var rand5 = Math.floor(Math.random() * appData.workout.length);
+var rand6 = Math.floor(Math.random() * appData.workout.length);
+var rand7 = Math.floor(Math.random() * appData.workout.length);
+var rand8 = Math.floor(Math.random() * appData.workout.length);
+appData.workout = [
+    Data[rand1],
+     Data[rand2],
+      Data[rand3],
+       Data[rand4],
+        Data[rand5],
+         Data[rand6],
+          Data[rand7],
+           Data[rand8],
+    ];
+that.props.goTo("PlaylistWorkout");; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"innerText":"'R&B Playlist Workout'","top":"21.99%","left":"19.55%","width":"60%","color":"","backgroundColor":"#30c2a2","height":"3%"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'R&B Playlist Workout'}
+
+       </Text>
+        </TouchableOpacity>
         </View>
         )
     }

@@ -215,7 +215,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FifthPage extends React.Component {
+ class Template extends React.Component {
      
 
     constructor(props)
@@ -267,12 +267,140 @@ function unwrap_dynamically(value,default_value){
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
       {this.state.createdelems}
 
+      <Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"1.39%","left":"4.39%","innerText":"'Exercises:'","fontSize":"resizeFont(30)","color":"#30c2a2"}]}
+        > {'Exercises:'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"6.53%","left":"4.46%","innerText":" JSON.parse(JSON.stringify(Data[appData.index1][\"exercise\"])) ","fontSize":"resizeFont(15)","fontWeight":"bold"}]}
+        > { JSON.parse(JSON.stringify(Data[appData.index1]["exercise"])) } </Text>
+        
+
+
+      <Image
+        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"16.71%","left":"-20.62%"}]}
+        source = {{uri:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png"}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+
+
+      <Image
+        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"14.31%","left":"-19.87%"}]}
+        source = {{uri:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png"}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"35.29%","left":"2.09%","innerText":"'Description:             '","fontSize":"resizeFont(15)","fontWeight":"bold"}]}
+        > {'Description:             '} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"49.75%","left":"2.95%","innerText":" JSON.parse(JSON.stringify(Data[appData.index2][\"exercise\"])) ","fontSize":"resizeFont(15)","fontWeight":"bold"}]}
+        > { JSON.parse(JSON.stringify(Data[appData.index2]["exercise"])) } </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"79.76%","left":"3.17%","innerText":"'Description:'","fontWeight":"bold","fontSize":"resizeFont(15)"}]}
+        > {'Description:'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"37.47%","left":"0.37%","innerText":"  JSON.parse(JSON.stringify(Data[appData.index1][\"Description\"])) ","fontSize":"resizeFont(14)"}]}
+        > {  JSON.parse(JSON.stringify(Data[appData.index1]["Description"])) } </Text>
+        
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo('FirstPage'); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"92.35%","left":"68.3%","innerText":"'Back'","backgroundColor":"#30c2a2"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Back'}
+
+       </Text>
+        </TouchableOpacity>
+
+
+      <Image
+        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"9.69%","left":"-20.87%"}]}
+        source = {{uri:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png"}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+
+
+      <Image
+        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"7.85%","left":"-20.87%"}]}
+        source = {{uri:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png"}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"82.71%","left":"1.23%","innerText":" JSON.parse(JSON.stringify(Data[appData.index2][\"Description\"])) "}]}
+        > { JSON.parse(JSON.stringify(Data[appData.index2]["Description"])) } </Text>
+        
+
+
+      <Image
+        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"53.64%","left":"4.24%","source":" JSON.parse(JSON.stringify(Data[appData.index2][\"images \"]));","width":"90%","height":"25%"}]}
+        source = {{uri: JSON.parse(JSON.stringify(Data[appData.index2]["images "]))}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+
+
+      <Image
+        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"10.26%","left":"16.28%","source":" JSON.parse(JSON.stringify(Data[appData.index1][\"images \"]));","height":"25%","width":"55%"}]}
+        source = {{uri: JSON.parse(JSON.stringify(Data[appData.index1]["images "]))}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
       
         </View>
         )
     }
   }
-    export default FifthPage; 
+    export default Template; 
 
 
 
