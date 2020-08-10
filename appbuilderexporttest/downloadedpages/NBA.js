@@ -1,11 +1,13 @@
 
 import React, { Component } from "react";
 import { ActivityIndicator, Button, Picker, Switch, Image, ScrollView, TouchableOpacity, StyleSheet, Text, View, TextInput, Dimensions } from "react-native";
-import Calendar from "./Calendar.js";
+// import Calendar from "./Calendar.js";
 import appData from "./global.js";
 import Multiplier from "./Multiplier.js";
 import { Audio } from 'expo-av'; 
 import * as SMS from 'expo-sms';
+import * as Calendar from 'expo-calendar';
+import AsyncStorage from '@react-native-community/async-storage';
 
 
 var d = new Date();
@@ -49,7 +51,13 @@ class Box extends React.Component{
 }
 
 
-
+async function storeData(key,value){
+ try {
+    await AsyncStorage.setItem(key, value)
+  } catch (e) {
+    // saving error
+  }
+}
 
 //READ ONLY API: format
 //https://spreadsheets.google.com/feeds/cells/1P0tGuikrAg5ZGpC2fHxLY49Osp6nhwseK2DSr34HM-o/1/public/full?alt=json
@@ -233,9 +241,78 @@ function unwrap_dynamically(value,default_value){
         this.state = {"key":"value","timer":11,"createdelems":[]}
     }
 
-    componentDidMount(){
+    async componentDidMount(){
       global.thisapp = this;
+
+      
     }
+
+    async createEvent(){
+
+      const { status } = await Calendar.requestCalendarPermissionsAsync();
+      const reminderPermission = Calendar.requestRemindersPermissionsAsync();
+      if (status === 'granted') {
+        const calendars = await Calendar.getCalendarsAsync();
+        const defaultCalendarSource =
+        Platform.OS === 'ios';
+        const sportsCal = await AsyncStorage.getItem('calendar');
+      if(sportsCal === null){
+        const newCalendarID = await Calendar.createCalendarAsync({
+          title: 'Sports Return Calendar',
+          color: 'blue',
+          entityType: Calendar.EntityTypes.EVENT,
+          sourceId: defaultCalendarSource.id,
+          source: defaultCalendarSource,
+          name: 'internalCalendarName',
+          ownerAccount: 'personal',
+          accessLevel: Calendar.CalendarAccessLevel.OWNER,
+        });
+
+        storeData("calendar", newCalendarID);
+        var date = new Date();
+        date.setDate(29);
+        date.setMonth(9)
+        date.setYear("2020")
+        var enddate = new Date();
+        enddate.setDate(30);
+        enddate.setMonth(9)
+        enddate.setYear("2020")
+
+        var id = await Calendar.createEventAsync(newCalendarID, {
+          title:"NBA Returns",
+          startDate: date,
+          endDate: enddate
+
+        })
+
+        alert("Its on your calendar!");
+
+      } else {
+       
+        var date = new Date();
+        date.setDate(29);
+        date.setMonth(9)
+        date.setYear("2020")
+        var enddate = new Date();
+        enddate.setDate(30);
+        enddate.setMonth(9)
+        enddate.setYear("2020")
+
+         var id = await Calendar.createEventAsync(sportsCal, {
+          title:"NBA Returns",
+          startDate: date,
+          endDate: enddate
+
+        })
+
+          alert("Its on your calendar!");
+      }
+     
+    }
+  }
+
+
+
 
 
       
@@ -295,6 +372,40 @@ function unwrap_dynamically(value,default_value){
 
 
 
+<TouchableOpacity
+          
+          onPress = { function(){
+            that.createEvent(); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'purple',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+             top:"70%",
+             left:"35%",
+             textAlign:'center',
+              borderRadius:15, borderWidth: 1},
+              {"innerText":"'Previous Page'"}]}
+        >
+        <Text style = {{color:"white", textAlign:'center'}}>
+
+        {'Create Calendar Event'}
+
+       </Text>
+        </TouchableOpacity>
+
       
  <TouchableOpacity
           
@@ -314,7 +425,8 @@ function unwrap_dynamically(value,default_value){
             position:'absolute',top:0,left:0, 
             backgroundColor:'#8fd158',
              alignItems:'center',
-             justifyContent:'center', height: "7%",  
+             top:"4%",
+             justifyContent:'center', height: "4%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
               {"innerText":"'Previous Page'"}]}

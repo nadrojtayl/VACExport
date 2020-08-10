@@ -11,10 +11,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@react-native-community/async-storage": "^1.11.0",
     "axios": "^0.19.2",
     "cors": "^2.8.5",
     "expo": "^38.0.8",
     "expo-av": "^8.4.0",
+    "expo-calendar": "^8.3.0",
     "expo-mail-composer": "^8.3.0",
     "expo-sms": "^8.2.1",
     "expo-speech": "^8.2.1",
