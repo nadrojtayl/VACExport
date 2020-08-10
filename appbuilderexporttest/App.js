@@ -4,20 +4,17 @@
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 import FirstPage from './downloadedpages/FirstPage.js'
-import SecondPage from './downloadedpages/SecondPage.js'
-import EighthPage from './downloadedpages/EighthPage.js'
-import SixthPage from './downloadedpages/SixthPage.js'
-import ThirdPage from './downloadedpages/ThirdPage.js'
-import SeventhPage from './downloadedpages/SeventhPage.js'
-import FourthPage from './downloadedpages/FourthPage.js'
-import FifthPage from './downloadedpages/FifthPage.js'
-import TwelfthPage from './downloadedpages/TwelfthPage.js'
-import ThirteenthPage from './downloadedpages/ThirteenthPage.js'
-import EleventhPage from './downloadedpages/EleventhPage.js'
-import TenthPage from './downloadedpages/TenthPage.js'
-import NInthPage from './downloadedpages/NInthPage.js'
-import Template from './downloadedpages/Template.js'
-import PlaylistWorkout from './downloadedpages/PlaylistWorkout.js'
+import SportsPage from './downloadedpages/SportsPage.js'
+import NBA from './downloadedpages/NBA.js'
+import FootBall from './downloadedpages/FootBall.js'
+import Baseball from './downloadedpages/Baseball.js'
+import Soccer from './downloadedpages/Soccer.js'
+import Tennis from './downloadedpages/Tennis.js'
+import Golf from './downloadedpages/Golf.js'
+import Olympics from './downloadedpages/Olympics.js'
+import Boston from './downloadedpages/Boston.js'
+import Cycling from './downloadedpages/Cycling.js'
+import NHL from './downloadedpages/NHL.js'
 import appData from './downloadedpages/global.js';
 /*
 EXPORT PROCESS
@@ -102,7 +99,7 @@ this.state = {dbLinks:{}, loaded:false, page:"FirstPage", numLoaded:0}
 componentDidMount(){
   
   var that = this;
-  var dbLinks = {"Data":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbwnU71tJvGzjIWhOCjYg3dQRYj9YjLru7mCrw3LdQ/exec?sheetName=Janae","Janae's_Database":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbwnU71tJvGzjIWhOCjYg3dQRYj9YjLru7mCrw3LdQ/exec?sheetName=Janae"}
+  var dbLinks = {"sports":"https://script.googleusercontent.com/macros/echo?user_content_key=YTFr-IPJoFOyRIdcoPGfxUDJt_6b0EA48pZZUqIogE5Sf-b5eq8A9PWWTjqMUXbakdd17SVMczzVr9uOCd7xFdn3vq1XvUt_m5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnJCXdJh6yvCv4yxm_uUVb2J8MjGe8B4ojjE_l8XvAqv0BE42TnJ6HCkTEih7QiyCq8LKBORzzn2EUx6HvROSgvE&lib=MXHwZDWn5UDNOS8I8eml2bEXCaJ-4jKQR"}
   Object.keys(dbLinks).forEach(function(key){
     that.connectToDatabase(dbLinks[key], key);
   })
@@ -147,10 +144,10 @@ render(){
     
 
 
-    if(that.state.page === "SecondPage"){
+    if(that.state.page === "SportsPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <SecondPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SecondPage>
+             <SportsPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SportsPage>
           </View>
         )
     }
@@ -160,10 +157,10 @@ render(){
     
 
 
-    if(that.state.page === "EighthPage"){
+    if(that.state.page === "SportsPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <EighthPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></EighthPage>
+             <SportsPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SportsPage>
           </View>
         )
     }
@@ -173,10 +170,10 @@ render(){
     
 
 
-    if(that.state.page === "SixthPage"){
+    if(that.state.page === "SportsPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <SixthPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SixthPage>
+             <SportsPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SportsPage>
           </View>
         )
     }
@@ -186,10 +183,10 @@ render(){
     
 
 
-    if(that.state.page === "ThirdPage"){
+    if(that.state.page === "SportsPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <ThirdPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></ThirdPage>
+             <SportsPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SportsPage>
           </View>
         )
     }
@@ -199,10 +196,10 @@ render(){
     
 
 
-    if(that.state.page === "SeventhPage"){
+    if(that.state.page === "SportsPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <SeventhPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SeventhPage>
+             <SportsPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SportsPage>
           </View>
         )
     }
@@ -212,10 +209,10 @@ render(){
     
 
 
-    if(that.state.page === "FourthPage"){
+    if(that.state.page === "NBA"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <FourthPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FourthPage>
+             <NBA  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NBA>
           </View>
         )
     }
@@ -225,10 +222,10 @@ render(){
     
 
 
-    if(that.state.page === "FifthPage"){
+    if(that.state.page === "FootBall"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <FifthPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FifthPage>
+             <FootBall  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FootBall>
           </View>
         )
     }
@@ -238,10 +235,10 @@ render(){
     
 
 
-    if(that.state.page === "TwelfthPage"){
+    if(that.state.page === "Baseball"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <TwelfthPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></TwelfthPage>
+             <Baseball  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Baseball>
           </View>
         )
     }
@@ -251,10 +248,10 @@ render(){
     
 
 
-    if(that.state.page === "ThirteenthPage"){
+    if(that.state.page === "NHL"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <ThirteenthPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></ThirteenthPage>
+             <NHL  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NHL>
           </View>
         )
     }
@@ -264,10 +261,10 @@ render(){
     
 
 
-    if(that.state.page === "EleventhPage"){
+    if(that.state.page === "NHL"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <EleventhPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></EleventhPage>
+             <NHL  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NHL>
           </View>
         )
     }
@@ -277,10 +274,10 @@ render(){
     
 
 
-    if(that.state.page === "TenthPage"){
+    if(that.state.page === "NHL"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <TenthPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></TenthPage>
+             <NHL  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NHL>
           </View>
         )
     }
@@ -290,10 +287,10 @@ render(){
     
 
 
-    if(that.state.page === "NInthPage"){
+    if(that.state.page === "NHL"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <NInthPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NInthPage>
+             <NHL  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NHL>
           </View>
         )
     }
@@ -303,10 +300,10 @@ render(){
     
 
 
-    if(that.state.page === "Template"){
+    if(that.state.page === "Soccer"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <Template  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Template>
+             <Soccer  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Soccer>
           </View>
         )
     }
@@ -316,10 +313,452 @@ render(){
     
 
 
-    if(that.state.page === "PlaylistWorkout"){
+    if(that.state.page === "NHL"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <PlaylistWorkout  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></PlaylistWorkout>
+             <NHL  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NHL>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Tennis"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Tennis  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Tennis>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Golf"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Golf  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Golf>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "NHL"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <NHL  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NHL>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Olympics"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Olympics  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Olympics>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "NHL"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <NHL  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NHL>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Boston"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Boston  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Boston>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "NHL"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <NHL  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NHL>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "NHL"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <NHL  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NHL>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "NHL"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <NHL  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NHL>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "NHL"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <NHL  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NHL>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "NHL"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <NHL  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NHL>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Cycling"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Cycling  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Cycling>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "NHL"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <NHL  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NHL>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "NHL"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <NHL  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NHL>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "NHL"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <NHL  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NHL>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "NHL"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <NHL  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NHL>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "NHL"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <NHL  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NHL>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "NHL"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <NHL  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NHL>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "NHL"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <NHL  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NHL>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "NHL"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <NHL  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NHL>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "NHL"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <NHL  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NHL>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "NHL"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <NHL  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NHL>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "NHL"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <NHL  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NHL>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "NHL"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <NHL  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NHL>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "NHL"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <NHL  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NHL>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "NHL"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <NHL  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NHL>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "America"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <America  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></America>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Election"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Election  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Election>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "NHL"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <NHL  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NHL>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Tiktok"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Tiktok  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Tiktok>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "NHL"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <NHL  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NHL>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "NHL"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <NHL  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NHL>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "NHL"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <NHL  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NHL>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "NHL"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <NHL  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></NHL>
           </View>
         )
     }

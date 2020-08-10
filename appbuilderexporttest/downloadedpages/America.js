@@ -224,7 +224,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class America extends React.Component {
      
 
     constructor(props)
@@ -278,14 +278,7 @@ function unwrap_dynamically(value,default_value){
 
        <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("SportsPage")
-runWithInterval(`
-appData.timer++;
-if(appData.timer === 30){
-    appData.timer = 0;
-}
-
-`,1000); that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("FirstPage"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -304,19 +297,81 @@ if(appData.timer === 30){
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"27.79%","left":"35.9%","innerText":"'Click To See Sport Updates'"}]}
+              {"innerText":"'Previous Page'"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Click To See Sport Updates'}
+        {'Previous Page'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo("Election"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"33.93%","left":"-0.14%","innerText":"'Presidential Election'"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Presidential Election'}
+
+       </Text>
+        </TouchableOpacity>
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"20.07%","left":"14.95%","innerText":"'American Updates'","fontSize":"resizeFont(27)"}]}
+        > {'American Updates'} </Text>
+        
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo("Tiktok"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"32.94%","left":"50.64%","innerText":"'Tiktok'"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Tiktok'}
 
        </Text>
         </TouchableOpacity>
 
 
       <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"41.53%","left":"0%","height":"60%","width":"100%","source":"https://www.logolynx.com/images/logolynx/b5/b5e6c595e4c915f3ce0e3e7a50fa68d0.jpeg"}]}
-        source = {{uri:'https://www.logolynx.com/images/logolynx/b5/b5e6c595e4c915f3ce0e3e7a50fa68d0.jpeg'}}
+        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"50.44%","left":"31%"}]}
+        source = {{uri:https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png}}
         onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
@@ -324,15 +379,11 @@ if(appData.timer === 30){
 
 
       
-<Text
-          style= {[{fontFamily:"Chalkduster", textAlign:'center', position:'absolute',zIndex:100,width:'100%'},{"top":"10.99%","left":"0%","innerText":"'Professional Sport Updates'","fontSize":resizeFont(27),"color":"black"}]}
-        > {'Professional Sport Updates'} </Text>
-        
         </View>
         )
     }
   }
-    export default FirstPage; 
+    export default America; 
 
 
 

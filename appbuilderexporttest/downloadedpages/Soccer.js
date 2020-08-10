@@ -224,7 +224,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class Soccer extends React.Component {
      
 
     constructor(props)
@@ -276,16 +276,17 @@ function unwrap_dynamically(value,default_value){
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#cccccc"}}>
       {this.state.createdelems}
 
-       <TouchableOpacity
+      <Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"10.06%","left":"37.08%","innerText":"'Soccer'","fontSize":"resizeFont(27)"}]}
+        > {'Soccer'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"26.34%","left":"0.58%","innerText":"'The famous sport Soccer,also known as football, is rescheduled to take place on July 8th. The EPL will resume on an earlier date on June 17th'"}]}
+        > {'The famous sport Soccer,also known as football, is rescheduled to take place on July 8th. The EPL will resume on an earlier date on June 17th'} </Text>
+        
+ <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("SportsPage")
-runWithInterval(`
-appData.timer++;
-if(appData.timer === 30){
-    appData.timer = 0;
-}
-
-`,1000); that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("SportsPage"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -304,19 +305,19 @@ if(appData.timer === 30){
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"27.79%","left":"35.9%","innerText":"'Click To See Sport Updates'"}]}
+              {"innerText":"'Previous Page'"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Click To See Sport Updates'}
+        {'Previous Page'}
 
        </Text>
         </TouchableOpacity>
 
 
       <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"41.53%","left":"0%","height":"60%","width":"100%","source":"https://www.logolynx.com/images/logolynx/b5/b5e6c595e4c915f3ce0e3e7a50fa68d0.jpeg"}]}
-        source = {{uri:'https://www.logolynx.com/images/logolynx/b5/b5e6c595e4c915f3ce0e3e7a50fa68d0.jpeg'}}
+        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"43.67%","left":"-5.17%","width":"105%","height":"60%","source":"https://tse2.mm.bing.net/th?id=OIP.wIrjjJH1SeGse0B8jl9BxgHaEK&pid=Api&P=0&w=273&h=154"}]}
+        source = {{uri:'https://tse2.mm.bing.net/th?id=OIP.wIrjjJH1SeGse0B8jl9BxgHaEK&pid=Api&P=0&w=273&h=154'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
@@ -325,14 +326,14 @@ if(appData.timer === 30){
 
       
 <Text
-          style= {[{fontFamily:"Chalkduster", textAlign:'center', position:'absolute',zIndex:100,width:'100%'},{"top":"10.99%","left":"0%","innerText":"'Professional Sport Updates'","fontSize":resizeFont(27),"color":"black"}]}
-        > {'Professional Sport Updates'} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"18.92%","left":"28.79%","innerText":"   appData.timer + \" seconds until refresh\";"}]}
+        > {   appData.timer + " seconds until refresh"} </Text>
         
         </View>
         )
     }
   }
-    export default FirstPage; 
+    export default Soccer; 
 
 
 

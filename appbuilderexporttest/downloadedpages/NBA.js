@@ -224,7 +224,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class NBA extends React.Component {
      
 
     constructor(props)
@@ -276,16 +276,29 @@ function unwrap_dynamically(value,default_value){
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#cccccc"}}>
       {this.state.createdelems}
 
-       <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("SportsPage")
-runWithInterval(`
-appData.timer++;
-if(appData.timer === 30){
-    appData.timer = 0;
-}
+      <Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"11.26%","left":"36.84%","innerText":"'NBA Page'","fontSize":"resizeFont(27)"}]}
+        > {'NBA Page'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"26.84%","left":"1.06%","innerText":"'The NBA is going to start on July 30th inside the bubble, at Disney World. Players arried there on July 7th to go through training camps, and to get comfortable.There will be virtual fans in the stands, with only the team staff, players, and refs inside the gym. Daily Covid-19 test are given out and also strict health protocals are in place'"}]}
+        > {'The NBA is going to start on July 30th inside the bubble, at Disney World. Players arried there on July 7th to go through training camps, and to get comfortable.There will be virtual fans in the stands, with only the team staff, players, and refs inside the gym. Daily Covid-19 test are given out and also strict health protocals are in place'} </Text>
+        
 
-`,1000); that.forceUpdate(); }}  
+
+      <Image
+        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"49.94%","left":"0.1%","source":"https://images.daznservices.com/di/library/sporting_news/8/88/nba-bubble-072820-getty-ftr_171qre7cfhsui1b802zc3k2pks.jpg?t=-1690856413&quality=100","width":"100%","height":"50%"}]}
+        source = {{uri:'https://images.daznservices.com/di/library/sporting_news/8/88/nba-bubble-072820-getty-ftr_171qre7cfhsui1b802zc3k2pks.jpg?t=-1690856413&quality=100'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo("SportsPage"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -304,35 +317,23 @@ if(appData.timer === 30){
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"27.79%","left":"35.9%","innerText":"'Click To See Sport Updates'"}]}
+              {"innerText":"'Previous Page'"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Click To See Sport Updates'}
+        {'Previous Page'}
 
        </Text>
         </TouchableOpacity>
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"41.53%","left":"0%","height":"60%","width":"100%","source":"https://www.logolynx.com/images/logolynx/b5/b5e6c595e4c915f3ce0e3e7a50fa68d0.jpeg"}]}
-        source = {{uri:'https://www.logolynx.com/images/logolynx/b5/b5e6c595e4c915f3ce0e3e7a50fa68d0.jpeg'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
 <Text
-          style= {[{fontFamily:"Chalkduster", textAlign:'center', position:'absolute',zIndex:100,width:'100%'},{"top":"10.99%","left":"0%","innerText":"'Professional Sport Updates'","fontSize":resizeFont(27),"color":"black"}]}
-        > {'Professional Sport Updates'} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"19.27%","left":"28.79%","innerText":"   appData.timer + \" seconds until refresh\";"}]}
+        > {   appData.timer + " seconds until refresh"} </Text>
         
         </View>
         )
     }
   }
-    export default FirstPage; 
+    export default NBA; 
 
 
 

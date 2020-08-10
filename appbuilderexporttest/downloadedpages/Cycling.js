@@ -224,7 +224,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class Cycling extends React.Component {
      
 
     constructor(props)
@@ -278,14 +278,7 @@ function unwrap_dynamically(value,default_value){
 
        <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("SportsPage")
-runWithInterval(`
-appData.timer++;
-if(appData.timer === 30){
-    appData.timer = 0;
-}
-
-`,1000); that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("SportsPage"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -304,19 +297,27 @@ if(appData.timer === 30){
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"27.79%","left":"35.9%","innerText":"'Click To See Sport Updates'"}]}
+              {"innerText":"'Previous Page'"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Click To See Sport Updates'}
+        {'Previous Page'}
 
        </Text>
         </TouchableOpacity>
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"13.13%","left":"28.08%","innerText":"'Tour De France'","fontSize":"resizeFont(27)"}]}
+        > {'Tour De France'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"30.47%","left":"-0.14%","innerText":"'The world famous cyclist match has been rescheduled to August 29-September 20. The course of the race has not been affected and will stay the same'"}]}
+        > {'The world famous cyclist match has been rescheduled to August 29-September 20. The course of the race has not been affected and will stay the same'} </Text>
+        
 
 
       <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"41.53%","left":"0%","height":"60%","width":"100%","source":"https://www.logolynx.com/images/logolynx/b5/b5e6c595e4c915f3ce0e3e7a50fa68d0.jpeg"}]}
-        source = {{uri:'https://www.logolynx.com/images/logolynx/b5/b5e6c595e4c915f3ce0e3e7a50fa68d0.jpeg'}}
+        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"50.77%","left":"-0.14%","source":"https://tse4.mm.bing.net/th?id=OIP.BW-P91LDC5MskKMBBjM8tQHaDO&pid=Api&P=0&w=392&h=172","width":"100%","height":"50%"}]}
+        source = {{uri:'https://tse4.mm.bing.net/th?id=OIP.BW-P91LDC5MskKMBBjM8tQHaDO&pid=Api&P=0&w=392&h=172'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
@@ -325,14 +326,14 @@ if(appData.timer === 30){
 
       
 <Text
-          style= {[{fontFamily:"Chalkduster", textAlign:'center', position:'absolute',zIndex:100,width:'100%'},{"top":"10.99%","left":"0%","innerText":"'Professional Sport Updates'","fontSize":resizeFont(27),"color":"black"}]}
-        > {'Professional Sport Updates'} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"23.36%","left":"31.39%","innerText":"   appData.timer + \" seconds until refresh\";"}]}
+        > {   appData.timer + " seconds until refresh"} </Text>
         
         </View>
         )
     }
   }
-    export default FirstPage; 
+    export default Cycling; 
 
 
 

@@ -224,7 +224,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class Olympics extends React.Component {
      
 
     constructor(props)
@@ -276,16 +276,17 @@ function unwrap_dynamically(value,default_value){
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#cccccc"}}>
       {this.state.createdelems}
 
-       <TouchableOpacity
+      <Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"8.02%","left":"34.47%","innerText":"'Olympics'","fontSize":"resizeFont(27)"}]}
+        > {'Olympics'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"23.21%","left":"0.82%","innerText":"'The 2020 Summer Games Olympics is forced to be rescheduled from July 23- August 8, 2021. This is the 4th time the Summer Game Olympics is being rescheduled/cancelled. The other 3 times were in 1916, 1940 and 1944 '"}]}
+        > {'The 2020 Summer Games Olympics is forced to be rescheduled from July 23- August 8, 2021. This is the 4th time the Summer Game Olympics is being rescheduled/cancelled. The other 3 times were in 1916, 1940 and 1944 '} </Text>
+        
+ <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("SportsPage")
-runWithInterval(`
-appData.timer++;
-if(appData.timer === 30){
-    appData.timer = 0;
-}
-
-`,1000); that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("SportsPage"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -304,19 +305,19 @@ if(appData.timer === 30){
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"27.79%","left":"35.9%","innerText":"'Click To See Sport Updates'"}]}
+              {"top":"0.1%","left":"-0.38%","innerText":"'Previous Page'"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Click To See Sport Updates'}
+        {'Previous Page'}
 
        </Text>
         </TouchableOpacity>
 
 
       <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"41.53%","left":"0%","height":"60%","width":"100%","source":"https://www.logolynx.com/images/logolynx/b5/b5e6c595e4c915f3ce0e3e7a50fa68d0.jpeg"}]}
-        source = {{uri:'https://www.logolynx.com/images/logolynx/b5/b5e6c595e4c915f3ce0e3e7a50fa68d0.jpeg'}}
+        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"50.27%","left":"-2.06%","width":"102%","height":"50%","source":"https://tse1.mm.bing.net/th?id=OIP.98PMlmR50qSJlwUf1eRfyAHaFO&pid=Api&P=0&w=216&h=153"}]}
+        source = {{uri:'https://tse1.mm.bing.net/th?id=OIP.98PMlmR50qSJlwUf1eRfyAHaFO&pid=Api&P=0&w=216&h=153'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
@@ -325,14 +326,14 @@ if(appData.timer === 30){
 
       
 <Text
-          style= {[{fontFamily:"Chalkduster", textAlign:'center', position:'absolute',zIndex:100,width:'100%'},{"top":"10.99%","left":"0%","innerText":"'Professional Sport Updates'","fontSize":resizeFont(27),"color":"black"}]}
-        > {'Professional Sport Updates'} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"16.71%","left":"30.45%","innerText":"   appData.timer + \" seconds until refresh\";"}]}
+        > {   appData.timer + " seconds until refresh"} </Text>
         
         </View>
         )
     }
   }
-    export default FirstPage; 
+    export default Olympics; 
 
 
 

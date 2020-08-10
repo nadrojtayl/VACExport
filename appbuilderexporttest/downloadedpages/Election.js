@@ -224,7 +224,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class Election extends React.Component {
      
 
     constructor(props)
@@ -276,16 +276,29 @@ function unwrap_dynamically(value,default_value){
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#cccccc"}}>
       {this.state.createdelems}
 
-       <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("SportsPage")
-runWithInterval(`
-appData.timer++;
-if(appData.timer === 30){
-    appData.timer = 0;
-}
+      <Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"12.97%","left":"21.66%","innerText":"'Presdential Election'","fontSize":"resizeFont(27)"}]}
+        > {'Presdential Election'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"23.87%","left":"0.1%","innerText":"'With the 2020 Election coming closer and closer, it's important to keep an eye out for who's winning. So far, the Democrat Joe biden is leading over the Republican Donald Trump. According to a poll by NYT Upshot/Siena College, Joe Biden is in the lead with 50% of the vote, Donald Trump with 36%, and other for 14%'"}]}
+        > {'With the 2020 Election coming closer and closer, it's important to keep an eye out for who's winning. So far, the Democrat Joe biden is leading over the Republican Donald Trump. According to a poll by NYT Upshot/Siena College, Joe Biden is in the lead with 50% of the vote, Donald Trump with 36%, and other for 14%'} </Text>
+        
 
-`,1000); that.forceUpdate(); }}  
+
+      <Image
+        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"49.94%","left":"-0.38%","height":"50%","width":"103%","source":"https://tse1.mm.bing.net/th?id=OIP.XlULNm1qOMGfXxlh_IjTYQHaEK&pid=Api&P=0&w=282&h=159"}]}
+        source = {{uri:'https://tse1.mm.bing.net/th?id=OIP.XlULNm1qOMGfXxlh_IjTYQHaEK&pid=Api&P=0&w=282&h=159'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo("America"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -304,35 +317,19 @@ if(appData.timer === 30){
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"27.79%","left":"35.9%","innerText":"'Click To See Sport Updates'"}]}
+              {"innerText":"'Previous Page'"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Click To See Sport Updates'}
+        {'Previous Page'}
 
        </Text>
         </TouchableOpacity>
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"41.53%","left":"0%","height":"60%","width":"100%","source":"https://www.logolynx.com/images/logolynx/b5/b5e6c595e4c915f3ce0e3e7a50fa68d0.jpeg"}]}
-        source = {{uri:'https://www.logolynx.com/images/logolynx/b5/b5e6c595e4c915f3ce0e3e7a50fa68d0.jpeg'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-<Text
-          style= {[{fontFamily:"Chalkduster", textAlign:'center', position:'absolute',zIndex:100,width:'100%'},{"top":"10.99%","left":"0%","innerText":"'Professional Sport Updates'","fontSize":resizeFont(27),"color":"black"}]}
-        > {'Professional Sport Updates'} </Text>
-        
         </View>
         )
     }
   }
-    export default FirstPage; 
+    export default Election; 
 
 
 

@@ -8,9 +8,6 @@ import appData from "./global.js";
 import { Audio } from 'expo-av';
 
 global.appData = appData;
-global.timer = false;
-
-
 
 function hasNumber(myString) {
   return /d/.test(myString);
@@ -157,20 +154,10 @@ function clone(arr){
 }
 
 global.audio = [];
-async function play(name){
-
-  var songs = {
-    "Four Leaf Clover":require("../assets/4_leaf_clover.mp3"),
-    "Let Me Be The One":require("../assets/let_me_be_the_one.mp3"),
-    "Cool It Now":require("../assets/cool_it_now.mp3"),
-    "Louder Than Love":require("../assets/louder_than_love.mp3"),
-    "Nocture":require("../assets/nocturne.mp3"),
-  }
-
-
+async function play(url){
   appData.soundObject = new Audio.Sound();
  try {
-    await appData.soundObject.loadAsync(songs[name]);
+    await appData.soundObject.loadAsync({uri:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"});
     await appData.soundObject.playAsync();
     // Your sound is playing!
   } catch (error) {
@@ -181,9 +168,7 @@ async function play(name){
 }
 
 async function pause(){
-  if(appData.soundObject){
    await appData.soundObject.pauseAsync();
-  }
 }
 
 global.play = play;
@@ -285,29 +270,12 @@ class Multiplier extends Component{
 
 
       return (
-        <View style = {{flexDirection:'row',  borderWidth: 1, flexDirection:'row', justifyContent:'space-between', backgroundColor:'white'}}>
-        <TouchableOpacity
-        onPress = {function(){
-          pause();
-          play(elem.Song)
-          StartTimer();
-        }}
-
-         style = {{ alignItems:'center',justifyContent:'center', width:"10%", backgroundColor:'#30c2a2'}}>
-          <Text style = {{textAlign:'center'}}>Play</Text>
-        </TouchableOpacity>
         <Text
-          style={[{width:"50%", alignItems:'center',justifyContent:'center', height: 40, textAlign:'center', justifyContent:'center', borderColor: 'black', backgroundColor:'white', color:'black'}, additionalStyle]}
+          style={[{ height: 40, borderColor: 'black', backgroundColor:'white', color:'black', width:"100%", borderWidth: 5}, additionalStyle]}
           key = {int}
           selectable = {true}
         >{  additionalStyle.innerText === undefined ? JSON.stringify(elem):additionalStyle.innerText }</Text>
-        <Text
-          style={[{width:"45%",  alignItems:'center',justifyContent:'center', height:'100%', height: 40, textAlign:'center', justifyContent:'center', borderColor: 'black', backgroundColor:'white', color:'black'}, additionalStyle]}
-          key = {int}
-          selectable = {true}
-        >{ elem.Song}</Text>
-       
-        </View>
+
         )
     }
 

@@ -224,7 +224,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class Baseball extends React.Component {
      
 
     constructor(props)
@@ -276,16 +276,17 @@ function unwrap_dynamically(value,default_value){
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#cccccc"}}>
       {this.state.createdelems}
 
-       <TouchableOpacity
+      <Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"11.6%","left":"35.66%","innerText":"'Baseball'","fontSize":"resizeFont(27)"}]}
+        > {'Baseball'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"27%","left":"2.01%","innerText":"'The MLB is ecpected to resume play on July 23 with the Yankees vs Nationals,and followed with the Giants vs Dodgers. The season has been redused to only 60 games, and will be played with no fans in the stands'"}]}
+        > {'The MLB is ecpected to resume play on July 23 with the Yankees vs Nationals,and followed with the Giants vs Dodgers. The season has been redused to only 60 games, and will be played with no fans in the stands'} </Text>
+        
+ <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("SportsPage")
-runWithInterval(`
-appData.timer++;
-if(appData.timer === 30){
-    appData.timer = 0;
-}
-
-`,1000); that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("SportsPage"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -304,19 +305,19 @@ if(appData.timer === 30){
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"27.79%","left":"35.9%","innerText":"'Click To See Sport Updates'"}]}
+              {"innerText":"'Previous Page'"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Click To See Sport Updates'}
+        {'Previous Page'}
 
        </Text>
         </TouchableOpacity>
 
 
       <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"41.53%","left":"0%","height":"60%","width":"100%","source":"https://www.logolynx.com/images/logolynx/b5/b5e6c595e4c915f3ce0e3e7a50fa68d0.jpeg"}]}
-        source = {{uri:'https://www.logolynx.com/images/logolynx/b5/b5e6c595e4c915f3ce0e3e7a50fa68d0.jpeg'}}
+        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"50.27%","left":"-0.14%","height":"50%","width":"102%","source":"https://tse2.mm.bing.net/th?id=OIP.1S_8WgQJuBSREVKgRKHRSAHaEK&pid=Api&P=0&w=332&h=187"}]}
+        source = {{uri:'https://tse2.mm.bing.net/th?id=OIP.1S_8WgQJuBSREVKgRKHRSAHaEK&pid=Api&P=0&w=332&h=187'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
@@ -325,14 +326,14 @@ if(appData.timer === 30){
 
       
 <Text
-          style= {[{fontFamily:"Chalkduster", textAlign:'center', position:'absolute',zIndex:100,width:'100%'},{"top":"10.99%","left":"0%","innerText":"'Professional Sport Updates'","fontSize":resizeFont(27),"color":"black"}]}
-        > {'Professional Sport Updates'} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"21.31%","left":"30.92%","innerText":"   appData.timer + \" seconds until refresh\";"}]}
+        > {   appData.timer + " seconds until refresh"} </Text>
         
         </View>
         )
     }
   }
-    export default FirstPage; 
+    export default Baseball; 
 
 
 
