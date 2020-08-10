@@ -277,8 +277,106 @@ function unwrap_dynamically(value,default_value){
       {this.state.createdelems}
 
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"10.06%","left":"37.08%","innerText":"'Soccer'","fontSize":"resizeFont(27)"}]}
+          style= {[{position:'absolute', textAlign:'center', zIndex:100,width:'100%'},{"top":"10.06%","left":"0%","innerText":"'Soccer'","fontSize":resizeFont(27)}]}
         > {'Soccer'} </Text>
+
+        <TouchableOpacity
+          
+          onPress = { async function(){
+            
+             const { status } = await Calendar.requestCalendarPermissionsAsync();
+      const reminderPermission = Calendar.requestRemindersPermissionsAsync();
+      if (status === 'granted') {
+        const calendars = await Calendar.getCalendarsAsync();
+        const defaultCalendarSource =
+        Platform.OS === 'ios';
+        const sportsCal = await AsyncStorage.getItem('calendar');
+      if(sportsCal === null){
+        const newCalendarID = await Calendar.createCalendarAsync({
+          title: 'Sports Return Calendar',
+          color: 'blue',
+          entityType: Calendar.EntityTypes.EVENT,
+          sourceId: defaultCalendarSource.id,
+          source: defaultCalendarSource,
+          name: 'internalCalendarName',
+          ownerAccount: 'personal',
+          accessLevel: Calendar.CalendarAccessLevel.OWNER,
+        });
+
+        storeData("calendar", newCalendarID);
+        var date = new Date();
+        date.setDate(29);
+        date.setMonth(9)
+        date.setYear("2020")
+        var enddate = new Date();
+        enddate.setDate(30);
+        enddate.setMonth(9)
+        enddate.setYear("2020")
+
+        var id = await Calendar.createEventAsync(newCalendarID, {
+          title:"NBA Returns",
+          startDate: date,
+          endDate: enddate
+
+        })
+
+        alert("Its on your calendar!");
+
+      } else {
+       
+        var date = new Date();
+        date.setDate(29);
+        date.setMonth(9)
+        date.setYear("2020")
+        var enddate = new Date();
+        enddate.setDate(30);
+        enddate.setMonth(9)
+        enddate.setYear("2020")
+
+         var id = await Calendar.createEventAsync(sportsCal, {
+          title:"NBA Returns",
+          startDate: date,
+          endDate: enddate
+
+        })
+
+          alert("Its on your calendar!");
+      }
+     
+    }
+
+
+
+            }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'purple',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+             top:"70%",
+             left:"35%",
+             textAlign:'center', zIndex:100,
+              borderRadius:15, borderWidth: 1},
+              {"innerText":"'Previous Page'"}]}
+        >
+        <Text style = {{color:"white", textAlign:'center'}}>
+
+        {'Create Calendar Event'}
+
+       </Text>
+        </TouchableOpacity>
         
 <Text
           style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"26.34%","left":"0.58%","innerText":"'The famous sport Soccer,also known as football, is rescheduled to take place on July 8th. The EPL will resume on an earlier date on June 17th'"}]}
@@ -302,7 +400,7 @@ function unwrap_dynamically(value,default_value){
             position:'absolute',top:0,left:0, 
             backgroundColor:'#8fd158',
              alignItems:'center',
-             justifyContent:'center', height: "7%",  
+             justifyContent:'center', height: "4%", top:"3%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
               {"innerText":"'Previous Page'"}]}
@@ -316,7 +414,7 @@ function unwrap_dynamically(value,default_value){
 
 
       <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"43.67%","left":"-5.17%","width":"105%","height":"60%","source":"https://tse2.mm.bing.net/th?id=OIP.wIrjjJH1SeGse0B8jl9BxgHaEK&pid=Api&P=0&w=273&h=154"}]}
+        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"43.67%","left":"0%","width":"100%","height":"60%","source":"https://tse2.mm.bing.net/th?id=OIP.wIrjjJH1SeGse0B8jl9BxgHaEK&pid=Api&P=0&w=273&h=154"}]}
         source = {{uri:'https://tse2.mm.bing.net/th?id=OIP.wIrjjJH1SeGse0B8jl9BxgHaEK&pid=Api&P=0&w=273&h=154'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >

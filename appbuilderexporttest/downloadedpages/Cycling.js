@@ -1,7 +1,11 @@
 
 import React, { Component } from "react";
 import { ActivityIndicator, Button, Picker, Switch, Image, ScrollView, TouchableOpacity, StyleSheet, Text, View, TextInput, Dimensions } from "react-native";
-import Calendar from "./Calendar.js";
+// import Calendar from "./Calendar.js";
+import * as Calendar from 'expo-calendar';
+import AsyncStorage from '@react-native-community/async-storage';
+
+
 import appData from "./global.js";
 import Multiplier from "./Multiplier.js";
 import { Audio } from 'expo-av'; 
@@ -276,6 +280,104 @@ function unwrap_dynamically(value,default_value){
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#cccccc"}}>
       {this.state.createdelems}
 
+<TouchableOpacity
+          
+          onPress = { async function(){
+            
+             const { status } = await Calendar.requestCalendarPermissionsAsync();
+      const reminderPermission = Calendar.requestRemindersPermissionsAsync();
+      if (status === 'granted') {
+        const calendars = await Calendar.getCalendarsAsync();
+        const defaultCalendarSource =
+        Platform.OS === 'ios';
+        const sportsCal = await AsyncStorage.getItem('calendar');
+      if(sportsCal === null){
+        const newCalendarID = await Calendar.createCalendarAsync({
+          title: 'Sports Return Calendar',
+          color: 'blue',
+          entityType: Calendar.EntityTypes.EVENT,
+          sourceId: defaultCalendarSource.id,
+          source: defaultCalendarSource,
+          name: 'internalCalendarName',
+          ownerAccount: 'personal',
+          accessLevel: Calendar.CalendarAccessLevel.OWNER,
+        });
+
+        storeData("calendar", newCalendarID);
+        var date = new Date();
+        date.setDate(29);
+        date.setMonth(9)
+        date.setYear("2020")
+        var enddate = new Date();
+        enddate.setDate(30);
+        enddate.setMonth(9)
+        enddate.setYear("2020")
+
+        var id = await Calendar.createEventAsync(newCalendarID, {
+          title:"NBA Returns",
+          startDate: date,
+          endDate: enddate
+
+        })
+
+        alert("Its on your calendar!");
+
+      } else {
+       
+        var date = new Date();
+        date.setDate(29);
+        date.setMonth(9)
+        date.setYear("2020")
+        var enddate = new Date();
+        enddate.setDate(30);
+        enddate.setMonth(9)
+        enddate.setYear("2020")
+
+         var id = await Calendar.createEventAsync(sportsCal, {
+          title:"NBA Returns",
+          startDate: date,
+          endDate: enddate
+
+        })
+
+          alert("Its on your calendar!");
+      }
+     
+    }
+
+
+
+            }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'purple',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+             top:"70%",
+             left:"35%",
+             textAlign:'center', zIndex:100,
+              borderRadius:15, borderWidth: 1},
+              {"innerText":"'Previous Page'"}]}
+        >
+        <Text style = {{color:"white", textAlign:'center'}}>
+
+        {'Create Calendar Event'}
+
+       </Text>
+        </TouchableOpacity>
+
        <TouchableOpacity
           
           onPress = { function(){that.props.goTo("SportsPage"); that.forceUpdate(); }}  
@@ -294,7 +396,7 @@ function unwrap_dynamically(value,default_value){
             position:'absolute',top:0,left:0, 
             backgroundColor:'#8fd158',
              alignItems:'center',
-             justifyContent:'center', height: "7%",  
+             justifyContent:'center', height: "4%",  top:"3%",
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
               {"innerText":"'Previous Page'"}]}
@@ -306,7 +408,7 @@ function unwrap_dynamically(value,default_value){
        </Text>
         </TouchableOpacity>
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"13.13%","left":"28.08%","innerText":"'Tour De France'","fontSize":"resizeFont(27)"}]}
+          style= {[{position:'absolute', textAlign:'center', zIndex:100,width:'100%'},{"top":"13.13%","left":"0%","innerText":"'Tour De France'","fontSize":resizeFont(27)}]}
         > {'Tour De France'} </Text>
         
 <Text
@@ -316,7 +418,7 @@ function unwrap_dynamically(value,default_value){
 
 
       <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"50.77%","left":"-0.14%","source":"https://tse4.mm.bing.net/th?id=OIP.BW-P91LDC5MskKMBBjM8tQHaDO&pid=Api&P=0&w=392&h=172","width":"100%","height":"50%"}]}
+        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"50.77%","left":"0%","source":"https://tse4.mm.bing.net/th?id=OIP.BW-P91LDC5MskKMBBjM8tQHaDO&pid=Api&P=0&w=392&h=172","width":"100%","height":"50%"}]}
         source = {{uri:'https://tse4.mm.bing.net/th?id=OIP.BW-P91LDC5MskKMBBjM8tQHaDO&pid=Api&P=0&w=392&h=172'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >

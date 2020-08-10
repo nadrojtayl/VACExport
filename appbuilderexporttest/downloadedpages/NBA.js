@@ -374,8 +374,72 @@ function unwrap_dynamically(value,default_value){
 
 <TouchableOpacity
           
-          onPress = { function(){
-            that.createEvent(); that.forceUpdate(); }}  
+          onPress = { async function(){
+            
+             const { status } = await Calendar.requestCalendarPermissionsAsync();
+      const reminderPermission = Calendar.requestRemindersPermissionsAsync();
+      if (status === 'granted') {
+        const calendars = await Calendar.getCalendarsAsync();
+        const defaultCalendarSource =
+        Platform.OS === 'ios';
+        const sportsCal = await AsyncStorage.getItem('calendar');
+      if(sportsCal === null){
+        const newCalendarID = await Calendar.createCalendarAsync({
+          title: 'Sports Return Calendar',
+          color: 'blue',
+          entityType: Calendar.EntityTypes.EVENT,
+          sourceId: defaultCalendarSource.id,
+          source: defaultCalendarSource,
+          name: 'internalCalendarName',
+          ownerAccount: 'personal',
+          accessLevel: Calendar.CalendarAccessLevel.OWNER,
+        });
+
+        storeData("calendar", newCalendarID);
+        var date = new Date();
+        date.setDate(29);
+        date.setMonth(9)
+        date.setYear("2020")
+        var enddate = new Date();
+        enddate.setDate(30);
+        enddate.setMonth(9)
+        enddate.setYear("2020")
+
+        var id = await Calendar.createEventAsync(newCalendarID, {
+          title:"NBA Returns",
+          startDate: date,
+          endDate: enddate
+
+        })
+
+        alert("Its on your calendar!");
+
+      } else {
+       
+        var date = new Date();
+        date.setDate(29);
+        date.setMonth(9)
+        date.setYear("2020")
+        var enddate = new Date();
+        enddate.setDate(30);
+        enddate.setMonth(9)
+        enddate.setYear("2020")
+
+         var id = await Calendar.createEventAsync(sportsCal, {
+          title:"NBA Returns",
+          startDate: date,
+          endDate: enddate
+
+        })
+
+          alert("Its on your calendar!");
+      }
+     
+    }
+
+
+
+            }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
