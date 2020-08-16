@@ -1,0 +1,6 @@
+module Pods_StrengthEnhancerForDancers {
+  umbrella header "Pods-StrengthEnhancerForDancers-umbrella.h"
+
+  export *
+  module * { export * }
+}
