@@ -1,33 +1,33 @@
-  {
-      "expo": {
-        "name": "QuestionADayMusic",
-        "slug": "QuestionADayMusic",
-        "platforms": [
-          "ios",
-          "android",
-          "web"
-        ],
-        "version": "1.0.0",
-        "orientation": "portrait",
-        "icon": "./assets/ficon.png",
-        "splash": {
-          "image": "./assets/splash.png",
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
-        },
-        "updates": {
-          "fallbackToCacheTimeout": 0
-        },
-        "assetBundlePatterns": [
-          "**/*"
-        ],
-        "ios": {
-          "supportsTablet": true,
-          "bundleIdentifier": "com.questionadaymusic.questionadaymusic"
-        },
-        "android": {
-          "package": "com.questionadaymusic.questionadaymusic"
-        },
-        "entryPoint": "node_modules/expo/AppEntry.js"
-      }
-    }
+{
+  "expo": {
+    "name": "QuestionADayMusic",
+    "slug": "QuestionADayMusic",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/ficon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.questionadaymusic.questionadaymusic"
+    },
+    "android": {
+      "package": "com.questionadaymusic.questionadaymusic"
+    },
+    "entryPoint": "node_modules/expo/AppEntry.js"
+  }
+}
