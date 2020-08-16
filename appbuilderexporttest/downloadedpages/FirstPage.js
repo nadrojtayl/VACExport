@@ -230,7 +230,7 @@ function unwrap_dynamically(value,default_value){
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","timer":11,"createdelems":[]}
+        this.state = {"FirstPageinput23":"100","FirstPageinput24":"5","FirstPageinput25":"-20","FirstPageinput26":"0","total":543.05,"today":"2020-07-23T15:53:39.377Z","createdelems":[]}
     }
 
     componentDidMount(){
@@ -273,19 +273,103 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#cccccc"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
       {this.state.createdelems}
 
-       <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("SportsPage")
-runWithInterval(`
-appData.timer++;
-if(appData.timer === 30){
-    appData.timer = 0;
-}
+      <View
+        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{"height":"15%","width":"100%","backgroundColor":"#2bed78","borderWidth":0,"top":"-0.32%","left":"0.04%"}]}
+        ></View>
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"4.1%","left":"0.04%","fontStyle":"italic","fontSize":resizeFont(35),"textAlign":"center","fontWeight":"light","fontFamily":"Futura","innerText":"'Money$Calc'","textDecorationLine":"underline","color":"#0c4222"}]}
+        > {'Money$Calc'} </Text>
+        
+<View
+        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{"top":"14.56%","left":"0.04%","backgroundColor":"#d6d6d6","borderWidth":0,"height":"100%","width":"100%","innerText":"'Email me calculation details'"}]}
+        ></View>
+<View
+        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{"top":"16.82%","left":"2.91%","backgroundColor":"#5c5c5c","width":"29%","height":"6%","borderWidth":0}]}
+        ></View>
+<View
+        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{"top":"16.82%","left":"67.82%","backgroundColor":"#5c5c5c","width":"29%","height":"6%","borderWidth":0}]}
+        ></View>
+<View
+        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{"top":"16.82%","left":"35.49%","backgroundColor":"#5c5c5c","width":"29%","height":"6%","borderWidth":0}]}
+        ></View>
+<View
+        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{"backgroundColor":"#ffffff","top":"22.87%","left":"2.91%","borderWidth":0,"width":"29%","height":"15%"}]}
+        ></View>
+<View
+        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{"backgroundColor":"#ffffff","top":"22.87%","left":"35.49%","borderWidth":0,"width":"29%","height":"15%"}]}
+        ></View>
+<View
+        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{"backgroundColor":"#ffffff","top":"22.87%","left":"67.82%","borderWidth":0,"width":"29%","height":"15%"}]}
+        ></View>
+<View
+        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{"top":"64.42%","left":"2.19%","backgroundColor":"#5c5c5c","width":"95%","height":"7%"}]}
+        ></View>
+<View
+        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{"backgroundColor":"#ffffff","top":"71.35%","left":"2.19%","borderWidth":0,"width":"95%","height":"16%"}]}
+        ></View>
+<View
+        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{"top":"39.49%","left":"2.43%","backgroundColor":"#5c5c5c","width":"45.5%","height":"7%"}]}
+        ></View>
+<View
+        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{"backgroundColor":"#ffffff","top":"46.59%","left":"2.43%","borderWidth":0,"width":"45.5%","height":"16%"}]}
+        ></View>
+<View
+        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{"height":"15%","width":"100%","backgroundColor":"#2bed78","borderWidth":0,"top":"89.7%","left":"0.04%"}]}
+        ></View>
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"18.37%","left":"2.91%","width":"29%","textAlign":"center","color":"white","fontWeight":"bold","innerText":"'Rate ($)'","fontSize":resizeFont(12)}]}
+        > {'Rate ($)'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"18.37%","left":"35.49%","width":"29%","textAlign":"center","color":"white","fontWeight":"bold","innerText":"'Interest Rate (%)'","fontSize":resizeFont(12)}]}
+        > {'Interest Rate (%)'} </Text>
+        
 
-`,1000); that.forceUpdate(); }}  
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"65.29%","left":"2.19%","width":"95%","textAlign":"center","color":"white","fontWeight":"bold","innerText":"'Total'","fontSize":resizeFont(20)}]}
+        > {'Total'} </Text>
+        
+
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"18.2%","left":"67.82%","width":"29%","textAlign":"center","color":"white","fontWeight":"bold","innerText":"'Add/Subtract'","fontSize":resizeFont(12)}]}
+        > {'Add/Subtract'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"40.88%","left":"2.67%","width":"45%","textAlign":"center","color":"white","fontWeight":"bold","innerText":"'Current Date'","fontSize":resizeFont(15)}]}
+        > {'Current Date'} </Text>
+        
+<TextInput
+       style= {[{position:'absolute', width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"22.75%","left":"2.39%","height":"15%","width":"29%","color":"black","textAlign":"center","fontWeight":"normal","fontSize":resizeFont(32),"borderWidth":0}]}
+        value={appData["FirstPageinput23"]}
+         onChangeText={function(val){ appData["FirstPageinput23"] = val; that.forceUpdate();   } }
+        />
+<TextInput
+       style= {[{position:'absolute', width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"22.53%","left":"35.25%","height":"15%","width":"29%","color":"black","textAlign":"center","fontWeight":"normal","fontSize":resizeFont(30),"borderWidth":0}]}
+        value={appData["FirstPageinput24"]}
+         onChangeText={function(val){ appData["FirstPageinput24"] = val; that.forceUpdate();   } }
+        />
+<TextInput
+       style= {[{position:'absolute', width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"22.87%","left":"68.06%","height":"15%","width":"29%","color":"black","textAlign":"center","fontWeight":"normal","fontSize":resizeFont(30),"borderWidth":0}]}
+        value={appData["FirstPageinput25"]}
+         onChangeText={function(val){ appData["FirstPageinput25"] = val; that.forceUpdate();   } }
+        />
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"74.29%","left":"2.19%","width":"95%","height":"10%","textAlign":"center","innerText":"      \"$\" + appData.total;","fontSize":resizeFont(35),"fontWeight":"normal"}]}
+        > {      "$" + appData.total} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"49.71%","left":"2.43%","width":"45.5%","height":"15%","textAlign":"center","innerText":"'String(month + 1) + \"/\" + String(day)'","fontSize":resizeFont(35),"fontWeight":"normal"}]}
+        > {String(month + 1) + "/" + String(day)} </Text>
+        
+ <TouchableOpacity
+          
+          onPress = { function(){appData.total += parseFloat(appData.FirstPageinput23)
+appData.total = Math.round(100*appData.total)/100;; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -304,30 +388,138 @@ if(appData.timer === 30){
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"27.79%","left":"35.9%","innerText":"'Click To See Sport Updates'"}]}
+              {"top":"39.67%","left":"51.3%","borderRadius":0,"borderWidth":0,"width":"45.5%","height":"5.75%","backgroundColor":"#5c5c5c","fontSize":resizeFont(15),"color":"white","fontWeight":"bold","innerText":"'Apply Rate'"}]}
         >
-        <Text style = {{color:"black"}}>
+        <Text style = {{color:"white"}}>
 
-        {'Click To See Sport Updates'}
+        {'Apply Rate'}
 
        </Text>
         </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){appData.total *= (1 + parseFloat(appData.FirstPageinput24)/100);
+appData.total = Math.round(100*appData.total)/100;; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"45.21%","left":"51.3%","borderRadius":0,"borderWidth":0,"width":"45.5%","height":"5.75%","backgroundColor":"#636363","fontSize":resizeFont(15),"color":"white","fontWeight":"bold","innerText":"'Apply Interest'"}]}
+        >
+        <Text style = {{color:"white"}}>
 
+        {'Apply Interest'}
 
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"41.53%","left":"0%","height":"60%","width":"100%","source":"https://www.logolynx.com/images/logolynx/b5/b5e6c595e4c915f3ce0e3e7a50fa68d0.jpeg"}]}
-        source = {{uri:'https://www.logolynx.com/images/logolynx/b5/b5e6c595e4c915f3ce0e3e7a50fa68d0.jpeg'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){appData.total += parseFloat(appData.FirstPageinput25);
+appData.total = Math.round(100*appData.total)/100;; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"50.75%","left":"51.3%","borderRadius":0,"borderWidth":0,"width":"45.5%","height":"5.75%","backgroundColor":"#5c5c5c","fontSize":resizeFont(15),"color":"white","fontWeight":"bold","innerText":"'Add/Subtract'"}]}
+        >
+        <Text style = {{color:"white"}}>
 
+        {'Add/Subtract'}
 
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){appData.total = 0;; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"56.46%","left":"51.3%","borderRadius":0,"borderWidth":0,"width":"45.5%","height":"5.75%","backgroundColor":"#636363","fontSize":resizeFont(15),"color":"white","fontWeight":"bold","innerText":"'Reset Total'"}]}
+        >
+        <Text style = {{color:"white"}}>
 
-      
-<Text
-          style= {[{fontFamily:"Chalkduster", textAlign:'center', position:'absolute',zIndex:100,width:'100%'},{"top":"10.99%","left":"0%","innerText":"'Professional Sport Updates'","fontSize":resizeFont(27),"color":"black"}]}
-        > {'Professional Sport Updates'} </Text>
-        
+        {'Reset Total'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){; 
+            user_text("",
+            `The rate is ` + appData.FirstPageinput23 + `. The interest rate % is ` + appData.FirstPageinput24 + `. The addition is ` + appData.FirstPageinput25 + `. All together the total is `+ appData.total
+
+            );
+
+            that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"92.04%","left":"18.54%","innerText":"'Email me calculation details'","width":"65%","height":"5%","backgroundColor":"#d6d6d6"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Text calculation details'}
+
+       </Text>
+        </TouchableOpacity>
         </View>
         )
     }
