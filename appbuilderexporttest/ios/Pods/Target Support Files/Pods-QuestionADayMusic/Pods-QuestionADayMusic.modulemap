@@ -1,0 +1,6 @@
+module Pods_QuestionADayMusic {
+  umbrella header "Pods-QuestionADayMusic-umbrella.h"
+
+  export *
+  module * { export * }
+}
