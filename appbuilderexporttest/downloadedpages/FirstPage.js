@@ -19,6 +19,15 @@ function hasNumber(myString) {
   return /d/.test(myString);
 }
 
+async function user_text(phone,message){
+  const isAvailable = await SMS.isAvailableAsync();
+    if (isAvailable) {
+      SMS.sendSMSAsync(phone, message);
+    } else {
+      alert("Texting isn't available on your device")
+    }
+}
+
 
 
 const width = Dimensions.get('window').width;
@@ -58,14 +67,14 @@ function runWithInterval(script_string,interval){
       }
 }
 
-async function user_text(phone,message){
-  const isAvailable = await SMS.isAvailableAsync();
-    if (isAvailable) {
-      SMS.sendSMSAsync(phone, message);
-    } else {
-      alert("Texting isn't available on your device")
-    }
-}
+// async function user_text(phone,message){
+//   const isAvailable = await SMS.isAvailableAsync();
+//     if (isAvailable) {
+//       SMS.sendSMSAsync(phone, message);
+//     } else {
+//       alert("Texting isn't available on your device")
+//     }
+// }
 
 window.runWithInterval = runWithInterval;
 runWithInterval = runWithInterval;
@@ -281,7 +290,7 @@ function unwrap_dynamically(value,default_value){
         > { JSON.parse(JSON.stringify(Data[appData.counter]["Question"])) } </Text>
         
         <Image 
-        style = {{height:"100%",width:"100%",position:'absolute',top:0,left:0,zIndex:-500}}
+        style = {{height:"105%",width:"100%",position:'absolute',zIndex:-500, left:"0%",top:"-5%"}}
         source = {{uri:"https://i.pinimg.com/736x/0f/25/19/0f2519e9175416f12789f7706da5fad3.jpg"}}>
         </Image>
  <TouchableOpacity
@@ -313,7 +322,7 @@ else{if(appData.SecondChance!=1){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, 
+            position:'absolute',
             backgroundColor:'#8fd158',
              alignItems:'center',
              justifyContent:'center', height: "7%",  
@@ -356,7 +365,7 @@ else{if(appData.SecondChance!=1){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, 
+            position:'absolute',
             backgroundColor:'#8fd158',
              alignItems:'center',
              justifyContent:'center', height: "7%",  
@@ -398,7 +407,7 @@ else{if(appData.SecondChance!=1){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, 
+            position:'absolute',
             backgroundColor:'#8fd158',
              alignItems:'center',
              justifyContent:'center', height: "7%",  
@@ -441,7 +450,7 @@ else{if(appData.SecondChance!=1){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, 
+            position:'absolute',
             backgroundColor:'#8fd158',
              alignItems:'center',
              justifyContent:'center', height: "7%",  
@@ -470,7 +479,7 @@ else{if(appData.SecondChance!=1){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, 
+            position:'absolute',
             backgroundColor:'#8fd158',
              alignItems:'center',
              justifyContent:'center', height: "7%",  
@@ -515,13 +524,13 @@ else{if(appData.SecondChance!=1){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, 
+            position:'absolute',
             backgroundColor:'#8fd158',
              alignItems:'center',
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"84.45%","left":"0",
+              {"top":"84.45%","left":0,
               "innerText":"'Second Chance= 15 Zoins'",
               "fontSize":"resizeFont(10)",
               "backgroundColor":"yellow"}]}
