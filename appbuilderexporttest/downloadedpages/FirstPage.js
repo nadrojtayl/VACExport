@@ -281,7 +281,6 @@ function unwrap_dynamically(value,default_value){
             shadowOffset: { height: 1, width: 1 }, // IOS
             shadowOpacity: 1, // IOS
             shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
             elevation: 2, // Android
             justifyContent: 'center',
             alignItems: 'center',
@@ -289,16 +288,16 @@ function unwrap_dynamically(value,default_value){
             height:"7%",
             width:"30%",
             position:'absolute',top:0,left:0, 
-            backgroundColor:'#8fd158',
+            backgroundColor:'lightblue',
              alignItems:'center',
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"57.52%","left":"35.73%","innerText":"'Click Me To Start Talking '","fontSize":"resizeFont(10)","color":"black"}]}
+              {"top":"57.52%","left":"35.73%","innerText":"Enter the room","fontSize":"resizeFont(10)","color":"black"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Click Me To Start Talking '}
+        {'Enter the Chat'}
 
        </Text>
         </TouchableOpacity>
