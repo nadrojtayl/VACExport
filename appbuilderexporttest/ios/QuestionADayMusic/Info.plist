@@ -47,6 +47,12 @@
 	</array>
 	<key>UIRequiresFullScreen</key>
 	<true/>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Used to create calendar reminders</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string></string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Used to read text in app for the sight impaired</string>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleDefault</string>
 	<key>UISupportedInterfaceOrientations</key>
