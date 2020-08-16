@@ -224,13 +224,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class Tiktok extends React.Component {
+ class Badthree extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","timer":11,"createdelems":[]}
+        this.state = {"loaded":false,"dbLinks":{},"index":23,"bindex1":3,"bindex2":2,"bindex3":0,"bindex4":1,"dbkeys":["Right Answer","Wrong Answer 1","Wrong Answer 2","Wrong Answer 3"],"counter":0,"correct":0,"repets":[],"daynumber":-1,"createdelems":[]}
     }
 
     componentDidMount(){
@@ -273,32 +273,16 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#cccccc"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#eaa8f7"}}>
       {this.state.createdelems}
 
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"16.93%","left":"14.71%","innerText":"'Will Tiktok Get Banned?'","fontSize":"resizeFont(27)"}]}
-        > {'Will Tiktok Get Banned?'} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"39.4%","left":"32.55%","innerText":"'wrong'","fontSize":resizeFont(50)}]}
+        > {'wrong'} </Text>
         
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"30.14%","left":"2.01%","innerText":"' 'With speculations of China stealing our information through the famous app Tiktok, Donald Trump has signed an executive order to ban the app in 45 days, unless it is sold to an American owned company. A potential buyer for Tiktok is Microsoft';'"}]}
-        > {' 'With speculations of China stealing our information through the famous app Tiktok, Donald Trump has signed an executive order to ban the app in 45 days, unless it is sold to an American owned company. A potential buyer for Tiktok is Microsoft''} </Text>
-        
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"53.41%","left":"-1.34%","width":"105%","height":"50%","source":"https://tse2.mm.bing.net/th?id=OIP.8tnBJL4BWXnQfY6pni2QrQEsCp&pid=Api&P=0&w=274&h=155"}]}
-        source = {{uri:'https://tse2.mm.bing.net/th?id=OIP.8tnBJL4BWXnQfY6pni2QrQEsCp&pid=Api&P=0&w=274&h=155'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
  <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("America"); that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo('Next'); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -317,11 +301,11 @@ function unwrap_dynamically(value,default_value){
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"innerText":"'Previous Page'"}]}
+              {"top":"76.06%","left":"32.8%","innerText":"'Go On'"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Previous Page'}
+        {'Go On'}
 
        </Text>
         </TouchableOpacity>
@@ -329,7 +313,7 @@ function unwrap_dynamically(value,default_value){
         )
     }
   }
-    export default Tiktok; 
+    export default Badthree; 
 
 
 

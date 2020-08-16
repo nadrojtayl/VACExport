@@ -224,13 +224,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class Election extends React.Component {
+ class Bad extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","timer":11,"createdelems":[]}
+        this.state = {"loaded":false,"dbLinks":{},"index":23,"bindex1":3,"bindex2":2,"bindex3":0,"bindex4":1,"dbkeys":["Right Answer","Wrong Answer 1","Wrong Answer 2","Wrong Answer 3"],"counter":0,"correct":0,"repets":[],"daynumber":-1,"createdelems":[]}
     }
 
     componentDidMount(){
@@ -273,32 +273,16 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#cccccc"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#eaa8f7"}}>
       {this.state.createdelems}
 
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"12.97%","left":"21.66%","innerText":"'Presdential Election'","fontSize":"resizeFont(27)"}]}
-        > {'Presdential Election'} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"39.4%","left":"32.55%","innerText":"'wrong'","fontSize":resizeFont(50)}]}
+        > {'wrong'} </Text>
         
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"23.87%","left":"0.1%","innerText":"'With the 2020 Election coming closer and closer, it's important to keep an eye out for who's winning. So far, the Democrat Joe biden is leading over the Republican Donald Trump. According to a poll by NYT Upshot/Siena College, Joe Biden is in the lead with 50% of the vote, Donald Trump with 36%, and other for 14%'"}]}
-        > {'With the 2020 Election coming closer and closer, it's important to keep an eye out for who's winning. So far, the Democrat Joe biden is leading over the Republican Donald Trump. According to a poll by NYT Upshot/Siena College, Joe Biden is in the lead with 50% of the vote, Donald Trump with 36%, and other for 14%'} </Text>
-        
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"49.94%","left":"-0.38%","height":"50%","width":"103%","source":"https://tse1.mm.bing.net/th?id=OIP.XlULNm1qOMGfXxlh_IjTYQHaEK&pid=Api&P=0&w=282&h=159"}]}
-        source = {{uri:'https://tse1.mm.bing.net/th?id=OIP.XlULNm1qOMGfXxlh_IjTYQHaEK&pid=Api&P=0&w=282&h=159'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
  <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("America"); that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo('Next'); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -317,11 +301,11 @@ function unwrap_dynamically(value,default_value){
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"innerText":"'Previous Page'"}]}
+              {"top":"76.06%","left":"32.8%","innerText":"'Go On'"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Previous Page'}
+        {'Go On'}
 
        </Text>
         </TouchableOpacity>
@@ -329,7 +313,7 @@ function unwrap_dynamically(value,default_value){
         )
     }
   }
-    export default Election; 
+    export default Bad; 
 
 
 

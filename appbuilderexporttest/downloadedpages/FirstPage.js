@@ -230,7 +230,7 @@ function unwrap_dynamically(value,default_value){
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","timer":11,"createdelems":[]}
+        this.state = {"loaded":false,"dbLinks":{},"index":23,"bindex1":3,"bindex2":2,"bindex3":0,"bindex4":1,"dbkeys":["Right Answer","Wrong Answer 1","Wrong Answer 2","Wrong Answer 3"],"counter":0,"correct":0,"repets":[],"daynumber":-1,"createdelems":[]}
     }
 
     componentDidMount(){
@@ -273,19 +273,25 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#cccccc"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#eaa8f7"}}>
       {this.state.createdelems}
 
-       <TouchableOpacity
+      <Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"10.45%","left":"-0.37%","fontSize":resizeFont(40),"innerText":"'Daily Tr?v!a'","backgroundColor":"white","color":"purple","textAlign":"center"}]}
+        > {'Daily Tr?v!a'} </Text>
+        
+ <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("SportsPage")
-runWithInterval(`
-appData.timer++;
-if(appData.timer === 30){
-    appData.timer = 0;
-}
-
-`,1000); that.forceUpdate(); }}  
+          onPress = { function(){appData.counter =0 
+appData.correct=0
+appData.index= Math.floor(Math.random()*Questions.length)
+appData.repets =[]
+if(appData.daynumber === day){
+    alert("You've already played today! Come back tomorrow.");
+} else {
+appData.daynumber = day;
+that.props.goTo('Next') 
+}; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -304,29 +310,17 @@ if(appData.timer === 30){
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"27.79%","left":"35.9%","innerText":"'Click To See Sport Updates'"}]}
+              {"top":"55.75%","left":"24.43%","backgroundColor":"white","innerText":"'Start Game'","width":"50%","height":"20%"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Click To See Sport Updates'}
+        {'Start Game'}
 
        </Text>
         </TouchableOpacity>
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"41.53%","left":"0%","height":"60%","width":"100%","source":"https://www.logolynx.com/images/logolynx/b5/b5e6c595e4c915f3ce0e3e7a50fa68d0.jpeg"}]}
-        source = {{uri:'https://www.logolynx.com/images/logolynx/b5/b5e6c595e4c915f3ce0e3e7a50fa68d0.jpeg'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
 <Text
-          style= {[{fontFamily:"Chalkduster", textAlign:'center', position:'absolute',zIndex:100,width:'100%'},{"top":"10.99%","left":"0%","innerText":"'Professional Sport Updates'","fontSize":resizeFont(27),"color":"black"}]}
-        > {'Professional Sport Updates'} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{textAlign:'center', "top":"30.13%","left":"0%","innerText":"  \"you got \"+appData.correct+\" right of 5\";","fontSize":resizeFont(30),"color":"white"}]}
+        > {  "you got "+appData.correct+" right of 5"} </Text>
         
         </View>
         )

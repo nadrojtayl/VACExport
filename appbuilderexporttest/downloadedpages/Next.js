@@ -1,11 +1,7 @@
 
 import React, { Component } from "react";
 import { ActivityIndicator, Button, Picker, Switch, Image, ScrollView, TouchableOpacity, StyleSheet, Text, View, TextInput, Dimensions } from "react-native";
-// import Calendar from "./Calendar.js";
-import * as Calendar from 'expo-calendar';
-import AsyncStorage from '@react-native-community/async-storage';
-
-
+import Calendar from "./Calendar.js";
 import appData from "./global.js";
 import Multiplier from "./Multiplier.js";
 import { Audio } from 'expo-av'; 
@@ -228,13 +224,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class Tennis extends React.Component {
+ class Next extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","timer":11,"createdelems":[]}
+        this.state = {"loaded":false,"dbLinks":{},"index":23,"bindex1":3,"bindex2":2,"bindex3":0,"bindex4":1,"dbkeys":["Right Answer","Wrong Answer 1","Wrong Answer 2","Wrong Answer 3"],"counter":0,"correct":0,"repets":[],"daynumber":-1,"createdelems":[]}
     }
 
     componentDidMount(){
@@ -277,121 +273,21 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#cccccc"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#eaa8f7"}}>
       {this.state.createdelems}
 
       <Text
-          style= {[{position:'absolute',zIndex:100,
-          width:'100%'},{"top":"9.21%","left":"0%", textAlign:"center",
-          "innerText":"'Tennis'","fontSize":resizeFont(27)}]}
-        > {'Tennis'} </Text>
-
-        <TouchableOpacity
-          
-          onPress = { async function(){
-            
-             const { status } = await Calendar.requestCalendarPermissionsAsync();
-      const reminderPermission = Calendar.requestRemindersPermissionsAsync();
-      if (status === 'granted') {
-        const calendars = await Calendar.getCalendarsAsync();
-        const defaultCalendarSource =
-        Platform.OS === 'ios';
-        const sportsCal = await AsyncStorage.getItem('calendar');
-      if(sportsCal === null){
-        const newCalendarID = await Calendar.createCalendarAsync({
-          title: 'Sports Return Calendar',
-          color: 'blue',
-          entityType: Calendar.EntityTypes.EVENT,
-          sourceId: defaultCalendarSource.id,
-          source: defaultCalendarSource,
-          name: 'internalCalendarName',
-          ownerAccount: 'personal',
-          accessLevel: Calendar.CalendarAccessLevel.OWNER,
-        });
-
-        storeData("calendar", newCalendarID);
-        var date = new Date();
-        date.setDate(29);
-        date.setMonth(9)
-        date.setYear("2020")
-        var enddate = new Date();
-        enddate.setDate(30);
-        enddate.setMonth(9)
-        enddate.setYear("2020")
-
-        var id = await Calendar.createEventAsync(newCalendarID, {
-          title:"NBA Returns",
-          startDate: date,
-          endDate: enddate
-
-        })
-
-        alert("Its on your calendar!");
-
-      } else {
-       
-        var date = new Date();
-        date.setDate(29);
-        date.setMonth(9)
-        date.setYear("2020")
-        var enddate = new Date();
-        enddate.setDate(30);
-        enddate.setMonth(9)
-        enddate.setYear("2020")
-
-         var id = await Calendar.createEventAsync(sportsCal, {
-          title:"NBA Returns",
-          startDate: date,
-          endDate: enddate
-
-        })
-
-          alert("Its on your calendar!");
-      }
-     
-    }
-
-
-
-            }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, 
-            backgroundColor:'purple',
-             alignItems:'center',
-             justifyContent:'center', height: "7%",  
-             title:'Test', borderColor: 'gray', color:'black',
-             top:"70%",
-             left:"35%",
-             textAlign:'center',
-             zIndex:100,
-              borderRadius:15, borderWidth: 1},
-              {"innerText":"'Previous Page'"}]}
-        >
-        <Text style = {{color:"white", textAlign:'center'}}>
-
-        {'Create Calendar Event'}
-
-       </Text>
-        </TouchableOpacity>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"24.03%","left":"0.82%","innerText":"'The ATP/WTA is set to reschedule on August 22nd. The US is to open their tennis with no change August 31st-September 13th. French-Open is rescheduled from Spetember 27th-October 11th  '"}]}
-        > {'The ATP/WTA is set to reschedule on August 22nd. The US is to open their tennis with no change August 31st-September 13th. French-Open is rescheduled from Spetember 27th-October 11th  '} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"6.21%","left":"0.02%","fontSize":resizeFont(20),textAlign:'center', "innerText":"  Questions[appData.index][\"Question\"];","backgroundColor":"white"}]}
+        > {  Questions[appData.index]["Question"]} </Text>
         
  <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("SportsPage"); that.forceUpdate(); }}  
+          onPress = { function(){if(appData.bindex1==0){ 
+that.props.goTo('Goodtwo')    
+}else {
+    that.props.goTo('Badtwo')
+}
+; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -406,39 +302,125 @@ function unwrap_dynamically(value,default_value){
             width:"30%",
             position:'absolute',top:0,left:0, 
             backgroundColor:'#8fd158',
-             alignItems:'center', top:"3%",
-             justifyContent:'center', height: "4%",  
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"innerText":"'Previous Page'"}]}
+              {"top":"47.2%","left":"5.61%","innerText":"     Questions[appData.index][appData.dbkeys[appData.bindex1]] ","backgroundColor":"white","fontSize":resizeFont(15),"height":"20%"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Previous Page'}
+        {     Questions[appData.index][appData.dbkeys[appData.bindex1]] }
 
        </Text>
         </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){if(appData.bindex2==0){ 
+that.props.goTo('Goodtwo')    
+}else {
+    that.props.goTo('Badtwo')
+}
+; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"47.98%","left":"57.17%","innerText":"  Questions[appData.index][appData.dbkeys[appData.bindex2]] ","backgroundColor":"white","fontSize":resizeFont(15),"height":"20%"}]}
+        >
+        <Text style = {{color:"black"}}>
 
+        {  Questions[appData.index][appData.dbkeys[appData.bindex2]] }
 
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"43.67%","left":"0%","height":"55%","width":"100%","source":"https://cdn.shopify.com/s/files/1/0646/5773/products/Tennis_Gallery_Calendar_2020_Cover_Dan_Evans_1024x1024.jpg?v=1573073540"}]}
-        source = {{uri:'https://cdn.shopify.com/s/files/1/0646/5773/products/Tennis_Gallery_Calendar_2020_Cover_Dan_Evans_1024x1024.jpg?v=1573073540'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){if(appData.bindex3==0){ 
+that.props.goTo('Goodtwo')    
+}else {
+    that.props.goTo('Badtwo')
+}
+; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"73.13%","left":"6.55%","innerText":"  Questions[appData.index][appData.dbkeys[appData.bindex3]] ","backgroundColor":"white","fontSize":resizeFont(15),"height":"20%"}]}
+        >
+        <Text style = {{color:"black"}}>
 
+        {  Questions[appData.index][appData.dbkeys[appData.bindex3]] }
 
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){if(appData.bindex4==0){ 
+that.props.goTo('Goodtwo')    
+}else {
+    that.props.goTo('Badtwo')
+}
+; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"72.74%","left":"57.48%","innerText":"  Questions[appData.index][appData.dbkeys[appData.bindex4]] ","backgroundColor":"white","fontSize":resizeFont(15),"height":"20%"}]}
+        >
+        <Text style = {{color:"black"}}>
 
-      
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"15%","left":"28.08%","innerText":"   appData.timer + \" seconds until refresh\";"}]}
-        > {   appData.timer + " seconds until refresh"} </Text>
-        
+        {  Questions[appData.index][appData.dbkeys[appData.bindex4]] }
+
+       </Text>
+        </TouchableOpacity>
         </View>
         )
     }
   }
-    export default Tennis; 
+    export default Next; 
 
 
 

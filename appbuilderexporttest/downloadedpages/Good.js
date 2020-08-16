@@ -224,13 +224,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class America extends React.Component {
+ class Good extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","timer":11,"createdelems":[]}
+        this.state = {"loaded":false,"dbLinks":{},"index":23,"bindex1":3,"bindex2":2,"bindex3":0,"bindex4":1,"dbkeys":["Right Answer","Wrong Answer 1","Wrong Answer 2","Wrong Answer 3"],"counter":0,"correct":0,"repets":[],"daynumber":-1,"createdelems":[]}
     }
 
     componentDidMount(){
@@ -273,74 +273,16 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#cccccc"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#eaa8f7"}}>
       {this.state.createdelems}
 
-       <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("FirstPage"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, 
-            backgroundColor:'#8fd158',
-             alignItems:'center',
-             justifyContent:'center', height: "7%",  
-             title:'Test', borderColor: 'gray', color:'black',
-              borderRadius:15, borderWidth: 1},
-              {"innerText":"'Previous Page'"}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {'Previous Page'}
-
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("Election"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, 
-            backgroundColor:'#8fd158',
-             alignItems:'center',
-             justifyContent:'center', height: "7%",  
-             title:'Test', borderColor: 'gray', color:'black',
-              borderRadius:15, borderWidth: 1},
-              {"top":"33.93%","left":"-0.14%","innerText":"'Presidential Election'"}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {'Presidential Election'}
-
-       </Text>
-        </TouchableOpacity>
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"20.07%","left":"14.95%","innerText":"'American Updates'","fontSize":"resizeFont(27)"}]}
-        > {'American Updates'} </Text>
+      <Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"43.3%","left":"43.94%","innerText":"'yay'","fontSize":resizeFont(50)}]}
+        > {'yay'} </Text>
         
  <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("Tiktok"); that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo('Next'); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -359,31 +301,19 @@ function unwrap_dynamically(value,default_value){
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"32.94%","left":"50.64%","innerText":"'Tiktok'"}]}
+              {"top":"77.03%","left":"37.61%","innerText":"'Go On'"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Tiktok'}
+        {'Go On'}
 
        </Text>
         </TouchableOpacity>
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"50.44%","left":"31%"}]}
-        source = {{uri:https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
         </View>
         )
     }
   }
-    export default America; 
+    export default Good; 
 
 
 

@@ -1,13 +1,11 @@
 
 import React, { Component } from "react";
 import { ActivityIndicator, Button, Picker, Switch, Image, ScrollView, TouchableOpacity, StyleSheet, Text, View, TextInput, Dimensions } from "react-native";
-// import Calendar from "./Calendar.js";
+import Calendar from "./Calendar.js";
 import appData from "./global.js";
 import Multiplier from "./Multiplier.js";
 import { Audio } from 'expo-av'; 
 import * as SMS from 'expo-sms';
-import * as Calendar from 'expo-calendar';
-import AsyncStorage from '@react-native-community/async-storage';
 
 
 var d = new Date();
@@ -51,13 +49,7 @@ class Box extends React.Component{
 }
 
 
-async function storeData(key,value){
- try {
-    await AsyncStorage.setItem(key, value)
-  } catch (e) {
-    // saving error
-  }
-}
+
 
 //READ ONLY API: format
 //https://spreadsheets.google.com/feeds/cells/1P0tGuikrAg5ZGpC2fHxLY49Osp6nhwseK2DSr34HM-o/1/public/full?alt=json
@@ -232,87 +224,18 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class NBA extends React.Component {
+ class Nexttwo extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","timer":11,"createdelems":[]}
+        this.state = {"loaded":false,"dbLinks":{},"index":23,"bindex1":3,"bindex2":2,"bindex3":0,"bindex4":1,"dbkeys":["Right Answer","Wrong Answer 1","Wrong Answer 2","Wrong Answer 3"],"counter":0,"correct":0,"repets":[],"daynumber":-1,"createdelems":[]}
     }
 
-    async componentDidMount(){
+    componentDidMount(){
       global.thisapp = this;
-
-      
     }
-
-    async createEvent(){
-
-      const { status } = await Calendar.requestCalendarPermissionsAsync();
-      const reminderPermission = Calendar.requestRemindersPermissionsAsync();
-      if (status === 'granted') {
-        const calendars = await Calendar.getCalendarsAsync();
-        const defaultCalendarSource =
-        Platform.OS === 'ios';
-        const sportsCal = await AsyncStorage.getItem('calendar');
-      if(sportsCal === null){
-        const newCalendarID = await Calendar.createCalendarAsync({
-          title: 'Sports Return Calendar',
-          color: 'blue',
-          entityType: Calendar.EntityTypes.EVENT,
-          sourceId: defaultCalendarSource.id,
-          source: defaultCalendarSource,
-          name: 'internalCalendarName',
-          ownerAccount: 'personal',
-          accessLevel: Calendar.CalendarAccessLevel.OWNER,
-        });
-
-        storeData("calendar", newCalendarID);
-        var date = new Date();
-        date.setDate(29);
-        date.setMonth(9)
-        date.setYear("2020")
-        var enddate = new Date();
-        enddate.setDate(30);
-        enddate.setMonth(9)
-        enddate.setYear("2020")
-
-        var id = await Calendar.createEventAsync(newCalendarID, {
-          title:"NBA Returns",
-          startDate: date,
-          endDate: enddate
-
-        })
-
-        alert("Its on your calendar!");
-
-      } else {
-       
-        var date = new Date();
-        date.setDate(29);
-        date.setMonth(9)
-        date.setYear("2020")
-        var enddate = new Date();
-        enddate.setDate(30);
-        enddate.setMonth(9)
-        enddate.setYear("2020")
-
-         var id = await Calendar.createEventAsync(sportsCal, {
-          title:"NBA Returns",
-          startDate: date,
-          endDate: enddate
-
-        })
-
-          alert("Its on your calendar!");
-      }
-     
-    }
-  }
-
-
-
 
 
       
@@ -350,130 +273,16 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#cccccc"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#eaa8f7"}}>
       {this.state.createdelems}
 
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"11.26%","left":"36.84%","innerText":"'NBA Page'","fontSize":"resizeFont(27)"}]}
-        > {'NBA Page'} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"1.77%","left":"46.22%","fontSize":"resizeFont(50)","innerText":"''thing''"}]}
+        > {'thing'} </Text>
         
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"26.84%","left":"1.06%","innerText":"'The NBA is going to start on July 30th inside the bubble, at Disney World. Players arried there on July 7th to go through training camps, and to get comfortable.There will be virtual fans in the stands, with only the team staff, players, and refs inside the gym. Daily Covid-19 test are given out and also strict health protocals are in place'"}]}
-        > {'The NBA is going to start on July 30th inside the bubble, at Disney World. Players arried there on July 7th to go through training camps, and to get comfortable.There will be virtual fans in the stands, with only the team staff, players, and refs inside the gym. Daily Covid-19 test are given out and also strict health protocals are in place'} </Text>
-        
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"49.94%","left":"0.1%","source":"https://images.daznservices.com/di/library/sporting_news/8/88/nba-bubble-072820-getty-ftr_171qre7cfhsui1b802zc3k2pks.jpg?t=-1690856413&quality=100","width":"100%","height":"50%"}]}
-        source = {{uri:'https://images.daznservices.com/di/library/sporting_news/8/88/nba-bubble-072820-getty-ftr_171qre7cfhsui1b802zc3k2pks.jpg?t=-1690856413&quality=100'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-<TouchableOpacity
-          
-          onPress = { async function(){
-            
-             const { status } = await Calendar.requestCalendarPermissionsAsync();
-      const reminderPermission = Calendar.requestRemindersPermissionsAsync();
-      if (status === 'granted') {
-        const calendars = await Calendar.getCalendarsAsync();
-        const defaultCalendarSource =
-        Platform.OS === 'ios';
-        const sportsCal = await AsyncStorage.getItem('calendar');
-      if(sportsCal === null){
-        const newCalendarID = await Calendar.createCalendarAsync({
-          title: 'Sports Return Calendar',
-          color: 'blue',
-          entityType: Calendar.EntityTypes.EVENT,
-          sourceId: defaultCalendarSource.id,
-          source: defaultCalendarSource,
-          name: 'internalCalendarName',
-          ownerAccount: 'personal',
-          accessLevel: Calendar.CalendarAccessLevel.OWNER,
-        });
-
-        storeData("calendar", newCalendarID);
-        var date = new Date();
-        date.setDate(29);
-        date.setMonth(9)
-        date.setYear("2020")
-        var enddate = new Date();
-        enddate.setDate(30);
-        enddate.setMonth(9)
-        enddate.setYear("2020")
-
-        var id = await Calendar.createEventAsync(newCalendarID, {
-          title:"NBA Returns",
-          startDate: date,
-          endDate: enddate
-
-        })
-
-        alert("Its on your calendar!");
-
-      } else {
-       
-        var date = new Date();
-        date.setDate(29);
-        date.setMonth(9)
-        date.setYear("2020")
-        var enddate = new Date();
-        enddate.setDate(30);
-        enddate.setMonth(9)
-        enddate.setYear("2020")
-
-         var id = await Calendar.createEventAsync(sportsCal, {
-          title:"NBA Returns",
-          startDate: date,
-          endDate: enddate
-
-        })
-
-          alert("Its on your calendar!");
-      }
-     
-    }
-
-
-
-            }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, 
-            backgroundColor:'purple',
-             alignItems:'center',
-             justifyContent:'center', height: "7%",  
-             title:'Test', borderColor: 'gray', color:'black',
-             top:"70%",
-             left:"35%",
-             textAlign:'center',
-              borderRadius:15, borderWidth: 1},
-              {"innerText":"'Previous Page'"}]}
-        >
-        <Text style = {{color:"white", textAlign:'center'}}>
-
-        {'Create Calendar Event'}
-
-       </Text>
-        </TouchableOpacity>
-
-      
  <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("SportsPage"); that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo('Badtwo'); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -489,27 +298,109 @@ function unwrap_dynamically(value,default_value){
             position:'absolute',top:0,left:0, 
             backgroundColor:'#8fd158',
              alignItems:'center',
-             top:"4%",
-             justifyContent:'center', height: "4%",  
+             justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"innerText":"'Previous Page'"}]}
+              {"top":"24%","left":"6.47%"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Previous Page'}
+        {}
 
        </Text>
         </TouchableOpacity>
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"19.27%","left":"28.79%","innerText":"   appData.timer + \" seconds until refresh\";"}]}
-        > {   appData.timer + " seconds until refresh"} </Text>
-        
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo('Badtwo'); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"23.22%","left":"55.34%"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo('Badtwo'); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"42.13%","left":"7.23%"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo('Goodtwo'); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"43.3%","left":"53.06%"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {}
+
+       </Text>
+        </TouchableOpacity>
         </View>
         )
     }
   }
-    export default NBA; 
+    export default Nexttwo; 
 
 
 

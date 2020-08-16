@@ -1,14 +1,11 @@
 
 import React, { Component } from "react";
 import { ActivityIndicator, Button, Picker, Switch, Image, ScrollView, TouchableOpacity, StyleSheet, Text, View, TextInput, Dimensions } from "react-native";
+import Calendar from "./Calendar.js";
 import appData from "./global.js";
 import Multiplier from "./Multiplier.js";
 import { Audio } from 'expo-av'; 
 import * as SMS from 'expo-sms';
-import * as Calendar from 'expo-calendar';
-import AsyncStorage from '@react-native-community/async-storage';
-
-
 
 
 var d = new Date();
@@ -227,13 +224,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class Golf extends React.Component {
+ class Goodtwo extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","timer":11,"createdelems":[]}
+        this.state = {"loaded":false,"dbLinks":{},"index":23,"bindex1":3,"bindex2":2,"bindex3":0,"bindex4":1,"dbkeys":["Right Answer","Wrong Answer 1","Wrong Answer 2","Wrong Answer 3"],"counter":0,"correct":0,"repets":[],"daynumber":-1,"createdelems":[]}
     }
 
     componentDidMount(){
@@ -276,88 +273,47 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#cccccc"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#eaa8f7"}}>
       {this.state.createdelems}
 
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"15%","left":"0%","innerText":"'Golf'", textAlign:'center',"fontSize":resizeFont(27)}]}
-        > {'Golf'} </Text>
-
-        <TouchableOpacity
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"24.1%","left":"0.02%","innerText":"'yay'","fontSize":resizeFont(50),"backgroundColor":"green","textAlign":"center","color":"white"}]}
+        > {'yay'} </Text>
+        
+ <TouchableOpacity
           
-          onPress = { async function(){
-            
-             const { status } = await Calendar.requestCalendarPermissionsAsync();
-      const reminderPermission = Calendar.requestRemindersPermissionsAsync();
-      if (status === 'granted') {
-        const calendars = await Calendar.getCalendarsAsync();
-        const defaultCalendarSource =
-        Platform.OS === 'ios';
-        const sportsCal = await AsyncStorage.getItem('calendar');
-      if(sportsCal === null){
-        const newCalendarID = await Calendar.createCalendarAsync({
-          title: 'Sports Return Calendar',
-          color: 'blue',
-          entityType: Calendar.EntityTypes.EVENT,
-          sourceId: defaultCalendarSource.id,
-          source: defaultCalendarSource,
-          name: 'internalCalendarName',
-          ownerAccount: 'personal',
-          accessLevel: Calendar.CalendarAccessLevel.OWNER,
-        });
-
-        storeData("calendar", newCalendarID);
-        var date = new Date();
-        date.setDate(29);
-        date.setMonth(9)
-        date.setYear("2020")
-        var enddate = new Date();
-        enddate.setDate(30);
-        enddate.setMonth(9)
-        enddate.setYear("2020")
-
-        var id = await Calendar.createEventAsync(newCalendarID, {
-          title:"NBA Returns",
-          startDate: date,
-          endDate: enddate
-
-        })
-
-        alert("Its on your calendar!");
-
-      } else {
-       
-        var date = new Date();
-        date.setDate(29);
-        date.setMonth(9)
-        date.setYear("2020")
-        var enddate = new Date();
-        enddate.setDate(30);
-        enddate.setMonth(9)
-        enddate.setYear("2020")
-
-         var id = await Calendar.createEventAsync(sportsCal, {
-          title:"NBA Returns",
-          startDate: date,
-          endDate: enddate
-
-        })
-
-          alert("Its on your calendar!");
-      }
-     
+          onPress = { function(){appData.counter+=1
+appData.correct+=1
+if (appData.counter>=5){ 
+ that.props.goTo('FirstPage')
+}else{
+    appData.index= Math.floor(Math.random()*Questions.length) 
+    // while (appData.repets.appData.indexOf(appData.index) != -1) {
+    //   appData.index = Math.floor(Math.random() * appData.repets.length)
+    // };
+    // appData.repets.push(appData.index)
+    var lst = [0, 1, 2, 3];
+    for(let i =lst.length - 1; i > 0; i--){
+      const j = Math.floor(Math.random() * i)
+      const temp = lst[i]
+        lst[i] = lst[j]
+        lst[j] = temp
     }
+    appData.bindex1 = lst[0];
+    appData.bindex2 = lst[1];
+    appData.bindex3 = lst[2];
+    appData.bindex4 = lst[3];
+    that.props.goTo('Next')
 
-
-
-            }}  
+}  
+   
+; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
             shadowOpacity: 1, // IOS
             shadowRadius: 1, //IOS
             backgroundColor: '#fff',
-            zIndex:100,
             elevation: 2, // Android
             justifyContent: 'center',
             alignItems: 'center',
@@ -365,78 +321,24 @@ function unwrap_dynamically(value,default_value){
             height:"7%",
             width:"30%",
             position:'absolute',top:0,left:0, 
-            backgroundColor:'purple',
+            backgroundColor:'#8fd158',
              alignItems:'center',
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
-             top:"70%",
-             left:"35%",
-             textAlign:'center',
               borderRadius:15, borderWidth: 1},
-              {"innerText":"'Previous Page'"}]}
-        >
-        <Text style = {{color:"white", textAlign:'center'}}>
-
-        {'Create Calendar Event'}
-
-       </Text>
-        </TouchableOpacity>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"28.32%","left":"1.3%","innerText":"'The PGA has already resumed and has been playing since June 11th. The LPGA is set to reschedule on July 31st'"}]}
-        > {'The PGA has already resumed and has been playing since June 11th. The LPGA is set to reschedule on July 31st'} </Text>
-        
- <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("SportsPage"); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"3%",
-            width:"30%",
-            position:'absolute',top:0,left:0, 
-            backgroundColor:'#8fd158',
-             alignItems:'center',
-             top:"3%",
-             justifyContent:'center', height: "4%",  
-             title:'Test', borderColor: 'gray', color:'black',
-              borderRadius:15, borderWidth: 1},
-              {"innerText":"'Previous Page'"}]}
+              {"top":"77.03%","left":"37.61%","innerText":"'Go On'"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Previous Page'}
+        {'Go On'}
 
        </Text>
         </TouchableOpacity>
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"44.83%","left":"0%","height":"55%","width":"100%","source":"https://tse4.mm.bing.net/th?id=OIP._N3Mmw1De-qhfhubsecfxgHaEK&pid=Api&P=0&w=274&h=155"}]}
-        source = {{uri:'https://tse4.mm.bing.net/th?id=OIP._N3Mmw1De-qhfhubsecfxgHaEK&pid=Api&P=0&w=274&h=155'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"22.84%","left":"30.92%","innerText":"   appData.timer + \" seconds until refresh\";"}]}
-        > {   appData.timer + " seconds until refresh"} </Text>
-        
         </View>
         )
     }
   }
-    export default Golf; 
+    export default Goodtwo; 
 
 
 
