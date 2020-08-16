@@ -1,0 +1,6 @@
+module Pods_WhenAreSportsBack {
+  umbrella header "Pods-WhenAreSportsBack-umbrella.h"
+
+  export *
+  module * { export * }
+}
