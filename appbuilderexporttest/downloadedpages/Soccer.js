@@ -1,11 +1,13 @@
 
 import React, { Component } from "react";
 import { ActivityIndicator, Button, Picker, Switch, Image, ScrollView, TouchableOpacity, StyleSheet, Text, View, TextInput, Dimensions } from "react-native";
-import Calendar from "./Calendar.js";
+//import Calendar from "./Calendar.js";
 import appData from "./global.js";
 import Multiplier from "./Multiplier.js";
 import { Audio } from 'expo-av'; 
 import * as SMS from 'expo-sms';
+import * as Calendar from 'expo-calendar';
+import AsyncStorage from '@react-native-community/async-storage';
 
 
 var d = new Date();
