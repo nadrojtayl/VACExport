@@ -290,7 +290,7 @@ class Multiplier extends Component{
         onPress = {function(){
           pause();
           play(elem.Song)
-          StartTimer();
+          // StartTimer();
         }}
 
          style = {{ alignItems:'center',justifyContent:'center', width:"10%", backgroundColor:'#30c2a2'}}>
