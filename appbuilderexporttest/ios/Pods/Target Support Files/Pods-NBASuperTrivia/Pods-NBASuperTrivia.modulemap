@@ -1,0 +1,6 @@
+module Pods_NBASuperTrivia {
+  umbrella header "Pods-NBASuperTrivia-umbrella.h"
+
+  export *
+  module * { export * }
+}
