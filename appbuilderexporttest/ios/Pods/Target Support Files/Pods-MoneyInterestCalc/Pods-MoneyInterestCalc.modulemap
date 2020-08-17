@@ -1,0 +1,6 @@
+module Pods_MoneyInterestCalc {
+  umbrella header "Pods-MoneyInterestCalc-umbrella.h"
+
+  export *
+  module * { export * }
+}
