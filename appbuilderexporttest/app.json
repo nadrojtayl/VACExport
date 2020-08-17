@@ -1,33 +1,33 @@
-  {
-      "expo": {
-        "name": "GamersLoungeNYC",
-        "slug": "GamersLoungeNYC",
-        "platforms": [
-          "ios",
-          "android",
-          "web"
-        ],
-        "version": "1.0.0",
-        "orientation": "portrait",
-        "icon": "./assets/ficon.png",
-        "splash": {
-          "image": "./assets/splash.png",
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
-        },
-        "updates": {
-          "fallbackToCacheTimeout": 0
-        },
-        "assetBundlePatterns": [
-          "**/*"
-        ],
-        "ios": {
-          "supportsTablet": true,
-          "bundleIdentifier": "com.gamerslounge.gamerslounge"
-        },
-        "android": {
-          "package": "com.gamerslounge.gamerslounge"
-        },
-        "entryPoint": "node_modules/expo/AppEntry.js"
-      }
-    }
+{
+  "expo": {
+    "name": "GamersLoungeNYC",
+    "slug": "GamersLoungeNYC",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/ficon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.gamerslounge.gamerslounge"
+    },
+    "android": {
+      "package": "com.gamerslounge.gamerslounge"
+    },
+    "entryPoint": "node_modules/expo/AppEntry.js"
+  }
+}
