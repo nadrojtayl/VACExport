@@ -224,7 +224,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class SignIn extends React.Component {
      
 
     constructor(props)
@@ -277,110 +277,40 @@ function unwrap_dynamically(value,default_value){
       {this.state.createdelems}
 
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"4.36%","innerText":"'MOOVE'", alignItems:'center', "fontSize":resizeFont(60),"fontStyle":"Times New Roman","fontFamily":"Helvetica","color":"lavender", textAlign:'center'}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"6.95%", textAlign:'center', "innerText":"'MOOVE'","fontWeight":"bold", fontSize:20}]}
         > {'MOOVE'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"12.55%","left":"39.9%","innerText":"'Sign In'","fontSize":resizeFont(25),"color":"lavender","fontFamily":"Times New Roman"}]}
+        > {'Sign In'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"19.46%","left":"4.9%","innerText":"'Username:'","fontSize":resizeFont(20),"color":"white","fontFamily":"Times New Roman"}]}
+        > {'Username:'} </Text>
+        
+<TextInput
+       style= {[{color:'black', position:'absolute', width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"19.3%","left":"37.42%","color":"black","borderColor":"lavender"}]}
+        value={appData["SignIninput3"]}
+         onChangeText={function(val){ appData["SignIninput3"] = val; that.forceUpdate();   } }
+        />
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"28.78%","left":"4.9%","innerText":"'Password:'","fontSize":resizeFont(20),"color":"white","fontFamily":"Times New Roman"}]}
+        > {'Password:'} </Text>
+        
+<TextInput
+       style= {[{position:'absolute', width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"28.13%","left":"36.87%","color":"black","borderColor":"lavender"}]}
+        value={appData["SignIninput5"]}
+         onChangeText={function(val){ appData["SignIninput5"] = val; that.forceUpdate();   } }
+        />
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"53.84%","left":"19.51%","innerText":"'Don't have an account?'","fontSize":"resizeFont(25)","color":"lavender","fontFamily":"Times New Roman"}]}
+        > {'Dont have an account?'} </Text>
         
 
 
       <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"19.62%","left":"14.82%","source":"https://us.123rf.com/450wm/olgamaslov/olgamaslov1603/olgamaslov160300162/53862974-stock-vector-fitness-emblem-woman-silhouette-illustration.jpg?ver=6"}]}
-        source = {{uri:'https://us.123rf.com/450wm/olgamaslov/olgamaslov1603/olgamaslov160300162/53862974-stock-vector-fitness-emblem-woman-silhouette-illustration.jpg?ver=6'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"19.62%","left":"41.28%","source":"https://www.netclipart.com/pp/m/32-326469_fitness-clipart-group-fitness-fitness-cartoon-transparent.png"}]}
-        source = {{uri:'https://www.netclipart.com/pp/m/32-326469_fitness-clipart-group-fitness-fitness-cartoon-transparent.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"19.62%","left":"68.28%","source":"https://www.netclipart.com/pp/m/340-3406114_fitness-clipart.png"}]}
-        source = {{uri:'https://www.netclipart.com/pp/m/340-3406114_fitness-clipart.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"42.91%","left":"15.1%","source":"https://www.clipartkey.com/mpngs/m/11-113014_clipart-exercise-weight-gym-transparent-background-fitness-png.png"}]}
-        source = {{uri:'https://www.clipartkey.com/mpngs/m/11-113014_clipart-exercise-weight-gym-transparent-background-fitness-png.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"43.07%","left":"41.83%","source":"https://www.pngitem.com/pimgs/m/178-1788846_health-transparent-healthy-transparent-background-healthy-clipart-png.png"}]}
-        source = {{uri:'https://www.pngitem.com/pimgs/m/178-1788846_health-transparent-healthy-transparent-background-healthy-clipart-png.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"43.07%","left":"68.56%","source":"https://pp.netclipart.com/pp/s/35-354190_community-health-clipart.png"}]}
-        source = {{uri:'https://pp.netclipart.com/pp/s/35-354190_community-health-clipart.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"67.01%","left":"15.1%","source":"https://www.vippng.com/png/detail/106-1061168_health-clipart-png-medical-services-clip-art.png"}]}
-        source = {{uri:'https://www.vippng.com/png/detail/106-1061168_health-clipart-png-medical-services-clip-art.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"66.85%","left":"42.38%","source":"https://www.netclipart.com/pp/m/97-972744_mass-scale-clip-art-weight-scale-clipart-png.png"}]}
-        source = {{uri:'https://www.netclipart.com/pp/m/97-972744_mass-scale-clip-art-weight-scale-clipart-png.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"66.85%","left":"69.11%","source":"https://static.vecteezy.com/system/resources/previews/000/463/565/non_2x/healthy-food-clipart-vector.jpg"}]}
-        source = {{uri:'https://static.vecteezy.com/system/resources/previews/000/463/565/non_2x/healthy-food-clipart-vector.jpg'}}
+        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"75.2%","left":"25.57%","source":"https://i.imgflip.com/2yao8g.jpg?a443064","width":"50%"}]}
+        source = {{uri:'https://i.imgflip.com/2yao8g.jpg?a443064'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
@@ -390,7 +320,15 @@ function unwrap_dynamically(value,default_value){
       
  <TouchableOpacity
           
-          onPress = { function(){that.props.goTo('SignIn');; that.forceUpdate(); }}  
+          onPress = { function(){alert('start');
+if (filter_list_of_objs(Users,"Username","jasminecarnevale")){
+    alert("true"); 
+    that.props.goTo('Calories');
+}else{
+    alert("false");
+    that.props.goTo('CreateAccount');
+}
+; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -409,11 +347,40 @@ function unwrap_dynamically(value,default_value){
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"90.31%","left":"35.77%","backgroundColor":"lavender","innerText":"'Get Started'","fontFamily":"Times New Roman"}]}
+              {"top":"38.09%","left":"34.66%","innerText":"'Sign In'","backgroundColor":"lavender"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Get Started'}
+        {'Sign In'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo('CreateAccount'); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"62.19%","left":"34.94%","innerText":"'Create Account'","backgroundColor":"lavender"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Create Account'}
 
        </Text>
         </TouchableOpacity>
@@ -421,7 +388,7 @@ function unwrap_dynamically(value,default_value){
         )
     }
   }
-    export default FirstPage; 
+    export default SignIn; 
 
 
 

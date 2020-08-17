@@ -224,7 +224,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class CreateAccount extends React.Component {
      
 
     constructor(props)
@@ -277,120 +277,35 @@ function unwrap_dynamically(value,default_value){
       {this.state.createdelems}
 
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"4.36%","innerText":"'MOOVE'", alignItems:'center', "fontSize":resizeFont(60),"fontStyle":"Times New Roman","fontFamily":"Helvetica","color":"lavender", textAlign:'center'}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"1.46%","left":"5.18%","innerText":"'MOOVE'","fontWeight":"bold"}]}
         > {'MOOVE'} </Text>
         
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"19.62%","left":"14.82%","source":"https://us.123rf.com/450wm/olgamaslov/olgamaslov1603/olgamaslov160300162/53862974-stock-vector-fitness-emblem-woman-silhouette-illustration.jpg?ver=6"}]}
-        source = {{uri:'https://us.123rf.com/450wm/olgamaslov/olgamaslov1603/olgamaslov160300162/53862974-stock-vector-fitness-emblem-woman-silhouette-illustration.jpg?ver=6'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"19.62%","left":"41.28%","source":"https://www.netclipart.com/pp/m/32-326469_fitness-clipart-group-fitness-fitness-cartoon-transparent.png"}]}
-        source = {{uri:'https://www.netclipart.com/pp/m/32-326469_fitness-clipart-group-fitness-fitness-cartoon-transparent.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"19.62%","left":"68.28%","source":"https://www.netclipart.com/pp/m/340-3406114_fitness-clipart.png"}]}
-        source = {{uri:'https://www.netclipart.com/pp/m/340-3406114_fitness-clipart.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"42.91%","left":"15.1%","source":"https://www.clipartkey.com/mpngs/m/11-113014_clipart-exercise-weight-gym-transparent-background-fitness-png.png"}]}
-        source = {{uri:'https://www.clipartkey.com/mpngs/m/11-113014_clipart-exercise-weight-gym-transparent-background-fitness-png.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"43.07%","left":"41.83%","source":"https://www.pngitem.com/pimgs/m/178-1788846_health-transparent-healthy-transparent-background-healthy-clipart-png.png"}]}
-        source = {{uri:'https://www.pngitem.com/pimgs/m/178-1788846_health-transparent-healthy-transparent-background-healthy-clipart-png.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"43.07%","left":"68.56%","source":"https://pp.netclipart.com/pp/s/35-354190_community-health-clipart.png"}]}
-        source = {{uri:'https://pp.netclipart.com/pp/s/35-354190_community-health-clipart.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"67.01%","left":"15.1%","source":"https://www.vippng.com/png/detail/106-1061168_health-clipart-png-medical-services-clip-art.png"}]}
-        source = {{uri:'https://www.vippng.com/png/detail/106-1061168_health-clipart-png-medical-services-clip-art.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"66.85%","left":"42.38%","source":"https://www.netclipart.com/pp/m/97-972744_mass-scale-clip-art-weight-scale-clipart-png.png"}]}
-        source = {{uri:'https://www.netclipart.com/pp/m/97-972744_mass-scale-clip-art-weight-scale-clipart-png.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"66.85%","left":"69.11%","source":"https://static.vecteezy.com/system/resources/previews/000/463/565/non_2x/healthy-food-clipart-vector.jpg"}]}
-        source = {{uri:'https://static.vecteezy.com/system/resources/previews/000/463/565/non_2x/healthy-food-clipart-vector.jpg'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"13.03%","left":"6.83%","innerText":"'Choose a Username:'","fontSize":"resizeFont(25)","color":"white","fontFamily":"Times New Roman"}]}
+        > {'Choose a Username:'} </Text>
+        
+<TextInput
+       style= {[{position:'absolute', width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"19.78%","left":"28.05%","color":"white","borderColor":"lavender"}]}
+        value={appData["CreateAccountinput2"]}
+         onChangeText={function(val){ appData["CreateAccountinput2"] = val; that.forceUpdate();   } }
+        />
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"26.69%","left":"6.56%","innerText":"'Choose a Password:'","fontSize":"resizeFont(25)","color":"white","fontFamily":"Times New Roman"}]}
+        > {'Choose a Password:'} </Text>
+        
+<TextInput
+       style= {[{position:'absolute', width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"32.31%","left":"27.5%","color":"white","borderColor":"lavender"}]}
+        value={appData["CreateAccountinput4"]}
+         onChangeText={function(val){ appData["CreateAccountinput4"] = val; that.forceUpdate();   } }
+        />
  <TouchableOpacity
           
-          onPress = { function(){that.props.goTo('SignIn');; that.forceUpdate(); }}  
+          onPress = { function(){if(filter_list_of_objs(Users,"Username",appData.CreateAccountinput2).length!==0){
+    alert("This Username Is Already Taken")
+}else{
+    that.props.saveTo('Users',{"Username" : appData.CreateAccountinput2, "Password" : appData.CreateAccountinput4} );
+    that.props.goTo('Stats');
+}; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -409,19 +324,31 @@ function unwrap_dynamically(value,default_value){
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"90.31%","left":"35.77%","backgroundColor":"lavender","innerText":"'Get Started'","fontFamily":"Times New Roman"}]}
+              {"top":"47.57%","left":"35.44%","innerText":"'Next'","backgroundColor":"lavender"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Get Started'}
+        {'Next'}
 
        </Text>
         </TouchableOpacity>
+
+
+      <Image
+        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"68.78%","left":"29.98%","source":"https://i.imgflip.com/2yao8g.jpg?a443064","width":"40%"}]}
+        source = {{uri:'https://i.imgflip.com/2yao8g.jpg?a443064'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
         </View>
         )
     }
   }
-    export default FirstPage; 
+    export default CreateAccount; 
 
 
 

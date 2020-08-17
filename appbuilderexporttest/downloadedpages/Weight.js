@@ -224,7 +224,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class Weight extends React.Component {
      
 
     constructor(props)
@@ -277,110 +277,30 @@ function unwrap_dynamically(value,default_value){
       {this.state.createdelems}
 
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"4.36%","innerText":"'MOOVE'", alignItems:'center', "fontSize":resizeFont(60),"fontStyle":"Times New Roman","fontFamily":"Helvetica","color":"lavender", textAlign:'center'}]}
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"2.43%","left":"4.63%","innerText":"'MOOVE'","fontWeight":"bold"}]}
         > {'MOOVE'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"11.91%","left":"21.16%","innerText":" \"Current Weight: \" + appData.currentWeight; ","color":"white","fontSize":"resizeFont(25)","fontFamily":"Times New Roman"}]}
+        > { "Current Weight: " + appData.currentWeight } </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"21.55%","left":"26.4%","innerText":"  \"Goal Weight: \" + appData.goalWeight; ","color":"white","fontSize":"resizeFont(25)","fontFamily":"Times New Roman"}]}
+        > {  "Goal Weight: " + appData.goalWeight } </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"36.81%","left":"16.48%","innerText":"'BMI (Body Mass Index): '","color":"white","fontSize":"resizeFont(25)","fontFamily":"Times New Roman"}]}
+        > {'BMI (Body Mass Index): '} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"42.27%","left":"19.51%","innerText":" appData.bodyMassIndex;","color":"white","fontSize":"resizeFont(30)","fontFamily":"Times New Roman"}]}
+        > { appData.bodyMassIndex} </Text>
         
 
 
       <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"19.62%","left":"14.82%","source":"https://us.123rf.com/450wm/olgamaslov/olgamaslov1603/olgamaslov160300162/53862974-stock-vector-fitness-emblem-woman-silhouette-illustration.jpg?ver=6"}]}
-        source = {{uri:'https://us.123rf.com/450wm/olgamaslov/olgamaslov1603/olgamaslov160300162/53862974-stock-vector-fitness-emblem-woman-silhouette-illustration.jpg?ver=6'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"19.62%","left":"41.28%","source":"https://www.netclipart.com/pp/m/32-326469_fitness-clipart-group-fitness-fitness-cartoon-transparent.png"}]}
-        source = {{uri:'https://www.netclipart.com/pp/m/32-326469_fitness-clipart-group-fitness-fitness-cartoon-transparent.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"19.62%","left":"68.28%","source":"https://www.netclipart.com/pp/m/340-3406114_fitness-clipart.png"}]}
-        source = {{uri:'https://www.netclipart.com/pp/m/340-3406114_fitness-clipart.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"42.91%","left":"15.1%","source":"https://www.clipartkey.com/mpngs/m/11-113014_clipart-exercise-weight-gym-transparent-background-fitness-png.png"}]}
-        source = {{uri:'https://www.clipartkey.com/mpngs/m/11-113014_clipart-exercise-weight-gym-transparent-background-fitness-png.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"43.07%","left":"41.83%","source":"https://www.pngitem.com/pimgs/m/178-1788846_health-transparent-healthy-transparent-background-healthy-clipart-png.png"}]}
-        source = {{uri:'https://www.pngitem.com/pimgs/m/178-1788846_health-transparent-healthy-transparent-background-healthy-clipart-png.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"43.07%","left":"68.56%","source":"https://pp.netclipart.com/pp/s/35-354190_community-health-clipart.png"}]}
-        source = {{uri:'https://pp.netclipart.com/pp/s/35-354190_community-health-clipart.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"67.01%","left":"15.1%","source":"https://www.vippng.com/png/detail/106-1061168_health-clipart-png-medical-services-clip-art.png"}]}
-        source = {{uri:'https://www.vippng.com/png/detail/106-1061168_health-clipart-png-medical-services-clip-art.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"66.85%","left":"42.38%","source":"https://www.netclipart.com/pp/m/97-972744_mass-scale-clip-art-weight-scale-clipart-png.png"}]}
-        source = {{uri:'https://www.netclipart.com/pp/m/97-972744_mass-scale-clip-art-weight-scale-clipart-png.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"66.85%","left":"69.11%","source":"https://static.vecteezy.com/system/resources/previews/000/463/565/non_2x/healthy-food-clipart-vector.jpg"}]}
-        source = {{uri:'https://static.vecteezy.com/system/resources/previews/000/463/565/non_2x/healthy-food-clipart-vector.jpg'}}
+        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"66.21%","left":"28.52%","source":"https://i.imgflip.com/2yao8g.jpg?a443064","width":"40%"}]}
+        source = {{uri:'https://i.imgflip.com/2yao8g.jpg?a443064'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
@@ -390,7 +310,7 @@ function unwrap_dynamically(value,default_value){
       
  <TouchableOpacity
           
-          onPress = { function(){that.props.goTo('SignIn');; that.forceUpdate(); }}  
+          onPress = { function(){; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -409,19 +329,125 @@ function unwrap_dynamically(value,default_value){
              justifyContent:'center', height: "7%",  
              title:'Test', borderColor: 'gray', color:'black',
               borderRadius:15, borderWidth: 1},
-              {"top":"90.31%","left":"35.77%","backgroundColor":"lavender","innerText":"'Get Started'","fontFamily":"Times New Roman"}]}
+              {"top":"93.2%","left":"34.39%","innerText":"'Weight'","backgroundColor":"mediumslateblue"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Get Started'}
+        {'Weight'}
 
        </Text>
         </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo('Calories'); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"93.2%","left":"4.63%","innerText":"'Calories'","backgroundColor":"lavender"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Calories'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo('Recipes'); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, 
+            backgroundColor:'#8fd158',
+             alignItems:'center',
+             justifyContent:'center', height: "7%",  
+             title:'Test', borderColor: 'gray', color:'black',
+              borderRadius:15, borderWidth: 1},
+              {"top":"93.04%","left":"64.15%","innerText":"'Recipes'","backgroundColor":"lavender"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Recipes'}
+
+       </Text>
+        </TouchableOpacity>
+
+
+      <Image
+        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"88.22%","left":"14.27%","source":"https://i.pinimg.com/originals/48/39/63/48396351091a31d5636205f16d6b343c.jpg","width":"10%","height":"5%","borderColor":"lavender","borderWidth":5}]}
+        source = {{uri:'https://i.pinimg.com/originals/48/39/63/48396351091a31d5636205f16d6b343c.jpg'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+
+
+      <Image
+        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"88.06%","left":"44.31%","source":"https://www.clipartkey.com/mpngs/m/238-2385312_weight-clipart-kilogram-weight-tons-icon.png","width":"10%","borderWidth":5,"height":"5%","borderColor":"mediumslateblue"}]}
+        source = {{uri:'https://www.clipartkey.com/mpngs/m/238-2385312_weight-clipart-kilogram-weight-tons-icon.png'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+
+
+      <Image
+        style= {[{width:"20%",height:"20%",position:'absolute'}, {"top":"88.06%","left":"74.07%","source":"https://www.clipartkey.com/mpngs/m/140-1406707_recipe-icon-png-recipe-clipart-black-and-white.png","height":"5%","width":"10%","borderWidth":5,"borderColor":"lavender"}]}
+        source = {{uri:'https://www.clipartkey.com/mpngs/m/140-1406707_recipe-icon-png-recipe-clipart-black-and-white.png'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"50.14%","left":"27.99%","innerText":"'A BMI Over 25 Is Too High'","color":"white","fontSize":"resizeFont(15)","fontFamily":"Times New Roman"}]}
+        > {'A BMI Over 25 Is Too High'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"53.19%","left":"25.33%","innerText":"'A BMI Under 18.5 Is Too Low'","color":"white","fontSize":"resizeFont(15)","fontFamily":"Times New Roman"}]}
+        > {'A BMI Under 18.5 Is Too Low'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"55.6%","left":"14.69%","innerText":"'A BMI Over 18.5 and Under 24.9 is Healthy'","color":"white","fontSize":"resizeFont(15)","fontFamily":"Times New Roman"}]}
+        > {'A BMI Over 18.5 and Under 24.9 is Healthy'} </Text>
+        
         </View>
         )
     }
   }
-    export default FirstPage; 
+    export default Weight; 
 
 
 
