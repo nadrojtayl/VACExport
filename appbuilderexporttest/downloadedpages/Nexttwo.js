@@ -208,13 +208,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class SCULPTORS extends React.Component {
+ class Nexttwo extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"FirstPageinput0":""}
+        this.state = {"loaded":false,"dbLinks":{},"index":20,"bindex1":3,"bindex2":2,"bindex3":0,"bindex4":1,"dbkeys":["Right Answer","Wrong Answer 1","Wrong Answer 2","Wrong Answer 3"],"counter":3,"correct":3,"repets":[]}
     }
 
 
@@ -235,96 +235,108 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#eaa8f7"}}>
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"8.54%","left":"35.93%","innerText":"'SCULPTORS'","color":"purple","fontSize":"resizeFont(20)"}]}
-        > {'SCULPTORS'} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"1.77%","left":"46.22%","fontSize":"resizeFont(50)","innerText":"''thing''"}]}
+        > thing </Text>
         
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"73.36%","left":"72.67%"}]}
-        > {} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"72.24%","left":"16.68%"}]}
-        > {} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"50.01%","left":"44.04%"}]}
-        > {} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"24.42%","left":"66.59%"}]}
-        > {} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"23.67%","left":"20.22%"}]}
-        > {} </Text>
-        
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo('Badtwo'); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"24%","left":"6.47%"}]}
+        >
+        <Text style = {{color:"black"}}>
 
+        {}
 
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"top":"26.66%","left":"63.3%"}]}
-        source = {{uri:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png"}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo('Badtwo'); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"23.22%","left":"55.34%"}]}
+        >
+        <Text style = {{color:"black"}}>
 
+        {}
 
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo('Badtwo'); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"42.13%","left":"7.23%"}]}
+        >
+        <Text style = {{color:"black"}}>
 
-      
+        {}
 
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo('Goodtwo'); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"43.3%","left":"53.06%"}]}
+        >
+        <Text style = {{color:"black"}}>
 
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"top":"5.92%","left":"17.69%"}]}
-        source = {{uri:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png"}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
+        {}
 
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"top":"36.75%","left":"70.39%"}]}
-        source = {{uri:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png"}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"top":"-6.78%","left":"41.25%"}]}
-        source = {{uri:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png"}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"top":"-3.79%","left":"14.65%"}]}
-        source = {{uri:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tobu_Skytree_Line_%28TS%29_symbol.svg/600px-Tobu_Skytree_Line_%28TS%29_symbol.svg.png"}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
+       </Text>
+        </TouchableOpacity>
         </View>
         )
     }
   }
-    export default SCULPTORS; 
+    export default Nexttwo; 
 
 
 

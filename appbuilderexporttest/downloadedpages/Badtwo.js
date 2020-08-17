@@ -208,13 +208,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class DaVinciDetails extends React.Component {
+ class Badtwo extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"FirstPageinput0":"","details":"im the first image"}
+        this.state = {"loaded":false,"dbLinks":{},"index":20,"bindex1":3,"bindex2":2,"bindex3":0,"bindex4":1,"dbkeys":["Right Answer","Wrong Answer 1","Wrong Answer 2","Wrong Answer 3"],"counter":3,"correct":3,"repets":[]}
     }
 
 
@@ -235,16 +235,62 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#eaa8f7"}}>
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":" appData.details;"}]}
-        > { appData.details} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"32.3%","left":"0.02%","innerText":"'wrong'","fontSize":"resizeFont(50)","textAlign":"center","backgroundColor":"red","color":"white"}]}
+        > {'wrong'} </Text>
         
+ <TouchableOpacity
+          
+          onPress = { function(){appData.counter+=1
+if (appData.counter>=5){
+    that.props.goTo('FirstPage')
+}else {
+  appData.index= Math.floor(Math.random()*Questions.length)
+//   while (appData.repets.appData.indexOf(appData.index) != -1) {
+//       appData.index = Math.floor(Math.random() * appData.repets.length)
+//     } 
+//     appData.repets.push(appData.index)
+    var lst = [0, 1, 2, 3];
+    for(let i =lst.length - 1; i > 0; i--){
+      const j = Math.floor(Math.random() * i)
+      const temp = lst[i]
+        lst[i] = lst[j]
+        lst[j] = temp
+    }
+    appData.bindex1 = lst[0];
+    appData.bindex2 = lst[1];
+    appData.bindex3 = lst[2];
+    appData.bindex4 = lst[3];
+    that.props.goTo('Next')
+    
+}
+; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"76.06%","left":"32.8%","innerText":"'Go On'"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Go On'}
+
+       </Text>
+        </TouchableOpacity>
         </View>
         )
     }
   }
-    export default DaVinciDetails; 
+    export default Badtwo; 
 
 
 

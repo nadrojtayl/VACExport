@@ -4,7 +4,6 @@ import { ActivityIndicator, Button, Picker, Switch, Image, ScrollView, Touchable
 import Calendar from "./Calendar.js";
 import appData from "./global.js";
 import Multiplier from "./Multiplier.js";
-import { CheckBox } from 'react-native-elements';
 
 var d = new Date();
 var month = d.getMonth();
@@ -209,22 +208,20 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class VIDEOGRAPHERS extends React.Component {
+ class Next extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"FirstPageinput0":"","details":"Leonardo DaVinci"}
+        this.state = {"loaded":false,"dbLinks":{},"index":20,"bindex1":3,"bindex2":2,"bindex3":0,"bindex4":1,"dbkeys":["Right Answer","Wrong Answer 1","Wrong Answer 2","Wrong Answer 3"],"counter":3,"correct":3,"repets":[]}
     }
 
 
       
   
 
-    componentDidMount(){
-      appData.museums = this;
-    }
+
    
 
     render(){ 
@@ -238,13 +235,18 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#eaa8f7"}}>
       <Text
-          style= {[{ position:'absolute',zIndex:100,width:'100%'},{"top":"15.54%","left":"0%", textAlign:'center', "innerText":"'VIDEOGRAPHERS'","color":"purple","fontSize":resizeFont(20)}]}
-        > {'Museums with ' + appData.selectedArtist} </Text>
-         <TouchableOpacity
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"3.53%","left":"1.68%","fontSize":"resizeFont(20)","innerText":"  Questions[appData.index][\"Question\"];","backgroundColor":"white"}]}
+        > {  Questions[appData.index]["Question"]} </Text>
+        
+ <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("FirstPage")
+          onPress = { function(){if(appData.bindex1==0){ 
+that.props.goTo('Goodtwo')    
+}else {
+    that.props.goTo('Badtwo')
+}
 ; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
@@ -258,45 +260,103 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:"5%",left:0, backgroundColor:'#8fd158', 
-            alignItems:'center',justifyContent:'center', height: "7%", 
-             title:'Test', borderColor: 'gray', color:'black', 
-             borderRadius:15, borderWidth: 1},{"innerText":"'Home'"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"47.2%","left":"5.61%","innerText":"     Questions[appData.index][appData.dbkeys[appData.bindex1]] ","backgroundColor":"white","fontSize":"resizeFont(15)","height":"20%"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Home'}
+        {     Questions[appData.index][appData.dbkeys[appData.bindex1]] }
 
        </Text>
         </TouchableOpacity>
-        <View style = {{position:'absolute',marginTop:'50%', width:'100%', alignItems:'center'}}>
-        <ScrollView>
-        {appData.data.map(function(obj,ind){
-            return (
-              <View style = {{flexDirection:'row', backgroundColor:'transparent'}}>
-              <CheckBox
-                checked={appData.checked[ind]}
-                onPress={function(){appData.checked[ind] = true; appData.museums.forceUpdate();} }
-              />
-              <Text style = {{color:'black', marginTop:'5%'}}>{obj[appData.selectedArtist]}</Text>
-              
-              </View>
+ <TouchableOpacity
+          
+          onPress = { function(){if(appData.bindex2==0){ 
+that.props.goTo('Goodtwo')    
+}else {
+    that.props.goTo('Badtwo')
+}
+; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"47.98%","left":"57.17%","innerText":"  Questions[appData.index][appData.dbkeys[appData.bindex2]] ","backgroundColor":"white","fontSize":"resizeFont(15)","height":"20%"}]}
+        >
+        <Text style = {{color:"black"}}>
 
+        {  Questions[appData.index][appData.dbkeys[appData.bindex2]] }
 
-              )
-          })}
-        </ScrollView>
-        </View>
-        
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){if(appData.bindex3==0){ 
+that.props.goTo('Goodtwo')    
+}else {
+    that.props.goTo('Badtwo')
+}
+; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"73.13%","left":"6.55%","innerText":"  Questions[appData.index][appData.dbkeys[appData.bindex3]] ","backgroundColor":"white","fontSize":"resizeFont(15)","height":"20%"}]}
+        >
+        <Text style = {{color:"black"}}>
 
+        {  Questions[appData.index][appData.dbkeys[appData.bindex3]] }
 
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){if(appData.bindex4==0){ 
+that.props.goTo('Goodtwo')    
+}else {
+    that.props.goTo('Badtwo')
+}
+; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"72.74%","left":"57.48%","innerText":"  Questions[appData.index][appData.dbkeys[appData.bindex4]] ","backgroundColor":"white","fontSize":"resizeFont(15)","height":"20%"}]}
+        >
+        <Text style = {{color:"black"}}>
 
-      
+        {  Questions[appData.index][appData.dbkeys[appData.bindex4]] }
+
+       </Text>
+        </TouchableOpacity>
         </View>
         )
     }
   }
-    export default VIDEOGRAPHERS; 
+    export default Next; 
 
 
 

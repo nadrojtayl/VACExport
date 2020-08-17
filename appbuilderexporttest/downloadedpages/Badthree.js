@@ -208,7 +208,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class Badthree extends React.Component {
      
 
     constructor(props)
@@ -237,16 +237,12 @@ function unwrap_dynamically(value,default_value){
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#eaa8f7"}}>
       <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"5.45%","left":"-0.37%","fontSize":"resizeFont(40)","innerText":"'Tr?v!a'","backgroundColor":"white","color":"purple","textAlign":"center"}]}
-        > {'Tr?v!a'} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"39.4%","left":"32.55%","innerText":"'wrong'","fontSize":"resizeFont(50)"}]}
+        > {'wrong'} </Text>
         
  <TouchableOpacity
           
-          onPress = { function(){appData.counter =0 
-appData.correct=0
-appData.index= Math.floor(Math.random()*Questions.length)
-appData.repets =[]
-that.props.goTo('Next') ; that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo('Next'); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -259,23 +255,19 @@ that.props.goTo('Next') ; that.forceUpdate(); }}
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"55.75%","left":"24.43%","backgroundColor":"white","innerText":"'Start Game'","width":"50%","height":"30%"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"76.06%","left":"32.8%","innerText":"'Go On'"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Start Game'}
+        {'Go On'}
 
        </Text>
         </TouchableOpacity>
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"23.69%","left":"2.33%","innerText":"  \"you got \"+appData.correct+\" right of 5\";","fontSize":"resizeFont(30)","color":"white"}]}
-        > {  "you got "+appData.correct+" right of 5"} </Text>
-        
         </View>
         )
     }
   }
-    export default FirstPage; 
+    export default Badthree; 
 
 
 

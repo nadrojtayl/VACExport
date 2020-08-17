@@ -208,13 +208,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class Museums extends React.Component {
+ class Bad extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"FirstPageinput0":"","details":"Leonardo DaVinci"}
+        this.state = {"loaded":false,"dbLinks":{},"index":20,"bindex1":3,"bindex2":2,"bindex3":0,"bindex4":1,"dbkeys":["Right Answer","Wrong Answer 1","Wrong Answer 2","Wrong Answer 3"],"counter":3,"correct":3,"repets":[]}
     }
 
 
@@ -235,16 +235,14 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#C8A2C8"}}>
-        <TouchableOpacity
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#eaa8f7"}}>
+      <Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"39.4%","left":"32.55%","innerText":"'wrong'","fontSize":"resizeFont(50)"}]}
+        > {'wrong'} </Text>
+        
+ <TouchableOpacity
           
-          onPress = { function(){
-           
-          
-
-         that.props.goTo("FirstPage");
-
-          }}  
+          onPress = { function(){that.props.goTo('Next'); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -255,36 +253,21 @@ function unwrap_dynamically(value,default_value){
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            height:"5%",
+            height:"7%",
             width:"30%",
-            position:'absolute',
-            top:'5%',
-            backgroundColor:'#8fd158', 
-            alignItems:'center',justifyContent:'center',  
-             title:'Test', borderColor: 'gray',
-              color:'black', 
-             borderRadius:15, borderWidth: 1},{
-              "innerText":"'Home'"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"76.06%","left":"32.8%","innerText":"'Go On'"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'Back'}
+        {'Go On'}
 
        </Text>
         </TouchableOpacity>
-        <View style = {{marginTop:'43%', height:"100%"}}>
-        <Text style = {{textAlign:'center', fontWeight:'bold', textDecorationLine:'underline', fontSize:resizeFont(20)}}>Recommended Museums</Text>
-        {
-          appData.recommendedMuseums.map(function(museum){
-            return (<Text style = {{marginTop:height*0.02, textAlign:'center', fontSize:resizeFont(16)}}>{museum}</Text>)
-          })
-        }
-        </View>
         </View>
         )
     }
   }
-    export default Museums; 
+    export default Bad; 
 
 
 

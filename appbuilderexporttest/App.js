@@ -1,25 +1,34 @@
+
+
+
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 import FirstPage from './downloadedpages/FirstPage.js'
-import PAINTER from './downloadedpages/PAINTER.js'
-import DRAWERS from './downloadedpages/DRAWERS.js'
-import VIDEOGRAPHERS from './downloadedpages/VIDEOGRAPHERS.js'
-import SCULPTORS from './downloadedpages/SCULPTORS.js'
-import PHOTOGRAPHERS from './downloadedpages/PHOTOGRAPHERS.js'
-import DaVinciDetails from './downloadedpages/DaVinciDetails.js'
-import Sculptors from './downloadedpages/Scuptors.js'
+import Good from './downloadedpages/Good.js'
+import Next from './downloadedpages/Next.js'
+import Bad from './downloadedpages/Bad.js'
+import TestPage from './downloadedpages/TestPage.js'
+import Badtwo from './downloadedpages/Badtwo.js'
+import Goodtwo from './downloadedpages/Goodtwo.js'
+import Nexttwo from './downloadedpages/Nexttwo.js'
+import Badthree from './downloadedpages/Badthree.js'
 import appData from './downloadedpages/global.js';
-import Museums from './downloadedpages/Museums.js';
-
-
 /*
 EXPORT PROCESS
+
 1. Click export in AppBuilder
+
 2. Go through all the pages in the app, click export, and copy the page code into their own files in downloaded pages directory
+
 3. Import pages. In the render function of class App, add if statements that wil render the pages if that.state.page is changed.
+
 4. Fix errors (Adding quotation marks and semicolons where necessary). Go through every page code and replace 'goTo' with 'that.props.goTo'
+
+
 5. Take the generated componentdidmount from the class and paste it over the App class's componentdidmount
+
 6. Delete componentdidmount from generated classes
+
 */
 
 
@@ -75,10 +84,6 @@ function unwrap_dynamically(value,default_value){
   return try_eval(value) === undefined ? (default_value):  try_eval(value) 
 }
 
-function modifyPercentage(percent,change){
-  return (parseInt(percent.replace("#","")) + change) + "%"
-}
-
 
 //prettifier: https://www.prettifier.net/js/
 class App extends React.Component {
@@ -89,9 +94,9 @@ this.state = {dbLinks:{}, loaded:false, page:"FirstPage", numLoaded:0}
 }
 
 componentDidMount(){
-  appData.recommendedMuseums = [];
+  
   var that = this;
-  var dbLinks = {museums:"https://script.google.com/macros/s/AKfycbwGDmTBl5IV95GKMBdxpMP5VelXYZHDJ5qE8ECjEYjpLmHo-MQ/exec?sheetName=museums","data":"https://script.googleusercontent.com/a/macros/digitaltechhs.org/echo?user_content_key=TJ1016nYZ0DZbO4hzbuwXhn4w8GjDHf5tmhmvMpRJDGUTdsmaO0-eyTgEsB1D6ENPgZh0BqII6nVgZSiALqhZJMREqMeOpD1m5_BxDlH2jW0nuo2oDemN9CCS2h10ox_AUoGWcFkcRNXRXZ8MY7GJqi0KLuFqxv7xbbXQd4eZLDMLbD0tVjOiHhJreuiblCRxGEhNZKuDLliWZdKcaAJdWjzvu2sAxXIBaXBGGtuoifvYXGi_Aw5AmD053358BwcG7RcrVv2q0M&lib=MuTl0KbzMb0P-1mM6u-JMf9ycmz3e6ipK","link":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbx8uQw_4uk3m3ApBlCl80x_3B6hpocK9onsdnja/exec?sheetName=TJ"}
+  var dbLinks = {"Questions":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbxQZzBBG4-2DXJOZPWl0lxCEAhVS0ipKaHBm6onnA/exec?sheetName=Avery"}
   Object.keys(dbLinks).forEach(function(key){
     that.connectToDatabase(dbLinks[key], key);
   })
@@ -136,10 +141,10 @@ render(){
     
 
 
-    if(that.state.page === "PAINTER"){
+    if(that.state.page === "Good"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <PAINTER  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></PAINTER>
+             <Good  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Good>
           </View>
         )
     }
@@ -149,10 +154,10 @@ render(){
     
 
 
-    if(that.state.page === "DRAWERS"){
+    if(that.state.page === "Next"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <DRAWERS  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></DRAWERS>
+             <Next  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Next>
           </View>
         )
     }
@@ -162,10 +167,10 @@ render(){
     
 
 
-    if(that.state.page === "VIDEOGRAPHERS"){
+    if(that.state.page === "Bad"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <VIDEOGRAPHERS  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></VIDEOGRAPHERS>
+             <Bad  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Bad>
           </View>
         )
     }
@@ -175,10 +180,10 @@ render(){
     
 
 
-    if(that.state.page === "SCULPTORS"){
+    if(that.state.page === "TestPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <SCULPTORS  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SCULPTORS>
+             <TestPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></TestPage>
           </View>
         )
     }
@@ -188,10 +193,10 @@ render(){
     
 
 
-    if(that.state.page === "SCULPTORS"){
+    if(that.state.page === "Badtwo"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <SCULPTORS  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SCULPTORS>
+             <Badtwo  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Badtwo>
           </View>
         )
     }
@@ -201,10 +206,10 @@ render(){
     
 
 
-    if(that.state.page === "PHOTOGRAPHERS"){
+    if(that.state.page === "Goodtwo"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <PHOTOGRAPHERS  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></PHOTOGRAPHERS>
+             <Goodtwo  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Goodtwo>
           </View>
         )
     }
@@ -214,10 +219,10 @@ render(){
     
 
 
-    if(that.state.page === "DaVinciDetails"){
+    if(that.state.page === "Nexttwo"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <DaVinciDetails  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></DaVinciDetails>
+             <Nexttwo  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Nexttwo>
           </View>
         )
     }
@@ -227,31 +232,10 @@ render(){
     
 
 
-    if(that.state.page === "DaVinciDetails"){
+    if(that.state.page === "Badthree"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <DaVinciDetails  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></DaVinciDetails>
-          </View>
-        )
-    }
-
-     if(that.state.page === "Museums"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <Museums  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Museums>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "Scuptors"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <Scuptors  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Scuptors>
+             <Badthree  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Badthree>
           </View>
         )
     }
@@ -373,3 +357,10 @@ const styles = StyleSheet.create({
 
 export default App;
 
+
+
+
+
+
+
+  
