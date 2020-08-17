@@ -1,0 +1,6 @@
+module Pods_GamersLoungeNYC {
+  umbrella header "Pods-GamersLoungeNYC-umbrella.h"
+
+  export *
+  module * { export * }
+}
