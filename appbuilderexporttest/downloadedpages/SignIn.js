@@ -208,13 +208,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class VIEW extends React.Component {
+ class SignIn extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","FirstPageinput2":"Select","FirstPagepicker0":"","loaded":false,"dbLinks":{},"LOGIN_SIGNUPinput2":"","LOGIN_SIGNUPinput3":"","FirstPageinput4":"","FirstPageinput5":"","FirstPageinput3":"","CREATEinput3":"","CREATEinput4":"","index":1,"opacity":0,"FirstPageinput6":"","index2":1,"search":[{"Riddle":"Why did the lizard cross the playground?","Answer":"To get to the other slide.","Owner":"Mamacita"},{"Riddle":"Why?","Answer":"Of course","Owner":"Mamacita"}],"opacity2":0,"SEARCH_VIEWinput3":"","data":[{"Riddle":"What comes once in a minute, twice in a moment, but never in a thousand years?","Answer":"The letter \"M\".","Owner":"Riddlemethis","Index":0},{"Riddle":"What is more useful when it is broken?","Answer":"An egg.","Owner":"Riddlemethis","Index":1},{"Riddle":"I'm not clothes but I cover your body. The more I'm used, the thinner I grow. What am I?","Answer":"A bar of soap.","Owner":"Riddlemethis","Index":2},{"Riddle":"What eight letter word can you take one letter away from to create a new word, until it's just one letter?","Answer":"Starting.","Owner":"Riddlemethis","Index":3},{"Riddle":"What can go up and come down without moving?","Answer":"The temperature / Mood / The sun.","Owner":"Riddlemethis","Index":4},{"Riddle":"Why did the lizard cross the playground?","Answer":"To get to the other slide.","Owner":"Mamacita"},{"Riddle":"Why?","Answer":"Of course","Owner":"Mamacita"}],"SEARCH_VIEWinput8":"","searching":"","searching2":"","profiles":[{"Usernames":"Mamacita","Passwords":"1019"}]}
+        this.state = {"currentWeight":"120","goalWeight":"110","calPerDay":"2000","calEaten":0,"ThirdPageinput5":"400 ","ThirdPageinput7":"200","ThirdPageinput9":"500","ThirdPageinput11":"100","SecondPageinput9":"63","height":"63","PageTwoinput3":"jasmineusername","PageTwoinput5":"jasminepw","SignIninput3":"jasmineusername","SignIninput5":"jasminepw","Statsinput2":"120","Statsinput4":"110","Statsinput9":"63","Statsinput6":"2000","CreateAccountinput2":"jasminec","CreateAccountinput4":"pw","PageFourinput5":"200","PageFourinput7":"400","PageFourinput9":"500","PageFourinput11":"100","Caloriesinput5":"200","Caloriesinput7":"400","Caloriesinput9":"500","Caloriesinput11":"100","heightInM":1.6002032004064008,"weightInKg":54.29864253393665,"bodyMassIndex":21.2050208117435}
     }
 
 
@@ -235,104 +235,62 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"pink"}}>
-       <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo("HOME");; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"height":25,"width":50,"innerText":"'BACK'","top":"87.99%","left":"84.07%","fontSize":"resizeFont(12)"}]}
-        >
-        <Text style = {{color:"black"}}>
-
-        {'BACK'}
-
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){appData.data = Data_Riddles;
-appData.SEARCH_VIEWinput3 = "";
-appData.SEARCH_VIEWinput8 = "";
-appData.searching = "";
-appData.searching2 = "";
-appData.search = [];
-that.props.goTo('SEARCH_VIEW');
-; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},
-            {"innerText":"'SEARCH RIDDLES'","backgroundColor":"#204016","color":"pink","height":100,"width":200,"fontSize":"resizeFont(25)","fontWeight":"bold","top":"40.2%","left":"26.01%","borderWidth":1,"borderStyle":"dashed"}]}
-        >
-        <Text style = {{color:"pink"}}>
-
-        {'SEARCH RIDDLES'}
-
-       </Text>
-        </TouchableOpacity>
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'_____________________________________________________________'","top":"7.33%","left":"2.49%","color":"#204016","source":"___________________________________________________________"}]}
-        > {'_____________________________________________________________'} </Text>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"mediumslateblue"}}>
+      <Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"1.95%","left":"4.63%","innerText":"'MOOVE'","fontWeight":"bold"}]}
+        > {'MOOVE'} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"fontSize":30,"innerText":"'VIEW'","top":"3.74%","left":"3.5%","color":"#204016"}]}
-        > {'VIEW'} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},
+          {"top":"12.55%","left":"36.9%","innerText":"'Sign In'","fontSize":30,"color":"lavender","fontFamily":"Times New Roman"}]}
+        > {'Sign In'} </Text>
         
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"19.46%","left":"4.9%","innerText":"'Username:'","fontSize":"resizeFont(20)","color":"white","fontFamily":"Times New Roman"}]}
+        > {'Username:'} </Text>
+        
+<TextInput
+       style= {[{height:"5%", width:'70%', backgroundColor:'lavendar',borderColor:'grey',borderWidth:1},
+       {"top":"18.3%","left":"23.42%","color":"white","borderColor":"lavender"}]}
+        value={appData["SignIninput3"]}
+         onChangeText={function(val){ appData["SignIninput3"] = val; that.forceUpdate();   } }
+        />
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"28.78%","left":"4.9%","innerText":"'Password:'","fontSize":"resizeFont(20)","color":"white","fontFamily":"Times New Roman"}]}
+        > {'Password:'} </Text>
+        
+<TextInput
+       style= {[{width:"60%", height:"5%", width:'70%', backgroundColor:'lavendar',borderColor:'grey',borderWidth:1},
+       {"top":"22.13%","left":"23.4%","color":"white","borderColor":"lavender"}]}
+        value={appData["SignIninput5"]}
+         onChangeText={function(val){ appData["SignIninput5"] = val; that.forceUpdate();   } }
+        />
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},
+          {"top":"53.84%","left":"15.51%","innerText":"'Don't have an account?'","fontSize":30,"color":"lavender","fontFamily":"Times New Roman"}]}
+        > {"Don't have an account?"} </Text>
+        
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"top":"65.2%","left":"25.57%","source":"https://i.imgflip.com/2yao8g.jpg?a443064","width":"50%"}]}
+        source = {{uri:'https://i.imgflip.com/2yao8g.jpg?a443064'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
  <TouchableOpacity
           
-          onPress = { function(){that.props.goTo('ALL_VIEW');
-appData.index = 0;
-appData.opacity = 0;; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},
-            {"top":"55.67%","left":"26.52%","backgroundColor":"#204016","color":"pink","innerText":"'ALL RIDDLES'","height":100,"width":200,"fontSize":"resizeFont(25)","fontWeight":"bold","borderWidth":1,"borderStyle":"dashed"}]}
-        >
-        <Text style = {{color:"pink"}}>
-
-        {'ALL RIDDLES'}
-
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){appData.index2 = 0;
-appData.data = Data_Riddles;
-appData.search = filter_list_of_objs(appData.data, 'Owner',appData.FirstPageinput3);
-if (appData.search.length === 0){
-    alert("Create a riddle to view your riddles.");
-} else{   
-that.props.goTo("YOUR_RIDDLES");
+          onPress = { function(){alert('start');
+if (filter_list_of_objs(Users,"Username","jasminecarnevale")){
+    alert("true"); 
+    that.props.goTo('Calories');
+}else{
+    alert("false");
+    that.props.goTo('CreateAccount');
 }
 ; that.forceUpdate(); }}  
           style= {[{
@@ -348,11 +306,34 @@ that.props.goTo("YOUR_RIDDLES");
             height:"7%",
             width:"30%",
             position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},
-            {"innerText":"'YOUR RIDDLES'","backgroundColor":"#204016","color":"pink","height":100,"width":200,"fontSize":"resizeFont(25)","fontWeight":"bold","top":"24.91%","left":"25.51%","borderWidth":1,"borderStyle":"dashed"}]}
+            {"fontSize": 30,"top":"34.09%","left":"64.66%","innerText":"'Sign In'","backgroundColor":"lavender"}]}
         >
-        <Text style = {{color:"pink"}}>
+        <Text style = {{color:"black"}}>
 
-        {'YOUR RIDDLES'}
+        {'Sign In'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo('CreateAccount'); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"62.19%","left":"34.94%","innerText":"'Create Account'","backgroundColor":"lavender"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Create Account'}
 
        </Text>
         </TouchableOpacity>
@@ -360,7 +341,7 @@ that.props.goTo("YOUR_RIDDLES");
         )
     }
   }
-    export default VIEW; 
+    export default SignIn; 
 
 
 

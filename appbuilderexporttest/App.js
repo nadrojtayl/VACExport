@@ -3,19 +3,21 @@
 
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
+
+import Stats from './downloadedpages/Stats.js'
+
+import Calories from './downloadedpages/Calories.js'
+
 import FirstPage from './downloadedpages/FirstPage.js'
-import CREATE from './downloadedpages/CREATE.js'
-import PROFILE from './downloadedpages/PROFILE.js'
-import VIEW from './downloadedpages/VIEW.js'
-import FRIENDS from './downloadedpages/FRIENDS.js'
-import TUTORIAL from './downloadedpages/TUTORIAL.js'
-import SEARCH_VIEW from './downloadedpages/SEARCH_VIEW.js'
-import ALL_VIEW from './downloadedpages/ALL_VIEW.js'
-import LOGIN_SIGNUP from './downloadedpages/LOGIN_SIGNUP.js'
-import HOME from './downloadedpages/HOME.js'
-import SEARCH_RIDDLES from './downloadedpages/SEARCH_RIDDLES.js'
-import DELETE from './downloadedpages/DELETE.js'
-import YOUR_RIDDLES from './downloadedpages/YOUR_RIDDLES.js'
+
+import Weight from './downloadedpages/Weight.js'
+
+import SignIn from './downloadedpages/SignIn.js'
+
+import CreateAccount from './downloadedpages/CreateAccount.js'
+
+import Recipes from './downloadedpages/Recipes.js'
+
 import appData from './downloadedpages/global.js';
 /*
 EXPORT PROCESS
@@ -100,7 +102,7 @@ this.state = {dbLinks:{}, loaded:false, page:"FirstPage", numLoaded:0}
 componentDidMount(){
   
   var that = this;
-  var dbLinks = {"Data_Profiles":"https://script.google.com/macros/s/AKfycbwXr5OuCmNOeg-WjgEaQju0Xy77OKeBsHJTW6QKRVsERZDD9ew/exec?sheetName=LevProfiles","Data_Riddles":"https://script.google.com/macros/s/AKfycbwXr5OuCmNOeg-WjgEaQju0Xy77OKeBsHJTW6QKRVsERZDD9ew/exec?sheetName=LevRiddles"}
+  var dbLinks = {"Jasmine":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbx8uQw_4uk3m3ApBlCl80x_3B6hpocK9onsdnja/exec?sheetName=Jasmine","Users":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbx8uQw_4uk3m3ApBlCl80x_3B6hpocK9onsdnja/exec?sheetName=JasmineUsers"}
   Object.keys(dbLinks).forEach(function(key){
     that.connectToDatabase(dbLinks[key], key);
   })
@@ -132,6 +134,32 @@ render(){
   var that = this; 
 
   
+    if(that.state.page === "Stats"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Stats  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Stats>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Calories"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Calories  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Calories>
+          </View>
+        )
+    }
+
+
+
+    
+
+
     if(that.state.page === "FirstPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
@@ -145,10 +173,10 @@ render(){
     
 
 
-    if(that.state.page === "CREATE"){
+    if(that.state.page === "Weight"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <CREATE  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></CREATE>
+             <Weight  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Weight>
           </View>
         )
     }
@@ -158,10 +186,10 @@ render(){
     
 
 
-    if(that.state.page === "PROFILE"){
+    if(that.state.page === "Weight"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <PROFILE  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></PROFILE>
+             <Weight  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Weight>
           </View>
         )
     }
@@ -171,10 +199,10 @@ render(){
     
 
 
-    if(that.state.page === "VIEW"){
+    if(that.state.page === "Weight"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <VIEW  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></VIEW>
+             <Weight  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Weight>
           </View>
         )
     }
@@ -184,10 +212,10 @@ render(){
     
 
 
-    if(that.state.page === "FRIENDS"){
+    if(that.state.page === "Calories"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <FRIENDS  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FRIENDS>
+             <Calories  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Calories>
           </View>
         )
     }
@@ -197,10 +225,10 @@ render(){
     
 
 
-    if(that.state.page === "TUTORIAL"){
+    if(that.state.page === "SignIn"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <TUTORIAL  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></TUTORIAL>
+             <SignIn  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SignIn>
           </View>
         )
     }
@@ -210,10 +238,10 @@ render(){
     
 
 
-    if(that.state.page === "SEARCH_VIEW"){
+    if(that.state.page === "CreateAccount"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <SEARCH_VIEW  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SEARCH_VIEW>
+             <CreateAccount  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></CreateAccount>
           </View>
         )
     }
@@ -223,10 +251,10 @@ render(){
     
 
 
-    if(that.state.page === "ALL_VIEW"){
+    if(that.state.page === "Stats"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <ALL_VIEW  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></ALL_VIEW>
+             <Stats  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Stats>
           </View>
         )
     }
@@ -236,10 +264,10 @@ render(){
     
 
 
-    if(that.state.page === "LOGIN_SIGNUP"){
+    if(that.state.page === "Calories"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <LOGIN_SIGNUP  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></LOGIN_SIGNUP>
+             <Calories  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Calories>
           </View>
         )
     }
@@ -249,10 +277,10 @@ render(){
     
 
 
-    if(that.state.page === "HOME"){
+    if(that.state.page === "SignIn"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <HOME  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></HOME>
+             <SignIn  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SignIn>
           </View>
         )
     }
@@ -262,10 +290,10 @@ render(){
     
 
 
-    if(that.state.page === "SEARCH_VIEW"){
+    if(that.state.page === "Weight"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <SEARCH_VIEW  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SEARCH_VIEW>
+             <Weight  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Weight>
           </View>
         )
     }
@@ -275,10 +303,10 @@ render(){
     
 
 
-    if(that.state.page === "SEARCH_VIEW"){
+    if(that.state.page === "Stats"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <SEARCH_VIEW  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SEARCH_VIEW>
+             <Stats  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Stats>
           </View>
         )
     }
@@ -288,10 +316,10 @@ render(){
     
 
 
-    if(that.state.page === "SEARCH_RIDDLES"){
+    if(that.state.page === "SignIn"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <SEARCH_RIDDLES  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SEARCH_RIDDLES>
+             <SignIn  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SignIn>
           </View>
         )
     }
@@ -301,10 +329,10 @@ render(){
     
 
 
-    if(that.state.page === "SEARCH_VIEW"){
+    if(that.state.page === "Calories"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <SEARCH_VIEW  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SEARCH_VIEW>
+             <Calories  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Calories>
           </View>
         )
     }
@@ -314,10 +342,10 @@ render(){
     
 
 
-    if(that.state.page === "SEARCH_VIEW"){
+    if(that.state.page === "Weight"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <SEARCH_VIEW  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SEARCH_VIEW>
+             <Weight  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Weight>
           </View>
         )
     }
@@ -327,10 +355,10 @@ render(){
     
 
 
-    if(that.state.page === "SEARCH_VIEW"){
+    if(that.state.page === "Stats"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <SEARCH_VIEW  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SEARCH_VIEW>
+             <Stats  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Stats>
           </View>
         )
     }
@@ -340,10 +368,10 @@ render(){
     
 
 
-    if(that.state.page === "SEARCH_VIEW"){
+    if(that.state.page === "Calories"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <SEARCH_VIEW  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SEARCH_VIEW>
+             <Calories  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Calories>
           </View>
         )
     }
@@ -353,10 +381,10 @@ render(){
     
 
 
-    if(that.state.page === "SEARCH_VIEW"){
+    if(that.state.page === "Stats"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <SEARCH_VIEW  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SEARCH_VIEW>
+             <Stats  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Stats>
           </View>
         )
     }
@@ -366,10 +394,10 @@ render(){
     
 
 
-    if(that.state.page === "SEARCH_VIEW"){
+    if(that.state.page === "Weight"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <SEARCH_VIEW  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SEARCH_VIEW>
+             <Weight  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Weight>
           </View>
         )
     }
@@ -379,10 +407,10 @@ render(){
     
 
 
-    if(that.state.page === "SEARCH_VIEW"){
+    if(that.state.page === "Calories"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <SEARCH_VIEW  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SEARCH_VIEW>
+             <Calories  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Calories>
           </View>
         )
     }
@@ -392,10 +420,10 @@ render(){
     
 
 
-    if(that.state.page === "SEARCH_VIEW"){
+    if(that.state.page === "SignIn"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <SEARCH_VIEW  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SEARCH_VIEW>
+             <SignIn  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SignIn>
           </View>
         )
     }
@@ -405,10 +433,10 @@ render(){
     
 
 
-    if(that.state.page === "SEARCH_VIEW"){
+    if(that.state.page === "Stats"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <SEARCH_VIEW  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SEARCH_VIEW>
+             <Stats  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Stats>
           </View>
         )
     }
@@ -418,10 +446,10 @@ render(){
     
 
 
-    if(that.state.page === "SEARCH_VIEW"){
+    if(that.state.page === "Weight"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <SEARCH_VIEW  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SEARCH_VIEW>
+             <Weight  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Weight>
           </View>
         )
     }
@@ -431,10 +459,10 @@ render(){
     
 
 
-    if(that.state.page === "SEARCH_VIEW"){
+    if(that.state.page === "Recipes"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <SEARCH_VIEW  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SEARCH_VIEW>
+             <Recipes  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Recipes>
           </View>
         )
     }
@@ -444,10 +472,10 @@ render(){
     
 
 
-    if(that.state.page === "DELETE"){
+    if(that.state.page === "Calories"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <DELETE  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></DELETE>
+             <Calories  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Calories>
           </View>
         )
     }
@@ -457,10 +485,10 @@ render(){
     
 
 
-    if(that.state.page === "DELETE"){
+    if(that.state.page === "Weight"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <DELETE  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></DELETE>
+             <Weight  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Weight>
           </View>
         )
     }
@@ -470,10 +498,10 @@ render(){
     
 
 
-    if(that.state.page === "DELETE"){
+    if(that.state.page === "Stats"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <DELETE  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></DELETE>
+             <Stats  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Stats>
           </View>
         )
     }
@@ -483,10 +511,10 @@ render(){
     
 
 
-    if(that.state.page === "YOUR_RIDDLES"){
+    if(that.state.page === "Weight"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <YOUR_RIDDLES  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></YOUR_RIDDLES>
+             <Weight  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Weight>
           </View>
         )
     }
@@ -496,10 +524,10 @@ render(){
     
 
 
-    if(that.state.page === "DELETE"){
+    if(that.state.page === "Calories"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <DELETE  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></DELETE>
+             <Calories  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Calories>
           </View>
         )
     }
@@ -509,10 +537,309 @@ render(){
     
 
 
-    if(that.state.page === "DELETE"){
+    if(that.state.page === "SignIn"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <DELETE  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></DELETE>
+             <SignIn  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SignIn>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Stats"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Stats  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Stats>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Calories"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Calories  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Calories>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Stats"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Stats  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Stats>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Weight"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Weight  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Weight>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Weight"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Weight  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Weight>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Calories"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Calories  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Calories>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Stats"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Stats  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Stats>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "SignIn"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <SignIn  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SignIn>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Calories"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Calories  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Calories>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Stats"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Stats  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Stats>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Calories"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Calories  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Calories>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Weight"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Weight  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Weight>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Stats"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Stats  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Stats>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Weight"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Weight  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Weight>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "SignIn"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <SignIn  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SignIn>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Calories"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Calories  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Calories>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Stats"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Stats  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Stats>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Weight"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Weight  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Weight>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Calories"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Calories  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Calories>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Weight"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Weight  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Weight>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Stats"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Stats  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Stats>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Calories"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Calories  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Calories>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "SignIn"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <SignIn  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SignIn>
           </View>
         )
     }

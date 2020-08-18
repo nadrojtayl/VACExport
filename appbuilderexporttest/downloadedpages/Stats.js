@@ -208,13 +208,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class TUTORIAL extends React.Component {
+ class Stats extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","FirstPageinput2":"Select","FirstPagepicker0":"","loaded":false,"dbLinks":{},"LOGIN_SIGNUPinput2":"","LOGIN_SIGNUPinput3":"","FirstPageinput4":"","FirstPageinput5":"","FirstPageinput3":"","CREATEinput3":"","CREATEinput4":"","index":1,"opacity":0,"FirstPageinput6":"","index2":1,"search":[{"Riddle":"Why did the lizard cross the playground?","Answer":"To get to the other slide.","Owner":"Mamacita"},{"Riddle":"Why?","Answer":"Of course","Owner":"Mamacita"}],"opacity2":0,"SEARCH_VIEWinput3":"","data":[{"Riddle":"What comes once in a minute, twice in a moment, but never in a thousand years?","Answer":"The letter \"M\".","Owner":"Riddlemethis","Index":0},{"Riddle":"What is more useful when it is broken?","Answer":"An egg.","Owner":"Riddlemethis","Index":1},{"Riddle":"I'm not clothes but I cover your body. The more I'm used, the thinner I grow. What am I?","Answer":"A bar of soap.","Owner":"Riddlemethis","Index":2},{"Riddle":"What eight letter word can you take one letter away from to create a new word, until it's just one letter?","Answer":"Starting.","Owner":"Riddlemethis","Index":3},{"Riddle":"What can go up and come down without moving?","Answer":"The temperature / Mood / The sun.","Owner":"Riddlemethis","Index":4},{"Riddle":"Why did the lizard cross the playground?","Answer":"To get to the other slide.","Owner":"Mamacita"},{"Riddle":"Why?","Answer":"Of course","Owner":"Mamacita"}],"SEARCH_VIEWinput8":"","searching":"","searching2":"","profiles":[{"Usernames":"Mamacita","Passwords":"1019"}]}
+        this.state = {"currentWeight":"120","goalWeight":"110","calPerDay":"2000","calEaten":0,"ThirdPageinput5":"400 ","ThirdPageinput7":"200","ThirdPageinput9":"500","ThirdPageinput11":"100","SecondPageinput9":"63","height":"63","PageTwoinput3":"jasmineusername","PageTwoinput5":"jasminepw","SignIninput3":"jasmineusername","SignIninput5":"jasminepw","Statsinput2":"120","Statsinput4":"110","Statsinput9":"63","Statsinput6":"2000","CreateAccountinput2":"jasminec","CreateAccountinput4":"pw","PageFourinput5":"200","PageFourinput7":"400","PageFourinput9":"500","PageFourinput11":"100","Caloriesinput5":"200","Caloriesinput7":"400","Caloriesinput9":"500","Caloriesinput11":"100","heightInM":1.6002032004064008,"weightInKg":54.29864253393665,"bodyMassIndex":21.2050208117435}
     }
 
 
@@ -235,10 +235,68 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"pink"}}>
-       <TouchableOpacity
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"mediumslateblue"}}>
+      <Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"2.75%","left":"4.08%","innerText":"'MOOVE'","fontFamily":"Helvetica","fontWeight":"bold"}]}
+        > {'MOOVE'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"11.1%","left":"5.18%","innerText":"'Please Enter Your Current Weight:'","fontSize":"resizeFont(20)","fontFamily":"Times New Roman","color":"lavender","fontWeight":"bold"}]}
+        > {'Please Enter Your Current Weight:'} </Text>
+        
+<TextInput
+       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},
+       {"top":"17.05%","left":"27.22%","color":"white","backgroundColor":"mediumslateblue","borderColor":"lavender"}]}
+        value={appData["Statsinput2"]}
+         onChangeText={function(val){ appData["Statsinput2"] = val; that.forceUpdate();   } }
+        />
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},
+          {"top":"24.6%","left":"4.08%","innerText":"'Please Enter Your Goal Weight:'","fontSize":"resizeFont(20)","fontStyle":"Helvetica","fontFamily":"Times New Roman","color":"lavender","fontWeight":"bold"}]}
+        > {'Please Enter Your Goal Weight:'} </Text>
+        
+<TextInput
+       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},
+       {"top":"25.06%","left":"26.67%","backgroundColor":"mediumslateblue","color":"white","borderColor":"lavender"}]}
+        value={appData["Statsinput4"]}
+         onChangeText={function(val){ appData["Statsinput4"] = val; that.forceUpdate();   } }
+        />
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},
+          {"top":"50.95%","left":"5.45%","innerText":"'Enter Amount of Calories Per Day:'","fontSize":"resizeFont(20)","fontFamily":"Times New Roman","color":"lavender","fontWeight":"bold"}]}
+        > {'Enter Amount of Calories Per Day:'} </Text>
+        
+<TextInput
+       style= {[{width:"0%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},
+       {"top":"33.17%","left":"26.67%","backgroundColor":"mediumslateblue","color":"white","borderColor":"lavender"}]}
+        value={appData["Statsinput6"]}
+         onChangeText={function(val){ appData["Statsinput6"] = val; that.forceUpdate();   } }
+        />
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"top":"61.13%","left":"16.67%","source":"https://i.imgflip.com/2yao8g.jpg?a443064","width":"70%"}]}
+        source = {{uri:'https://i.imgflip.com/2yao8g.jpg?a443064'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"37.45%","left":"4.9%","innerText":"'Please Enter Your Height (in inches):'","fontSize":"resizeFont(20)","fontStyle":"Helvetica","fontFamily":"Times New Roman","color":"lavender","fontWeight":"bold"}]}
+        > {'Please Enter Your Height (in inches):'} </Text>
+        
+<TextInput
+       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},
+       {"top":"20.07%","left":"26.67%","color":"white","backgroundColor":"mediumslateblue","borderColor":"lavender"}]}
+        value={appData["Statsinput9"]}
+         onChangeText={function(val){ appData["Statsinput9"] = val; that.forceUpdate();   } }
+        />
+ <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("HOME");; that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo('Calories'); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -251,47 +309,19 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'BACK'","height":25,"width":50,"top":"87.99%","left":"82.3%","fontSize":"resizeFont(12)"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"62.69%","left":"34.66%","innerText":"'Done!'","backgroundColor":"lavender"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'BACK'}
+        {'Done!'}
 
        </Text>
         </TouchableOpacity>
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"fontSize":20,"textAlign": "center" ,"innerText":"'This is a Riddle Creator. You will be able to create riddles, share them with friends, and view your friends' riddles.'","top":"16.69%","left":"0%","color":"#204016"}]}
-        > {'This is a Riddle Creator. You will be able to create riddles, share them with friends, and view your friends riddles.'} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"fontSize":20,"textAlign": "center","top":"39.83%","left":"0%","innerText":"'To create a riddle, go to the create page. There you will have to option to put in your riddle and it's answer. Once you put those two things in, press done.'","display":"#204016","color":"#204016"}]}
-        > {"To create a riddle, go to the create page. There you will have to option to put in your riddle and its answer. Once you put those two things in, press done."} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"fontSize":20,"textAlign": "center" ,"top":"66.67%","left":"0%","innerText":"'To view your riddles, riddles other people created, or to find specific riddles, press view and select either \"your riddles\", \"all riddles\", or \"find riddles\".'","color":"#204016"}]}
-        > {'To view your riddles, riddles other people created, or to find specific riddles, press view and select either "your riddles", "all riddles", or "find riddles".'} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'________________________________________'","top":"29.65%","left":"21.71%","color":"#204016"}]}
-        > {'________________________________________'} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'________________________________________'","top":"56.86%","left":"21.71%","color":"#204016"}]}
-        > {'________________________________________'} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'____________________________________________________________'","top":"7.66%","left":"2.96%","color":"#204016"}]}
-        > {'____________________________________________________________'} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'TUTORIAL'","fontSize":30,"color":"#204016","top":"4.33%","left":"4.48%"}]}
-        > {'TUTORIAL'} </Text>
-        
         </View>
         )
     }
   }
-    export default TUTORIAL; 
+    export default Stats; 
 
 
 

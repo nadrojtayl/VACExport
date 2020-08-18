@@ -1,7 +1,7 @@
   {
       "expo": {
-        "name": "RiddleMeThis?",
-        "slug": "RiddleMeThis?",
+        "name": "MOOVE!",
+        "slug": "MOOVE!",
         "platforms": [
           "ios",
           "android",
@@ -23,10 +23,10 @@
         ],
         "ios": {
           "supportsTablet": true,
-          "bundleIdentifier": "com.LevRiddle.LevRiddle"
+          "bundleIdentifier": "com.Moove.Moove"
         },
         "android": {
-          "package": "com.LevRiddle.LevRiddle"
+          "package": "com.Moove.Moove"
         },
         "entryPoint": "node_modules/expo/AppEntry.js"
       }

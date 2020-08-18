@@ -208,13 +208,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class DELETE extends React.Component {
+ class Weight extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","FirstPageinput2":"Select","FirstPagepicker0":"","loaded":false,"dbLinks":{},"LOGIN_SIGNUPinput2":"","LOGIN_SIGNUPinput3":"","FirstPageinput4":"","FirstPageinput5":"","FirstPageinput3":"","CREATEinput3":"","CREATEinput4":"","index":1,"opacity":0,"FirstPageinput6":"","index2":1,"search":[{"Riddle":"Why did the lizard cross the playground?","Answer":"To get to the other slide.","Owner":"Mamacita"},{"Riddle":"Why?","Answer":"Of course","Owner":"Mamacita"}],"opacity2":0,"SEARCH_VIEWinput3":"","data":[{"Riddle":"What comes once in a minute, twice in a moment, but never in a thousand years?","Answer":"The letter \"M\".","Owner":"Riddlemethis","Index":0},{"Riddle":"What is more useful when it is broken?","Answer":"An egg.","Owner":"Riddlemethis","Index":1},{"Riddle":"I'm not clothes but I cover your body. The more I'm used, the thinner I grow. What am I?","Answer":"A bar of soap.","Owner":"Riddlemethis","Index":2},{"Riddle":"What eight letter word can you take one letter away from to create a new word, until it's just one letter?","Answer":"Starting.","Owner":"Riddlemethis","Index":3},{"Riddle":"What can go up and come down without moving?","Answer":"The temperature / Mood / The sun.","Owner":"Riddlemethis","Index":4},{"Riddle":"Why did the lizard cross the playground?","Answer":"To get to the other slide.","Owner":"Mamacita"},{"Riddle":"Why?","Answer":"Of course","Owner":"Mamacita"}],"SEARCH_VIEWinput8":"","searching":"","searching2":"","profiles":[{"Usernames":"Mamacita","Passwords":"1019"}]}
+        this.state = {"currentWeight":"120","goalWeight":"110","calPerDay":"2000","calEaten":0,"ThirdPageinput5":"400 ","ThirdPageinput7":"200","ThirdPageinput9":"500","ThirdPageinput11":"100","SecondPageinput9":"63","height":"63","PageTwoinput3":"jasmineusername","PageTwoinput5":"jasminepw","SignIninput3":"jasmineusername","SignIninput5":"jasminepw","Statsinput2":"120","Statsinput4":"110","Statsinput9":"63","Statsinput6":"2000","CreateAccountinput2":"jasminec","CreateAccountinput4":"pw","PageFourinput5":"200","PageFourinput7":"400","PageFourinput9":"500","PageFourinput11":"100","Caloriesinput5":"200","Caloriesinput7":"400","Caloriesinput9":"500","Caloriesinput11":"100","heightInM":1.6002032004064008,"weightInKg":54.29864253393665,"bodyMassIndex":21.2050208117435}
     }
 
 
@@ -235,10 +235,42 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"pink"}}>
-       <TouchableOpacity
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"mediumslateblue"}}>
+      <Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"2.43%","left":"4.63%","innerText":"'MOOVE'","fontWeight":"bold"}]}
+        > {'MOOVE'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"11.91%","left":"21.16%","innerText":" \"Current Weight: \" + appData.currentWeight; ","color":"white","fontSize":"resizeFont(25)","fontFamily":"Times New Roman"}]}
+        > { "Current Weight: " + appData.currentWeight } </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"21.55%","left":"26.4%","innerText":"  \"Goal Weight: \" + appData.goalWeight; ","color":"white","fontSize":"resizeFont(25)","fontFamily":"Times New Roman"}]}
+        > {  "Goal Weight: " + appData.goalWeight } </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"36.81%","left":"16.48%","innerText":"'BMI (Body Mass Index): '","color":"white","fontSize":"resizeFont(25)","fontFamily":"Times New Roman"}]}
+        > {'BMI (Body Mass Index): '} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"42.27%","left":"19.51%","innerText":" appData.bodyMassIndex;","color":"white","fontSize":"resizeFont(30)","fontFamily":"Times New Roman"}]}
+        > { appData.bodyMassIndex} </Text>
+        
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"top":"66.21%","left":"28.52%","source":"https://i.imgflip.com/2yao8g.jpg?a443064","width":"40%"}]}
+        source = {{uri:'https://i.imgflip.com/2yao8g.jpg?a443064'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+ <TouchableOpacity
           
-          onPress = { function(){that.props.goTo('VIEW');; that.forceUpdate(); }}  
+          onPress = { function(){; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -251,40 +283,17 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'BACK'","height":25,"width":50,"top":"88.73%","left":"82.55%","fontSize":"resizeFont(12)"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"93.2%","left":"34.39%","innerText":"'Weight'","backgroundColor":"mediumslateblue"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'BACK'}
+        {'Weight'}
 
        </Text>
         </TouchableOpacity>
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'_____________________________________________________________'","top":"4.52%","left":"4.52%","color":"#204016"}]}
-        > {'_____________________________________________________________'} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'SEARCH RIDDLES'","fontSize":"resizeFont(20)","color":"#204016","top":"1.56%","left":"5.02%"}]}
-        > {'SEARCH RIDDLES'} </Text>
-        
-<TextInput
-       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"29.28%","left":"20.44%"}]}
-        value={appData["DELETEinput3"]}
-         onChangeText={function(val){ appData["DELETEinput3"] = val; that.forceUpdate();   } }
-        />
  <TouchableOpacity
           
-          onPress = { function(){appData.search = filter_obj_by_phrase(appData.data, 'Riddle', appData.SEARCH_VIEWinput3);
-appData.index2 = 0;
-appData.searching = appData.SEARCH_VIEWinput3;
-appData.searching2 = "Riddles";
-if (appData.search.length === 0) {
-    alert("There are no results.");
-} else if (appData.SEARCH_VIEWinput3 === ""){
-    alert("Don't leave it blank");
-} else {
-    that.props.goTo("SEARCH_RIDDLES");
-}; that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo('Calories'); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -297,35 +306,17 @@ if (appData.search.length === 0) {
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"36.5%","left":"34.12%","innerText":"'SEARCH RIDDLES'","color":"pink","backgroundColor":"#204016","fontWeight":"bold","borderStyle":"dashed"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"93.2%","left":"4.63%","innerText":"'Calories'","backgroundColor":"lavender"}]}
         >
-        <Text style = {{color:"pink"}}>
+        <Text style = {{color:"black"}}>
 
-        {'SEARCH RIDDLES'}
+        {'Calories'}
 
        </Text>
         </TouchableOpacity>
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"22.99%","left":"11.82%","innerText":"'Search for a riddle.'","textAlign":"center","width":"75%","fontSize":"resizeFont(17)","color":"#204016"}]}
-        > {'Search for a riddle.'} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"57.41%","left":"11.57%","innerText":"'Search for a creator.'","textAlign":"center","width":"75%","fontSize":"resizeFont(17)","color":"#204016"}]}
-        > {'Search for a creator.'} </Text>
-        
  <TouchableOpacity
           
-          onPress = { function(){appData.search = filter_obj_by_phrase(appData.data, 'Owner', appData.SEARCH_VIEWinput8);
-appData.index2 = 0;
-appData.searching = appData.SEARCH_VIEWinput8;
-appData.searching2 = "Creators";
-if (appData.search.length === 0) {
-    alert("There are no results.");
-} else if (appData.SEARCH_VIEWinput8 === "") {
-    alert("Don't leave it blank.");
-} else {
-    that.props.goTo("SEARCH_RIDDLES");
-}; that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo('Recipes'); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -338,24 +329,67 @@ if (appData.search.length === 0) {
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"70.18%","left":"34.12%","innerText":"'SEARCH CREATORS'","color":"pink","backgroundColor":"#204016","fontWeight":"bold","borderStyle":"dashed"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"93.04%","left":"64.15%","innerText":"'Recipes'","backgroundColor":"lavender"}]}
         >
-        <Text style = {{color:"pink"}}>
+        <Text style = {{color:"black"}}>
 
-        {'SEARCH CREATORS'}
+        {'Recipes'}
 
        </Text>
         </TouchableOpacity>
-<TextInput
-       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"62.59%","left":"20.19%"}]}
-        value={appData["DELETEinput8"]}
-         onChangeText={function(val){ appData["DELETEinput8"] = val; that.forceUpdate();   } }
-        />
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"top":"88.22%","left":"14.27%","source":"https://i.pinimg.com/originals/48/39/63/48396351091a31d5636205f16d6b343c.jpg","width":"10%","height":"5%","borderColor":"lavender","borderWidth":5}]}
+        source = {{uri:'https://i.pinimg.com/originals/48/39/63/48396351091a31d5636205f16d6b343c.jpg'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"top":"88.06%","left":"44.31%","source":"https://www.clipartkey.com/mpngs/m/238-2385312_weight-clipart-kilogram-weight-tons-icon.png","width":"10%","borderWidth":5,"height":"5%","borderColor":"mediumslateblue"}]}
+        source = {{uri:'https://www.clipartkey.com/mpngs/m/238-2385312_weight-clipart-kilogram-weight-tons-icon.png'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"top":"88.06%","left":"74.07%","source":"https://www.clipartkey.com/mpngs/m/140-1406707_recipe-icon-png-recipe-clipart-black-and-white.png","height":"5%","width":"10%","borderWidth":5,"borderColor":"lavender"}]}
+        source = {{uri:'https://www.clipartkey.com/mpngs/m/140-1406707_recipe-icon-png-recipe-clipart-black-and-white.png'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"50.14%","left":"27.99%","innerText":"'A BMI Over 25 Is Too High'","color":"white","fontSize":"resizeFont(15)","fontFamily":"Times New Roman"}]}
+        > {'A BMI Over 25 Is Too High'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"53.19%","left":"25.33%","innerText":"'A BMI Under 18.5 Is Too Low'","color":"white","fontSize":"resizeFont(15)","fontFamily":"Times New Roman"}]}
+        > {'A BMI Under 18.5 Is Too Low'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"55.6%","left":"14.69%","innerText":"'A BMI Over 18.5 and Under 24.9 is Healthy'","color":"white","fontSize":"resizeFont(15)","fontFamily":"Times New Roman"}]}
+        > {'A BMI Over 18.5 and Under 24.9 is Healthy'} </Text>
+        
         </View>
         )
     }
   }
-    export default DELETE; 
+    export default Weight; 
 
 
 

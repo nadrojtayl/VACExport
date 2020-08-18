@@ -214,7 +214,7 @@ function unwrap_dynamically(value,default_value){
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","FirstPageinput2":"Select","FirstPagepicker0":"","loaded":false,"dbLinks":{},"LOGIN_SIGNUPinput2":"","LOGIN_SIGNUPinput3":"","FirstPageinput4":"","FirstPageinput5":"","FirstPageinput3":"","CREATEinput3":"","CREATEinput4":"","index":1,"opacity":0,"FirstPageinput6":"","index2":1,"search":[{"Riddle":"Why did the lizard cross the playground?","Answer":"To get to the other slide.","Owner":"Mamacita"},{"Riddle":"Why?","Answer":"Of course","Owner":"Mamacita"}],"opacity2":0,"SEARCH_VIEWinput3":"","data":[{"Riddle":"What comes once in a minute, twice in a moment, but never in a thousand years?","Answer":"The letter \"M\".","Owner":"Riddlemethis","Index":0},{"Riddle":"What is more useful when it is broken?","Answer":"An egg.","Owner":"Riddlemethis","Index":1},{"Riddle":"I'm not clothes but I cover your body. The more I'm used, the thinner I grow. What am I?","Answer":"A bar of soap.","Owner":"Riddlemethis","Index":2},{"Riddle":"What eight letter word can you take one letter away from to create a new word, until it's just one letter?","Answer":"Starting.","Owner":"Riddlemethis","Index":3},{"Riddle":"What can go up and come down without moving?","Answer":"The temperature / Mood / The sun.","Owner":"Riddlemethis","Index":4},{"Riddle":"Why did the lizard cross the playground?","Answer":"To get to the other slide.","Owner":"Mamacita"},{"Riddle":"Why?","Answer":"Of course","Owner":"Mamacita"}],"SEARCH_VIEWinput8":"","searching":"","searching2":"","profiles":[{"Usernames":"Mamacita","Passwords":"1019"}]}
+        this.state = {"currentWeight":"120","goalWeight":"110","calPerDay":"2000","calEaten":0,"ThirdPageinput5":"400 ","ThirdPageinput7":"200","ThirdPageinput9":"500","ThirdPageinput11":"100","SecondPageinput9":"63","height":"63","PageTwoinput3":"jasmineusername","PageTwoinput5":"jasminepw","SignIninput3":"jasmineusername","SignIninput5":"jasminepw","Statsinput2":"120","Statsinput4":"110","Statsinput9":"63","Statsinput6":"2000","CreateAccountinput2":"jasminec","CreateAccountinput4":"pw","PageFourinput5":"200","PageFourinput7":"400","PageFourinput9":"500","PageFourinput11":"100","Caloriesinput5":"200","Caloriesinput7":"400","Caloriesinput9":"500","Caloriesinput11":"100","heightInM":1.6002032004064008,"weightInKg":54.29864253393665,"bodyMassIndex":21.2050208117435}
     }
 
 
@@ -235,134 +235,17 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"pink"}}>
-       <TouchableOpacity
-          
-          onPress = { function(){if(findInArrayOfObjects(Data_Profiles,{'Usernames': appData.FirstPageinput4})){
-alert("This username is already taken");
-} else if (appData.FirstPageinput4 === ""){
-    alert('Please add a username.');
-} else if (appData.FirstPageinput6 === ""){
-    alert('Please add a password.');
-} else{
-that.props.saveTo('Data_Profiles',{'Usernames':appData.FirstPageinput4, 'Passwords': appData.FirstPageinput6});
-that.props.goTo('HOME');  
-appData.FirstPageinput3 = appData.FirstPageinput4;
-appData.FirstPageinput4 = "";
-appData.FirstPageinput5 = appData.FirstPageinput6;
-appData.FirstPageinput6 = "";
-}
-; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'SIGN UP'","backgroundColor":"#204016","color":"pink","borderWidth":1,"borderStyle":"dashed","top":"71.85%","left":"34.88%","fontWeight":"BOLD"}]}
-        >
-        <Text style = {{color:"pink"}}>
-
-        {'SIGN UP'}
-
-       </Text>
-        </TouchableOpacity>
-<Text
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"mediumslateblue"}}>
+      <Text
           style= {[{position:'absolute',zIndex:100,width:'100%'},
-          {"color":"#204016","top":"10.48%","left":"0%", "fontSize": 15, "textAlign": "center", "innerText":"'Enter your username and password in the Log In spot if you already have an account. Enter a new username and password in the Sign Up spot to create a new account. The password must be no more or less than four characters long.'"}]}
-        > {'Enter your username and password in the Log In spot if you already have an account. Enter a new username and password in the Sign Up spot to create a new account. The password must be no more or less than four characters long.'} </Text>
-        
- <TouchableOpacity
-          
-          onPress = { function(){var user = findInArrayOfObjects(Data_Profiles,{'Usernames': appData.FirstPageinput3});
-if(appData.FirstPageinput3 === ""){
-alert("Please add a username.");
-} else if (findInArrayOfObjects(Data_Profiles,{'Usernames': appData.FirstPageinput3}) === false){
-    alert('This username does not exist.');
-} else if (appData.FirstPageinput5 === ""){
-    alert("Please add a password");
-} else {
-if (user ["Passwords"] != appData.FirstPageinput5){
-    alert("Password does not match.");
-} else{
-    that.props.goTo('HOME');
-    appData.FirstPageinput4 = "";
-}}; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'LOG IN'","backgroundColor":"#204016","color":"pink","borderWidth":1,"borderStyle":"dashed","top":"43.72%","left":"35.13%","fontWeight":"bold"}]}
-        >
-        <Text style = {{color:"pink"}}>
-
-        {'LOG IN'}
-
-       </Text>
-        </TouchableOpacity>
-<TextInput
-       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},
-       {"top":"28.69%","left":"19.97%"}]}
-        value={appData["FirstPageinput3"]}
-         onChangeText={function(val){ appData["FirstPageinput3"] = val; that.forceUpdate();   } }
-        />
-<TextInput
-       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},
-       {"top":"53.26%","left":"20.19%"}]}
-        value={appData["FirstPageinput4"]}
-         onChangeText={function(val){ appData["FirstPageinput4"] = val; that.forceUpdate();   } }
-        />
-<TextInput
-       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},
-       {"top":"26.98%","left":"20.19%"}]}
-        value={appData["FirstPageinput5"]}
-         onChangeText={function(val){ appData["FirstPageinput5"] = val; that.forceUpdate();   } }
-        />
-<TextInput
-       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},
-       {"top":"50.3%","left":"20.19%"}]}
-        value={appData["FirstPageinput6"]}
-         onChangeText={function(val){ appData["FirstPageinput6"] = val; that.forceUpdate();   } }
-        />
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"30.02%","left":"0.93%","innerText":"'Username'","color":"#204016"}]}
-        > {'Username'} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"59.82%","left":"1.18%","innerText":"'Username'","color":"#204016"}]}
-        > {'Username'} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"38.53%","left":"0.93%","innerText":"'Password'","color":"#204016"}]}
-        > {'Password'} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"66.67%","left":"1.18%","innerText":"'Password'","color":"#204016"}]}
-        > {'Password'} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"52.97%","left":"7.26%","innerText":"'__________________________________________________________'","color":"#204016"}]}
-        > {'__________________________________________________________'} </Text>
+          {"top":"4.36%","left":"1.78%","innerText":"'MOOVE'","fontSize":30,"fontStyle":"Times New Roman","color":"lavender"}]}
+        > {'MOOVE'} </Text>
         
 
 
       <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://i.postimg.cc/sf02McrR/My-Post-4.png","top":"81.66%","left":"0.17%","width":"100%","height":"20%"}]}
-        source = {{uri:'https://i.postimg.cc/sf02McrR/My-Post-4.png'}}
+        style= {[{width:"20%",height:"20%"}, {"top":"19.62%","left":"14.82%","source":"https://us.123rf.com/450wm/olgamaslov/olgamaslov1603/olgamaslov160300162/53862974-stock-vector-fitness-emblem-woman-silhouette-illustration.jpg?ver=6"}]}
+        source = {{uri:'https://us.123rf.com/450wm/olgamaslov/olgamaslov1603/olgamaslov160300162/53862974-stock-vector-fitness-emblem-woman-silhouette-illustration.jpg?ver=6'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
@@ -370,6 +253,126 @@ if (user ["Passwords"] != appData.FirstPageinput5){
 
 
       
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"top":"19.62%","left":"41.28%","source":"https://www.netclipart.com/pp/m/32-326469_fitness-clipart-group-fitness-fitness-cartoon-transparent.png"}]}
+        source = {{uri:'https://www.netclipart.com/pp/m/32-326469_fitness-clipart-group-fitness-fitness-cartoon-transparent.png'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"top":"19.62%","left":"68.28%","source":"https://www.netclipart.com/pp/m/340-3406114_fitness-clipart.png"}]}
+        source = {{uri:'https://www.netclipart.com/pp/m/340-3406114_fitness-clipart.png'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"top":"42.91%","left":"15.1%","source":"https://www.clipartkey.com/mpngs/m/11-113014_clipart-exercise-weight-gym-transparent-background-fitness-png.png"}]}
+        source = {{uri:'https://www.clipartkey.com/mpngs/m/11-113014_clipart-exercise-weight-gym-transparent-background-fitness-png.png'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"top":"43.07%","left":"41.83%","source":"https://www.pngitem.com/pimgs/m/178-1788846_health-transparent-healthy-transparent-background-healthy-clipart-png.png"}]}
+        source = {{uri:'https://www.pngitem.com/pimgs/m/178-1788846_health-transparent-healthy-transparent-background-healthy-clipart-png.png'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"top":"43.07%","left":"68.56%","source":"https://pp.netclipart.com/pp/s/35-354190_community-health-clipart.png"}]}
+        source = {{uri:'https://pp.netclipart.com/pp/s/35-354190_community-health-clipart.png'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"top":"67.01%","left":"15.1%","source":"https://www.vippng.com/png/detail/106-1061168_health-clipart-png-medical-services-clip-art.png"}]}
+        source = {{uri:'https://www.vippng.com/png/detail/106-1061168_health-clipart-png-medical-services-clip-art.png'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"top":"66.85%","left":"42.38%","source":"https://www.netclipart.com/pp/m/97-972744_mass-scale-clip-art-weight-scale-clipart-png.png"}]}
+        source = {{uri:'https://www.netclipart.com/pp/m/97-972744_mass-scale-clip-art-weight-scale-clipart-png.png'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"top":"66.85%","left":"69.11%","source":"https://static.vecteezy.com/system/resources/previews/000/463/565/non_2x/healthy-food-clipart-vector.jpg"}]}
+        source = {{uri:'https://static.vecteezy.com/system/resources/previews/000/463/565/non_2x/healthy-food-clipart-vector.jpg'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+ <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo('SignIn');; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},
+            {"top":"83.31%","left":"35.77%","backgroundColor":"lavender","innerText":"'Get Started'","fontFamily":"Times New Roman"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Get Started'}
+
+       </Text>
+        </TouchableOpacity>
         </View>
         )
     }

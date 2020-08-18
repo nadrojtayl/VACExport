@@ -208,13 +208,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class PROFILE extends React.Component {
+ class CreateAccount extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","FirstPageinput2":"Select","FirstPagepicker0":"","loaded":false,"dbLinks":{},"LOGIN_SIGNUPinput2":"","LOGIN_SIGNUPinput3":"","FirstPageinput4":"","FirstPageinput5":"","FirstPageinput3":"","CREATEinput3":"","CREATEinput4":"","index":1,"opacity":0,"FirstPageinput6":"","index2":1,"search":[{"Riddle":"Why did the lizard cross the playground?","Answer":"To get to the other slide.","Owner":"Mamacita"},{"Riddle":"Why?","Answer":"Of course","Owner":"Mamacita"}],"opacity2":0,"SEARCH_VIEWinput3":"","data":[{"Riddle":"What comes once in a minute, twice in a moment, but never in a thousand years?","Answer":"The letter \"M\".","Owner":"Riddlemethis","Index":0},{"Riddle":"What is more useful when it is broken?","Answer":"An egg.","Owner":"Riddlemethis","Index":1},{"Riddle":"I'm not clothes but I cover your body. The more I'm used, the thinner I grow. What am I?","Answer":"A bar of soap.","Owner":"Riddlemethis","Index":2},{"Riddle":"What eight letter word can you take one letter away from to create a new word, until it's just one letter?","Answer":"Starting.","Owner":"Riddlemethis","Index":3},{"Riddle":"What can go up and come down without moving?","Answer":"The temperature / Mood / The sun.","Owner":"Riddlemethis","Index":4},{"Riddle":"Why did the lizard cross the playground?","Answer":"To get to the other slide.","Owner":"Mamacita"},{"Riddle":"Why?","Answer":"Of course","Owner":"Mamacita"}],"SEARCH_VIEWinput8":"","searching":"","searching2":"","profiles":[{"Usernames":"Mamacita","Passwords":"1019"}]}
+        this.state = {"currentWeight":"120","goalWeight":"110","calPerDay":"2000","calEaten":0,"ThirdPageinput5":"400 ","ThirdPageinput7":"200","ThirdPageinput9":"500","ThirdPageinput11":"100","SecondPageinput9":"63","height":"63","PageTwoinput3":"jasmineusername","PageTwoinput5":"jasminepw","SignIninput3":"jasmineusername","SignIninput5":"jasminepw","Statsinput2":"120","Statsinput4":"110","Statsinput9":"63","Statsinput6":"2000","CreateAccountinput2":"jasminec","CreateAccountinput4":"pw","PageFourinput5":"200","PageFourinput7":"400","PageFourinput9":"500","PageFourinput11":"100","Caloriesinput5":"200","Caloriesinput7":"400","Caloriesinput9":"500","Caloriesinput11":"100","heightInM":1.6002032004064008,"weightInKg":54.29864253393665,"bodyMassIndex":21.2050208117435}
     }
 
 
@@ -235,10 +235,37 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"pink"}}>
-       <TouchableOpacity
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"mediumslateblue"}}>
+      <Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"1.46%","left":"5.18%","innerText":"'MOOVE'","fontWeight":"bold"}]}
+        > {'MOOVE'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"13.03%","left":"6.83%","innerText":"'Choose a Username:'","fontSize":"resizeFont(25)","color":"white","fontFamily":"Times New Roman"}]}
+        > {'Choose a Username:'} </Text>
+        
+<TextInput
+       style= {[{width:"60%", height:"5%", width:'80%', backgroundColor:'lavendar',borderColor:'grey',borderWidth:1},{"top":"19.78%","left":"10.05%","color":"white","borderColor":"lavender"}]}
+        value={appData["CreateAccountinput2"]}
+         onChangeText={function(val){ appData["CreateAccountinput2"] = val; that.forceUpdate();   } }
+        />
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"32.69%","left":"6.56%","innerText":"'Choose a Password:'","fontSize":"resizeFont(25)","color":"white","fontFamily":"Times New Roman"}]}
+        > {'Choose a Password:'} </Text>
+        
+<TextInput
+       style= {[{width:"60%", height:"5%", width:'80%', backgroundColor:'lavendar',borderColor:'grey',borderWidth:1},{"top":"32.31%","left":"10.5%","color":"white","borderColor":"lavender"}]}
+        value={appData["CreateAccountinput4"]}
+         onChangeText={function(val){ appData["CreateAccountinput4"] = val; that.forceUpdate();   } }
+        />
+ <TouchableOpacity
           
-          onPress = { function(){that.props.goTo("HOME");; that.forceUpdate(); }}  
+          onPress = { function(){if(filter_list_of_objs(Users,"Username",appData.CreateAccountinput2).length!==0){
+    alert("This Username Is Already Taken")
+}else{
+    that.props.saveTo('Users',{"Username" : appData.CreateAccountinput2, "Password" : appData.CreateAccountinput4} );
+    that.props.goTo('Stats');
+}; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -251,27 +278,31 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"containerStyle":"square","height":25,"width":50,"innerText":"'BACK'","top":"87.99%","left":"83.82%","fontSize":"resizeFont(12)"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"47.57%","left":"35.44%","innerText":"'Next'","backgroundColor":"lavender"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'BACK'}
+        {'Next'}
 
        </Text>
         </TouchableOpacity>
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'____________________________________________________________'","top":"3.58%","left":"3.61%","color":"#204016"}]}
-        > {'____________________________________________________________'} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'PROFILE'","fontSize":"resizeFont(20)","color":"#204016","top":"0.72%","left":"3.33%"}]}
-        > {'PROFILE'} </Text>
-        
+
+
+      <Image
+        style= {[{width:"40%",height:"20%"}, {"top":"58.78%","left":"21.98%","source":"https://i.imgflip.com/2yao8g.jpg?a443064","width":"60%"}]}
+        source = {{uri:'https://i.imgflip.com/2yao8g.jpg?a443064'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
         </View>
         )
     }
   }
-    export default PROFILE; 
+    export default CreateAccount; 
 
 
 
