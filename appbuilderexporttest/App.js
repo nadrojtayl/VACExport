@@ -3,8 +3,11 @@
 
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
+import Car_Picker from './downloadedpages/Car_Picker.js'
 import FirstPage from './downloadedpages/FirstPage.js'
-import SECONDPAGE from './downloadedpages/SECONDPAGE.js'
+import Track from './downloadedpages/Track.js'
+import Game_Over from './downloadedpages/Game_Over.js'
+import First_Page from './downloadedpages/First_Page.js'
 import appData from './downloadedpages/global.js';
 /*
 EXPORT PROCESS
@@ -83,7 +86,7 @@ class App extends React.Component {
 
 constructor(props){
 super(props);
-this.state = {dbLinks:{}, loaded:true, page:"FirstPage", numLoaded:0}
+this.state = {dbLinks:{}, loaded:true, page:"First_Page", numLoaded:0}
 }
 
 componentDidMount(){
@@ -121,6 +124,19 @@ render(){
   var that = this; 
 
   
+    if(that.state.page === "Car_Picker"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Car_Picker  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Car_Picker>
+          </View>
+        )
+    }
+
+
+
+    
+
+
     if(that.state.page === "FirstPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
@@ -134,10 +150,36 @@ render(){
     
 
 
-    if(that.state.page === "SECONDPAGE"){
+    if(that.state.page === "Track"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <SECONDPAGE  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SECONDPAGE>
+             <Track  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Track>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "Game_Over"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <Game_Over  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Game_Over>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "First_Page"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <First_Page  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></First_Page>
           </View>
         )
     }

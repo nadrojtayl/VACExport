@@ -208,7 +208,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class First_Page extends React.Component {
      
 
     constructor(props)
@@ -236,12 +236,46 @@ function unwrap_dynamically(value,default_value){
       }
       return (
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"black"}}>
+       <TouchableOpacity
+          
+          onPress = { function(){that.props.goTo('Car_Picker');; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"29.05%","left":"34.69%","innerText":"'START PLAYING'","backgroundColor":"red"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'START PLAYING'}
+
+       </Text>
+        </TouchableOpacity>
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"source":"https://lh3.googleusercontent.com/proxy/N19fdP_uLIbzxwoXMkWCH2wjAKEU-V0um5KFaGnLkusLCowIXzSLRbAK4c7yIF6TOb1KEpUAb4uRePeo9ZDifMvi3zZl59RAPAgj-AYkr20rVJnmwC67BRsyhT54jYnxkIixIZ1J17zuoNVGbwM_bJZkolnM-HIXKA","zIndex":-123456,"resizeMode":"contain","height":"100%","width":"100%"}]}
+        source = {{uri:'https://lh3.googleusercontent.com/proxy/N19fdP_uLIbzxwoXMkWCH2wjAKEU-V0um5KFaGnLkusLCowIXzSLRbAK4c7yIF6TOb1KEpUAb4uRePeo9ZDifMvi3zZl59RAPAgj-AYkr20rVJnmwC67BRsyhT54jYnxkIixIZ1J17zuoNVGbwM_bJZkolnM-HIXKA'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
       
         </View>
         )
     }
   }
-    export default FirstPage; 
+    export default First_Page; 
 
 
 

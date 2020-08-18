@@ -208,13 +208,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class SECONDPAGE extends React.Component {
+ class Game_Over extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"character":260,"baton":22,"hurdle":8,"javelin":8,"variable1":109,"variable2":8,"variable3":48}
+        this.state = {"key":"value","CarX":250,"CarY":270,"CarImageUrl":"https://i.imgur.com/0HRKgxE.png","spawned":6,"ended":true,"yeet":1592,"thet":1593}
     }
 
 
@@ -235,37 +235,25 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
-       <TouchableOpacity
-          
-          onPress = { function(){if(appData.character>0){
-    appData.character = appData.character - 4;
-}; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"92.8%","left":"0.31%","innerText":"'left'","zIndex":500}]}
-        >
-        <Text style = {{color:"black"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"black"}}>
+      
 
-        {'left'}
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"source":"https://image.shutterstock.com/z/stock-vector-game-over-crash-car-468621020.jpg","height":"100%","width":"100%","resizeMode":"contain","top":"-3.08%","left":"-1.31%","zIndex":-123456}]}
+        source = {{uri:'https://image.shutterstock.com/z/stock-vector-game-over-crash-car-468621020.jpg'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
 
-       </Text>
-        </TouchableOpacity>
+
+
+      
+<View
+        style= {[{position:'absolute',zIndex:-1000, height:'10%',width:'10%'},{"top":"64.26%","left":"-0.74%","width":"100%","backgroundColor":"black","borderRadius":0,"borderColor":"black"}]}
+        ></View>
  <TouchableOpacity
           
-          onPress = { function(){if(appData.character<400){
-    appData.character = appData.character + 4;
-}; that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo('Car_Picker');; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -278,79 +266,19 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"92.92%","left":"70.02%","innerText":"'right'","zIndex":500}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"65.96%","left":"31.26%","innerText":"'PLAY AGAIN?'"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'right'}
+        {'PLAY AGAIN?'}
 
        </Text>
         </TouchableOpacity>
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSBpW-qcsw_AW8zHooy2LqMwcf1Md06SH6SkQ&usqp=CAU","top":appData.baton, "left": appData.variable1}]}
-        source = {{uri:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSBpW-qcsw_AW8zHooy2LqMwcf1Md06SH6SkQ&usqp=CAU'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":" \"https://png.pngtree.com/element_our/20190603/ourlarge/pngtree-game-hurdle-cartoon-illustration-image_1436363.jpg\";","top": appData.hurdle, "left": appData.variable2}]}
-        source = {{uri:' "https://png.pngtree.com/element_our/20190603/ourlarge/pngtree-game-hurdle-cartoon-illustration-image_1436363.jpg";'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://thumbs.dreamstime.com/b/cartoon-city-landscape-summer-day-modern-flat-cityscape-banner-skyscraper-buildings-green-park-trees-urban-156715015.jpg","height":"100%","width":"100%","zIndex":-50}]}
-        source = {{uri:'https://thumbs.dreamstime.com/b/cartoon-city-landscape-summer-day-modern-flat-cityscape-banner-skyscraper-buildings-green-park-trees-urban-156715015.jpg'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://www.tracknfieldgear.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/r/b/rbbl.jpg","top":appData.javelin, "left": appData.variable3 }]}
-        source = {{uri:'https://www.tracknfieldgear.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/r/b/rbbl.jpg'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://www.kindpng.com/picc/m/44-445260_transparent-stick-figure-running-clipart-monaca-towa-pixel.png","top":"71.39%","left":appData.character}]}
-        source = {{uri:'https://www.kindpng.com/picc/m/44-445260_transparent-stick-figure-running-clipart-monaca-towa-pixel.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
         </View>
         )
     }
   }
-    export default SECONDPAGE; 
+    export default Game_Over; 
 
 
 

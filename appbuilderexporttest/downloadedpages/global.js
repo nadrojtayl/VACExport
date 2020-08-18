@@ -1,3 +1,3 @@
-var global = {"character":260,"baton":22,"hurdle":8,"javelin":8,"variable1":109,"variable2":8,"variable3":48}
+var global = {"key":"value","CarX":250,"CarY":270,"CarImageUrl":"https://i.imgur.com/0HRKgxE.png","spawned":6,"ended":true,"yeet":1592,"thet":1593}
 
 export default global;
