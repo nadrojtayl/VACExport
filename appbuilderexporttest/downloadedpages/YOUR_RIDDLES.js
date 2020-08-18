@@ -208,7 +208,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class YOUR_RIDDLES extends React.Component {
      
 
     constructor(props)
@@ -238,21 +238,7 @@ function unwrap_dynamically(value,default_value){
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"pink"}}>
        <TouchableOpacity
           
-          onPress = { function(){if(findInArrayOfObjects(Data_Profiles,{'Usernames': appData.FirstPageinput4})){
-alert("This username is already taken");
-} else if (appData.FirstPageinput4 === ""){
-    alert('Please add a username.');
-} else if (appData.FirstPageinput6 === ""){
-    alert('Please add a password.');
-} else{
-that.props.saveTo('Data_Profiles',{'Usernames':appData.FirstPageinput4, 'Passwords': appData.FirstPageinput6});
-that.props.goTo('HOME');  
-appData.FirstPageinput3 = appData.FirstPageinput4;
-appData.FirstPageinput4 = "";
-appData.FirstPageinput5 = appData.FirstPageinput6;
-appData.FirstPageinput6 = "";
-}
-; that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo('VIEW');; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -265,35 +251,29 @@ appData.FirstPageinput6 = "";
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'SIGN UP'","backgroundColor":"#204016","color":"pink","borderWidth":1,"borderStyle":"dashed","top":"71.85%","left":"34.88%","fontWeight":"BOLD"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"fontSize":"resizeFont(12)","innerText":"'BACK '","height":25,"width":50,"top":"88.73%","left":"84.32%"}]}
         >
-        <Text style = {{color:"pink"}}>
+        <Text style = {{color:"black"}}>
 
-        {'SIGN UP'}
+        {'BACK '}
 
        </Text>
         </TouchableOpacity>
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},
-          {"color":"#204016","top":"10.48%","left":"0%", "fontSize": 15, "textAlign": "center", "innerText":"'Enter your username and password in the Log In spot if you already have an account. Enter a new username and password in the Sign Up spot to create a new account. The password must be no more or less than four characters long.'"}]}
-        > {'Enter your username and password in the Log In spot if you already have an account. Enter a new username and password in the Sign Up spot to create a new account. The password must be no more or less than four characters long.'} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'_____________________________________________________________'","top":"4.7%","left":"4.26%","color":"#204016"}]}
+        > {'_____________________________________________________________'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'SEARCH RIDDLES'","fontSize":"resizeFont(20)","color":"#204016","top":"1.37%","left":"6.04%"}]}
+        > {'SEARCH RIDDLES'} </Text>
         
  <TouchableOpacity
           
-          onPress = { function(){var user = findInArrayOfObjects(Data_Profiles,{'Usernames': appData.FirstPageinput3});
-if(appData.FirstPageinput3 === ""){
-alert("Please add a username.");
-} else if (findInArrayOfObjects(Data_Profiles,{'Usernames': appData.FirstPageinput3}) === false){
-    alert('This username does not exist.');
-} else if (appData.FirstPageinput5 === ""){
-    alert("Please add a password");
-} else {
-if (user ["Passwords"] != appData.FirstPageinput5){
-    alert("Password does not match.");
-} else{
-    that.props.goTo('HOME');
-    appData.FirstPageinput4 = "";
-}}; that.forceUpdate(); }}  
+          onPress = { function(){appData.index2 ++;
+appData.opacity2 = 0;
+if (appData.index2 > appData.search.length - 1){
+appData.index2 = 0;
+}; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -306,75 +286,97 @@ if (user ["Passwords"] != appData.FirstPageinput5){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'LOG IN'","backgroundColor":"#204016","color":"pink","borderWidth":1,"borderStyle":"dashed","top":"43.72%","left":"35.13%","fontWeight":"bold"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'NEXT'","color":"pink","backgroundColor":"#204106","borderWidth":1,"borderStyle":"dashed","top":"52.09%","left":"67.86%","fontWeight":"bold"}]}
         >
         <Text style = {{color:"pink"}}>
 
-        {'LOG IN'}
+        {'NEXT'}
 
        </Text>
         </TouchableOpacity>
-<TextInput
-       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},
-       {"top":"28.69%","left":"19.97%"}]}
-        value={appData["FirstPageinput3"]}
-         onChangeText={function(val){ appData["FirstPageinput3"] = val; that.forceUpdate();   } }
-        />
-<TextInput
-       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},
-       {"top":"53.26%","left":"20.19%"}]}
-        value={appData["FirstPageinput4"]}
-         onChangeText={function(val){ appData["FirstPageinput4"] = val; that.forceUpdate();   } }
-        />
-<TextInput
-       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},
-       {"top":"26.98%","left":"20.19%"}]}
-        value={appData["FirstPageinput5"]}
-         onChangeText={function(val){ appData["FirstPageinput5"] = val; that.forceUpdate();   } }
-        />
-<TextInput
-       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},
-       {"top":"50.3%","left":"20.19%"}]}
-        value={appData["FirstPageinput6"]}
-         onChangeText={function(val){ appData["FirstPageinput6"] = val; that.forceUpdate();   } }
-        />
+ <TouchableOpacity
+          
+          onPress = { function(){appData.index2 -=1;
+appData.opacity2 = 0;
+if (appData.index2 < 0){
+appData.index2 = appData.search.length -1;    
+}; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'PREVIOUS'","color":"pink","backgroundColor":"#204106","borderWidth":1,"borderStyle":"dashed","top":"52.27%","left":"1.73%","fontWeight":"bold"}]}
+        >
+        <Text style = {{color:"pink"}}>
+
+        {'PREVIOUS'}
+
+       </Text>
+        </TouchableOpacity>
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"30.02%","left":"0.93%","innerText":"'Username'","color":"#204016"}]}
-        > {'Username'} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"9.47%","left":"0.68%","innerText":"           appData.search[appData.index2][\"Riddle\"];","color":"#204016","fontSize":"resizeFont(17)","textAlign":"center","width":"100%"}]}
+        > {           appData.search[appData.index2]["Riddle"]} </Text>
+        
+ <TouchableOpacity
+          
+          onPress = { function(){if(appData.opacity2 > 0){
+appData.opacity2 = 0;
+}else {
+appData.opacity2 = 1;
+}; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'ANSWER'","color":"pink","backgroundColor":"#204106","borderWidth":1,"borderStyle":"dashed","top":"52.09%","left":"35.43%","fontWeight":"bold"}]}
+        >
+        <Text style = {{color:"pink"}}>
+
+        {'ANSWER'}
+
+       </Text>
+        </TouchableOpacity>
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"45.38%","left":"-2.62%","color":"#204016","fontSize":"resizeFont(17)","innerText":"     'By ' + appData.search[appData.index2]['Owner'];","textAlign":"Center"}]}
+        > {     'By ' + appData.search[appData.index2]['Owner']} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"59.82%","left":"1.18%","innerText":"'Username'","color":"#204016"}]}
-        > {'Username'} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"32.06%","left":"0.42%","innerText":"   appData.search[appData.index2]['Answer'];","fontSize":"resizeFont(20)","color":"#204016","opacity":"  appData.opacity2;","textAlign":"center"}]}
+        > {   appData.search[appData.index2]['Answer']} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"38.53%","left":"0.93%","innerText":"'Password'","color":"#204016"}]}
-        > {'Password'} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"24.47%","left":"21.45%","innerText":"'________________________________________'","color":"#204016"}]}
+        > {'________________________________________'} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"66.67%","left":"1.18%","innerText":"'Password'","color":"#204016"}]}
-        > {'Password'} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"37.79%","left":"21.71%","innerText":"'________________________________________'","color":"#204016"}]}
+        > {'________________________________________'} </Text>
         
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"52.97%","left":"7.26%","innerText":"'__________________________________________________________'","color":"#204016"}]}
-        > {'__________________________________________________________'} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"63.52%","left":"9.04%","innerText":"'Use the previous and next buttons to switch between questions. Use the answer button to show and hide the answer.'","textAlign":"center","width":"85%","fontSize":"resizeFont(17)","color":"#204016"}]}
+        > {'Use the previous and next buttons to switch between questions. Use the answer button to show and hide the answer.'} </Text>
         
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://i.postimg.cc/sf02McrR/My-Post-4.png","top":"81.66%","left":"0.17%","width":"100%","height":"20%"}]}
-        source = {{uri:'https://i.postimg.cc/sf02McrR/My-Post-4.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
         </View>
         )
     }
   }
-    export default FirstPage; 
+    export default YOUR_RIDDLES; 
 
 
 

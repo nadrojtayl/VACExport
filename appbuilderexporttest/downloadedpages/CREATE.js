@@ -208,7 +208,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class CREATE extends React.Component {
      
 
     constructor(props)
@@ -238,19 +238,122 @@ function unwrap_dynamically(value,default_value){
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"pink"}}>
        <TouchableOpacity
           
-          onPress = { function(){if(findInArrayOfObjects(Data_Profiles,{'Usernames': appData.FirstPageinput4})){
-alert("This username is already taken");
-} else if (appData.FirstPageinput4 === ""){
-    alert('Please add a username.');
-} else if (appData.FirstPageinput6 === ""){
-    alert('Please add a password.');
-} else{
-that.props.saveTo('Data_Profiles',{'Usernames':appData.FirstPageinput4, 'Passwords': appData.FirstPageinput6});
-that.props.goTo('HOME');  
-appData.FirstPageinput3 = appData.FirstPageinput4;
-appData.FirstPageinput4 = "";
-appData.FirstPageinput5 = appData.FirstPageinput6;
-appData.FirstPageinput6 = "";
+          onPress = { function(){that.props.goTo("HOME");; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'BACK'","height":25,"width":50,"top":"87.99%","left":"84.58%","fontSize":"resizeFont(12)"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'BACK'}
+
+       </Text>
+        </TouchableOpacity>
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'____________________________________________________________'","top":"7.33%","left":"2.99%","color":"#204016"}]}
+        > {'____________________________________________________________'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"fontSize":30,"innerText":"'CREATE'","top":"4.56%","left":"3.75%","color":"#204016"}]}
+        > {'CREATE'} </Text>
+        
+<TextInput
+       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"23.06%","left":"20.22%"}]}
+        value={appData["CREATEinput3"]}
+         onChangeText={function(val){ appData["CREATEinput3"] = val; that.forceUpdate();   } }
+        />
+<TextInput
+       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"39.72%","left":"21.3%"}]}
+        value={appData["CREATEinput4"]}
+         onChangeText={function(val){ appData["CREATEinput4"] = val; that.forceUpdate();   } }
+        />
+ <TouchableOpacity
+          
+          onPress = { function(){
+            if (appData.CREATEinput3 === "") {
+              alert("Please add a riddle.");
+            } else if (appData.CREATEinput4 === "") {
+              alert("Please add an answer.");
+            } else {
+              that.props.saveTo("Data_Riddles",{"Riddle":appData.CREATEinput3, "Answer":appData.CREATEinput4, "Owner":appData.FirstPageinput3});
+              alert("Your riddle has been created");
+              appData.CREATEinput3 = "";
+              appData.CREATEinput4 = "";
+            }; 
+            that.forceUpdate(); 
+          }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},
+            {"innerText":"'DONE '","top":"61.3%","left":"57.68%","backgroundColor":"#204016","color":"pink","fontWeight":"bold","borderWidth":1,"borderStyle":"dashed"}]}
+        >
+        <Text style = {{color:"pink"}}>
+
+        {'DONE '}
+
+       </Text>
+        </TouchableOpacity>
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"19.69%","left":"31%","innerText":"'Enter your riddle below.'","color":"#204016"}]}
+        > {'Enter your riddle below.'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"41.54%","left":"30.87%","innerText":"'Enter your answer below.'","color":"#204016"}]}
+        > {'Enter your answer below.'} </Text>
+        
+ <TouchableOpacity
+          
+          onPress = { function(){appData.CREATEinput3 = "";
+appData.CREATEinput4 = "";; that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            backgroundColor: '#fff',
+            elevation: 2, // Android
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height:"7%",
+            width:"30%",
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'CANCEL '","top":"61.3%","left":"10.81%","backgroundColor":"#204016","color":"pink","fontWeight":"bold","borderWidth":1,"borderStyle":"dashed"}]}
+        >
+        <Text style = {{color:"pink"}}>
+
+        {'CANCEL '}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){appData.index2 = 0;
+appData.data = Data_Riddles;
+appData.search = filter_list_of_objs(appData.data, 'Owner', appData.FirstPageinput3);
+if (appData.search.length === 0){
+    alert("Create a riddle to view your riddles.");
+} else{   
+that.props.goTo("YOUR_RIDDLES");
 }
 ; that.forceUpdate(); }}  
           style= {[{
@@ -265,116 +368,19 @@ appData.FirstPageinput6 = "";
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'SIGN UP'","backgroundColor":"#204016","color":"pink","borderWidth":1,"borderStyle":"dashed","top":"71.85%","left":"34.88%","fontWeight":"BOLD"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'VIEW YOUR RIDDLES'","top":"70.92%","left":"23.99%","backgroundColor":"#204016","color":"pink","fontWeight":"bold","borderWidth":1,"borderStyle":"dashed","width":"50%","height":"12%"}]}
         >
         <Text style = {{color:"pink"}}>
 
-        {'SIGN UP'}
+        {'VIEW YOUR RIDDLES'}
 
        </Text>
         </TouchableOpacity>
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},
-          {"color":"#204016","top":"10.48%","left":"0%", "fontSize": 15, "textAlign": "center", "innerText":"'Enter your username and password in the Log In spot if you already have an account. Enter a new username and password in the Sign Up spot to create a new account. The password must be no more or less than four characters long.'"}]}
-        > {'Enter your username and password in the Log In spot if you already have an account. Enter a new username and password in the Sign Up spot to create a new account. The password must be no more or less than four characters long.'} </Text>
-        
- <TouchableOpacity
-          
-          onPress = { function(){var user = findInArrayOfObjects(Data_Profiles,{'Usernames': appData.FirstPageinput3});
-if(appData.FirstPageinput3 === ""){
-alert("Please add a username.");
-} else if (findInArrayOfObjects(Data_Profiles,{'Usernames': appData.FirstPageinput3}) === false){
-    alert('This username does not exist.');
-} else if (appData.FirstPageinput5 === ""){
-    alert("Please add a password");
-} else {
-if (user ["Passwords"] != appData.FirstPageinput5){
-    alert("Password does not match.");
-} else{
-    that.props.goTo('HOME');
-    appData.FirstPageinput4 = "";
-}}; that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'LOG IN'","backgroundColor":"#204016","color":"pink","borderWidth":1,"borderStyle":"dashed","top":"43.72%","left":"35.13%","fontWeight":"bold"}]}
-        >
-        <Text style = {{color:"pink"}}>
-
-        {'LOG IN'}
-
-       </Text>
-        </TouchableOpacity>
-<TextInput
-       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},
-       {"top":"28.69%","left":"19.97%"}]}
-        value={appData["FirstPageinput3"]}
-         onChangeText={function(val){ appData["FirstPageinput3"] = val; that.forceUpdate();   } }
-        />
-<TextInput
-       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},
-       {"top":"53.26%","left":"20.19%"}]}
-        value={appData["FirstPageinput4"]}
-         onChangeText={function(val){ appData["FirstPageinput4"] = val; that.forceUpdate();   } }
-        />
-<TextInput
-       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},
-       {"top":"26.98%","left":"20.19%"}]}
-        value={appData["FirstPageinput5"]}
-         onChangeText={function(val){ appData["FirstPageinput5"] = val; that.forceUpdate();   } }
-        />
-<TextInput
-       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},
-       {"top":"50.3%","left":"20.19%"}]}
-        value={appData["FirstPageinput6"]}
-         onChangeText={function(val){ appData["FirstPageinput6"] = val; that.forceUpdate();   } }
-        />
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"30.02%","left":"0.93%","innerText":"'Username'","color":"#204016"}]}
-        > {'Username'} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"59.82%","left":"1.18%","innerText":"'Username'","color":"#204016"}]}
-        > {'Username'} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"38.53%","left":"0.93%","innerText":"'Password'","color":"#204016"}]}
-        > {'Password'} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"66.67%","left":"1.18%","innerText":"'Password'","color":"#204016"}]}
-        > {'Password'} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"52.97%","left":"7.26%","innerText":"'__________________________________________________________'","color":"#204016"}]}
-        > {'__________________________________________________________'} </Text>
-        
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://i.postimg.cc/sf02McrR/My-Post-4.png","top":"81.66%","left":"0.17%","width":"100%","height":"20%"}]}
-        source = {{uri:'https://i.postimg.cc/sf02McrR/My-Post-4.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
         </View>
         )
     }
   }
-    export default FirstPage; 
+    export default CREATE; 
 
 
 

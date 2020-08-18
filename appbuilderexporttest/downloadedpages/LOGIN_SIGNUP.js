@@ -208,7 +208,7 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class FirstPage extends React.Component {
+ class LOGIN_SIGNUP extends React.Component {
      
 
     constructor(props)
@@ -238,21 +238,7 @@ function unwrap_dynamically(value,default_value){
       <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"pink"}}>
        <TouchableOpacity
           
-          onPress = { function(){if(findInArrayOfObjects(Data_Profiles,{'Usernames': appData.FirstPageinput4})){
-alert("This username is already taken");
-} else if (appData.FirstPageinput4 === ""){
-    alert('Please add a username.');
-} else if (appData.FirstPageinput6 === ""){
-    alert('Please add a password.');
-} else{
-that.props.saveTo('Data_Profiles',{'Usernames':appData.FirstPageinput4, 'Passwords': appData.FirstPageinput6});
-that.props.goTo('HOME');  
-appData.FirstPageinput3 = appData.FirstPageinput4;
-appData.FirstPageinput4 = "";
-appData.FirstPageinput5 = appData.FirstPageinput6;
-appData.FirstPageinput6 = "";
-}
-; that.forceUpdate(); }}  
+          onPress = { function(){that.props.saveTo('Data_Profiles',{'Username': appData.LOGIN_SIGNUPinput2}); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -265,7 +251,7 @@ appData.FirstPageinput6 = "";
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'SIGN UP'","backgroundColor":"#204016","color":"pink","borderWidth":1,"borderStyle":"dashed","top":"71.85%","left":"34.88%","fontWeight":"BOLD"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"backgroundColor":"#204016","innerText":"'SIGN UP'","color":"pink","borderWidth":1,"borderStyle":"dashed","top":"36.22%","left":"36.3%"}]}
         >
         <Text style = {{color:"pink"}}>
 
@@ -274,26 +260,22 @@ appData.FirstPageinput6 = "";
        </Text>
         </TouchableOpacity>
 <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},
-          {"color":"#204016","top":"10.48%","left":"0%", "fontSize": 15, "textAlign": "center", "innerText":"'Enter your username and password in the Log In spot if you already have an account. Enter a new username and password in the Sign Up spot to create a new account. The password must be no more or less than four characters long.'"}]}
-        > {'Enter your username and password in the Log In spot if you already have an account. Enter a new username and password in the Sign Up spot to create a new account. The password must be no more or less than four characters long.'} </Text>
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'Enter your username in the Log In spot if you already have an account. Enter a new username in the Sign Up spot to create a new account. Once you put in a username, press the corresponding button.'","top":"3.78%","left":"3.89%"}]}
+        > {'Enter your username in the Log In spot if you already have an account. Enter a new username in the Sign Up spot to create a new account. Once you put in a username, press the corresponding button.'} </Text>
         
+<TextInput
+       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"27.65%","left":"27.64%"}]}
+        value={appData["LOGIN_SIGNUPinput2"]}
+         onChangeText={function(val){ appData["LOGIN_SIGNUPinput2"] = val; that.forceUpdate();   } }
+        />
+<TextInput
+       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},{"top":"55.59%","left":"28.2%"}]}
+        value={appData["LOGIN_SIGNUPinput3"]}
+         onChangeText={function(val){ appData["LOGIN_SIGNUPinput3"] = val; that.forceUpdate();   } }
+        />
  <TouchableOpacity
           
-          onPress = { function(){var user = findInArrayOfObjects(Data_Profiles,{'Usernames': appData.FirstPageinput3});
-if(appData.FirstPageinput3 === ""){
-alert("Please add a username.");
-} else if (findInArrayOfObjects(Data_Profiles,{'Usernames': appData.FirstPageinput3}) === false){
-    alert('This username does not exist.');
-} else if (appData.FirstPageinput5 === ""){
-    alert("Please add a password");
-} else {
-if (user ["Passwords"] != appData.FirstPageinput5){
-    alert("Password does not match.");
-} else{
-    that.props.goTo('HOME');
-    appData.FirstPageinput4 = "";
-}}; that.forceUpdate(); }}  
+          onPress = { function(){; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -306,7 +288,7 @@ if (user ["Passwords"] != appData.FirstPageinput5){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'LOG IN'","backgroundColor":"#204016","color":"pink","borderWidth":1,"borderStyle":"dashed","top":"43.72%","left":"35.13%","fontWeight":"bold"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'LOG IN'","color":"pink","backgroundColor":"#204016","borderWidth":1,"borderStyle":"dashed","top":"64.36%","left":"35.74%"}]}
         >
         <Text style = {{color:"pink"}}>
 
@@ -314,67 +296,11 @@ if (user ["Passwords"] != appData.FirstPageinput5){
 
        </Text>
         </TouchableOpacity>
-<TextInput
-       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},
-       {"top":"28.69%","left":"19.97%"}]}
-        value={appData["FirstPageinput3"]}
-         onChangeText={function(val){ appData["FirstPageinput3"] = val; that.forceUpdate();   } }
-        />
-<TextInput
-       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},
-       {"top":"53.26%","left":"20.19%"}]}
-        value={appData["FirstPageinput4"]}
-         onChangeText={function(val){ appData["FirstPageinput4"] = val; that.forceUpdate();   } }
-        />
-<TextInput
-       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},
-       {"top":"26.98%","left":"20.19%"}]}
-        value={appData["FirstPageinput5"]}
-         onChangeText={function(val){ appData["FirstPageinput5"] = val; that.forceUpdate();   } }
-        />
-<TextInput
-       style= {[{width:"60%", height:"5%", width:'60%', backgroundColor:'white',borderColor:'grey',borderWidth:1},
-       {"top":"50.3%","left":"20.19%"}]}
-        value={appData["FirstPageinput6"]}
-         onChangeText={function(val){ appData["FirstPageinput6"] = val; that.forceUpdate();   } }
-        />
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"30.02%","left":"0.93%","innerText":"'Username'","color":"#204016"}]}
-        > {'Username'} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"59.82%","left":"1.18%","innerText":"'Username'","color":"#204016"}]}
-        > {'Username'} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"38.53%","left":"0.93%","innerText":"'Password'","color":"#204016"}]}
-        > {'Password'} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"66.67%","left":"1.18%","innerText":"'Password'","color":"#204016"}]}
-        > {'Password'} </Text>
-        
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"52.97%","left":"7.26%","innerText":"'__________________________________________________________'","color":"#204016"}]}
-        > {'__________________________________________________________'} </Text>
-        
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://i.postimg.cc/sf02McrR/My-Post-4.png","top":"81.66%","left":"0.17%","width":"100%","height":"20%"}]}
-        source = {{uri:'https://i.postimg.cc/sf02McrR/My-Post-4.png'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
         </View>
         )
     }
   }
-    export default FirstPage; 
+    export default LOGIN_SIGNUP; 
 
 
 

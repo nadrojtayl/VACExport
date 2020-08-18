@@ -339,9 +339,10 @@ function unwrap_dynamically(value,default_value){
           onPress = { function(){
             appData.spawned = 0;
             appData.ended = false;
+
             appData.yeet = runWithInterval( 
               function functionX() {
-              for(var i = 0;i<created.length;i++){
+              for(var i = 0;i < created.length; i++){
               created[i].top += 20;
               var samelane = (created[i].left == 50) == (appData.CarX < 200);
               if(samelane && created[i].top >= 360 && created[i].top <= 380){
@@ -355,7 +356,8 @@ function unwrap_dynamically(value,default_value){
                      that.props.goTo("Game_Over")
                  }
               }
-           }}, 100);
+            }}, 100);
+
             appData.thet = runWithInterval(
               function functY(){
                 if(0.5>Math.random()){
@@ -369,7 +371,9 @@ function unwrap_dynamically(value,default_value){
                 }
                 removeOffScreen();
               }, 1000);
-            ; that.forceUpdate(); 
+             
+            that.forceUpdate(); 
+
           }}  
 
           style= {[{

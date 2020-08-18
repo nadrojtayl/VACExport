@@ -3,11 +3,19 @@
 
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
-import Car_Picker from './downloadedpages/Car_Picker.js'
 import FirstPage from './downloadedpages/FirstPage.js'
-import Track from './downloadedpages/Track.js'
-import Game_Over from './downloadedpages/Game_Over.js'
-import First_Page from './downloadedpages/First_Page.js'
+import CREATE from './downloadedpages/CREATE.js'
+import PROFILE from './downloadedpages/PROFILE.js'
+import VIEW from './downloadedpages/VIEW.js'
+import FRIENDS from './downloadedpages/FRIENDS.js'
+import TUTORIAL from './downloadedpages/TUTORIAL.js'
+import SEARCH_VIEW from './downloadedpages/SEARCH_VIEW.js'
+import ALL_VIEW from './downloadedpages/ALL_VIEW.js'
+import LOGIN_SIGNUP from './downloadedpages/LOGIN_SIGNUP.js'
+import HOME from './downloadedpages/HOME.js'
+import SEARCH_RIDDLES from './downloadedpages/SEARCH_RIDDLES.js'
+import DELETE from './downloadedpages/DELETE.js'
+import YOUR_RIDDLES from './downloadedpages/YOUR_RIDDLES.js'
 import appData from './downloadedpages/global.js';
 /*
 EXPORT PROCESS
@@ -86,13 +94,13 @@ class App extends React.Component {
 
 constructor(props){
 super(props);
-this.state = {dbLinks:{}, loaded:true, page:"First_Page", numLoaded:0}
+this.state = {dbLinks:{}, loaded:false, page:"FirstPage", numLoaded:0}
 }
 
 componentDidMount(){
   
   var that = this;
-  var dbLinks = {}
+  var dbLinks = {"Data_Profiles":"https://script.google.com/macros/s/AKfycbwXr5OuCmNOeg-WjgEaQju0Xy77OKeBsHJTW6QKRVsERZDD9ew/exec?sheetName=LevProfiles","Data_Riddles":"https://script.google.com/macros/s/AKfycbwXr5OuCmNOeg-WjgEaQju0Xy77OKeBsHJTW6QKRVsERZDD9ew/exec?sheetName=LevRiddles"}
   Object.keys(dbLinks).forEach(function(key){
     that.connectToDatabase(dbLinks[key], key);
   })
@@ -124,19 +132,6 @@ render(){
   var that = this; 
 
   
-    if(that.state.page === "Car_Picker"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <Car_Picker  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Car_Picker>
-          </View>
-        )
-    }
-
-
-
-    
-
-
     if(that.state.page === "FirstPage"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
@@ -150,10 +145,10 @@ render(){
     
 
 
-    if(that.state.page === "Track"){
+    if(that.state.page === "CREATE"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <Track  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Track>
+             <CREATE  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></CREATE>
           </View>
         )
     }
@@ -163,10 +158,10 @@ render(){
     
 
 
-    if(that.state.page === "Game_Over"){
+    if(that.state.page === "PROFILE"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <Game_Over  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Game_Over>
+             <PROFILE  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></PROFILE>
           </View>
         )
     }
@@ -176,10 +171,348 @@ render(){
     
 
 
-    if(that.state.page === "First_Page"){
+    if(that.state.page === "VIEW"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <First_Page  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></First_Page>
+             <VIEW  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></VIEW>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "FRIENDS"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <FRIENDS  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></FRIENDS>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "TUTORIAL"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <TUTORIAL  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></TUTORIAL>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "SEARCH_VIEW"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <SEARCH_VIEW  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SEARCH_VIEW>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "ALL_VIEW"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <ALL_VIEW  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></ALL_VIEW>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "LOGIN_SIGNUP"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <LOGIN_SIGNUP  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></LOGIN_SIGNUP>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "HOME"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <HOME  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></HOME>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "SEARCH_VIEW"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <SEARCH_VIEW  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SEARCH_VIEW>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "SEARCH_VIEW"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <SEARCH_VIEW  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SEARCH_VIEW>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "SEARCH_RIDDLES"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <SEARCH_RIDDLES  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SEARCH_RIDDLES>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "SEARCH_VIEW"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <SEARCH_VIEW  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SEARCH_VIEW>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "SEARCH_VIEW"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <SEARCH_VIEW  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SEARCH_VIEW>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "SEARCH_VIEW"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <SEARCH_VIEW  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SEARCH_VIEW>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "SEARCH_VIEW"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <SEARCH_VIEW  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SEARCH_VIEW>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "SEARCH_VIEW"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <SEARCH_VIEW  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SEARCH_VIEW>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "SEARCH_VIEW"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <SEARCH_VIEW  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SEARCH_VIEW>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "SEARCH_VIEW"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <SEARCH_VIEW  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SEARCH_VIEW>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "SEARCH_VIEW"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <SEARCH_VIEW  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SEARCH_VIEW>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "SEARCH_VIEW"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <SEARCH_VIEW  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SEARCH_VIEW>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "SEARCH_VIEW"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <SEARCH_VIEW  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SEARCH_VIEW>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "SEARCH_VIEW"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <SEARCH_VIEW  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SEARCH_VIEW>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "DELETE"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <DELETE  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></DELETE>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "DELETE"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <DELETE  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></DELETE>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "DELETE"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <DELETE  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></DELETE>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "YOUR_RIDDLES"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <YOUR_RIDDLES  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></YOUR_RIDDLES>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "DELETE"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <DELETE  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></DELETE>
+          </View>
+        )
+    }
+
+
+
+    
+
+
+    if(that.state.page === "DELETE"){
+        return(
+          <View style = {{width:"100%",height:"100%"}}>
+             <DELETE  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></DELETE>
           </View>
         )
     }

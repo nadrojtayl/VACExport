@@ -1,7 +1,7 @@
   {
       "expo": {
-        "name": "Traffic Racerz",
-        "slug": "Traffic Racerz",
+        "name": "RiddleMeThis?",
+        "slug": "RiddleMeThis?",
         "platforms": [
           "ios",
           "android",
@@ -23,10 +23,10 @@
         ],
         "ios": {
           "supportsTablet": true,
-          "bundleIdentifier": "com.TrafficRaceSimulator.TrafficRaceSimulator"
+          "bundleIdentifier": "com.LevRiddle.LevRiddle"
         },
         "android": {
-          "package": "com.TrafficRaceSimulator.TrafficRaceSimulator"
+          "package": "com.LevRiddle.LevRiddle"
         },
         "entryPoint": "node_modules/expo/AppEntry.js"
       }

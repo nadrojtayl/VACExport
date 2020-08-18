@@ -208,13 +208,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class First_Page extends React.Component {
+ class TUTORIAL extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"key":"value","CarX":250,"CarY":270,"CarImageUrl":"https://i.imgur.com/0HRKgxE.png","spawned":6,"ended":true,"yeet":1592,"thet":1593}
+        this.state = {"key":"value","FirstPageinput2":"Select","FirstPagepicker0":"","loaded":false,"dbLinks":{},"LOGIN_SIGNUPinput2":"","LOGIN_SIGNUPinput3":"","FirstPageinput4":"","FirstPageinput5":"","FirstPageinput3":"","CREATEinput3":"","CREATEinput4":"","index":1,"opacity":0,"FirstPageinput6":"","index2":1,"search":[{"Riddle":"Why did the lizard cross the playground?","Answer":"To get to the other slide.","Owner":"Mamacita"},{"Riddle":"Why?","Answer":"Of course","Owner":"Mamacita"}],"opacity2":0,"SEARCH_VIEWinput3":"","data":[{"Riddle":"What comes once in a minute, twice in a moment, but never in a thousand years?","Answer":"The letter \"M\".","Owner":"Riddlemethis","Index":0},{"Riddle":"What is more useful when it is broken?","Answer":"An egg.","Owner":"Riddlemethis","Index":1},{"Riddle":"I'm not clothes but I cover your body. The more I'm used, the thinner I grow. What am I?","Answer":"A bar of soap.","Owner":"Riddlemethis","Index":2},{"Riddle":"What eight letter word can you take one letter away from to create a new word, until it's just one letter?","Answer":"Starting.","Owner":"Riddlemethis","Index":3},{"Riddle":"What can go up and come down without moving?","Answer":"The temperature / Mood / The sun.","Owner":"Riddlemethis","Index":4},{"Riddle":"Why did the lizard cross the playground?","Answer":"To get to the other slide.","Owner":"Mamacita"},{"Riddle":"Why?","Answer":"Of course","Owner":"Mamacita"}],"SEARCH_VIEWinput8":"","searching":"","searching2":"","profiles":[{"Usernames":"Mamacita","Passwords":"1019"}]}
     }
 
 
@@ -235,10 +235,10 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"black"}}>
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"pink"}}>
        <TouchableOpacity
           
-          onPress = { function(){that.props.goTo('Car_Picker');; that.forceUpdate(); }}  
+          onPress = { function(){that.props.goTo("HOME");; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -251,31 +251,47 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"29.05%","left":"34.69%","innerText":"'START PLAYING'","backgroundColor":"red"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'BACK'","height":25,"width":50,"top":"87.99%","left":"82.3%","fontSize":"resizeFont(12)"}]}
         >
         <Text style = {{color:"black"}}>
 
-        {'START PLAYING'}
+        {'BACK'}
 
        </Text>
         </TouchableOpacity>
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://lh3.googleusercontent.com/proxy/N19fdP_uLIbzxwoXMkWCH2wjAKEU-V0um5KFaGnLkusLCowIXzSLRbAK4c7yIF6TOb1KEpUAb4uRePeo9ZDifMvi3zZl59RAPAgj-AYkr20rVJnmwC67BRsyhT54jYnxkIixIZ1J17zuoNVGbwM_bJZkolnM-HIXKA","zIndex":-123456,"resizeMode":"contain","height":"100%","width":"100%"}]}
-        source = {{uri:'https://lh3.googleusercontent.com/proxy/N19fdP_uLIbzxwoXMkWCH2wjAKEU-V0um5KFaGnLkusLCowIXzSLRbAK4c7yIF6TOb1KEpUAb4uRePeo9ZDifMvi3zZl59RAPAgj-AYkr20rVJnmwC67BRsyhT54jYnxkIixIZ1J17zuoNVGbwM_bJZkolnM-HIXKA'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"fontSize":20,"textAlign": "center" ,"innerText":"'This is a Riddle Creator. You will be able to create riddles, share them with friends, and view your friends' riddles.'","top":"16.69%","left":"0%","color":"#204016"}]}
+        > {'This is a Riddle Creator. You will be able to create riddles, share them with friends, and view your friends riddles.'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"fontSize":20,"textAlign": "center","top":"39.83%","left":"0%","innerText":"'To create a riddle, go to the create page. There you will have to option to put in your riddle and it's answer. Once you put those two things in, press done.'","display":"#204016","color":"#204016"}]}
+        > {"To create a riddle, go to the create page. There you will have to option to put in your riddle and its answer. Once you put those two things in, press done."} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"fontSize":20,"textAlign": "center" ,"top":"66.67%","left":"0%","innerText":"'To view your riddles, riddles other people created, or to find specific riddles, press view and select either \"your riddles\", \"all riddles\", or \"find riddles\".'","color":"#204016"}]}
+        > {'To view your riddles, riddles other people created, or to find specific riddles, press view and select either "your riddles", "all riddles", or "find riddles".'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'________________________________________'","top":"29.65%","left":"21.71%","color":"#204016"}]}
+        > {'________________________________________'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'________________________________________'","top":"56.86%","left":"21.71%","color":"#204016"}]}
+        > {'________________________________________'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'____________________________________________________________'","top":"7.66%","left":"2.96%","color":"#204016"}]}
+        > {'____________________________________________________________'} </Text>
+        
+<Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"innerText":"'TUTORIAL'","fontSize":30,"color":"#204016","top":"4.33%","left":"4.48%"}]}
+        > {'TUTORIAL'} </Text>
+        
         </View>
         )
     }
   }
-    export default First_Page; 
+    export default TUTORIAL; 
 
 
 
