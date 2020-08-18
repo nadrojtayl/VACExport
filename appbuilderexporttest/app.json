@@ -1,7 +1,7 @@
   {
       "expo": {
-        "name": "Tr?v!a",
-        "slug": "Tr?v!a",
+        "name": "TrackRunner!",
+        "slug": "TrackRunner!",
         "platforms": [
           "ios",
           "android",
@@ -23,10 +23,10 @@
         ],
         "ios": {
           "supportsTablet": true,
-          "bundleIdentifier": "com.AveryTrivia.AveryTrivia"
+          "bundleIdentifier": "com.TrackRunner.TrackRunner"
         },
         "android": {
-          "package": "com.AveryTrivia.AveryTrivia"
+          "package": "com.TrackRunner.TrackRunner"
         },
         "entryPoint": "node_modules/expo/AppEntry.js"
       }

@@ -4,14 +4,7 @@
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, Button, Picker, Switch, Image, Text, View } from 'react-native';
 import FirstPage from './downloadedpages/FirstPage.js'
-import Good from './downloadedpages/Good.js'
-import Next from './downloadedpages/Next.js'
-import Bad from './downloadedpages/Bad.js'
-import TestPage from './downloadedpages/TestPage.js'
-import Badtwo from './downloadedpages/Badtwo.js'
-import Goodtwo from './downloadedpages/Goodtwo.js'
-import Nexttwo from './downloadedpages/Nexttwo.js'
-import Badthree from './downloadedpages/Badthree.js'
+import SECONDPAGE from './downloadedpages/SECONDPAGE.js'
 import appData from './downloadedpages/global.js';
 /*
 EXPORT PROCESS
@@ -90,13 +83,13 @@ class App extends React.Component {
 
 constructor(props){
 super(props);
-this.state = {dbLinks:{}, loaded:false, page:"FirstPage", numLoaded:0}
+this.state = {dbLinks:{}, loaded:true, page:"FirstPage", numLoaded:0}
 }
 
 componentDidMount(){
   
   var that = this;
-  var dbLinks = {"Questions":"https://script.google.com/a/vineyardappcamp.com/macros/s/AKfycbxQZzBBG4-2DXJOZPWl0lxCEAhVS0ipKaHBm6onnA/exec?sheetName=Avery"}
+  var dbLinks = {}
   Object.keys(dbLinks).forEach(function(key){
     that.connectToDatabase(dbLinks[key], key);
   })
@@ -141,101 +134,10 @@ render(){
     
 
 
-    if(that.state.page === "Good"){
+    if(that.state.page === "SECONDPAGE"){
         return(
           <View style = {{width:"100%",height:"100%"}}>
-             <Good  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Good>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "Next"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <Next  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Next>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "Bad"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <Bad  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Bad>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "TestPage"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <TestPage  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></TestPage>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "Badtwo"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <Badtwo  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Badtwo>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "Goodtwo"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <Goodtwo  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Goodtwo>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "Nexttwo"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <Nexttwo  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Nexttwo>
-          </View>
-        )
-    }
-
-
-
-    
-
-
-    if(that.state.page === "Badthree"){
-        return(
-          <View style = {{width:"100%",height:"100%"}}>
-             <Badthree  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></Badthree>
+             <SECONDPAGE  saveTo = {that.sendToDatabase.bind(that)} goTo = {that.goTo.bind(that)} loaded = {that.state.loaded}></SECONDPAGE>
           </View>
         )
     }

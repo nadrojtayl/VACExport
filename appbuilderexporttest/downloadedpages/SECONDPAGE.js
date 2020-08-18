@@ -208,13 +208,13 @@ function unwrap_dynamically(value,default_value){
 
 
 
- class Nexttwo extends React.Component {
+ class SECONDPAGE extends React.Component {
      
 
     constructor(props)
     {
         super(props);
-        this.state = {"loaded":false,"dbLinks":{},"index":20,"bindex1":3,"bindex2":2,"bindex3":0,"bindex4":1,"dbkeys":["Right Answer","Wrong Answer 1","Wrong Answer 2","Wrong Answer 3"],"counter":3,"correct":3,"repets":[]}
+        this.state = {"character":260,"baton":22,"hurdle":8,"javelin":8,"variable1":109,"variable2":8,"variable3":48}
     }
 
 
@@ -235,14 +235,12 @@ function unwrap_dynamically(value,default_value){
         </View>)
       }
       return (
-      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"#eaa8f7"}}>
-      <Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"1.77%","left":"46.22%","fontSize":"resizeFont(50)","innerText":"''thing''"}]}
-        > thing </Text>
-        
- <TouchableOpacity
+      <View style = {{width:"100%", height:"100%", borderWidth:5, borderColor:"black", backgroundColor:"white"}}>
+       <TouchableOpacity
           
-          onPress = { function(){that.props.goTo('Badtwo'); that.forceUpdate(); }}  
+          onPress = { function(){if(appData.character>0){
+    appData.character = appData.character - 4;
+}; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -255,17 +253,19 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"24%","left":"6.47%"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"92.8%","left":"0.31%","innerText":"'left'","zIndex":500}]}
         >
         <Text style = {{color:"black"}}>
 
-        {}
+        {'left'}
 
        </Text>
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){that.props.goTo('Badtwo'); that.forceUpdate(); }}  
+          onPress = { function(){if(appData.character<400){
+    appData.character = appData.character + 4;
+}; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -278,65 +278,79 @@ function unwrap_dynamically(value,default_value){
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"23.22%","left":"55.34%"}]}
+            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"92.92%","left":"70.02%","innerText":"'right'","zIndex":500}]}
         >
         <Text style = {{color:"black"}}>
 
-        {}
+        {'right'}
 
        </Text>
         </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo('Badtwo'); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"42.13%","left":"7.23%"}]}
-        >
-        <Text style = {{color:"black"}}>
 
-        {}
 
-       </Text>
-        </TouchableOpacity>
- <TouchableOpacity
-          
-          onPress = { function(){that.props.goTo('Goodtwo'); that.forceUpdate(); }}  
-          style= {[{
-            shadowColor: 'rgba(0,0,0, .4)', // IOS
-            shadowOffset: { height: 1, width: 1 }, // IOS
-            shadowOpacity: 1, // IOS
-            shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
-            elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"43.3%","left":"53.06%"}]}
-        >
-        <Text style = {{color:"black"}}>
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"source":"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSBpW-qcsw_AW8zHooy2LqMwcf1Md06SH6SkQ&usqp=CAU","top":appData.baton, "left": appData.variable1}]}
+        source = {{uri:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSBpW-qcsw_AW8zHooy2LqMwcf1Md06SH6SkQ&usqp=CAU'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
 
-        {}
 
-       </Text>
-        </TouchableOpacity>
+
+      
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"source":" \"https://png.pngtree.com/element_our/20190603/ourlarge/pngtree-game-hurdle-cartoon-illustration-image_1436363.jpg\";","top": appData.hurdle, "left": appData.variable2}]}
+        source = {{uri:' "https://png.pngtree.com/element_our/20190603/ourlarge/pngtree-game-hurdle-cartoon-illustration-image_1436363.jpg";'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"source":"https://thumbs.dreamstime.com/b/cartoon-city-landscape-summer-day-modern-flat-cityscape-banner-skyscraper-buildings-green-park-trees-urban-156715015.jpg","height":"100%","width":"100%","zIndex":-50}]}
+        source = {{uri:'https://thumbs.dreamstime.com/b/cartoon-city-landscape-summer-day-modern-flat-cityscape-banner-skyscraper-buildings-green-park-trees-urban-156715015.jpg'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"source":"https://www.tracknfieldgear.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/r/b/rbbl.jpg","top":appData.javelin, "left": appData.variable3 }]}
+        source = {{uri:'https://www.tracknfieldgear.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/r/b/rbbl.jpg'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
+
+
+      <Image
+        style= {[{width:"20%",height:"20%"}, {"source":"https://www.kindpng.com/picc/m/44-445260_transparent-stick-figure-running-clipart-monaca-towa-pixel.png","top":"71.39%","left":appData.character}]}
+        source = {{uri:'https://www.kindpng.com/picc/m/44-445260_transparent-stick-figure-running-clipart-monaca-towa-pixel.png'}}
+        onPress = { function(){; that.forceUpdate(); }}  
+      >
+      </Image>
+
+
+
+      
         </View>
         )
     }
   }
-    export default Nexttwo; 
+    export default SECONDPAGE; 
 
 
 
