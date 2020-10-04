@@ -1,7 +1,7 @@
   {
       "expo": {
-        "name": "TrackRunner!",
-        "slug": "TrackRunner!",
+        "name": "TrackRunner",
+        "slug": "TrackRunner",
         "platforms": [
           "ios",
           "android",

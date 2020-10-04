@@ -246,14 +246,10 @@ function unwrap_dynamically(value,default_value){
             shadowOffset: { height: 1, width: 1 }, // IOS
             shadowOpacity: 1, // IOS
             shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
             elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"92.8%","left":"0.31%","innerText":"'left'","zIndex":500}]}
+            flexDirection: 'row',width:"30%",
+            position:'absolute', backgroundColor:'white', alignItems:'center',justifyContent:'center', height: "7%",
+            title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1,"top":"92.8%","left":"0.31%","innerText":"'left'","zIndex":50}]}
         >
         <Text style = {{color:"black"}}>
 
@@ -263,22 +259,17 @@ function unwrap_dynamically(value,default_value){
         </TouchableOpacity>
  <TouchableOpacity
           
-          onPress = { function(){if(appData.character<400){
-    appData.character = appData.character + 4;
-}; that.forceUpdate(); }}  
+          onPress = { function(){if(appData.character<200){
+            appData.character = appData.character + 4;
+            }; that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
             shadowOpacity: 1, // IOS
             shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
             elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"92.92%","left":"70.02%","innerText":"'right'","zIndex":500}]}
+            position:'absolute', backgroundColor:'white', alignItems:'center',justifyContent:'center', height: "7%", width:"30%", 
+            title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1,"top":"92.92%","left":"70.02%","zIndex":50}]}
         >
         <Text style = {{color:"black"}}>
 
@@ -288,60 +279,40 @@ function unwrap_dynamically(value,default_value){
         </TouchableOpacity>
 
 
+
       <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSBpW-qcsw_AW8zHooy2LqMwcf1Md06SH6SkQ&usqp=CAU","top":appData.baton, "left": appData.variable1}]}
+        style= {[{width:"20%",height:"20%", "top":appData.baton, "left": appData.variable1},"zIndex":500]}
         source = {{uri:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSBpW-qcsw_AW8zHooy2LqMwcf1Md06SH6SkQ&usqp=CAU'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
 
-
-
-      
-
-
       <Image
-        style= {[{width:"20%",height:"20%"}, {"source":" \"https://png.pngtree.com/element_our/20190603/ourlarge/pngtree-game-hurdle-cartoon-illustration-image_1436363.jpg\";","top": appData.hurdle, "left": appData.variable2}]}
-        source = {{uri:' "https://png.pngtree.com/element_our/20190603/ourlarge/pngtree-game-hurdle-cartoon-illustration-image_1436363.jpg";'}}
+        style= {[{width:"20%",height:"20%","top":appData.hurdle, "left": appData.variable2, "zIndex":500, "resizeMode":"contain"}]}
+        source = {{uri:'https://png.pngtree.com/element_our/20190603/ourlarge/pngtree-game-hurdle-cartoon-illustration-image_1436363.jpg'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
 
 
-
-      
-
-
       <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://thumbs.dreamstime.com/b/cartoon-city-landscape-summer-day-modern-flat-cityscape-banner-skyscraper-buildings-green-park-trees-urban-156715015.jpg","height":"100%","width":"100%","zIndex":-50}]}
-        source = {{uri:'https://thumbs.dreamstime.com/b/cartoon-city-landscape-summer-day-modern-flat-cityscape-banner-skyscraper-buildings-green-park-trees-urban-156715015.jpg'}}
+        style= {[{width:"20%",height:"10%", "top":appData.javelin, "left": appData.variable3, "zIndex":500}]}
+        source = {{uri:'https://www.kindpng.com/picc/m/360-3607940_javelin-png-transparent-png.png'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
 
 
-
-      
-
-
       <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://www.tracknfieldgear.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/r/b/rbbl.jpg","top":appData.javelin, "left": appData.variable3 }]}
-        source = {{uri:'https://www.tracknfieldgear.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/r/b/rbbl.jpg'}}
-        onPress = { function(){; that.forceUpdate(); }}  
-      >
-      </Image>
-
-
-
-      
-
-
-      <Image
-        style= {[{width:"20%",height:"20%"}, {"source":"https://www.kindpng.com/picc/m/44-445260_transparent-stick-figure-running-clipart-monaca-towa-pixel.png","top":"71.39%","left":appData.character}]}
+        style= {[{width:"20%",height:"20%","top":"25%","left":appData.character,"zIndex":500,"resizeMode":"contain"}]}
         source = {{uri:'https://www.kindpng.com/picc/m/44-445260_transparent-stick-figure-running-clipart-monaca-towa-pixel.png'}}
         onPress = { function(){; that.forceUpdate(); }}  
       >
       </Image>
+
+ 
+
+
 
 
 
