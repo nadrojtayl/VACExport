@@ -244,14 +244,9 @@ function unwrap_dynamically(value,default_value){
             shadowOffset: { height: 1, width: 1 }, // IOS
             shadowOpacity: 1, // IOS
             shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
             elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"3.25%","left":"61.3%","backgroundColor":"#fffa00","innerText":"'NANI'","height":"80%","width":"27%"}]}
+            position:'absolute', alignItems:'center',justifyContent:'center',  title:'Test', borderColor: 'gray', 
+            color:'black', borderRadius:15, borderWidth: 1,"top":"20%","left":"63%","backgroundColor":"#fffa00","height":"7%","width":"27%"}]}
         >
         <Text style = {{color:"black"}}>
 
@@ -259,7 +254,7 @@ function unwrap_dynamically(value,default_value){
 
        </Text>
         </TouchableOpacity>
- <TouchableOpacity
+      <TouchableOpacity
           
           onPress = { function(){play("https://www.mboxdrive.com/roblox-death-sound_1.mp3"); that.forceUpdate(); }}  
           style= {[{
@@ -267,14 +262,9 @@ function unwrap_dynamically(value,default_value){
             shadowOffset: { height: 1, width: 1 }, // IOS
             shadowOpacity: 1, // IOS
             shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
             elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"49.38%","left":"11.2%","backgroundColor":"#fffa00","height":"20%","innerText":"'OOF'","containerStyle":null,"width":"27%"}]}
+            position:'absolute',backgroundColor:'yellow', alignItems:'center',justifyContent:'center', title:'Test', borderColor: 'gray', 
+            color:'black', borderRadius:15, borderWidth: 1,"top":"20%","left":"7%","height":"7%","width":"27%"}]}
         >
         <Text style = {{color:"black"}}>
 
@@ -282,7 +272,7 @@ function unwrap_dynamically(value,default_value){
 
        </Text>
         </TouchableOpacity>
- <TouchableOpacity
+      <TouchableOpacity
           
           onPress = { function(){play("https://www.mboxdrive.com/musica_1 (1).mp3"); that.forceUpdate(); }}  
           style= {[{
@@ -290,14 +280,9 @@ function unwrap_dynamically(value,default_value){
             shadowOffset: { height: 1, width: 1 }, // IOS
             shadowOpacity: 1, // IOS
             shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
             elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            height:"7%",
-            width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"49.66%","left":"61.83%","innerText":"'Windows Error Song'","backgroundColor":"#fffa00","height":"20%","color":"black","width":"27%"}]}
+            position:'absolute', alignItems:'center',justifyContent:'center',  title:'Test', borderColor: 'gray', 
+            color:'black', borderRadius:15, borderWidth: 1},{"top":"30%","left":"63%","backgroundColor":"#fffa00","height":"7%","color":"black","width":"27%"}]}
         >
         <Text style = {{color:"black"}}>
 
@@ -305,7 +290,7 @@ function unwrap_dynamically(value,default_value){
 
        </Text>
         </TouchableOpacity>
- <TouchableOpacity
+      <TouchableOpacity
           
           onPress = { function(){play("https://www.mboxdrive.com/classic_hurt.mp3"); that.forceUpdate(); }}  
           style= {[{
@@ -313,14 +298,12 @@ function unwrap_dynamically(value,default_value){
             shadowOffset: { height: 1, width: 1 }, // IOS
             shadowOpacity: 1, // IOS
             shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
             elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"22.42%","left":"10.49%","backgroundColor":"#fffa00","height":"20%","fontFamily":null,"innerText":"'Minecraft Hurt'","width":"27%"}]}
+            position:'absolute', alignItems:'center',justifyContent:'center',  title:'Test', borderColor: 'gray', 
+            color:'black', borderRadius:15, borderWidth: 1},{"top":"30%","left":"7%","backgroundColor":"#fffa00","height":"7%","width":"27%"}]}
         >
         <Text style = {{color:"black"}}>
 
@@ -328,7 +311,7 @@ function unwrap_dynamically(value,default_value){
 
        </Text>
         </TouchableOpacity>
- <TouchableOpacity
+      <TouchableOpacity
           
           onPress = { function(){play("https://www.mboxdrive.com/perfect-fart.mp3"); that.forceUpdate(); }}  
           style= {[{
@@ -336,14 +319,12 @@ function unwrap_dynamically(value,default_value){
             shadowOffset: { height: 1, width: 1 }, // IOS
             shadowOpacity: 1, // IOS
             shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
             elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'Fart'","top":"77.16%","left":"11.38%","backgroundColor":"#fffa00","height":"20%","width":"27%"}]}
+            position:'absolute', alignItems:'center',justifyContent:'center', borderColor: 'gray', 
+            color:'black', borderRadius:15, borderWidth: 1,"top":"40%","left":"7%","backgroundColor":"#fffa00","height":"7%","width":"27%"}]}
         >
         <Text style = {{color:"black"}}>
 
@@ -351,7 +332,7 @@ function unwrap_dynamically(value,default_value){
 
        </Text>
         </TouchableOpacity>
- <TouchableOpacity
+      <TouchableOpacity
           
           onPress = { function(){play("https://www.mboxdrive.com/movie_1.mp3"); that.forceUpdate(); }}  
           style= {[{
@@ -359,14 +340,12 @@ function unwrap_dynamically(value,default_value){
             shadowOffset: { height: 1, width: 1 }, // IOS
             shadowOpacity: 1, // IOS
             shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
             elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
             flexDirection: 'row',
             height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"top":"77.03%","left":"62.37%","height":150,"backgroundColor":"#fffa00","innerText":"'Bruh'","width":"27%"}]}
+            position:'absolute', alignItems:'center',justifyContent:'center',  title:'Test', borderColor: 'gray', 
+            color:'black', borderRadius:15, borderWidth: 1,"top":"40%","left":"63%","height":"7%","backgroundColor":"#fffa00","width":"27%"}]}
         >
         <Text style = {{color:"black"}}>
 
@@ -374,27 +353,361 @@ function unwrap_dynamically(value,default_value){
 
        </Text>
         </TouchableOpacity>
-<Text
-          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"1.1%","left":"11.73%","innerText":"'Meme Soundboard'","fontSize":"resizeFont(50)"}]}
-        > {'Meme Soundboard'} </Text>
-        
- <TouchableOpacity
+
+
+        <TouchableOpacity
           
-          onPress = { function(){pause()
-; that.forceUpdate(); }}  
+          onPress = { function(){play("https://www.mboxdrive.com/ali-a-intro-bass-boosted.mp3"); that.forceUpdate(); }}  
           style= {[{
             shadowColor: 'rgba(0,0,0, .4)', // IOS
             shadowOffset: { height: 1, width: 1 }, // IOS
             shadowOpacity: 1, // IOS
             shadowRadius: 1, //IOS
-            backgroundColor: '#fff',
             elevation: 2, // Android
-            justifyContent: 'center',
-            alignItems: 'center',
             flexDirection: 'row',
-            height:"7%",
             width:"30%",
-            position:'absolute',top:0,left:0, backgroundColor:'#8fd158', alignItems:'center',justifyContent:'center', height: "7%",  title:'Test', borderColor: 'gray', color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'STOP ALL'","top":"12.52%","left":"38.48%","backgroundColor":"red"}]}
+            position:'absolute', alignItems:'center',justifyContent:'center',  title:'Test', borderColor: 'gray', 
+            color:'black', borderRadius:15, borderWidth: 1,"top":"50%","left":"7%","height":"7%","width":"27%","backgroundColor":"yellow"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Ali A'}
+
+       </Text>
+        </TouchableOpacity>
+      <TouchableOpacity
+          
+          onPress = { function(){play("https://www.mboxdrive.com/its-me-mario.mp3"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            elevation: 2, // Android
+            flexDirection: 'row',
+            width:"30%",
+            position:'absolute', alignItems:'center',justifyContent:'center',  title:'Test', borderColor: 'gray', 
+            color:'black', borderRadius:15, borderWidth: 1,"top":"50%","left":"63%","height":"7%","width":"27%","backgroundColor":"yellow"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Its a me Mario'}
+
+       </Text>
+        </TouchableOpacity>
+      <TouchableOpacity
+          
+          onPress = { function(){play("https://www.mboxdrive.com/untitled3_13.mp3"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            elevation: 2, // Android
+            flexDirection: 'row',
+            width:"30%",
+            position:'absolute', alignItems:'center',justifyContent:'center',  title:'Test', borderColor: 'gray', 
+            color:'black', borderRadius:15, borderWidth: 1,"top":"60%","left":"7%","height":"7%","width":"27%","backgroundColor":"yellow"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Stop It, Get Some Help'}
+
+       </Text>
+        </TouchableOpacity>
+      <TouchableOpacity
+          
+          onPress = { function(){play("https://www.mboxdrive.com/obi-wan-hello-there.mp3"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            elevation: 2, // Android
+            position:'absolute', alignItems:'center',justifyContent:'center',  title:'Test', borderColor: 'gray', 
+            color:'black', borderRadius:15, borderWidth: 1},{"top":"60%","left":"63%","width":"27%","height":"7%","backgroundColor":"yellow"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Hello There'}
+
+       </Text>
+        </TouchableOpacity>
+      <TouchableOpacity
+          
+          onPress = { function(){play("https://www.mboxdrive.com/another-one_1.mp3"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            elevation: 2, // Android
+            position:'absolute', alignItems:'center',justifyContent:'center',  title:'Test', borderColor: 'gray', 
+            color:'black', borderRadius:15, borderWidth: 1,"top":"70%","left":"63%","height":"7%","width":"27%","backgroundColor":"yellow"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Another One'}
+
+       </Text>
+        </TouchableOpacity>
+      <TouchableOpacity
+          
+          onPress = { function(){play("https://www.mboxdrive.com/engineer_no01_1.mp3"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            elevation: 2, // Android
+            position:'absolute', alignItems:'center',justifyContent:'center',  title:'Test', borderColor: 'gray', 
+            color:'black', borderRadius:15, borderWidth: 1},{"height":"7%","width":"27%","backgroundColor":"yellow","top":"70%","left":"7%"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Nope'}
+
+       </Text>
+        </TouchableOpacity>
+
+               <TouchableOpacity
+          
+          onPress = { function(){play("https://www.mboxdrive.com/henchman_dbno_enter_010.mp3"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            elevation: 2, // Android
+            position:'absolute', alignItems:'center',justifyContent:'center', title:'Test', borderColor: 'gray', 
+            color:'black', borderRadius:15, borderWidth: 1,"top":"80%","left":"7%","height":"7%","width":"27%","backgroundColor":"yellow"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Fortnite Henchman'}
+
+       </Text>
+        </TouchableOpacity>
+      <TouchableOpacity
+          
+          onPress = { function(){play("https://www.mboxdrive.com/johncenaprankcall_cutted.mp3"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            elevation: 2, // Android
+            position:'absolute', alignItems:'center',justifyContent:'center', title:'Test', borderColor: 'gray', 
+            color:'black', borderRadius:15, borderWidth: 1,"height":"7%","width":"27%","top":"80%","left":"63%",
+            "backgroundColor":"yellow"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'John Cena'}
+
+       </Text>
+        </TouchableOpacity>
+      <TouchableOpacity
+          
+          onPress = { function(){play("https://www.mboxdrive.com/wii-sports-theme-roblox-death-sound-edition-audiotrimmer_pvK4V0Q.mp3"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            elevation: 2, // Android
+            position:'absolute', alignItems:'center',justifyContent:'center', title:'Test', borderColor: 'gray', 
+            color:'black', borderRadius:15, borderWidth: 1,"height":"7%","width":"27%","color":"black",
+            "top":"90%","left":"63%","backgroundColor":"yellow"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Wii Sports Roblox Death'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){play("https://www.mboxdrive.com/anime-wow-sound-effect.mp3"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            elevation: 2, // Android
+            position:'absolute', alignItems:'center',justifyContent:'center', title:'Test', borderColor: 'gray', 
+            color:'black', borderRadius:15, borderWidth: 1,"height":"7%","width":"27%", "top":"90%","left":"35%","backgroundColor":"yellow"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Anime WOW'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){play("https://www.mboxdrive.com/r2d2_scream_converted.mp3"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            elevation: 2, // Android
+            position:'absolute', alignItems:'center',justifyContent:'center', title:'Test', borderColor: 'gray', 
+            color:'black', borderRadius:15, borderWidth: 1,"height":"7%","width":"27%",
+            "top":"70%","left":"35%","backgroundColor":"yellow"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'R2D2 Scream'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){play("https://www.mboxdrive.com/yeet-sound-effect.mp3"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            elevation: 2, // Android
+            position:'absolute', alignItems:'center',justifyContent:'center', title:'Test', borderColor: 'gray',
+             color:'black', borderRadius:15, borderWidth: 1,"height":"7%","width":"27%",
+             "top":"20%","left":"35%","borderStyle":null,"backgroundColor":"yellow"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'YEET'}
+
+       </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          
+          onPress = { function(){play("https://www.mboxdrive.com/i-have-the-high-ground.mp3"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            elevation: 2, // Android
+            position:'absolute', alignItems:'center',justifyContent:'center', title:'Test', borderColor: 'gray', 
+            color:'black', borderRadius:15, borderWidth: 1},{"innerText":"'I have the high ground'",
+            "top":"90%","left":"7%","height":"7%","width":"27%","backgroundColor":"yellow"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'I have the high ground'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){play("https://www.mboxdrive.com/why-you-bully-me_tAonLVq.mp3"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            elevation: 2, // Android
+            position:'absolute', alignItems:'center',justifyContent:'center', title:'Test', borderColor: 'gray', 
+            color:'black', borderRadius:15, borderWidth: 1,"top":"50%","left":"35%",
+            "height":"7%","width":"27%","backgroundColor":"yellow"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Why you bully me?'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){play("https://www.mboxdrive.com/imogen-heap-hide-and-seek-mm-what-you-say.mp3"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            elevation: 2, // Android
+            position:'absolute', alignItems:'center',justifyContent:'center', title:'Test', borderColor: 'gray', 
+            color:'black', borderRadius:15, borderWidth: 1},{"top":"80%","left":"35%","height":"7%","width":"27%","backgroundColor":"yellow"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'MMM-What you sayyy?'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){play("https://www.mboxdrive.com/victory_6.mp3"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            elevation: 2, // Android
+            position:'absolute', alignItems:'center',justifyContent:'center', title:'Test', borderColor: 'gray',
+            color:'black', borderRadius:15, borderWidth: 1,"top":"40%","left":"35%","height":"7%","width":"27%","backgroundColor":"yellow"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Victory'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){play("https://www.mboxdrive.com/liedjes-voor-twitch-4.mp3"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            elevation: 2, // Android
+            position:'absolute', alignItems:'center',justifyContent:'center', title:'Test', borderColor: 'gray', 
+            color:'black', borderRadius:15, borderWidth: 1,"top":"60%","left":"35%","height":"7%","width":"27%","backgroundColor":"yellow"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'Fortnite Loser'}
+
+       </Text>
+        </TouchableOpacity>
+ <TouchableOpacity
+          
+          onPress = { function(){play("https://www.mboxdrive.com/pk-fire.mp3"); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            elevation: 2, // Android
+            position:'absolute', alignItems:'center',justifyContent:'center', title:'Test', borderColor: 'gray',
+            color:'black', borderRadius:15, borderWidth: 1,"top":"30%","left":"35%","height":"7%","width":"27%","backgroundColor":"yellow"}]}
+        >
+        <Text style = {{color:"black"}}>
+
+        {'PK FIRE'}
+
+       </Text>
+        </TouchableOpacity>
+        <Text
+          style= {[{position:'absolute',zIndex:100,width:'100%'},{"top":"5.1%","left":"20.73%","fontSize":"36px"}]}
+        > {'Meme Soundboard'} </Text>
+        
+         <TouchableOpacity
+          
+          onPress = { function(){pause(); that.forceUpdate(); }}  
+          style= {[{
+            shadowColor: 'rgba(0,0,0, .4)', // IOS
+            shadowOffset: { height: 1, width: 1 }, // IOS
+            shadowOpacity: 1, // IOS
+            shadowRadius: 1, //IOS
+            elevation: 2, // Android
+            position:'absolute', alignItems:'center',justifyContent:'center',  title:'Test', borderColor: 'gray', 
+            color:'black', borderRadius:15, borderWidth: 1,"top":"12.52%","left":"38.48%","backgroundColor":"red"}]}
         >
         <Text style = {{color:"black"}}>
 
